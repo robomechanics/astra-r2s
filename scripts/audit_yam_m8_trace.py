@@ -32,6 +32,14 @@ def audit(path: Path, scene: Path, *, use_saved_xml=False):
         controls = saved["controller"].copy() if "controller" in saved else None
         records = json.loads(str(saved["info_json"]))
         metadata = json.loads(str(saved["metadata_json"]))
+    recorded_runtime = metadata.get("runtime", {})
+    runtime_match = {
+        "mujoco_version_matches": recorded_runtime.get("mujoco_version") == runtime.get("mujoco_version"),
+        "thread_plugin_source_matches": recorded_runtime.get("thread_plugin_source_sha256")
+            == runtime.get("thread_plugin_source_sha256"),
+        "mujoco_core_binary_hashes_match": sorted(lib["sha256"] for lib in recorded_runtime.get("libraries", []))
+            == sorted(lib["sha256"] for lib in runtime.get("libraries", [])),
+    }
     portable_fingerprint = None
     if metadata.get("scene_config") and not use_saved_xml:
         values = dict(metadata["scene_config"])
@@ -183,6 +191,16 @@ def audit(path: Path, scene: Path, *, use_saved_xml=False):
         finite_caps = bool(np.isfinite(controls).all() and np.all(controls >= lower - 1e-12)
                            and np.all(controls <= upper + 1e-12))
         maximum_motor_command = np.max(np.abs(controls), axis=0).tolist()
+    arm_joint_margins = {}
+    for side in ("left", "right"):
+        joints = [model.joint(f"{side}_joint{i}").id for i in range(1, 7)]
+        lower, upper = model.jnt_range[joints].T
+        values = qpos[:, model.jnt_qposadr[joints]]
+        margins = np.minimum(values - lower, upper - values)
+        arm_joint_margins[side] = {
+            "sampled_minimum_margin_rad": float(margins.min()),
+            "sampled_minimum_margin_by_joint_rad": margins.min(axis=0).tolist(),
+            "all_sampled_positions_inside_joint_ranges": bool(np.all(margins >= 0.))}
     equalities = []
     for i in range(model.neq):
         kind = int(model.eq_type[i])
@@ -199,6 +217,7 @@ def audit(path: Path, scene: Path, *, use_saved_xml=False):
             "model_source": model_source, "rebuilt_portable_model_fingerprint": portable_fingerprint,
             "auditor_sha256": auditor_sha256,
             "audit_runtime": runtime, "recorded_rollout_metadata": metadata,
+            "recorded_runtime_matches_current_replay": runtime_match,
             "post_clamp_reference_index": baseline, "post_clamp_reference_time_s": rows[baseline]["time_s"],
             "post_clamp_reference_note": "Last saved pose preceding the first turn, or end of the first phase for a clamp-only trace",
             "phase_boundary_note": "Phase deltas use the preceding phase's last sampled pose and the current phase's last sampled pose; original all-substep acceptance gates remain authoritative",
@@ -215,6 +234,7 @@ def audit(path: Path, scene: Path, *, use_saved_xml=False):
             "maximum_recorded_vs_recomputed_bolt_relative_yaw_error_rad": max(recorded_yaw_error, default=None),
             "sampled_actuator_commands_within_declared_ranges": finite_caps,
             "maximum_absolute_sampled_actuator_command": maximum_motor_command,
+            "actual_arm_joint_limit_margins": arm_joint_margins,
             "free_block_and_nut_have_no_actuator": bool(free_objects_unactuated),
             "equalities": equalities,
             "recorded_between_sample_drive_checks": {name: check for name, check in

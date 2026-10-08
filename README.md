@@ -5,11 +5,13 @@ short M8 shaft. The nut has a 20 mm outer width and the same M8 × 1.25 bore;
 the shaft is 16 mm long. Native joint motors and finite finger contacts drive
 the task. See [scene, controls, policy interface and current results](docs/yam_m8.md).
 
-[![Recorded bimanual grasp and lift](media/yam_m8/hold.png)](media/yam_m8/hold.mp4)
+[![Recorded first turn, release and regrasp; full run in progress](media/yam_m8/turn_progress.gif)](media/yam_m8/turn_progress.mp4)
 
 The left arm physically lifts the free assembly **3.829 mm**, with zero
-world supports or artificial object forces. The full three-stroke turning
-demo is currently being validated. **97 software tests pass**; neither these
+world supports or artificial object forces. The first two 120° strokes pass
+their strict lead checks, with errors of **3.0 and 3.1 µm**. The clip shows
+the first stroke and its open reset; the full three-stroke turning demo is
+currently being validated. **97 software tests pass**; neither these
 tests nor the lift alone certify policy-training fidelity.
 
 ```bash

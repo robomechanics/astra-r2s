@@ -8,6 +8,17 @@ axial trajectory.
 
 [![Recorded physical grasp and lift](../media/yam_m8/hold.png)](../media/yam_m8/hold.mp4)
 
+[![First turning stroke and open reset, recorded physics](../media/yam_m8/turn_progress.gif)](../media/yam_m8/turn_progress.mp4)
+
+The first two measured 120° strokes pass the unchanged 8.33 µm lead-error
+gate (errors 2.991 and 3.082 µm). The turning clip contains the first stroke
+and open reset, with zero hand/nut contacts during reset and 14 nm of axial
+creep. The full three-stroke run and a left-contact sticking convergence
+comparison are still in progress. The inspection camera keeps the nut visible
+between the actual fingers; the inset is the real model's wrist camera. The
+advance plot uses the measured post-grasp baseline and reports initial flank
+take-up separately; no simulated state or motion command is corrected.
+
 **Current recorded milestone: grasp and lift.** The full three-stroke turning
 run is being validated. This clip replays the actual 1.32 s hold/lift trajectory
 at 3× slow motion. It passes the hold, alignment, support and drive checks;

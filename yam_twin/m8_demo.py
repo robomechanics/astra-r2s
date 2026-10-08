@@ -65,6 +65,7 @@ def render_recording(trajectory, output, *, fps=12, slow_motion=1.5,
         raise ValueError("The recorded scene source or model settings have changed")
     data = mujoco.MjData(model)
     bolt_id = model.body("bolt_frame").id
+    nut_id = model.body("nut").id
     overview = mujoco.Renderer(model, height=720, width=864)
     detail = mujoco.Renderer(model, height=330, width=432)
     wrist = mujoco.Renderer(model, height=150, width=224)
@@ -72,10 +73,17 @@ def render_recording(trajectory, output, *, fps=12, slow_motion=1.5,
     overview_camera.lookat[:] = [.28, 0., .20]
     overview_camera.distance = 1.15
     overview_camera.azimuth, overview_camera.elevation = 160., -40.
+    detail_camera = mujoco.MjvCamera()
+    detail_camera.distance = .037
+    azimuth, elevation = np.deg2rad(130.), np.deg2rad(75.)
+    local_view_offset = np.array([np.cos(elevation)*np.cos(azimuth),
+                                 np.cos(elevation)*np.sin(azimuth), np.sin(elevation)])
     options = mujoco.MjvOption()
     options.geomgroup[3:] = False
     options.flags[mujoco.mjtVisFlag.mjVIS_CONTACTPOINT] = False
     turning = [i for i, s in enumerate(samples) if s["phase"].startswith("turn_")]
+    turn_start = turning[0] if turning else None
+    take_up_mm = samples[max(0, turn_start - 1)]["axial_advance_mm"] if turning else 0.
     still_index = (turning[len(turning)//2] if turning else len(times)//2) if still_time is None else min(
         len(times)-1, int(np.searchsorted(times, still_time)))
     duration = float(times[-1] - times[0])
@@ -95,7 +103,14 @@ def render_recording(trajectory, output, *, fps=12, slow_motion=1.5,
             overview.update_scene(data, camera=overview_camera, scene_option=options)
             canvas = Image.new("RGB", (1296, 720), "#101924")
             canvas.paste(Image.fromarray(overview.render()), (0, 0))
-            detail.update_scene(data, camera="threadcloseup", scene_option=options)
+            # An inspection camera inside the jaw gap keeps the short thread
+            # visible as the real fingers rotate. No meshes are hidden. The
+            # inset remains the actual robot-mounted camera.
+            detail_camera.lookat[:] = data.xpos[nut_id]
+            view_offset = data.xmat[bolt_id].reshape(3, 3) @ local_view_offset
+            detail_camera.azimuth = float(np.rad2deg(np.arctan2(view_offset[1], view_offset[0])))
+            detail_camera.elevation = -float(np.rad2deg(np.arcsin(np.clip(view_offset[2], -1., 1.))))
+            detail.update_scene(data, camera=detail_camera, scene_option=options)
             detail.scene.flags[mujoco.mjtRndFlag.mjRND_SHADOW] = False
             canvas.paste(Image.fromarray(detail.render()), (864, 0))
             wrist.update_scene(data, camera="right_camera_d405", scene_option=options)
@@ -108,14 +123,18 @@ def render_recording(trajectory, output, *, fps=12, slow_motion=1.5,
             draw.rectangle((624, 16, 848, 42), fill=(16, 25, 36, 230))
             draw.text((636, 20), "Right wrist camera", font=small, fill="#c6d5e4")
             draw.rectangle((864, 0, 1296, 38), fill=(16, 25, 36, 220))
-            draw.text((882, 9), "Recorded thread / finger contacts", font=small, fill="white")
+            draw.text((882, 9), "Virtual thread closeup", font=small, fill="white")
             draw.rectangle((0, 619, 864, 720), fill=(16, 25, 36, 235))
             draw.text((20, 635), sample["phase"].replace("_", " "), font=big, fill="white")
             draw.text((20, 677), f"{times[index]:.2f} s physics · {slow_motion:g}× slow motion", font=small, fill="#c6d5e4")
             draw.text((485, 637), "Left holds block · right turns nut", font=small, fill="#c6d5e4")
             draw.text((485, 674), "M8 bore · AF20 nut · 16 mm shaft", font=small, fill="#c6d5e4")
             draw.text((882, 348), f"Nut turns: {sample['clockwise_turns']:.3f}", font=normal, fill="white")
-            draw.text((882, 380), f"Advance: {sample['axial_advance_mm']:.3f} mm", font=normal, fill="white")
+            if turn_start is not None and index >= turn_start:
+                advance_text = f"Turn advance: {sample['axial_advance_mm'] - take_up_mm:.3f} mm"
+            else:
+                advance_text = f"Flank take-up: {sample['axial_advance_mm']:.3f} mm"
+            draw.text((882, 380), advance_text, font=normal, fill="white")
             contact = sample.get("contact", {})
             torque = np.asarray(contact.get("pad_wrench_world", [0.]*6))[3:]
             axis = data.xmat[bolt_id].reshape(3, 3)[:, 2]
@@ -129,15 +148,19 @@ def render_recording(trajectory, output, *, fps=12, slow_motion=1.5,
             left, top, width, height = 884, 511, 365, 137
             max_turns = max(1., max(s["clockwise_turns"] for s in samples))
             max_advance = max(scene.thread.pitch*1000*max_turns*1.1,
-                              max(s["axial_advance_mm"] for s in samples)*1.1)
+                              max(s["axial_advance_mm"] - take_up_mm for s in samples)*1.1)
             point = lambda a, b: (left+width*a/max_turns, top+height-height*b/max_advance)
             draw.line([(left, top), (left, top+height), (left+width, top+height)], fill="#60768a", width=2)
             draw.line([point(0, 0), point(max_turns, scene.thread.pitch*1000*max_turns)], fill="#6686aa", width=2)
-            points = [point(s["clockwise_turns"], s["axial_advance_mm"]) for s in samples[:index+1]]
+            plot_start = turn_start if turn_start is not None else 0
+            points = [point(s["clockwise_turns"], s["axial_advance_mm"] - take_up_mm)
+                      for s in samples[plot_start:index+1]]
             if len(points) > 1:
                 draw.line(points, fill="#53dec4", width=3)
-            draw.text((882, 656), "Observed advance vs. clockwise turns", font=small, fill="#53dec4")
-            draw.text((882, 681), "Blue: 1.25 mm/rev reference", font=small, fill="#93aec7")
+            draw.text((882, 656), "Observed turn advance after grasp", font=small, fill="#53dec4")
+            reference = (f"1.25 mm/rev · initial take-up {take_up_mm*1000:.1f} µm" if turning
+                         else "Blue: 1.25 mm/rev reference")
+            draw.text((882, 681), reference, font=small, fill="#93aec7")
             if report.get("partial", False):
                 status = ("PARTIAL PHYSICS RUN" if "acceptance_checks" in report or "hold_checks" in report
                           else "PHYSICS RUN IN PROGRESS")
