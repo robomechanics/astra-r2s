@@ -1,0 +1,158 @@
+{
+  "upstream_repository": "https://github.com/i2rt-robotics/i2rt",
+  "upstream_commit": "120c3c81400171174604e503943f8d1ebc891058",
+  "upstream_subdirectory": "i2rt/robot_models",
+  "license": "MIT",
+  "copyright": "I2RT Robotics",
+  "copied_files_unchanged": true,
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "7cd0a0224a287ebd6c45703eb6623d264c7810f8958d65de8f99e87ccd9f4891"
+    },
+    {
+      "path": "arm/yam/v1/README.md",
+      "sha256": "401ef6b846ae4bd968b95a73bf9f16f3b82a9b6142419bcf97779f48c2936ea9"
+    },
+    {
+      "path": "arm/yam/v1/assets/base.stl",
+      "sha256": "d95a5aa0c06a5ef6da02788b0df5a14e4202c1ae8eb2771a7f6f8947e3a490c7"
+    },
+    {
+      "path": "arm/yam/v1/assets/crank_4310/gripper.stl",
+      "sha256": "efbe5e92e44c715d9c0ea0617e412a24db6ea0f3dabf18edc6746cd685a5d85f"
+    },
+    {
+      "path": "arm/yam/v1/assets/crank_4310/tip_left.stl",
+      "sha256": "b70f8c1e32ccfae03fec46ac10a0f04195347bc530ee761143a5d7c5bb07ae07"
+    },
+    {
+      "path": "arm/yam/v1/assets/crank_4310/tip_right.stl",
+      "sha256": "f074d03ca2a4fdc53cb7f47240111010b02b6fe7bae4465230b6ac3e5a1b32d6"
+    },
+    {
+      "path": "arm/yam/v1/assets/gripper.stl",
+      "sha256": "e0dad958755f0a9d58e6bea4f16fed2849146ae81c0dbd45487aff308cb49e58"
+    },
+    {
+      "path": "arm/yam/v1/assets/link1.stl",
+      "sha256": "41f7dfbd0471a0f96884c73782e82927f2bbc6aced9b55c0111da1b52d6e0c50"
+    },
+    {
+      "path": "arm/yam/v1/assets/link2.stl",
+      "sha256": "067b51567a95a631d50fc02515bd045a2eb7f2f34489d5aec31d9f3f6ce58b30"
+    },
+    {
+      "path": "arm/yam/v1/assets/link3.stl",
+      "sha256": "9650a114393881b54a68822ba3fb48fcd3318023ebecaf251e4f7804e91f801c"
+    },
+    {
+      "path": "arm/yam/v1/assets/link4.stl",
+      "sha256": "42740ce2bb8693760a35dc6e9e8fe0981999c02d6bf167a465c9936acf41c557"
+    },
+    {
+      "path": "arm/yam/v1/assets/link5.stl",
+      "sha256": "f70eb1191d6a1ccbb748a46fe8ba541f38094c9829fd1859300e70360c5a07c7"
+    },
+    {
+      "path": "arm/yam/v1/assets/tip_left.stl",
+      "sha256": "281354d77e4914ccd994b6c71fecce49a91527701f268d318f801769a6913685"
+    },
+    {
+      "path": "arm/yam/v1/assets/tip_right.stl",
+      "sha256": "070925233d4b742c05c4d5508e951deba5947c2fabfa336a4e33db599c70ac3a"
+    },
+    {
+      "path": "arm/yam/v1/yam.urdf",
+      "sha256": "c0967cf85c4904a142c3aa2bb7453af609354ee94997900040fd0b3e1b756bb8"
+    },
+    {
+      "path": "arm/yam/v1/yam.xml",
+      "sha256": "36203fe5c845afbd201d3cea4c94f6e4b8e1a2929038c1e4aa22ad30e076322e"
+    },
+    {
+      "path": "gripper/crank_4310/assets/gripper.stl",
+      "sha256": "efbe5e92e44c715d9c0ea0617e412a24db6ea0f3dabf18edc6746cd685a5d85f"
+    },
+    {
+      "path": "gripper/crank_4310/assets/tip_left.stl",
+      "sha256": "b70f8c1e32ccfae03fec46ac10a0f04195347bc530ee761143a5d7c5bb07ae07"
+    },
+    {
+      "path": "gripper/crank_4310/assets/tip_right.stl",
+      "sha256": "f074d03ca2a4fdc53cb7f47240111010b02b6fe7bae4465230b6ac3e5a1b32d6"
+    },
+    {
+      "path": "gripper/crank_4310/crank_4310.xml",
+      "sha256": "080e06cf7d7c06eb459061af8c39d0315214304d15b878d3ea2f95b2d2afaf36"
+    },
+    {
+      "path": "gripper/linear_4310/assets/gripper.stl",
+      "sha256": "d949c401186197d842ca8f9b23bfcbf24bed8461b421df06093c65e4ead21f5d"
+    },
+    {
+      "path": "gripper/linear_4310/assets/tip_left.stl",
+      "sha256": "03d94f53d7b5e9e1871ea6f3925c68d7a2f894b08e0c575fa0b9ed4024684ff7"
+    },
+    {
+      "path": "gripper/linear_4310/assets/tip_right.stl",
+      "sha256": "8f620aae9c15e00e2ea4e5bf5e9a49e7edb2d23128b8955cfacc0da8da45c72f"
+    },
+    {
+      "path": "gripper/linear_4310/linear_4310.xml",
+      "sha256": "b30cf347d35b72dfc0e1c32d57f1c868e4d79a02d916d6dc5b48222a80544c64"
+    },
+    {
+      "path": "station/assets/d405_top.stl",
+      "sha256": "480453e27beb82122615d2f898623573bf50f202f54305c2407e69770c2ea173"
+    },
+    {
+      "path": "station/assets/d405_wrist_crank_4310.stl",
+      "sha256": "8aded328eac0dfccae6a9d43fff8daec8f0ad8291ab2dc67229b0f9142838843"
+    },
+    {
+      "path": "station/assets/d405_wrist_linear_4310.stl",
+      "sha256": "f01bcd92b447c3a44c1ad9345367628d4157fe4c07b545ccbf9bc4ae81115112"
+    },
+    {
+      "path": "station/assets/decxin_top.stl",
+      "sha256": "30267683328b69051d11a2aca2fb60006716329c6b5ee4cefe6e21f1545f9b31"
+    },
+    {
+      "path": "station/yam_station_crank_4310_d405/README.md",
+      "sha256": "6ae5a477aef26f8d352ff6ecfe7aa502d972472ae8d78d822512066d6d698564"
+    },
+    {
+      "path": "station/yam_station_crank_4310_d405/yam_station_crank_4310_d405.urdf",
+      "sha256": "db10cf79a36363f8267c7fa416b6f8b1e05c187d7ead5ea1e40e8d5d76998b38"
+    },
+    {
+      "path": "station/yam_station_crank_4310_d405/yam_station_crank_4310_d405.xml",
+      "sha256": "1f6faa19d0a36d7a6ff28ff018ea95c42bde5457bd58d749602bcdf067798501"
+    },
+    {
+      "path": "station/yam_station_linear_4310_d405/README.md",
+      "sha256": "c2cb31a9592f6fc4e4fa92214cb0b1d9708116de73cc1380c6af11595a62e528"
+    },
+    {
+      "path": "station/yam_station_linear_4310_d405/yam_station_linear_4310_d405.urdf",
+      "sha256": "5f7b5beee13c2df1986ac6e434c63e9fb9e381d33740d764556298a2a18919be"
+    },
+    {
+      "path": "station/yam_station_linear_4310_d405/yam_station_linear_4310_d405.xml",
+      "sha256": "9d398a8bcc65269b63d0f589b8dc939c81a9228b692f0b4f3cb90801e4731a45"
+    }
+  ],
+  "selection": {
+    "arm": "YAM v1",
+    "gripper": "crank_4310 suggested from visible angled claws; linear_4310 retained as alternate",
+    "model": "station/yam_station_crank_4310_d405/yam_station_crank_4310_d405.xml"
+  },
+  "coordinate_notes": {
+    "station_left_base": "0 0 0",
+    "station_right_base": "0 -0.61 0",
+    "station_approach": "+X world",
+    "tool_frame": "+X right, +Y down, +Z forward (ROS/OpenCV)",
+    "mesh_units": "metres"
+  }
+}

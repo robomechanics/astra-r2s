@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yam-screw-twin"
+version = "0.1.0"
+description = "Video-informed dual-YAM screwdriving scene and demonstrator"
+requires-python = ">=3.10"
+dependencies = ["mujoco>=3.11,<4", "numpy>=2,<3", "scipy>=1.15,<2", "imageio[ffmpeg]>=2.36,<3", "Pillow>=11,<13"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+mjlab = ["mjlab @ git+https://github.com/mujocolab/mjlab@033ae22a2c7a30a25a6fa77b16c113ed88dd1b55"]
+
+[project.scripts]
+yam-twin = "yam_twin.demo:main"
+
+[tool.setuptools]
+packages = ["yam_twin"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
