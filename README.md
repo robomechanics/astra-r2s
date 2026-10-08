@@ -1,5 +1,7 @@
 # M8 nut-on-bolt contact proof of concept
 
+**YAM integration:** [arm-driven scene and current progress](docs/yam_m8.md).
+
 A video-informed M8 × 1.25 experiment with a free six-DOF nut, continuous
 60° helical collision surfaces, and finite-force frictional fingers. Rotation
 and axial travel emerge from contact. The thread plugin supplies geometry only;
