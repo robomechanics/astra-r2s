@@ -14,6 +14,11 @@ recovered from the video.
 
 ![Initial M8 contact-model geometry](../media/m8_progress.png)
 
+[Watch the preliminary contact-driven turn](../media/m8_progress.mp4)
+(download the raw MP4 from GitHub). This is a recorded nominal-friction rollout,
+shown at 4× slow motion. Its blue line is a comparison reference; it does not
+drive insertion. The gripper has no grasp weld and the nut has no axial motor.
+
 This screenshot shows geometry, not a validated assembly result. Work is in
 progress. The nominal-friction contact experiment produces approximately the
 expected pitch; the open-finger negative control does not turn the nut. A free
