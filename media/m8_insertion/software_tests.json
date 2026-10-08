@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "tests_passed": 118,
+  "wall_seconds": 68.64995292499952,
+  "source_hashes": {
+    "tests/test_m8_env.py": "f1aa01a7e8f49481f152be4fa4e7d81d0512c9529234e7ab0c7f334c1ffb9ad0",
+    "tests/test_m8_insertion_env.py": "fbbcd6a58d358bbbad3c72c20f3db6f27298e0480eed1ef183930c1f8aac71d6",
+    "tests/test_m8_insertion_mechanics.py": "38c3500352177b5ab5ff2799d645ec2f402c1c8cb7dfe05927b672f2ba5d260a",
+    "tests/test_m8_physics.py": "1ef772e1e4af6cd864577176ab8c1c088c30c4856944ce5948ba1894c897f7e0",
+    "tests/test_m8_sdf.py": "b21ab6a5fd8b2af14c50a6cdea5358a77fcec3ee8883dc475e4e3d4bc6a1dd37",
+    "tests/test_m8_theory.py": "a82b341fca21da556e6aa311d2663d229428183ad1687660a5bf9cecb060863b",
+    "tests/test_twin.py": "2dbf4a42b45b1ec9f804191f10c4bce617d968a4cb875de54656331ec0206458",
+    "tests/test_yam_m8_control.py": "40956a87183b2100976b9cba5aafc9fbc93524b8191b36e983b11cca39d75be0",
+    "tests/test_yam_m8_env.py": "47ebd3f925ed0d7330a2f559499dc33d3aaec4e715120f28328120c4eb5a194e",
+    "tests/test_yam_m8_insertion_controller.py": "99dc320305e4fefc468592689225bf3e3c4945f0809c5e126550c51d0e52f2a8",
+    "tests/test_yam_m8_insertion_scene.py": "2ff01beda5da6be0e3604ac681bf4116203f2b624013198f440e0afcc5a00a42",
+    "tests/test_yam_m8_provenance.py": "fd447004b701fe29cd20545cebdc3a3b3961d175d9286d9387e2f423d45adcd6",
+    "tests/test_yam_m8_scene.py": "806b8daf2e83b21657dc55529083d9182620dc2ebce7b07386ec8ec88c48cf68",
+    "yam_twin/m8_demo.py": "f5989b9ee052a2bb6d68bdec090d90aec4faeed667fd8218bf3fa4dccb3d485d",
+    "yam_twin/m8_env.py": "88eab5fc877341db0bed0f5b81e0c45c25995493b7c368dd3e182dd9d43f510a",
+    "yam_twin/m8_insertion_demo.py": "c7391a9d89ba728cd410fe59968da8179c0424fddc9357322260699ed3719648",
+    "yam_twin/m8_insertion_env.py": "b3a8f2875c89cfb3cb3829d077cdebdc13cc605f27afd616ede4bd41903ab144",
+    "yam_twin/m8_insertion_mechanics.py": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+    "yam_twin/m8_insertion_scene.py": "e5c58732ea89e166fc4095a63a927fdfab42181a103bd645faa3fea08386fa42",
+    "yam_twin/m8_insertion_simulation.py": "824f064b2fd9a744ec9487457e9a0e9323b4123d18558c009a98d1df3e11905e",
+    "yam_twin/m8_scene.py": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f",
+    "yam_twin/m8_simulation.py": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449"
+  },
+  "source_hashes_unchanged": true,
+  "command": [
+    "scripts/run_m8.sh",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "output_log": "outputs/m8_insertion/pytest_all.log"
+}

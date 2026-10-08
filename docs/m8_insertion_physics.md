@@ -72,6 +72,41 @@ lead fit failed by 97.12%; that failure is retained. A separate, stricter
 fully formed flank diagnostic is declared before the longer probe. This
 avoids reporting cone contacts as completed threading.
 
+With the same controls extended to 5.5 s, the male physically found the
+thread phase and advanced into the block. The separate fully formed flank
+window spanned 0.24515 revolutions and measured **1.2500516 mm/revolution**,
+a 0.004124% lead error, with 0.32468 µm residual range. Maximum reported
+depth remained 3.932 µm; radial offset stayed below 14.63 µm and tilt below
+0.120°. No numerical guard aborted the run. Total axial travel was
+4.0518 mm, including the initial separated gap and thread-finding movement.
+The original broad fit still failed by 19.87%; its overall `passed=false`
+remains recorded alongside the separate full-flank diagnostic.
+
+Contact force is unilateral and intermittent with zero-margin SDF search.
+In the final 0.52 s of this benchmark, complete flank geometry persisted,
+while positive contact appeared in 177 of 520 sampled 1 ms rows. A 0.2 s
+requirement for positive force on every substep would reject this physically
+threading trajectory. A manipulation engagement classifier must distinguish
+persistent geometry and repeated loaded contact from an uninterrupted force
+signal; completed lead strokes and all penetration/alignment guards remain
+separate requirements. This contact intermittency also merits timestep and
+contact-search refinement before claiming broad policy-training fidelity.
+
+Reproduce the separated start benchmark:
+
+```bash
+scripts/run_m8.sh scripts/probe_m8_thread_start.py \
+  --duration 5.5 --output outputs/m8_insertion/start_probe_extended
+```
+
+A separate negative control kept the same axial feed and velocity drag but
+commanded zero angular speed. It stopped at 1.400317 mm tip insertion,
+showed only 0.6013 µm axial motion range during the final 0.4 s, and never
+reached formed-flank capture. Net yaw drift was 7.15 µrad; the bolt was
+angularly damped, not constrained by a rotation lock. Reported depth stayed
+below 0.953 µm with no guard abort. Its positive-threading `passed=false`
+is the expected negative result, not a discarded failed experiment.
+
 ## Qualification before policy-training claims
 
 The nominal robot trace must show initially separated male/female bodies,

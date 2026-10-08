@@ -1,0 +1,11 @@
+{
+  "scope": "Negative control: same bounded axial feed/drag and zero angular-speed command, angular motion damped rather than position-locked",
+  "final_tip_insertion_mm": 1.400317069829529,
+  "yaw_change_rad": 7.148198040429765e-06,
+  "maximum_yaw_excursion_rad": 0.00012967886743370238,
+  "late_axial_motion_range_um": 0.6013190882656061,
+  "depth_guard_abort": null,
+  "reported_depth_um": 0.9528366271063673,
+  "no_thread_capture_observed": true,
+  "raw_report_passed_value": false
+}

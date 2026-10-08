@@ -3,10 +3,16 @@
 The next task puts the **female M8 × 1.25 thread in the left-held block**.
 The right arm picks up a separate headed bolt and starts the thread. The
 scene has a real open bore, a free 16 mm shaft with a 20 mm graspable head,
-and a physical pickup rest. Pickup and disengaged thread capture are being
-validated separately; the image below is a static scene preview.
+and a physical pickup rest. The actual pickup/transport and first entry stroke
+pass their scoped checks; the full capture/reset/turn sequence is in progress.
+See [task controls, policy interface and measured results](docs/yam_m8_insertion.md).
 
-![Female-threaded block and set-aside male bolt, static preview](media/yam_m8/insertion_preview.png)
+[![Recorded physical bolt pickup and transport](media/m8_insertion/pickup/demo.gif)](media/m8_insertion/pickup/demo.mp4)
+
+The separate disengaged contact benchmark measures **1.250052 mm/revolution**
+after capture. Without a rotation command, the bolt stops at the thread
+entry. These are explicitly ideal-fixture tests; their results do not replace
+the full robot checks. **118 software tests pass.**
 
 ## Verified turning baseline
 

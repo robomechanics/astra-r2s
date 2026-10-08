@@ -1,0 +1,171 @@
+{
+  "kind": "Fixed-female, direct bounded-wrench benchmark; no robot-pickup qualification",
+  "method": "Independent raw sampled positions, yaw and tilt; no dynamics or contact-force reconstruction",
+  "original_report": {
+    "scope": "Fixed-female, free-6DOF headed-male bounded-wrench thread-start benchmark; not robot pickup",
+    "gravity_note": "Zero gravity and axes up, equivalent geometric start to rotating both SDF frames 180 degrees for shaft-down insertion",
+    "passed": false,
+    "checks": {
+      "initially_disengaged": true,
+      "contact_captured": true,
+      "sustained_thread_lead": false,
+      "reported_depth_below_10um": true,
+      "coaxial_fixture_bounds": true,
+      "solver_finite": true,
+      "no_axial_yaw_equality": true
+    },
+    "guard_abort": null,
+    "config": {
+      "timestep": 5e-05,
+      "friction": 0.15,
+      "contact_time_constant": 0.0005,
+      "contact_margin": 0.0,
+      "contact_impratio": 1.0,
+      "sdf_initpoints": 40,
+      "sdf_iterations": 30,
+      "bolt_length": 0.016,
+      "pitch": 0.00125,
+      "male_pitch_diameter": 0.0071,
+      "female_pitch_diameter": 0.007268,
+      "nut_height": 0.016,
+      "nut_across_flats": 0.016,
+      "nut_mass": 0.005195807,
+      "nut_transverse_inertia": 9.70861e-08,
+      "nut_axial_inertia": 1.58804e-07,
+      "initial_z": 0.0175,
+      "gravity": 0.0,
+      "with_gripper": false,
+      "with_bolt": true,
+      "guided": false
+    },
+    "inputs": {
+      "output": "outputs/m8_insertion/start_probe_extended",
+      "duration": 5.5,
+      "dt": 5e-05,
+      "points": 40,
+      "gap": 0.0005,
+      "yaw": 0.37,
+      "speed": 3.0,
+      "feed": 0.05,
+      "axial_drag": 10.0
+    },
+    "engine": {
+      "mujoco_version": "3.15.0",
+      "libraries": [
+        {
+          "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+          "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+          "sdf_minimum_search_step_m": 1e-07,
+          "sdf_initial_search_step_m": 0.002
+        }
+      ],
+      "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+    },
+    "initial_gap_m": 0.0005,
+    "initial_yaw_rad": 0.37,
+    "first_thread_contact_time_s": 0.38244999999996604,
+    "contact_substeps": 40235,
+    "total_axial_travel_mm": 4.051801099064643,
+    "steady_turns": 2.334711026372118,
+    "fitted_lead_mm": 1.0016295467629992,
+    "lead_error_percent": 19.869636258960067,
+    "steady_helix_residual_range_um": 769.0665113771304,
+    "full_flank_start_passed": true,
+    "full_flank_diagnostic": {
+      "minimum_total_overlap_m": 0.003242582346706593,
+      "female_chamfer_maximum_axial_extent_m": 0.0010365823467065928,
+      "male_tip_chamfer_m": 0.000956,
+      "fully_formed_shared_flank_length_minimum_m": 0.00125,
+      "turns": 0.2451488638699244,
+      "lead_error_percent": 0.004124046734932385,
+      "fitted_lead_mm": 1.2500515505841867,
+      "helix_residual_range_um": 0.32467700915306263,
+      "note": "Separate stricter geometry-based window. Original broad >one-pitch lead test and its failures are preserved."
+    },
+    "worst_reported_sdf_depth_um": 3.932025423497318,
+    "max_radial_um": 14.620354804485078,
+    "max_tilt_deg": 0.11939174993595503,
+    "max_total_thread_normal_N": 1.3277630606935376,
+    "mass_properties": {
+      "mass_kg": 0.026749601402495507,
+      "centroid_m": [
+        4.7283421325714466e-07,
+        1.158516516585161e-06,
+        -0.0017689775694136264
+      ],
+      "inertia_kg_m2": [
+        [
+          1.4216334974737535e-06,
+          -6.365261899204182e-12,
+          -2.0862196784183195e-10
+        ],
+        [
+          -6.365261899204182e-12,
+          1.4216390039131532e-06,
+          -1.6299677134553207e-10
+        ],
+        [
+          -2.0862196784183195e-10,
+          -1.6299677134553207e-10,
+          1.2409665459658619e-06
+        ]
+      ],
+      "steel_density_kg_m3": 7850.0,
+      "shaft_quadrature_samples": 262144,
+      "head_across_flats_m": 0.02,
+      "head_height_m": 0.008
+    },
+    "wall_seconds": 464.3350597429999,
+    "xml_sha256": "0d433460491fcdb8fc62a8fdc71753500d9cefe7fcafed22279734d89b0feb3e",
+    "probe_source_sha256": "547430f31396c6bb1bfed0d83a688bd06b6ceba2ab0c3975ece602ec9dddedfb",
+    "initial_qpos": [
+      0.0,
+      0.0,
+      -0.0245,
+      0.9829362506302315,
+      0.0,
+      0.0,
+      0.18394653352804122
+    ],
+    "warnings": {},
+    "steady_definition": "shaft overlap > one pitch, contact present, >0.2 s since first contact; free axial DOF, constant feed plus velocity drag"
+  },
+  "original_report_sha256": "335858005f418b2072c4203667644efaefe227266924ce6baa5bbbb8d7fe1eb9",
+  "geometry_note": "Tilt-aware full-ring length is potential flank overlap. Saved total SDF contacts include cones; interior loaded contacts cannot be established from this trace alone.",
+  "recomputed_broad_lead_fit": {
+    "turns": 2.334711026372118,
+    "lead_m": 0.0010016295467629992,
+    "lead_error_percent": 19.869636258960067,
+    "residual_range_m": 0.0007690665113771304,
+    "passed": false
+  },
+  "recomputed_complete_ring_geometry_lead_fit": {
+    "turns": 0.2451488638699244,
+    "lead_m": 0.0012500515505841866,
+    "lead_error_percent": 0.004124046734932385,
+    "residual_range_m": 3.2467700915306263e-07,
+    "passed": true
+  },
+  "recomputed_complete_ring_all_sample_lead_fit": {
+    "turns": 0.24705275771052115,
+    "lead_m": 0.0012500007620687074,
+    "lead_error_percent": 6.096549658440864e-05,
+    "residual_range_m": 3.2467700915306263e-07,
+    "passed": true
+  },
+  "complete_ring_geometry_sample_count": 520,
+  "sampled_loaded_total_contact_duty_in_complete_ring_window": 0.3403846153846154,
+  "longest_consecutive_loaded_sample_run_duration_s": 0.0059999999999860165,
+  "sampled_total_normal_impulse_in_complete_ring_window_N_s": 0.02670506461956198,
+  "contact_window_scope_note": "Duty, run length and impulse are sampled total SDF-contact diagnostics, including possible cone contacts. They do not certify continuous all-substep loaded full-flank contacts.",
+  "recorded_fixture_wrench_component_caps_respected": true,
+  "maximum_potential_complete_ring_length_m": 0.0015589633504636668,
+  "complete_ring_sample_count": 177,
+  "coaxial_one_pitch_nominal_overlap_threshold_m": 0.003242582346706593,
+  "initial_gap_m": 0.0005000000000000004,
+  "auditor_sha256": "5d47a251a23f45d0797540857ddef55badff45a5929cc13d9ac16c01ef8e675c",
+  "trajectory": "outputs/m8_insertion/start_probe_extended/trace.npz",
+  "trajectory_sha256": "1edb9b39d5a98db42a4565f14e921e79444ec91d4cd98371c17b495f8803aa3a",
+  "force_scope_note": "Original loaded-contact and between-sample force/support checks remain the rollout's evidence; they cannot be reconstructed from saved poses",
+  "publication_note": "Compact report; 5500 recomputed rows omitted. Recompute from published trace.npz and preserved source with scripts/audit_m8_insertion_trace.py."
+}

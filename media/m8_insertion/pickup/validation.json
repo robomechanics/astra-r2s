@@ -1,0 +1,277 @@
+{
+  "description": "Actual YAM picks up a free bolt, carries it over a female M8 block, and starts the thread",
+  "scene_config": {
+    "base": {
+      "thread": {
+        "timestep": 5e-05,
+        "friction": 0.15,
+        "contact_time_constant": 0.0005,
+        "contact_margin": 0.0,
+        "contact_impratio": 1.0,
+        "sdf_initpoints": 40,
+        "sdf_iterations": 30,
+        "bolt_length": 0.016,
+        "pitch": 0.00125,
+        "male_pitch_diameter": 0.0071,
+        "female_pitch_diameter": 0.007268,
+        "nut_height": 0.016,
+        "nut_across_flats": 0.016,
+        "nut_mass": 0.018984665656908355,
+        "nut_transverse_inertia": 6.946182225160569e-07,
+        "nut_axial_inertia": 1.1886877420788483e-06,
+        "initial_z": 0.00875,
+        "gravity": -9.81,
+        "with_gripper": false,
+        "with_bolt": true,
+        "guided": false
+      },
+      "bolt_position": [
+        0.3,
+        -0.06,
+        0.11125
+      ],
+      "bolt_quaternion": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pad_friction": 0.8,
+      "jaw_stiffness": 20000.0,
+      "jaw_damping": 8.0,
+      "maximum_jaw_force": 20.0,
+      "open_aperture": 0.024,
+      "closed_aperture": 0.0194,
+      "left_closed_aperture": 0.0144,
+      "left_grasp_roll_rad": -1.5707963267948966,
+      "left_block_contact_impedance": [
+        0.9999,
+        0.9999,
+        0.0001
+      ],
+      "left_block_contact_time_constant": 0.0008,
+      "pad_inner_offset": 0.0005,
+      "block_size": [
+        0.02,
+        0.12,
+        0.016
+      ],
+      "block_density": 2700.0,
+      "bolt_offset": [
+        0.0,
+        -0.05,
+        0.008
+      ],
+      "left_grasp_offset": [
+        0.0,
+        -0.0094,
+        0.0
+      ]
+    },
+    "block_position": [
+      0.3,
+      -0.01,
+      0.10325
+    ],
+    "hole_offset": [
+      0.0,
+      -0.05,
+      0.0
+    ],
+    "bolt_head_position": [
+      0.36,
+      -0.15,
+      0.12
+    ],
+    "bolt_yaw_rad": 0.23,
+    "head_across_flats": 0.02,
+    "head_height": 0.008,
+    "steel_density": 7850.0,
+    "rest_radius": 0.007,
+    "rest_pin_radius": 0.001,
+    "rest_base_height": 0.01
+  },
+  "control_config": {
+    "arm": {
+      "position_stiffness": 20000.0,
+      "position_damping": 650.0,
+      "rotation_stiffness": 40.0,
+      "rotation_damping": 6.0,
+      "left_rotation_stiffness": 80.0,
+      "left_rotation_damping": 10.0,
+      "maximum_cartesian_force": 8.0,
+      "maximum_cartesian_torque": 2.0,
+      "axial_feed_N": -0.05,
+      "open_aperture": 0.024,
+      "closed_aperture": 0.0194,
+      "left_closed_aperture": 0.0144,
+      "stroke_angle_rad": 2.0943951023931953,
+      "angular_speed_rad_s": 1.0,
+      "reset_speed_rad_s": 4.0,
+      "strokes": 3,
+      "sample_period_s": 0.005
+    },
+    "pickup_hover_m": 0.02,
+    "transport_tip_clearance_m": 0.015,
+    "entry_tip_clearance_m": 0.00075,
+    "block_lift_m": 0.004,
+    "net_axial_feed_N": 0.05,
+    "maximum_starting_strokes": 3,
+    "qualifying_turns": 2,
+    "sample_period_s": 0.005
+  },
+  "runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "starts_preengaged": false,
+  "starts_grasp_ready": false,
+  "block_starts_left_touching": true,
+  "bolt_starts_on_declared_fixed_rest": true,
+  "model_fingerprint": "570387eef1dabf8b6c76c043c6f628f14fbd15cd928bcc123454e49600d69e75",
+  "model_xml_sha256": "ff7fbd30cc1d6eaf892c2dd394900df5e3eab3520f258db11f6dc612c20f2c4e",
+  "controller_sha256": "d5cfbaef6e7e1bd2e5e44cfbd3110532246a57e5949aad60b6eb91a79f285b3e",
+  "known_bolt_mass_kg": 0.0267496436326005,
+  "axial_command_note": "Gravity compensation of known bolt weight plus constant net axial feed; no axial motion servo during entry or turns",
+  "partial": true,
+  "initial_bolt_yaw_rad": -0.23000000000071746,
+  "passed": false,
+  "phases": [
+    {
+      "phase": "secure_left",
+      "bolt_insertion_advance_m": -0.00013289924971453607,
+      "bolt_clockwise_rotation_rad": -2.304163402300219e-06,
+      "observed_helix_residual_m": -0.0001328987913157921,
+      "maximum_hand_bolt_contacts": 0,
+      "maximum_bolt_world_support_contacts": 12,
+      "sampled_peak_pad_contact_torque_Nm": 0.0,
+      "started_engaged": false,
+      "ended_engaged": false
+    },
+    {
+      "phase": "reach_bolt",
+      "bolt_insertion_advance_m": 2.534066559142095e-07,
+      "bolt_clockwise_rotation_rad": 2.3046743087284938e-06,
+      "observed_helix_residual_m": 2.5294815552864573e-07,
+      "maximum_hand_bolt_contacts": 0,
+      "maximum_bolt_world_support_contacts": 12,
+      "sampled_peak_pad_contact_torque_Nm": 0.0,
+      "started_engaged": false,
+      "ended_engaged": false
+    },
+    {
+      "phase": "close_bolt",
+      "bolt_insertion_advance_m": -3.9903165083635117e-07,
+      "bolt_clockwise_rotation_rad": -3.531931496558727e-05,
+      "observed_helix_residual_m": -3.920050963821102e-07,
+      "maximum_hand_bolt_contacts": 8,
+      "maximum_bolt_world_support_contacts": 12,
+      "sampled_peak_pad_contact_torque_Nm": 0.0007106271739400595,
+      "started_engaged": false,
+      "ended_engaged": false
+    },
+    {
+      "phase": "settle_bolt",
+      "bolt_insertion_advance_m": 3.9715577706579686e-07,
+      "bolt_clockwise_rotation_rad": 2.7551114640367302e-05,
+      "observed_helix_residual_m": 3.916746569624144e-07,
+      "maximum_hand_bolt_contacts": 8,
+      "maximum_bolt_world_support_contacts": 12,
+      "sampled_peak_pad_contact_torque_Nm": 0.00020546742242295274,
+      "started_engaged": false,
+      "ended_engaged": false
+    },
+    {
+      "phase": "lift_bolt",
+      "bolt_insertion_advance_m": -0.02629611605916242,
+      "bolt_clockwise_rotation_rad": 0.00035882368104145357,
+      "observed_helix_residual_m": -0.02629618744486559,
+      "maximum_hand_bolt_contacts": 8,
+      "maximum_bolt_world_support_contacts": 12,
+      "sampled_peak_pad_contact_torque_Nm": 8.482782987813731e-05,
+      "started_engaged": false,
+      "ended_engaged": false
+    },
+    {
+      "phase": "transport_bolt",
+      "bolt_insertion_advance_m": 0.00022436644944082845,
+      "bolt_clockwise_rotation_rad": -0.0004879595897886446,
+      "observed_helix_residual_m": 0.0002244635259167584,
+      "maximum_hand_bolt_contacts": 8,
+      "maximum_bolt_world_support_contacts": 0,
+      "sampled_peak_pad_contact_torque_Nm": 8.572260318347228e-06,
+      "started_engaged": false,
+      "ended_engaged": false
+    }
+  ],
+  "acceptance_checks": {
+    "completed_qualifying_turns": {
+      "passed": false
+    },
+    "picked_up_free_bolt": {
+      "passed": true,
+      "maximum_world_support_after_pickup": 0,
+      "sampled_minimum_closed_transport_pad_normals_N": [
+        5.954696562073792,
+        5.944666273037058
+      ]
+    },
+    "started_previously_separate_threads": {
+      "passed": false,
+      "engagement_time_s": null
+    },
+    "observed_metric_lead": {
+      "passed": false
+    },
+    "closed_turn_tracking": {
+      "passed": false
+    },
+    "contact_torque_turns_bolt": {
+      "passed": false
+    },
+    "open_reset_contact_decoupling": {
+      "passed": false
+    },
+    "passive_self_locking_during_open_reset": {
+      "passed": false
+    },
+    "reported_sdf_depth_proxy": {
+      "passed": true,
+      "observed_peak_m": 0.0
+    },
+    "entry_alignment": {
+      "passed": true,
+      "peak_radial_m": 0.0,
+      "peak_tilt_rad": 0.0
+    },
+    "left_grasp_retention": {
+      "passed": true,
+      "peak_translation_m": 0.00013064427480918956,
+      "peak_rotation_rad": 1.023913171767191e-06
+    },
+    "right_bolt_grasp_retention": {
+      "passed": true,
+      "peak_translation_m": 4.174866570722753e-05
+    },
+    "left_block_has_no_world_support": {
+      "passed": true
+    },
+    "free_objects_have_no_external_drive": {
+      "passed": true
+    },
+    "no_solver_or_state_abort": {
+      "passed": true
+    }
+  },
+  "aborted": null,
+  "wall_seconds": 68.51782892300253,
+  "reported_sdf_depth_note": "Native contact dist proxy; not an independent overlap certificate"
+}
