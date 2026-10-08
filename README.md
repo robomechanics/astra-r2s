@@ -1,22 +1,33 @@
-# Bimanual YAM M8 contact proof of concept
+# Bimanual YAM M8 contact tasks
+
+The next task puts the **female M8 × 1.25 thread in the left-held block**.
+The right arm picks up a separate headed bolt and starts the thread. The
+scene has a real open bore, a free 16 mm shaft with a 20 mm graspable head,
+and a physical pickup rest. Pickup and disengaged thread capture are being
+validated separately; the image below is a static scene preview.
+
+![Female-threaded block and set-aside male bolt, static preview](media/yam_m8/insertion_preview.png)
+
+## Verified turning baseline
 
 Two actual YAM arms hold a free mounting block and turn a larger nut on its
 short M8 shaft. The nut has a 20 mm outer width and the same M8 × 1.25 bore;
 the shaft is 16 mm long. Native joint motors and finite finger contacts drive
 the task. See [scene, controls, policy interface and current results](docs/yam_m8.md).
 
-[![Recorded first turn, release and regrasp; full run in progress](media/yam_m8/turn_progress.gif)](media/yam_m8/turn_progress.mp4)
+[![Complete recorded physical turning demo](media/yam_m8/demo.gif)](media/yam_m8/demo.mp4)
 
-The [complete three-stroke demo](media/yam_m8/reference_demo.mp4) passes all
-15 nominal checks: measured lead errors are **3.0, 3.1 and 3.1 µm**, and both
+The [complete three-stroke demo](media/yam_m8/demo.mp4) passes all
+15 nominal checks: measured lead errors are **2.9, 3.1 and 3.1 µm**, and both
 open resets have zero hand/nut contacts. The left arm lifts the free assembly
 **3.829 mm**, with zero world supports or artificial object forces. See the
-[raw rollout](media/yam_m8/reference_trace.npz),
-[checks](media/yam_m8/reference_validation.json), and
-[independent audit](media/yam_m8/reference_independent_audit.json).
-The stronger left-contact comparison is finishing; the next task is bolt
-pickup and thread starting in a female-threaded block.
-**97 software tests pass**; nominal demo checks do not certify policy-training
+[raw rollout](media/yam_m8/demo_trace.npz),
+[checks](media/yam_m8/demo_validation.json), and
+[independent audit](media/yam_m8/demo_independent_audit.json).
+Firmer left-pad contact reduces post-clamp block slip to **3.52 µm**;
+[the original softer-contact comparison](media/yam_m8/contact_sticking_comparison.json)
+retains its results and identical thread/controller settings.
+**97 baseline software tests pass**; nominal demo checks do not certify policy-training
 fidelity.
 
 ```bash

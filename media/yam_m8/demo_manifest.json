@@ -1,0 +1,49 @@
+{
+  "description": "Published accepted pre-engaged bimanual YAM M8 nominal turning baseline; insertion extension qualifies separately",
+  "artifacts": {
+    "demo.mp4": {
+      "sha256": "11f1df279d82153930d42be3779107f0579cacd6891253e8cb59c8e44171341f",
+      "bytes": 4110886
+    },
+    "demo.gif": {
+      "sha256": "3eaf3e067929900f3d08f5ebe862a7ef4c9774ee3c7e6b78557a0a8c6a8c31d2",
+      "bytes": 4181217
+    },
+    "demo.png": {
+      "sha256": "591351271882754b72b62b1f761a2502ee41a9b045dafb86d8789f17a98ff892",
+      "bytes": 241692
+    },
+    "demo_trace.npz": {
+      "sha256": "0e3c6c24f7b5acb454940d42fdbe433eeb943f06ce812476ee56ad6c1bfcf6a9",
+      "bytes": 4925473
+    },
+    "demo_validation.json": {
+      "sha256": "bc5c47b76fb48f4f52a691f96583bd4dd636143620eb3c6a2ab38d46cada708c",
+      "bytes": 12318
+    },
+    "demo_scene.zip": {
+      "sha256": "68636e043191812c713c82168500ec9df3d884dd4ba8a0b0d63143a8fd6b5899",
+      "bytes": 5316756
+    },
+    "demo_independent_audit.json": {
+      "sha256": "051a8f986bffb6c25c4221be2f2cc8dfc74c945e0c9cc30331a4574f325f9ec9",
+      "bytes": 48130
+    },
+    "geometry_audit.json": {
+      "sha256": "05263ba91f37d4756549b3da565cf0c16bf3d81cddc610830702a044f1d3b98a",
+      "bytes": 177774
+    },
+    "contact_sticking_comparison.json": {
+      "sha256": "700801ff65b05ed091e9c99f118c0d4fb0102c90363fb783bdfee6a617bfcfe8",
+      "bytes": 2510
+    },
+    "hold_lift_timestep_comparison.json": {
+      "sha256": "7d5eccb6bef5d85ef99bba622279a3d0766596806ac114488c2437bfa1ffb06f",
+      "bytes": 2863
+    },
+    "software_tests.json": {
+      "sha256": "8d5eaaadc6f514df81f9570ae3524e5999a330faaf7425eaa7fd745cf78a3fe4",
+      "bytes": 1844
+    }
+  }
+}

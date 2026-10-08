@@ -183,7 +183,8 @@ def test_short_bolt_large_nut_and_free_block_mass_properties():
 
 
 def test_left_block_impedance_study_changes_only_the_two_left_block_pad_pairs():
-    original = ET.fromstring(scene_xml())
+    original = ET.fromstring(scene_xml(replace(YamM8Config(),
+        left_block_contact_impedance=(.95, .99, .0001))))
     altered = ET.fromstring(scene_xml(replace(YamM8Config(),
         left_block_contact_impedance=(.999, .9999, .0001))))
     original_pairs, altered_pairs = original.findall("contact/pair"), altered.findall("contact/pair")

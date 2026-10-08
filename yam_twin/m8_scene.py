@@ -118,7 +118,7 @@ class YamM8Config:
     # Only the left finger/block contact uses this setting. It permits explicit
     # convergence studies of MuJoCo's tangential contact regularization, without
     # changing the M8 contact law, friction coefficient, or right-hand contact.
-    left_block_contact_impedance: tuple[float, float, float] = (.95, .99, .0001)
+    left_block_contact_impedance: tuple[float, float, float] = (.9999, .9999, .0001)
     left_block_contact_time_constant: float = .0008
     pad_inner_offset: float = 0.0005
     block_size: tuple[float, float, float] = (0.020, 0.120, 0.016)

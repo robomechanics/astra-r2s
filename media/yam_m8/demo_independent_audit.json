@@ -1,0 +1,1158 @@
+{
+  "method": "Independent saved-pose forward kinematics and collision queries; zero integration or contact-force solve",
+  "scope_limit": "Sampled poses cannot certify between-sample drive absence, maximum depth, or contact forces",
+  "trajectory": "outputs/yam_m8/stiction_final/yam_m8_trace.npz",
+  "trajectory_sha256": "0e3c6c24f7b5acb454940d42fdbe433eeb943f06ce812476ee56ad6c1bfcf6a9",
+  "saved_scene": "outputs/yam_m8/stiction_final/scene.xml",
+  "saved_scene_sha256": "f71fe9d8d77a4ca09e108eeea726c3630c8a120ab8d5e9b463e8bf299c8c780b",
+  "model_source": "Rebuilt recorded scene_config, with verified portable fingerprint or legacy XML hash",
+  "rebuilt_portable_model_fingerprint": "48e82724cb78793143eb1a94527864371fa983a37659bbe8a66fc82c96f6ad7b",
+  "auditor_sha256": "8d41f8ea4eea3a905f536a257a707bf953dae7e54f7fc1d7e6d2d151d2a1cfc2",
+  "audit_runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "recorded_rollout_metadata": {
+    "thread_config": {
+      "timestep": 5e-05,
+      "friction": 0.15,
+      "contact_time_constant": 0.0005,
+      "contact_margin": 0.0,
+      "contact_impratio": 1.0,
+      "sdf_initpoints": 40,
+      "sdf_iterations": 30,
+      "bolt_length": 0.016,
+      "pitch": 0.00125,
+      "male_pitch_diameter": 0.0071,
+      "female_pitch_diameter": 0.007268,
+      "nut_height": 0.008,
+      "nut_across_flats": 0.02,
+      "nut_mass": 0.018984665656908355,
+      "nut_transverse_inertia": 6.946182225160569e-07,
+      "nut_axial_inertia": 1.1886877420788483e-06,
+      "initial_z": 0.00875,
+      "gravity": -9.81,
+      "with_gripper": false,
+      "with_bolt": true,
+      "guided": false
+    },
+    "scene_config": {
+      "thread": {
+        "timestep": 5e-05,
+        "friction": 0.15,
+        "contact_time_constant": 0.0005,
+        "contact_margin": 0.0,
+        "contact_impratio": 1.0,
+        "sdf_initpoints": 40,
+        "sdf_iterations": 30,
+        "bolt_length": 0.016,
+        "pitch": 0.00125,
+        "male_pitch_diameter": 0.0071,
+        "female_pitch_diameter": 0.007268,
+        "nut_height": 0.008,
+        "nut_across_flats": 0.02,
+        "nut_mass": 0.018984665656908355,
+        "nut_transverse_inertia": 6.946182225160569e-07,
+        "nut_axial_inertia": 1.1886877420788483e-06,
+        "initial_z": 0.00875,
+        "gravity": -9.81,
+        "with_gripper": false,
+        "with_bolt": true,
+        "guided": false
+      },
+      "bolt_position": [
+        0.3,
+        -0.06,
+        0.11125
+      ],
+      "bolt_quaternion": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pad_friction": 0.8,
+      "jaw_stiffness": 20000.0,
+      "jaw_damping": 8.0,
+      "maximum_jaw_force": 20.0,
+      "open_aperture": 0.024,
+      "closed_aperture": 0.0194,
+      "left_closed_aperture": 0.0144,
+      "left_grasp_roll_rad": -1.5707963267948966,
+      "left_block_contact_impedance": [
+        0.9999,
+        0.9999,
+        0.0001
+      ],
+      "left_block_contact_time_constant": 0.0008,
+      "pad_inner_offset": 0.0005,
+      "block_size": [
+        0.02,
+        0.12,
+        0.016
+      ],
+      "block_density": 2700.0,
+      "bolt_offset": [
+        0.0,
+        -0.05,
+        0.008
+      ],
+      "left_grasp_offset": [
+        0.0,
+        -0.0094,
+        0.0
+      ]
+    },
+    "control_config": {
+      "position_stiffness": 20000.0,
+      "position_damping": 650.0,
+      "rotation_stiffness": 40.0,
+      "rotation_damping": 6.0,
+      "left_rotation_stiffness": 80.0,
+      "left_rotation_damping": 10.0,
+      "maximum_cartesian_force": 8.0,
+      "maximum_cartesian_torque": 2.0,
+      "axial_feed_N": -0.05,
+      "open_aperture": 0.024,
+      "closed_aperture": 0.0194,
+      "left_closed_aperture": 0.0144,
+      "stroke_angle_rad": 2.0943951023931953,
+      "angular_speed_rad_s": 1.0,
+      "reset_speed_rad_s": 4.0,
+      "strokes": 3,
+      "sample_period_s": 0.005
+    },
+    "runtime": {
+      "mujoco_version": "3.15.0",
+      "libraries": [
+        {
+          "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+          "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+          "sdf_minimum_search_step_m": 1e-07,
+          "sdf_initial_search_step_m": 0.002
+        }
+      ],
+      "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+    },
+    "starts_preengaged": true,
+    "partial": false,
+    "starts_grasp_ready": true,
+    "block_supported_by_world": false,
+    "controller": "Actual YAM joint torque impedance; floating hand axial DOF during closed turns",
+    "initial_z_m": 0.008750000000000008,
+    "model_fingerprint": "48e82724cb78793143eb1a94527864371fa983a37659bbe8a66fc82c96f6ad7b",
+    "model_xml_sha256": "f71fe9d8d77a4ca09e108eeea726c3630c8a120ab8d5e9b463e8bf299c8c780b",
+    "controller_sha256": "2c46098b74f9e62265c8e6cf148f8c225b6594a0483d1881ac51a4ff3cb1b78f",
+    "passed": true,
+    "description": "Actual bimanual YAM joint torque actuation; left fingers hold a free block and bolt, right fingers turn a pre-engaged nut",
+    "phases": [
+      {
+        "phase": "close",
+        "axial_advance_m": 4.854611006470562e-05,
+        "nut_rotation_rad": -0.00013371415011276255,
+        "observed_helix_residual_m": 4.8519508479765896e-05,
+        "maximum_hand_nut_contacts": 80,
+        "sampled_peak_pad_contact_torque_Nm": 0.00016006807748057155
+      },
+      {
+        "phase": "settle",
+        "axial_advance_m": -1.3047036260399603e-08,
+        "nut_rotation_rad": 0.00012556381383665993,
+        "observed_helix_residual_m": 1.193309079656909e-08,
+        "maximum_hand_nut_contacts": 80,
+        "sampled_peak_pad_contact_torque_Nm": 0.0002080645387824968
+      },
+      {
+        "phase": "lift",
+        "axial_advance_m": -7.927916425079506e-08,
+        "nut_rotation_rad": -2.9004471535643006e-06,
+        "observed_helix_residual_m": -7.985618987787828e-08,
+        "maximum_hand_nut_contacts": 80,
+        "sampled_peak_pad_contact_torque_Nm": 0.0001888820958343906
+      },
+      {
+        "phase": "hold_lift",
+        "axial_advance_m": 6.585806682987694e-08,
+        "nut_rotation_rad": 1.5392661220747783e-05,
+        "observed_helix_residual_m": 6.89203394806531e-08,
+        "maximum_hand_nut_contacts": 80,
+        "sampled_peak_pad_contact_torque_Nm": 0.00013292924001755206
+      },
+      {
+        "phase": "turn_1",
+        "axial_advance_m": 0.00041375387363143216,
+        "nut_rotation_rad": -2.0944667654120095,
+        "observed_helix_residual_m": -2.9270499398359657e-06,
+        "maximum_hand_nut_contacts": 80,
+        "sampled_peak_pad_contact_torque_Nm": 0.0005160628030337607
+      },
+      {
+        "phase": "stop_1",
+        "axial_advance_m": -9.065308032019104e-08,
+        "nut_rotation_rad": 4.563453296801967e-05,
+        "observed_helix_residual_m": -8.157437844825305e-08,
+        "maximum_hand_nut_contacts": 80,
+        "sampled_peak_pad_contact_torque_Nm": 0.00023892895803245042
+      },
+      {
+        "phase": "release_1",
+        "axial_advance_m": 3.2739165333178083e-06,
+        "nut_rotation_rad": -0.0013455692959185583,
+        "observed_helix_residual_m": 3.0062240274201585e-06,
+        "maximum_hand_nut_contacts": 80,
+        "sampled_peak_pad_contact_torque_Nm": 0.00017995770093864598
+      },
+      {
+        "phase": "open_settle_1",
+        "axial_advance_m": 1.9685061393437397e-09,
+        "nut_rotation_rad": -4.754090751735163e-06,
+        "observed_helix_residual_m": 1.022709835536095e-09,
+        "maximum_hand_nut_contacts": 0,
+        "sampled_peak_pad_contact_torque_Nm": 0.0
+      },
+      {
+        "phase": "reset_open_1",
+        "axial_advance_m": 1.4503930804640741e-08,
+        "nut_rotation_rad": -6.669766231315322e-05,
+        "observed_helix_residual_m": 1.234852492375299e-09,
+        "maximum_hand_nut_contacts": 0,
+        "sampled_peak_pad_contact_torque_Nm": 0.0
+      },
+      {
+        "phase": "open_hold_1",
+        "axial_advance_m": 8.450669677917411e-10,
+        "nut_rotation_rad": -4.753176229499445e-06,
+        "observed_helix_residual_m": -1.0054739759792626e-10,
+        "maximum_hand_nut_contacts": 0,
+        "sampled_peak_pad_contact_torque_Nm": 0.0
+      },
+      {
+        "phase": "regrip_1",
+        "axial_advance_m": -1.3967029139569376e-06,
+        "nut_rotation_rad": 0.0008479590977685802,
+        "observed_helix_residual_m": -1.2280068115199209e-06,
+        "maximum_hand_nut_contacts": 42,
+        "sampled_peak_pad_contact_torque_Nm": 7.229552180899209e-05
+      },
+      {
+        "phase": "settle_regrip_1",
+        "axial_advance_m": 8.278609383866736e-07,
+        "nut_rotation_rad": 0.0003912410021413848,
+        "observed_helix_residual_m": 9.056958626754589e-07,
+        "maximum_hand_nut_contacts": 60,
+        "sampled_peak_pad_contact_torque_Nm": 0.00021700120130989064
+      },
+      {
+        "phase": "turn_2",
+        "axial_advance_m": 0.0004135158478075166,
+        "nut_rotation_rad": -2.0942461442015663,
+        "observed_helix_residual_m": -3.1211845685102956e-06,
+        "maximum_hand_nut_contacts": 62,
+        "sampled_peak_pad_contact_torque_Nm": 0.000561112447953734
+      },
+      {
+        "phase": "stop_2",
+        "axial_advance_m": 8.234774592774663e-08,
+        "nut_rotation_rad": 4.658911966259893e-05,
+        "observed_helix_residual_m": 9.161635678849967e-08,
+        "maximum_hand_nut_contacts": 62,
+        "sampled_peak_pad_contact_torque_Nm": 8.745638238941718e-05
+      },
+      {
+        "phase": "release_2",
+        "axial_advance_m": 3.835710129310166e-06,
+        "nut_rotation_rad": -0.0024112809164300586,
+        "observed_helix_residual_m": 3.3560010330189168e-06,
+        "maximum_hand_nut_contacts": 62,
+        "sampled_peak_pad_contact_torque_Nm": 0.00010115560704659455
+      },
+      {
+        "phase": "open_settle_2",
+        "axial_advance_m": -5.325093300340145e-10,
+        "nut_rotation_rad": -4.9454024528827745e-06,
+        "observed_helix_residual_m": -1.5163658874778615e-09,
+        "maximum_hand_nut_contacts": 0,
+        "sampled_peak_pad_contact_torque_Nm": 0.0
+      },
+      {
+        "phase": "reset_open_2",
+        "axial_advance_m": 7.225162766688609e-09,
+        "nut_rotation_rad": -5.753143892572865e-05,
+        "observed_helix_residual_m": -4.2203533435853864e-09,
+        "maximum_hand_nut_contacts": 0,
+        "sampled_peak_pad_contact_torque_Nm": 0.0
+      },
+      {
+        "phase": "open_hold_2",
+        "axial_advance_m": 5.678718403498428e-09,
+        "nut_rotation_rad": -5.77291603320873e-06,
+        "observed_helix_residual_m": 4.530233250073896e-09,
+        "maximum_hand_nut_contacts": 0,
+        "sampled_peak_pad_contact_torque_Nm": 0.0
+      },
+      {
+        "phase": "regrip_2",
+        "axial_advance_m": -9.215275633706749e-07,
+        "nut_rotation_rad": 0.0012191243157797516,
+        "observed_helix_residual_m": -6.789904869958346e-07,
+        "maximum_hand_nut_contacts": 32,
+        "sampled_peak_pad_contact_torque_Nm": 8.985809430489434e-05
+      },
+      {
+        "phase": "settle_regrip_2",
+        "axial_advance_m": -3.479589720696563e-08,
+        "nut_rotation_rad": 0.0008298644292095148,
+        "observed_helix_residual_m": 1.3030038529907e-07,
+        "maximum_hand_nut_contacts": 50,
+        "sampled_peak_pad_contact_torque_Nm": 0.0002189397399765579
+      },
+      {
+        "phase": "turn_3",
+        "axial_advance_m": 0.00041345197520300907,
+        "nut_rotation_rad": -2.0940069474816374,
+        "observed_helix_residual_m": -3.137470497582796e-06,
+        "maximum_hand_nut_contacts": 62,
+        "sampled_peak_pad_contact_torque_Nm": 0.0005084214226917383
+      },
+      {
+        "phase": "stop_3",
+        "axial_advance_m": 4.604445183117867e-08,
+        "nut_rotation_rad": 4.546836360663775e-05,
+        "observed_helix_residual_m": 5.5090095359048716e-08,
+        "maximum_hand_nut_contacts": 62,
+        "sampled_peak_pad_contact_torque_Nm": 0.00012918327353108857
+      }
+    ],
+    "acceptance_checks": {
+      "all_requested_strokes_completed": {
+        "passed": true,
+        "observed": 3,
+        "expected": 3
+      },
+      "closed_turn_tracking": {
+        "passed": true,
+        "angular_error_limit_rad": 0.03
+      },
+      "observed_metric_lead": {
+        "passed": true
+      },
+      "reported_sdf_depth_proxy": {
+        "passed": true,
+        "observed_peak_m": 1.9833728192451827e-06,
+        "limit_m": 1e-05
+      },
+      "free_nut_alignment": {
+        "passed": true,
+        "peak_radial_m": 2.1936799199038062e-05,
+        "peak_tilt_rad": 0.00349389011827532
+      },
+      "no_solver_or_state_abort": {
+        "passed": true
+      },
+      "nut_has_no_external_drive": {
+        "passed": true
+      },
+      "block_and_bolt_have_no_external_drive": {
+        "passed": true
+      },
+      "left_block_contact_retention": {
+        "passed": true,
+        "sampled_minimum_loaded_pad_normals_N": [
+          16.53986916467471,
+          14.915805964286609
+        ]
+      },
+      "left_block_grip_slip": {
+        "passed": true,
+        "peak_translation_slip_m": 0.0001383007744670188,
+        "peak_rotation_slip_rad": 6.37115634696332e-05
+      },
+      "block_has_no_world_support": {
+        "passed": true,
+        "maximum_support_contacts": 0
+      },
+      "left_arm_physically_lifts_block": {
+        "passed": true,
+        "observed_lift_m": 0.0038290438206353278
+      },
+      "closed_turn_contact_torque": {
+        "passed": true
+      },
+      "open_reset_contact_decoupling": {
+        "passed": true
+      },
+      "passive_self_locking_during_reset": {
+        "passed": true
+      }
+    },
+    "aborted": null,
+    "clockwise_turns": 1.000000896372696,
+    "axial_advance_mm": 1.2948932277926528,
+    "wall_seconds": 1473.432594869002,
+    "reported_sdf_depth_note": "Native contact dist proxy; not an independent overlap certificate",
+    "warnings": {},
+    "trajectory": "outputs/yam_m8/stiction_final/yam_m8_trace.npz"
+  },
+  "recorded_runtime_matches_current_replay": {
+    "mujoco_version_matches": true,
+    "thread_plugin_source_matches": true,
+    "mujoco_core_binary_hashes_match": true
+  },
+  "inspected_controller_sha256": "2c46098b74f9e62265c8e6cf148f8c225b6594a0483d1881ac51a4ff3cb1b78f",
+  "recorded_controller_source_matches_inspected_source": true,
+  "post_clamp_reference_index": 267,
+  "post_clamp_reference_time_s": 1.3200000000005734,
+  "post_clamp_reference_note": "Last saved pose preceding the first turn, or end of the first phase for a clamp-only trace",
+  "phase_boundary_note": "Phase deltas use the preceding phase's last sampled pose and the current phase's last sampled pose; original all-substep acceptance gates remain authoritative",
+  "derived_pose_note": "A recorded mj_step diagnostic may retain the preceding step's derived pose; replay recomputes kinematics from the saved integrated qpos",
+  "initial_to_reference_block_translation_m": 0.00010631985101211171,
+  "initial_to_reference_block_rotation_rad": 6.151331332510131e-07,
+  "post_clamp_maximum_left_relative_block_slip_m": 3.516257261340267e-06,
+  "post_clamp_maximum_left_relative_block_rotation_rad": 6.389295572325559e-05,
+  "maximum_recorded_vs_recomputed_bolt_relative_z_error_m": 1.8962081318497914e-07,
+  "maximum_recorded_vs_recomputed_bolt_relative_yaw_error_rad": 5.001182557773376e-05,
+  "sampled_actuator_commands_within_declared_ranges": true,
+  "maximum_absolute_sampled_actuator_command": [
+    0.08023727133311716,
+    9.481337543100985,
+    4.104729095385299,
+    1.5832836245787407,
+    0.043691340210396376,
+    0.07255156941962362,
+    0.0077,
+    0.0077,
+    0.8479109517233858,
+    10.791867879702245,
+    5.6970613601748745,
+    0.34394746810259036,
+    0.049642410269712056,
+    0.2905556162271681,
+    0.0125,
+    0.0125
+  ],
+  "actual_arm_joint_limit_margins": {
+    "left": {
+      "sampled_minimum_margin_rad": 0.20051312462476778,
+      "sampled_minimum_margin_by_joint_rad": [
+        2.2102146033744035,
+        1.37921932978221,
+        0.913863321159015,
+        0.20051312462476778,
+        0.40769938699790087,
+        0.5228522567944005
+      ],
+      "all_sampled_positions_inside_joint_ranges": true
+    },
+    "right": {
+      "sampled_minimum_margin_rad": 0.08635494608979566,
+      "sampled_minimum_margin_by_joint_rad": [
+        2.2853634621992427,
+        1.4192552701354972,
+        1.521508019770474,
+        0.08635494608979566,
+        1.5626883710125612,
+        0.9876090561461388
+      ],
+      "all_sampled_positions_inside_joint_ranges": true
+    }
+  },
+  "free_block_and_nut_have_no_actuator": true,
+  "equalities": [
+    {
+      "type": 2,
+      "object_1": "left_left_finger",
+      "object_2": "left_right_finger"
+    },
+    {
+      "type": 2,
+      "object_1": "right_left_finger",
+      "object_2": "right_right_finger"
+    }
+  ],
+  "recorded_between_sample_drive_checks": {
+    "nut_has_no_external_drive": {
+      "passed": true
+    },
+    "block_and_bolt_have_no_external_drive": {
+      "passed": true
+    }
+  },
+  "drive_check_note": "Applied-force absence cannot be recovered from qpos; reported checks require original rollout instrumentation/source review",
+  "phases": [
+    {
+      "phase": "close",
+      "start_time_s": 5e-05,
+      "end_time_s": 0.24999999999998063,
+      "sampled_axial_advance_m": 4.835648120512896e-05,
+      "sampled_relative_nut_rotation_rad": -0.00013362409375612292,
+      "sampled_helix_residual_m": 4.832989753633213e-05,
+      "maximum_left_relative_block_slip_m": 0.00010631985101211171,
+      "maximum_left_relative_block_rotation_rad": 6.151331332510131e-07,
+      "maximum_nut_radial_offset_m": 5.772595075712304e-08,
+      "maximum_nut_relative_tilt_rad": 7.326538952182115e-06,
+      "minimum_block_bottom_world_z_m": 0.09507555148890276,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09994999999998899,
+      "late_window_left_relative_block_translation_range_m": 1.3430596108858035e-07,
+      "late_window_left_relative_block_rotation_range_rad": 3.547413978161126e-08,
+      "late_window_block_rotation_range_over_duration_rad_s": 3.5491885724477403e-07,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.62594653325204,
+        15.373934467788548
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        -0.001059143716173681,
+        0.0005960121624844819,
+        1.2520120579978282,
+        -0.01171753761973956,
+        -2.5741002564130877e-05,
+        -0.0001497698014087417
+      ]
+    },
+    {
+      "phase": "settle",
+      "start_time_s": 0.24999999999998063,
+      "end_time_s": 0.3699999999999674,
+      "sampled_axial_advance_m": -1.2989628277518261e-08,
+      "sampled_relative_nut_rotation_rad": 0.00012551199551561612,
+      "sampled_helix_residual_m": 1.1980189852029372e-08,
+      "maximum_left_relative_block_slip_m": 1.0833736660109492e-06,
+      "maximum_left_relative_block_rotation_rad": 1.4643328734047644e-07,
+      "maximum_nut_radial_offset_m": 6.099386954584099e-08,
+      "maximum_nut_relative_tilt_rad": 1.0753425840603877e-05,
+      "minimum_block_bottom_world_z_m": 0.09507819272092853,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09994999999998899,
+      "late_window_left_relative_block_translation_range_m": 6.045884409905633e-07,
+      "late_window_left_relative_block_rotation_range_rad": 4.294209015209879e-08,
+      "late_window_block_rotation_range_over_duration_rad_s": 4.296357193807256e-07,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.652401485997057,
+        15.347478221458752
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        -0.000749564677712958,
+        0.0023654533696183568,
+        1.3049232754379214,
+        -0.0143937802761787,
+        -7.593131407429103e-05,
+        -0.00022479115289648783
+      ]
+    },
+    {
+      "phase": "lift",
+      "start_time_s": 0.3699999999999674,
+      "end_time_s": 1.1200000000001513,
+      "sampled_axial_advance_m": -7.919198766366542e-08,
+      "sampled_relative_nut_rotation_rad": -2.921095696308804e-06,
+      "sampled_helix_residual_m": -7.977312118780543e-08,
+      "maximum_left_relative_block_slip_m": 2.9025070562626682e-06,
+      "maximum_left_relative_block_rotation_rad": 2.840795295753512e-07,
+      "maximum_nut_radial_offset_m": 9.34922165348769e-07,
+      "maximum_nut_relative_tilt_rad": 0.00014361098536622767,
+      "minimum_block_bottom_world_z_m": 0.09507813799032877,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09995000000021093,
+      "late_window_left_relative_block_translation_range_m": 2.3009761071747157e-06,
+      "late_window_left_relative_block_rotation_range_rad": 5.302247792229629e-08,
+      "late_window_block_rotation_range_over_duration_rad_s": 5.304900242339609e-07,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.621425924897185,
+        15.378456548699283
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        -0.001652463492630225,
+        -0.00020410252397782226,
+        1.2429692826385799,
+        -0.011479311909483873,
+        -0.00012392703271160395,
+        -0.00012632423395034844
+      ]
+    },
+    {
+      "phase": "hold_lift",
+      "start_time_s": 1.1200000000001513,
+      "end_time_s": 1.3200000000005734,
+      "sampled_axial_advance_m": 6.570839619114699e-08,
+      "sampled_relative_nut_rotation_rad": 1.5384547781269353e-05,
+      "sampled_helix_residual_m": 6.876905472442507e-08,
+      "maximum_left_relative_block_slip_m": 4.279951714289774e-07,
+      "maximum_left_relative_block_rotation_rad": 6.007479714341187e-08,
+      "maximum_nut_radial_offset_m": 6.442245290977257e-07,
+      "maximum_nut_relative_tilt_rad": 9.560733199977639e-05,
+      "minimum_block_bottom_world_z_m": 0.09906620791402432,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09995000000021093,
+      "late_window_left_relative_block_translation_range_m": 9.45599254815841e-08,
+      "late_window_left_relative_block_rotation_range_rad": 2.9477800005519866e-08,
+      "late_window_block_rotation_range_over_duration_rad_s": 2.9492546278596956e-07,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.65062237154462,
+        15.349253950844394
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        0.0005317627249884832,
+        -0.00456855768391654,
+        1.3013680432632246,
+        -0.014063107008003157,
+        -9.030072517084914e-05,
+        -1.6735255629039896e-05
+      ]
+    },
+    {
+      "phase": "turn_1",
+      "start_time_s": 1.3200000000005734,
+      "end_time_s": 5.246999999994441,
+      "sampled_axial_advance_m": 0.000413754593088728,
+      "sampled_relative_nut_rotation_rad": -2.094466744737747,
+      "sampled_helix_residual_m": -2.92632636952634e-06,
+      "maximum_left_relative_block_slip_m": 1.4108489498784362e-06,
+      "maximum_left_relative_block_rotation_rad": 2.3458077779965416e-05,
+      "maximum_nut_radial_offset_m": 1.5715293163348304e-05,
+      "maximum_nut_relative_tilt_rad": 0.0022420922261255118,
+      "minimum_block_bottom_world_z_m": 0.09907417886492677,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09694999999977405,
+      "late_window_left_relative_block_translation_range_m": 1.4433191590296498e-07,
+      "late_window_left_relative_block_rotation_range_rad": 6.195926973631589e-07,
+      "late_window_block_rotation_range_over_duration_rad_s": 6.390847832538452e-06,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.653334834824225,
+        15.346548874450797
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        0.07493511418266208,
+        -0.0646685701442956,
+        1.3067857488626322,
+        -0.013559878197957852,
+        0.0011002061684857155,
+        0.003749146599344569
+      ],
+      "phase_lead_error_limit_m": 8.333333333333334e-06,
+      "sampled_phase_lead_passed": true
+    },
+    {
+      "phase": "stop_1",
+      "start_time_s": 5.246999999994441,
+      "end_time_s": 5.366999999994161,
+      "sampled_axial_advance_m": -9.000027183063419e-08,
+      "sampled_relative_nut_rotation_rad": 4.563197080820203e-05,
+      "sampled_helix_residual_m": -8.092207968419617e-08,
+      "maximum_left_relative_block_slip_m": 2.2189054928011336e-07,
+      "maximum_left_relative_block_rotation_rad": 2.4100861509395238e-05,
+      "maximum_nut_radial_offset_m": 1.369807128915722e-05,
+      "maximum_nut_relative_tilt_rad": 0.0021644713714551117,
+      "minimum_block_bottom_world_z_m": 0.09907731309649838,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09994999999976706,
+      "late_window_left_relative_block_translation_range_m": 1.1414313956458053e-07,
+      "late_window_left_relative_block_rotation_range_rad": 5.502037023561414e-07,
+      "late_window_block_rotation_range_over_duration_rad_s": 5.504789418283379e-06,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.651087053995493,
+        15.34888941931271
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        0.06457925517487333,
+        -0.0604742346195257,
+        1.3021974263126264,
+        -0.013237211099888128,
+        0.0007313397653685845,
+        0.0030434158717388034
+      ]
+    },
+    {
+      "phase": "release_1",
+      "start_time_s": 5.366999999994161,
+      "end_time_s": 5.5169999999938115,
+      "sampled_axial_advance_m": 3.272553107041415e-06,
+      "sampled_relative_nut_rotation_rad": -0.0013455910979374153,
+      "sampled_helix_residual_m": 3.004856263769927e-06,
+      "maximum_left_relative_block_slip_m": 1.4422441261882121e-06,
+      "maximum_left_relative_block_rotation_rad": 2.4342324241170478e-05,
+      "maximum_nut_radial_offset_m": 1.307680770195682e-05,
+      "maximum_nut_relative_tilt_rad": 0.0021620743701709294,
+      "minimum_block_bottom_world_z_m": 0.09907796338020297,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09994999999976706,
+      "late_window_left_relative_block_translation_range_m": 3.6691698605983624e-07,
+      "late_window_left_relative_block_rotation_range_rad": 9.299549280272352e-09,
+      "late_window_block_rotation_range_over_duration_rad_s": 9.304201380984517e-08,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.624689412052945,
+        15.375217074208495
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        -0.0016390038457428193,
+        0.0003330644700284516,
+        1.249472323921474,
+        -0.011592567708347726,
+        -1.881321058924789e-05,
+        -0.00011891575141780941
+      ]
+    },
+    {
+      "phase": "open_settle_1",
+      "start_time_s": 5.5169999999938115,
+      "end_time_s": 5.596999999993625,
+      "sampled_axial_advance_m": 1.9743349507356234e-09,
+      "sampled_relative_nut_rotation_rad": -4.75123463816729e-06,
+      "sampled_helix_residual_m": 1.0291068526684272e-09,
+      "maximum_left_relative_block_slip_m": 1.0742741710632336e-06,
+      "maximum_left_relative_block_rotation_rad": 2.4339892901566824e-05,
+      "maximum_nut_radial_offset_m": 3.089073041271508e-08,
+      "maximum_nut_relative_tilt_rad": 7.414132612483577e-06,
+      "minimum_block_bottom_world_z_m": 0.09908203651663401,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.07994999999981367,
+      "late_window_left_relative_block_translation_range_m": 3.588596698673947e-09,
+      "late_window_left_relative_block_rotation_range_rad": 5.472626697130968e-09,
+      "late_window_block_rotation_range_over_duration_rad_s": 6.845061534888958e-08,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.626109967983194,
+        15.373768815650196
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        -5.3759242332119715e-06,
+        2.2714473908414965e-06,
+        1.2523411523297565,
+        -0.011761710459231548,
+        1.810061161460257e-07,
+        -2.2395528821484544e-07
+      ]
+    },
+    {
+      "phase": "reset_open_1",
+      "start_time_s": 5.596999999993625,
+      "end_time_s": 6.578749999991337,
+      "sampled_axial_advance_m": 1.4502867328944347e-08,
+      "sampled_relative_nut_rotation_rad": -6.669783361568093e-05,
+      "sampled_helix_residual_m": 1.2337549371238437e-09,
+      "maximum_left_relative_block_slip_m": 1.073108946411347e-06,
+      "maximum_left_relative_block_rotation_rad": 2.4338661204660644e-05,
+      "maximum_nut_radial_offset_m": 3.5998177339067576e-08,
+      "maximum_nut_relative_tilt_rad": 5.446858529696405e-06,
+      "minimum_block_bottom_world_z_m": 0.09908218208466218,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09669999999977463,
+      "late_window_left_relative_block_translation_range_m": 4.3883893635011643e-13,
+      "late_window_left_relative_block_rotation_range_rad": 5.532946711031966e-12,
+      "late_window_block_rotation_range_over_duration_rad_s": 5.721764954544841e-11,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.62611054825044,
+        15.37376838717626
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        -1.2619451302162103e-08,
+        1.2077074207466878e-08,
+        1.2523421610741858,
+        -0.011761761484016304,
+        1.648234968494985e-07,
+        -5.80997041655427e-10
+      ]
+    },
+    {
+      "phase": "open_hold_1",
+      "start_time_s": 6.578749999991337,
+      "end_time_s": 6.658749999991151,
+      "sampled_axial_advance_m": 8.452602593550518e-10,
+      "sampled_relative_nut_rotation_rad": -4.7530507343296335e-06,
+      "sampled_helix_residual_m": -1.0032913956385341e-10,
+      "maximum_left_relative_block_slip_m": 1.0719928424562862e-06,
+      "maximum_left_relative_block_rotation_rad": 2.4333010646362775e-05,
+      "maximum_nut_radial_offset_m": 3.353662142109967e-08,
+      "maximum_nut_relative_tilt_rad": 4.04889530386221e-06,
+      "minimum_block_bottom_world_z_m": 0.09908226568435465,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.07994999999981367,
+      "late_window_left_relative_block_translation_range_m": 2.0954626584283965e-13,
+      "late_window_left_relative_block_rotation_range_rad": 1.9489514953835747e-13,
+      "late_window_block_rotation_range_over_duration_rad_s": 2.437712939822535e-12,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.62611054651504,
+        15.37376838893366
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        2.7933945885980485e-08,
+        -2.5777177154146217e-09,
+        1.252342157581392,
+        -0.011761760592149095,
+        1.6601147117733104e-07,
+        1.4188253365234962e-09
+      ]
+    },
+    {
+      "phase": "regrip_1",
+      "start_time_s": 6.658749999991151,
+      "end_time_s": 6.908749999990568,
+      "sampled_axial_advance_m": -1.395699498705008e-06,
+      "sampled_relative_nut_rotation_rad": 0.0008482634176267823,
+      "sampled_helix_residual_m": -1.2269428537558492e-06,
+      "maximum_left_relative_block_slip_m": 3.516257261340267e-06,
+      "maximum_left_relative_block_rotation_rad": 2.4333014201087997e-05,
+      "maximum_nut_radial_offset_m": 7.499588351591617e-06,
+      "maximum_nut_relative_tilt_rad": 0.0004633022703972648,
+      "minimum_block_bottom_world_z_m": 0.09908198663258348,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09994999999976706,
+      "late_window_left_relative_block_translation_range_m": 2.4589899699001966e-06,
+      "late_window_left_relative_block_rotation_range_rad": 2.7915232378035797e-07,
+      "late_window_block_rotation_range_over_duration_rad_s": 2.792919697658915e-06,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.59749352389359,
+        15.402333141310134
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        -0.025665074658276037,
+        0.01567851539508144,
+        1.1951602712289964,
+        -0.009125648540471395,
+        -0.00014390516328595526,
+        -0.0013593649143736422
+      ]
+    },
+    {
+      "phase": "settle_regrip_1",
+      "start_time_s": 6.908749999990568,
+      "end_time_s": 7.028749999990288,
+      "sampled_axial_advance_m": 8.266329427630836e-07,
+      "sampled_relative_nut_rotation_rad": 0.0003910454093505322,
+      "sampled_helix_residual_m": 9.044289551024972e-07,
+      "maximum_left_relative_block_slip_m": 2.921669031934284e-06,
+      "maximum_left_relative_block_rotation_rad": 2.4056550449491504e-05,
+      "maximum_nut_radial_offset_m": 2.241227361175302e-06,
+      "maximum_nut_relative_tilt_rad": 0.0002811433719075264,
+      "minimum_block_bottom_world_z_m": 0.09907859293887161,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09994999999976706,
+      "late_window_left_relative_block_translation_range_m": 1.7088128257364313e-06,
+      "late_window_left_relative_block_rotation_range_rad": 1.1956357730506484e-07,
+      "late_window_block_rotation_range_over_duration_rad_s": 1.1962338899984342e-06,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.650841598661952,
+        15.349025104697924
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        -0.008226569086490713,
+        0.06164455559786417,
+        1.3018164189616992,
+        -0.014830268748426847,
+        -0.0003504495364550453,
+        -0.0005654542120295294
+      ]
+    },
+    {
+      "phase": "turn_2",
+      "start_time_s": 7.028749999990288,
+      "end_time_s": 10.955749999981137,
+      "sampled_axial_advance_m": 0.00041351628725336265,
+      "sampled_relative_nut_rotation_rad": -2.094246226875063,
+      "sampled_helix_residual_m": -3.1207615700338262e-06,
+      "maximum_left_relative_block_slip_m": 1.4200021332418577e-06,
+      "maximum_left_relative_block_rotation_rad": 4.3661559808697066e-05,
+      "maximum_nut_radial_offset_m": 2.1058589118824847e-05,
+      "maximum_nut_relative_tilt_rad": 0.003493693110489966,
+      "minimum_block_bottom_world_z_m": 0.09907372802352665,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09694999999977405,
+      "late_window_left_relative_block_translation_range_m": 1.53190717624221e-07,
+      "late_window_left_relative_block_rotation_range_rad": 2.5800713476124804e-07,
+      "late_window_block_rotation_range_over_duration_rad_s": 2.661239141432175e-06,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.653167690775366,
+        15.346709302300642
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        0.03023373481941106,
+        0.00731230548003964,
+        1.306458853730922,
+        -0.01425809741186475,
+        0.0003113844823246885,
+        0.0014990381017526578
+      ],
+      "phase_lead_error_limit_m": 8.333333333333334e-06,
+      "sampled_phase_lead_passed": true
+    },
+    {
+      "phase": "stop_2",
+      "start_time_s": 10.955749999981137,
+      "end_time_s": 11.075749999980857,
+      "sampled_axial_advance_m": 8.169912272919244e-08,
+      "sampled_relative_nut_rotation_rad": 4.6577819492910066e-05,
+      "sampled_helix_residual_m": 9.096548549261579e-08,
+      "maximum_left_relative_block_slip_m": 3.822746625615255e-07,
+      "maximum_left_relative_block_rotation_rad": 4.3939727084602826e-05,
+      "maximum_nut_radial_offset_m": 1.9909544671009235e-05,
+      "maximum_nut_relative_tilt_rad": 0.003334524859378149,
+      "minimum_block_bottom_world_z_m": 0.09907693421882172,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09994999999976706,
+      "late_window_left_relative_block_translation_range_m": 3.790552428669018e-08,
+      "late_window_left_relative_block_rotation_range_rad": 2.3299877488965814e-07,
+      "late_window_block_rotation_range_over_duration_rad_s": 2.331153325564794e-06,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.650316723347412,
+        15.34956091786194
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        0.027864871524185517,
+        0.0049138199932213,
+        1.3007560638072133,
+        -0.01381889231440003,
+        0.0002889112869989884,
+        0.001329963385333085
+      ]
+    },
+    {
+      "phase": "release_2",
+      "start_time_s": 11.075749999980857,
+      "end_time_s": 11.225749999980508,
+      "sampled_axial_advance_m": 3.836142343057597e-06,
+      "sampled_relative_nut_rotation_rad": -0.0024112955594963736,
+      "sampled_helix_residual_m": 3.3564303336208654e-06,
+      "maximum_left_relative_block_slip_m": 1.4932358662110997e-06,
+      "maximum_left_relative_block_rotation_rad": 4.405507911379223e-05,
+      "maximum_nut_radial_offset_m": 1.9482136852673437e-05,
+      "maximum_nut_relative_tilt_rad": 0.003235246861776617,
+      "minimum_block_bottom_world_z_m": 0.09907758389678867,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09994999999976706,
+      "late_window_left_relative_block_translation_range_m": 2.847973641370981e-07,
+      "late_window_left_relative_block_rotation_range_rad": 1.1780167130361192e-08,
+      "late_window_block_rotation_range_over_duration_rad_s": 1.1786060160468881e-07,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.62674221804119,
+        15.373092059352928
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        -0.0019453058002838967,
+        0.0027459146618760482,
+        1.2536501918154155,
+        -0.011873412975575917,
+        -2.5525147346055615e-05,
+        -0.00011191292366165154
+      ]
+    },
+    {
+      "phase": "open_settle_2",
+      "start_time_s": 11.225749999980508,
+      "end_time_s": 11.305749999980321,
+      "sampled_axial_advance_m": -5.624280017407779e-10,
+      "sampled_relative_nut_rotation_rad": -4.9487279794036e-06,
+      "sampled_helix_residual_m": -1.5469461516648407e-09,
+      "maximum_left_relative_block_slip_m": 1.1196097944824888e-06,
+      "maximum_left_relative_block_rotation_rad": 4.4052455161442436e-05,
+      "maximum_nut_radial_offset_m": 6.871991513808329e-08,
+      "maximum_nut_relative_tilt_rad": 1.4179494317284755e-05,
+      "minimum_block_bottom_world_z_m": 0.0990818752782838,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.07994999999981367,
+      "late_window_left_relative_block_translation_range_m": 3.0990158185157484e-09,
+      "late_window_left_relative_block_rotation_range_rad": 1.7526951153795368e-08,
+      "late_window_block_rotation_range_over_duration_rad_s": 2.192239043631797e-07,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.62610905123306,
+        15.373769874978095
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        -3.203771523594605e-06,
+        9.580205791869988e-07,
+        1.2523391762676686,
+        -0.011761498955759028,
+        4.388391076412861e-07,
+        -1.9572324451119558e-07
+      ]
+    },
+    {
+      "phase": "reset_open_2",
+      "start_time_s": 11.305749999980321,
+      "end_time_s": 12.287499999978033,
+      "sampled_axial_advance_m": 7.2570303689956095e-09,
+      "sampled_relative_nut_rotation_rad": -5.7528702751774574e-05,
+      "sampled_helix_residual_m": -4.1879413967659475e-09,
+      "maximum_left_relative_block_slip_m": 1.118225902195323e-06,
+      "maximum_left_relative_block_rotation_rad": 4.405441044714185e-05,
+      "maximum_nut_radial_offset_m": 6.028753509671059e-08,
+      "maximum_nut_relative_tilt_rad": 1.201395898328042e-05,
+      "minimum_block_bottom_world_z_m": 0.09908210343185166,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09669999999977463,
+      "late_window_left_relative_block_translation_range_m": 1.702150495770434e-11,
+      "late_window_left_relative_block_rotation_range_rad": 8.804106680852085e-10,
+      "late_window_block_rotation_range_over_duration_rad_s": 9.104557063984079e-09,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.62611052659209,
+        15.37376840866293
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        -1.0963383154151182e-08,
+        3.3622065800559106e-09,
+        1.2523421179291703,
+        -0.011761759667875012,
+        3.961289761347268e-07,
+        -1.0996490341575663e-09
+      ]
+    },
+    {
+      "phase": "open_hold_2",
+      "start_time_s": 12.287499999978033,
+      "end_time_s": 12.367499999977847,
+      "sampled_axial_advance_m": 5.675766433232976e-09,
+      "sampled_relative_nut_rotation_rad": -5.7726281212922e-06,
+      "sampled_helix_residual_m": 4.527338558064307e-09,
+      "maximum_left_relative_block_slip_m": 1.117884750696113e-06,
+      "maximum_left_relative_block_rotation_rad": 4.4045546477515694e-05,
+      "maximum_nut_radial_offset_m": 2.0377567887613594e-08,
+      "maximum_nut_relative_tilt_rad": 2.595327164425442e-06,
+      "minimum_block_bottom_world_z_m": 0.09908226569209891,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.07994999999981367,
+      "late_window_left_relative_block_translation_range_m": 6.211548810098112e-11,
+      "late_window_left_relative_block_rotation_range_rad": 2.151384018789408e-09,
+      "late_window_block_rotation_range_over_duration_rad_s": 2.6909118433951497e-08,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.626110190040535,
+        15.373768745793685
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        1.5303963895541686e-07,
+        3.012166221435284e-07,
+        1.252341444246831,
+        -0.011761783270985872,
+        4.030894905748e-07,
+        3.322423163338144e-09
+      ]
+    },
+    {
+      "phase": "regrip_2",
+      "start_time_s": 12.367499999977847,
+      "end_time_s": 12.617499999977264,
+      "sampled_axial_advance_m": -9.209437242599372e-07,
+      "sampled_relative_nut_rotation_rad": 0.0012197119951773416,
+      "sampled_helix_residual_m": -6.782897327837473e-07,
+      "maximum_left_relative_block_slip_m": 3.1553753310365557e-06,
+      "maximum_left_relative_block_rotation_rad": 4.405050301354171e-05,
+      "maximum_nut_radial_offset_m": 6.5387002501841336e-06,
+      "maximum_nut_relative_tilt_rad": 0.00036812581863745407,
+      "minimum_block_bottom_world_z_m": 0.09908194804988935,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09994999999976706,
+      "late_window_left_relative_block_translation_range_m": 2.0817294652474462e-06,
+      "late_window_left_relative_block_rotation_range_rad": 3.142462301129645e-07,
+      "late_window_block_rotation_range_over_duration_rad_s": 3.1440343182961164e-06,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.600117190705653,
+        15.399725106265665
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        -0.027971048627498662,
+        0.015927826066108642,
+        1.2003920266445012,
+        -0.009366290589797887,
+        -0.00020472114771706755,
+        -0.0014709741962916367
+      ]
+    },
+    {
+      "phase": "settle_regrip_2",
+      "start_time_s": 12.617499999977264,
+      "end_time_s": 12.737499999976984,
+      "sampled_axial_advance_m": -3.559578310927125e-08,
+      "sampled_relative_nut_rotation_rad": 0.0008294825727475086,
+      "sampled_helix_residual_m": 1.294245314674146e-07,
+      "maximum_left_relative_block_slip_m": 2.821818960181145e-06,
+      "maximum_left_relative_block_rotation_rad": 4.3738117973854536e-05,
+      "maximum_nut_radial_offset_m": 2.3679819906924606e-06,
+      "maximum_nut_relative_tilt_rad": 0.00038931218657623043,
+      "minimum_block_bottom_world_z_m": 0.09907860092193296,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.09994999999976706,
+      "late_window_left_relative_block_translation_range_m": 1.4641189340451525e-06,
+      "late_window_left_relative_block_rotation_range_rad": 5.5002995851194726e-08,
+      "late_window_block_rotation_range_over_duration_rad_s": 5.503051110687636e-07,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.649359359532525,
+        15.350519533367246
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        0.0059736578288653456,
+        0.04149092459899914,
+        1.29883977606163,
+        -0.01452599883906139,
+        -0.00025756174880676996,
+        0.00013604096285651292
+      ]
+    },
+    {
+      "phase": "turn_3",
+      "start_time_s": 12.737499999976984,
+      "end_time_s": 16.66449999999144,
+      "sampled_axial_advance_m": 0.0004134522303733861,
+      "sampled_relative_nut_rotation_rad": -2.0940071296615503,
+      "sampled_helix_residual_m": -3.1372515707478563e-06,
+      "maximum_left_relative_block_slip_m": 1.4546358131340682e-06,
+      "maximum_left_relative_block_rotation_rad": 6.365689734145826e-05,
+      "maximum_nut_radial_offset_m": 2.192921093295461e-05,
+      "maximum_nut_relative_tilt_rad": 0.003217070058329087,
+      "minimum_block_bottom_world_z_m": 0.09907390053252567,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.0969500000032184,
+      "late_window_left_relative_block_translation_range_m": 1.5530585611923133e-07,
+      "late_window_left_relative_block_rotation_range_rad": 2.7731676621461376e-07,
+      "late_window_block_rotation_range_over_duration_rad_s": 2.8604101723095183e-06,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.65357962145085,
+        15.346284246547643
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        0.03272041596793289,
+        0.016512468970501275,
+        1.3072961901456586,
+        -0.014592577784306737,
+        0.00037692838483644684,
+        0.0016439644365648445
+      ],
+      "phase_lead_error_limit_m": 8.333333333333334e-06,
+      "sampled_phase_lead_passed": true
+    },
+    {
+      "phase": "stop_3",
+      "start_time_s": 16.66449999999144,
+      "end_time_s": 16.784499999995422,
+      "sampled_axial_advance_m": 4.586335885722881e-08,
+      "sampled_relative_nut_rotation_rad": 4.5461418305414725e-05,
+      "sampled_helix_residual_m": 5.490762066132272e-08,
+      "maximum_left_relative_block_slip_m": 5.539768312545645e-07,
+      "maximum_left_relative_block_rotation_rad": 6.389295572325559e-05,
+      "maximum_nut_radial_offset_m": 2.0529994741899945e-05,
+      "maximum_nut_relative_tilt_rad": 0.0029513501365066017,
+      "minimum_block_bottom_world_z_m": 0.09907682924795295,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "late_window_duration_s": 0.099950000003318,
+      "late_window_left_relative_block_translation_range_m": 3.998348730397939e-08,
+      "late_window_left_relative_block_rotation_range_rad": 1.9561459398324638e-07,
+      "late_window_block_rotation_range_over_duration_rad_s": 1.9571245020185356e-06,
+      "recorded_late_mean_left_pad_normal_forces_N": [
+        16.649964368890043,
+        15.349914161746106
+      ],
+      "recorded_late_mean_left_pad_wrench_world_about_block": [
+        0.024597706472141233,
+        0.0027415104831020353,
+        1.3000504125073649,
+        -0.013937340866238147,
+        0.00028407099312611773,
+        0.0011278958119771312
+      ]
+    }
+  ],
+  "publication_note": "Compact report; 3382 per-sample rows omitted. Recompute with scripts/run_m8.sh scripts/audit_yam_m8_trace.py media/yam_m8/demo_trace.npz --output outputs/yam_m8/demo_audit.json."
+}

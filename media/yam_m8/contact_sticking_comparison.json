@@ -1,0 +1,68 @@
+{
+  "scope": "Full physical bimanual recordings with identical thread geometry/friction, joint controller, timestep and runtime. Only two left block-pad numerical sticking impedances differ. No modified acceptance gates.",
+  "only_scene_configuration_differences": {
+    "left_block_contact_impedance": {
+      "reference": [
+        0.95,
+        0.99,
+        0.0001
+      ],
+      "preferred": [
+        0.9999,
+        0.9999,
+        0.0001
+      ]
+    }
+  },
+  "thread_configuration_identical": true,
+  "controller_configuration_and_source_identical": true,
+  "core_and_plugin_runtime_identical": true,
+  "cases": {
+    "reference": {
+      "path": "final",
+      "full_demo_passed": true,
+      "all_acceptance_checks_passed": true,
+      "measured_clockwise_turns": 1.0000011466733862,
+      "stroke_only_advance_mm": 1.2406927084559187,
+      "initial_axial_seating_um": 48.544426848448275,
+      "net_advance_mm": 1.2948701129710942,
+      "stroke_lead_residuals_um": [
+        -2.9905966402794153,
+        -3.0818961659812603,
+        -3.141679696753812
+      ],
+      "block_retention_initial_baseline": {
+        "passed": true,
+        "peak_translation_slip_m": 0.0003078964618488303,
+        "peak_rotation_slip_rad": 0.0330840306883819
+      },
+      "lift_m": 0.003829084029985913,
+      "model_fingerprint": "027dd245fb6486b03704da1ceac633dcffdfc94c243035078bd0b169f776192b",
+      "controller_sha256": "2c46098b74f9e62265c8e6cf148f8c225b6594a0483d1881ac51a4ff3cb1b78f"
+    },
+    "preferred": {
+      "path": "stiction_final",
+      "full_demo_passed": true,
+      "all_acceptance_checks_passed": true,
+      "measured_clockwise_turns": 1.000000896372696,
+      "stroke_only_advance_mm": 1.2407216966419579,
+      "initial_axial_seating_um": 48.54611006470562,
+      "net_advance_mm": 1.2948932277926528,
+      "stroke_lead_residuals_um": [
+        -2.9270499398359657,
+        -3.1211845685102957,
+        -3.137470497582796
+      ],
+      "block_retention_initial_baseline": {
+        "passed": true,
+        "peak_translation_slip_m": 0.0001383007744670188,
+        "peak_rotation_slip_rad": 6.37115634696332e-05
+      },
+      "lift_m": 0.0038290438206353278,
+      "model_fingerprint": "48e82724cb78793143eb1a94527864371fa983a37659bbe8a66fc82c96f6ad7b",
+      "controller_sha256": "2c46098b74f9e62265c8e6cf148f8c225b6594a0483d1881ac51a4ff3cb1b78f"
+    }
+  },
+  "peak_block_rotation_reference_over_preferred": 519.2782736237625,
+  "strict_per_stroke_lead_limit_um": 8.333333333333332
+}

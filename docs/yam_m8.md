@@ -6,28 +6,31 @@ workpieces are free bodies. The actual robot joint motors and sliding fingers
 supply the forces; there is no grasp weld, screw joint, nut motor, or imposed
 axial trajectory.
 
-[![Recorded physical grasp and lift](../media/yam_m8/hold.png)](../media/yam_m8/hold.mp4)
+[![Complete contact-driven turning demo](../media/yam_m8/demo.gif)](../media/yam_m8/demo.mp4)
 
-[![First turning stroke and open reset, recorded physics](../media/yam_m8/turn_progress.gif)](../media/yam_m8/turn_progress.mp4)
+The full 16.7845 s physical run passes all 15 nominal demo gates. Its three
+120° strokes pass the unchanged 8.33 µm lead-error limit. Both open resets
+have zero hand/nut contacts at every substep, with 14.50 and 7.23 nm of axial
+creep. See the [rollout checks](../media/yam_m8/demo_validation.json),
+[raw states](../media/yam_m8/demo_trace.npz),
+[portable scene ZIP](../media/yam_m8/demo_scene.zip), and
+[independent pose audit](../media/yam_m8/demo_independent_audit.json).
 
-The [complete three-stroke reference demo](../media/yam_m8/reference_demo.mp4)
-passes all 15 nominal gates. Its 120° strokes pass the unchanged 8.33 µm
-lead-error gate (errors 2.991, 3.082 and 3.142 µm). Both open resets have zero
-hand/nut contacts, with 14.0 and 7.37 nm of axial creep. See the
-[rollout checks](../media/yam_m8/reference_validation.json),
-[raw states](../media/yam_m8/reference_trace.npz), and
-[independent audit](../media/yam_m8/reference_independent_audit.json).
-The original soft left grip rotates by 1.896°, close to its 2° limit; a
-left-contact sticking comparison is still in progress.
-The inspection camera keeps the nut visible
+| Stroke | Measured advance | Signed lead residual | Limit |
+|---|---:|---:|---:|
+| 1, 120° | 413.754 µm | −2.927 µm | ±8.333 µm |
+| 2, 120° | 413.516 µm | −3.121 µm | ±8.333 µm |
+| 3, 120° | 413.452 µm | −3.137 µm | ±8.333 µm |
+
+The strokes contribute 1.240722 mm travel; initial clearance take-up and
+release/regrasp motion are recorded separately. The inspection camera keeps the nut visible
 between the actual fingers; the inset is the real model's wrist camera. The
 advance plot uses the measured post-grasp baseline and reports initial flank
 take-up separately; no simulated state or motion command is corrected.
 
-The earlier grasp/lift clip replays the actual 1.32 s hold/lift trajectory
-at 3× slow motion. It passes the hold, alignment, support and drive checks;
-its full-demo report deliberately remains incomplete because it contains no
-turning strokes or open resets.
+The next task is [bolt pickup and thread starting in a female-threaded
+block](m8_insertion_physics.md). Its success is separate from this pre-engaged
+turning baseline.
 
 ## Requested geometry
 
@@ -54,7 +57,34 @@ pad inserts and μ=0.8 pad friction are declared reconstruction assumptions.
 Their positions near the real fingertips permit clearance around the short
 shaft. Native arm, camera and finger collision meshes remain active.
 
-## Verified holding behavior
+## Verified holding behavior and contact comparison
+
+In the full accepted demo, the free block rises **3.829044 mm**. After
+clamping, its motion relative to the left hand remains below **3.516 µm**
+and **63.89 µrad**. There are zero world-support contacts, direct object
+forces, and solver warnings. Real arm joints remain within native limits,
+with independently checked margins of at least 0.2005 rad left and
+0.08635 rad right.
+
+Only the two left-pad/block contact pairs now use MuJoCo impedance
+`(.9999, .9999, .0001)` instead of `(.95, .99, .0001)`. Elliptic friction
+constraints permit slow slip with soft regularization even inside the friction
+cone. Increasing this numerical impedance reduces the peak block rotation by
+**519×** in otherwise identical full runs; it does not add torsional friction,
+a grasp weld, or an object motor. Geometry, μ, right-pad contacts, thread
+settings, timestep, core/plugin and controller are unchanged. Both runs pass
+the same 15 gates, with similar measured lead. The
+[comparison report](../media/yam_m8/contact_sticking_comparison.json) and
+[original softer-contact run](../media/yam_m8/reference_validation.json)
+preserve the evidence.
+
+Halving the timestep from 50 to 25 µs in the clamp/lift phases changes the
+block endpoint by only **39.8 nm**. This is a
+[hold/lift check](../media/yam_m8/hold_lift_timestep_comparison.json);
+it does not establish turning or thread-load convergence.
+
+The earlier hold-only clip uses the original softer left contact:
+[recording](../media/yam_m8/hold.mp4).
 
 The left arm commands a 4 mm lift through finite joint torques. The actual
 block rises **3.829 mm**, with zero world-support contacts, zero externally
@@ -69,8 +99,9 @@ coordinates. See the [rollout checks](../media/yam_m8/hold_validation.json),
 The initial side clamp was inadequate: the block rotated within the pads at
 about 0.0616 rad/s. MuJoCo's soft tangential constraints permit slow slippage
 under sustained load. A separate stiffer-contact probe confirmed that cause.
-The final vertical clamp fixes the grasp geometry while retaining the original
-left contact settings, thread friction and solver parameters.
+The vertical clamp fixes the grasp geometry; the accepted full demo also uses
+the explicitly tested left-contact impedance above. Thread friction and the
+thread solver parameters retain their original values.
 
 ## Controls, task scope, and validation
 
@@ -115,17 +146,17 @@ scripts/setup.sh
 scripts/run_m8.sh -m pytest -q
 scripts/run_m8.sh -m yam_twin.m8_demo --output outputs/yam_m8/demo \
   --dt .00005 --angular-speed 1 --video
-scripts/run_m8.sh -m yam_twin.m8_demo --replay media/yam_m8/hold_trace.npz \
-  --output outputs/yam_m8/hold --slow-motion 3
+scripts/run_m8.sh -m yam_twin.m8_demo --replay media/yam_m8/demo_trace.npz \
+  --output outputs/yam_m8/replay --slow-motion 1.5
 scripts/run_m8.sh scripts/audit_yam_m8_geometry.py
-scripts/run_m8.sh scripts/audit_yam_m8_trace.py media/yam_m8/hold_trace.npz
+scripts/run_m8.sh scripts/audit_yam_m8_trace.py media/yam_m8/demo_trace.npz
 ```
 
 Rendering replays saved `qpos/qvel` states and checks portable model/mesh
 provenance. It runs no physical rollout and synthesizes no nut trajectory.
 `--export-only` writes a native `MjSpec` ZIP containing the YAM mesh assets;
 loading its custom thread plugin still requires the matched engine.
-The [97 software tests pass](../media/yam_m8/software_tests.json). Software
+The [97 baseline software tests pass](../media/yam_m8/software_tests.json). Software
 tests and short successful holding checks do not establish policy stability.
 
 `yam_twin.m8_env.YamM8Env` exposes 14 normalized actions: 12 actual arm motor

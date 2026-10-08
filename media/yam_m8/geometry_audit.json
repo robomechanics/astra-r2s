@@ -53,8 +53,8 @@
     "left_closed_aperture": 0.0144,
     "left_grasp_roll_rad": -1.5707963267948966,
     "left_block_contact_impedance": [
-      0.95,
-      0.99,
+      0.9999,
+      0.9999,
       0.0001
     ],
     "left_block_contact_time_constant": 0.0008,
@@ -88,8 +88,8 @@
     ],
     "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
   },
-  "model_xml_sha256": "8ca6d5aae5f4213bf57a2024c9441b4340894d92ee678bd05d92c37a27bb1d8b",
-  "portable_model_fingerprint": "027dd245fb6486b03704da1ceac633dcffdfc94c243035078bd0b169f776192b",
+  "model_xml_sha256": "f71fe9d8d77a4ca09e108eeea726c3630c8a120ab8d5e9b463e8bf299c8c780b",
+  "portable_model_fingerprint": "48e82724cb78793143eb1a94527864371fa983a37659bbe8a66fc82c96f6ad7b",
   "auditor_sha256": "1dac9d46cc585cd01ca5ea759c6bf86ce14edbb1bacaf3b04a39848c1b145fee",
   "left_target_position_world_m": [
     0.3,
@@ -7061,8 +7061,8 @@
     }
   ],
   "recorded_configuration_provenance": {
-    "trace": "outputs/yam_m8/final/yam_m8_trace_partial.npz",
-    "trace_sha256": "e937f4209458b10b36d2fc54bc30aa4eeb608e5302a566bba02a6966f2180c7a",
-    "recorded_model_fingerprint": "027dd245fb6486b03704da1ceac633dcffdfc94c243035078bd0b169f776192b"
+    "trace": "outputs/yam_m8/stiction_final/yam_m8_trace.npz",
+    "trace_sha256": "0e3c6c24f7b5acb454940d42fdbe433eeb943f06ce812476ee56ad6c1bfcf6a9",
+    "recorded_model_fingerprint": "48e82724cb78793143eb1a94527864371fa983a37659bbe8a66fc82c96f6ad7b"
   }
 }

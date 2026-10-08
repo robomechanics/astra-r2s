@@ -1,0 +1,61 @@
+{
+  "scope": "Close, settle, lift and hold_lift only. No turn-lead or thread-load timestep-convergence qualification.",
+  "method": "Compare original saved diagnostics sampled approximately every 5 ms; no dynamics or independent force reconstruction",
+  "comparer_sha256": "85395970bed69b1f1288e03082ca1f2aa677a73384522bf326aac80491c1a7ff",
+  "configuration_differs_only_by_timestep": true,
+  "controller_configuration_and_source_match": true,
+  "core_and_plugin_identities_match": true,
+  "cases": {
+    "first": {
+      "trace": "outputs/yam_m8/stiction_hold_25us/yam_m8_trace.npz",
+      "trace_sha256": "85b0f3eed8add998b4d5f570551ec73a7e3f7613c64ee683749857087f4a7bed",
+      "model_fingerprint": "348a2ee0df9690edff117d1438121f41c5ea5c7d20022594a02d0b3cce004d1c",
+      "timestep_s": 2.5e-05,
+      "end_time_s": 1.3200000000002583,
+      "end_block_world_position_m": [
+        0.3000001237128042,
+        -0.009999758129846981,
+        0.10707899528704964
+      ],
+      "end_block_lift_m": 0.0038289952870496496,
+      "sampled_peak_initial_relative_block_slip_m": 0.00013827991092906712,
+      "sampled_peak_initial_relative_block_rotation_rad": 2.3436317230356306e-07,
+      "sampled_peak_nut_radial_m": 9.349290924782577e-07,
+      "sampled_peak_nut_tilt_rad": 0.00014365071214709736,
+      "sampled_peak_reported_sdf_depth_proxy_m": 6.670889245031965e-07,
+      "sampled_minimum_loaded_left_pad_normals_N": [
+        16.592953049089612,
+        15.285155033903163
+      ],
+      "sampled_support_contacts": 0,
+      "sampled_object_drive_flags_all_zero": true
+    },
+    "second": {
+      "trace": "outputs/yam_m8/stiction_final/yam_m8_trace.npz",
+      "trace_sha256": "0e3c6c24f7b5acb454940d42fdbe433eeb943f06ce812476ee56ad6c1bfcf6a9",
+      "model_fingerprint": "48e82724cb78793143eb1a94527864371fa983a37659bbe8a66fc82c96f6ad7b",
+      "timestep_s": 5e-05,
+      "end_time_s": 1.3200000000005734,
+      "end_block_world_position_m": [
+        0.3000001233144118,
+        -0.009999718351806379,
+        0.10707899581154262
+      ],
+      "end_block_lift_m": 0.0038289958115426265,
+      "sampled_peak_initial_relative_block_slip_m": 0.00013829504768937714,
+      "sampled_peak_initial_relative_block_rotation_rad": 3.6215001829991204e-07,
+      "sampled_peak_nut_radial_m": 9.348702222346646e-07,
+      "sampled_peak_nut_tilt_rad": 0.00014361147163063207,
+      "sampled_peak_reported_sdf_depth_proxy_m": 5.135665458952203e-07,
+      "sampled_minimum_loaded_left_pad_normals_N": [
+        16.592341068996834,
+        15.28891608991895
+      ],
+      "sampled_support_contacts": 0,
+      "sampled_object_drive_flags_all_zero": true
+    }
+  },
+  "hold_lift_endpoint_world_position_difference_m": 3.978349310458768e-08,
+  "sampled_peak_nut_radial_difference_m": 5.887024359311548e-11,
+  "sampled_peak_nut_tilt_difference_rad": 3.924051646529594e-08
+}
