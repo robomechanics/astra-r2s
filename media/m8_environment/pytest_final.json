@@ -1,0 +1,26 @@
+{
+  "command": "scripts/run_m8.sh -m pytest -q",
+  "exit_code": 0,
+  "passed": 64,
+  "warnings": 2,
+  "duration_seconds": 39.87,
+  "summary": "64 passed, 2 warnings in 39.87s",
+  "recorded_utc": "2026-10-08T20:53:24.674532+00:00",
+  "log": "outputs/m8/environment/pytest_final.log",
+  "log_sha256": "5efc107c49122a965406e4777c02993ee05176f0be900e75e8b1f5fb900730a7",
+  "runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "checkout_commit": "668bdf28455c44089da8eafe7f05bb109d01f4a2",
+  "working_tree_changes_present": true,
+  "scope": "Final complete suite after exact thread-kernel optimization and fit-backlash guard correction"
+}

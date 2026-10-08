@@ -1,0 +1,25 @@
+{
+  "version": "3.15.0",
+  "package": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco",
+  "library": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+  "library_sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+  "extension_sha256": {
+    "_callbacks.cpython-312-x86_64-linux-gnu.so": "38d673578baf1ae82e32998daad4a1e754813537db8ed67da0618f568face628",
+    "_constants.cpython-312-x86_64-linux-gnu.so": "800afb5452520b0db959becdd64485bbe872ed2a1266f95b56cd9e53d951bbcb",
+    "_enums.cpython-312-x86_64-linux-gnu.so": "a9ff6a7a2d3fd713b45e5b5f740b21ecab64b077a280f18c4c0de4702c0045a9",
+    "_errors.cpython-312-x86_64-linux-gnu.so": "374e3ca05caad57166a6e16810488d652b791e1a4c9eb4f56ed6a038bfc2c95b",
+    "_functions.cpython-312-x86_64-linux-gnu.so": "437e474c14438520e89bc584302aa330e6b53b90513381c672a3495de145b438",
+    "_render.cpython-312-x86_64-linux-gnu.so": "76e21e4bfacb4f8dbfabe7c95b2d2734624f4a34021adcce6054d574cba57c27",
+    "_rollout.cpython-312-x86_64-linux-gnu.so": "9e130eb4632f54e3bfc76dfde9e996ba15c1f068002fea154265b37d8b955dc6",
+    "_simulate.cpython-312-x86_64-linux-gnu.so": "713a79cf142dec8ec8c920a7e1038559542844e35163e4b3532c449ac89b60a7",
+    "_specs.cpython-312-x86_64-linux-gnu.so": "4c42b94992f1fca1fbfbe23b461acef88e1d4e75d7d806ec19a9532a28b729e4",
+    "_structs.cpython-312-x86_64-linux-gnu.so": "5e600f90a2e577ca0e760064619240ec25d46a49b9f3ee1c2b0730714a47e072"
+  },
+  "mapped_mujoco_libraries": [
+    "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0"
+  ],
+  "sdf_min_alpha": 1e-07,
+  "sdf_initial_alpha": 0.002,
+  "spec_modelname_and_zip_roundtrip": "passed",
+  "build_fingerprint": "6f0a44c3b10e97235b36c0c91fef4d2a55925df325f9b70f4a38b8776d6da292"
+}

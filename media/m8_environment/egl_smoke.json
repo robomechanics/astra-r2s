@@ -1,0 +1,23 @@
+{
+  "backend": "EGL/Mesa",
+  "pixels_shape": [
+    480,
+    640,
+    3
+  ],
+  "pixel_std": 27.164635401359387,
+  "model_bodies": 5,
+  "image": "outputs/m8/environment/egl_smoke.png",
+  "runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+  }
+}

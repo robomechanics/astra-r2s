@@ -1,0 +1,89 @@
+{
+  "reference_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af",
+  "optimized_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a",
+  "mujoco_version": "3.15.0",
+  "pinned_cpu": 4,
+  "queries_per_batch": 300000,
+  "repeats": 9,
+  "populations": {
+    "outer_gripper": {
+      "distance": {
+        "median_cpu_seconds": {
+          "reference": 0.034499651999999825,
+          "optimized": 0.0035974420000000062
+        },
+        "cpu_speedup": 9.590050930633424,
+        "median_wall_seconds": {
+          "reference": 0.0345009550001123,
+          "optimized": 0.003598753000915167
+        },
+        "wall_speedup": 9.586919411067852
+      },
+      "gradient": {
+        "median_cpu_seconds": {
+          "reference": 0.18505515000000017,
+          "optimized": 0.020363847999999685
+        },
+        "cpu_speedup": 9.087435243083872,
+        "median_wall_seconds": {
+          "reference": 0.1851160100013658,
+          "optimized": 0.020365483998830314
+        },
+        "wall_speedup": 9.089693621423281
+      }
+    },
+    "uniform_volume": {
+      "distance": {
+        "median_cpu_seconds": {
+          "reference": 0.03837609000000031,
+          "optimized": 0.014352020000000021
+        },
+        "cpu_speedup": 2.673915588188997,
+        "median_wall_seconds": {
+          "reference": 0.038377654000214534,
+          "optimized": 0.014353254999150522
+        },
+        "wall_speedup": 2.673794480937311
+      },
+      "gradient": {
+        "median_cpu_seconds": {
+          "reference": 0.20210360100000013,
+          "optimized": 0.06805212300000019
+        },
+        "cpu_speedup": 2.9698353569366174,
+        "median_wall_seconds": {
+          "reference": 0.2022821139998996,
+          "optimized": 0.06811243999982253
+        },
+        "wall_speedup": 2.9698262755001386
+      }
+    },
+    "thread_near_surface": {
+      "distance": {
+        "median_cpu_seconds": {
+          "reference": 0.03731204100000074,
+          "optimized": 0.03862232100000007
+        },
+        "cpu_speedup": 0.9660745401603563,
+        "median_wall_seconds": {
+          "reference": 0.03732091000165383,
+          "optimized": 0.03862328899958811
+        },
+        "wall_speedup": 0.9662799561697563
+      },
+      "gradient": {
+        "median_cpu_seconds": {
+          "reference": 0.17880829399999953,
+          "optimized": 0.18244971200000037
+        },
+        "cpu_speedup": 0.980041525086097,
+        "median_wall_seconds": {
+          "reference": 0.17880879699987418,
+          "optimized": 0.1826616300004389
+        },
+        "wall_speedup": 0.9789072669473307
+      }
+    }
+  },
+  "scope": "Geometry microbenchmarks; not end-to-end policy-training throughput."
+}

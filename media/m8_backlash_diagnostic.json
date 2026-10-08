@@ -1,0 +1,3940 @@
+{
+  "description": "Diagnostic only: time-only missing-contact failure filtered to inspect ordinary fit backlash; all other guards kept",
+  "runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+  },
+  "rows": [
+    {
+      "control": 0,
+      "reward": -0.0006813178767793222,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -8.500848459741528e-07,
+        "nut_unwrapped_rotation_rad": -1.2891985745611123e-07,
+        "observed_helix_residual_m": -8.501104937648739e-07,
+        "radial_offset_m": 4.3063991683959036e-08,
+        "nut_tilt_rad": 8.423809752905823e-06,
+        "nut_center_along_bolt_m": 0.017452251502703426,
+        "bolt_nut_contact_count": 0,
+        "worst_reported_sdf_depth_m": 0.0,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.000825,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            7.513459079649953e-06,
+            5.582994150473385e-07,
+            0.060061218517727145,
+            -4.455726298960314e-08,
+            3.6252426995671966e-09,
+            -1.4122291071532855e-08
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            7.513459079649953e-06,
+            5.582994150473385e-07,
+            0.060061218517727145,
+            -4.455726298960314e-08,
+            3.6252426995671966e-09,
+            -1.4122291071532855e-08
+          ],
+          "pad_normal_force_N": [
+            5.935447928600001,
+            5.935506915423173
+          ],
+          "jaw_actuator_force": [
+            5.935423002088633,
+            5.9353844158304625
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -2.9038520282687643e-08,
+            -7.1346046912187586e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.25099999999997646,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 0,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -2.9038520282687643e-08,
+          -7.1346046912187586e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 1,
+      "reward": -0.0020796976935264972,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -3.4481444628822744e-06,
+        "nut_unwrapped_rotation_rad": -3.1643186826357805e-07,
+        "observed_helix_residual_m": -3.4482074150022567e-06,
+        "radial_offset_m": 4.1348942172811394e-08,
+        "nut_tilt_rad": 8.430871049980097e-06,
+        "nut_center_along_bolt_m": 0.017454849562320334,
+        "bolt_nut_contact_count": 0,
+        "worst_reported_sdf_depth_m": 0.0,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.001825,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            4.274074033444597e-06,
+            5.890230013258372e-07,
+            0.06006529066458163,
+            -4.721223066401798e-08,
+            5.423599667032236e-09,
+            3.3248452125170247e-09
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            4.274074033444597e-06,
+            5.890230013258372e-07,
+            0.06006529066458163,
+            -4.721223066401798e-08,
+            5.423599667032236e-09,
+            3.3248452125170247e-09
+          ],
+          "pad_normal_force_N": [
+            5.935469156009241,
+            5.935535306080993
+          ],
+          "jaw_actuator_force": [
+            5.935418535406669,
+            5.935410397852763
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -2.918272311420612e-08,
+            -7.034821147703166e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.25199999999997635,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 0,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -2.918272311420612e-08,
+          -7.034821147703166e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 2,
+      "reward": -0.003479370438824006,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -7.795795011412282e-06,
+        "nut_unwrapped_rotation_rad": -4.976993750460679e-07,
+        "observed_helix_residual_m": -7.795894025556922e-06,
+        "radial_offset_m": 3.9323497343952965e-08,
+        "nut_tilt_rad": 8.25568709663348e-06,
+        "nut_center_along_bolt_m": 0.017459197212868864,
+        "bolt_nut_contact_count": 0,
+        "worst_reported_sdf_depth_m": 0.0,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0028250000000000003,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -4.452700951840249e-06,
+            2.9838917346713695e-07,
+            0.060061845966057764,
+            -1.7528877885735446e-08,
+            -2.362761489498738e-09,
+            -9.338721682083679e-09
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -4.452700951840249e-06,
+            2.9838917346713695e-07,
+            0.060061845966057764,
+            -1.7528877885735446e-08,
+            -2.362761489498738e-09,
+            -9.338721682083679e-09
+          ],
+          "pad_normal_force_N": [
+            5.935457094513779,
+            5.935529965709399
+          ],
+          "jaw_actuator_force": [
+            5.9354173110456045,
+            5.935426378757967
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -2.9319481534257585e-08,
+            -7.019122333059083e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.25299999999997624,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 0,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -2.9319481534257585e-08,
+          -7.019122333059083e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 3,
+      "reward": -0.004878668525167654,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -1.389256816787185e-05,
+        "nut_unwrapped_rotation_rad": -6.732718071944532e-07,
+        "observed_helix_residual_m": -1.3892702111042049e-05,
+        "radial_offset_m": 3.753790345531923e-08,
+        "nut_tilt_rad": 8.140113069182093e-06,
+        "nut_center_along_bolt_m": 0.017465293986025324,
+        "bolt_nut_contact_count": 0,
+        "worst_reported_sdf_depth_m": 0.0,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0038250000000000003,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -2.2507834562535134e-06,
+            3.090943660497914e-07,
+            0.060061717160036956,
+            -1.6115352076680135e-08,
+            -1.4837718188441193e-09,
+            -1.8175048307187726e-09
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -2.2507834562535134e-06,
+            3.090943660497914e-07,
+            0.060061717160036956,
+            -1.6115352076680135e-08,
+            -1.4837718188441193e-09,
+            -1.8175048307187726e-09
+          ],
+          "pad_normal_force_N": [
+            5.935454065057307,
+            5.935528531988376
+          ],
+          "jaw_actuator_force": [
+            5.93541913092843,
+            5.935424303392395
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -2.945280000044409e-08,
+            -6.905190346817927e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.25399999999997613,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 0,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -2.945280000044409e-08,
+          -6.905190346817927e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 4,
+      "reward": -0.006278317050916574,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -2.1738901981517567e-05,
+        "nut_unwrapped_rotation_rad": -8.829500859341977e-07,
+        "observed_helix_residual_m": -2.1739077638855915e-05,
+        "radial_offset_m": 3.6028099112693656e-08,
+        "nut_tilt_rad": 7.904584976316558e-06,
+        "nut_center_along_bolt_m": 0.01747314031983897,
+        "bolt_nut_contact_count": 0,
+        "worst_reported_sdf_depth_m": 0.0,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.004825,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            7.200909989291127e-06,
+            1.5133102675981506e-07,
+            0.06005985623180517,
+            -1.4420943725811176e-09,
+            -4.686353219547634e-10,
+            -1.7937163790848927e-08
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            7.200909989291127e-06,
+            1.5133102675981506e-07,
+            0.06005985623180517,
+            -1.4420943725811176e-09,
+            -4.686353219547634e-10,
+            -1.7937163790848927e-08
+          ],
+          "pad_normal_force_N": [
+            5.935467898429138,
+            5.935529148494781
+          ],
+          "jaw_actuator_force": [
+            5.9354296907937965,
+            5.935423510188336
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -2.9579505177740687e-08,
+            -6.740281242542147e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.254999999999976,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 0,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -2.9579505177740687e-08,
+          -6.740281242542147e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 5,
+      "reward": -0.007677577920966286,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -3.1334311882725424e-05,
+        "nut_unwrapped_rotation_rad": -1.1372953276911346e-06,
+        "observed_helix_residual_m": -3.133453814044187e-05,
+        "radial_offset_m": 3.430528619654498e-08,
+        "nut_tilt_rad": 7.737032452811128e-06,
+        "nut_center_along_bolt_m": 0.017482735729740177,
+        "bolt_nut_contact_count": 0,
+        "worst_reported_sdf_depth_m": 0.0,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.005825,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            4.413743292294714e-05,
+            -7.055473135615274e-06,
+            0.05997034970363278,
+            7.293210047447795e-07,
+            -1.409717700077604e-07,
+            1.365981134250258e-07
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            4.413743292294714e-05,
+            -7.055473135615274e-06,
+            0.05997034970363278,
+            7.293210047447795e-07,
+            -1.409717700077604e-07,
+            1.365981134250258e-07
+          ],
+          "pad_normal_force_N": [
+            5.954209643133181,
+            5.949599931302746
+          ],
+          "jaw_actuator_force": [
+            5.935421377402257,
+            5.935414244375643
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -2.9703117533501835e-08,
+            -6.577154183589305e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2559999999999759,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 0,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -2.9703117533501835e-08,
+          -6.577154183589305e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 6,
+      "reward": -0.0090769840597436,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -4.2678979457404925e-05,
+        "nut_unwrapped_rotation_rad": -1.4628138398364854e-06,
+        "observed_helix_residual_m": -4.2679270474971714e-05,
+        "radial_offset_m": 3.2850174735892294e-08,
+        "nut_tilt_rad": 7.575434383488769e-06,
+        "nut_center_along_bolt_m": 0.017494080397314857,
+        "bolt_nut_contact_count": 0,
+        "worst_reported_sdf_depth_m": 0.0,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.006825,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -4.6605930845711185e-06,
+            1.8336771874418855e-07,
+            0.06006059245684891,
+            -7.310188162845496e-09,
+            1.5402480267774632e-10,
+            -1.1428109190198509e-08
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -4.6605930845711185e-06,
+            1.8336771874418855e-07,
+            0.06006059245684891,
+            -7.310188162845496e-09,
+            1.5402480267774632e-10,
+            -1.1428109190198509e-08
+          ],
+          "pad_normal_force_N": [
+            5.935454067525992,
+            5.935527287965821
+          ],
+          "jaw_actuator_force": [
+            5.935413610170478,
+            5.935417725142116
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -2.982250612742173e-08,
+            -6.482426688752402e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2569999999999758,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 0,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -2.982250612742173e-08,
+          -6.482426688752402e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 7,
+      "reward": -0.010476210255035803,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -5.577267977619968e-05,
+        "nut_unwrapped_rotation_rad": -1.8329672033523536e-06,
+        "observed_helix_residual_m": -5.577304443343835e-05,
+        "radial_offset_m": 3.177487961749488e-08,
+        "nut_tilt_rad": 7.516081303596162e-06,
+        "nut_center_along_bolt_m": 0.01750717409763365,
+        "bolt_nut_contact_count": 0,
+        "worst_reported_sdf_depth_m": 0.0,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.007825,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -4.6432911543492494e-06,
+            3.0811050144346954e-07,
+            0.060061840469681264,
+            -1.7214017497572505e-08,
+            1.1219186037494683e-08,
+            -5.172823451808813e-09
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -4.6432911543492494e-06,
+            3.0811050144346954e-07,
+            0.060061840469681264,
+            -1.7214017497572505e-08,
+            1.1219186037494683e-08,
+            -5.172823451808813e-09
+          ],
+          "pad_normal_force_N": [
+            5.935463126431791,
+            5.935531745994783
+          ],
+          "jaw_actuator_force": [
+            5.935416954290311,
+            5.9354228232261335
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -2.993909489244785e-08,
+            -6.376736655963437e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2579999999999757,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 0,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -2.993909489244785e-08,
+          -6.376736655963437e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 8,
+      "reward": -0.011875856650830177,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -7.06159380897374e-05,
+        "nut_unwrapped_rotation_rad": -2.24686707639421e-06,
+        "observed_helix_residual_m": -7.06163850897395e-05,
+        "radial_offset_m": 3.090236643695003e-08,
+        "nut_tilt_rad": 7.324947667685037e-06,
+        "nut_center_along_bolt_m": 0.01752201735594719,
+        "bolt_nut_contact_count": 0,
+        "worst_reported_sdf_depth_m": 0.0,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.008825000000000001,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            5.134175361853899e-06,
+            2.1008301726585868e-07,
+            0.0600609598319612,
+            -1.0145898445283914e-08,
+            7.67354435733409e-09,
+            -1.507142703281901e-09
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            5.134175361853899e-06,
+            2.1008301726585868e-07,
+            0.0600609598319612,
+            -1.0145898445283914e-08,
+            7.67354435733409e-09,
+            -1.507142703281901e-09
+          ],
+          "pad_normal_force_N": [
+            5.935475002037493,
+            5.935531666602457
+          ],
+          "jaw_actuator_force": [
+            5.9354336593971055,
+            5.935431017418701
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.00490519364894e-08,
+            -6.235902928796236e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2589999999999756,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 0,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.00490519364894e-08,
+          -6.235902928796236e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 9,
+      "reward": -0.013275289301253148,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -8.720848721630384e-05,
+        "nut_unwrapped_rotation_rad": -2.6925006326727896e-06,
+        "observed_helix_residual_m": -8.720902287228505e-05,
+        "radial_offset_m": 3.004784519500467e-08,
+        "nut_tilt_rad": 7.1102589111338906e-06,
+        "nut_center_along_bolt_m": 0.017538609905073756,
+        "bolt_nut_contact_count": 0,
+        "worst_reported_sdf_depth_m": 0.0,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.009825,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            1.8214157335716408e-06,
+            1.9867466208886402e-07,
+            0.06006063437405101,
+            -7.567487933891991e-09,
+            5.733120212836167e-10,
+            -4.0485837792068186e-09
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            1.8214157335716408e-06,
+            1.9867466208886402e-07,
+            0.06006063437405101,
+            -7.567487933891991e-09,
+            5.733120212836167e-10,
+            -4.0485837792068186e-09
+          ],
+          "pad_normal_force_N": [
+            5.935485167120648,
+            5.935544145850093
+          ],
+          "jaw_actuator_force": [
+            5.935452157219274,
+            5.935444024141489
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.015431044532726e-08,
+            -6.069164791067984e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2599999999999755,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 0,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.015431044532726e-08,
+          -6.069164791067984e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 10,
+      "reward": -0.010598271544775375,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -0.00010045476414727306,
+        "nut_unwrapped_rotation_rad": 1.2082794671464114e-06,
+        "observed_helix_residual_m": -0.00010045452376771076,
+        "radial_offset_m": 2.9654566427566264e-08,
+        "nut_tilt_rad": 5.569766228789694e-06,
+        "nut_center_along_bolt_m": 0.017551856182004725,
+        "bolt_nut_contact_count": 32,
+        "worst_reported_sdf_depth_m": 1.0587923633519878e-06,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -0.00035033065727843593,
+            -0.004014807324958453,
+            1.2674869096738401,
+            4.5477942173501196e-05,
+            -7.20171501457614e-05,
+            -0.0002336417193003833
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -0.00035033065727843593,
+            -0.004014807324958453,
+            1.2674869096738401,
+            4.5477942173501196e-05,
+            -7.20171501457614e-05,
+            -0.0002336417193003833
+          ],
+          "pad_normal_force_N": [
+            5.934783461563169,
+            5.934857944096444
+          ],
+          "jaw_actuator_force": [
+            5.935154570677987,
+            5.93572207017025
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.04964376613988e-08,
+            -5.299841231566453e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.26099999999997536,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 1,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.04964376613988e-08,
+          -5.299841231566453e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 11,
+      "reward": 0.0004178334448830616,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.993090984116923e-05,
+        "nut_unwrapped_rotation_rad": 2.2551239420742775e-05,
+        "observed_helix_residual_m": -9.99264234146359e-05,
+        "radial_offset_m": 3.3347057016336846e-08,
+        "nut_tilt_rad": 7.0247557252008335e-06,
+        "nut_center_along_bolt_m": 0.01755133232769862,
+        "bolt_nut_contact_count": 33,
+        "worst_reported_sdf_depth_m": 6.11411932199508e-07,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -0.002668616796211276,
+            -0.0011238577720784591,
+            0.14049922352076888,
+            4.814428083192592e-05,
+            4.1760835057371294e-05,
+            -9.559616891664617e-06
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -0.002668616796211276,
+            -0.0011238577720784591,
+            0.14049922352076888,
+            4.814428083192592e-05,
+            4.1760835057371294e-05,
+            -9.559616891664617e-06
+          ],
+          "pad_normal_force_N": [
+            5.934101782370008,
+            5.936810648400676
+          ],
+          "jaw_actuator_force": [
+            5.934813026955062,
+            5.936065562116667
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -2.8976968790099626e-08,
+            -9.656196199624503e-10,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.26199999999997525,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 2,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -2.8976968790099626e-08,
+          -9.656196199624503e-10,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 12,
+      "reward": 0.0006421201305458284,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.912669717798694e-05,
+        "nut_unwrapped_rotation_rad": 4.612403213721805e-05,
+        "observed_helix_residual_m": -9.911752109334948e-05,
+        "radial_offset_m": 3.086289478078217e-08,
+        "nut_tilt_rad": 1.0083231627845022e-05,
+        "nut_center_along_bolt_m": 0.01755052811503544,
+        "bolt_nut_contact_count": 33,
+        "worst_reported_sdf_depth_m": 8.87450464596196e-07,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            0.001408055133604924,
+            -0.004826574749452916,
+            0.19461126548187266,
+            3.766415183365306e-05,
+            5.22078474094161e-05,
+            -2.10250334860453e-05
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            0.001408055133604924,
+            -0.004826574749452916,
+            0.19461126548187266,
+            3.766415183365306e-05,
+            5.22078474094161e-05,
+            -2.10250334860453e-05
+          ],
+          "pad_normal_force_N": [
+            5.936122821498661,
+            5.934733857339177
+          ],
+          "jaw_actuator_force": [
+            5.934763920971811,
+            5.93610027722719
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.034934214616443e-08,
+            2.3706656521746763e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.26299999999997514,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 3,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.034934214616443e-08,
+          2.3706656521746763e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 13,
+      "reward": 0.0006044369135045995,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.83695885361062e-05,
+        "nut_unwrapped_rotation_rad": 7.134586337631532e-05,
+        "observed_helix_residual_m": -9.835539472757432e-05,
+        "radial_offset_m": 5.636419027499533e-08,
+        "nut_tilt_rad": 1.1724288171418531e-05,
+        "nut_center_along_bolt_m": 0.017549771006393558,
+        "bolt_nut_contact_count": 34,
+        "worst_reported_sdf_depth_m": 2.1898856792317758e-07,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            0.0002972109325844463,
+            -0.002310430916408329,
+            0.1536906914661137,
+            3.273566345625663e-05,
+            3.0127875733944797e-05,
+            1.4758185588727678e-05
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            0.0002972109325844463,
+            -0.002310430916408329,
+            0.1536906914661137,
+            3.273566345625663e-05,
+            3.0127875733944797e-05,
+            1.4758185588727678e-05
+          ],
+          "pad_normal_force_N": [
+            5.9355585638219095,
+            5.935290676627979
+          ],
+          "jaw_actuator_force": [
+            5.936080858026678,
+            5.934750300996036
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.246553697979465e-08,
+            1.5768419260099066e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.26399999999997503,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 4,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.246553697979465e-08,
+          1.5768419260099066e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 14,
+      "reward": 0.00038188828353842005,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.789066568168317e-05,
+        "nut_unwrapped_rotation_rad": 9.642200343584761e-05,
+        "observed_helix_residual_m": -9.787148313359612e-05,
+        "radial_offset_m": 6.109721716710912e-08,
+        "nut_tilt_rad": 1.2375537724938076e-05,
+        "nut_center_along_bolt_m": 0.017549292083539135,
+        "bolt_nut_contact_count": 34,
+        "worst_reported_sdf_depth_m": 2.823022379719268e-07,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -3.5682828672167766e-05,
+            -0.0010987224372230207,
+            0.16705282865493898,
+            0.00011118575824021869,
+            0.0003063030475468044,
+            3.5502764901025195e-06
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -3.5682828672167766e-05,
+            -0.0010987224372230207,
+            0.16705282865493898,
+            0.00011118575824021869,
+            0.0003063030475468044,
+            3.5502764901025195e-06
+          ],
+          "pad_normal_force_N": [
+            5.935355959516075,
+            5.935492464594033
+          ],
+          "jaw_actuator_force": [
+            5.936474196248049,
+            5.934335097559625
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.554419162084547e-08,
+            2.2741146961098406e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2649999999999749,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 5,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.554419162084547e-08,
+          2.2741146961098406e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 15,
+      "reward": 0.00024167534969994061,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.758700899455824e-05,
+        "nut_unwrapped_rotation_rad": 0.00012072734425006004,
+        "observed_helix_residual_m": -9.756299105255355e-05,
+        "radial_offset_m": 6.184820585077403e-08,
+        "nut_tilt_rad": 1.1746662020213411e-05,
+        "nut_center_along_bolt_m": 0.01754898842685201,
+        "bolt_nut_contact_count": 33,
+        "worst_reported_sdf_depth_m": 2.371340677748824e-07,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            0.001375168684868311,
+            0.002310750428096278,
+            0.19585162123081618,
+            -1.6885183326518874e-05,
+            2.0642400080831986e-05,
+            1.6080316259413645e-05
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            0.001375168684868311,
+            0.002310750428096278,
+            0.19585162123081618,
+            -1.6885183326518874e-05,
+            2.0642400080831986e-05,
+            1.6080316259413645e-05
+          ],
+          "pad_normal_force_N": [
+            5.935874461335591,
+            5.942009193899589
+          ],
+          "jaw_actuator_force": [
+            5.936237088345663,
+            5.934473070017361
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.6939200802680974e-08,
+            2.3780304034314373e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2659999999999748,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 6,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.6939200802680974e-08,
+          2.3780304034314373e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 16,
+      "reward": 0.00017337514578514554,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.736872756232681e-05,
+        "nut_unwrapped_rotation_rad": 0.00014290358279689386,
+        "observed_helix_residual_m": -9.734029779784223e-05,
+        "radial_offset_m": 6.152344296655871e-08,
+        "nut_tilt_rad": 1.1100324959696834e-05,
+        "nut_center_along_bolt_m": 0.01754877014541978,
+        "bolt_nut_contact_count": 33,
+        "worst_reported_sdf_depth_m": 1.4077686335620596e-07,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            0.0012082855684394378,
+            -0.002564292987624675,
+            0.19844593436484664,
+            2.5979729232469267e-05,
+            4.343920053463668e-06,
+            3.208566046571294e-05
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            0.0012082855684394378,
+            -0.002564292987624675,
+            0.19844593436484664,
+            2.5979729232469267e-05,
+            4.343920053463668e-06,
+            3.208566046571294e-05
+          ],
+          "pad_normal_force_N": [
+            5.935966476316395,
+            5.934781379706904
+          ],
+          "jaw_actuator_force": [
+            5.9355562985735375,
+            5.935093507647103
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.7136508095986395e-08,
+            1.8534189383007278e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2669999999999747,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 7,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.7136508095986395e-08,
+          1.8534189383007278e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 17,
+      "reward": 0.00010630181122368284,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.723428779829721e-05,
+        "nut_unwrapped_rotation_rad": 0.0001613957684338807,
+        "observed_helix_residual_m": -9.720217913037175e-05,
+        "radial_offset_m": 5.790959190526149e-08,
+        "nut_tilt_rad": 1.0048068563672385e-05,
+        "nut_center_along_bolt_m": 0.01754863570565575,
+        "bolt_nut_contact_count": 32,
+        "worst_reported_sdf_depth_m": 8.123740802001601e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -0.00016332913176206332,
+            -0.00042578800831547816,
+            0.19644367737041146,
+            -4.749561990537297e-06,
+            -1.5537441884140536e-05,
+            4.2546895051109206e-05
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -0.00016332913176206332,
+            -0.00042578800831547816,
+            0.19644367737041146,
+            -4.749561990537297e-06,
+            -1.5537441884140536e-05,
+            4.2546895051109206e-05
+          ],
+          "pad_normal_force_N": [
+            5.9352744235968125,
+            5.935451039722492
+          ],
+          "jaw_actuator_force": [
+            5.934970094996878,
+            5.935692473882213
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.593875775162782e-08,
+            1.0769149704154338e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2679999999999746,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 8,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.593875775162782e-08,
+          1.0769149704154338e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 18,
+      "reward": 5.772693288181571e-05,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.716056663219494e-05,
+        "nut_unwrapped_rotation_rad": 0.00017523462102930765,
+        "observed_helix_residual_m": -9.712570481202288e-05,
+        "radial_offset_m": 5.2603530460754234e-08,
+        "nut_tilt_rad": 8.939430027906762e-06,
+        "nut_center_along_bolt_m": 0.017548561984489647,
+        "bolt_nut_contact_count": 32,
+        "worst_reported_sdf_depth_m": 4.626651699297251e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -0.001202311356178043,
+            0.001696190326530941,
+            0.19725921236383634,
+            -1.4938422299482552e-05,
+            -3.378300296275717e-05,
+            5.03326636508264e-05
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -0.001202311356178043,
+            0.001696190326530941,
+            0.19725921236383634,
+            -1.4938422299482552e-05,
+            -3.378300296275717e-05,
+            5.03326636508264e-05
+          ],
+          "pad_normal_force_N": [
+            5.934748005547188,
+            5.935952160402708
+          ],
+          "jaw_actuator_force": [
+            5.934628046801777,
+            5.936071909866023
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.412787177815168e-08,
+            5.01559663755851e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2689999999999745,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 9,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.412787177815168e-08,
+          5.01559663755851e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 19,
+      "reward": 2.9216040457088894e-05,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.712248408162358e-05,
+        "nut_unwrapped_rotation_rad": 0.00018399136200208943,
+        "observed_helix_residual_m": -9.708588016318753e-05,
+        "radial_offset_m": 5.164857354687012e-08,
+        "nut_tilt_rad": 8.094197739141761e-06,
+        "nut_center_along_bolt_m": 0.017548523901939075,
+        "bolt_nut_contact_count": 28,
+        "worst_reported_sdf_depth_m": 3.048139672072688e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -0.0008978836230373877,
+            0.0006095809991309221,
+            0.1991651930899894,
+            -3.221927563142014e-07,
+            -2.9252314571080675e-06,
+            5.137739946025786e-05
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -0.0008978836230373877,
+            0.0006095809991309221,
+            0.1991651930899894,
+            -3.221927563142014e-07,
+            -2.9252314571080675e-06,
+            5.137739946025786e-05
+          ],
+          "pad_normal_force_N": [
+            5.934740338872152,
+            5.939958871844257
+          ],
+          "jaw_actuator_force": [
+            5.934914311006466,
+            5.935590746719043
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.291324326966933e-08,
+            4.6080118202077025e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.26999999999997437,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 10,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.291324326966933e-08,
+          4.6080118202077025e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 20,
+      "reward": 1.4589968620090517e-05,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.710268412084846e-05,
+        "nut_unwrapped_rotation_rad": 0.00018791195416945072,
+        "observed_helix_residual_m": -9.706530022538331e-05,
+        "radial_offset_m": 4.744048327095941e-08,
+        "nut_tilt_rad": 6.705423195433511e-06,
+        "nut_center_along_bolt_m": 0.0175485041019783,
+        "bolt_nut_contact_count": 24,
+        "worst_reported_sdf_depth_m": 2.2224380168120644e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -0.0004634172229682765,
+            -0.00025074290067381177,
+            0.19932762692951586,
+            -8.101123288763927e-07,
+            -2.354273687842968e-05,
+            2.380735909554972e-05
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -0.0004634172229682765,
+            -0.00025074290067381177,
+            0.19932762692951586,
+            -8.101123288763927e-07,
+            -2.354273687842968e-05,
+            2.380735909554972e-05
+          ],
+          "pad_normal_force_N": [
+            5.935132836760537,
+            5.9356271132382945
+          ],
+          "jaw_actuator_force": [
+            5.935151453015514,
+            5.935297549878129
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.280569861061689e-08,
+            6.420050578290724e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.27099999999997426,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 11,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.280569861061689e-08,
+          6.420050578290724e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 21,
+      "reward": 6.1499873367869285e-06,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.709343413667748e-05,
+        "nut_unwrapped_rotation_rad": 0.00018907018474756399,
+        "observed_helix_residual_m": -9.705581981856014e-05,
+        "radial_offset_m": 4.621072794655015e-08,
+        "nut_tilt_rad": 7.051083990732547e-06,
+        "nut_center_along_bolt_m": 0.01754849485199413,
+        "bolt_nut_contact_count": 17,
+        "worst_reported_sdf_depth_m": 1.885765804784529e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -0.0003705262016998334,
+            -0.0003193525884626813,
+            0.19970470307366836,
+            4.976809400289479e-06,
+            -6.062706180465813e-06,
+            1.7255096381700455e-06
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -0.0003705262016998334,
+            -0.0003193525884626813,
+            0.19970470307366836,
+            4.976809400289479e-06,
+            -6.062706180465813e-06,
+            1.7255096381700455e-06
+          ],
+          "pad_normal_force_N": [
+            5.935114654696825,
+            5.935499078217542
+          ],
+          "jaw_actuator_force": [
+            5.935163777838653,
+            5.935499256594248
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.323256529618606e-08,
+            7.344400337135244e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.27199999999997415,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 12,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.323256529618606e-08,
+          7.344400337135244e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 22,
+      "reward": 1.4295610452712279e-06,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.709008468537089e-05,
+        "nut_unwrapped_rotation_rad": 0.00018967521670365528,
+        "observed_helix_residual_m": -9.705234999997038e-05,
+        "radial_offset_m": 4.4425958530505414e-08,
+        "nut_tilt_rad": 8.059999383577401e-06,
+        "nut_center_along_bolt_m": 0.017548491502542823,
+        "bolt_nut_contact_count": 16,
+        "worst_reported_sdf_depth_m": 1.4499958986484879e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -8.116874087579773e-05,
+            5.4313174653269935e-05,
+            0.19989607724052033,
+            -5.57782293103333e-07,
+            6.477109058689013e-06,
+            2.4540517239575693e-06
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -8.116874087579773e-05,
+            5.4313174653269935e-05,
+            0.19989607724052033,
+            -5.57782293103333e-07,
+            6.477109058689013e-06,
+            2.4540517239575693e-06
+          ],
+          "pad_normal_force_N": [
+            5.935316291447629,
+            5.935412809043672
+          ],
+          "jaw_actuator_force": [
+            5.935297548618081,
+            5.935490457729578
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.387633466401814e-08,
+            8.803825650698788e-09,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.27299999999997404,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 13,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.387633466401814e-08,
+          8.803825650698788e-09,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 23,
+      "reward": -2.823653460229312e-08,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708855748103914e-05,
+        "nut_unwrapped_rotation_rad": 0.0001899875351596414,
+        "observed_helix_residual_m": -9.705076066185601e-05,
+        "radial_offset_m": 4.338642580497966e-08,
+        "nut_tilt_rad": 8.657279703096888e-06,
+        "nut_center_along_bolt_m": 0.01754848997533849,
+        "bolt_nut_contact_count": 14,
+        "worst_reported_sdf_depth_m": 1.8056765630929288e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            0.000740970862860596,
+            0.0003012925640321026,
+            0.20003304872781213,
+            -5.342077751545552e-06,
+            -1.736888674993631e-06,
+            1.2063261331729893e-05
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            0.000740970862860596,
+            0.0003012925640321026,
+            0.20003304872781213,
+            -5.342077751545552e-06,
+            -1.736888674993631e-06,
+            1.2063261331729893e-05
+          ],
+          "pad_normal_force_N": [
+            5.935510296455762,
+            5.934320926394564
+          ],
+          "jaw_actuator_force": [
+            5.93556973613687,
+            5.935248556122971
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.405977036472851e-08,
+            1.148099762959473e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.27399999999997393,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 14,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.405977036472851e-08,
+          1.148099762959473e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 24,
+      "reward": -5.7644356714917e-07,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708771553549808e-05,
+        "nut_unwrapped_rotation_rad": 0.00019018807786697067,
+        "observed_helix_residual_m": -9.7049878819611e-05,
+        "radial_offset_m": 4.258810086569271e-08,
+        "nut_tilt_rad": 8.923519044050574e-06,
+        "nut_center_along_bolt_m": 0.01754848913339295,
+        "bolt_nut_contact_count": 16,
+        "worst_reported_sdf_depth_m": 1.6958448360493288e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            0.0006818184898804425,
+            -0.0020742308630908503,
+            0.19919781940045425,
+            3.910335828320404e-05,
+            -1.806514367412896e-05,
+            6.576989357938456e-06
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            0.0006818184898804425,
+            -0.0020742308630908503,
+            0.19919781940045425,
+            3.910335828320404e-05,
+            -1.806514367412896e-05,
+            6.576989357938456e-06
+          ],
+          "pad_normal_force_N": [
+            5.953653740260287,
+            5.933599419491753
+          ],
+          "jaw_actuator_force": [
+            5.935679952291423,
+            5.935088111469739
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.400656673310382e-08,
+            1.3835343897448948e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2749999999999738,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 15,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.400656673310382e-08,
+          1.3835343897448948e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 25,
+      "reward": -4.205157353916181e-07,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708667868016732e-05,
+        "nut_unwrapped_rotation_rad": 0.00019038808466698143,
+        "observed_helix_residual_m": -9.704880217419164e-05,
+        "radial_offset_m": 4.1632841644885244e-08,
+        "nut_tilt_rad": 9.316193584618904e-06,
+        "nut_center_along_bolt_m": 0.01754848809653762,
+        "bolt_nut_contact_count": 12,
+        "worst_reported_sdf_depth_m": 1.742200603318058e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            0.00047943787543627825,
+            0.00015582923239190895,
+            0.19984432348337516,
+            -2.5088743960893396e-06,
+            1.0731971958510844e-05,
+            6.988932286924399e-07
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            0.00047943787543627825,
+            0.00015582923239190895,
+            0.19984432348337516,
+            -2.5088743960893396e-06,
+            1.0731971958510844e-05,
+            6.988932286924399e-07
+          ],
+          "pad_normal_force_N": [
+            5.9356485016443346,
+            5.935187578957641
+          ],
+          "jaw_actuator_force": [
+            5.935644869544966,
+            5.935211408876356
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.3887804836697765e-08,
+            1.4316519715497529e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2759999999999737,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 16,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.3887804836697765e-08,
+          1.4316519715497529e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 26,
+      "reward": -1.4491564940739824e-06,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708692762578491e-05,
+        "nut_unwrapped_rotation_rad": 0.00019051510056522503,
+        "observed_helix_residual_m": -9.704902585079916e-05,
+        "radial_offset_m": 4.1345604762336764e-08,
+        "nut_tilt_rad": 9.329162313994825e-06,
+        "nut_center_along_bolt_m": 0.017548488345483237,
+        "bolt_nut_contact_count": 13,
+        "worst_reported_sdf_depth_m": 1.777258293639669e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            8.569813650280422e-05,
+            0.0005628412904338803,
+            0.20026028068140844,
+            -1.059182699321963e-05,
+            3.830623683399382e-06,
+            7.120831288438042e-07
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            8.569813650280422e-05,
+            0.0005628412904338803,
+            0.20026028068140844,
+            -1.059182699321963e-05,
+            3.830623683399382e-06,
+            7.120831288438042e-07
+          ],
+          "pad_normal_force_N": [
+            5.935508096166559,
+            5.935466949716885
+          ],
+          "jaw_actuator_force": [
+            5.935510691502849,
+            5.935329108607817
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.3909135805324995e-08,
+            1.3586121358575426e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2769999999999736,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 17,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.3909135805324995e-08,
+          1.3586121358575426e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 27,
+      "reward": -1.4314928235477356e-06,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708715449181435e-05,
+        "nut_unwrapped_rotation_rad": 0.0001906276742791313,
+        "observed_helix_residual_m": -9.70492303209998e-05,
+        "radial_offset_m": 4.109303626795195e-08,
+        "nut_tilt_rad": 9.33022140416292e-06,
+        "nut_center_along_bolt_m": 0.017548488572349266,
+        "bolt_nut_contact_count": 14,
+        "worst_reported_sdf_depth_m": 1.8187626449427672e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -0.0001979295055579977,
+            0.00041727140733864056,
+            0.20016065635919686,
+            -7.775501690201585e-06,
+            3.880103054709348e-06,
+            -3.044521047133723e-06
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -0.0001979295055579977,
+            0.00041727140733864056,
+            0.20016065635919686,
+            -7.775501690201585e-06,
+            3.880103054709348e-06,
+            -3.044521047133723e-06
+          ],
+          "pad_normal_force_N": [
+            5.935343393197312,
+            5.935552732998556
+          ],
+          "jaw_actuator_force": [
+            5.935333240174657,
+            5.935453955071118
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.407624452641232e-08,
+            1.2519956631325269e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2779999999999735,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 18,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.407624452641232e-08,
+          1.2519956631325269e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 28,
+      "reward": -1.3420782283753144e-06,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708726958959982e-05,
+        "nut_unwrapped_rotation_rad": 0.0001907358714445806,
+        "observed_helix_residual_m": -9.704932389364313e-05,
+        "radial_offset_m": 4.08240747202699e-08,
+        "nut_tilt_rad": 9.351864769995034e-06,
+        "nut_center_along_bolt_m": 0.01754848868744705,
+        "bolt_nut_contact_count": 14,
+        "worst_reported_sdf_depth_m": 1.8269736394178014e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 77,
+          "wrench_world": [
+            5.4532574791960053e-05,
+            0.0001859061281179223,
+            0.20005661534774405,
+            -3.276653247401827e-06,
+            -9.367161087274359e-06,
+            9.499933299012995e-06
+          ],
+          "pad_contact_count": 77,
+          "pad_wrench_world": [
+            5.4532574791960053e-05,
+            0.0001859061281179223,
+            0.20005661534774405,
+            -3.276653247401827e-06,
+            -9.367161087274359e-06,
+            9.499933299012995e-06
+          ],
+          "pad_normal_force_N": [
+            5.93517641881816,
+            5.9352030170757155
+          ],
+          "jaw_actuator_force": [
+            5.9352486050301465,
+            5.935548491695229
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.3967871212498556e-08,
+            1.1525596101103451e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2789999999999734,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 19,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.3967871212498556e-08,
+          1.1525596101103451e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 29,
+      "reward": -1.2994549567964245e-06,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708733140829581e-05,
+        "nut_unwrapped_rotation_rad": 0.00019084210915698563,
+        "observed_helix_residual_m": -9.704936457701778e-05,
+        "radial_offset_m": 4.060321328983755e-08,
+        "nut_tilt_rad": 9.359839135945984e-06,
+        "nut_center_along_bolt_m": 0.017548488749265748,
+        "bolt_nut_contact_count": 13,
+        "worst_reported_sdf_depth_m": 1.8357888457217955e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            7.09405411544739e-05,
+            0.0002490960276965578,
+            0.2001112898799936,
+            -4.6790334888547095e-06,
+            -5.6782313842072135e-06,
+            8.820794447991212e-06
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            7.09405411544739e-05,
+            0.0002490960276965578,
+            0.2001112898799936,
+            -4.6790334888547095e-06,
+            -5.6782313842072135e-06,
+            8.820794447991212e-06
+          ],
+          "pad_normal_force_N": [
+            5.935226807336361,
+            5.934061964878957
+          ],
+          "jaw_actuator_force": [
+            5.935253012242001,
+            5.935523932770288
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.3758475356213095e-08,
+            1.1409838153279839e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.27999999999997327,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 20,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.3758475356213095e-08,
+          1.1409838153279839e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 30,
+      "reward": -1.2763134375400046e-06,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708736430009274e-05,
+        "nut_unwrapped_rotation_rad": 0.00019095416245651364,
+        "observed_helix_residual_m": -9.704937517651908e-05,
+        "radial_offset_m": 4.038099987706375e-08,
+        "nut_tilt_rad": 9.365542808922318e-06,
+        "nut_center_along_bolt_m": 0.017548488782157545,
+        "bolt_nut_contact_count": 13,
+        "worst_reported_sdf_depth_m": 1.8402765602370257e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -0.0002615683115523293,
+            0.00022913421098592988,
+            0.20010402967763974,
+            -4.377820855324094e-06,
+            3.922491596853239e-06,
+            -5.272568871517668e-06
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -0.0002615683115523293,
+            0.00022913421098592988,
+            0.20010402967763974,
+            -4.377820855324094e-06,
+            3.922491596853239e-06,
+            -5.272568871517668e-06
+          ],
+          "pad_normal_force_N": [
+            5.93531057711199,
+            5.935592467137088
+          ],
+          "jaw_actuator_force": [
+            5.93529557635361,
+            5.9353955613933
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.3522985408918205e-08,
+            1.2435296405446938e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.28099999999997316,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 21,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.3522985408918205e-08,
+          1.2435296405446938e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 31,
+      "reward": -1.2750205495211378e-06,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708739557577964e-05,
+        "nut_unwrapped_rotation_rad": 0.00019104428677030327,
+        "observed_helix_residual_m": -9.704938852254344e-05,
+        "radial_offset_m": 4.0173575999651635e-08,
+        "nut_tilt_rad": 9.378810269073377e-06,
+        "nut_center_along_bolt_m": 0.01754848881343323,
+        "bolt_nut_contact_count": 13,
+        "worst_reported_sdf_depth_m": 1.8405719636422383e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            9.363805398235336e-05,
+            4.519106076162087e-05,
+            0.20000389588157239,
+            -7.496676217589821e-07,
+            2.676545235066256e-06,
+            -1.443118947079135e-07
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            9.363805398235336e-05,
+            4.519106076162087e-05,
+            0.20000389588157239,
+            -7.496676217589821e-07,
+            2.676545235066256e-06,
+            -1.443118947079135e-07
+          ],
+          "pad_normal_force_N": [
+            5.935414686986126,
+            5.935319841063428
+          ],
+          "jaw_actuator_force": [
+            5.935421310939155,
+            5.9353796190841805
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.317622912353305e-08,
+            1.3152123043750318e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.28199999999997305,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 22,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.317622912353305e-08,
+          1.3152123043750318e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 32,
+      "reward": -1.261375425601479e-06,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708740979506164e-05,
+        "nut_unwrapped_rotation_rad": 0.00019114028977718078,
+        "observed_helix_residual_m": -9.704938364263407e-05,
+        "radial_offset_m": 3.996759646869011e-08,
+        "nut_tilt_rad": 9.376821346791688e-06,
+        "nut_center_along_bolt_m": 0.017548488827652513,
+        "bolt_nut_contact_count": 13,
+        "worst_reported_sdf_depth_m": 1.8473008098417614e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            0.00018297839805481164,
+            0.00012017569903682737,
+            0.20005411027333392,
+            -2.218410324912287e-06,
+            3.95692177785229e-06,
+            -1.1608203701371608e-06
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            0.00018297839805481164,
+            0.00012017569903682737,
+            0.20005411027333392,
+            -2.218410324912287e-06,
+            3.95692177785229e-06,
+            -1.1608203701371608e-06
+          ],
+          "pad_normal_force_N": [
+            5.935501672872862,
+            5.935323971453056
+          ],
+          "jaw_actuator_force": [
+            5.935505615064983,
+            5.935310266066786
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.2726408624313173e-08,
+            1.3932432693869803e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.28299999999997294,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 23,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.2726408624313173e-08,
+          1.3932432693869803e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 33,
+      "reward": -1.2466048630506424e-06,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708740555114045e-05,
+        "nut_unwrapped_rotation_rad": 0.00019124595944486344,
+        "observed_helix_residual_m": -9.704935837640045e-05,
+        "radial_offset_m": 3.976437580025362e-08,
+        "nut_tilt_rad": 9.375187273551829e-06,
+        "nut_center_along_bolt_m": 0.017548488823408592,
+        "bolt_nut_contact_count": 13,
+        "worst_reported_sdf_depth_m": 1.85057435112317e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 77,
+          "wrench_world": [
+            0.0005125963996293892,
+            0.00011980024052399285,
+            0.20003182906234723,
+            -2.0453167569844716e-06,
+            -4.043218336038609e-06,
+            8.340846208745021e-06
+          ],
+          "pad_contact_count": 77,
+          "pad_wrench_world": [
+            0.0005125963996293892,
+            0.00011980024052399285,
+            0.20003182906234723,
+            -2.0453167569844716e-06,
+            -4.043218336038609e-06,
+            8.340846208745021e-06
+          ],
+          "pad_normal_force_N": [
+            5.935412176024387,
+            5.934972629322671
+          ],
+          "jaw_actuator_force": [
+            5.93548675375132,
+            5.935251974402256
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.2383263344551464e-08,
+            1.4431879533441383e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.28399999999997283,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 24,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.2383263344551464e-08,
+          1.4431879533441383e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 34,
+      "reward": -1.2288353216567674e-06,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708737909529253e-05,
+        "nut_unwrapped_rotation_rad": 0.00019134339677906453,
+        "observed_helix_residual_m": -9.70493125360108e-05,
+        "radial_offset_m": 3.956570577822039e-08,
+        "nut_tilt_rad": 9.3724276482254e-06,
+        "nut_center_along_bolt_m": 0.017548488796952744,
+        "bolt_nut_contact_count": 13,
+        "worst_reported_sdf_depth_m": 1.8494814497047028e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            0.00032161896224869313,
+            0.00014015434165596695,
+            0.20002909352388554,
+            -2.451221335236888e-06,
+            -4.323367144101287e-06,
+            7.040509733259874e-06
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            0.00032161896224869313,
+            0.00014015434165596695,
+            0.20002909352388554,
+            -2.451221335236888e-06,
+            -4.323367144101287e-06,
+            7.040509733259874e-06
+          ],
+          "pad_normal_force_N": [
+            5.93531740573509,
+            5.933945568502456
+          ],
+          "jaw_actuator_force": [
+            5.935380614033697,
+            5.9352737035390675
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.208167934432017e-08,
+            1.426754906851558e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2849999999999727,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 25,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.208167934432017e-08,
+          1.426754906851558e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 35,
+      "reward": -1.2253738127994399e-06,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708734831255852e-05,
+        "nut_unwrapped_rotation_rad": 0.00019143798907172993,
+        "observed_helix_residual_m": -9.704926293473811e-05,
+        "radial_offset_m": 3.936965328149963e-08,
+        "nut_tilt_rad": 9.361511466642602e-06,
+        "nut_center_along_bolt_m": 0.01754848876617001,
+        "bolt_nut_contact_count": 16,
+        "worst_reported_sdf_depth_m": 1.8520661819923604e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -0.00018553245950311825,
+            0.00018806864906519694,
+            0.20007593371223517,
+            -3.5295270029256437e-06,
+            3.408295625848283e-06,
+            -4.104994019144665e-06
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -0.00018553245950311825,
+            0.00018806864906519694,
+            0.20007593371223517,
+            -3.5295270029256437e-06,
+            3.408295625848283e-06,
+            -4.104994019144665e-06
+          ],
+          "pad_normal_force_N": [
+            5.935285271526297,
+            5.935485284597776
+          ],
+          "jaw_actuator_force": [
+            5.935271961355902,
+            5.9353439750606185
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.173498139489263e-08,
+            1.3855815472947099e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2859999999999726,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 26,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.173498139489263e-08,
+          1.3855815472947099e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 36,
+      "reward": -1.1544471676867832e-06,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708722887151813e-05,
+        "nut_unwrapped_rotation_rad": 0.00019152278016809632,
+        "observed_helix_residual_m": -9.704912662504507e-05,
+        "radial_offset_m": 3.916578471737453e-08,
+        "nut_tilt_rad": 9.359352799311713e-06,
+        "nut_center_along_bolt_m": 0.01754848864672897,
+        "bolt_nut_contact_count": 17,
+        "worst_reported_sdf_depth_m": 1.8315937771514755e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -0.00018378259979351386,
+            0.00017766351832015546,
+            0.20005287188371731,
+            -3.2500930439776648e-06,
+            1.1164740834959924e-07,
+            2.2892177529683713e-09
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -0.00018378259979351386,
+            0.00017766351832015546,
+            0.20005287188371731,
+            -3.2500930439776648e-06,
+            1.1164740834959924e-07,
+            2.2892177529683713e-09
+          ],
+          "pad_normal_force_N": [
+            5.935242009584268,
+            5.935434862757709
+          ],
+          "jaw_actuator_force": [
+            5.935244218857413,
+            5.93546968725569
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.14319139367792e-08,
+            1.306157769063402e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2869999999999725,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 27,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.14319139367792e-08,
+          1.306157769063402e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 37,
+      "reward": -1.1318201368822048e-06,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708708114668924e-05,
+        "nut_unwrapped_rotation_rad": 0.00019161138865086969,
+        "observed_helix_residual_m": -9.704896127211862e-05,
+        "radial_offset_m": 3.898858129814591e-08,
+        "nut_tilt_rad": 9.35945955829867e-06,
+        "nut_center_along_bolt_m": 0.01754848849900414,
+        "bolt_nut_contact_count": 17,
+        "worst_reported_sdf_depth_m": 1.8075833756284268e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -0.00014669864668456767,
+            0.00013128156229130322,
+            0.20006515508681955,
+            -2.397154129858314e-06,
+            -7.441029125504484e-08,
+            -3.2441458771003415e-07
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -0.00014669864668456767,
+            0.00013128156229130322,
+            0.20006515508681955,
+            -2.397154129858314e-06,
+            -7.441029125504484e-08,
+            -3.2441458771003415e-07
+          ],
+          "pad_normal_force_N": [
+            5.9352970640107685,
+            5.935451991349861
+          ],
+          "jaw_actuator_force": [
+            5.935303840056541,
+            5.935455712168164
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.087793369688348e-08,
+            1.2961363412894097e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2879999999999724,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 28,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.087793369688348e-08,
+          1.2961363412894097e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 38,
+      "reward": -1.0257805153542069e-06,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708680087233343e-05,
+        "nut_unwrapped_rotation_rad": 0.00019171080399660312,
+        "observed_helix_residual_m": -9.70486612197082e-05,
+        "radial_offset_m": 3.8807834546391195e-08,
+        "nut_tilt_rad": 9.368553326709964e-06,
+        "nut_center_along_bolt_m": 0.017548488218729785,
+        "bolt_nut_contact_count": 16,
+        "worst_reported_sdf_depth_m": 1.755408829920653e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            -4.6581388456562456e-05,
+            3.638734158171395e-05,
+            0.20004520286456237,
+            -6.586497924455124e-07,
+            3.1695691893366914e-06,
+            -9.464307087124978e-07
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            -4.6581388456562456e-05,
+            3.638734158171395e-05,
+            0.20004520286456237,
+            -6.586497924455124e-07,
+            3.1695691893366914e-06,
+            -9.464307087124978e-07
+          ],
+          "pad_normal_force_N": [
+            5.93538049689773,
+            5.935423696734395
+          ],
+          "jaw_actuator_force": [
+            5.935376653860644,
+            5.935383603285558
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -3.025726174132466e-08,
+            1.3517139015734037e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.2889999999999723,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 29,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -3.025726174132466e-08,
+          1.3517139015734037e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    },
+    {
+      "control": 39,
+      "reward": -9.014396333191502e-07,
+      "info": {
+        "starts_preengaged": true,
+        "axial_advance_m": -9.708636517187508e-05,
+        "nut_unwrapped_rotation_rad": 0.00019181051387473502,
+        "observed_helix_residual_m": -9.704820568259988e-05,
+        "radial_offset_m": 3.861635177999411e-08,
+        "nut_tilt_rad": 9.413029440044718e-06,
+        "nut_center_along_bolt_m": 0.017548487783029327,
+        "bolt_nut_contact_count": 17,
+        "worst_reported_sdf_depth_m": 1.650486084421007e-08,
+        "episode_peak_reported_sdf_depth_m": 1.983436646549583e-06,
+        "reported_sdf_depth_note": "Native contact dist proxy; not a geometric overlap certificate",
+        "thread_contact_gap_seconds": 0.0,
+        "pad_contact": {
+          "contact_count": 78,
+          "wrench_world": [
+            0.0001047015892737535,
+            -2.3628782893301008e-05,
+            0.19998979145310145,
+            4.013936146932465e-07,
+            2.579058988653321e-06,
+            -2.4037538291939425e-07
+          ],
+          "pad_contact_count": 78,
+          "pad_wrench_world": [
+            0.0001047015892737535,
+            -2.3628782893301008e-05,
+            0.19998979145310145,
+            4.013936146932465e-07,
+            2.579058988653321e-06,
+            -2.4037538291939425e-07
+          ],
+          "pad_normal_force_N": [
+            5.935425694907328,
+            5.935334317659535
+          ],
+          "jaw_actuator_force": [
+            5.935434694049626,
+            5.935338639007149
+          ],
+          "hand_wrench_world": [
+            0.0,
+            0.0,
+            0.9848000000000001,
+            -2.970685030004893e-08,
+            1.4195153460235671e-08,
+            0.0
+          ]
+        },
+        "solver_warning_count": 0,
+        "elapsed_seconds": 0.28999999999997217,
+        "control_dt": 0.001,
+        "model_timestep_s": 2.5e-05,
+        "observation_fields": {
+          "nut_position_in_hand": 3,
+          "nut_quaternion_in_hand_wxyz": 4,
+          "nut_relative_velocity_in_hand_linear_angular": 6,
+          "bolt_position_in_hand": 3,
+          "bolt_quaternion_in_hand_wxyz": 4,
+          "jaw_positions": 2,
+          "jaw_velocities": 2,
+          "pad_wrench_on_nut_in_hand_force_torque": 6,
+          "pad_normal_forces": 2,
+          "hand_quaternion_world_wxyz": 4,
+          "hand_velocity_world_linear_angular": 6
+        },
+        "physics_scope": "Rigid-body SDF thread contact; pre-engaged nut; proxy frictional pads; no thread-start validation",
+        "runtime": {
+          "mujoco_version": "3.15.0",
+          "libraries": [
+            {
+              "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+              "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+              "sdf_minimum_search_step_m": 1e-07,
+              "sdf_initial_search_step_m": 0.002
+            }
+          ],
+          "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+        },
+        "success": false,
+        "failure": false,
+        "failure_reasons": [],
+        "recent_valid_contact_steps": 30,
+        "target_advance_m": 0.0025,
+        "action_world_wrench": [
+          0.0,
+          0.0,
+          0.9848000000000001,
+          -2.970685030004893e-08,
+          1.4195153460235671e-08,
+          0.0
+        ],
+        "commanded_aperture_m": 0.0124
+      }
+    }
+  ],
+  "failure": false,
+  "success": false,
+  "failure_reasons": []
+}

@@ -1,0 +1,9 @@
+# MuJoCo 3.15 Python binding build toolchain, separate from runtime core lock.
+# Versions are the actual toolchain used for the matched GCC/libstdc++ build.
+setuptools==84.0.0
+wheel==0.48.0
+build==1.6.1
+cmake==4.4.4
+ninja==1.13.2
+pybind11==3.1.0
+websockets==17.2

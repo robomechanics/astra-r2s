@@ -1,0 +1,112 @@
+{
+  "experiment": "aligned independent slide/yaw, torque-only yaw-speed servo",
+  "note": "Short steady window is a load diagnostic, not a several-revolution pitch certification.",
+  "config": {
+    "timestep": 2.5e-05,
+    "friction": 0.0,
+    "contact_time_constant": 0.0005,
+    "contact_margin": 0.0,
+    "contact_impratio": 1.0,
+    "sdf_initpoints": 40,
+    "sdf_iterations": 30,
+    "bolt_length": 0.03,
+    "pitch": 0.00125,
+    "male_pitch_diameter": 0.0071,
+    "female_pitch_diameter": 0.007268,
+    "nut_height": 0.0065,
+    "nut_across_flats": 0.013,
+    "nut_mass": 0.005195807,
+    "nut_transverse_inertia": 9.70861e-08,
+    "nut_axial_inertia": 1.58804e-07,
+    "initial_z": 0.0175,
+    "gravity": 0,
+    "with_gripper": false,
+    "with_bolt": true,
+    "guided": true
+  },
+  "engine": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/research/mujoco-3.15.0-thread-build/lib/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+  },
+  "mode": "raise",
+  "friction_impedance_ratio": 1.0,
+  "duration_s": 0.5,
+  "preload_seconds": 0.1,
+  "ramp_seconds": 0.1,
+  "load_ramp_seconds": 0.05,
+  "steady_statistics_physics_steps": 6999,
+  "yaw_velocity_target_rads": 0.2,
+  "axial_load_N": 1.0,
+  "controller": {
+    "kp_Nms": 0.001,
+    "ki_Nm": 0.3,
+    "torque_limit_Nm": 0.03,
+    "saturation_fraction": 0.0
+  },
+  "analytical_contact_pitch_diameter_m": 0.007184,
+  "analytical_flank_contact_radius_range_m": [
+    0.003363367061317363,
+    0.003955949408023956
+  ],
+  "analytical_torque_geometry_range_Nm": [
+    0.00019894367886486917,
+    0.0001989436788648692
+  ],
+  "predicted_torque_Nm": 0.00019894367886486917,
+  "measured_steady_torque_Nm": 0.0001989862019113556,
+  "torque_error_Nm": 4.252304648642304e-08,
+  "torque_tolerance_Nm": 9.94718394324346e-06,
+  "steady_yaw_velocity_rads": 0.20000000788290917,
+  "steady_yaw_speed_std_rads": 4.7830137937242514e-06,
+  "steady_angular_travel_rad": 0.0346000024960728,
+  "measured_lead_mm": 1.2501900648751108,
+  "lead_error_percent": 0.015205190008860114,
+  "steady_contact_force_z_N": 0.9999999746283147,
+  "steady_contact_count": 18.418916988141163,
+  "steady_contact_torque_z_Nm": -0.0001989861979516511,
+  "steady_contact_diagnostics": {
+    "normal_force_weighted_cone_fraction": 1.0,
+    "normal_force_weighted_normal_axial_component": 0.8650695502950664,
+    "normal_force_weighted_tangential_slip_ms": 0.0007357282341632606,
+    "normal_force_weighted_normal_speed_ms": 1.0983312021449655e-06,
+    "mean_contact_friction_power_W": -8.50484504440535e-09,
+    "friction_power_note": "First power/slip values pair the impulse with pre-step velocity; compare post-step values for the semi-implicit solve.",
+    "normal_force_weighted_contact_radius_m": 0.003673244084679242,
+    "mean_post_step_contact_friction_power_W": -8.504845912910163e-09,
+    "normal_force_weighted_post_step_tangential_slip_ms": 0.0007357282278144904,
+    "normal_force_weighted_post_step_normal_speed_ms": 1.0982248080742174e-06
+  },
+  "axial_force_balance_error_N": -2.5371685308250846e-08,
+  "torque_balance_error_Nm": 3.959704498969138e-12,
+  "worst_penetration_um": 2.2504390816462285,
+  "max_contact_normal_N": 1.456293437817778,
+  "motor_work_J": 1.3857293467132515e-05,
+  "axial_load_work_J": -1.1163404607083187e-05,
+  "final_kinetic_energy_J": 3.1803644448116777e-09,
+  "net_external_work_minus_kinetic_J": 2.6907084956045168e-06,
+  "energy_note": "Contact compliance stores energy; residual is not a measured friction dissipation.",
+  "checks": {
+    "finite": true,
+    "no_solver_warnings": true,
+    "yaw_speed_within_5_percent": true,
+    "yaw_speed_std_below_10_percent": true,
+    "sufficient_steady_angular_travel": true,
+    "contact_lead_within_2_percent": true,
+    "torque_matches_theory": true,
+    "torque_within_fixed_geometry_bounds": true,
+    "force_balance_within_2_percent": true,
+    "torque_balance": true,
+    "penetration_below_10_um": true
+  },
+  "accepted": true,
+  "warnings": {},
+  "wall_seconds": 52.17072320800071
+}

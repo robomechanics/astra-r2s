@@ -1,0 +1,38 @@
+{
+  "reference_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af",
+  "optimized_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a",
+  "mujoco_version": "3.15.0",
+  "pinned_cpu": 4,
+  "engine": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "duration_s": 0.2,
+  "physics_steps": 4000,
+  "state_columns": "time, contact_count, qpos, qvel, qacc, qfrc_constraint, energy",
+  "state_bytes_equal": true,
+  "contact_bytes_equal": true,
+  "max_state_abs_error": 0.0,
+  "state_sha256": {
+    "reference": "2687a0a3e3cdd2f09ae3096e2b10298268ac5ed8eef054f8d63b4b9704063acd",
+    "optimized": "2687a0a3e3cdd2f09ae3096e2b10298268ac5ed8eef054f8d63b4b9704063acd"
+  },
+  "contact_sha256": {
+    "reference": "9278e32b33200826175ea9e6499f1ce0a1686ddb6719a193763a160ad4732821",
+    "optimized": "9278e32b33200826175ea9e6499f1ce0a1686ddb6719a193763a160ad4732821"
+  },
+  "wall_seconds": {
+    "reference": 7.3892778330009605,
+    "optimized": 7.451546119000341
+  },
+  "finite": true,
+  "passed": true
+}

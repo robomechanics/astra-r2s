@@ -3,5 +3,6 @@ __pycache__/
 *.egg-info/
 MUJOCO_LOG.TXT
 .venv/
+*.so
 outputs/*
 !outputs/.gitkeep

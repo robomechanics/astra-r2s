@@ -5,19 +5,24 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "yam-screw-twin"
 version = "0.1.0"
-description = "Video-informed dual-YAM screwdriving scene and demonstrator"
+description = "M8 contact-mechanics proof of concept and video-informed YAM reconstruction"
 requires-python = ">=3.10"
-dependencies = ["mujoco>=3.11,<4", "numpy>=2,<3", "scipy>=1.15,<2", "imageio[ffmpeg]>=2.36,<3", "Pillow>=11,<13"]
+dependencies = ["mujoco==3.15.0", "numpy>=2,<3", "scipy>=1.15,<2", "imageio[ffmpeg]>=2.36,<3", "Pillow>=11,<13", "gymnasium>=1.2,<2"]
 
 [project.optional-dependencies]
 test = ["pytest>=8"]
+physics-build = ["cmake==3.31.6", "ninja==1.13.0"]
 mjlab = ["mjlab @ git+https://github.com/mujocolab/mjlab@033ae22a2c7a30a25a6fa77b16c113ed88dd1b55"]
 
 [project.scripts]
 yam-twin = "yam_twin.demo:main"
+m8-benchmark = "thread_lab.benchmark:main"
 
 [tool.setuptools]
-packages = ["yam_twin"]
+packages = ["yam_twin", "thread_lab"]
+
+[tool.setuptools.package-data]
+thread_lab = ["plugins/*.cc"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

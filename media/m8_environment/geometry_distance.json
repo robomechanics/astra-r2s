@@ -1,0 +1,168 @@
+{
+  "max_error_um": 0.0008271965255916012,
+  "max_relative_error": 1.141826812263314e-05,
+  "probes": [
+    {
+      "phase_fraction": 0.0,
+      "radial_offset_um": -100.0,
+      "approx_um": 99.99999999999983,
+      "closest_3d_um": 99.99999999999983,
+      "absolute_error_um": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "phase_fraction": 0.0,
+      "radial_offset_um": -10.0,
+      "approx_um": 9.999999999999593,
+      "closest_3d_um": 9.999999999999593,
+      "absolute_error_um": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "phase_fraction": 0.0,
+      "radial_offset_um": 10.0,
+      "approx_um": 9.999999999999593,
+      "closest_3d_um": 9.999999999999593,
+      "absolute_error_um": 0.0,
+      "relative_error": 0.0
+    },
+    {
+      "phase_fraction": 0.0,
+      "radial_offset_um": 100.0,
+      "approx_um": 100.00000000000026,
+      "closest_3d_um": 100.00000000000027,
+      "absolute_error_um": 1.3552527156068805e-14,
+      "relative_error": 1.3552527156068768e-16
+    },
+    {
+      "phase_fraction": 0.1,
+      "radial_offset_um": -100.0,
+      "approx_um": 49.94799979349725,
+      "closest_3d_um": 49.94834068585943,
+      "absolute_error_um": 0.00034089236217638066,
+      "relative_error": 6.8248986351790584e-06
+    },
+    {
+      "phase_fraction": 0.1,
+      "radial_offset_um": -10.0,
+      "approx_um": 4.99503899262318,
+      "closest_3d_um": 4.995042188585711,
+      "absolute_error_um": 3.1959625308090704e-06,
+      "relative_error": 6.39826934417539e-07
+    },
+    {
+      "phase_fraction": 0.1,
+      "radial_offset_um": 10.0,
+      "approx_um": 4.9950898678481686,
+      "closest_3d_um": 4.995086716827023,
+      "absolute_error_um": 3.1510211454316623e-06,
+      "relative_error": 6.308241125858276e-07
+    },
+    {
+      "phase_fraction": 0.1,
+      "radial_offset_um": 100.0,
+      "approx_um": 49.95309400224666,
+      "closest_3d_um": 49.95279809023751,
+      "absolute_error_um": 0.00029591200915665434,
+      "relative_error": 5.923832507282224e-06
+    },
+    {
+      "phase_fraction": 0.25,
+      "radial_offset_um": -100.0,
+      "approx_um": 49.93776825557343,
+      "closest_3d_um": 49.938214032064906,
+      "absolute_error_um": 0.0004457764914782259,
+      "relative_error": 8.926560553246789e-06
+    },
+    {
+      "phase_fraction": 0.25,
+      "radial_offset_um": -10.0,
+      "approx_um": 4.9940886819050245,
+      "closest_3d_um": 4.994092836398277,
+      "absolute_error_um": 4.154493253153465e-06,
+      "relative_error": 8.318814626100686e-07
+    },
+    {
+      "phase_fraction": 0.25,
+      "radial_offset_um": 10.0,
+      "approx_um": 4.994154798541239,
+      "closest_3d_um": 4.994150707698347,
+      "absolute_error_um": 4.090842891181273e-06,
+      "relative_error": 8.191268407009323e-07
+    },
+    {
+      "phase_fraction": 0.25,
+      "radial_offset_um": 100.0,
+      "approx_um": 49.94439026417316,
+      "closest_3d_um": 49.94400824922845,
+      "absolute_error_um": 0.0003820149447087708,
+      "relative_error": 7.648864360314379e-06
+    },
+    {
+      "phase_fraction": 0.4,
+      "radial_offset_um": -100.0,
+      "approx_um": 81.40513671450152,
+      "closest_3d_um": 81.40596391102711,
+      "absolute_error_um": 0.0008271965255916012,
+      "relative_error": 1.0161374988393823e-05
+    },
+    {
+      "phase_fraction": 0.4,
+      "radial_offset_um": -10.0,
+      "approx_um": 7.332804699966359,
+      "closest_3d_um": 7.332815103013358,
+      "absolute_error_um": 1.0403046999043358e-05,
+      "relative_error": 1.4186975742465283e-06
+    },
+    {
+      "phase_fraction": 0.4,
+      "radial_offset_um": 10.0,
+      "approx_um": 7.065715823878856,
+      "closest_3d_um": 7.065705464666782,
+      "absolute_error_um": 1.035921207332319e-05,
+      "relative_error": 1.4661256579581654e-06
+    },
+    {
+      "phase_fraction": 0.4,
+      "radial_offset_um": 100.0,
+      "approx_um": 57.04085768092377,
+      "closest_3d_um": 57.04020638055355,
+      "absolute_error_um": 0.0006513003702234899,
+      "relative_error": 1.141826812263314e-05
+    },
+    {
+      "phase_fraction": 0.5,
+      "radial_offset_um": -100.0,
+      "approx_um": 99.99999999999996,
+      "closest_3d_um": 99.99999999999983,
+      "absolute_error_um": 1.3552527156068805e-13,
+      "relative_error": 1.355252715606883e-15
+    },
+    {
+      "phase_fraction": 0.5,
+      "radial_offset_um": -10.0,
+      "approx_um": 10.000000000000162,
+      "closest_3d_um": 10.000000000000027,
+      "absolute_error_um": 1.3552527156068805e-13,
+      "relative_error": 1.3552527156068769e-14
+    },
+    {
+      "phase_fraction": 0.5,
+      "radial_offset_um": 10.0,
+      "approx_um": 9.99999999999989,
+      "closest_3d_um": 10.000000000000027,
+      "absolute_error_um": 1.3552527156068805e-13,
+      "relative_error": 1.3552527156068769e-14
+    },
+    {
+      "phase_fraction": 0.5,
+      "radial_offset_um": 100.0,
+      "approx_um": 99.99999999999969,
+      "closest_3d_um": 99.99999999999983,
+      "absolute_error_um": 1.3552527156068805e-13,
+      "relative_error": 1.355252715606883e-15
+    }
+  ],
+  "method": "Independent 3D Euclidean closest-surface optimization, nine bounded starts per probe; signed-field constructive caps are excluded.",
+  "plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+}

@@ -1,0 +1,25 @@
+{
+  "reference_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af",
+  "optimized_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a",
+  "mujoco_version": "3.15.0",
+  "pinned_cpu": 4,
+  "baseline": "outputs/m8/acceptance/nominal",
+  "baseline_fingerprint_verified": true,
+  "duration_s": 0.6,
+  "trace_shape": [
+    600,
+    18
+  ],
+  "trace_bytes_equal": true,
+  "max_abs_error": 0.0,
+  "trace_sha256": {
+    "reference": "69941c25ae2733d95e2d6d26dbe5f16c7961e9e1863ee173a25b495be719dd99",
+    "optimized": "69941c25ae2733d95e2d6d26dbe5f16c7961e9e1863ee173a25b495be719dd99"
+  },
+  "wall_seconds": {
+    "reference_historical": 36.2196447869992,
+    "optimized": 22.14267429100073
+  },
+  "timing_note": "The historical and current wall times were not measured concurrently; not a throughput comparison.",
+  "passed": true
+}

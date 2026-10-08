@@ -1,0 +1,310 @@
+{
+  "reference_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af",
+  "optimized_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a",
+  "mujoco_version": "3.15.0",
+  "pinned_cpu": 4,
+  "points": 500000,
+  "gradient_step_m": 1e-08,
+  "populations": {
+    "uniform_volume": {
+      "points": 100000,
+      "params": [
+        0.008,
+        0.00125,
+        0.0065,
+        0.007268,
+        0.013,
+        0.00036,
+        1.0,
+        0.0
+      ],
+      "distance": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      },
+      "gradient": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      }
+    },
+    "axis": {
+      "points": 20000,
+      "params": [
+        0.008,
+        0.00125,
+        0.0065,
+        0.007268,
+        0.013,
+        0.00036,
+        1.0,
+        0.0
+      ],
+      "distance": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      },
+      "gradient": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      }
+    },
+    "feature_limits": {
+      "points": 30000,
+      "params": [
+        0.008,
+        0.00125,
+        0.0065,
+        0.007268,
+        0.013,
+        0.00036,
+        1.0,
+        0.0
+      ],
+      "distance": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      },
+      "gradient": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      }
+    },
+    "outer_gripper": {
+      "points": 100000,
+      "params": [
+        0.008,
+        0.00125,
+        0.0065,
+        0.007268,
+        0.013,
+        0.00036,
+        1.0,
+        0.0
+      ],
+      "distance": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      },
+      "gradient": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      }
+    },
+    "bound_equality_end": {
+      "points": 20000,
+      "params": [
+        0.008,
+        0.00125,
+        0.0065,
+        0.007268,
+        0.013,
+        0.00036,
+        1.0,
+        0.0
+      ],
+      "distance": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      },
+      "gradient": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      }
+    },
+    "bound_equality_end_jitter": {
+      "points": 20000,
+      "params": [
+        0.008,
+        0.00125,
+        0.0065,
+        0.007268,
+        0.013,
+        0.00036,
+        1.0,
+        0.0
+      ],
+      "distance": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      },
+      "gradient": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      }
+    },
+    "parameter_variant_0": {
+      "points": 30000,
+      "params": [
+        0.008,
+        0.0012588693221689791,
+        0.0043815467606958865,
+        0.007331983811537312,
+        0.013390581939502086,
+        0.0005698770097417264,
+        1.0,
+        -0.00043072787112066724
+      ],
+      "distance": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      },
+      "gradient": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      }
+    },
+    "parameter_variant_1": {
+      "points": 30000,
+      "params": [
+        0.008,
+        0.001317950519847201,
+        0.006771320902913188,
+        0.0074108191102285085,
+        0.011268752422589541,
+        0.0003221866552936877,
+        1.0,
+        0.0016781751738308404
+      ],
+      "distance": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      },
+      "gradient": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      }
+    },
+    "parameter_variant_2": {
+      "points": 30000,
+      "params": [
+        0.008,
+        0.0017910905304181928,
+        0.009177967178864772,
+        0.006856514647300764,
+        0.01478535319048728,
+        0.0008749472672901676,
+        1.0,
+        0.0011801290284516935
+      ],
+      "distance": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      },
+      "gradient": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      }
+    },
+    "parameter_variant_3": {
+      "points": 30000,
+      "params": [
+        0.008,
+        0.0017797867886861557,
+        0.0060337075547556625,
+        0.007192308274440719,
+        0.014872364400164238,
+        0.000328303928942982,
+        1.0,
+        -0.0012606111972861362
+      ],
+      "distance": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      },
+      "gradient": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      }
+    },
+    "parameter_variant_4": {
+      "points": 30000,
+      "params": [
+        0.008,
+        0.0018849507319150696,
+        0.0047641890237847245,
+        0.00744538130586643,
+        0.012421716906297248,
+        0.0002750615216603649,
+        1.0,
+        0.0008332529745160382
+      ],
+      "distance": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      },
+      "gradient": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      }
+    },
+    "parameter_variant_5": {
+      "points": 30000,
+      "params": [
+        0.008,
+        0.0019134600926820583,
+        0.00709887954544409,
+        0.007452250371928702,
+        0.011929041988370886,
+        0.0008649403101755418,
+        1.0,
+        0.0007738662264774911
+      ],
+      "distance": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      },
+      "gradient": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      }
+    },
+    "male_control": {
+      "points": 30000,
+      "params": [
+        0.008,
+        0.00125,
+        0.03,
+        0.0071,
+        0.013,
+        0.000956,
+        0.0,
+        0.0
+      ],
+      "distance": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      },
+      "gradient": {
+        "bitwise_equal": true,
+        "finite": true,
+        "max_abs_error": 0.0
+      }
+    }
+  },
+  "passed": true
+}

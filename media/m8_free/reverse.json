@@ -1,0 +1,58 @@
+{
+  "config": {
+    "timestep": 5e-05,
+    "friction": 0.15,
+    "contact_time_constant": 0.0005,
+    "contact_margin": 0.0,
+    "contact_impratio": 1.0,
+    "sdf_initpoints": 40,
+    "sdf_iterations": 30,
+    "bolt_length": 0.03,
+    "pitch": 0.00125,
+    "male_pitch_diameter": 0.0071,
+    "female_pitch_diameter": 0.007268,
+    "nut_height": 0.0065,
+    "nut_across_flats": 0.013,
+    "nut_mass": 0.005195807,
+    "nut_transverse_inertia": 9.70861e-08,
+    "nut_axial_inertia": 1.58804e-07,
+    "initial_z": 0.0175,
+    "gravity": -9.81,
+    "with_gripper": false,
+    "with_bolt": true,
+    "guided": false
+  },
+  "engine": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "model_xml_sha256": "1ff6f4233761e854c3b07c8f1cb2f214ab0ac2fcc6b9e2f5664e9cca24707410",
+  "duration_s": 0.6,
+  "applied_torque_Nm": 0.0001,
+  "axial_force_N": 0.0,
+  "angular_drag_Nms": 1e-05,
+  "wall_seconds": 23.110793674999513,
+  "turns": 0.5343238553053211,
+  "axial_travel_mm": 0.6225317584139106,
+  "fitted_lead_mm": 1.2535393345560497,
+  "lead_error_percent": 0.2831467644839769,
+  "max_helix_residual_mm": 0.05463304199767499,
+  "worst_penetration_um": 3.0348122677197216,
+  "max_contact_normal_N": 0.22499849084651133,
+  "worst_reported_sdf_depth_um": 3.0348122677197216,
+  "sdf_depth_note": "Reported SDF intersection depth; flat-face geometric overlap is approximately twice this value. Not an independent overlap bound.",
+  "max_tilt_deg": 0.7124618861429707,
+  "external_work_J": 0.00014520372907174606,
+  "warnings": {},
+  "rigid_body_energy_change_J": 3.4442296527933914e-05,
+  "energy_note": "Rigid-body kinetic and gravitational potential only; soft-contact energy is excluded.",
+  "finite": true
+}

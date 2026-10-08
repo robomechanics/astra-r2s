@@ -1,0 +1,236 @@
+{
+  "passed": true,
+  "starts_preengaged": true,
+  "description": "Contact-driven proxy hand, floating axial pose during turns; no learned policy",
+  "runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+  },
+  "config": {
+    "timestep": 5e-05,
+    "friction": 0.15,
+    "contact_time_constant": 0.0005,
+    "contact_margin": 0.0,
+    "contact_impratio": 1.0,
+    "sdf_initpoints": 40,
+    "sdf_iterations": 30,
+    "bolt_length": 0.03,
+    "pitch": 0.00125,
+    "male_pitch_diameter": 0.0071,
+    "female_pitch_diameter": 0.007268,
+    "nut_height": 0.0065,
+    "nut_across_flats": 0.013,
+    "nut_mass": 0.005195807,
+    "nut_transverse_inertia": 9.70861e-08,
+    "nut_axial_inertia": 1.58804e-07,
+    "initial_z": 0.0175,
+    "gravity": -9.81,
+    "with_gripper": true,
+    "with_bolt": true,
+    "guided": false
+  },
+  "phases": [
+    {
+      "phase": "close",
+      "axial_advance_m": 4.855359274135926e-05,
+      "nut_rotation_rad": -0.0002237042448998139,
+      "observed_helix_residual_m": 4.8509088195901204e-05,
+      "maximum_hand_nut_contacts": 80,
+      "sampled_peak_pad_contact_torque_Nm": 4.27138832124236e-05
+    },
+    {
+      "phase": "settle",
+      "axial_advance_m": 1.0565773807952317e-08,
+      "nut_rotation_rad": 5.9728156344807104e-05,
+      "observed_helix_residual_m": 2.244831296300432e-08,
+      "maximum_hand_nut_contacts": 78,
+      "sampled_peak_pad_contact_torque_Nm": 8.253077046945596e-05
+    },
+    {
+      "phase": "turn_1",
+      "axial_advance_m": 0.0012497859251002948,
+      "nut_rotation_rad": -6.283291085798176,
+      "observed_helix_residual_m": -2.3511888723264616e-07,
+      "maximum_hand_nut_contacts": 78,
+      "sampled_peak_pad_contact_torque_Nm": 0.0009144329769309653
+    },
+    {
+      "phase": "stop_1",
+      "axial_advance_m": 2.4091997696124023e-07,
+      "nut_rotation_rad": -5.034544352788828e-05,
+      "observed_helix_residual_m": 2.309040692117186e-07,
+      "maximum_hand_nut_contacts": 78,
+      "sampled_peak_pad_contact_torque_Nm": 0.000616262973933969
+    },
+    {
+      "phase": "release",
+      "axial_advance_m": -2.2032775028046903e-08,
+      "nut_rotation_rad": 6.490038564965772e-05,
+      "observed_helix_residual_m": -9.121253547155232e-09,
+      "maximum_hand_nut_contacts": 79,
+      "sampled_peak_pad_contact_torque_Nm": 4.5722452446441797e-05
+    },
+    {
+      "phase": "open_settle",
+      "axial_advance_m": -1.2558781722904477e-09,
+      "nut_rotation_rad": -5.395841608191176e-06,
+      "observed_helix_residual_m": -2.3293467523961324e-09,
+      "maximum_hand_nut_contacts": 0,
+      "sampled_peak_pad_contact_torque_Nm": 0.0
+    },
+    {
+      "phase": "reset_open",
+      "axial_advance_m": 1.3456437745335004e-08,
+      "nut_rotation_rad": -4.7996964421592736e-05,
+      "observed_helix_residual_m": 3.907745068957107e-09,
+      "maximum_hand_nut_contacts": 0,
+      "sampled_peak_pad_contact_torque_Nm": 0.0
+    },
+    {
+      "phase": "open_hold",
+      "axial_advance_m": 1.627667722825521e-10,
+      "nut_rotation_rad": -2.727709640382159e-06,
+      "observed_helix_residual_m": -3.798938184502439e-10,
+      "maximum_hand_nut_contacts": 0,
+      "sampled_peak_pad_contact_torque_Nm": 0.0
+    },
+    {
+      "phase": "regrip",
+      "axial_advance_m": -2.349188241157485e-08,
+      "nut_rotation_rad": 9.312070100087055e-05,
+      "observed_helix_residual_m": -4.9661075759861535e-09,
+      "maximum_hand_nut_contacts": 80,
+      "sampled_peak_pad_contact_torque_Nm": 4.61578146278493e-05
+    },
+    {
+      "phase": "turn_2",
+      "axial_advance_m": 0.0012499022587064736,
+      "nut_rotation_rad": -6.2832371359428,
+      "observed_helix_residual_m": -1.0805229835116233e-07,
+      "maximum_hand_nut_contacts": 78,
+      "sampled_peak_pad_contact_torque_Nm": 0.0009070632308861334
+    },
+    {
+      "phase": "stop_2",
+      "axial_advance_m": 1.152538862680963e-07,
+      "nut_rotation_rad": 1.3043992819206096e-06,
+      "observed_helix_residual_m": 1.1551338825995027e-07,
+      "maximum_hand_nut_contacts": 78,
+      "sampled_peak_pad_contact_torque_Nm": 0.0006148136899710515
+    }
+  ],
+  "gripper_config": {
+    "pad_friction": 0.8,
+    "maximum_jaw_force": 20.0,
+    "maximum_force": 8.0,
+    "maximum_torque": 0.08,
+    "jaw_stiffness": 20000.0,
+    "jaw_damping": 8.0,
+    "position_stiffness": 800.0,
+    "position_damping": 14.0,
+    "rotation_stiffness": 0.35,
+    "rotation_damping": 0.012,
+    "open_aperture": 0.017,
+    "closed_aperture": 0.0124
+  },
+  "acceptance_checks": {
+    "all_requested_turns_completed": {
+      "passed": true,
+      "expected": 2,
+      "observed": 2
+    },
+    "observed_metric_lead": {
+      "passed": true,
+      "residual_limit_m": 2.5e-05,
+      "fraction_of_pitch_limit": 0.02
+    },
+    "closed_turn_tracking": {
+      "passed": true,
+      "angular_error_limit_rad": 0.02
+    },
+    "reported_sdf_depth_proxy": {
+      "passed": true,
+      "reported_depth_limit_m": 1e-05,
+      "note": "Not a geometric overlap certificate"
+    },
+    "no_solver_or_state_abort": {
+      "passed": true
+    },
+    "free_nut_alignment": {
+      "passed": true,
+      "maximum_radial_offset_m": 6.465726719252098e-07,
+      "maximum_tilt_rad": 0.00011227561210389725
+    },
+    "nut_has_no_external_drive": {
+      "passed": true
+    },
+    "closed_turn_contact_torque": {
+      "passed": true,
+      "sampled_peak_torque_floor_Nm": 1e-06
+    },
+    "open_reset_contact_decoupling": {
+      "passed": true,
+      "expected_hand_nut_contacts": 0
+    },
+    "passive_self_locking_during_reset": {
+      "passed": true,
+      "maximum_nut_creep_rad": 0.02,
+      "observed_nut_creep_rad": -4.7996964421592736e-05
+    }
+  },
+  "episode_peak_reported_sdf_depth_m": 1.982816643640201e-06,
+  "reported_sdf_depth_note": "Native contact dist proxy; not a certified geometric overlap bound",
+  "aborted": null,
+  "wall_seconds": 552.1660834719987,
+  "resumed_from_checkpoint": true,
+  "controller_sha256": "b6bcb446c56324392d80ba866eff134a2add20764e67cc2a20a5e9677575a964",
+  "model_xml_sha256": "8dbfbdf1af46106a070ba27a9effad9498d706035442825ad08f595364264673",
+  "checkpoint_note": "Restores integrated state; derived-pose refresh can change the first resumed control, so identical continuation is not claimed",
+  "trajectory": "outputs/m8/final_demo/gripper_trace.npz",
+  "report_only_checkpoint_recovery": true,
+  "physical_run_runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+  },
+  "recovery_note": "All 11 physical phases ran uninterrupted. A NumPy boolean prevented final JSON serialization; the completed full integration checkpoint was reopened solely to write the report and trace, with zero additional physics steps.",
+  "sampled_mid_turn_pad_diagnostics": [
+    {
+      "phase": "turn_1",
+      "sample_count": 189,
+      "window_note": "Central 60% of sampled turn",
+      "mean_pad_contact_torque_Nm": -4.761456903643036e-05,
+      "mean_pad_axial_force_N": -0.05844947173319566,
+      "mean_pad_normal_force_N": [
+        5.934670586858271,
+        5.936836169124914
+      ]
+    },
+    {
+      "phase": "turn_2",
+      "sample_count": 189,
+      "window_note": "Central 60% of sampled turn",
+      "mean_pad_contact_torque_Nm": -4.57026317267146e-05,
+      "mean_pad_axial_force_N": -0.05469290387318637,
+      "mean_pad_normal_force_N": [
+        5.9343201775970185,
+        5.9378327210160045
+      ]
+    }
+  ]
+}

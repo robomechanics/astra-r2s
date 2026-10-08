@@ -1,0 +1,58 @@
+{
+  "experiment": "zero-yaw-torque axial load, independent slide/yaw",
+  "config": {
+    "timestep": 2.5e-05,
+    "friction": 0.08,
+    "contact_time_constant": 0.0005,
+    "contact_margin": 0,
+    "contact_impratio": 1.0,
+    "sdf_initpoints": 40,
+    "sdf_iterations": 30,
+    "bolt_length": 0.03,
+    "pitch": 0.00125,
+    "male_pitch_diameter": 0.0071,
+    "female_pitch_diameter": 0.007268,
+    "nut_height": 0.0065,
+    "nut_across_flats": 0.013,
+    "nut_mass": 0.005195807,
+    "nut_transverse_inertia": 9.70861e-08,
+    "nut_axial_inertia": 1.58804e-07,
+    "initial_z": 0.0175,
+    "gravity": 0,
+    "with_gripper": false,
+    "with_bolt": true,
+    "guided": true
+  },
+  "engine": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/research/mujoco-3.15.0-thread-build/lib/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "fc1d703d5406b7856d70d6e8ead3c64d3aec1811af58423610ecd167e39989af"
+  },
+  "axial_load_N": 1,
+  "duration_s": 0.08,
+  "friction_impedance_ratio": 1.0,
+  "load_ramp_seconds": 0.02,
+  "predicted_self_lock": true,
+  "predicted_friction_threshold": 0.04796499994969656,
+  "observed_hold": true,
+  "observed_backdrive": false,
+  "late_axial_drift_um": 0.001094658558242756,
+  "late_yaw_velocity_rads": -0.000136889084372514,
+  "axial_travel_mm": -0.048728359980553665,
+  "yaw_travel_rad": -0.0009548026569397578,
+  "worst_penetration_um": 3.7469513925496716,
+  "max_contact_normal_N": 2.0568527906407543,
+  "load_work_J": 4.633921336404061e-06,
+  "final_kinetic_energy_J": 1.515513098662989e-15,
+  "accepted": true,
+  "warnings": {},
+  "wall_seconds": 9.707980646000578,
+  "note": "No yaw holding controller; late drift excludes initial clearance take-up."
+}

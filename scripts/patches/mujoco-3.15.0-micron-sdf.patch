@@ -1,0 +1,28 @@
+diff --git a/src/engine/engine_collision_sdf.c b/src/engine/engine_collision_sdf.c
+index dc89636..7748522 100644
+--- a/src/engine/engine_collision_sdf.c
++++ b/src/engine/engine_collision_sdf.c
+@@ -624,12 +624,12 @@ static mjtNum stepGradient(mjtNum x[3], const mjModel* m, const mjSDF* s,
+                            const mjData* d, int niter) {
+   const mjtNum c = .1;       // reduction factor for the target decrease in the objective function
+   const mjtNum rho = .5;     // reduction factor for the gradient scaling (alpha)
+-  const mjtNum amin = 1e-4;  // minimum value for alpha
++  const mjtNum amin = 1e-7;  // 0.1 micrometer line-search floor for M8 contact research
+   mjtNum dist = mjMAXVAL;
+ 
+   for (int step=0; step < niter; step++) {
+     mjtNum grad[3];
+-    mjtNum alpha = 2.;  // initial line search factor scaling the gradient
++    mjtNum alpha = .002;  // 2 mm initial step for M8-scale SDF contact research
+                         // the units of the gradient depend on s->type
+ 
+     // evaluate gradient
+@@ -1397,3 +1397,8 @@ int mjc_FlexSDF(const mjModel* m, const mjData* d, mjPreContact* con, int* elem,
+ 
+   return cnt;
+ }
++
++// Exported marker: proves this research core is loaded rather than stock.
++#include <mujoco/mjexport.h>
++MJAPI mjtNum astra_sdf_min_alpha(void) { return 1e-7; }
++MJAPI mjtNum astra_sdf_initial_alpha(void) { return .002; }

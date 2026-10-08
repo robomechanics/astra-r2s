@@ -1,44 +1,92 @@
-# M8 contact experiment: progress and acceptance gates
+# M8 contact evidence and unresolved acceptance gates
 
-The first M4 animation in this repository used a prescribed helix, an axial
-actuator, decorative holes, and grasp welds. **It is not evidence of thread
-physics and should not be used to train a contact assembly policy.**
+The replacement for the original imposed-helix M4 animation is a passive
+M8 × 1.25 right-hand contact model. It has continuous 60° flanks, explicit
+male/female fit, a rounded bolt root, and entry chamfers. The nut is a free
+rigid body; the hand transmits forces through finite frictional pad contacts.
+The collision plugin contains no force law or rotation-to-translation rule.
 
-The replacement experiment uses an M8 × 1.25 right-hand thread with 60° flanks,
-specified male/female tolerances, a rounded bolt root, and entry chamfers. The
-nut has independent rigid-body motion; the geometry plugin contains no forces
-or rotation-to-insertion rule. Fingers transmit torque through frictional
-contacts. The bolt is fixed to a fixture for this first mechanics benchmark.
-These dimensions and friction are declared design choices, not measurements
-recovered from the video.
+![Recorded contact-driven turn](../media/m8_contact.png)
 
-![Initial M8 contact-model geometry](../media/m8_progress.png)
+[Two-turn video](../media/m8_contact.mp4) ·
+[Transparent nut view](../media/m8_thread_view.png) ·
+[Complete demo report](../media/m8_gripper_validation.json) ·
+[Recorded trajectory](../media/m8_gripper_trace.npz)
 
-[Watch the preliminary contact-driven turn](../media/m8_progress.mp4)
-(download the raw MP4 from GitHub). This is a recorded nominal-friction rollout,
-shown at 4× slow motion. Its blue line is a comparison reference; it does not
-drive insertion. The gripper has no grasp weld and the nut has no axial motor.
+## Results and practical limits
 
-This screenshot shows geometry, not a validated assembly result. Work is in
-progress. The nominal-friction contact experiment produces approximately the
-expected pitch; the open-finger negative control does not turn the nut. A free
-nut's frictionless backdrive test is currently unstable, although a fixture
-with independent axial and rotational degrees of freedom passes. This is a
-blocking issue for a general policy-training claim.
+| Test | Recorded result | Interpretation |
+| --- | --- | --- |
+| Two gripped turns | 1.249786 / 1.249902 mm advance | Contact lead agrees with 1.25 mm; no pitch-controlled axial command |
+| Open-hand full-turn reset | Zero hand/nut contacts every substep; 13.46 nm axial drift | Release decouples the hand; finite-duration hold passes |
+| Gripper demo validity | 1.983 µm peak reported SDF depth; 0.647 µm radial offset; 0.00643° tilt; no warnings | All ten demo gates pass in this nominal condition |
+| Axial reversal | 97.087 µm backlash; opposite flank reacquired | Matches the approximately 97 µm fit clearance |
+| Slow running load suite | 13/19 individual diagnostics pass all original gates | Whole suite remains unaccepted |
+| Friction / torque | All 12 running torques inside independently calculated geometry bounds | Several stricter scalar mean-radius comparisons still fail |
+| Zero-torque hold/backdrive | All seven finite-duration diagnostics pass | Frictionless backdrive and frictional holding are distinguished |
+| Nominal timestep refinement | Mean torque, lead, reported depth change <2% at 25→12.5 µs | These measurements converge in that condition; work and speed variance do not all converge |
+| Free-body contact search | 40→80 starting points change travel 2.477% | Fails the unchanged 2% convergence gate; 80→160 also changes travel 2.627% |
+| Policy action stress | All eight modest and eight pure axial/yaw maximum pulses remain valid; three extreme corners stop under depth guards | Short interface/termination check, not long-horizon policy validation |
 
-The investigation identified an absolute 100 µm minimum line-search step in
-MuJoCo 3.15's SDF contact search, larger than the chosen 84 µm radial thread
-clearance. A smaller, explicitly documented search tolerance is being tested
-against unchanged SI geometry. Results will report the engine revision and
-patch rather than presenting them as stock MuJoCo results.
+The exact numerical values and all failed gates are retained in
+[load evidence](../media/m8_load/README.md),
+[free-body evidence](../media/m8_free/validation.json),
+[policy stress](../media/m8_policy_action_stress.json), and
+[backlash diagnostic](../media/m8_backlash_diagnostic.json).
 
-Required evidence: torque-driven lead and reversal, no feed without a bolt,
-frictionless backdrive and frictional self-locking, torque versus axial load,
-penetration relative to clearance, timestep/contact-search convergence, energy
-diagnostics, and torque transmission through finite-force fingers. Thread
-starting, cross-threading, seating/preload, and a trained bimanual policy remain
-separate acceptance targets.
+The μ=.08 lowering local lead misses the 2% gate. At μ=.25, running speed
+fluctuations exceed the declared limit. Nominal lowering torque differs from
+the declared mean-pitch-radius analytical prediction by approximately 5.5–6.5%,
+while remaining within the predeclared geometric contact-radius envelope.
+Using measured contact radius afterward explains much of that difference,
+but does not erase the independent failed comparison. The slow load fit spans
+only about 7 µm of travel; it is a local diagnostic, separate from the full
+gripper turns. [Mechanics investigation](thread_mechanics_research.md) gives
+the detailed interpretation.
 
-Research: [thread mechanics](thread_mechanics_research.md),
-[video observations](nut_video_observations.md),
-[Newton evaluation](newton_thread_research.md).
+## Numerical implementation
+
+The official MuJoCo 3.15.0 SDF search uses a 100 µm absolute minimum step,
+larger than the model's 84 µm radial flank clearance. The reproducible custom
+core lowers that search floor to 100 nm and starts its search at 2 mm. Exported
+markers, hashes, and matched GCC Python bindings are checked by the launcher.
+These are documented engine modifications; the results are not stock-wheel
+MuJoCo results. [Build details](m8_setup.md).
+
+Thread contact uses zero margin. MuJoCo's SDF narrowphase rejects positive
+distances, so a positive solver margin caused recurring contact loss and
+incorrect slow friction/holding. Removing the incompatible margin fixed that
+failure without retuning friction or imposing a helix. Elliptic Coulomb
+friction, zero extra rolling/torsional friction, and a 0.5 ms contact time
+constant are explicit assumptions. Reported SDF intersection depth is a
+solver metric: overlap between parallel flat fields can be about twice that
+value. It is not an independently certified geometric overlap bound.
+
+Historical demo/load traces use the preserved reference geometry kernel.
+The current kernel skips expensive bore calculations when a proven bound
+shows the outer hex/cap field dominates. It produces byte-identical distances,
+finite-difference gradients, and a fresh 4,000-step contact trajectory against
+the reference. [Proof, checks, and hashes](m8_sdf_performance.md) accompany the
+optimization; no geometry, contact law, or forces were approximated.
+
+## Scope before policy training
+
+This is a fixed-bolt, **pre-engaged** mechanics experiment with a proxy hand
+and privileged observations. It does not reproduce nut pickup, thread finding,
+the video's full bimanual YAM motion, or an already trained policy. Dimensions,
+steel density, pad friction, and thread friction are design assumptions rather
+than calibrated measurements from the video. The camera cannot supply actual
+thread forces, tolerances, or material properties.
+
+Remaining qualification includes resolving the strict search/dynamic gates,
+checking larger action/initial-state distributions over useful horizons,
+starting from above the bolt, validating seating and elastic preload, and
+matching physical force/torque data. Rigid contacts alone do not establish
+plastic cross-threading, wear, stripping, or damage.
+
+Newton's official nut/bolt SDF path requires CUDA. The CPU mesh investigation
+did not produce a trustworthy geometry/contact benchmark, so no Newton
+fidelity advantage is claimed. [Evaluation](newton_thread_research.md).
+
+The original [M4 visual reconstruction](legacy_m4.md) remains explicitly
+labeled as an imposed-helix surrogate.
