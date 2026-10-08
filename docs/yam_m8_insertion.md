@@ -26,6 +26,8 @@ The first actual robot search stroke also completes without a guard abort.
 It reaches approximately 2.125 mm total insertion. Only about 0.116 mm of
 fully formed flank overlaps, so it is correctly not marked engaged. The
 full multi-stroke starting/reset/lead-qualification run is in progress.
+Watch the [recorded first entry stroke](../media/m8_insertion/first_start/demo.mp4)
+and its [independent entry-only audit](../media/m8_insertion/first_start/independent_audit.json).
 
 The separate fixed-female/free-bolt contact experiment starts from 0.5 mm
 separation and an arbitrary angular phase. Its conservative full-flank window
