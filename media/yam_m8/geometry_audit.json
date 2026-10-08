@@ -1,0 +1,7068 @@
+{
+  "passed": true,
+  "checks": {
+    "all_thirteen_poses_have_no_unexpected_penetration": true,
+    "joint_limit_margin_above_0_1_rad": true,
+    "pose_errors_below_2_um_and_20_urad": true,
+    "free_block_and_nut_only_finite_robot_actuators_and_finger_equalities": true
+  },
+  "method": "Independent initialization-only IK and collision audit; zero mj_step calls",
+  "scope_limit": "Prescribed nut initialization phases do not validate lead, dynamics, contact forces, or grasp retention",
+  "dynamic_steps": 0,
+  "config": {
+    "thread": {
+      "timestep": 5e-05,
+      "friction": 0.15,
+      "contact_time_constant": 0.0005,
+      "contact_margin": 0.0,
+      "contact_impratio": 1.0,
+      "sdf_initpoints": 40,
+      "sdf_iterations": 30,
+      "bolt_length": 0.016,
+      "pitch": 0.00125,
+      "male_pitch_diameter": 0.0071,
+      "female_pitch_diameter": 0.007268,
+      "nut_height": 0.008,
+      "nut_across_flats": 0.02,
+      "nut_mass": 0.018984665656908355,
+      "nut_transverse_inertia": 6.946182225160569e-07,
+      "nut_axial_inertia": 1.1886877420788483e-06,
+      "initial_z": 0.00875,
+      "gravity": -9.81,
+      "with_gripper": false,
+      "with_bolt": true,
+      "guided": false
+    },
+    "bolt_position": [
+      0.3,
+      -0.06,
+      0.11125
+    ],
+    "bolt_quaternion": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pad_friction": 0.8,
+    "jaw_stiffness": 20000.0,
+    "jaw_damping": 8.0,
+    "maximum_jaw_force": 20.0,
+    "open_aperture": 0.024,
+    "closed_aperture": 0.0194,
+    "left_closed_aperture": 0.0144,
+    "left_grasp_roll_rad": -1.5707963267948966,
+    "left_block_contact_impedance": [
+      0.95,
+      0.99,
+      0.0001
+    ],
+    "left_block_contact_time_constant": 0.0008,
+    "pad_inner_offset": 0.0005,
+    "block_size": [
+      0.02,
+      0.12,
+      0.016
+    ],
+    "block_density": 2700.0,
+    "bolt_offset": [
+      0.0,
+      -0.05,
+      0.008
+    ],
+    "left_grasp_offset": [
+      0.0,
+      -0.0094,
+      0.0
+    ]
+  },
+  "runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "model_xml_sha256": "8ca6d5aae5f4213bf57a2024c9441b4340894d92ee678bd05d92c37a27bb1d8b",
+  "portable_model_fingerprint": "027dd245fb6486b03704da1ceac633dcffdfc94c243035078bd0b169f776192b",
+  "auditor_sha256": "1dac9d46cc585cd01ca5ea759c6bf86ce14edbb1bacaf3b04a39848c1b145fee",
+  "left_target_position_world_m": [
+    0.3,
+    -0.019399999999999994,
+    0.10325000000000001
+  ],
+  "left_target_orientation_world": [
+    [
+      -1.0,
+      6.123233995736766e-17,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    [
+      -6.123233995736766e-17,
+      -1.0,
+      0.0
+    ]
+  ],
+  "left_initialized_touching_gap_m": 0.016,
+  "left": {
+    "joint_positions_rad": [
+      -0.40776514015735854,
+      2.2857036542791076,
+      0.9157021469697807,
+      1.3700015020198724,
+      1.163031187086614,
+      -1.5707963218689955
+    ],
+    "joint_limit_margins_rad": [
+      2.2102248598426413,
+      1.3794863457208923,
+      0.9157021469697807,
+      0.2007984979801276,
+      0.40776881291338607,
+      0.5236036781310043
+    ],
+    "minimum_joint_limit_margin_rad": 0.2007984979801276,
+    "position_error_m": 8.185779117223741e-11,
+    "orientation_error_rad": 2.146258588370561e-09
+  },
+  "masses_kg": {
+    "fixture_block": 0.10368,
+    "bolt_frame": 0.004995085489535396,
+    "nut": 0.018984665656908355
+  },
+  "assembly_gravity_wrench_about_left_grip_world": [
+    0.0,
+    0.0,
+    -1.252342158746613,
+    -1.0251721979675013e-05,
+    1.2370647265342136e-07,
+    0.0
+  ],
+  "assumed_right_axial_feed_N": -0.05,
+  "right_axial_feed_moment_about_left_grip_world_Nm": [
+    0.00203,
+    0.0,
+    -0.0
+  ],
+  "payload_moment_note": "Gravity wrench uses the last initialized phase; these are load estimates, not measured grip capacity",
+  "topology": {
+    "nq": 30,
+    "nv": 28,
+    "nu": 16,
+    "equalities": [
+      {
+        "type": 2,
+        "joint_1": "left_left_finger",
+        "joint_2": "left_right_finger"
+      },
+      {
+        "type": 2,
+        "joint_1": "right_left_finger",
+        "joint_2": "right_right_finger"
+      }
+    ],
+    "actuators": [
+      {
+        "name": "left_servo1",
+        "joint": "left_joint1",
+        "control_range": [
+          -28.0,
+          28.0
+        ],
+        "force_range": [
+          -28.0,
+          28.0
+        ],
+        "force_limited": true
+      },
+      {
+        "name": "left_servo2",
+        "joint": "left_joint2",
+        "control_range": [
+          -28.0,
+          28.0
+        ],
+        "force_range": [
+          -28.0,
+          28.0
+        ],
+        "force_limited": true
+      },
+      {
+        "name": "left_servo3",
+        "joint": "left_joint3",
+        "control_range": [
+          -28.0,
+          28.0
+        ],
+        "force_range": [
+          -28.0,
+          28.0
+        ],
+        "force_limited": true
+      },
+      {
+        "name": "left_servo4",
+        "joint": "left_joint4",
+        "control_range": [
+          -10.0,
+          10.0
+        ],
+        "force_range": [
+          -10.0,
+          10.0
+        ],
+        "force_limited": true
+      },
+      {
+        "name": "left_servo5",
+        "joint": "left_joint5",
+        "control_range": [
+          -10.0,
+          10.0
+        ],
+        "force_range": [
+          -10.0,
+          10.0
+        ],
+        "force_limited": true
+      },
+      {
+        "name": "left_servo6",
+        "joint": "left_joint6",
+        "control_range": [
+          -10.0,
+          10.0
+        ],
+        "force_range": [
+          -10.0,
+          10.0
+        ],
+        "force_limited": true
+      },
+      {
+        "name": "left_grip_left",
+        "joint": "left_left_finger",
+        "control_range": [
+          0.0,
+          0.037524
+        ],
+        "force_range": [
+          -20.0,
+          20.0
+        ],
+        "force_limited": true
+      },
+      {
+        "name": "left_grip_right",
+        "joint": "left_right_finger",
+        "control_range": [
+          -0.037524,
+          0.0
+        ],
+        "force_range": [
+          -20.0,
+          20.0
+        ],
+        "force_limited": true
+      },
+      {
+        "name": "right_servo1",
+        "joint": "right_joint1",
+        "control_range": [
+          -28.0,
+          28.0
+        ],
+        "force_range": [
+          -28.0,
+          28.0
+        ],
+        "force_limited": true
+      },
+      {
+        "name": "right_servo2",
+        "joint": "right_joint2",
+        "control_range": [
+          -28.0,
+          28.0
+        ],
+        "force_range": [
+          -28.0,
+          28.0
+        ],
+        "force_limited": true
+      },
+      {
+        "name": "right_servo3",
+        "joint": "right_joint3",
+        "control_range": [
+          -28.0,
+          28.0
+        ],
+        "force_range": [
+          -28.0,
+          28.0
+        ],
+        "force_limited": true
+      },
+      {
+        "name": "right_servo4",
+        "joint": "right_joint4",
+        "control_range": [
+          -10.0,
+          10.0
+        ],
+        "force_range": [
+          -10.0,
+          10.0
+        ],
+        "force_limited": true
+      },
+      {
+        "name": "right_servo5",
+        "joint": "right_joint5",
+        "control_range": [
+          -10.0,
+          10.0
+        ],
+        "force_range": [
+          -10.0,
+          10.0
+        ],
+        "force_limited": true
+      },
+      {
+        "name": "right_servo6",
+        "joint": "right_joint6",
+        "control_range": [
+          -10.0,
+          10.0
+        ],
+        "force_range": [
+          -10.0,
+          10.0
+        ],
+        "force_limited": true
+      },
+      {
+        "name": "right_grip_left",
+        "joint": "right_left_finger",
+        "control_range": [
+          0.0,
+          0.037524
+        ],
+        "force_range": [
+          -20.0,
+          20.0
+        ],
+        "force_limited": true
+      },
+      {
+        "name": "right_grip_right",
+        "joint": "right_right_finger",
+        "control_range": [
+          -0.037524,
+          0.0
+        ],
+        "force_range": [
+          -20.0,
+          20.0
+        ],
+        "force_limited": true
+      }
+    ]
+  },
+  "samples": [
+    {
+      "angle_rad": 0.0,
+      "angle_degrees": 0.0,
+      "nut_initialized_position_world_m": [
+        0.3,
+        -0.06,
+        0.12
+      ],
+      "right": {
+        "joint_positions_rad": [
+          0.7667246167323644,
+          2.151801098349087,
+          1.9795515509478834,
+          -1.39854667712695,
+          7.899917899026345e-09,
+          -0.804071722454642
+        ],
+        "joint_limit_margins_rad": [
+          2.287605383267636,
+          1.513388901650913,
+          1.6856384490521166,
+          0.17225332287305006,
+          1.5707999921000821,
+          1.290328277545358
+        ],
+        "minimum_joint_limit_margin_rad": 0.17225332287305006,
+        "position_error_m": 1.2761065486573962e-08,
+        "orientation_error_rad": 1.0331727763674825e-07
+      },
+      "contacts": {
+        "left_pad_block": [
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.30100758269957e-11,
+            "position_world_m": [
+              0.30449999993600657,
+              -0.022149999950427206,
+              0.09525000001650503
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.454676093430969e-11,
+            "position_world_m": [
+              0.3044999999384765,
+              -0.016649999950427208,
+              0.09525000002227338
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.3915570581381034e-11,
+            "position_world_m": [
+              0.2954999999384765,
+              -0.01664999994638552,
+              0.09525000002195778
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.237888547406704e-11,
+            "position_world_m": [
+              0.29549999993600656,
+              -0.022149999946385522,
+              0.09525000001618944
+            ]
+          }
+        ],
+        "right_pad_nut": [
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.972935112157237e-09,
+            "position_world_m": [
+              0.3099999990135325,
+              -0.060000007640851866,
+              0.1216499942779351
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.0091358385425225e-09,
+            "position_world_m": [
+              0.30999999658165994,
+              -0.05775000756906562,
+              0.12054999442477567
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.756668216613578e-09,
+            "position_world_m": [
+              0.3099999986216659,
+              -0.05662500742549713,
+              0.11834999449820235
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.0060905895025075e-09,
+            "position_world_m": [
+              0.3099999949622342,
+              -0.0611250076982789,
+              0.1225299942045125
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.664219546151598e-10,
+            "position_world_m": [
+              0.309999999516789,
+              -0.058875007626493926,
+              0.12142999435135662
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.8327480217370535e-09,
+            "position_world_m": [
+              0.309999998083626,
+              -0.06337500755469484,
+              0.12032999405768044
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.0030453416786569e-09,
+            "position_world_m": [
+              0.30999999365606673,
+              -0.056062507482919174,
+              0.1192299945349059
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.3804223227980037e-09,
+            "position_world_m": [
+              0.3099999988097888,
+              -0.05831250768392591,
+              0.12230999438805423
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.6747874232791765e-09,
+            "position_world_m": [
+              0.30999999609064527,
+              -0.06281250761213181,
+              0.12120999409439051
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.1418260220951169e-10,
+            "position_world_m": [
+              0.30999999989290866,
+              -0.05718750754034835,
+              0.12010999446148703
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.0805086693314054e-09,
+            "position_world_m": [
+              0.30999999845974563,
+              -0.061687507468556446,
+              0.11900999416781545
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.671742175699633e-09,
+            "position_world_m": [
+              0.3099999948053896,
+              -0.059437507396773545,
+              0.1179099943146511
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.2902624073329871e-09,
+            "position_world_m": [
+              0.3099999993548688,
+              -0.0639375076695533,
+              0.12208999402096808
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.677832675382322e-09,
+            "position_world_m": [
+              0.3099999975254902,
+              -0.0557812575978136,
+              0.12098999455325711
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.686969229211059e-10,
+            "position_world_m": [
+              0.3099999931545962,
+              -0.060281257525990145,
+              0.11988999425958498
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.296901781620453e-09,
+            "position_world_m": [
+              0.3099999988515491,
+              -0.0625312573824108,
+              0.11768999411276039
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.340439008018903e-09,
+            "position_world_m": [
+              0.30999999546370466,
+              -0.05690625765521033,
+              0.12186999447983879
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.48478899450866e-10,
+            "position_world_m": [
+              0.30999999972576053,
+              -0.06140625758341903,
+              0.12076999418616562
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.498451724495699e-09,
+            "position_world_m": [
+              0.3099999982507741,
+              -0.05915625751163583,
+              0.119669994333007
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.3373937586894893e-09,
+            "position_world_m": [
+              0.30999999430391906,
+              -0.06365625743984381,
+              0.11856999403932901
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.3531236946889846e-09,
+            "position_world_m": [
+              0.30999999932343814,
+              -0.056343757368065676,
+              0.1174699945165693
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.343484287974433e-09,
+            "position_world_m": [
+              0.3099999969509122,
+              -0.06084375770976346,
+              0.12270599422275927
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.343485093822807e-10,
+            "position_world_m": [
+              0.30999999249637145,
+              -0.05859375763797851,
+              0.1216059943697131
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.938179962010511e-09,
+            "position_world_m": [
+              0.30999999903091,
+              -0.05746875749440811,
+              0.11940599444313493
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.897686365648293e-09,
+            "position_world_m": [
+              0.30999999664433714,
+              -0.061968757422613936,
+              0.11830599414946048
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.4793370001209283e-10,
+            "position_world_m": [
+              0.3099999999260331,
+              -0.05971875769540845,
+              0.12248599429629285
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.0142597671339866e-09,
+            "position_world_m": [
+              0.3099999984928701,
+              -0.06421875762358151,
+              0.12138599400261428
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.8946411195889305e-09,
+            "position_world_m": [
+              0.3099999949046691,
+              -0.0556406325518528,
+              0.12028599456243716
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -8.846155041125625e-10,
+            "position_world_m": [
+              0.30999999955769225,
+              -0.060140632480045204,
+              0.11918599426876421
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.834588329157396e-09,
+            "position_world_m": [
+              0.30999999808270584,
+              -0.057890632408263656,
+              0.1180859944156085
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -8.915958687553688e-10,
+            "position_world_m": [
+              0.30999999332706674,
+              -0.06239063268105057,
+              0.12226599412192378
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.277704181513629e-09,
+            "position_world_m": [
+              0.3099999988611479,
+              -0.06126563253747319,
+              0.12006599419534164
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.5633379503368157e-09,
+            "position_world_m": [
+              0.309999996053992,
+              -0.05901563246569024,
+              0.11896599434218307
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.964108109630551e-11,
+            "position_world_m": [
+              0.30999999996517946,
+              -0.06351563239390104,
+              0.1178659940485066
+            ]
+          }
+        ],
+        "thread": [],
+        "unexpected": []
+      },
+      "unexpected_penetrating_contact_count": 0,
+      "passed": true
+    },
+    {
+      "angle_rad": -0.17453292519943295,
+      "angle_degrees": -10.0,
+      "nut_initialized_position_world_m": [
+        0.3,
+        -0.06,
+        0.11996527777777777
+      ],
+      "right": {
+        "joint_positions_rad": [
+          0.7530103580511949,
+          2.176228408659372,
+          2.0181732257158767,
+          -1.4127411535347005,
+          -1.4598627560618107e-09,
+          -0.6432530431310255
+        ],
+        "joint_limit_margins_rad": [
+          2.3013196419488056,
+          1.4889615913406278,
+          1.6470167742841233,
+          0.15805884646529944,
+          1.5707999985401373,
+          1.4511469568689743
+        ],
+        "minimum_joint_limit_margin_rad": 0.15805884646529944,
+        "position_error_m": 4.5364982124281556e-10,
+        "orientation_error_rad": 9.801441745002286e-09
+      },
+      "contacts": {
+        "left_pad_block": [
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.30100758269957e-11,
+            "position_world_m": [
+              0.30449999993600657,
+              -0.022149999950427206,
+              0.09525000001650503
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.454676093430969e-11,
+            "position_world_m": [
+              0.3044999999384765,
+              -0.016649999950427208,
+              0.09525000002227338
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.3915570581381034e-11,
+            "position_world_m": [
+              0.2954999999384765,
+              -0.01664999994638552,
+              0.09525000002195778
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.237888547406704e-11,
+            "position_world_m": [
+              0.29549999993600656,
+              -0.022149999946385522,
+              0.09525000001618944
+            ]
+          }
+        ],
+        "right_pad_nut": [],
+        "thread": [],
+        "unexpected": []
+      },
+      "unexpected_penetrating_contact_count": 0,
+      "passed": true
+    },
+    {
+      "angle_rad": -0.3490658503988659,
+      "angle_degrees": -20.0,
+      "nut_initialized_position_world_m": [
+        0.3,
+        -0.06,
+        0.11993055555555555
+      ],
+      "right": {
+        "joint_positions_rad": [
+          0.7377079906362224,
+          2.196493252823443,
+          2.050594383934477,
+          -1.4248974782821675,
+          -2.7433952249600563e-09,
+          -0.4840224844808243
+        ],
+        "joint_limit_margins_rad": [
+          2.316622009363778,
+          1.468696747176557,
+          1.614595616065523,
+          0.14590252171783247,
+          1.5707999972566047,
+          1.6103775155191755
+        ],
+        "minimum_joint_limit_margin_rad": 0.14590252171783247,
+        "position_error_m": 4.0188779800027496e-10,
+        "orientation_error_rad": 2.0599830990407836e-08
+      },
+      "contacts": {
+        "left_pad_block": [
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.30100758269957e-11,
+            "position_world_m": [
+              0.30449999993600657,
+              -0.022149999950427206,
+              0.09525000001650503
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.454676093430969e-11,
+            "position_world_m": [
+              0.3044999999384765,
+              -0.016649999950427208,
+              0.09525000002227338
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.3915570581381034e-11,
+            "position_world_m": [
+              0.2954999999384765,
+              -0.01664999994638552,
+              0.09525000002195778
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.237888547406704e-11,
+            "position_world_m": [
+              0.29549999993600656,
+              -0.022149999946385522,
+              0.09525000001618944
+            ]
+          }
+        ],
+        "right_pad_nut": [],
+        "thread": [],
+        "unexpected": []
+      },
+      "unexpected_penetrating_contact_count": 0,
+      "passed": true
+    },
+    {
+      "angle_rad": -0.5235987755982988,
+      "angle_degrees": -29.999999999999996,
+      "nut_initialized_position_world_m": [
+        0.3,
+        -0.06,
+        0.11989583333333333
+      ],
+      "right": {
+        "joint_positions_rad": [
+          0.7212085740352833,
+          2.211794719391228,
+          2.075282398753389,
+          -1.434284017732442,
+          -3.5047325985031685e-09,
+          -0.3259889758091333
+        ],
+        "joint_limit_margins_rad": [
+          2.333121425964717,
+          1.4533952806087718,
+          1.589907601246611,
+          0.1365159822675579,
+          1.5707999964952675,
+          1.7684110241908666
+        ],
+        "minimum_joint_limit_margin_rad": 0.1365159822675579,
+        "position_error_m": 2.0802580680603288e-09,
+        "orientation_error_rad": 1.2169678000415786e-08
+      },
+      "contacts": {
+        "left_pad_block": [
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.30100758269957e-11,
+            "position_world_m": [
+              0.30449999993600657,
+              -0.022149999950427206,
+              0.09525000001650503
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.454676093430969e-11,
+            "position_world_m": [
+              0.3044999999384765,
+              -0.016649999950427208,
+              0.09525000002227338
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.3915570581381034e-11,
+            "position_world_m": [
+              0.2954999999384765,
+              -0.01664999994638552,
+              0.09525000002195778
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.237888547406704e-11,
+            "position_world_m": [
+              0.29549999993600656,
+              -0.022149999946385522,
+              0.09525000001618944
+            ]
+          }
+        ],
+        "right_pad_nut": [
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.808992333659727e-11,
+            "position_world_m": [
+              0.3097852530964913,
+              -0.0630514443738665,
+              0.12044583232423602
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.3148197421385408e-10,
+            "position_world_m": [
+              0.3080977530484758,
+              -0.06597428006141219,
+              0.1224258323574573
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.4274214492700318e-10,
+            "position_world_m": [
+              0.310629002856036,
+              -0.061590026381156696,
+              0.11912583230762532
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.379035705415148e-10,
+            "position_world_m": [
+              0.3089415029611724,
+              -0.06451286219463301,
+              0.11780583234084678
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.516143125235009e-11,
+            "position_world_m": [
+              0.30851962779655145,
+              -0.06524357101152717,
+              0.11978583234915209
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.828346449933571e-10,
+            "position_world_m": [
+              0.31020712806629236,
+              -0.06232073540698472,
+              0.12176583231593063
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.9032285686689825e-10,
+            "position_world_m": [
+              0.3068321279016879,
+              -0.06816640682500348,
+              0.11846583238237353
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.954204498557434e-11,
+            "position_world_m": [
+              0.3082383781324544,
+              -0.06573071046308249,
+              0.1226018323546888
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.758071584301545e-11,
+            "position_world_m": [
+              0.309363377755607,
+              -0.06378215309949732,
+              0.12150183233254137
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.3542354043716287e-10,
+            "position_world_m": [
+              0.3076758780692811,
+              -0.06670498905587792,
+              0.11820183236576283
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.556952045928984e-10,
+            "position_world_m": [
+              0.3108399405269467,
+              -0.0612246720006082,
+              0.12018183230347262
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.268819047224757e-10,
+            "position_world_m": [
+              0.3074649403614409,
+              -0.06707034335809291,
+              0.12216183236991546
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.7437319123347894e-10,
+            "position_world_m": [
+              0.3091524405556637,
+              -0.06414750776996336,
+              0.11886183233669408
+            ]
+          }
+        ],
+        "thread": [],
+        "unexpected": []
+      },
+      "unexpected_penetrating_contact_count": 0,
+      "passed": true
+    },
+    {
+      "angle_rad": -0.6981317007977318,
+      "angle_degrees": -40.0,
+      "nut_initialized_position_world_m": [
+        0.3,
+        -0.06,
+        0.11986111111111111
+      ],
+      "right": {
+        "joint_positions_rad": [
+          0.7039025695266359,
+          2.221465413677853,
+          2.090941251131584,
+          -1.4402721852431823,
+          -5.572865725567291e-09,
+          -0.1687620548956641
+        ],
+        "joint_limit_margins_rad": [
+          2.3504274304733643,
+          1.4437245863221468,
+          1.574248748868416,
+          0.13052781475681763,
+          1.5707999944271342,
+          1.9256379451043357
+        ],
+        "minimum_joint_limit_margin_rad": 0.13052781475681763,
+        "position_error_m": 5.2869537711610335e-09,
+        "orientation_error_rad": 2.1778621569928922e-08
+      },
+      "contacts": {
+        "left_pad_block": [
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.30100758269957e-11,
+            "position_world_m": [
+              0.30449999993600657,
+              -0.022149999950427206,
+              0.09525000001650503
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.454676093430969e-11,
+            "position_world_m": [
+              0.3044999999384765,
+              -0.016649999950427208,
+              0.09525000002227338
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.3915570581381034e-11,
+            "position_world_m": [
+              0.2954999999384765,
+              -0.01664999994638552,
+              0.09525000002195778
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.237888547406704e-11,
+            "position_world_m": [
+              0.29549999993600656,
+              -0.022149999946385522,
+              0.09525000001618944
+            ]
+          }
+        ],
+        "right_pad_nut": [
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.9945570889357e-10,
+            "position_world_m": [
+              0.30910671342502766,
+              -0.06470427967245247,
+              0.12041110874477738
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.233155258288645e-10,
+            "position_world_m": [
+              0.3069373052006985,
+              -0.0672896795819668,
+              0.12239110881146807
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.8640941968658424e-11,
+            "position_world_m": [
+              0.30549103317551196,
+              -0.06901327971679781,
+              0.12019110885592889
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.616577483855916e-10,
+            "position_world_m": [
+              0.31019141723037097,
+              -0.06341157946875409,
+              0.11909110871143196
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.694296005919506e-10,
+            "position_world_m": [
+              0.3080220091415573,
+              -0.0659969795771036,
+              0.1177711087781229
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -8.461454800712254e-11,
+            "position_world_m": [
+              0.3103722015811734,
+              -0.06319612970531092,
+              0.12085110870587436
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.0777182314972216e-10,
+            "position_world_m": [
+              0.30747965694794127,
+              -0.06664332940077185,
+              0.11975110879479557
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.9399238772598313e-10,
+            "position_world_m": [
+              0.3096490654512572,
+              -0.0640579296232062,
+              0.12173110872810462
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.155436736214108e-10,
+            "position_world_m": [
+              0.30531024885912766,
+              -0.06922872950912133,
+              0.11843110886148647
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.309949336503191e-10,
+            "position_world_m": [
+              0.3071180893111667,
+              -0.06707422965771875,
+              0.12256710880590997
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.3885897913913677e-11,
+            "position_world_m": [
+              0.30856436101305773,
+              -0.06535062933673477,
+              0.12146710876145013
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.443024896964241e-10,
+            "position_world_m": [
+              0.3063949531509828,
+              -0.0679360296864151,
+              0.11816710882814106
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.0535355191204394e-10,
+            "position_world_m": [
+              0.3104625934395418,
+              -0.06308840459842721,
+              0.12014710870309557
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.820661306057186e-11,
+            "position_world_m": [
+              0.30901632143255975,
+              -0.06481200474853294,
+              0.1179471087475562
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.436957727287101e-10,
+            "position_world_m": [
+              0.3061237769190896,
+              -0.06825920440828762,
+              0.12212710883647736
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_right",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              120,
+              4
+            ],
+            "bodies": [
+              "right_rf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.8758445277943245e-10,
+            "position_world_m": [
+              0.30829318530264344,
+              -0.06567380466642829,
+              0.11882710876978651
+            ]
+          }
+        ],
+        "thread": [],
+        "unexpected": []
+      },
+      "unexpected_penetrating_contact_count": 0,
+      "passed": true
+    },
+    {
+      "angle_rad": -0.8726646259971648,
+      "angle_degrees": -50.0,
+      "nut_initialized_position_world_m": [
+        0.3,
+        -0.06,
+        0.11982638888888889
+      ],
+      "right": {
+        "joint_positions_rad": [
+          0.6861790119429622,
+          2.2250508886645477,
+          2.0966806452108213,
+          -1.4424261151365572,
+          -8.011730078595928e-09,
+          -0.011952688082473692
+        ],
+        "joint_limit_margins_rad": [
+          2.368150988057038,
+          1.4401391113354522,
+          1.5685093547891786,
+          0.1283738848634428,
+          1.5707999919882698,
+          2.082447311917526
+        ],
+        "minimum_joint_limit_margin_rad": 0.1283738848634428,
+        "position_error_m": 8.683548202586164e-09,
+        "orientation_error_rad": 3.2798336615933125e-08
+      },
+      "contacts": {
+        "left_pad_block": [
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.30100758269957e-11,
+            "position_world_m": [
+              0.30449999993600657,
+              -0.022149999950427206,
+              0.09525000001650503
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.454676093430969e-11,
+            "position_world_m": [
+              0.3044999999384765,
+              -0.016649999950427208,
+              0.09525000002227338
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.3915570581381034e-11,
+            "position_world_m": [
+              0.2954999999384765,
+              -0.01664999994638552,
+              0.09525000002195778
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.237888547406704e-11,
+            "position_world_m": [
+              0.29549999993600656,
+              -0.022149999946385522,
+              0.09525000001618944
+            ]
+          }
+        ],
+        "right_pad_nut": [],
+        "thread": [],
+        "unexpected": []
+      },
+      "unexpected_penetrating_contact_count": 0,
+      "passed": true
+    },
+    {
+      "angle_rad": -1.0471975511965976,
+      "angle_degrees": -59.99999999999999,
+      "nut_initialized_position_world_m": [
+        0.3,
+        -0.06,
+        0.11979166666666666
+      ],
+      "right": {
+        "joint_positions_rad": [
+          0.6684258828444745,
+          2.222376493935729,
+          2.092156775230426,
+          -1.440576645342216,
+          -1.0667166681727975e-08,
+          0.1448271059780251
+        ],
+        "joint_limit_margins_rad": [
+          2.3859041171555257,
+          1.442813506064271,
+          1.5730332247695737,
+          0.130223354657784,
+          1.5707999893328333,
+          1.9495728940219748
+        ],
+        "minimum_joint_limit_margin_rad": 0.130223354657784,
+        "position_error_m": 1.0109978157176303e-08,
+        "orientation_error_rad": 3.877053642069545e-08
+      },
+      "contacts": {
+        "left_pad_block": [
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.30100758269957e-11,
+            "position_world_m": [
+              0.30449999993600657,
+              -0.022149999950427206,
+              0.09525000001650503
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.454676093430969e-11,
+            "position_world_m": [
+              0.3044999999384765,
+              -0.016649999950427208,
+              0.09525000002227338
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.3915570581381034e-11,
+            "position_world_m": [
+              0.2954999999384765,
+              -0.01664999994638552,
+              0.09525000002195778
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.237888547406704e-11,
+            "position_world_m": [
+              0.29549999993600656,
+              -0.022149999946385522,
+              0.09525000001618944
+            ]
+          }
+        ],
+        "right_pad_nut": [
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.0817344723034203e-10,
+            "position_world_m": [
+              0.2911029042955294,
+              -0.05358973533669736,
+              0.1225416096066938
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.636631799672443e-10,
+            "position_world_m": [
+              0.2949999924137156,
+              -0.05133975072526505,
+              0.12144166240008879
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.668928217135697e-10,
+            "position_world_m": [
+              0.29305143549983503,
+              -0.052464751233468526,
+              0.12034166248649378
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.381538365293535e-10,
+            "position_world_m": [
+              0.29694854941768734,
+              -0.05021475062655773,
+              0.11924166231368438
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.781547129772898e-10,
+            "position_world_m": [
+              0.2920771566089818,
+              -0.05302725086273757,
+              0.11814166252969646
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.1126187608374474e-10,
+            "position_world_m": [
+              0.29597427142316723,
+              -0.050777251402795244,
+              0.12232166235688645
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.083194906663202e-10,
+            "position_world_m": [
+              0.2940257137883058,
+              -0.05190225066222339,
+              0.12122166244329124
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.225237690798523e-10,
+            "position_world_m": [
+              0.29792282826794597,
+              -0.049652251028357984,
+              0.12012166227048184
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.5563093045198288e-10,
+            "position_world_m": [
+              0.2915900178181474,
+              -0.053308501659087744,
+              0.1190216625512974
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.2970340733674544e-10,
+            "position_world_m": [
+              0.29548713147778904,
+              -0.05105850060494267,
+              0.11792166237848804
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.210983997418818e-10,
+            "position_world_m": [
+              0.2935385745811382,
+              -0.0521835007374624,
+              0.12210166246489196
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.150158381019646e-10,
+            "position_world_m": [
+              0.2974356891658502,
+              -0.04993350128558647,
+              0.12100166229208303
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.9986906320843563e-10,
+            "position_world_m": [
+              0.29256429584840754,
+              -0.052746000640608325,
+              0.11990166250809493
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.2627773283319e-10,
+            "position_world_m": [
+              0.2964614102749967,
+              -0.05049600091485571,
+              0.11880166233528562
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.593848924711153e-10,
+            "position_world_m": [
+              0.2945128534286466,
+              -0.05162100154002565,
+              0.11770166242169029
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.571946966320684e-10,
+            "position_world_m": [
+              0.2984099674291323,
+              -0.049371000670714725,
+              0.12188166224888031
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.706467854779546e-10,
+            "position_world_m": [
+              0.29134644792534053,
+              -0.053449126094375,
+              0.12078166256209791
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.0375394684028538e-10,
+            "position_world_m": [
+              0.2952435625502546,
+              -0.051199126712132274,
+              0.11968166238928846
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.882086288374941e-10,
+            "position_world_m": [
+              0.2932950047110359,
+              -0.05232412561760339,
+              0.11858166247569335
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.436977353392216e-10,
+            "position_world_m": [
+              0.2971921191053549,
+              -0.0500741258359573,
+              0.11748166230288434
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.6313885795981794e-10,
+            "position_world_m": [
+              0.29232072669106013,
+              -0.05288662634975068,
+              0.12166166251889554
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.49814270900295e-10,
+            "position_world_m": [
+              0.2962178405550589,
+              -0.05063662564956271,
+              0.12056166234608595
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.744007526907594e-10,
+            "position_world_m": [
+              0.2942692835358391,
+              -0.05176162597531329,
+              0.11946166243249093
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.075079123289121e-10,
+            "position_world_m": [
+              0.2981663981607538,
+              -0.04951162659307019,
+              0.11836166225968132
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.947740581296879e-10,
+            "position_world_m": [
+              0.2918335868748919,
+              -0.0531678757756953,
+              0.11726166254049804
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.18769805446325e-10,
+            "position_world_m": [
+              0.2957307016292093,
+              -0.05091787613095346,
+              0.12249766236768446
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.187696496336571e-11,
+            "position_world_m": [
+              0.29378214478285913,
+              -0.05204287675612344,
+              0.12139766245409203
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.0421439018980525e-10,
+            "position_world_m": [
+              0.29767925835376524,
+              -0.04979287554828393,
+              0.12029766228128244
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.725435174048666e-10,
+            "position_world_m": [
+              0.29280786553797744,
+              -0.052605375772197364,
+              0.11919766249729456
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.4960049442133816e-10,
+            "position_world_m": [
+              0.2967049801019045,
+              -0.050355376284320984,
+              0.11809766232448497
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.7438004432677197e-10,
+            "position_world_m": [
+              0.2947564227243836,
+              -0.051480375583949606,
+              0.12227766241088886
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.608623874428328e-10,
+            "position_world_m": [
+              0.2986535371359532,
+              -0.04923037583218497,
+              0.12117766223807992
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.939695470614437e-10,
+            "position_world_m": [
+              0.29122466328529395,
+              -0.053519438964303834,
+              0.12007766256749829
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.123848203364423e-10,
+            "position_world_m": [
+              0.2951217771163574,
+              -0.051269438207071014,
+              0.11897766239468889
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.05231440052603e-10,
+            "position_world_m": [
+              0.29317322013007263,
+              -0.05239443858986663,
+              0.11787766248109374
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.3833860315964287e-10,
+            "position_world_m": [
+              0.2970703349442583,
+              -0.050144439129924154,
+              0.12205766230828397
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.675346194580541e-10,
+            "position_world_m": [
+              0.29219894138322194,
+              -0.052956938063029514,
+              0.12095766252429581
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.230237259597816e-10,
+            "position_world_m": [
+              0.29609605577754095,
+              -0.05070693828138343,
+              0.11985766235148626
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.9772351254427684e-10,
+            "position_world_m": [
+              0.29414749889579284,
+              -0.051831938845241954,
+              0.11875766243789118
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.975143807871673e-10,
+            "position_world_m": [
+              0.29804461278151256,
+              -0.04958193818267619,
+              0.11765766226508197
+            ]
+          }
+        ],
+        "thread": [],
+        "unexpected": []
+      },
+      "unexpected_penetrating_contact_count": 0,
+      "passed": true
+    },
+    {
+      "angle_rad": -1.2217304763960306,
+      "angle_degrees": -70.0,
+      "nut_initialized_position_world_m": [
+        0.3,
+        -0.06,
+        0.11975694444444444
+      ],
+      "right": {
+        "joint_positions_rad": [
+          0.651031080806626,
+          2.2135758210103313,
+          2.0776320094387253,
+          -1.43485254890212,
+          -1.3892189262696602e-08,
+          0.30196522621206995
+        ],
+        "joint_limit_margins_rad": [
+          2.4032989191933742,
+          1.4516141789896686,
+          1.5875579905612747,
+          0.13594745109787998,
+          1.5707999861078108,
+          1.7924347737879298
+        ],
+        "minimum_joint_limit_margin_rad": 0.13594745109787998,
+        "position_error_m": 8.514450151517618e-09,
+        "orientation_error_rad": 3.667233671278075e-08
+      },
+      "contacts": {
+        "left_pad_block": [
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.30100758269957e-11,
+            "position_world_m": [
+              0.30449999993600657,
+              -0.022149999950427206,
+              0.09525000001650503
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.454676093430969e-11,
+            "position_world_m": [
+              0.3044999999384765,
+              -0.016649999950427208,
+              0.09525000002227338
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.3915570581381034e-11,
+            "position_world_m": [
+              0.2954999999384765,
+              -0.01664999994638552,
+              0.09525000002195778
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.237888547406704e-11,
+            "position_world_m": [
+              0.29549999993600656,
+              -0.022149999946385522,
+              0.09525000001618944
+            ]
+          }
+        ],
+        "right_pad_nut": [
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.597017211338539e-17,
+            "position_world_m": [
+              0.29235117519491566,
+              -0.05214216703372267,
+              0.1225068798359875
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.025749356980965e-09,
+            "position_world_m": [
+              0.29657979206133706,
+              -0.05060307670570498,
+              0.12140694070785381
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -8.580890481683406e-10,
+            "position_world_m": [
+              0.2944654839512236,
+              -0.05137262293246788,
+              0.120306940789499
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.371048818035961e-10,
+            "position_world_m": [
+              0.29869410028242527,
+              -0.04983353113395336,
+              0.11920694062621015
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.3152222991252849e-09,
+            "position_world_m": [
+              0.29340832940316497,
+              -0.05175739486639172,
+              0.11810694083032224
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.720593621267273e-10,
+            "position_world_m": [
+              0.2976369467579881,
+              -0.050218305320076685,
+              0.12228694066703157
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.437253417286183e-10,
+            "position_world_m": [
+              0.295522637807223,
+              -0.05098784923716856,
+              0.12118694074867634
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.1441187359554443e-09,
+            "position_world_m": [
+              0.2997512547805835,
+              -0.04944875920297291,
+              0.1200869405853874
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.8602967607308936e-10,
+            "position_world_m": [
+              0.29287975290307683,
+              -0.05194978274967698,
+              0.11898694085073261
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.4921177274594974e-10,
+            "position_world_m": [
+              0.29710836890770803,
+              -0.05041069005391661,
+              0.11788694068744372
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.1303162520542864e-09,
+            "position_world_m": [
+              0.29499406080414836,
+              -0.05118023573850608,
+              0.1220669407690861
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.627458217990711e-10,
+            "position_world_m": [
+              0.2992226779088389,
+              -0.04964114606513525,
+              0.12096694060579863
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.558322309362485e-10,
+            "position_world_m": [
+              0.29393690643250575,
+              -0.051565008157131796,
+              0.11986694080991009
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.334805195630235e-09,
+            "position_world_m": [
+              0.2981655233411256,
+              -0.05002591794506188,
+              0.11876694064662156
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.767161322816513e-10,
+            "position_world_m": [
+              0.29605121534908235,
+              -0.0507954644962202,
+              0.11766694072826585
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -8.199713286832777e-10,
+            "position_world_m": [
+              0.30027983173549294,
+              -0.04925637228921601,
+              0.12184694056497541
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.0487755079117135e-09,
+            "position_world_m": [
+              0.292615464024543,
+              -0.052045974824503564,
+              0.12074694086093787
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.9068644623379882e-10,
+            "position_world_m": [
+              0.2968440812131152,
+              -0.05050688538160187,
+              0.11964694069764897
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.5731878046674215e-10,
+            "position_world_m": [
+              0.29472977200233624,
+              -0.051276428584312195,
+              0.11854694077929383
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.1929548373451615e-09,
+            "position_world_m": [
+              0.2989583889012662,
+              -0.04973733834561931,
+              0.11744694061600627
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.674025902257023e-10,
+            "position_world_m": [
+              0.29367261844794995,
+              -0.05166120268815174,
+              0.12162694082011563
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.356183322731024e-10,
+            "position_world_m": [
+              0.2979012347125945,
+              -0.05012211070677307,
+              0.12052694065682637
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.2394619657898282e-09,
+            "position_world_m": [
+              0.2957869264705462,
+              -0.05089165657104766,
+              0.11942694073847156
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.813729059121018e-10,
+            "position_world_m": [
+              0.30001554365912064,
+              -0.049352567128145106,
+              0.11832694057518212
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.321715014470877e-10,
+            "position_world_m": [
+              0.2931440407580573,
+              -0.0518535878626484,
+              0.11722694084053055
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.534322787591475e-10,
+            "position_world_m": [
+              0.2973726580193365,
+              -0.050314497947288796,
+              0.12246294067722835
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.534321639484573e-11,
+            "position_world_m": [
+              0.295258350027293,
+              -0.05108404449844723,
+              0.12136294075888242
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.827456606179334e-10,
+            "position_world_m": [
+              0.29948696592372315,
+              -0.04954495150540685,
+              0.12026294059559313
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.0608630779396222e-09,
+            "position_world_m": [
+              0.2942011950444622,
+              -0.051468815237845425,
+              0.1191629407997051
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -8.263079721340636e-10,
+            "position_world_m": [
+              0.2984298121264056,
+              -0.04992972550197789,
+              0.11806294063641581
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.893661205429556e-10,
+            "position_world_m": [
+              0.29631550344852065,
+              -0.050699269608622116,
+              0.1222429407180582
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.3250021756866515e-09,
+            "position_world_m": [
+              0.3005441203474466,
+              -0.04916017936993066,
+              0.12114294055477029
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.402782861213414e-10,
+            "position_world_m": [
+              0.29248331998603294,
+              -0.05209407213104897,
+              0.1200429408660409
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.62908552304209e-10,
+            "position_world_m": [
+              0.29671193620716885,
+              -0.050554980030135,
+              0.11894294070275212
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.1123376599193402e-09,
+            "position_world_m": [
+              0.29459762800862804,
+              -0.05132452601394532,
+              0.11784294078439704
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.542486000381385e-10,
+            "position_world_m": [
+              0.2988262453831055,
+              -0.0497854365216276,
+              0.12202294062110709
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.0678318045651576e-10,
+            "position_world_m": [
+              0.2935404736015294,
+              -0.05170929777497686,
+              0.12092294082521844
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.1424192373349351e-09,
+            "position_world_m": [
+              0.29776909050045935,
+              -0.050170207536283956,
+              0.11982294066192915
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.309647457636778e-10,
+            "position_world_m": [
+              0.2956547824320372,
+              -0.050939753877592656,
+              0.1187229407435742
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.537747621575662e-10,
+            "position_world_m": [
+              0.2998833987215472,
+              -0.049400661964532494,
+              0.11762294058028575
+            ]
+          }
+        ],
+        "thread": [],
+        "unexpected": []
+      },
+      "unexpected_penetrating_contact_count": 0,
+      "passed": true
+    },
+    {
+      "angle_rad": -1.3962634015954636,
+      "angle_degrees": -80.0,
+      "nut_initialized_position_world_m": [
+        0.3,
+        -0.06,
+        0.11972222222222222
+      ],
+      "right": {
+        "joint_positions_rad": [
+          0.6343834342775975,
+          2.199068582424902,
+          2.053928568092989,
+          -1.425656353207148,
+          -1.6862242646905148e-08,
+          0.45985049905845593
+        ],
+        "joint_limit_margins_rad": [
+          2.4199465657224026,
+          1.4661214175750978,
+          1.6112614319070109,
+          0.14514364679285197,
+          1.5707999831377573,
+          1.6345495009415438
+        ],
+        "minimum_joint_limit_margin_rad": 0.14514364679285197,
+        "position_error_m": 4.38396176874918e-09,
+        "orientation_error_rad": 4.521964954651386e-08
+      },
+      "contacts": {
+        "left_pad_block": [
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.30100758269957e-11,
+            "position_world_m": [
+              0.30449999993600657,
+              -0.022149999950427206,
+              0.09525000001650503
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.454676093430969e-11,
+            "position_world_m": [
+              0.3044999999384765,
+              -0.016649999950427208,
+              0.09525000002227338
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.3915570581381034e-11,
+            "position_world_m": [
+              0.2954999999384765,
+              -0.01664999994638552,
+              0.09525000002195778
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.237888547406704e-11,
+            "position_world_m": [
+              0.29549999993600656,
+              -0.022149999946385522,
+              0.09525000001618944
+            ]
+          }
+        ],
+        "right_pad_nut": [
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.3337633254784098e-10,
+            "position_world_m": [
+              0.2938319281488948,
+              -0.05093333143546878,
+              0.12247218359810289
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.085552483967252e-10,
+            "position_world_m": [
+              0.2982635152404114,
+              -0.05015192345713266,
+              0.12137222039406252
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -8.169974406210613e-10,
+            "position_world_m": [
+              0.29604769790277685,
+              -0.050542632740377354,
+              0.12027222049305247
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.478849101151704e-10,
+            "position_world_m": [
+              0.30047933254068987,
+              -0.04976121479811317,
+              0.11917222029507384
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.2245127186533145e-09,
+            "position_world_m": [
+              0.29493978895845036,
+              -0.05073798623754802,
+              0.11807222054254804
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.446649542031733e-10,
+            "position_world_m": [
+              0.299371424219021,
+              -0.04995657048881918,
+              0.12225222034456779
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.481488314807882e-10,
+            "position_world_m": [
+              0.2971556064861317,
+              -0.05034727753046347,
+              0.12115222044355745
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.0893299305176894e-09,
+            "position_world_m": [
+              0.3015872414233291,
+              -0.04956586128552842,
+              0.12005222024557874
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.7233246950963024e-10,
+            "position_world_m": [
+              0.2943858349078646,
+              -0.05083566487537533,
+              0.11895222056729472
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.8716156402476258e-10,
+            "position_world_m": [
+              0.29881746938633574,
+              -0.0500542460288697,
+              0.11785222036931602
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.0142793081119317e-09,
+            "position_world_m": [
+              0.29660165219497914,
+              -0.05044495480396222,
+              0.1220322204683036
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.262199474599323e-10,
+            "position_world_m": [
+              0.30103328719549255,
+              -0.04966353891810793,
+              0.12093222027032617
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.874254836556569e-10,
+            "position_world_m": [
+              0.2954937433317776,
+              -0.05064030876122,
+              0.11983222051779979
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.262603747248514e-09,
+            "position_world_m": [
+              0.2999253782399761,
+              -0.04985889235182342,
+              0.11873222031982147
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.53887459301832e-10,
+            "position_world_m": [
+              0.29770956096460827,
+              -0.05024960198819974,
+              0.11763222041881066
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.862398600759878e-10,
+            "position_world_m": [
+              0.3021411957676571,
+              -0.04946818364473894,
+              0.12181222022083073
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.98552432204403e-10,
+            "position_world_m": [
+              0.2941088576140086,
+              -0.05088450233674078,
+              0.12071222057966811
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.815549711438354e-10,
+            "position_world_m": [
+              0.2985404926604447,
+              -0.05010308671133801,
+              0.11961222038168946
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.013397517626082e-10,
+            "position_world_m": [
+              0.2963246748000331,
+              -0.05049379302976864,
+              0.11851222048067914
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.0765180153554654e-09,
+            "position_world_m": [
+              0.30075630970823175,
+              -0.049712376620372055,
+              0.11741222028270162
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.354424508294181e-10,
+            "position_world_m": [
+              0.2952167664664411,
+              -0.050689148652856474,
+              0.12159222053017345
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.339706437429426e-10,
+            "position_world_m": [
+              0.2996484010724341,
+              -0.04990773052956457,
+              0.12049222033219448
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.1801074236750787e-09,
+            "position_world_m": [
+              0.29743258367075,
+              -0.050298439449565586,
+              0.11939222043118446
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.6310996440573804e-10,
+            "position_world_m": [
+              0.30186421871718827,
+              -0.04951702382416242,
+              0.11829222023320532
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -8.668363700448101e-10,
+            "position_world_m": [
+              0.2946628117087333,
+              -0.05078682461811854,
+              0.11719222055492413
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.077749361660487e-10,
+            "position_world_m": [
+              0.2990944469519302,
+              -0.050005408503313205,
+              0.1224282203569335
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.077747798250233e-11,
+            "position_world_m": [
+              0.29687862967728096,
+              -0.05039611814376725,
+              0.12132822045593156
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.421875085680043e-11,
+            "position_world_m": [
+              0.301310264106023,
+              -0.049614699015232945,
+              0.12022822025795259
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.70846557660221e-10,
+            "position_world_m": [
+              0.29577072052378284,
+              -0.050591470454667914,
+              0.11912822050542662
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.86738277390835e-10,
+            "position_world_m": [
+              0.3002023555152707,
+              -0.04981005451762773,
+              0.11802822030744764
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.944826704876947e-10,
+            "position_world_m": [
+              0.2979865380514645,
+              -0.05020076174758329,
+              0.12220822040643535
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.169660934080552e-09,
+            "position_world_m": [
+              0.3024181729596598,
+              -0.04941934533818731,
+              0.12110822020845738
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.144057892631596e-10,
+            "position_world_m": [
+              0.29397036911995267,
+              -0.05090892233573911,
+              0.12000822058585517
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.723965620403227e-10,
+            "position_world_m": [
+              0.29840200370341696,
+              -0.050127504084687025,
+              0.1189082203878766
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.0590707620817156e-09,
+            "position_world_m": [
+              0.29618618632426047,
+              -0.05051821313244841,
+              0.11780822048686639
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.4207330280937527e-10,
+            "position_world_m": [
+              0.3006178215967398,
+              -0.049736797451252465,
+              0.12198822028888678
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.464405172986073e-10,
+            "position_world_m": [
+              0.29507827758580535,
+              -0.05071356645944378,
+              0.12088822053636032
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.0216187808914645e-09,
+            "position_world_m": [
+              0.2995099124940041,
+              -0.04993215005004719,
+              0.11978822033838131
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.959607807592958e-10,
+            "position_world_m": [
+              0.29729409517669514,
+              -0.05032285944856373,
+              0.11868822043737116
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.6094844260990975e-10,
+            "position_world_m": [
+              0.3017257297942823,
+              -0.04954144139102776,
+              0.11758822023939282
+            ]
+          }
+        ],
+        "thread": [],
+        "unexpected": []
+      },
+      "unexpected_penetrating_contact_count": 0,
+      "passed": true
+    },
+    {
+      "angle_rad": -1.5707963267948966,
+      "angle_degrees": -90.0,
+      "nut_initialized_position_world_m": [
+        0.3,
+        -0.06,
+        0.1196875
+      ],
+      "right": {
+        "joint_positions_rad": [
+          0.6188732045613945,
+          2.179497507091754,
+          2.02229581567223,
+          -1.4135947373392463,
+          -1.7016018471322468e-08,
+          0.6188731797180009
+        ],
+        "joint_limit_margins_rad": [
+          2.435456795438606,
+          1.485692492908246,
+          1.64289418432777,
+          0.15720526266075363,
+          1.5707999829839816,
+          1.4755268202819989
+        ],
+        "minimum_joint_limit_margin_rad": 0.15720526266075363,
+        "position_error_m": 3.209476645276886e-09,
+        "orientation_error_rad": 1.0631731074803944e-07
+      },
+      "contacts": {
+        "left_pad_block": [
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.30100758269957e-11,
+            "position_world_m": [
+              0.30449999993600657,
+              -0.022149999950427206,
+              0.09525000001650503
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.454676093430969e-11,
+            "position_world_m": [
+              0.3044999999384765,
+              -0.016649999950427208,
+              0.09525000002227338
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.3915570581381034e-11,
+            "position_world_m": [
+              0.2954999999384765,
+              -0.01664999994638552,
+              0.09525000002195778
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.237888547406704e-11,
+            "position_world_m": [
+              0.29549999993600656,
+              -0.022149999946385522,
+              0.09525000001618944
+            ]
+          }
+        ],
+        "right_pad_nut": [
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.166776654274898e-10,
+            "position_world_m": [
+              0.29775000191362033,
+              -0.0500000002628077,
+              0.12023750206810203
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.376170454316707e-10,
+            "position_world_m": [
+              0.29662500170918715,
+              -0.05000000016880852,
+              0.11803750217264186
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.111184703622844e-10,
+            "position_world_m": [
+              0.3011250020976102,
+              -0.05000000024762397,
+              0.12221750175448277
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.858072792848553e-10,
+            "position_world_m": [
+              0.3033750018931769,
+              -0.05000000009290364,
+              0.12001750154540343
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.055592752964746e-10,
+            "position_world_m": [
+              0.2960625017909604,
+              -0.05000000068119256,
+              0.11891750222491167
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.5968876274948833e-11,
+            "position_world_m": [
+              0.29831250207716686,
+              -0.05000000002298443,
+              0.12199750201583215
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.814912682288184e-10,
+            "position_world_m": [
+              0.3028125019749502,
+              -0.0500000001599256,
+              0.12089750159767328
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.1714175423015458e-10,
+            "position_world_m": [
+              0.30168750177051695,
+              -0.05000000010857088,
+              0.11869750170221306
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.7593207316329332e-10,
+            "position_world_m": [
+              0.2994375016683004,
+              -0.05000000055157097,
+              0.1175975019112925
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.7975615013730035e-10,
+            "position_world_m": [
+              0.29578125195450733,
+              -0.050000000189878074,
+              0.12067750225104652
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.037287636305084e-11,
+            "position_world_m": [
+              0.3002812518522903,
+              -0.05000000059927208,
+              0.11957750183288769
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.8559139641771694e-10,
+            "position_world_m": [
+              0.302531251647857,
+              -0.0500000000927957,
+              0.11737750162380835
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.4630486929542704e-10,
+            "position_world_m": [
+              0.2969062520362803,
+              -0.05000000032954446,
+              0.12155750214650682
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.853209595671258e-10,
+            "position_world_m": [
+              0.29915625183184696,
+              -0.05000000014266047,
+              0.11935750193742743
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.4074567422988438e-10,
+            "position_world_m": [
+              0.30365625172963034,
+              -0.05000000046965049,
+              0.11825750151926853
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.4371468732020674e-10,
+            "position_world_m": [
+              0.29634375162741394,
+              -0.05000000012185734,
+              0.11715750219877705
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.1145361850383182e-10,
+            "position_world_m": [
+              0.30084375211396486,
+              -0.050000000105726805,
+              0.12239350178061702
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.518647742964405e-11,
+            "position_world_m": [
+              0.29859375201174826,
+              -0.05000000061625563,
+              0.12129350198969727
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.7499779750296263e-10,
+            "position_world_m": [
+              0.2974687518073151,
+              -0.0500000000874989,
+              0.11909350209423701
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.0494886693952665e-10,
+            "position_world_m": [
+              0.3019687517050983,
+              -0.05000000027722573,
+              0.11799350167607815
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.3188033090870697e-11,
+            "position_world_m": [
+              0.3042187519913048,
+              -0.050000000011594006,
+              0.12107350146699863
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.993896718757734e-10,
+            "position_world_m": [
+              0.29564062688908854,
+              -0.05000000050310053,
+              0.11997350226411403
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.3024177222820121e-11,
+            "position_world_m": [
+              0.30014062678687164,
+              -0.05000000000651208,
+              0.11887350184595513
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.105080637399049e-10,
+            "position_world_m": [
+              0.2978906266846551,
+              -0.050000000230165396,
+              0.11777350205503469
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.383047507375407e-11,
+            "position_world_m": [
+              0.3023906270730782,
+              -0.05000000040407036,
+              0.12195350163687568
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -8.596492268031497e-11,
+            "position_world_m": [
+              0.30126562686864494,
+              -0.05000000004298246,
+              0.1197535017414154
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.6976246974079913e-10,
+            "position_world_m": [
+              0.29901562676642834,
+              -0.05000000037347894,
+              0.1186535019504949
+            ]
+          }
+        ],
+        "thread": [],
+        "unexpected": []
+      },
+      "unexpected_penetrating_contact_count": 0,
+      "passed": true
+    },
+    {
+      "angle_rad": -1.7453292519943295,
+      "angle_degrees": -100.0,
+      "nut_initialized_position_world_m": [
+        0.3,
+        -0.06,
+        0.11965277777777777
+      ],
+      "right": {
+        "joint_positions_rad": [
+          0.6048914764526202,
+          2.1556487744016093,
+          1.9842414319648813,
+          -1.399389054600698,
+          -2.7536583261050882e-08,
+          0.7794243500166529
+        ],
+        "joint_limit_margins_rad": [
+          2.44943852354738,
+          1.5095412255983907,
+          1.6809485680351186,
+          0.17141094539930202,
+          1.5707999724634167,
+          1.314975649983347
+        ],
+        "minimum_joint_limit_margin_rad": 0.17141094539930202,
+        "position_error_m": 5.470825807104748e-09,
+        "orientation_error_rad": 9.142478209320851e-08
+      },
+      "contacts": {
+        "left_pad_block": [
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.30100758269957e-11,
+            "position_world_m": [
+              0.30449999993600657,
+              -0.022149999950427206,
+              0.09525000001650503
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.454676093430969e-11,
+            "position_world_m": [
+              0.3044999999384765,
+              -0.016649999950427208,
+              0.09525000002227338
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.3915570581381034e-11,
+            "position_world_m": [
+              0.2954999999384765,
+              -0.01664999994638552,
+              0.09525000002195778
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.237888547406704e-11,
+            "position_world_m": [
+              0.29549999993600656,
+              -0.022149999946385522,
+              0.09525000001618944
+            ]
+          }
+        ],
+        "right_pad_nut": [
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.26513670267925e-10,
+            "position_world_m": [
+              0.2995206685711592,
+              -0.049761214983311715,
+              0.12020278017377146
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.115181103184982e-10,
+            "position_world_m": [
+              0.29841275970881903,
+              -0.049565860700330346,
+              0.11800278025175591
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.1257688491427285e-10,
+            "position_world_m": [
+              0.30284439488263515,
+              -0.050347277550668326,
+              0.12218277993981828
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.1930522585484593e-10,
+            "position_world_m": [
+              0.2978588053164569,
+              -0.04946818412915399,
+              0.11888278029074806
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.98842026611528e-10,
+            "position_world_m": [
+              0.30118253143691326,
+              -0.0500542464624939,
+              0.11756278005679499
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.355290559281521e-10,
+            "position_world_m": [
+              0.29758182833667124,
+              -0.04941934514326558,
+              0.12064278031024409
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.953682547648413e-11,
+            "position_world_m": [
+              0.30201346310041477,
+              -0.05020076221149097,
+              0.11954277999830669
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.783788291029891e-10,
+            "position_world_m": [
+              0.2986897371009376,
+              -0.049614699455512334,
+              0.12152278023225972
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.210377978400068e-10,
+            "position_world_m": [
+              0.3009055544315985,
+              -0.050005407621385986,
+              0.11932278007629105
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.5907362449846408e-10,
+            "position_world_m": [
+              0.3053371892208711,
+              -0.05078682454483087,
+              0.11822277976435362
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.317697308164341e-11,
+            "position_world_m": [
+              0.2981357824784849,
+              -0.04951702208149715,
+              0.1171227802712521
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.278373654300395e-11,
+            "position_world_m": [
+              0.302567417727121,
+              -0.05029843892905932,
+              0.12235877995931421
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.976842509814682e-11,
+            "position_world_m": [
+              0.30035160011773737,
+              -0.0499077310265581,
+              0.12125878011528322
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.044966709331298e-11,
+            "position_world_m": [
+              0.29924369133823336,
+              -0.04971237627378927,
+              0.11905878019326759
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.8876848695281723e-10,
+            "position_world_m": [
+              0.3036753261379494,
+              -0.05049379313800634,
+              0.11795877988133018
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.253542946894766e-10,
+            "position_world_m": [
+              0.2974433396470461,
+              -0.049394926150733716,
+              0.11993878031999217
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.865913981825452e-10,
+            "position_world_m": [
+              0.2996591569966846,
+              -0.04978563420897861,
+              0.11773878016402353
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.0604909181714392e-10,
+            "position_world_m": [
+              0.30409079215473345,
+              -0.05056705114873767,
+              0.12191877985208598
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.0489109370884653e-10,
+            "position_world_m": [
+              0.3007670657675022,
+              -0.04998098848407358,
+              0.11861878008603913
+            ]
+          }
+        ],
+        "thread": [],
+        "unexpected": []
+      },
+      "unexpected_penetrating_contact_count": 0,
+      "passed": true
+    },
+    {
+      "angle_rad": -1.9198621771937625,
+      "angle_degrees": -110.0,
+      "nut_initialized_position_world_m": [
+        0.3,
+        -0.06,
+        0.11961805555555555
+      ],
+      "right": {
+        "joint_positions_rad": [
+          0.5928277763426302,
+          2.1283815330230125,
+          1.9413783122735657,
+          -1.383793061342955,
+          -6.200057010255933e-08,
+          0.9418935091099173
+        ],
+        "joint_limit_margins_rad": [
+          2.4615022236573703,
+          1.5368084669769875,
+          1.7238116877264342,
+          0.18700693865704499,
+          1.57079993799943,
+          1.1525064908900826
+        ],
+        "minimum_joint_limit_margin_rad": 0.18700693865704499,
+        "position_error_m": 9.017368129809052e-09,
+        "orientation_error_rad": 1.4028389873855456e-07
+      },
+      "contacts": {
+        "left_pad_block": [
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.30100758269957e-11,
+            "position_world_m": [
+              0.30449999993600657,
+              -0.022149999950427206,
+              0.09525000001650503
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.454676093430969e-11,
+            "position_world_m": [
+              0.3044999999384765,
+              -0.016649999950427208,
+              0.09525000002227338
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.3915570581381034e-11,
+            "position_world_m": [
+              0.2954999999384765,
+              -0.01664999994638552,
+              0.09525000002195778
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.237888547406704e-11,
+            "position_world_m": [
+              0.29549999993600656,
+              -0.022149999946385522,
+              0.09525000001618944
+            ]
+          }
+        ],
+        "right_pad_nut": [
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.4981385670096454e-10,
+            "position_world_m": [
+              0.3034202080984736,
+              -0.050603076404213555,
+              0.12126805599544702
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.6490149510696357e-09,
+            "position_world_m": [
+              0.30130589927204166,
+              -0.04983353218554661,
+              0.12016805604909048
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.056839353877348e-09,
+            "position_world_m": [
+              0.3002487453084822,
+              -0.049448758725774256,
+              0.11796805607591417
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.0993433095742302e-09,
+            "position_world_m": [
+              0.304477361716159,
+              -0.050987850722255264,
+              0.122148055968623
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.562894694864488e-10,
+            "position_world_m": [
+              0.30659167056033854,
+              -0.05175739466212392,
+              0.11994805591498157
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.496716662587626e-10,
+            "position_world_m": [
+              0.2997201673457901,
+              -0.04925637482894001,
+              0.11884805608932376
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.794715758263626e-10,
+            "position_world_m": [
+              0.3018344767422089,
+              -0.05002591761960673,
+              0.1219280560356777
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.4657910705591277e-09,
+            "position_world_m": [
+              0.30606309327283887,
+              -0.051565008910218944,
+              0.1208280559283922
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -6.924839070221456e-10,
+            "position_world_m": [
+              0.30500593927830355,
+              -0.05118023553555041,
+              0.1186280559552152
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -9.161194272838656e-10,
+            "position_world_m": [
+              0.3028916302679387,
+              -0.05041069182223383,
+              0.11752805600885885
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.0154627142933534e-09,
+            "position_world_m": [
+              0.2994558795325989,
+              -0.049160179763090506,
+              0.1206080560960282
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.6644778400945697e-10,
+            "position_world_m": [
+              0.3036844956638544,
+              -0.050699272150947855,
+              0.11950805598874185
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.309234092666811e-10,
+            "position_world_m": [
+              0.30579880499355144,
+              -0.05146881475687071,
+              0.11730805593509878
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.2825671900491256e-09,
+            "position_world_m": [
+              0.3005130333980954,
+              -0.04954495340024767,
+              0.12148805606920653
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.2213932712445974e-09,
+            "position_world_m": [
+              0.30262734225627796,
+              -0.05031449730164564,
+              0.11928805601556437
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -7.328955485060942e-10,
+            "position_world_m": [
+              0.30685595858600284,
+              -0.051853589144241596,
+              0.11818805590827659
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -2.931203179484809e-10,
+            "position_world_m": [
+              0.29998445686977343,
+              -0.04935256519445716,
+              0.11708805608262059
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.7930421331718849e-09,
+            "position_world_m": [
+              0.3042130735241132,
+              -0.0508916565868509,
+              0.12232405597529682
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.8322390349727015e-10,
+            "position_world_m": [
+              0.30209876420020937,
+              -0.05012211373497584,
+              0.12122405602897453
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -5.456795657693414e-10,
+            "position_world_m": [
+              0.30104161106834093,
+              -0.049737337990149254,
+              0.119024056055797
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.5854681421900718e-09,
+            "position_world_m": [
+              0.30527022765941786,
+              -0.05127642911468539,
+              0.11792405594851033
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.451296813784422e-10,
+            "position_world_m": [
+              0.3073845363201968,
+              -0.05204597392649875,
+              0.12100405589486522
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.038268681788702e-09,
+            "position_world_m": [
+              0.29932373475252233,
+              -0.049112084519587734,
+              0.11990405609938172
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.4995359381292372e-09,
+            "position_world_m": [
+              0.30143804370004335,
+              -0.04988162817551711,
+              0.11770405604574014
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -4.885970382634107e-10,
+            "position_world_m": [
+              0.3056666599275719,
+              -0.05142072066695476,
+              0.1218840559384507
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -3.3020158655971965e-10,
+            "position_world_m": [
+              0.304609506539522,
+              -0.05103594562597891,
+              0.11968405596527276
+            ]
+          },
+          {
+            "geoms": [
+              "right_m8_pad_left",
+              "nut_thread"
+            ],
+            "geom_ids": [
+              102,
+              4
+            ],
+            "bodies": [
+              "right_lf_down",
+              "nut"
+            ],
+            "signed_distance_m": -1.404716442560637e-09,
+            "position_world_m": [
+              0.30249519767466604,
+              -0.05026640151287981,
+              0.11858405601891701
+            ]
+          }
+        ],
+        "thread": [],
+        "unexpected": []
+      },
+      "unexpected_penetrating_contact_count": 0,
+      "passed": true
+    },
+    {
+      "angle_rad": -2.0943951023931953,
+      "angle_degrees": -119.99999999999999,
+      "nut_initialized_position_world_m": [
+        0.3,
+        -0.06,
+        0.11958333333333333
+      ],
+      "right": {
+        "joint_positions_rad": [
+          0.5830651926477245,
+          2.0985786673552895,
+          1.8953128717487686,
+          -1.367530531187526,
+          -9.077123946858922e-14,
+          1.106663968245914
+        ],
+        "joint_limit_margins_rad": [
+          2.471264807352276,
+          1.5666113326447104,
+          1.7698771282512313,
+          0.20326946881247387,
+          1.5707999999999092,
+          0.9877360317540858
+        ],
+        "minimum_joint_limit_margin_rad": 0.20326946881247387,
+        "position_error_m": 4.456541653978408e-14,
+        "orientation_error_rad": 8.607965032408617e-13
+      },
+      "contacts": {
+        "left_pad_block": [
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.30100758269957e-11,
+            "position_world_m": [
+              0.30449999993600657,
+              -0.022149999950427206,
+              0.09525000001650503
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.454676093430969e-11,
+            "position_world_m": [
+              0.3044999999384765,
+              -0.016649999950427208,
+              0.09525000002227338
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -4.3915570581381034e-11,
+            "position_world_m": [
+              0.2954999999384765,
+              -0.01664999994638552,
+              0.09525000002195778
+            ]
+          },
+          {
+            "geoms": [
+              "fixture_block_geom",
+              "left_m8_pad_left"
+            ],
+            "geom_ids": [
+              2,
+              44
+            ],
+            "bodies": [
+              "fixture_block",
+              "left_lf_down"
+            ],
+            "signed_distance_m": -3.237888547406704e-11,
+            "position_world_m": [
+              0.29549999993600656,
+              -0.022149999946385522,
+              0.09525000001618944
+            ]
+          }
+        ],
+        "right_pad_nut": [],
+        "thread": [],
+        "unexpected": []
+      },
+      "unexpected_penetrating_contact_count": 0,
+      "passed": true
+    }
+  ],
+  "recorded_configuration_provenance": {
+    "trace": "outputs/yam_m8/final/yam_m8_trace_partial.npz",
+    "trace_sha256": "e937f4209458b10b36d2fc54bc30aa4eeb608e5302a566bba02a6966f2180c7a",
+    "recorded_model_fingerprint": "027dd245fb6486b03704da1ceac633dcffdfc94c243035078bd0b169f776192b"
+  }
+}

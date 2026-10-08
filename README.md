@@ -1,6 +1,23 @@
-# M8 nut-on-bolt contact proof of concept
+# Bimanual YAM M8 contact proof of concept
 
-**YAM integration:** [arm-driven scene and current progress](docs/yam_m8.md).
+Two actual YAM arms hold a free mounting block and turn a larger nut on its
+short M8 shaft. The nut has a 20 mm outer width and the same M8 × 1.25 bore;
+the shaft is 16 mm long. Native joint motors and finite finger contacts drive
+the task. See [scene, controls, policy interface and current results](docs/yam_m8.md).
+
+[![Recorded bimanual grasp and lift](media/yam_m8/hold.png)](media/yam_m8/hold.mp4)
+
+The left arm physically lifts the free assembly **3.829 mm**, with zero
+world supports or artificial object forces. The full three-stroke turning
+demo is currently being validated. **97 software tests pass**; neither these
+tests nor the lift alone certify policy-training fidelity.
+
+```bash
+scripts/run_m8.sh -m yam_twin.m8_demo --output outputs/yam_m8/demo \
+  --dt .00005 --angular-speed 1 --video
+```
+
+## Independent M8 mechanics experiment
 
 A video-informed M8 × 1.25 experiment with a free six-DOF nut, continuous
 60° helical collision surfaces, and finite-force frictional fingers. Rotation
@@ -61,7 +78,7 @@ scripts/run_m8.sh -m thread_lab.load_benchmark --help
 ```
 
 `thread_lab.validate` retains strict physics gates and can exit with failure.
-The final **64 software tests pass**. Software tests, numerical geometry checks,
+The final **97 software tests pass**. Software tests, numerical geometry checks,
 and physics acceptance answer different questions.
 [Setup and engine provenance](docs/m8_setup.md) explain the separate runtimes.
 

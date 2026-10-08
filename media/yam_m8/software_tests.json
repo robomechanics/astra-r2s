@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "tests_passed": 97,
+  "warnings": 2,
+  "wall_seconds": 51.51,
+  "source_hashes": {
+    "tests/test_yam_m8_control.py": "40956a87183b2100976b9cba5aafc9fbc93524b8191b36e983b11cca39d75be0",
+    "tests/test_yam_m8_env.py": "47ebd3f925ed0d7330a2f559499dc33d3aaec4e715120f28328120c4eb5a194e",
+    "tests/test_yam_m8_provenance.py": "fd447004b701fe29cd20545cebdc3a3b3961d175d9286d9387e2f423d45adcd6",
+    "tests/test_yam_m8_scene.py": "7476fd5a93c416f3cf12506fa89f22a388874a4b4fdcfb852a30590ea377c497",
+    "yam_twin/m8_demo.py": "1b83f44b1a6c527a0c2ba9b2aa62ed681058cfd07b21f714ded0d07cd8895ad3",
+    "yam_twin/m8_env.py": "88eab5fc877341db0bed0f5b81e0c45c25995493b7c368dd3e182dd9d43f510a",
+    "yam_twin/m8_scene.py": "7f7b8c73106ec7ac306a9bb410ae980bab939e53ac5f5350980171808863354d",
+    "yam_twin/m8_simulation.py": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449"
+  },
+  "source_hashes_unchanged": true,
+  "command": "scripts/run_m8.sh -m pytest -q"
+}
