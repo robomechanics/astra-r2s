@@ -10,17 +10,21 @@ axial trajectory.
 
 [![First turning stroke and open reset, recorded physics](../media/yam_m8/turn_progress.gif)](../media/yam_m8/turn_progress.mp4)
 
-The first two measured 120° strokes pass the unchanged 8.33 µm lead-error
-gate (errors 2.991 and 3.082 µm). The turning clip contains the first stroke
-and open reset, with zero hand/nut contacts during reset and 14 nm of axial
-creep. The full three-stroke run and a left-contact sticking convergence
-comparison are still in progress. The inspection camera keeps the nut visible
+The [complete three-stroke reference demo](../media/yam_m8/reference_demo.mp4)
+passes all 15 nominal gates. Its 120° strokes pass the unchanged 8.33 µm
+lead-error gate (errors 2.991, 3.082 and 3.142 µm). Both open resets have zero
+hand/nut contacts, with 14.0 and 7.37 nm of axial creep. See the
+[rollout checks](../media/yam_m8/reference_validation.json),
+[raw states](../media/yam_m8/reference_trace.npz), and
+[independent audit](../media/yam_m8/reference_independent_audit.json).
+The original soft left grip rotates by 1.896°, close to its 2° limit; a
+left-contact sticking comparison is still in progress.
+The inspection camera keeps the nut visible
 between the actual fingers; the inset is the real model's wrist camera. The
 advance plot uses the measured post-grasp baseline and reports initial flank
 take-up separately; no simulated state or motion command is corrected.
 
-**Current recorded milestone: grasp and lift.** The full three-stroke turning
-run is being validated. This clip replays the actual 1.32 s hold/lift trajectory
+The earlier grasp/lift clip replays the actual 1.32 s hold/lift trajectory
 at 3× slow motion. It passes the hold, alignment, support and drive checks;
 its full-demo report deliberately remains incomplete because it contains no
 turning strokes or open resets.

@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import inspect
 import json
 from pathlib import Path
 import sys
@@ -22,6 +23,7 @@ from thread_lab.build_plugin import build_plugin
 from thread_lab.model import ThreadConfig
 from thread_lab.runtime import require_micron_engine
 from yam_twin.m8_scene import YamM8Config, build_model, scene_fingerprint, scene_xml
+from yam_twin import m8_simulation
 
 
 def audit(path: Path, scene: Path, *, use_saved_xml=False):
@@ -40,6 +42,9 @@ def audit(path: Path, scene: Path, *, use_saved_xml=False):
         "mujoco_core_binary_hashes_match": sorted(lib["sha256"] for lib in recorded_runtime.get("libraries", []))
             == sorted(lib["sha256"] for lib in runtime.get("libraries", [])),
     }
+    controller_hash = hashlib.sha256("\n".join(inspect.getsource(getattr(m8_simulation, name))
+        for name in ("YamM8ControlConfig", "YamCartesianController", "bounded_vector", "smooth_profile",
+                     "demo_phases", "initialize_work_pose", "run_demo")).encode()).hexdigest()
     portable_fingerprint = None
     if metadata.get("scene_config") and not use_saved_xml:
         values = dict(metadata["scene_config"])
@@ -218,6 +223,9 @@ def audit(path: Path, scene: Path, *, use_saved_xml=False):
             "auditor_sha256": auditor_sha256,
             "audit_runtime": runtime, "recorded_rollout_metadata": metadata,
             "recorded_runtime_matches_current_replay": runtime_match,
+            "inspected_controller_sha256": controller_hash,
+            "recorded_controller_source_matches_inspected_source":
+                metadata.get("controller_sha256") == controller_hash,
             "post_clamp_reference_index": baseline, "post_clamp_reference_time_s": rows[baseline]["time_s"],
             "post_clamp_reference_note": "Last saved pose preceding the first turn, or end of the first phase for a clamp-only trace",
             "phase_boundary_note": "Phase deltas use the preceding phase's last sampled pose and the current phase's last sampled pose; original all-substep acceptance gates remain authoritative",

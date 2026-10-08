@@ -7,12 +7,17 @@ the task. See [scene, controls, policy interface and current results](docs/yam_m
 
 [![Recorded first turn, release and regrasp; full run in progress](media/yam_m8/turn_progress.gif)](media/yam_m8/turn_progress.mp4)
 
-The left arm physically lifts the free assembly **3.829 mm**, with zero
-world supports or artificial object forces. The first two 120° strokes pass
-their strict lead checks, with errors of **3.0 and 3.1 µm**. The clip shows
-the first stroke and its open reset; the full three-stroke turning demo is
-currently being validated. **97 software tests pass**; neither these
-tests nor the lift alone certify policy-training fidelity.
+The [complete three-stroke demo](media/yam_m8/reference_demo.mp4) passes all
+15 nominal checks: measured lead errors are **3.0, 3.1 and 3.1 µm**, and both
+open resets have zero hand/nut contacts. The left arm lifts the free assembly
+**3.829 mm**, with zero world supports or artificial object forces. See the
+[raw rollout](media/yam_m8/reference_trace.npz),
+[checks](media/yam_m8/reference_validation.json), and
+[independent audit](media/yam_m8/reference_independent_audit.json).
+The stronger left-contact comparison is finishing; the next task is bolt
+pickup and thread starting in a female-threaded block.
+**97 software tests pass**; nominal demo checks do not certify policy-training
+fidelity.
 
 ```bash
 scripts/run_m8.sh -m yam_twin.m8_demo --output outputs/yam_m8/demo \
