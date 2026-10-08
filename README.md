@@ -1,5 +1,11 @@
 # Dual-YAM screwdriving twin
 
+**M8 contact-physics replacement is in progress:** see
+[current evidence and acceptance gates](docs/m8_status.md).
+The M4 demonstration below uses a prescribed helix and grasp welds. Its
+insertion result validates the scripted animation, not physical thread contact
+or policy-training fidelity.
+
 ![Reconstructed dual-YAM screwdriving demonstration](media/screenshot.png)
 
 **[Demo video](media/twin_demo.mp4)** · **[Source vs. simulation](media/comparison.mp4)** · **[Portable MuJoCo scene](media/twin_scene.zip)**
