@@ -1,0 +1,15 @@
+{
+  "scope": "Closed independent diagnostic audit and actual-data plot; inputs original native cold checkpoint forces, qualification remains false. This audit tests supplemental new90/10 criterion, not historical first-demo acceptance.",
+  "files_sha256": {
+    "independent_weight_transfer_audit.json": "1a4cabf16136cc4c931fcf1b6d85a7da86eae5850404d2e0e1f44d07402f6da4",
+    "native_load_chatter.png": "bbd181d16c645ee195780bbd4ec67edc73f9080d2293b9c7dea97af6a523d636",
+    "native_load_chatter_binding.json": "9784bc175b6aa103defd9c84db8a24595bb2c74135624111dd1a2458ca7e262a"
+  },
+  "audit_sources_sha256": {
+    "software_proof.json": "6a8c9d030c3677943ae8bc27fa5c4c1a7092a451f6e31127f6984a15668437c0",
+    "independent_weight_transfer_audit.py": "59d47d49b301ceb6d61925885c67e55a61c8e7f593e3ec477e0957ae2b85fdba",
+    "test_bolt_weight_transfer_observer.py": "1454a1223af738d607d50f67306610bb70401150ef8576133196348fb61cc405"
+  },
+  "command": "python outputs/m8_table_supported/diagnostics/independent_weight_transfer_audit.py outputs/m8_table_supported/diagnostics/stop_transfer_B200_v2 --output outputs/m8_table_supported/diagnostics/stop_transfer_B200_v2/independent_weight_transfer_audit.json",
+  "raw_unchanged": true
+}

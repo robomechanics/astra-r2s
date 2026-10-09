@@ -63,7 +63,12 @@ later aborts at 12.84275 s when radial offset exceeds the unchanged 150 µm
 limit during opening. Its first starting half-turn advances only 8.946 µm,
 with zero formed-flank overlap. Table/left-pad support stays loaded throughout
 the observed 11.1928 s active period; complete threading remains unqualified.
-Further checkpoint diagnostics are pending.
+The separate [one-second cold weight-transfer diagnostic](media/m8_table_supported/diagnostics/cone_weight_transfer_B200)
+starts a new solve from an archived checkpoint. Its final 100 ms has 99.97%
+mean thread support of bolt weight but 67.08% mean positive right-hand
+support and zero loaded interior-flank contacts. Release readiness stays
+false. Its 15 observer tests are separate from the 213-test producer proof;
+further checkpoint diagnostics remain pending.
 The [actual 1.65 s stabilization clip](media/m8_table_supported/progress_stabilized/demo.gif)
 records 99.072% mean block weight on the table, with 0.928% mean positive
 upward left-hand load. It has not attempted bolt pickup or threading;

@@ -1,0 +1,10 @@
+{
+  "scope": "Exact Python stdin source saved after the original plot command. No plot regeneration or physics replay. Original plot/binding/raw bytes unchanged.",
+  "source_sha256": "84dbc8bb66aeb9296ebd5f11e5ea3499daf566236df61448a4bc9a89fc206dd5",
+  "plot_sha256": "bbd181d16c645ee195780bbd4ec67edc73f9080d2293b9c7dea97af6a523d636",
+  "original_plot_binding_sha256": "9784bc175b6aa103defd9c84db8a24595bb2c74135624111dd1a2458ca7e262a",
+  "ledger_sha256": "545f1eca7f7b2309e0aa99b074dde25104d70d2b49cc1e385dc1dead1ef6d1f5",
+  "original_command": "scripts/run_m8.sh - < native_load_chatter_plot_source.py",
+  "original_working_directory": "/workspace/astra-r2s",
+  "source_preservation_note": "Saved source bytes match the executed Python stdin text, including literal escaped newline labels."
+}

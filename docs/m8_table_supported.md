@@ -130,10 +130,26 @@ full-shaft/rest clearance during transfer is **14.93967 mm**. These support
 and transfer results apply to the actually executed failed prefix, not an
 unexecuted complete assembly.
 
-Further bounded native gravity/load-transfer and axial-damping diagnostics
-are being checked from closed checkpoints under `outputs/`. They remain
-separate diagnostic branches; a new continuous full attempt will need its
-own producer, source proof, trajectory and acceptance result. Post-closure audit
+The [closed one-second B200 weight-transfer diagnostic](../media/m8_table_supported/diagnostics/cone_weight_transfer_B200)
+starts from the parent's actual saved `stop_start_1` checkpoint at
+12.76565 s. Exact archived qpos/qvel/ctrl initialize a new `MjData` once;
+the original solver state and warm starts are absent. It is a cold
+diagnostic branch, not a continuous run or a splice into the parent.
+
+Its axial damping is 200 N·s/m, with net feed ramped from 0.05 N to the
+0.262414 N bolt weight over 0.5 s and then held for 0.5 s. In the independently
+evaluated final exact 100 ms, mean signed native thread support is **99.97%**
+of bolt weight, while mean positive right-hand support is **67.08%**.
+Loaded thread-support duty is 63.6%, and actual formed overlap/interior-flank
+loading remain zero. Cone/right-pad load chatter keeps release readiness
+false; mean signed force balance does not establish unsupported capture.
+The [original-force plot and evidence](../media/m8_table_supported/diagnostics/cone_weight_transfer_B200)
+retain exact force/frame/source identities. Its **15 diagnostic observer
+tests** remain separate from the historical **213 producer tests**.
+
+Further bounded native checkpoint diagnostics remain pending. A new
+continuous full attempt will need its own producer, source proof, trajectory
+and acceptance result. Post-closure audit
 corrections cover unloaded window endpoints and qualified closed hold phases;
 they do not alter the original failed trajectory.
 

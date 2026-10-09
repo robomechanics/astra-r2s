@@ -1,0 +1,7 @@
+{
+  "scope": "Scientific plot from original all-step cold-checkpoint force ledger; not a full native trajectory or qualified capture",
+  "ledger_sha256": "545f1eca7f7b2309e0aa99b074dde25104d70d2b49cc1e385dc1dead1ef6d1f5",
+  "plot_sha256": "bbd181d16c645ee195780bbd4ec67edc73f9080d2293b9c7dea97af6a523d636",
+  "last_mean_window_s": 0.1,
+  "native_timestep_s": 5e-05
+}

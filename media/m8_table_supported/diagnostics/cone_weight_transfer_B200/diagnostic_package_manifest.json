@@ -1,0 +1,154 @@
+{
+  "status": "cold_checkpoint_diagnostic_only",
+  "parent_package": "media/m8_table_supported/failures/cone_release_alignment_abort",
+  "parent_package_url": "https://github.com/robomechanics/astra-r2s/tree/main/media/m8_table_supported/failures/cone_release_alignment_abort",
+  "parent_trace_sha256": "02a03f0262edfd519a3080bc3d44588f2f2f12ac2da6d40ca44dc379e3acae4c",
+  "parent_model_fingerprint": "dd44ffab2beade32ed4682adb551fdf077dd97d4140bb2794cc995effe35a9ca",
+  "parent_model_xml_sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+  "parent_producer_commit": "66276d0dd2188c763ada69e7426e5d74cf64fd29",
+  "parent_checkpoint_time_s": 12.765649999976919,
+  "parent_checkpoint_index": 2568,
+  "parent_checkpoint_phase": "stop_start_1",
+  "parent_checkpoint_qpos_qvel_sha256": "8ba40eca88316549ee8917a0bce376ea3431cabcb8309c096c96b8388e4781b1",
+  "cold_initialization": "Exact post-integration archived qpos/qvel/ctrl once into new MjData; qacc_warmstart and solver state default zero; one mj_forward initializes a new solve",
+  "warmstarts_or_original_solver_state_restored": false,
+  "continuous_full_trajectory": false,
+  "checkpoint_spliced_into_parent": false,
+  "parent_original_trace_report_sources_modified": false,
+  "current_canonical_producer_tests": 213,
+  "separate_output_only_observer_tests": {
+    "passed": 15,
+    "failed": 0,
+    "elapsed_s": 0.35,
+    "command": "scripts/run_m8.sh -m pytest -q outputs/m8_table_supported/test_bolt_weight_transfer_observer.py"
+  },
+  "proof_accounting": "The separate 15 observer tests are not combined with or relabeled as the 213-test native producer proof.",
+  "diagnostic_duration_s": 1.0,
+  "original_native_steps": 20000,
+  "native_timestep_s": 5e-05,
+  "axial_damping_Ns_per_m": 200.0,
+  "net_feed_start_N": 0.05,
+  "net_feed_final_N": 0.26241400403581094,
+  "original_diagnostic_guards_held": true,
+  "ever_weight_transfer_ready": false,
+  "capture_qualified": false,
+  "actual_loaded_interior_flank_contacts": 0,
+  "independent_exact100ms": {
+    "duration_s": 0.1,
+    "native_steps": 2000,
+    "mean_signed_thread_weight_fraction": 0.9997019111175486,
+    "mean_positive_hand_upward_weight_fraction": 0.6708277560402379,
+    "mean_signed_hand_weight_fraction": 0.00029110156430878686,
+    "loaded_thread_gravity_support_duty": 0.636,
+    "geometry_motion_drive_support_checks_contiguous": true,
+    "ready": false,
+    "ever_ready": false,
+    "last_window_ranges": {
+      "relative_bolt_axial_velocity_m_per_s": [
+        -5.3248492211905195e-05,
+        4.549501975536015e-05
+      ],
+      "radial_offset_m": [
+        2.049368012680561e-05,
+        2.054259746848192e-05
+      ],
+      "bolt_tilt_rad": [
+        0.0029477227032642084,
+        0.0029488506104756894
+      ],
+      "thread_gravity_opposing_force_N": [
+        0.0,
+        1.9709717617159541
+      ],
+      "hand_gravity_opposing_force_N": [
+        -1.6694385324406336,
+        0.257711175833045
+      ],
+      "native_thread_depth_m": [
+        0.0,
+        9.638754443072911e-07
+      ]
+    }
+  },
+  "signed_force_mean_scope": "Mean signed thread reaction approximately balances bolt gravity, but periodic alternating right-pad loads remain. Positive hand support is high; a near-zero signed hand mean is not unsupported thread support.",
+  "plot_source_provenance": "Exact Python stdin source saved after the original plot command. No plot regeneration or physics replay. Original plot/binding/raw bytes unchanged.",
+  "scope": "One-second cold checkpoint experiment at the pre-open full_v2 stop, with damping B200. Exact archived qpos/qvel/ctrl initialize a new MjData once; original warm starts and solver state are absent. Native entry contacts only, zero actual interior-flank loading, no capture, no passive reset, no qualified lead and no completed policy-training trajectory. Original force records and independent retransformation remain separate from pose replay.",
+  "files": {
+    "audit_sources/independent_weight_transfer_audit.py": {
+      "bytes": 7728,
+      "sha256": "59d47d49b301ceb6d61925885c67e55a61c8e7f593e3ec477e0957ae2b85fdba"
+    },
+    "audit_sources/software_proof.json": {
+      "bytes": 730,
+      "sha256": "6a8c9d030c3677943ae8bc27fa5c4c1a7092a451f6e31127f6984a15668437c0"
+    },
+    "audit_sources/test_bolt_weight_transfer_observer.py": {
+      "bytes": 6983,
+      "sha256": "1454a1223af738d607d50f67306610bb70401150ef8576133196348fb61cc405"
+    },
+    "checkpoint_trace.npz": {
+      "bytes": 359358,
+      "sha256": "73d8bb5bc14ff26a85f20a2b7b510ce3a2192cee43f56202507f6de342712f32"
+    },
+    "declaration.json": {
+      "bytes": 5389,
+      "sha256": "2836f1bae1ed55539fc7d738d71195197a4f6195e7c4426880ee90dee66b8179"
+    },
+    "diagnostic_source.py": {
+      "bytes": 17131,
+      "sha256": "a2b3b1120eb98db7f6914c2f69f1999f07112fe9227e246d3513c44f49ff6933"
+    },
+    "frozen_observer/bolt_weight_transfer_observer.py": {
+      "bytes": 12852,
+      "sha256": "f384eaa28376a95e64ee93f6bc291b6f028aa2ad411f406070e2133456274432"
+    },
+    "frozen_observer/software_proof.json": {
+      "bytes": 730,
+      "sha256": "6a8c9d030c3677943ae8bc27fa5c4c1a7092a451f6e31127f6984a15668437c0"
+    },
+    "frozen_observer/test_bolt_weight_transfer_observer.py": {
+      "bytes": 6983,
+      "sha256": "1454a1223af738d607d50f67306610bb70401150ef8576133196348fb61cc405"
+    },
+    "independent_audit_binding.json": {
+      "bytes": 1230,
+      "sha256": "bd770c5fd8fb75d57ed000cfeb53aa889579333511e86809487d0cc76fedce22"
+    },
+    "independent_weight_transfer_audit.json": {
+      "bytes": 4366,
+      "sha256": "1a4cabf16136cc4c931fcf1b6d85a7da86eae5850404d2e0e1f44d07402f6da4"
+    },
+    "native_load_chatter.png": {
+      "bytes": 214702,
+      "sha256": "bbd181d16c645ee195780bbd4ec67edc73f9080d2293b9c7dea97af6a523d636"
+    },
+    "native_load_chatter_binding.json": {
+      "bytes": 367,
+      "sha256": "9784bc175b6aa103defd9c84db8a24595bb2c74135624111dd1a2458ca7e262a"
+    },
+    "native_load_chatter_plot_source.py": {
+      "bytes": 2308,
+      "sha256": "84dbc8bb66aeb9296ebd5f11e5ea3499daf566236df61448a4bc9a89fc206dd5"
+    },
+    "native_load_chatter_plot_source_binding.json": {
+      "bytes": 796,
+      "sha256": "b8fe6277fc552b6a62060ad6d05199d1f21503519878338ffc87ae0d767f8c0b"
+    },
+    "observer_source.py": {
+      "bytes": 12852,
+      "sha256": "f384eaa28376a95e64ee93f6bc291b6f028aa2ad411f406070e2133456274432"
+    },
+    "original_native_force_ledger.npz": {
+      "bytes": 1717260,
+      "sha256": "545f1eca7f7b2309e0aa99b074dde25104d70d2b49cc1e385dc1dead1ef6d1f5"
+    },
+    "package_source.py": {
+      "bytes": 11226,
+      "sha256": "aa26c05d68ff7ca7974068f947540335de1496a57f5020a5d87dcaf0a6a1030a"
+    },
+    "report.json": {
+      "bytes": 10849,
+      "sha256": "b25229108f269c0d28e093962f648a062acd847d07a899c0f95e796f9e0283f8"
+    }
+  }
+}
