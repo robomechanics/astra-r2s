@@ -1,0 +1,500 @@
+{
+  "source": "outputs/m8_table_pickup/full_damped/insertion_trace_partial.npz",
+  "immutable_snapshot": "insertion_trace.npz",
+  "snapshot_wall_time_UTC": "2026-10-09T03:22:46Z",
+  "byte_exact_copy": true,
+  "archive_closed_readable": true,
+  "trajectory_sha256": "da6b1e9e2037c465f0b956a6560234e533a517c2d7139de38754f346d53aeed8",
+  "bytes": 4352466,
+  "samples": 2862,
+  "first_physics_time_s": 5e-05,
+  "last_physics_time_s": 14.187849999973604,
+  "last_phase": "settle_regrip_search_2",
+  "phase_sequence": [
+    "settle_table",
+    "reach_left_block",
+    "close_left_block",
+    "settle_left_block",
+    "lift_left_block",
+    "transport_left_block",
+    "hold_left_block",
+    "secure_left",
+    "reach_bolt",
+    "close_bolt",
+    "settle_bolt",
+    "lift_bolt",
+    "transport_bolt",
+    "align_over_hole",
+    "feed_to_entry",
+    "start_thread_1",
+    "stop_start_1",
+    "release_search_2",
+    "open_settle_search_2",
+    "reset_open_search_2",
+    "open_hold_search_2",
+    "regrip_search_2",
+    "settle_regrip_search_2"
+  ],
+  "model_fingerprint": "d8ef2669aff4b4e871d1e09bed2a00e7482649c554bcfce5b7fb234e220bf635",
+  "model_xml_sha256": "19dd6fcd1081b03ad1c5c584be4a4635b03b32ab5ffa183bbc5b1c71ce2e847e",
+  "scene_source_sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+  "controller_sha256": "87f2cc95ed1fbadab60c6e0efbb1cf9f0eb19b7f17a692a6119559240f2fac69",
+  "status": "incomplete_progress_prefix",
+  "scope": "Both genuine pickups and first cone-start recovery. This prefix ends after opening, reset and regrasp, before the second starting stroke. No finished rollout, formed-thread support or qualified-thread proof is claimed.",
+  "metadata_partial_note": "The original metadata partial field records the requested phase selection, not completion. This byte-exact prefix remains incomplete regardless of its original partial field.",
+  "first_still_requested_time_s": 12.3,
+  "first_still_recorded_time_s": 12.300299999978003,
+  "first_still_phase": "reset_open_search_2",
+  "original_recorded_metadata": {
+    "description": "Actual YAM picks up both free workpieces from declared table/rest support, carries them, and starts the M8 thread",
+    "scene_config": {
+      "base": {
+        "thread": {
+          "timestep": 5e-05,
+          "friction": 0.15,
+          "contact_time_constant": 0.0005,
+          "contact_margin": 0.0,
+          "contact_impratio": 1.0,
+          "sdf_initpoints": 40,
+          "sdf_iterations": 30,
+          "bolt_length": 0.016,
+          "pitch": 0.00125,
+          "male_pitch_diameter": 0.0071,
+          "female_pitch_diameter": 0.007268,
+          "nut_height": 0.016,
+          "nut_across_flats": 0.016,
+          "nut_mass": 0.018984665656908355,
+          "nut_transverse_inertia": 6.946182225160569e-07,
+          "nut_axial_inertia": 1.1886877420788483e-06,
+          "initial_z": 0.00875,
+          "gravity": -9.81,
+          "with_gripper": false,
+          "with_bolt": true,
+          "guided": false
+        },
+        "bolt_position": [
+          0.3,
+          -0.06,
+          0.11125
+        ],
+        "bolt_quaternion": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "pad_friction": 0.8,
+        "jaw_stiffness": 20000.0,
+        "jaw_damping": 8.0,
+        "maximum_jaw_force": 20.0,
+        "open_aperture": 0.024,
+        "closed_aperture": 0.0194,
+        "left_closed_aperture": 0.0144,
+        "left_grasp_roll_rad": -1.5707963267948966,
+        "left_block_contact_impedance": [
+          0.9999,
+          0.9999,
+          0.0001
+        ],
+        "left_block_contact_time_constant": 0.0008,
+        "pad_inner_offset": 0.0005,
+        "block_size": [
+          0.02,
+          0.12,
+          0.016
+        ],
+        "block_density": 2700.0,
+        "bolt_offset": [
+          0.0,
+          -0.05,
+          0.008
+        ],
+        "left_grasp_offset": [
+          0.0,
+          -0.0094,
+          0.0
+        ]
+      },
+      "block_position": [
+        0.25,
+        0.15,
+        0.059999989999999996
+      ],
+      "hole_offset": [
+        0.0,
+        -0.05,
+        0.0
+      ],
+      "bolt_head_position": [
+        0.36,
+        -0.22,
+        0.04
+      ],
+      "bolt_yaw_rad": 0.23,
+      "head_across_flats": 0.02,
+      "head_height": 0.008,
+      "steel_density": 7850.0,
+      "rest_radius": 0.007,
+      "rest_pin_radius": 0.001,
+      "rest_base_height": 0.01,
+      "pickup_from_table": true,
+      "held_block_position": [
+        0.3,
+        -0.01,
+        0.10325
+      ],
+      "left_block_friction_time_constant": 0.0008,
+      "left_pad_collision_geometry": "box",
+      "left_block_direct_normal_solref": [
+        -31250.0,
+        -2500.0
+      ]
+    },
+    "control_config": {
+      "arm": {
+        "position_stiffness": 20000.0,
+        "position_damping": 650.0,
+        "rotation_stiffness": 40.0,
+        "rotation_damping": 6.0,
+        "left_rotation_stiffness": 80.0,
+        "left_rotation_damping": 10.0,
+        "maximum_cartesian_force": 8.0,
+        "maximum_cartesian_torque": 2.0,
+        "axial_feed_N": -0.05,
+        "open_aperture": 0.024,
+        "closed_aperture": 0.0194,
+        "left_closed_aperture": 0.0144,
+        "stroke_angle_rad": 3.141592653589793,
+        "angular_speed_rad_s": 2.0,
+        "reset_speed_rad_s": 4.0,
+        "strokes": 3,
+        "sample_period_s": 0.005
+      },
+      "pickup_hover_m": 0.02,
+      "left_pickup_hover_m": 0.075,
+      "left_lift_clearance_m": 0.06,
+      "transport_tip_clearance_m": 0.015,
+      "entry_tip_clearance_m": 0.00075,
+      "block_lift_m": 0.004,
+      "net_axial_feed_N": 0.05,
+      "axial_velocity_damping_Ns_per_m": 50.0,
+      "maximum_starting_strokes": 5,
+      "qualifying_turns": 2,
+      "sample_period_s": 0.005,
+      "full_flank_contact_streak_s": 0.2
+    },
+    "runtime": {
+      "mujoco_version": "3.15.0",
+      "libraries": [
+        {
+          "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+          "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+          "sdf_minimum_search_step_m": 1e-07,
+          "sdf_initial_search_step_m": 0.002
+        }
+      ],
+      "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+    },
+    "starts_preengaged": false,
+    "starts_grasp_ready": false,
+    "block_starts_left_touching": false,
+    "block_starts_on_table": true,
+    "initial_left_block_hand_contacts": {
+      "contact_count": 0,
+      "normal_force_N": 0.0,
+      "world_support_contacts": 16
+    },
+    "initial_right_bolt_hand_contacts": {
+      "contact_count": 0,
+      "normal_force_N": 0.0,
+      "world_support_contacts": 0
+    },
+    "initial_block_world_support_contacts": 16,
+    "left_acquisition_reference_scope": "Frozen at end of settle_left_block after actual bilateral loaded pad contact",
+    "bolt_starts_on_declared_fixed_rest": true,
+    "model_fingerprint": "d8ef2669aff4b4e871d1e09bed2a00e7482649c554bcfce5b7fb234e220bf635",
+    "model_xml_sha256": "19dd6fcd1081b03ad1c5c584be4a4635b03b32ab5ffa183bbc5b1c71ce2e847e",
+    "controller_sha256": "87f2cc95ed1fbadab60c6e0efbb1cf9f0eb19b7f17a692a6119559240f2fac69",
+    "known_bolt_mass_kg": 0.0267496436326005,
+    "full_flank_overlap_threshold_m": 0.003242582346706593,
+    "male_tip_chamfer_m": 0.000956,
+    "female_full_profile_chamfer_bound_m": 0.0010365823467065928,
+    "minimum_engagement_contact_normal_force_N": 1e-05,
+    "engagement_observer": "loaded_full_flank_window_v1",
+    "engagement_observer_source_sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "engagement_observer_scope": "Candidate full-flank capture; actual coupled lead and unsupported reset checks establish completed engagement",
+    "engagement_window": {
+      "duration_s": 0.2,
+      "minimum_loaded_normal_impulse_Ns": 0.0010000000000000002,
+      "minimum_loaded_duration_s": 0.0005,
+      "maximum_helix_phase_range_m": 0.00015
+    },
+    "legacy_engagement_note": "Consecutive positive force for 0.2 s retained as a diagnostic; unilateral contact may have valid resolved gaps",
+    "axial_command_note": "Known bolt-weight compensation plus constant net axial feed, with declared dissipative relative hand/hole velocity damping through finite native arm motors; no axial position or pitch spring",
+    "axial_velocity_reference_note": "Actual hand SITE linear velocity minus hole rigid-frame velocity evaluated at the hand point; pre-command native kinematics retained from the preceding mj_step's pre-integration state (the initialized state on the first command), with requested feed subject to the existing Cartesian-force and native motor-torque caps",
+    "native_force_recording_note": "mj_step contact forces and contact geometry are from the pre-integration state at recorded time minus timestep; saved qpos/qvel are the post-integration state",
+    "left_pad_history_scope": "Every physics substep after end-settle acquisition; force minima and gaps include physical lift and roll, separately from 5 ms saved-pose sampling",
+    "partial": true,
+    "initial_bolt_yaw_rad": 0.0,
+    "scene_source_sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+    "all_substep_left_pad_loads": {
+      "observer": "native-bilateral-pad-load-v1",
+      "minimum_loaded_force_N": 0.1,
+      "observed_physics_steps": 253758,
+      "observed_duration_s": 12.6878999999771,
+      "minimum_normal_force_N": [
+        0.0,
+        0.0
+      ],
+      "unloaded_physics_steps": [
+        9,
+        6
+      ],
+      "unloaded_duration_s": [
+        0.0004500000000000001,
+        0.00030000000000000003
+      ],
+      "maximum_consecutive_unloaded_duration_s": [
+        5e-05,
+        5e-05
+      ],
+      "continuously_bilateral_loaded": false
+    },
+    "left_acquisition": {
+      "time_s": 1.5000000000009532,
+      "phase": "settle_left_block",
+      "pad_normal_force_N": [
+        15.985915814634085,
+        15.984269015069643
+      ],
+      "block_world_support_contacts": 15,
+      "grasp_relative_block_position_m": [
+        4.451495882962478e-07,
+        1.7269148306778212e-07,
+        -0.00939975479976837
+      ],
+      "grasp_relative_block_rotation": [
+        [
+          -0.999999994530061,
+          0.00010459357492467871,
+          2.5136624678607e-07
+        ],
+        [
+          -2.503703285088713e-07,
+          9.521805101524762e-06,
+          -0.999999999954637
+        ],
+        [
+          -0.00010459357731339435,
+          -0.9999999944847605,
+          -9.521778862313348e-06
+        ]
+      ],
+      "pad_contact_compliance_observation": {
+        "normal_force_N": [
+          15.985915814634085,
+          15.984269015069643
+        ],
+        "loaded_force_weighted_indentation_m": [
+          7.990557299230578e-07,
+          7.043552281995031e-07
+        ],
+        "effective_pad_force_per_indentation_N_per_m": [
+          20006008.612407286,
+          22693476.778654963
+        ],
+        "contacts": [
+          {
+            "pad": "left_m8_pad_left",
+            "signed_distance_m": -7.678871289947424e-07,
+            "normal_force_N": 3.387854257187365,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          },
+          {
+            "pad": "left_m8_pad_left",
+            "signed_distance_m": -8.202569127372816e-07,
+            "normal_force_N": 4.561988886122833,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          },
+          {
+            "pad": "left_m8_pad_left",
+            "signed_distance_m": -8.22519208957357e-07,
+            "normal_force_N": 4.605103650129677,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          },
+          {
+            "pad": "left_m8_pad_left",
+            "signed_distance_m": -7.701494252148178e-07,
+            "normal_force_N": 3.4309690211942097,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          },
+          {
+            "pad": "left_m8_pad_right",
+            "signed_distance_m": -7.255463455150701e-07,
+            "normal_force_N": 4.562996272632994,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          },
+          {
+            "pad": "left_m8_pad_right",
+            "signed_distance_m": -6.731765617725309e-07,
+            "normal_force_N": 3.3859152790281715,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          },
+          {
+            "pad": "left_m8_pad_right",
+            "signed_distance_m": -6.754388579926063e-07,
+            "normal_force_N": 3.429138234901826,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          },
+          {
+            "pad": "left_m8_pad_right",
+            "signed_distance_m": -7.278086417351456e-07,
+            "normal_force_N": 4.60621922850665,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          }
+        ],
+        "scope": "Native signed distances and solved forces at acquisition end-settle; effective force/indentation is a model observation, not material modulus or hardware calibration"
+      },
+      "block_free_velocity": [
+        6.871607790610586e-07,
+        -1.225118892846763e-07,
+        1.976131857051497e-09,
+        9.176128686904222e-07,
+        -2.6450837714428144e-07,
+        3.52915614691392e-06
+      ],
+      "jaw_velocity_m_s": [
+        7.455484889822253e-06,
+        -7.343601823559453e-06
+      ]
+    },
+    "left_pickup_verified": {
+      "time_s": 2.400000000001076,
+      "phase": "lift_left_block",
+      "physical_block_lift_m": 0.05996490005782493,
+      "block_world_support_contacts": 0,
+      "pad_normal_force_N": [
+        15.995991634439033,
+        15.996066662398635
+      ]
+    }
+  },
+  "completion_validation_available": false,
+  "passed": false,
+  "partial_progress": true,
+  "replay": "scripts/run_m8.sh -m yam_twin.m8_insertion_demo --replay media/m8_table_pickup/progress_first_start/insertion_trace.npz --output outputs/m8_table_pickup/replay_progress_first_start --fps 10 --slow-motion 1 --still-time 12.3",
+  "render_method": "Exact native recorded qpos/qvel states selected by searchsorted at frame time. mj_forward for display only; no integration and no interpolation.",
+  "source_private_videos_included": false
+}
