@@ -1,0 +1,20 @@
+{
+  "scope": "Output-only dedicated cold V3 reader regressions; separate from canonical402/65 and experimental observer69 proof",
+  "command": "python outputs/m8_table_supported/diagnostics/crest_seat_search_v3_audits/test_independent_cold_crest_audit_v1.py",
+  "passed": true,
+  "tests_passed": 10,
+  "return_code": 0,
+  "wall_seconds": 0.9536474819979048,
+  "reader_source_sha256": "82a36f56439adcadcffff3fdbab561eb6b5d81a96b02391eee8a62bde369724d",
+  "test_source_sha256": "2002430efaf57ae0f25284e4509745c834a5b5b3a8c57b9c29ffc57f2f4ffe75",
+  "test_log_sha256": "b397535f6541c2372caeb5afdd0251036e43559a2b8b1d3c82ab659ab9939721",
+  "source_before": {
+    "independent_cold_crest_audit_v1.py": "82a36f56439adcadcffff3fdbab561eb6b5d81a96b02391eee8a62bde369724d",
+    "test_independent_cold_crest_audit_v1.py": "2002430efaf57ae0f25284e4509745c834a5b5b3a8c57b9c29ffc57f2f4ffe75"
+  },
+  "source_after": {
+    "independent_cold_crest_audit_v1.py": "82a36f56439adcadcffff3fdbab561eb6b5d81a96b02391eee8a62bde369724d",
+    "test_independent_cold_crest_audit_v1.py": "2002430efaf57ae0f25284e4509745c834a5b5b3a8c57b9c29ffc57f2f4ffe75"
+  },
+  "all_sources_unchanged": true
+}

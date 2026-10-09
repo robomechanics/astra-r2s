@@ -1,0 +1,159 @@
+{
+  "schema": "independent-cold-crest-audit-binding-v1",
+  "closed": true,
+  "source_frozen": true,
+  "reader_source_sha256": "82a36f56439adcadcffff3fdbab561eb6b5d81a96b02391eee8a62bde369724d",
+  "primary_report_sha256": "7c2dc70155e92b5847fa52bf8452ee3f589cacabf88a605199fbac0e56c1e19c",
+  "auditor_artifacts": {
+    "independent_cold_crest_audit.json": {
+      "path": "independent_cold_crest_audit.json",
+      "sha256": "7c2dc70155e92b5847fa52bf8452ee3f589cacabf88a605199fbac0e56c1e19c"
+    },
+    "independent_cold_reader_tests.log": {
+      "path": "independent_cold_reader_tests.log",
+      "sha256": "b397535f6541c2372caeb5afdd0251036e43559a2b8b1d3c82ab659ab9939721"
+    },
+    "independent_cold_reader_software_proof.json": {
+      "path": "independent_cold_reader_software_proof.json",
+      "sha256": "3abf243f827c66c0efd6a14ea841d94bfb952ce33b6597d113d76143346bc5f8"
+    },
+    "original_free_joint_auditor.py": {
+      "path": "original_free_joint_auditor.py",
+      "sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11"
+    },
+    "test_independent_cold_crest_audit_v1.py": {
+      "path": "test_independent_cold_crest_audit_v1.py",
+      "sha256": "2002430efaf57ae0f25284e4509745c834a5b5b3a8c57b9c29ffc57f2f4ffe75"
+    },
+    "independent_free_joint_properties.json": {
+      "path": "independent_free_joint_properties.json",
+      "sha256": "593a7007b8c36673768383f8f42dc9cd451fc447815787f010904089df19dd40"
+    },
+    "independent_cold_crest_audit_v1.py": {
+      "path": "independent_cold_crest_audit_v1.py",
+      "sha256": "82a36f56439adcadcffff3fdbab561eb6b5d81a96b02391eee8a62bde369724d"
+    }
+  },
+  "original_run": "/workspace/astra-r2s/outputs/m8_table_supported/diagnostics/crest_seat_search_v3",
+  "original_native_trace_sha256": "052c9a506e6bd24e195839c3637ea918a594912d6b840516bd10bcef09007f44",
+  "original_native_report_sha256": "ada1a160c6ed7e179233d534c7fe0a7b471c1c01181cd9e5db08046510759203",
+  "original_native_passed": false,
+  "original_native_aborted": {
+    "phase": "stop_reverse_seat_1",
+    "time": 1.6254000000012179,
+    "reported_sdf_depth_m": 0.0,
+    "radial_offset_m": 0.0001508483412099329,
+    "bolt_tilt_rad": 0.01359428198256766,
+    "block_grip_slip_m": 1.8045584995886961e-06,
+    "block_grip_rotation_slip_rad": 4.943700915085946e-05,
+    "bolt_grip_slip_m": 0.00024659074631036874,
+    "world_block_support_contacts": 26,
+    "minimum_native_joint_margin_rad": 0.21419618866969348,
+    "warnings": 0,
+    "external_drive_zero": true
+  },
+  "original_native_exit_code": 1,
+  "original_native_steps": 32508,
+  "original_harness_sha256": "85c485e5382adad57e83bc8e3c924e0a9ac3b36dfc896ed77712201baeb02bf9",
+  "original_experimental_observer_sha256": "1d37ef46382c349e29b4206206e9aac2132587b65abc39467342e7e1b0560c0c",
+  "original_feedback_helper_sha256": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51",
+  "original_core_and_plugin": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "original_raw_closed_output_sha256": {
+    "controller_source.py": "85c485e5382adad57e83bc8e3c924e0a9ac3b36dfc896ed77712201baeb02bf9",
+    "diagnostic_declaration.json": "096693ba6c3461eccd679631c64e85834c02b45ae2fb7a6e2be2c2d9e9d751a6",
+    "diagnostic_execution_after.json": "6490d98ae5b8daa951633f5c608a13726214eb10f186544206d5c2c876460fc7",
+    "diagnostic_source.py": "85c485e5382adad57e83bc8e3c924e0a9ac3b36dfc896ed77712201baeb02bf9",
+    "engagement_observer_source.py": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "experimental_observer_source.py": "1d37ef46382c349e29b4206206e9aac2132587b65abc39467342e7e1b0560c0c",
+    "insertion_trace.npz": "052c9a506e6bd24e195839c3637ea918a594912d6b840516bd10bcef09007f44",
+    "insertion_trace_partial.npz": "01ecf349e06ec651041b2224dd5d13a208ac273027254b4414fa66335ac2251a",
+    "insertion_validation.json": "ada1a160c6ed7e179233d534c7fe0a7b471c1c01181cd9e5db08046510759203",
+    "left_pad_force_history.npz": "c0962e9953a6073dd1ab50b71bda170873920538f74168670748553fdb91aafa",
+    "native_feedback_force_history.npz": "467c7e6f5ebbf544a4f7e0b801c2df32b22112548434d58060d7b98d492c2c75",
+    "original_controller_source.py": "57f430143787317f8dc6f50bd2ea1ff23aab123810284da74da70b53b45a9493",
+    "recorded_sources/yam_twin/crest_seat_observer_v3.py": "1d37ef46382c349e29b4206206e9aac2132587b65abc39467342e7e1b0560c0c",
+    "recorded_sources/yam_twin/kinematics.py": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+    "recorded_sources/yam_twin/m8_insertion_engagement.py": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "recorded_sources/yam_twin/m8_insertion_mechanics.py": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+    "recorded_sources/yam_twin/m8_insertion_scene.py": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+    "recorded_sources/yam_twin/m8_insertion_simulation.py": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294",
+    "recorded_sources/yam_twin/m8_scene.py": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f",
+    "recorded_sources/yam_twin/m8_simulation.py": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+    "recorded_sources/yam_twin/m8_supported_scene.py": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+    "recorded_sources/yam_twin/m8_supported_start.py": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51",
+    "scene.xml": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "scene_source.py": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+    "supported_scene.zip": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+    "table_support_force_history.npz": "9b04d4cd4de925f2eae55f339085b13815b9ce26867fb49abcbed075909379a6"
+  },
+  "outer_execution_before": {
+    "path": "../crest_seat_search_v3_execution_before.json",
+    "sha256": "79d2387947a951d5ed83c90d086adc7a43bf431f34fcce0e42656a9087b37100"
+  },
+  "outer_execution_after": {
+    "path": "../crest_seat_search_v3_execution_after.json",
+    "sha256": "d10050d9c7b2258e77cbac3860d6a67edd1ddc32e54cb6d9aeab097e2e7015fb"
+  },
+  "source65_unchanged": true,
+  "historical_producer_commit": "6e7d0d2ac3d28ff2538e122a10d7ffb2febf83b1",
+  "execution_head_scope": "eba9f7e1bc6c0a440e06920589586f86dacd75fd",
+  "parent_inputs_sha256": {
+    "insertion_trace.npz": "c4cd0f891ba6c9af51ced80b4802023f54472135649fab2d41122770a4ffc19c",
+    "insertion_validation.json": "6acdcb02c683204e2ed52230764dc3e556243dedd6089ca7e4701bd25eea79d8",
+    "scene.xml": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "supported_scene.zip": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+    "table_support_force_history.npz": "78c23021e24be9cbddd7b2d9406dce12044ccbe5e4386c86d3f9ff3983aad58d",
+    "native_feedback_force_history.npz": "b2329e454086e6251e5ea8b1fff6757ed14dc4c1ad7aaa3536cba098d902026f",
+    "run_publication_identity.json": "44f629b1456635e6f456d2b3f0410061fae9f26a8f11447073c6ec2948d4b6e1",
+    "run_publication_identity_after.json": "1edc728af94ab47b607402f81a086c9444306f996cd1a6969abe92f086aafe75"
+  },
+  "observer69_contract_proof_record": {
+    "reported_actual_passed": 69,
+    "reported_elapsed_s": 0.63,
+    "owner": "/root/supported_grasp_tests",
+    "test_source_sha256": "d1f3347dcad30c8966eb5fab082ef73cebfaa8e43f9f4f730aad322ad2934ade",
+    "scope": "37 observer contracts plus32 pure actual-window/bootstrap-guard checks; synthetic state/load histories, no native integration or trajectory qualification"
+  },
+  "dedicated_reader_proof": {
+    "scope": "Output-only dedicated cold V3 reader regressions; separate from canonical402/65 and experimental observer69 proof",
+    "command": "python outputs/m8_table_supported/diagnostics/crest_seat_search_v3_audits/test_independent_cold_crest_audit_v1.py",
+    "passed": true,
+    "tests_passed": 10,
+    "return_code": 0,
+    "wall_seconds": 0.9536474819979048,
+    "reader_source_sha256": "82a36f56439adcadcffff3fdbab561eb6b5d81a96b02391eee8a62bde369724d",
+    "test_source_sha256": "2002430efaf57ae0f25284e4509745c834a5b5b3a8c57b9c29ffc57f2f4ffe75",
+    "test_log_sha256": "b397535f6541c2372caeb5afdd0251036e43559a2b8b1d3c82ab659ab9939721",
+    "source_before": {
+      "independent_cold_crest_audit_v1.py": "82a36f56439adcadcffff3fdbab561eb6b5d81a96b02391eee8a62bde369724d",
+      "test_independent_cold_crest_audit_v1.py": "2002430efaf57ae0f25284e4509745c834a5b5b3a8c57b9c29ffc57f2f4ffe75"
+    },
+    "source_after": {
+      "independent_cold_crest_audit_v1.py": "82a36f56439adcadcffff3fdbab561eb6b5d81a96b02391eee8a62bde369724d",
+      "test_independent_cold_crest_audit_v1.py": "2002430efaf57ae0f25284e4509745c834a5b5b3a8c57b9c29ffc57f2f4ffe75"
+    },
+    "all_sources_unchanged": true
+  },
+  "canonical402_proof_scope": "The unchanged historical canonical65 producer map is provenance only. Original402 tests/e468 primary reader do not establish coverage of the new cold V3 tag or observer; the new reader has10 separate pure regressions.",
+  "cold_history_scope": "1999 initial table windows remain original failed/unavailable windows. All complete fresh local windows pass; no fresh pickup/acquisition prefix, warmstart or original force window copied. Original acceptance labels and false final qualification remain unchanged.",
+  "observed_event_scope": "Fresh local table/boltweight support at100ms, first moving unloaded crest-return CLOSED stop request1.61915s, first stop command1.61920s, radial guard abort1.6254s. No confirmed direction, forward/open/interior/capture/full trajectory. Current epoch1 cleared report and historical request metadata are both retained.",
+  "timing": {
+    "native_original_forces_and_geometry": "post-step label minus dt",
+    "saved_qpos_qvel": "post-step label",
+    "command_calibration": "previous retained native solve at label minus 2dt; first command uses initialized mj_forward pose at time zero (generic numeric logging label is minus dt)",
+    "source_clock_not_retimed": true
+  },
+  "command": "python outputs/m8_table_supported/diagnostics/crest_seat_search_v3_audits/independent_cold_crest_audit_v1.py outputs/m8_table_supported/diagnostics/crest_seat_search_v3 --output outputs/m8_table_supported/diagnostics/crest_seat_search_v3_audits/independent_cold_crest_audit.json",
+  "compiled_passive_property_audit_scope": "Exact archived scene compiled once through original free-joint auditor, zero integration/force solving; its runtime/source hash retained. Other reader checks use only original arrays and hash-bound pure observer ASTs."
+}

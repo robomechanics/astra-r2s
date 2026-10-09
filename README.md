@@ -74,6 +74,18 @@ Older load/search failures also remain. See
 ## Separate table-supported approach in progress
 
 The left arm can stabilize a block that stays on the solid table.
+The separate [crest-search V3 cold trial](media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/README.md)
+closed with a **1.6254 s** radial-guard failure after requesting a stop at
+1.61915 s. Offset reaches **150.848 µm**, above the unchanged 150 µm limit;
+there is no stopped readiness, forward scan or capture. Its
+[normal-speed clip](media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/render/demo.gif)
+and [original stop-boundary chart](media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/render/scientific_plot/native_stop_boundary.png)
+remain separate from the full failed run. A separate output-only crest V4
+trial closes failed at **1.7091 s**, radial error **150.011 µm**, after
+89.95 ms of its intended 150 ms smooth brake. No stopped direction readiness
+or forward scan occurs; its frozen evidence package is pending.
+Its 50 pure braking tests do not extend the
+69 observer contracts or 402-test canonical proof.
 The [complete closed failed attempt](media/m8_table_supported/full_canonical_v1_failed_evidence/README.md)
 has [normal 1× GIF](media/m8_table_supported/full_canonical_v1_failed_evidence/demo.gif),
 [MP4](media/m8_table_supported/full_canonical_v1_failed_evidence/demo.mp4),

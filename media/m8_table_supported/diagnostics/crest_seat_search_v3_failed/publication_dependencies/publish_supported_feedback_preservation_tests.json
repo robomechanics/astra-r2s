@@ -1,0 +1,43 @@
+{
+  "scope": "Standard-library publication/compatibility/byte-preservation/original-layout regressions only. No native imports/integration, original report/ledger/source edits or physical acceptance waiver.",
+  "tests_passed": 19,
+  "command": [
+    "python",
+    "-B",
+    "outputs/m8_table_supported/test_publish_supported_feedback_preservation.py"
+  ],
+  "unittest_reported_seconds": 1.114,
+  "process_exit_code": 0,
+  "tested_sha256": {
+    "publish_supported_feedback_run.py": "8678d079a8e5bb756776cf6ea365559c5407e121f75bf816865b046bc28c41bf",
+    "test_publish_supported_feedback_preservation.py": "f02dee985a492ba28bd835af20e491e313cb85ed8dbd1630648479bd92748ef2",
+    "restore_original_run_layout.py": "2a64428a4c1f3a96c9abce16f708576ac310d6e426eac54e38441097ac4cdf8b",
+    "reassemble_archives.py": "0706d299abfc70a0883aa8227ea3d89c7da420e961b4fc542fd696f3b05a3cfb"
+  },
+  "producer65_sources_unchanged": true,
+  "publisher_and_derivative_sources_are_outside_frozen_producer_map": true,
+  "actual_closed_sidecar_validation": {
+    "schema": "supported-auditor-compatibility-v1",
+    "correction_kind": "initial-settle-bolt-same-row-grasp-flag",
+    "sidecar_sha256": "36c7add292b1a29a0305c6e9f39c709236f7a03250274b3a8500b47c09a18421",
+    "original_frozen_auditor_sha256": "e46808601d7974ffdea1e5e20e07e0f28eb8e0a74a394545b276621a7e856702",
+    "corrected_output_only_reader_sha256": "abb4e724de91eeec9dcff9c481d1a89674fba5ea3e3c5c2d9a9b76a074f9cf1e",
+    "corrected_report_sha256": "48e629f328152d6f827aef9add7f2870ba5f934f548c198575c21dbcf3fc5f13",
+    "original_exception_sha256": "8cea886761cc589c3be7e2fec7fa5cd452d1254214b8a934a7380b848adb288a",
+    "correction_scope": "Archived initial settle_bolt reference is assigned BEFORE guard/error computation, so its final solved acquisition row must be active with new-reference error. Later quiet settle_regrip references are assigned AFTER cached guard/error computation: acquisition inactive, next tick active. Only original_grasp_flag_audit AST changes; malformed scope/flags/missing quiet streak/omitted closed guard still reject. Original native direction failure, frozen402/e468 source and exception remain unchanged.",
+    "regression_tests_passed": 8,
+    "original_source_report_acceptance_and_proof_preserved": true,
+    "scope": "Explicit output-only reader compatibility; original frozen reader exception/source and native402/65 proof remain preserved. No native physical acceptance gate is waived."
+  },
+  "actual_original_report_passed": false,
+  "actual_derivative_independent_report_passed": false,
+  "coverage": [
+    "Collision-safe allartifacts and live/closure/output-location refusal",
+    "Raw exceptional partial byte preservation without report/ledger synthesis",
+    "Exact contiguous chunks/offsets/wholeSHA and corruption rejection",
+    "Native/report/acceptance bool/int identity and approved e468/abb4 pair/diff/proof bindings",
+    "Exact original-name restoration with aliases/chunks and no differing-file overwrite",
+    "Relocated sidecar resolves all8original relative companion paths"
+  ],
+  "frozen_utc": "2026-10-09T11:13:09.708537+00:00"
+}

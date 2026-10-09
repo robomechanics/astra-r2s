@@ -14,6 +14,23 @@ establish completion of this new table-supported trajectory.
 
 ## Start here
 
+The latest [crest-search V3 cold diagnostic](../media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/README.md)
+fails at **1.6254 s**, radial error **150.848 µm** above the unchanged
+150 µm guard, after requesting a closed stop at 1.61915 s. It never reaches
+stopped direction readiness, forward scan, formed capture or opening/reset.
+Its [normal-speed clip](../media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/render/demo.gif),
+[exact failed state](../media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/render/abort_detail.png)
+and [dense stop-boundary chart](../media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/render/scientific_plot/native_stop_boundary.png)
+preserve the failed physical response. The separate new crest V4 trial
+also closes failed at **1.7091 s** (**260.939 s** native wall time), radial
+error **150.011 µm**, after executing 89.95 ms of its 150 ms C2 brake from
+the same 13.1949 s cold checkpoint. Caps and guards remain unchanged; no
+stopped direction readiness or forward scan occurs. Its frozen evidence
+package is pending. These crest
+trials are distinct from the older opening/reset V4 diagnostic below.
+Use the [cold-search handoff](m8_supported_agent_handoff.md#separate-cold-crest-search-diagnostics)
+for exact frozen sources, restoration/replay differences and proof scopes.
+
 The new canonical feedback candidate passes
 [402 software tests on 65 unchanged source files](../media/m8_table_supported/software_proof_feedback_v1).
 Use its [full-run candidate recipe](#run-current-canonical-candidate) for the

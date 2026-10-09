@@ -1,0 +1,87 @@
+[
+  {
+    "purpose": "Standalone ignored diagnostic imports; frozen producer unchanged",
+    "original": "from __future__ import annotations\n",
+    "diagnostic": "from __future__ import annotations\nimport sys\nfrom pathlib import Path\nsys.path.insert(0, str(Path(__file__).resolve().parents[3]))\n__package__ = \"yam_twin\"\nfrom crest_seat_observer_v3 import CrestSeatDropWindowV3\n_COLD_CONTEXT = None\n\ndef cold_table_mean_unavailable(label, observed_duration_s, required_duration_s):\n    if (not np.isfinite((observed_duration_s, required_duration_s)).all()\n            or observed_duration_s < 0 or required_duration_s <= 0):\n        raise ValueError(\"Cold-window durations must be finite and physical\")\n    return bool(label == \"cold_window_hold\"\n                and observed_duration_s+1e-12 < required_duration_s)\n"
+  },
+  {
+    "purpose": "Use exact archived XML/assets/model, not a scene reconstruction",
+    "original": "    model = build_model(scene)\n",
+    "diagnostic": "    model = _COLD_CONTEXT[\"model\"]\n"
+  },
+  {
+    "purpose": "Exact selected original post-integration qpos/qvel/ctrl written once at cold initialization",
+    "original": "    bolt_id = model.body(\"male_bolt\").id\n",
+    "diagnostic": "    # Declared cold initialization only.  Native contact warm-start/history is\n    # deliberately absent; no later workpiece state write is introduced.\n    original_block_id = model.body(\"fixture_block\").id\n    original_block_p0 = data.xpos[original_block_id].copy()\n    original_block_r0 = data.xmat[original_block_id].reshape(3, 3).copy()\n    original_hole_r0 = data.xmat[model.body(\"female_frame\").id].reshape(3, 3).copy()\n    data.qpos[:] = _COLD_CONTEXT[\"qpos\"]\n    data.qvel[:] = _COLD_CONTEXT[\"qvel\"]\n    data.ctrl[:] = _COLD_CONTEXT[\"ctrl\"]\n    data.time = 0.\n    mujoco.mj_forward(model, data)\n    bolt_id = model.body(\"male_bolt\").id\n"
+  },
+  {
+    "purpose": "Bounded reverse, strict stopped observation, first closed forward, final strict stop only",
+    "original": "    phases = supported_phases(control)\n",
+    "diagnostic": "    phases = [(\"cold_window_hold\", .5, 0., 0., control.arm.closed_aperture,\n               control.arm.closed_aperture, True)] + [p for p in supported_phases(control) if p[0] in {\n        \"reverse_seat_1\", \"stop_reverse_seat_1\", \"start_thread_1\", \"stop_start_1\"}]\n"
+  },
+  {
+    "purpose": "Bind executed experimental observer in selected source bundle",
+    "original": "            native_weight_transfer_sample, BoltWeightTransferWindow, ImpulseSeatDropWindow,\n",
+    "diagnostic": "            native_weight_transfer_sample, BoltWeightTransferWindow, ImpulseSeatDropWindow, CrestSeatDropWindowV3, cold_table_mean_unavailable,\n"
+  },
+  {
+    "purpose": "Archive whole executed experimental observer alongside frozen dependencies",
+    "original": "                  ArmIK):\n",
+    "diagnostic": "                  ArmIK, CrestSeatDropWindowV3):\n"
+  },
+  {
+    "purpose": "Cold lineage, original cumulative references, original independent yaw clock, fresh observer windows",
+    "original": "    for phase_index, (label, duration, angle0, angle1, gap0, gap1, axial_float) in enumerate(selected):\n",
+    "diagnostic": "    # Preserve the original actually-acquired per-grasp references. Target\n    # recalibration never rebases these cumulative physical slip guards.\n    left_grip_p = np.asarray(_COLD_CONTEXT[\"left_acquisition\"][\"grasp_relative_block_position_m\"]).copy()\n    left_grip_r = np.asarray(_COLD_CONTEXT[\"left_acquisition\"][\"grasp_relative_block_rotation\"]).copy()\n    left_grasp_acquired = True\n    left_acquisition_time = 0.\n    grip_reference = (np.asarray(_COLD_CONTEXT[\"right_acquisition\"][\"grasp_relative_bolt_head_position_m\"]).copy(),\n                      np.asarray(_COLD_CONTEXT[\"right_acquisition\"][\"grasp_relative_bolt_rotation\"]).copy())\n    metadata[\"left_acquisition\"] = _COLD_CONTEXT[\"left_acquisition\"]\n    metadata[\"right_grasp_acquisitions\"] = [_COLD_CONTEXT[\"right_acquisition\"]]\n    block_p0, block_r0 = original_block_p0, original_block_r0\n    hand_relative_r = original_hole_r0.T @ right_initial_r\n    desired_clock = closed_clock_anchor = _COLD_CONTEXT[\"desired_clock_rad\"]\n    closed_yaw_anchor = _COLD_CONTEXT[\"closed_yaw_anchor_rad\"]\n    seat_event = CrestSeatDropWindowV3(_COLD_CONTEXT[\"settled_base_z_m\"], bolt_weight)\n    metadata[\"diagnostic_only\"] = True\n    metadata[\"cold_initialization\"] = _COLD_CONTEXT[\"declaration\"]\n    metadata[\"experimental_crest_observer_source_sha256\"] = _COLD_CONTEXT[\"observer_sha256\"]\n    metadata[\"inherited_reference_scope\"] = \"Original full-run measured left/right acquisition references are retained verbatim for cumulative grip guards. They are not new cold-branch acquisition evidence. Fresh native pad/table/force/motion windows begin with this branch; no old force window or solver warm-start is reused.\"\n    metadata[\"starts_preengaged\"] = False\n    metadata[\"starts_grasp_ready\"] = True\n    metadata[\"block_starts_left_touching\"] = True\n    metadata[\"bolt_starts_on_declared_fixed_rest\"] = False\n    metadata[\"physical_feedback_controller\"] = \"cold-crest-return-diagnostic-v3\"\n    metadata[\"seat_direction_stop_scope\"] = \"Measured50um return from a valid contiguous actual bolt/female shallow crest requests CLOSED deceleration only. Persistent return, actual max(body,hand) angular quiet, axial slow motion and original EntrySupportWindow impulse/duty/current-load proof over100ms PLUS the unchanged live100ms90/10 native weight-transfer window are required before any forward scan. No capture or jaw opening occurs.\"\n    metadata[\"cold_window_hold_scope\"] = \"First actual100ms trailing force mean is undefined after cold initialization: this explicitly unqualified warm-up retains all instantaneous table/pad/grip/collision/depth/limit/drive/cap guards. After complete fresh table-window coverage the unchanged original rolling90/10/99 guard applies every tick. Reverse cannot start before fresh table, bolt-weight90/10, and actual body/tool angular/axial quiet readiness. No original native force or window is reused.\"\n    for phase_index, (label, duration, angle0, angle1, gap0, gap1, axial_float) in enumerate(selected):\n"
+  },
+  {
+    "purpose": "Warm-up keeps the same closed finite force/pose controller and continuous left press",
+    "original": "        feedback_closed = label in {\"transfer_bolt_weight\", \"reverse_seat_1\", \"stop_reverse_seat_1\"}",
+    "diagnostic": "        feedback_closed = label in {\"cold_window_hold\", \"transfer_bolt_weight\", \"reverse_seat_1\", \"stop_reverse_seat_1\"}"
+  },
+  {
+    "purpose": "Keep unqualified warm-up mean windows visible in legacy full-task diagnostics",
+    "original": "                task_table_failed_windows += int(not task_table_window.ready)\n",
+    "diagnostic": "                task_table_failed_windows += int(not task_table_window.ready)\n"
+  },
+  {
+    "purpose": "Explicit availability flag for initial fresh cold trailing100ms window; instantaneous guards still apply",
+    "original": "            if (thread_depth > 10e-6 or left_slip > .001 or left_angle > np.deg2rad(2)\n",
+    "diagnostic": "            cold_table_window_warmup = cold_table_mean_unavailable(label,\n                task_table_window.elapsed, control.settled_table_window_s)\n            if (thread_depth > 10e-6 or left_slip > .001 or left_angle > np.deg2rad(2)\n"
+  },
+  {
+    "purpose": "Undefined initial cold mean only; after100ms original rolling ready predicate restored without changed values",
+    "original": "or (left_grasp_acquired and (not table_bearing or not task_table_window.ready\n",
+    "diagnostic": "or (left_grasp_acquired and (not table_bearing or (not task_table_window.ready and not cold_table_window_warmup)\n"
+  },
+  {
+    "purpose": "Fresh native table and bolt weight/actual motion window gate before any reverse motion",
+    "original": "            if label == \"transfer_bolt_weight\":\n                after_ramp =",
+    "diagnostic": "            if label == \"cold_window_hold\":\n                gate = bounded_phase_gate(elapsed_phase, control.settled_table_window_s,\n                    duration, task_table_window.ready and weight_window.ready and quiet,\n                    valid=not aborted)\n            elif label == \"transfer_bolt_weight\":\n                after_ramp ="
+  },
+  {
+    "purpose": "Stopped direction additionally requires live original 100ms 90/10 weight and both angular/axial quiet",
+    "original": "                ready = seat_event.stop_requested if label == \"reverse_seat_1\" else seat_event.ready\n",
+    "diagnostic": "                ready = (seat_event.stop_requested if label == \"reverse_seat_1\"\n                         else seat_event.ready and weight_window.ready and quiet)\n"
+  },
+  {
+    "purpose": "Archive unavailable initial trailing mean as a separate original all-step scalar",
+    "original": "                grip_slip, right_grip_rotation_slip, left_slip, left_angle))\n",
+    "diagnostic": "                grip_slip, right_grip_rotation_slip, left_slip, left_angle, cold_table_window_warmup))\n"
+  },
+  {
+    "purpose": "Add corresponding raw native feedback ledger column",
+    "original": "\"right_grip_rotation_slip_rad\", \"left_grip_slip_m\", \"left_grip_rotation_slip_rad\")\n",
+    "diagnostic": "\"right_grip_rotation_slip_rad\", \"left_grip_slip_m\", \"left_grip_rotation_slip_rad\", \"cold_table_window_warmup\")\n"
+  },
+  {
+    "purpose": "Sample availability flag; missing rolling coverage is explicitly unqualified",
+    "original": "\"all_hard_guards_held\": hard_guards_held,\n",
+    "diagnostic": "\"all_hard_guards_held\": hard_guards_held, \"cold_table_window_warmup\": cold_table_window_warmup,\n"
+  },
+  {
+    "purpose": "Truthful cold-only reporting; cannot become full captured/fresh success",
+    "original": "    serialized_result = json.dumps(result, allow_nan=False)\n",
+    "diagnostic": "    result[\"passed\"] = False\n    result[\"partial\"] = True\n    result[\"diagnostic_completed\"] = bool(aborted is None and len(summaries) == 5\n        and summaries[-1][\"phase\"] == \"stop_start_1\"\n        and summaries[-1][\"live_physical_phase_gate\"] == \"complete\"\n        and entry_support.ready and weight_window.ready)\n    result[\"diagnostic_final_native_entry_support\"] = entry_support.report()\n    result[\"diagnostic_final_native_weight_support\"] = weight_window.report()\n    result[\"full_fresh_trajectory_qualified\"] = False\n    result[\"capture_or_open_reset_qualified\"] = False\n    result[\"final_experimental_crest_direction_event\"] = seat_event.report()\n    result[\"diagnostic_acceptance_scope\"] = \"Only this new cold branch's observed native guards, closed direction/first-forward motion and original solved forces. Legacy whole-task acceptance rows remain explicitly incomplete; inherited acquisition references are not fresh prefix evidence. No captured thread/open reset/policy/full trajectory qualification.\"\n    serialized_result = json.dumps(result, allow_nan=False)\n"
+  }
+]

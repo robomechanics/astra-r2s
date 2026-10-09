@@ -236,13 +236,88 @@ convergence. Friction/compliance are uncalibrated numerical assumptions.
 Full seating, preload, cross-thread damage, stripping/wear and hardware transfer
 remain unqualified.
 
-The proposed output-only crest experiment passes **69 standalone tests**:
-the original 37 observer tests plus 32 cold-window checks, in 0.63 s. Observer
-SHA is `1d37ef46382c349e29b4206206e9aac2132587b65abc39467342e7e1b0560c0c`;
-the separate cold harness/preparation has its own `85c485…` source binding.
-Preparation checks are complete; one cold native diagnostic is pending,
-with no physical result yet. This code is neither canonical 6e7 nor an extension
-of the 402 proof. A local return from an observed
-withdrawal crest is a new CLOSED direction heuristic, not the original absolute
-50 µm criterion, capture proof or permission to open. Any future changed
-controller requires its own source/config binding, native attempt and audits.
+## Separate cold crest-search diagnostics
+
+The [closed V3 cold failure](../media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/README.md)
+starts once from original parent row 2651, post-state **13.1949 s**. It copies
+qpos/qvel/ctrl and original cumulative grip references, with no solver warm
+starts, old native force samples or previous force windows. A local return
+from an observed withdrawal crest is a new CLOSED direction heuristic,
+distinct from the frozen full attempt's absolute 50 µm criterion; it is not
+capture proof or permission to open. No cold branch is stitched into a full run.
+
+V3 requests a closed stop at **1.61915 s**, after a measured **50.0352 µm**
+return. Independent-clock angular command changes abruptly to zero; the robot
+reaches its existing 8 N / 2 N·m Cartesian caps. Radial error grows to
+**150.848 µm**, above the unchanged 150 µm guard, at **1.6254 s**. Original
+exit 1, `passed=false`, `partial=true` remain. There is no quiet-stop readiness,
+forward scan, formed/interior capture, opening or qualified reset.
+
+The frozen [independent binding](../media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/independent_audits/independent_audit_binding.json)
+(`ae870d0a…`) covers **32,508 original ticks / 47 feedback columns**. Its
+**10 reader regressions** are separate from the **69 observer/cold-window
+contracts** and **402 canonical tests**. All 1,999 initially unavailable
+rolling windows and the raw false table-window label remain; complete fresh
+windows are evaluated separately. Original right-pad local records were not
+saved, so the raw-ledger/saved-sample right-wrench match is a consistency
+check, not independent per-contact reconstruction.
+
+Use the [complete isolated-copy and source-placement recipe](../media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/README.md#reproduce-in-an-isolated-producer-checkout)
+before running anything. It restores the WHOLE failed parent into the pinned
+6e7 checkout and installs frozen harness `85c485e5…` plus observer `1d37ef46…`
+directly under `outputs/m8_table_supported/diagnostics/` (`ROOT=parents[3]`).
+Neither experiment belongs to canonical code or extends the 402/65 proof.
+The original cold reader requires its declared parent path and sibling layout;
+the package does not supply a portability adapter or revised declaration.
+Do not substitute the full-run compatibility auditor for this cold reader.
+
+The frozen package contains 145 files / 144 checksums (ledger SHA
+`b3fbe85ce75a093051ec389561df559b1d71c0d60173caacd4883ce3469a35d6`).
+Its original-layout helper separately verifies/restores all 26 cold native
+files, without a simulator, after the complete package-copy steps:
+
+```sh
+python outputs/m8_table_supported/cold_inputs/crest_v3_package/restore_original_run_layout.py --verify-only
+python outputs/m8_table_supported/cold_inputs/crest_v3_package/restore_original_run_layout.py --output outputs/m8_table_supported/diagnostics/crest_v3_original_layout
+```
+
+After the package's complete copy/restore steps, these are two separate actions:
+
+```sh
+# Fresh cold native attempt; use an absent output, and retain any new failure.
+scripts/run_m8.sh outputs/m8_table_supported/diagnostics/crest_seat_search_probe_v3.py --parent outputs/m8_table_supported/crest_v3_original_parent/insertion_trace.npz --checkpoint-time 13.1949 --output outputs/m8_table_supported/diagnostics/crest_v3_repeat
+# Exact recorded-state media replay; no native integration or force solve.
+scripts/run_m8.sh outputs/m8_table_supported/cold_inputs/crest_v3_package/render/renderer_sources/render_crest_seat_search_v3.py --repository-root "$PWD" outputs/m8_table_supported/cold_inputs/crest_v3_package/native_v3 outputs/m8_table_supported/diagnostics/crest_v3_geometry_replay
+```
+
+The portable renderer checks all 65 pinned source bytes, original runtime and
+closed native artifacts before/after. It uses kinematics only, displays
+original `t−dt` forces against saved `t` states, and keeps `t−2dt` command
+calibration distinct. This replays the original failure; it does not run its
+controller or recreate its solve history. The package includes normal 1×
+media, every original raw archive and exact state/source hashes.
+
+The separate **crest V4 smooth-brake trial closes failed at 1.7091 s**,
+after 260.939 s native wall time. It executes 89.95 ms of the intended 150 ms
+brake before radial error reaches **150.011272 µm**, above the unchanged
+150 µm guard. Final tilt is 5.641 mrad and grasp slip 247.626 µm; no quiet
+direction readiness, forward scan or capture occurs. Its 34,182 ticks and
+50 feedback columns are closed, with all 65 canonical, nine experimental
+source, nine parent-input and runtime hashes unchanged. The frozen V4
+evidence package is pending; no portable V4 reproduction claim is supplied.
+Frozen harness SHA is
+`aee1c3d5f9f9b8b6b8359b9da92726130acc606862975ab66a8b9ba9174cf74b`;
+braking helper SHA is
+`4bc45250cbf1aba271dad51df2781971e323735d631349afcc20ab311afa21c1`.
+Its actual command uses `crest_seat_brake_probe_v4.py --checkpoint-time 13.1949
+--brake-duration .15`, from the same exact original parent, not the failed V3
+endpoint. Only the 150 ms C2 braking schedule changes; geometry, motor caps
+and physical readiness/capture guards stay unchanged. **50 pure helper tests**
+verify the schedule/analytic bounds, separately from the retained 69 contracts
+and 402-test proof. Frozen input/argv and execution-before records are local
+`crest_seat_search_v4_frozen_inputs.json` / `crest_seat_search_v4_execution_before.json`
+under `outputs/m8_table_supported/diagnostics/`; execution-after SHA is
+`ca60886564935c746d4f497cd46167b82a5d2cbe889cbb8e1176f2afdb3ddfa8`.
+Portable native-repeat instructions await its frozen source/evidence package.
+The original failure is preserved; no V4 readiness, forward scan, capture or
+completed full trajectory is claimed.
