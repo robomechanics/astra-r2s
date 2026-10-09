@@ -1,0 +1,37 @@
+{
+  "status": "manually_interrupted_before_completion",
+  "final_validation_exists": false,
+  "reason": "Independent v11 clearance audit found native finger-backing contacts with assumed soft-normal law. Full run stopped by SIGINT; no checkpoint is reused.",
+  "source_run": "outputs/m8_table_pickup/full",
+  "scope": "Exact last completed phase prefix; no final result and no complete every-substep force archive. Preserved trace metadata is unchanged.",
+  "files": {
+    "scene.xml": {
+      "sha256": "f0a8f58bc4abf5bd5625444dd3907838ac25e8da1596fc1d8a429295c2bfa1e0",
+      "bytes": 43908
+    },
+    "scene_source.py": {
+      "sha256": "22f63989606629ccf7eed572e586fe9032fefbc6b448edeedb0acfec30924f64",
+      "bytes": 25139
+    },
+    "controller_source.py": {
+      "sha256": "ce1d056837ea3d6f580b95f85acdf1fccf46e7ddedfb8161c92677981c6b4843",
+      "bytes": 54599
+    },
+    "engagement_observer_source.py": {
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "bytes": 4752
+    },
+    "insertion_trace_partial.npz": {
+      "sha256": "ff84f3999fbbf7cd85dbd0171ee5152d077373fae8c573951ea1c3839ee8c752",
+      "bytes": 629095
+    },
+    "recorded_sources/yam_twin/m8_insertion_mechanics.py": {
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+      "bytes": 4321
+    },
+    "recorded_sources/yam_twin/m8_simulation.py": {
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+      "bytes": 30270
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "Supplemental diagnostics for exact recorded failed bounded trial",
+  "primary_manifest_sha256": "7ed583774f841fd6d567246b2e38919c30a51dcd9f124915b2f610e5ca2fb6d3",
+  "trajectory_sha256": "a09930df6d36a0de61f92b7b8a8e93b03c8994a0fff0b851daaf83e1662a7cbc",
+  "auditor_source_sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+  "files": {
+    "independent_free_joint_properties.json": {
+      "sha256": "f614f2b9eeb1124ab411ae5dff373ef4f34e7ff8d7d95c310da6b5d1826edcdb",
+      "bytes": 9978
+    },
+    "audit_sources/audit_m8_free_joint_properties.py": {
+      "sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+      "bytes": 6934
+    },
+    "failure_notes.json": {
+      "sha256": "6c1587a0cdb52629f72e67ae6bfc3496e6d162f299fc722c62d28607ab46ef20",
+      "bytes": 872
+    },
+    "README.md": {
+      "sha256": "5e3553b748805fece1debd902ba2b24a5510d2d91150ce81b137364d5bc5315f",
+      "bytes": 1694
+    }
+  }
+}

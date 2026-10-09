@@ -1,0 +1,135 @@
+{
+  "status": "Failed bounded trial: continuous preload gaps AND independently observed native-jaw backing engagement",
+  "passed": false,
+  "partial": true,
+  "native_acceleration_reference_solref": [
+    -51.0,
+    -14.2828568570857
+  ],
+  "maximum_sampled_pad_block_reported_depth_m": 0.0003184370058645346,
+  "maximum_sampled_nonpad_left_hand_block_candidates": 12,
+  "nominal_pad_inner_offset_m": 0.0005,
+  "unexpected_native_jaw_contacts": [
+    {
+      "geoms": [
+        "left_lf_down6_collision",
+        "fixture_block_geom"
+      ],
+      "sampled_penetrating_candidate_count": 106,
+      "maximum_signed_depth_m": 1.8160074661042786e-05,
+      "first_saved_time_s": 1.2900500000005102,
+      "first_saved_phase": "close_left_block"
+    },
+    {
+      "geoms": [
+        "left_lf_down7_collision",
+        "fixture_block_geom"
+      ],
+      "sampled_penetrating_candidate_count": 103,
+      "maximum_signed_depth_m": 1.8160141616234177e-05,
+      "first_saved_time_s": 1.2900500000005102,
+      "first_saved_phase": "close_left_block"
+    },
+    {
+      "geoms": [
+        "left_lf_down8_collision",
+        "fixture_block_geom"
+      ],
+      "sampled_penetrating_candidate_count": 106,
+      "maximum_signed_depth_m": 1.8201823726370883e-05,
+      "first_saved_time_s": 1.2900500000005102,
+      "first_saved_phase": "close_left_block"
+    },
+    {
+      "geoms": [
+        "left_lf_down9_collision",
+        "fixture_block_geom"
+      ],
+      "sampled_penetrating_candidate_count": 104,
+      "maximum_signed_depth_m": 1.8201890681532784e-05,
+      "first_saved_time_s": 1.2900500000005102,
+      "first_saved_phase": "close_left_block"
+    },
+    {
+      "geoms": [
+        "left_lf_down10_collision",
+        "fixture_block_geom"
+      ],
+      "sampled_penetrating_candidate_count": 103,
+      "maximum_signed_depth_m": 1.825401005798807e-05,
+      "first_saved_time_s": 1.2900500000005102,
+      "first_saved_phase": "close_left_block"
+    },
+    {
+      "geoms": [
+        "left_lf_down11_collision",
+        "fixture_block_geom"
+      ],
+      "sampled_penetrating_candidate_count": 102,
+      "maximum_signed_depth_m": 1.8254077013179462e-05,
+      "first_saved_time_s": 1.2900500000005102,
+      "first_saved_phase": "close_left_block"
+    },
+    {
+      "geoms": [
+        "left_rf_down6_collision",
+        "fixture_block_geom"
+      ],
+      "sampled_penetrating_candidate_count": 194,
+      "maximum_signed_depth_m": 1.8412133675295536e-05,
+      "first_saved_time_s": 1.2900500000005102,
+      "first_saved_phase": "close_left_block"
+    },
+    {
+      "geoms": [
+        "left_rf_down7_collision",
+        "fixture_block_geom"
+      ],
+      "sampled_penetrating_candidate_count": 192,
+      "maximum_signed_depth_m": 1.8412200630488662e-05,
+      "first_saved_time_s": 1.2900500000005102,
+      "first_saved_phase": "close_left_block"
+    },
+    {
+      "geoms": [
+        "left_rf_down8_collision",
+        "fixture_block_geom"
+      ],
+      "sampled_penetrating_candidate_count": 191,
+      "maximum_signed_depth_m": 1.837038460996744e-05,
+      "first_saved_time_s": 1.2900500000005102,
+      "first_saved_phase": "close_left_block"
+    },
+    {
+      "geoms": [
+        "left_rf_down9_collision",
+        "fixture_block_geom"
+      ],
+      "sampled_penetrating_candidate_count": 188,
+      "maximum_signed_depth_m": 1.8370451565160564e-05,
+      "first_saved_time_s": 1.2900500000005102,
+      "first_saved_phase": "close_left_block"
+    },
+    {
+      "geoms": [
+        "left_rf_down10_collision",
+        "fixture_block_geom"
+      ],
+      "sampled_penetrating_candidate_count": 182,
+      "maximum_signed_depth_m": 1.8318198278351986e-05,
+      "first_saved_time_s": 1.2900500000005102,
+      "first_saved_phase": "close_left_block"
+    },
+    {
+      "geoms": [
+        "left_rf_down11_collision",
+        "fixture_block_geom"
+      ],
+      "sampled_penetrating_candidate_count": 149,
+      "maximum_signed_depth_m": 1.831826523351562e-05,
+      "first_saved_time_s": 1.2900500000005102,
+      "first_saved_phase": "close_left_block"
+    }
+  ],
+  "scope": "The nominal 0.5mm pad offset does not establish minimum clearance to every textured native jaw piece. Saved-pose backing penetration is directly observed. This trial is not used as the full-demo model; no full bolt/thread qualification was attempted."
+}

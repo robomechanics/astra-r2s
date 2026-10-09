@@ -1,0 +1,11 @@
+{
+  "video": "insertion_demo.mp4",
+  "screenshot": "insertion_demo.png",
+  "frames": 219,
+  "source_recording": "outputs/m8_table_pickup/full_v10/insertion_trace.npz",
+  "trajectory_sha256": "098ede19f8fac000853b04b87c42729ddfd068902867cbbea27391a89545d380",
+  "recorded_validation_passed": false,
+  "physics_scope": "Both actual tabletop pickups; aborted unengaged thread search at unchanged SDF depth guard. No qualified thread turn.",
+  "fps": 12,
+  "slow_motion": 1.5
+}

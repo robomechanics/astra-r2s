@@ -1,0 +1,14 @@
+{
+  "native_probe_filename": "native_pad_compliance_probe.json",
+  "native_probe_sha256": "912f6433ef12af70e1a52ea15148a6b890d0f160317905e0f40c9564b9a7357e",
+  "original_average_pad_secant_stiffness_N_per_m": 5042756486.977222,
+  "proposed_average_pad_secant_stiffness_N_per_m": 101228277.33267929,
+  "measured_stiffness_reduction_factor": 49.815690040882295,
+  "assumed_uniform_rubber_normal_stiffness_N_per_m": 164999.99999999997,
+  "proposed_to_assumed_rubber_stiffness_ratio": 613.5047111071473,
+  "equivalent_Young_modulus_if_uniform_compression_assumed_Pa": 6135047111.071473,
+  "direct_normal_K_for_same_pose_static_rubber_reference_s_minus_2": 50.936854166295475,
+  "slow_normal_time_constant_if_original_B_retained_s": 49.080376888571784,
+  "scope": "Force/indentation ratios are settled model secant stiffness, not measured material properties or dynamic constitutive calibration. The direct K for reference is a local static extrapolation, not a proposed operating setting. Native effective stiffness depends on constraint impedance, inertia and contact multiplicity; preserving original B at that K yields an impractically slow mode. No actual demo source was changed.",
+  "recommendation": "Preserve numerical pilot and failed bilateral diagnostics. Material-matched compliance needs an explicit independently declared deformation model or calibrated normal/tangential solver parameters; avoid further arbitrary K or tau sweeps."
+}

@@ -1,0 +1,579 @@
+{
+  "source_trace": "/workspace/astra-r2s/outputs/m8_insertion/table_left_smoke_v2/insertion_trace.npz",
+  "source_trace_sha256": "f0e7f2758db5698b615f01fd469f821faf9b7601642cb6587665d10f7e2e2297",
+  "compiled_archived_model_identity": {
+    "model_fingerprint": "25efc9d79f2a2c9fe95313571e0d25cb586077f44a66ff747d994ace75744c22",
+    "model_xml_sha256": "f4f342f65e7eeb65084a5a4974977dd8291fa2473f8f8f77152e4d09323a8aad",
+    "mesh_sha256": {
+      "model2.stl": "5ac61c0313ed00c38655e41681af1b8b307cf8d5ef57209a75f215cea02df754",
+      "model2__2.stl": "30dab41f14bae95d737abca3c934eb5d570ab107dff0b40952fbdfb9d07eab79",
+      "model2__3.stl": "9fd96f5ad387fe7dd96eaa65e386637800e2f5637b6167fbad4ecb37d8598f47",
+      "model2__4.stl": "33c0e7ef538e2c4473efa9c4ef2a8441b6094b65090b4dec71abe82001d974df",
+      "model2__5.stl": "09f08e7dead2d6363618471adadb1b94af39e8056676670f3fd21ec06c197b20",
+      "model2__6.stl": "888b5919d10dbfb59b964c3cafc2ddbdac3b5426e20dd13bcaf4baedd5ee15c9",
+      "model2__7.stl": "2d64b18f1e70b0460eb53335d340b7c879976a3093ec67b07bcb7245e371a91d",
+      "model2__8.stl": "db3708da6b14daf3fc9a1909a8325b68f65ff69146cdd20b69a9ddc4ce51f50d",
+      "model2__9.stl": "74969d09b8b7f75cc984c5c7e5526d2941c6724f48b3efa1fa8730cc7820f4f5",
+      "model2__10.stl": "b879cc07f547b7a2ac52e428dd206e80a0d4b0e805cb56b9a8230df04a690923",
+      "model2__11.stl": "af220d2a51e8444392aef36e2fe4a6f69aed22bc292a7f38e54da3b4f5253434",
+      "model2__12.stl": "e79614869bd2283f70fafa150ce748d5b6c03377a651448c6fe9893a22f6d1de",
+      "model2__13.stl": "32b62f14f00ea82bfc79b935f7dac32c7cb276a3abc0aae8362cbba3fb1326de",
+      "model2__14.stl": "72d2178789dd5e0358c2caf9dad90b8881e505f4c52a8d6d18c71b5e93e8c84b",
+      "model2__15.stl": "ca8788184d54f30c18482cb9b48dffb010a93dbc029054b6cc515083a740d324",
+      "model2__16.stl": "18bb99691eed524393e8f3a0ff29e79d97ab75689bc92144bbdfafa2cc79d37b",
+      "model2__17.stl": "6513dbd192d2bf3a4f7016231f1ba5eca93916c9ebfdc334e9b435ca1d302ff6",
+      "d405.stl": "6617f3fb22b604a66c27e16d2397f305fcdca8a781248abdbabbf69c9fe6a3c5"
+    },
+    "scene_source_sha256": "d9af47fae3e24075eb4bc0abe8b05f1331b67f1c96a40404788e3b80d39c5674",
+    "scene_source_matches_recorded": true,
+    "method": "Exact hash-verified archived XML; current scene generator is not used"
+  },
+  "initial_saved_time_s": 1.5000000000009532,
+  "probe_source_sha256": "19ea9dd6e7ae9a319477eda4d7ced374c3360d3249e7cff4bbd1bc86ffc13348",
+  "rubber_comparison_assumptions": {
+    "face_area_m2": 4.949999999999999e-05,
+    "thickness_m": 0.003,
+    "assumed_Young_modulus_Pa": 10000000.0,
+    "nominal_compression_at_16N_m": 9.696969696969699e-05,
+    "scope": "Simple uniform uniaxial compression reference only; uncalibrated assumed modulus, no shape-factor correction."
+  },
+  "cases": [
+    {
+      "case": "original_normal_0p8ms",
+      "modified_pair_ids": [],
+      "measurement_scope": "Separate native 12 bounded arm motors plus 4 finite jaw position actuators holding original table-acquisition configuration; no object actuator/weld/applied wrench. Mean of original native pre-integration contact force/depth pairs over final 0.1 s of 0.5 s integration; not actual-demo qualification or material calibration.",
+      "mean_pad_normal_force_N": [
+        16.00006463012039,
+        15.999808455386386
+      ],
+      "mean_force_weighted_normal_indentation_m": [
+        3.176861724618359e-09,
+        3.1688588629950358e-09
+      ],
+      "force_weighted_indentation_range_m": [
+        [
+          3.1768609115011718e-09,
+          3.176862490815845e-09
+        ],
+        [
+          3.1688580898956285e-09,
+          3.1688596348139736e-09
+        ]
+      ],
+      "mean_pad_secant_stiffness_N_per_m": [
+        5036437219.200185,
+        5049075754.75426
+      ],
+      "unloaded_measurement_steps": [
+        0,
+        0
+      ],
+      "final_contacts": [
+        {
+          "pad": "left_m8_pad_left",
+          "force_N": 3.999715471705062,
+          "distance_m": -3.176622833959451e-09,
+          "solref": [
+            0.0008,
+            1.0
+          ],
+          "solreffriction": [
+            0.0,
+            0.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            1562812.5468812506,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.409565749118848,
+          "normal_R": 0.001241080682980046
+        },
+        {
+          "pad": "left_m8_pad_left",
+          "force_N": 4.0003080901007335,
+          "distance_m": -3.177093338727011e-09,
+          "solref": [
+            0.0008,
+            1.0
+          ],
+          "solreffriction": [
+            0.0,
+            0.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            1562812.5468812506,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.409565749118848,
+          "normal_R": 0.001241080682980046
+        },
+        {
+          "pad": "left_m8_pad_left",
+          "force_N": 4.000315318311527,
+          "distance_m": -3.177099103509297e-09,
+          "solref": [
+            0.0008,
+            1.0
+          ],
+          "solreffriction": [
+            0.0,
+            0.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            1562812.5468812506,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.409565749118848,
+          "normal_R": 0.001241080682980046
+        },
+        {
+          "pad": "left_m8_pad_left",
+          "force_N": 3.9997226999158553,
+          "distance_m": -3.176628598741737e-09,
+          "solref": [
+            0.0008,
+            1.0
+          ],
+          "solreffriction": [
+            0.0,
+            0.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            1562812.5468812506,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.409565749118848,
+          "normal_R": 0.001241080682980046
+        },
+        {
+          "pad": "left_m8_pad_right",
+          "force_N": 4.000246305956506,
+          "distance_m": -3.1690919475107497e-09,
+          "solref": [
+            0.0008,
+            1.0
+          ],
+          "solreffriction": [
+            0.0,
+            0.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            1562812.5468812506,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.378503225567858,
+          "normal_R": 0.0012379741199686463
+        },
+        {
+          "pad": "left_m8_pad_right",
+          "force_N": 3.9996522004486574,
+          "distance_m": -3.1686214427431898e-09,
+          "solref": [
+            0.0008,
+            1.0
+          ],
+          "solreffriction": [
+            0.0,
+            0.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            1562812.5468812506,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.378503225567858,
+          "normal_R": 0.0012379741199686463
+        },
+        {
+          "pad": "left_m8_pad_right",
+          "force_N": 3.99965944679787,
+          "distance_m": -3.1686272075254758e-09,
+          "solref": [
+            0.0008,
+            1.0
+          ],
+          "solreffriction": [
+            0.0,
+            0.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            1562812.5468812506,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.378503225567858,
+          "normal_R": 0.0012379741199686463
+        },
+        {
+          "pad": "left_m8_pad_right",
+          "force_N": 4.000253552305717,
+          "distance_m": -3.1690977122930357e-09,
+          "solref": [
+            0.0008,
+            1.0
+          ],
+          "solreffriction": [
+            0.0,
+            0.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            1562812.5468812506,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.378503225567858,
+          "normal_R": 0.0012379741199686463
+        }
+      ],
+      "maximum_object_applied_force": 0.0,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "direct_normal_K31250_B2500",
+      "modified_pair_ids": [
+        0,
+        7
+      ],
+      "measurement_scope": "Separate native 12 bounded arm motors plus 4 finite jaw position actuators holding original table-acquisition configuration; no object actuator/weld/applied wrench. Mean of original native pre-integration contact force/depth pairs over final 0.1 s of 0.5 s integration; not actual-demo qualification or material calibration.",
+      "mean_pad_normal_force_N": [
+        15.996966595568201,
+        15.996712185315937
+      ],
+      "mean_force_weighted_normal_indentation_m": [
+        1.582269621085166e-07,
+        1.5782829643717596e-07
+      ],
+      "force_weighted_indentation_range_m": [
+        [
+          1.5778467877323592e-07,
+          1.5851944520633015e-07
+        ],
+        [
+          1.5738706920176978e-07,
+          1.5812010222471275e-07
+        ]
+      ],
+      "mean_pad_secant_stiffness_N_per_m": [
+        101101394.9986414,
+        101355159.66671717
+      ],
+      "unloaded_measurement_steps": [
+        0,
+        0
+      ],
+      "final_contacts": [
+        {
+          "pad": "left_m8_pad_left",
+          "force_N": 3.999066201876983,
+          "distance_m": -1.5851314707046686e-07,
+          "solref": [
+            -31250.0,
+            -2500.0
+          ],
+          "solreffriction": [
+            0.0008,
+            1.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            31256.250937625013,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.409565749118848,
+          "normal_R": 0.001241080682980046
+        },
+        {
+          "pad": "left_m8_pad_left",
+          "force_N": 3.9994090208511124,
+          "distance_m": -1.5852564121812816e-07,
+          "solref": [
+            -31250.0,
+            -2500.0
+          ],
+          "solreffriction": [
+            0.0008,
+            1.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            31256.250937625013,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.409565749118848,
+          "normal_R": 0.001241080682980046
+        },
+        {
+          "pad": "left_m8_pad_left",
+          "force_N": 3.999412677019615,
+          "distance_m": -1.585257428066413e-07,
+          "solref": [
+            -31250.0,
+            -2500.0
+          ],
+          "solreffriction": [
+            0.0008,
+            1.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            31256.250937625013,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.409565749118848,
+          "normal_R": 0.001241080682980046
+        },
+        {
+          "pad": "left_m8_pad_left",
+          "force_N": 3.999069858045486,
+          "distance_m": -1.5851324865898e-07,
+          "solref": [
+            -31250.0,
+            -2500.0
+          ],
+          "solreffriction": [
+            0.0008,
+            1.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            31256.250937625013,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.409565749118848,
+          "normal_R": 0.001241080682980046
+        },
+        {
+          "pad": "left_m8_pad_right",
+          "force_N": 3.99934735551488,
+          "distance_m": -1.5812629823583466e-07,
+          "solref": [
+            -31250.0,
+            -2500.0
+          ],
+          "solreffriction": [
+            0.0008,
+            1.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            31256.250937625013,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.378503225567858,
+          "normal_R": 0.0012379741199686463
+        },
+        {
+          "pad": "left_m8_pad_right",
+          "force_N": 3.999003676273377,
+          "distance_m": -1.5811380408817336e-07,
+          "solref": [
+            -31250.0,
+            -2500.0
+          ],
+          "solreffriction": [
+            0.0008,
+            1.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            31256.250937625013,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.378503225567858,
+          "normal_R": 0.0012379741199686463
+        },
+        {
+          "pad": "left_m8_pad_right",
+          "force_N": 3.9990073416166414,
+          "distance_m": -1.581139056766865e-07,
+          "solref": [
+            -31250.0,
+            -2500.0
+          ],
+          "solreffriction": [
+            0.0008,
+            1.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            31256.250937625013,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.378503225567858,
+          "normal_R": 0.0012379741199686463
+        },
+        {
+          "pad": "left_m8_pad_right",
+          "force_N": 3.999351020858144,
+          "distance_m": -1.581263998243478e-07,
+          "solref": [
+            -31250.0,
+            -2500.0
+          ],
+          "solreffriction": [
+            0.0008,
+            1.0
+          ],
+          "solimp": [
+            0.9999,
+            0.9999,
+            0.0001,
+            0.5,
+            2.0
+          ],
+          "normal_KBIP": [
+            31256.250937625013,
+            2500.2500250025,
+            0.9999,
+            0.0
+          ],
+          "normal_diagA": 12.378503225567858,
+          "normal_R": 0.0012379741199686463
+        }
+      ],
+      "maximum_object_applied_force": 0.0,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "scope": "Software checks at unchanged recorded source hashes; no physical, hardware or policy-training certification",
+  "files": {
+    "software_tests.json": {
+      "sha256": "f3be76ce418c9c5d70256ce0dc4e672efb030b4a2c23cd04fd19108d8b6dd45e",
+      "bytes": 3573
+    },
+    "software_tests.log": {
+      "sha256": "975055a6793552860a4e7d843ab4cf247a7ec65d3dbd8b88807e88857b5cb0ed",
+      "bytes": 1020
+    },
+    "verify_software_sources.py": {
+      "sha256": "8d7cf7e8632b3eb2664b9c58c28c1b6faf401f20fa04d8e88a19635018c90fb2",
+      "bytes": 1339
+    }
+  }
+}

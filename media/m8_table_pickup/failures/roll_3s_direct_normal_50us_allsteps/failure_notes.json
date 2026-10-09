@@ -1,0 +1,16 @@
+{
+  "status": "Failed isolated numerical normal-contact compliance pilot; no material calibration",
+  "passed": false,
+  "partial": true,
+  "native_acceleration_reference_solref": [
+    -31250.0,
+    -2500.0
+  ],
+  "friction_time_constant_s": 0.0008,
+  "sampled_left_pad_check_passed": true,
+  "all_substep_left_pad_check_passed": false,
+  "maximum_sampled_pad_block_reported_depth_m": 1.0315099070676174e-05,
+  "maximum_sampled_nonpad_left_hand_block_candidates": 0,
+  "nominal_pad_inner_offset_m": 0.0005,
+  "scope": "Signed depths and backing candidates are sampled post-integration geometry diagnostics only. Every-substep native solved force statistics come from the raw force archive. Neither establishes calibrated rubber behavior; no full bolt/thread qualification was attempted."
+}

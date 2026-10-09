@@ -1,0 +1,26 @@
+{
+  "progress_snapshot_sha256": "130aaa49db0391931346c246a51cd4eef87e723139f32ee3c8eb7a2873fc5494",
+  "source_trace_path": "media/m8_table_pickup/failures/full_v10_depth_abort/trace.npz",
+  "source_trace_sha256": "098ede19f8fac000853b04b87c42729ddfd068902867cbbea27391a89545d380",
+  "exact_saved_state_and_native_sample_match": true,
+  "sample_index": 1808,
+  "source_outcome": {
+    "passed": false,
+    "partial": false,
+    "aborted": {
+      "phase": "release_search_2",
+      "time": 12.153149999978346,
+      "reported_sdf_depth_m": 1.0562170081413037e-05,
+      "radial_offset_m": 3.5162024743437225e-05,
+      "bolt_tilt_rad": 0.008854687146360445,
+      "block_grip_slip_m": 0.00022422605356700958,
+      "block_grip_rotation_slip_rad": 0.00037157018297236333,
+      "bolt_grip_slip_m": 0.0,
+      "world_block_support_contacts": 0,
+      "minimum_native_joint_margin_rad": 0.0965462910151158,
+      "warnings": 0,
+      "external_drive_zero": true
+    }
+  },
+  "scope": "The screenshot is verified against this aborted continuous attempt; it does not demonstrate qualified threading."
+}

@@ -1,0 +1,11 @@
+{
+  "status": "Recorded failed, bounded table-block pickup with equivalent convex-mesh pad envelopes",
+  "passed": false,
+  "partial": true,
+  "sampled_left_pad_check_passed": false,
+  "all_substep_left_pad_check_passed": false,
+  "configuration": "50us, original0.8ms left normal/tangential contact reference, native convex mesh pads with the same box envelope",
+  "raw_history_statistics_location": "independent_capture_audit.json:left_pad_force_history_audit.recomputed_stats",
+  "pose_force_timing_note": "mj_step contact forces and contact geometry are from the pre-integration state at recorded time minus timestep; saved qpos/qvel are the post-integration state",
+  "scope": "The alternative native collision dispatch does not pass continuous bilateral preload. Original failures remain unchanged. No full bolt pickup/capture/thread qualification was attempted."
+}

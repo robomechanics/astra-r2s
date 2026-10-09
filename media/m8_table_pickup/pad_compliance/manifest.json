@@ -1,0 +1,77 @@
+{
+  "kind": "Separate bounded native-jaw quasistatic compliance comparison",
+  "status": "Numerical contact-regularization diagnostic; not actual-demo acceptance or calibrated rubber material",
+  "published_baseline_trajectory": "media/m8_table_pickup/failures/roll_3s_50us/trace.npz",
+  "baseline_trajectory_sha256": "f0e7f2758db5698b615f01fd469f821faf9b7601642cb6587665d10f7e2e2297",
+  "compiled_archived_model_identity": {
+    "model_fingerprint": "25efc9d79f2a2c9fe95313571e0d25cb586077f44a66ff747d994ace75744c22",
+    "model_xml_sha256": "f4f342f65e7eeb65084a5a4974977dd8291fa2473f8f8f77152e4d09323a8aad",
+    "mesh_sha256": {
+      "model2.stl": "5ac61c0313ed00c38655e41681af1b8b307cf8d5ef57209a75f215cea02df754",
+      "model2__2.stl": "30dab41f14bae95d737abca3c934eb5d570ab107dff0b40952fbdfb9d07eab79",
+      "model2__3.stl": "9fd96f5ad387fe7dd96eaa65e386637800e2f5637b6167fbad4ecb37d8598f47",
+      "model2__4.stl": "33c0e7ef538e2c4473efa9c4ef2a8441b6094b65090b4dec71abe82001d974df",
+      "model2__5.stl": "09f08e7dead2d6363618471adadb1b94af39e8056676670f3fd21ec06c197b20",
+      "model2__6.stl": "888b5919d10dbfb59b964c3cafc2ddbdac3b5426e20dd13bcaf4baedd5ee15c9",
+      "model2__7.stl": "2d64b18f1e70b0460eb53335d340b7c879976a3093ec67b07bcb7245e371a91d",
+      "model2__8.stl": "db3708da6b14daf3fc9a1909a8325b68f65ff69146cdd20b69a9ddc4ce51f50d",
+      "model2__9.stl": "74969d09b8b7f75cc984c5c7e5526d2941c6724f48b3efa1fa8730cc7820f4f5",
+      "model2__10.stl": "b879cc07f547b7a2ac52e428dd206e80a0d4b0e805cb56b9a8230df04a690923",
+      "model2__11.stl": "af220d2a51e8444392aef36e2fe4a6f69aed22bc292a7f38e54da3b4f5253434",
+      "model2__12.stl": "e79614869bd2283f70fafa150ce748d5b6c03377a651448c6fe9893a22f6d1de",
+      "model2__13.stl": "32b62f14f00ea82bfc79b935f7dac32c7cb276a3abc0aae8362cbba3fb1326de",
+      "model2__14.stl": "72d2178789dd5e0358c2caf9dad90b8881e505f4c52a8d6d18c71b5e93e8c84b",
+      "model2__15.stl": "ca8788184d54f30c18482cb9b48dffb010a93dbc029054b6cc515083a740d324",
+      "model2__16.stl": "18bb99691eed524393e8f3a0ff29e79d97ab75689bc92144bbdfafa2cc79d37b",
+      "model2__17.stl": "6513dbd192d2bf3a4f7016231f1ba5eca93916c9ebfdc334e9b435ca1d302ff6",
+      "d405.stl": "6617f3fb22b604a66c27e16d2397f305fcdca8a781248abdbabbf69c9fe6a3c5"
+    },
+    "scene_source_sha256": "d9af47fae3e24075eb4bc0abe8b05f1331b67f1c96a40404788e3b80d39c5674",
+    "scene_source_matches_recorded": true,
+    "method": "Exact hash-verified archived XML; current scene generator is not used"
+  },
+  "native_runtime_verified_at_packaging": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "original_measurement_scope": "Two 0.5 s native motor/jaw holds from the exact original v2 end-acquisition state; final 0.1 s force-weighted contact indentation. No external object drives, solver warnings or actual-demo source changes.",
+  "original_probe_source_sha256": "19ea9dd6e7ae9a319477eda4d7ced374c3360d3249e7cff4bbd1bc86ffc13348",
+  "controller_source_byte_identical_to_pre_probe_check": true,
+  "helper_source_sha256": {
+    "scripts/audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+    "yam_twin/m8_simulation.py": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+    "yam_twin/m8_scene.py": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f",
+    "yam_twin/m8_insertion_scene.py": "4d13129d8075ab3158a72986db589c84a4ebf10a7c4bd99ed40b5f1d06c65062",
+    "thread_lab/model.py": "12d79f294f00ae1a6ae7551877f4dafd705ef54ba4f2ae6af7ab9e21c646b3de",
+    "thread_lab/runtime.py": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd",
+    "thread_lab/build_plugin.py": "0ddb419b5dd1d7578c659ace20869699a434a99c578815d5928dc9cd6556b5d0",
+    "thread_lab/plugins/m8_sdf.cc": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "helper_snapshot_scope": "Helper files frozen at package creation for reproduction. The Cartesian controller is byte-identical to its verified original-probe import. Scene configuration helpers may contain later additional configuration fields; they do not generate the probed scene, which is compiled only from the hash-bound original archived XML/assets.",
+  "limit": "Secant force/indentation is a local model observation dependent on inertia, constraint impedance and contact multiplicity, not a material modulus or an arbitrary-pose/dynamic calibration.",
+  "reproduce_command": "scripts/run_m8.sh media/m8_table_pickup/pad_compliance/reproduce_probe.py",
+  "reproducer_source_sha256": "4b721898f162d82ca62ca00d059f4bec506aab0ec8199e4844296549c26f9db2",
+  "files_sha256": {
+    "README.md": "0013ab64ab3fc9d9a58ae45b495918ea2943324af8f159127b400a03cffaaa49",
+    "compliance_interpretation.json": "9956e6cabdc38a2397ac24114b493b0be111440e818e33ea21597e98d050786a",
+    "helper_sources/scripts/audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+    "helper_sources/thread_lab/build_plugin.py": "0ddb419b5dd1d7578c659ace20869699a434a99c578815d5928dc9cd6556b5d0",
+    "helper_sources/thread_lab/model.py": "12d79f294f00ae1a6ae7551877f4dafd705ef54ba4f2ae6af7ab9e21c646b3de",
+    "helper_sources/thread_lab/plugins/m8_sdf.cc": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a",
+    "helper_sources/thread_lab/runtime.py": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd",
+    "helper_sources/yam_twin/m8_insertion_scene.py": "4d13129d8075ab3158a72986db589c84a4ebf10a7c4bd99ed40b5f1d06c65062",
+    "helper_sources/yam_twin/m8_scene.py": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f",
+    "helper_sources/yam_twin/m8_simulation.py": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+    "native_pad_compliance_probe.json": "912f6433ef12af70e1a52ea15148a6b890d0f160317905e0f40c9564b9a7357e",
+    "probe_source.py": "19ea9dd6e7ae9a319477eda4d7ced374c3360d3249e7cff4bbd1bc86ffc13348",
+    "reproduce_probe.py": "4b721898f162d82ca62ca00d059f4bec506aab0ec8199e4844296549c26f9db2"
+  }
+}

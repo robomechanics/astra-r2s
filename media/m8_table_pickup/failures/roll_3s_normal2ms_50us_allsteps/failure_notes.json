@@ -1,0 +1,10 @@
+{
+  "status": "Recorded failed, bounded table-block pickup; original outcomes preserved",
+  "passed": false,
+  "partial": true,
+  "sampled_left_pad_check_passed": true,
+  "all_substep_left_pad_check_passed": false,
+  "raw_history_statistics_location": "independent_capture_audit.json:left_pad_force_history_audit.recomputed_stats",
+  "pose_force_timing_note": "mj_step contact forces and contact geometry are from the pre-integration state at recorded time minus timestep; saved qpos/qvel are the post-integration state",
+  "scope": "Raw forces substantiate temporal aliasing in the older sparse sampled gate. No full bolt pickup/capture/thread qualification was attempted."
+}

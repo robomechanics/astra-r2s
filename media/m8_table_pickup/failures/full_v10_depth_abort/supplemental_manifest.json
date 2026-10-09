@@ -1,0 +1,58 @@
+{
+  "kind": "failed_full_attempt_independent_audit_supplement",
+  "primary_manifest_sha256": "205938bb396e7d06bc81fe4d937f84df4904e03992a761ccfe460b4d48b753be",
+  "trajectory_sha256": "098ede19f8fac000853b04b87c42729ddfd068902867cbbea27391a89545d380",
+  "recorded_validation_passed": false,
+  "aborted": true,
+  "partial_task_scope": false,
+  "files": {
+    "README.md": {
+      "sha256": "75e228ce08d56b2937f41ab1aeb06fa2faa8806aace8ea718eabba020d99d1c9",
+      "bytes": 2426
+    },
+    "audit_sources/audit_m8_free_joint_properties.py": {
+      "sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+      "bytes": 6934
+    },
+    "audit_sources/audit_m8_insertion_reset_contacts.py": {
+      "sha256": "b8b14448a2fba7074ebed84669a7a6015b1f831e45e7a647ff7acc9cdb10ab0a",
+      "bytes": 7681
+    },
+    "audit_sources/package_m8_insertion_demo.py": {
+      "sha256": "96ba1018173e05f18e98d50a24018b1cec55a215c63aae2c648fdb7932324e39",
+      "bytes": 24780
+    },
+    "audit_sources/plot_m8_insertion_trace.py": {
+      "sha256": "4125f08051d2ac8461545bb71d7b6ceda6f26a80ae121ce18ef250534be69dac",
+      "bytes": 24634
+    },
+    "failure_notes.json": {
+      "sha256": "3a62a9a95c6cfd26ac404573b241ed781eeeb16280caf714890c7f96ae1ba148",
+      "bytes": 10616
+    },
+    "independent_free_joint_properties.json": {
+      "sha256": "498d2b3be04ff3eb7207aeaafc4ecbb3ce3b77c23f51b16b2f16e5c7abaedb41",
+      "bytes": 10010
+    },
+    "independent_left_pad_force_history_audit.json": {
+      "sha256": "e00dee22f3bbf2ff1fc43d8515e1fb1032614db9f892617cb4da6648bf8005ad",
+      "bytes": 15678
+    },
+    "independent_reset_contact_audit.json": {
+      "sha256": "2f40581be8a47ff0b9a543a7652e3092d2cbb7d06505bafbd3ff6b5d6d340f4e",
+      "bytes": 4003
+    },
+    "rollout_stdout.log": {
+      "sha256": "f6da236d75c21d96091a39e7da306a9068e2a7587d1ad13dfba7097fdd162129",
+      "bytes": 69040
+    },
+    "software_tests.json": {
+      "sha256": "c0c80c0cc1c50400ed67f6f282547e67fc4048584d50796040bc6bf3850aff75",
+      "bytes": 3567
+    },
+    "software_tests.log": {
+      "sha256": "130bf3eebb79acaf064d1bf72352b70006bd6a21c745b2c13c9da51474870fbd",
+      "bytes": 1020
+    }
+  }
+}
