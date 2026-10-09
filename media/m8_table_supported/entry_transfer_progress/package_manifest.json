@@ -1,0 +1,441 @@
+{
+  "scope": "PHASE-ONLY PROGRESS. One fresh native continuous pickup/align/entry/weight-transfer prefix. Full every-step native ledgers and full physical qualification are not closed. Final formed0/interior0; no captured pitch, qualified turn, opening/reset, task-success or continuous full-completion claim.",
+  "producer_commit": "6e7d0d2ac3d28ff2538e122a10d7ffb2febf83b1",
+  "software_checks_passed": 402,
+  "software_source_files": 65,
+  "snapshot_trajectory_sha256": "375aeaf08fb8bcfc5422e3493e15be6b1aff44ae5f02b8c6f5babd62aa908188",
+  "partial": true,
+  "passed_full_physics": false,
+  "full_raw_ledgers_closed": false,
+  "native_first_time_s": 5e-05,
+  "native_last_time_s": 13.194899999975918,
+  "saved_native_states": 2652,
+  "original_final_sample_sha256": "318ef39af23f596b3e8abc98f6e34188613fe817fc29070dd6405f63c22c56cd",
+  "original_source_model_runtime_identities_preserved": true,
+  "no_splice_no_integration_no_force_solve": true,
+  "final_formed_overlap_m": 0,
+  "final_loaded_interior_count": 0,
+  "full_capture_qualified": false,
+  "full_pitch_lead_qualified": false,
+  "full_trajectory_qualified": false,
+  "all_artifacts_below45MB_no_chunks_needed": true,
+  "maximum_artifact_bytes": 40061016,
+  "files": {
+    "README.md": {
+      "sha256": "34c360292c1e49abfc4096506c9adf1fc08c340ed42323d8c922b1e6642bfe68",
+      "bytes": 3899
+    },
+    "controller_source.py": {
+      "sha256": "57f430143787317f8dc6f50bd2ea1ff23aab123810284da74da70b53b45a9493",
+      "bytes": 113329
+    },
+    "engagement_observer_source.py": {
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "bytes": 4752
+    },
+    "entry_transfer_detail.png": {
+      "sha256": "29cbc088e12eef9556ba97d89c808a9eddf150e4ac9323ef797674b19ef3dfa3",
+      "bytes": 143629
+    },
+    "entry_transfer_progress.gif": {
+      "sha256": "ce0ad1def50239fa4ea4b694857b37edc77cfe23976da58445a596b501ab81ce",
+      "bytes": 19797641
+    },
+    "entry_transfer_progress.mp4": {
+      "sha256": "b2c903e8b59555e5dc3804408c7e5b75f738cdb548c58b62085cb38cc77b2b4e",
+      "bytes": 1258798
+    },
+    "entry_transfer_progress.png": {
+      "sha256": "4a97d6a1f356fb9a7d5333feaa34b0f2b4f072acf8ae4eb14a398e5733001712",
+      "bytes": 259200
+    },
+    "frozen_audit_sources/scripts/audit_m8_free_joint_properties.py": {
+      "sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+      "bytes": 6934
+    },
+    "frozen_audit_sources/scripts/audit_m8_insertion_trace.py": {
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+      "bytes": 30341
+    },
+    "frozen_audit_sources/scripts/audit_m8_left_pad_force_history.py": {
+      "sha256": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc",
+      "bytes": 10265
+    },
+    "frozen_audit_sources/scripts/audit_m8_supported_trace.py": {
+      "sha256": "e46808601d7974ffdea1e5e20e07e0f28eb8e0a74a394545b276621a7e856702",
+      "bytes": 72219
+    },
+    "frozen_audit_sources/thread_lab/runtime.py": {
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd",
+      "bytes": 2177
+    },
+    "insertion_trace_partial.npz": {
+      "sha256": "375aeaf08fb8bcfc5422e3493e15be6b1aff44ae5f02b8c6f5babd62aa908188",
+      "bytes": 40061016
+    },
+    "launch_source.py": {
+      "sha256": "21a49f7ee65ed69c816184b921d4fd0e7e20add9874a7c06ba539932505c2d70",
+      "bytes": 4466
+    },
+    "manifest.json": {
+      "sha256": "971053760610668d1797ce10cd7341b773b7e1cb06720e7bf9eb1d2b7693727a",
+      "bytes": 725
+    },
+    "prepare_snapshot_source.py": {
+      "sha256": "b8b0b1f19d2008e8ca4bb16d9f175c5365432f3085bff889bb66c03fe8110038",
+      "bytes": 5730
+    },
+    "producer_sources/scripts/audit_m8_free_joint_properties.py": {
+      "sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+      "bytes": 6934
+    },
+    "producer_sources/scripts/audit_m8_insertion_capture.py": {
+      "sha256": "15ba607ac3277b4f8ef3f02aaf8df677e285e20511f0a7b9f8d07a202bad1233",
+      "bytes": 7389
+    },
+    "producer_sources/scripts/audit_m8_insertion_reset_contacts.py": {
+      "sha256": "b8b14448a2fba7074ebed84669a7a6015b1f831e45e7a647ff7acc9cdb10ab0a",
+      "bytes": 7681
+    },
+    "producer_sources/scripts/audit_m8_insertion_trace.py": {
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+      "bytes": 30341
+    },
+    "producer_sources/scripts/audit_m8_left_pad_force_history.py": {
+      "sha256": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc",
+      "bytes": 10265
+    },
+    "producer_sources/scripts/audit_m8_supported_trace.py": {
+      "sha256": "e46808601d7974ffdea1e5e20e07e0f28eb8e0a74a394545b276621a7e856702",
+      "bytes": 72219
+    },
+    "producer_sources/scripts/audit_yam_m8_geometry.py": {
+      "sha256": "1dac9d46cc585cd01ca5ea759c6bf86ce14edbb1bacaf3b04a39848c1b145fee",
+      "bytes": 10939
+    },
+    "producer_sources/scripts/audit_yam_m8_trace.py": {
+      "sha256": "8d41f8ea4eea3a905f536a257a707bf953dae7e54f7fc1d7e6d2d151d2a1cfc2",
+      "bytes": 17345
+    },
+    "producer_sources/scripts/check_m8_distance.py": {
+      "sha256": "6cb40d77aa8dec608ed7a4a9af13c64e463940aa027368e20f118d5fb3a461c9",
+      "bytes": 2644
+    },
+    "producer_sources/scripts/check_m8_optimization.py": {
+      "sha256": "dc8e68893522fc55dd2da71f3fa7b21be2e4717ab67b305ffb6512e6ee0f677a",
+      "bytes": 16201
+    },
+    "producer_sources/scripts/compare_m8_thread_start.py": {
+      "sha256": "a202391a03ea0ff9697f1219be0260881396dd7b0c2bf704d0032d7a2c25a67f",
+      "bytes": 15848
+    },
+    "producer_sources/scripts/compare_yam_m8_hold.py": {
+      "sha256": "85395970bed69b1f1288e03082ca1f2aa677a73384522bf326aac80491c1a7ff",
+      "bytes": 4819
+    },
+    "producer_sources/scripts/package_m8_insertion_demo.py": {
+      "sha256": "96ba1018173e05f18e98d50a24018b1cec55a215c63aae2c648fdb7932324e39",
+      "bytes": 24780
+    },
+    "producer_sources/scripts/plot_m8_insertion_trace.py": {
+      "sha256": "4125f08051d2ac8461545bb71d7b6ceda6f26a80ae121ce18ef250534be69dac",
+      "bytes": 24634
+    },
+    "producer_sources/scripts/probe_m8_thread_start.py": {
+      "sha256": "547430f31396c6bb1bfed0d83a688bd06b6ceba2ab0c3975ece602ec9dddedfb",
+      "bytes": 14088
+    },
+    "producer_sources/scripts/verify_m8_bindings.py": {
+      "sha256": "fa3c0d3ea85d1dd33a534d1ca36bb2f166d78a958fad4a2e15a7f71ffe7d6af5",
+      "bytes": 4300
+    },
+    "producer_sources/tests/test_m8_env.py": {
+      "sha256": "f1aa01a7e8f49481f152be4fa4e7d81d0512c9529234e7ab0c7f334c1ffb9ad0",
+      "bytes": 2999
+    },
+    "producer_sources/tests/test_m8_insertion_env.py": {
+      "sha256": "cd74ac30cc21ead94d62bbb629cc2f6ffbb5f5cf531910d8af67fe4ec82b3cac",
+      "bytes": 18203
+    },
+    "producer_sources/tests/test_m8_insertion_mechanics.py": {
+      "sha256": "38c3500352177b5ab5ff2799d645ec2f402c1c8cb7dfe05927b672f2ba5d260a",
+      "bytes": 3347
+    },
+    "producer_sources/tests/test_m8_physics.py": {
+      "sha256": "1ef772e1e4af6cd864577176ab8c1c088c30c4856944ce5948ba1894c897f7e0",
+      "bytes": 1884
+    },
+    "producer_sources/tests/test_m8_sdf.py": {
+      "sha256": "b21ab6a5fd8b2af14c50a6cdea5358a77fcec3ee8883dc475e4e3d4bc6a1dd37",
+      "bytes": 3492
+    },
+    "producer_sources/tests/test_m8_supported_audit.py": {
+      "sha256": "c3b8290a2f89aaff2ffdfa0719039d07287dde8fdb62a660f8438b39dd2dd6e8",
+      "bytes": 21821
+    },
+    "producer_sources/tests/test_m8_supported_feedback.py": {
+      "sha256": "c53717a80eb50a769e4e0a834e38113e972bcd2ce03e05940dfd138a7f620c74",
+      "bytes": 25977
+    },
+    "producer_sources/tests/test_m8_supported_grasp.py": {
+      "sha256": "18301b45f5f8ee709e9b7080fa45b14217673d2599b73ec42dfa12b2dd9e7892",
+      "bytes": 6541
+    },
+    "producer_sources/tests/test_m8_supported_phase_gate.py": {
+      "sha256": "d9c4a4be0dfc9ca748d48b60e6c7b87bf30249cda668280e1aa22ed2d4d74a7b",
+      "bytes": 10989
+    },
+    "producer_sources/tests/test_m8_supported_start.py": {
+      "sha256": "8b6fdf260cc33767aa2f7b742fb299bf4415f025015d2b0b88af849557073892",
+      "bytes": 13358
+    },
+    "producer_sources/tests/test_m8_theory.py": {
+      "sha256": "a82b341fca21da556e6aa311d2663d229428183ad1687660a5bf9cecb060863b",
+      "bytes": 3858
+    },
+    "producer_sources/tests/test_twin.py": {
+      "sha256": "2dbf4a42b45b1ec9f804191f10c4bce617d968a4cb875de54656331ec0206458",
+      "bytes": 10759
+    },
+    "producer_sources/tests/test_yam_m8_control.py": {
+      "sha256": "40956a87183b2100976b9cba5aafc9fbc93524b8191b36e983b11cca39d75be0",
+      "bytes": 6353
+    },
+    "producer_sources/tests/test_yam_m8_env.py": {
+      "sha256": "47ebd3f925ed0d7330a2f559499dc33d3aaec4e715120f28328120c4eb5a194e",
+      "bytes": 10164
+    },
+    "producer_sources/tests/test_yam_m8_insertion_controller.py": {
+      "sha256": "1d888f545dece29d595948b5eca8289b21969464973f6f6d9b416006b8f30fe9",
+      "bytes": 18035
+    },
+    "producer_sources/tests/test_yam_m8_insertion_engagement.py": {
+      "sha256": "f6f571c0bba710a94b6ca072a42615b16dc0261c68aa3cfcd8545de47f71be4a",
+      "bytes": 2406
+    },
+    "producer_sources/tests/test_yam_m8_insertion_scene.py": {
+      "sha256": "5b6109bd3e4a9a9b25a292c8ac683bdf5188232372ab235c0bd9cba91408d488",
+      "bytes": 28494
+    },
+    "producer_sources/tests/test_yam_m8_provenance.py": {
+      "sha256": "fd447004b701fe29cd20545cebdc3a3b3961d175d9286d9387e2f423d45adcd6",
+      "bytes": 1457
+    },
+    "producer_sources/tests/test_yam_m8_scene.py": {
+      "sha256": "806b8daf2e83b21657dc55529083d9182620dc2ebce7b07386ec8ec88c48cf68",
+      "bytes": 11012
+    },
+    "producer_sources/tests/test_yam_m8_supported_controller.py": {
+      "sha256": "51db0238d81157a7f0890d8cd8a8c7d3140f4bc4210e79f6d259589e46d8c929",
+      "bytes": 11226
+    },
+    "producer_sources/tests/test_yam_m8_supported_scene.py": {
+      "sha256": "ed4aee425488736d4bb0c79c227cb3b776b0954c90e699e214d861c2d61ebd59",
+      "bytes": 10531
+    },
+    "producer_sources/thread_lab/__init__.py": {
+      "sha256": "d694de2a94fc8dfb2d0937bfd082272270bf94df494feb106b0e96287ffa1fbd",
+      "bytes": 207
+    },
+    "producer_sources/thread_lab/benchmark.py": {
+      "sha256": "0456dccc55070fb7e85cc24fb29e213aa79085fd370312d3391364a4f1b069e4",
+      "bytes": 5182
+    },
+    "producer_sources/thread_lab/build_plugin.py": {
+      "sha256": "0ddb419b5dd1d7578c659ace20869699a434a99c578815d5928dc9cd6556b5d0",
+      "bytes": 899
+    },
+    "producer_sources/thread_lab/demo.py": {
+      "sha256": "bfd0d601cbb2c7c7fec7522278e23fd0c78dbd80ba9ee927c06bca5c912be5b3",
+      "bytes": 1744
+    },
+    "producer_sources/thread_lab/env.py": {
+      "sha256": "7850807cadadfbac6511a7a01331a80cb87040d075c15594d06347a9bec75976",
+      "bytes": 30087
+    },
+    "producer_sources/thread_lab/gripper.py": {
+      "sha256": "dc55f61c7544ea23c9651854bd4151251f335292a87e08fa2cc5b87c7ba00a57",
+      "bytes": 35781
+    },
+    "producer_sources/thread_lab/load_benchmark.py": {
+      "sha256": "5270e6a9d37720dee81b57981b3b0ec3465224f491f29dd133612e81e1a24f1a",
+      "bytes": 22702
+    },
+    "producer_sources/thread_lab/model.py": {
+      "sha256": "12d79f294f00ae1a6ae7551877f4dafd705ef54ba4f2ae6af7ab9e21c646b3de",
+      "bytes": 7229
+    },
+    "producer_sources/thread_lab/plugins/m8_sdf.cc": {
+      "sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a",
+      "bytes": 8429
+    },
+    "producer_sources/thread_lab/render.py": {
+      "sha256": "1b3049306df5808ae5f6c2034071e07b1d5133012826eb810701cd441d520224",
+      "bytes": 9164
+    },
+    "producer_sources/thread_lab/runtime.py": {
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd",
+      "bytes": 2177
+    },
+    "producer_sources/thread_lab/theory.py": {
+      "sha256": "0480828df22825d3c3ce38187c50fb291670b4beaab9de44bb1e10d4e022453d",
+      "bytes": 5383
+    },
+    "producer_sources/thread_lab/validate.py": {
+      "sha256": "59fb22e6b2ec713eea06c53151dea87358df06f29426f4fc61b91547e7bbe4e1",
+      "bytes": 5147
+    },
+    "producer_sources/yam_twin/kinematics.py": {
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+      "bytes": 2796
+    },
+    "producer_sources/yam_twin/m8_demo.py": {
+      "sha256": "f5989b9ee052a2bb6d68bdec090d90aec4faeed667fd8218bf3fa4dccb3d485d",
+      "bytes": 13137
+    },
+    "producer_sources/yam_twin/m8_env.py": {
+      "sha256": "88eab5fc877341db0bed0f5b81e0c45c25995493b7c368dd3e182dd9d43f510a",
+      "bytes": 25978
+    },
+    "producer_sources/yam_twin/m8_insertion_demo.py": {
+      "sha256": "3531a3659ded5b4a7fe66868989c1bac6437a008282ec1229bf2f8a5ccb97a91",
+      "bytes": 13740
+    },
+    "producer_sources/yam_twin/m8_insertion_engagement.py": {
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "bytes": 4752
+    },
+    "producer_sources/yam_twin/m8_insertion_env.py": {
+      "sha256": "fc0d054321a4e76374306bf9f7adeb8fa8366e37f198aac998532dca1b6bea25",
+      "bytes": 38894
+    },
+    "producer_sources/yam_twin/m8_insertion_mechanics.py": {
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+      "bytes": 4321
+    },
+    "producer_sources/yam_twin/m8_insertion_scene.py": {
+      "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+      "bytes": 25139
+    },
+    "producer_sources/yam_twin/m8_insertion_simulation.py": {
+      "sha256": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294",
+      "bytes": 67946
+    },
+    "producer_sources/yam_twin/m8_scene.py": {
+      "sha256": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f",
+      "bytes": 20849
+    },
+    "producer_sources/yam_twin/m8_simulation.py": {
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+      "bytes": 30270
+    },
+    "producer_sources/yam_twin/m8_supported_demo.py": {
+      "sha256": "a9f3fa23986cc0cd68e572eee2a3dc1bad11a67130fbea5a2d651eb0f21db5f7",
+      "bytes": 7793
+    },
+    "producer_sources/yam_twin/m8_supported_scene.py": {
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+      "bytes": 7969
+    },
+    "producer_sources/yam_twin/m8_supported_simulation.py": {
+      "sha256": "57f430143787317f8dc6f50bd2ea1ff23aab123810284da74da70b53b45a9493",
+      "bytes": 113329
+    },
+    "producer_sources/yam_twin/m8_supported_start.py": {
+      "sha256": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51",
+      "bytes": 26529
+    },
+    "progress_snapshot.json": {
+      "sha256": "c4194331e06dd613645d91ea6f81a462d2e43443eda0e80d9ef2393f70683405",
+      "bytes": 181481
+    },
+    "publication_helper_source.py": {
+      "sha256": "281f10b892c665affce47e911919562224b3f87e9f7c3ceac311c8199ab620b1",
+      "bytes": 7817
+    },
+    "recorded_sources/yam_twin/kinematics.py": {
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+      "bytes": 2796
+    },
+    "recorded_sources/yam_twin/m8_insertion_engagement.py": {
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "bytes": 4752
+    },
+    "recorded_sources/yam_twin/m8_insertion_mechanics.py": {
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+      "bytes": 4321
+    },
+    "recorded_sources/yam_twin/m8_insertion_scene.py": {
+      "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+      "bytes": 25139
+    },
+    "recorded_sources/yam_twin/m8_insertion_simulation.py": {
+      "sha256": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294",
+      "bytes": 67946
+    },
+    "recorded_sources/yam_twin/m8_scene.py": {
+      "sha256": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f",
+      "bytes": 20849
+    },
+    "recorded_sources/yam_twin/m8_simulation.py": {
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+      "bytes": 30270
+    },
+    "recorded_sources/yam_twin/m8_supported_scene.py": {
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+      "bytes": 7969
+    },
+    "recorded_sources/yam_twin/m8_supported_start.py": {
+      "sha256": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51",
+      "bytes": 26529
+    },
+    "render_dependencies/yam_twin/m8_demo.py": {
+      "sha256": "f5989b9ee052a2bb6d68bdec090d90aec4faeed667fd8218bf3fa4dccb3d485d",
+      "bytes": 13137
+    },
+    "render_dependencies/yam_twin/m8_insertion_demo.py": {
+      "sha256": "3531a3659ded5b4a7fe66868989c1bac6437a008282ec1229bf2f8a5ccb97a91",
+      "bytes": 13740
+    },
+    "render_manifest.json": {
+      "sha256": "037e1c4bc1a94b89b10fafadfcd7c6cd00ac6510a97c0109b1e24696867d7afa",
+      "bytes": 83312
+    },
+    "render_progress_source.py": {
+      "sha256": "4ccc11c4951ec75263c9706a301452c516a6cbc81001c906d0b0db95923e4887",
+      "bytes": 8531
+    },
+    "renderer_source.py": {
+      "sha256": "a9f3fa23986cc0cd68e572eee2a3dc1bad11a67130fbea5a2d651eb0f21db5f7",
+      "bytes": 7793
+    },
+    "run_publication_identity.json": {
+      "sha256": "44f629b1456635e6f456d2b3f0410061fae9f26a8f11447073c6ec2948d4b6e1",
+      "bytes": 8201
+    },
+    "scene.xml": {
+      "sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+      "bytes": 43813
+    },
+    "scene_source.py": {
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+      "bytes": 7969
+    },
+    "software_tests.json": {
+      "sha256": "9da72f28802082dbe5bae649607fd8f4959167a5f8320882f0d3aeb3b864061d",
+      "bytes": 7295
+    },
+    "software_tests.log": {
+      "sha256": "d20a182ab8493975d91177f0af4cb8995d59e740a5120ea2ca66439558796316",
+      "bytes": 1260
+    },
+    "supported_scene.zip": {
+      "sha256": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+      "bytes": 5325454
+    },
+    "verify_sources.py": {
+      "sha256": "38884b1f737814bc5ea5965bd2c93806e107fd2dfc371f6ededff755617a3260",
+      "bytes": 1895
+    }
+  }
+}

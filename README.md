@@ -32,9 +32,14 @@ hardware calibration and broad policy-training fidelity remain unqualified.
 
 **402 software tests pass** for the new canonical table-supported feedback
 candidate, with [all 65 exact source files, original log and before/after proof](media/m8_table_supported/software_proof_feedback_v1).
-Its fresh unspliced native full attempt from producer `6e7d0d2` is running;
-no outcome is available yet. This software proof does not qualify capture,
-lead or reset. See the
+Its fresh unspliced native attempt from producer `6e7d0d2` closed with a
+failure at **16.47615 s** (**2194.916 s** launch wall time); all 65 tested
+source files stayed unchanged. The original report passes **19/27 checks**
+and aborts in `stop_reverse_seat_1`: measured axial drop is **19.121 µm**,
+below the unchanged 50 µm direction criterion. Formed overlap and loaded
+interior contacts remain zero; no opening, qualified turn or reset occurs.
+Independent full-trace audit completion is pending. This software proof
+does not qualify capture, lead or reset. See the
 [candidate full-run recipe and controls](docs/m8_table_supported.md#run-current-canonical-candidate).
 The older alternate-grip `b2b13ff` source retains its separate
 [281-test proof](media/m8_table_supported/software_proof_281).
@@ -65,18 +70,25 @@ Older load/search failures also remain. See
 ## Separate table-supported approach in progress
 
 The left arm can stabilize a block that stays on the solid table.
-The fresh `6e7d0d2` attempt has a
+The failed `6e7d0d2` attempt preserves a historical
+[13.1949 s entry/weight-transfer snapshot](media/m8_table_supported/entry_transfer_progress/README.md),
+with [normal 1× GIF](media/m8_table_supported/entry_transfer_progress/entry_transfer_progress.gif),
+[MP4](media/m8_table_supported/entry_transfer_progress/entry_transfer_progress.mp4)
+and [actual entry detail](media/m8_table_supported/entry_transfer_progress/entry_transfer_detail.png).
+It was captured while the attempt continued; zero formed overlap and zero
+loaded interior contacts make it starting-geometry support, not capture.
+The earlier
 [4.82 s pickup-to-alignment clip](media/m8_table_supported/full_canonical_v1_pickup_align_progress/pickup_align_progress.gif)
 and [actual screenshot](media/m8_table_supported/full_canonical_v1_pickup_align_progress/pickup_align_progress.png).
 Its [exact snapshot and geometry-only replay](media/m8_table_supported/full_canonical_v1_pickup_align_progress/PROGRESS.md)
-preserve physical stabilization, bolt pickup and transfer; threading remains pending.
+preserve physical stabilization, bolt pickup and transfer before the later abort.
 The latest [cold opening/reset/regrasp clip](media/m8_table_supported/diagnostics/entry_supported_reset_regrasp_v4/native_v4/render/demo.gif)
 records **8.8531 s** with all original guards held: a contact-free open −π
 reset, quiet bilateral regrasp and the next native π turn. That partial
 half-turn advances **624.7518 µm**, with **−0.2632 µm** pitch residual;
 final formed overlap is **646.637 µm**, below one 1.25 mm pitch.
 [Exact frozen inputs, sources and repeat/replay instructions](media/m8_table_supported/diagnostics/entry_supported_reset_regrasp_v4/README.md)
-keep this `b2b13ff`/281-test producer's cold diagnostic separate from the live
+keep this `b2b13ff`/281-test producer's cold diagnostic separate from the failed
 `6e7d0d2`/402-test producer's continuous attempt. Full capture, a qualified passive
 reset and complete table-supported assembly remain unqualified.
 The [new 120° grip pickup-to-entry clip](media/m8_table_supported/face120_pickup_entry_v1/render/demo.gif)

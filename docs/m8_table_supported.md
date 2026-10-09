@@ -19,11 +19,28 @@ The new canonical feedback candidate passes
 Use its [full-run candidate recipe](#run-current-canonical-candidate) for the
 new 30 mm opening/B200 controller, pinned to producer
 `6e7d0d2ac3d28ff2538e122a10d7ffb2febf83b1`. Its fresh unspliced
-`full_canonical_v1` native attempt is running, with no closed outcome yet;
-software success does not qualify assembly. Historical results and recipes
-below retain their exact older producer bindings.
+`full_canonical_v1` native attempt closed with exit 1 at **16.47615 s**,
+after **2194.916 s** launch wall time. All 65 tested source bytes stayed
+unchanged. The original `passed=false`, `partial=false` report passes
+**19/27 checks** and aborts in `stop_reverse_seat_1`: its bounded 0.75 s
+stop cannot confirm the unchanged 50 µm measured direction drop; the
+final stopped drop is **19.121 µm**. Formed overlap and loaded interior contacts
+stay zero, and no opening, qualified turn or reset is executed. All task
+qualification checks remain failed or unexecuted. The independent full-trace
+audit is not complete: the frozen reader's boundary exception is preserved,
+and separate left-pad/passive/rest audits are pending. Historical results
+and recipes below retain their exact older producer bindings.
 
-The live candidate's [4.82 s pickup/alignment snapshot](../media/m8_table_supported/full_canonical_v1_pickup_align_progress/PROGRESS.md)
+The [13.1949 s entry/weight-transfer snapshot](../media/m8_table_supported/entry_transfer_progress/README.md)
+preserves a historical prefix captured while the same fresh run continued:
+[normal 1× GIF](../media/m8_table_supported/entry_transfer_progress/entry_transfer_progress.gif),
+[MP4](../media/m8_table_supported/entry_transfer_progress/entry_transfer_progress.mp4)
+and [actual endpoint detail](../media/m8_table_supported/entry_transfer_progress/entry_transfer_detail.png).
+Its measured starting-geometry weight transfer has zero formed overlap and
+zero loaded interior duration. Open force ledgers at snapshot time do not
+establish full-trace audit coverage; the later native failure is separate.
+
+The earlier [4.82 s pickup/alignment snapshot](../media/m8_table_supported/full_canonical_v1_pickup_align_progress/PROGRESS.md)
 includes [normal-speed video](../media/m8_table_supported/full_canonical_v1_pickup_align_progress/pickup_align_progress.mp4)
 and an [actual approach screenshot](../media/m8_table_supported/full_canonical_v1_pickup_align_progress/pickup_align_progress.png).
 It records real left stabilization and right bolt pickup/transfer. Its force
@@ -49,7 +66,7 @@ policy. Its historical 281-test producer binding, earlier failed 24 mm branch
 and static preflight are separate from the new 402-test producer's continuous
 attempt.
 
-The latest reproducible continuous result is the
+The historical continuous result is the
 [6.3983 s pickup-to-entry prefix](../media/m8_table_supported/face120_pickup_entry_v1/README.md),
 using producer `b2b13ff39cd47c48afd19b38f83e9a405c9d6e32` and its separate
 [281-test source proof](../media/m8_table_supported/software_proof_281).
@@ -435,8 +452,9 @@ independent table/rest spawns. Actual 30 mm opening, 18.4 mm closure, finite
 come from this producer's supported defaults. The **10 s entry bound** is an
 explicit configuration override for the slow 0.05 N/B200 initial feed; it
 changes the timeout, not the entry criterion, forces or geometry. Historical
-`b2b13ff` prefix commands stay at 3 s/B50. No capture/full-trajectory outcome
-is claimed for this new candidate. Budget roughly 1–2 h CPU, refined by live
+`b2b13ff` prefix commands stay at 3 s/B50. These exact flags reproduce the
+closed failed source/configuration above, not a qualified assembly. Budget
+roughly 1–2 h CPU, refined by live
 throughput and native events; exhausting the maximum plan can take longer.
 
 The packet also preserves the output-only launcher's original source. Copy
