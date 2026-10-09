@@ -11,7 +11,118 @@ The completed carried-block demo remains separate; use its unchanged
 [first handoff](m8_agent_handoff.md). This handoff concerns the free female-threaded block
 stabilized on the table and a separately spawned M8 × 1.25 bolt.
 
-## Recorded outcome and proof scope
+## Current producer: fresh run
+
+Current producer **`da69a9cd44a8312cc7b97365faf5e09c27a646e2`** passes
+[672 whole-suite tests on 74 unchanged source/test files](../media/m8_table_supported/software_proof_c2_inertia_v2/README.md),
+with 88.97 s pytest / 89.685 s proof-wrapper duration and unchanged native
+runtime. The source packet archives all 74 files, original proof/log and the
+portable launcher. Its software proof SHA is
+`71e6d7b7a4688ae8a6e4588424f931b64f824e9552d3d792278ebe472b767be9`.
+These tests do not qualify native thread capture or a completed trajectory.
+
+The new fresh `full_c2_inertia_v2` attempt starts at **2026-10-09
+13:12:50.752963 UTC**, from independent table/rest spawns. It is in progress;
+there is no closed native result or complete audit yet. Its launch-before
+identity is `f98c6ba218d1c5d8503ac3d362a4a501de4fd99a8f1d87e4ee2e11a704f4c9c3`.
+The older failed full run and all cold branches below retain their original
+producer/evidence identities; no cold state is stitched into this attempt.
+
+Use an absent complete clone destination and detach to the exact new pin.
+The commands below use the recorded runtime; for a different-host build,
+follow [the local-proof case](#different-host-local-proof) before launching:
+
+```sh
+git clone https://github.com/robomechanics/astra-r2s.git /workspace/astra-r2s-supported-c2-agent
+git -C /workspace/astra-r2s-supported-c2-agent switch --detach da69a9cd44a8312cc7b97365faf5e09c27a646e2
+cd /workspace/astra-r2s-supported-c2-agent
+scripts/setup.sh
+scripts/run_m8.sh -m yam_twin.m8_supported_demo --help
+python media/m8_table_supported/software_proof_c2_inertia_v2/launch_supported_c2_inertia_v2.py --repository-root "$PWD" --proof media/m8_table_supported/software_proof_c2_inertia_v2 --producer da69a9cd44a8312cc7b97365faf5e09c27a646e2 --output outputs/m8_table_supported/agent_c2_fresh --prepare-only
+python media/m8_table_supported/software_proof_c2_inertia_v2/launch_supported_c2_inertia_v2.py --repository-root "$PWD" --proof media/m8_table_supported/software_proof_c2_inertia_v2 --producer da69a9cd44a8312cc7b97365faf5e09c27a646e2 --output outputs/m8_table_supported/agent_c2_fresh
+```
+
+Reuse the verified cloud runtime if already installed; setup is needed on a
+fresh host. Never rebuild shared core/bindings/plugin during another native
+integration. Preparation checks exact HEAD, all 74 proof-bound source bytes
+and recorded runtime files, without model initialization, native steps or
+output creation. `--repository-root` makes the public launcher portable;
+it does not require the historical helper depth. The proof is bound to the
+recorded binary/runtime hashes listed below. A different machine's rebuild
+needs a new local proof/runtime binding, not a claim of identical binaries.
+The archived `verification_source.py` reruns the whole suite; it is not a
+read-only source verifier. Its original proof/log remain immutable.
+
+### Different-host local proof
+
+A different host's rebuilt binary can differ from the published runtime SHA,
+so the published-proof preparation above rejects it by design. After setup,
+create a NEW local proof and log, preserving the published packet. The whole
+suite includes native tests: run it serially when no other native integration
+is active. From the exact detached da69 checkout:
+
+```sh
+python media/m8_table_supported/software_proof_c2_inertia_v2/verification_source.py --output outputs/m8_table_supported/agent_local_software_proof
+python - <<'PY_SOURCE_CHECK'
+import json
+from pathlib import Path
+published=json.loads(Path('media/m8_table_supported/software_proof_c2_inertia_v2/software_proof.json').read_text())
+local=json.loads(Path('outputs/m8_table_supported/agent_local_software_proof/software_proof.json').read_text())
+assert local['passed'] and local['source_hashes_unchanged'] and local['runtime_files_unchanged']
+assert len(local['source_hashes']) == 74 and local['source_hashes'] == published['source_hashes']
+PY_SOURCE_CHECK
+python media/m8_table_supported/software_proof_c2_inertia_v2/launch_supported_c2_inertia_v2.py --repository-root "$PWD" --proof outputs/m8_table_supported/agent_local_software_proof --producer da69a9cd44a8312cc7b97365faf5e09c27a646e2 --output outputs/m8_table_supported/agent_local_c2_fresh --prepare-only
+```
+
+The proof and trial destinations must be absent. Preparation still takes zero
+native steps; start the actual fresh trial by repeating the last command
+without `--prepare-only`. This binds a new local runtime/trial with the same
+74 source bytes, not binary-equivalent reproduction of the archived trial.
+Preserve its new proof/log, runtime identities and native closure independently.
+
+The launcher starts exactly this child; use the launcher OR the bare CLI
+for a new run, not both into the same destination:
+
+```sh
+scripts/run_m8.sh -m yam_twin.m8_supported_demo --output outputs/m8_table_supported/agent_c2_fresh --dt .00005 --starting-angular-speed 1 --angular-speed 2 --maximum-entry-dwell 10 --maximum-starting-strokes 5 --qualifying-strokes 2 --axial-damping 200
+```
+
+No replay, phase truncation, parent checkpoint or state injection is used.
+The explicit 10 s entry timeout is separate from physical readiness. At this
+pin, 30 mm actual opening/18.4 mm closure and finite downward left stabilization
+remain. The measured local crest return only requests CLOSED yaw deceleration;
+150 ms C2 braking plus a fresh 100 ms body/hand quiet, original impulse/current
+load and 90/10 bolt-weight window must confirm direction before forward motion.
+Approximate arm inertia feedforward controls two transverse translations and
+three rotations, excluding axial acceleration/position/lead. Fingers remain
+native; their independent acceleration coupling/contact dynamics are not
+inverted. Pickup/transport/open/regrasp rows explicitly disable feedforward.
+Total PD/feedforward and native motor caps remain finite. Perfect native pose
+feedback at 20 kHz is privileged; no learned policy or supported Gym wrapper
+is supplied.
+
+The wrapper preserves `run_publication_identity.json`, original native
+stdout/stderr/exit and `run_publication_identity_after.json`, all 74 before/after
+source hashes and runtime identities. Exit 2 records source/runtime drift;
+a native failed exit remains failed. The final native archive must retain
+XML/ZIP/imported sources, original validation/trace, all table/pad/native-feedback
+ledgers and the complete `robot_inertia_command_history.npz`. Enabled FF rows
+need exact retained M/J/Jdot/velocity inputs; disabled rows keep false presence
+flags and explicit uncomputed placeholders. Rejected unapplied commands are
+separate from actual solved steps/previous controls. Preserve raw timing and
+failed/unexecuted stages, and reassemble any large arrays losslessly.
+
+Phase-end partial snapshots/logs are progress only while integration lives.
+Require complete closed artifacts/source maps before serial audits; do not
+solve/audit live outputs. Budget roughly 1–2 h CPU or more for a longer bounded
+schedule. The new pinned auditor source `4a8b018a…` handles the new canonical
+ledger; historical e468/abb4 compatibility and 65-file wrappers are for the
+older failed run only. Recorded-state geometry replay refreshes saved poses,
+not native forces or controller execution; keep a complete matching pinned
+checkout/runtime and write derivatives to new paths. No closed new evidence
+package or acceptance report is promised before closure.
+
+## Historical 6e7d0d2 outcome and proof scope
 
 Producer **`6e7d0d2ac3d28ff2538e122a10d7ffb2febf83b1`** passes **402 software
 tests** with **65 exact source/test files** unchanged before/after testing and
@@ -40,7 +151,7 @@ mean positive left upward support and 100% loaded duty. Original minimum
 transport rest clearance is **14.93886 mm**, above the 10 mm guard. These are
 measurements of the executed failed prefix, not successful assembly.
 
-## Reproduce the exact fresh attempt
+## Reproduce the historical failed fresh attempt
 
 Use an unused COMPLETE clone. Keep first-demo files, original evidence and
 any active experiment untouched. Reuse this cloud's verified native runtime;
@@ -365,18 +476,72 @@ reaction of bolt weight, 0.4851% positive hand support and 100% loaded duty;
 formed overlap/interior contacts remain zero. This is shallow-entry progress,
 not engagement, capture/reset or a fresh complete trajectory.
 
-The trial subsequently closed at **7.3566 s**, after **147,132 native ticks**,
-without an abort. Its forward turn advanced **0.553 mm** over **2.84294 rad**;
-final formed overlap is only **0.0216 mm** with **zero interior contacts**.
+The [complete closed V5 packet](../media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/README.md)
+preserves **7.3566 s / 147,132 native ticks**, exit 0 and no abort, after
+**1141.46 s** wall time. Its shallow forward scan advances **552.969644 µm**
+over **2.842942425 rad**, with **−12.615781 µm** pitch-reference residual;
+this is a partial-motion measurement, not a qualified lead turn. Final
+formed overlap is only **21.6147 µm**, with **zero loaded interior contacts
+and zero fully-open steps**. Original `passed=false`, `partial=true` remain;
+`diagnostic_completed=true` records only the selected bounded cold branch.
 Full capture, passive opening/reset and a fresh complete trajectory remain
-unqualified. The immutable prefix preserves sparse original force and
-executed inertia-command records; every-step dense ledgers were pending at
-capture. Complete ledgers and the independent audit are being prepared for
-publication.
-Its 18 experimental-source identities and 67+6 synthetic proofs stay separate
-from the unchanged canonical 65-file/402 proof and historical 69/50 tests.
-Use the [recording replay recipe](../media/m8_table_supported/diagnostics/crest_seat_search_v5_stopped_progress/README.md#verify-and-replay-this-recording):
-copy the COMPLETE progress package into an isolated 6e7 checkout and invoke
-its archived renderer with `--repository-root "$PWD" --mode progress`.
-That refreshes recorded geometry only, with no integration, force solve or
-controller execution. It supplies no qualified native-repeat result.
+unqualified. [Normal 1× GIF](../media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/render/demo.gif),
+[MP4](../media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/render/demo.mp4),
+[actual thread detail](../media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/render/endpoint_detail.png)
+and [dense native trajectory](../media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/scientific_plot/native_closed_trajectory.png)
+are separate from the immutable stopped-prefix record.
+
+The packet's SHA256SUMS identity is
+`ba36ae7d8759dcce7bf68c1835d124d9b92986c5e16ebe891f8d809adae4e2e1`.
+Its standard-library restorer preserves **all 31 original native files**, including
+all dense force ledgers and the **211,454,565-byte / 35-column** executed
+inertia-command ledger. Five contiguous chunks, at most 45 MB each, reconstruct
+that ledger losslessly, with whole-file SHA checks; no solver is needed for
+byte verification.
+From a checkout containing the published packet:
+
+```sh
+python media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/restore_original_run_layout.py --verify-only
+python media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/restore_original_run_layout.py --output outputs/m8_table_supported/crest_v5_received_original
+```
+
+The frozen [independent audit binding](../media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/independent_audits/independent_audit_binding.json)
+`3fb45a3725ecd1db732568dec664cfbad678981063a0d0b8abfed6e7d79ff1cc`
+verifies all **147,132 commands**, **147,130 exact previous-cache velocity
+links plus two initialized rows**, the 50 original force columns, clocks,
+stopped windows and events. It reconstructs 1,204 thread, 43,384 table and
+11,821 left contact-frame sums. Individual right-pad local records were not
+archived, so original aggregate right wrenches/pad loads remain source-bound
+consistency evidence. PD wrench is the original recorded input to the mapping
+audit; unavailable every-tick target/error terms are not independently recomputed.
+Forces/geometry remain at `t−dt`, saved qpos/qvel at `t`, retained command
+inputs at `t−2dt` after startup. The equal-model historical passive-property
+report binds identical XML/ZIP/runtime only, not a new native force solve.
+Its **31 pure reader regressions**, **67+6 experimental controller tests**,
+historical **69/50 contracts** and canonical **65-file/402 proof** stay separate.
+
+Use the [exact isolated native-repeat recipe](../media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/README.md#repeat-the-exact-cold-native-branch):
+pin complete producer 6e7, copy BOTH newer complete packets, restore all
+34 original full-parent files and put `crest_seat_inertia_probe_v5.py`,
+`crest_seat_observer_v3.py`, `reverse_brake_v4.py` and
+`robot_inertia_feedforward_v5.py` directly under
+`outputs/m8_table_supported/diagnostics/` (`ROOT=parents[3]`). The parent is
+original full row 2651 at 13.1949 s, with inherited cumulative grip references;
+no earlier abort endpoint, solver warmstart or old force windows are used.
+The explicit cold flags are `--checkpoint-time 13.1949 --brake-duration .15`
+with the restored parent and an absent output. `--prepare-only` checks the
+archived model and coherent finite commands without integration; a fresh
+native repeat integrates another cold branch; the original cost about 19
+minutes here.
+It does not prove fresh pickup or continuous task completion.
+
+The [closed recorded-state replay/replot recipe](../media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/README.md#replay-and-replot-preserved-evidence)
+uses reassembled archived `render_crest_seat_search_v5_closed.py`,
+`--repository-root "$PWD" --mode closed`, restored original native files and
+a new output in the pinned complete checkout/runtime. It selects 89 exact
+saved states at 12 fps (7.4167 s encoded), with no interpolation, integration,
+collision discovery, `mj_forward` or force solve. The historical audit reader's
+absolute path/sibling assumptions remain provenance; this portable media
+recipe does not claim a relocated auditor adapter. The older
+[stopped-prefix replay](../media/m8_table_supported/diagnostics/crest_seat_search_v5_stopped_progress/README.md#verify-and-replay-this-recording)
+keeps its separate `--mode progress` and sparse-at-capture scope.

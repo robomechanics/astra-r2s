@@ -1,0 +1,35 @@
+{
+  "scope": "Separate narrow rejection artifact contract tests only. Actual command try/catch and artifact writer operate on synthetic original prefix buffers. Native mj_step/mj_forward are prohibited; zero calls asserted. No physics or full trajectory qualification.",
+  "command": [
+    "scripts/run_m8.sh",
+    "-m",
+    "pytest",
+    "-q",
+    "outputs/m8_table_supported/diagnostics/test_inertia_rejection_artifacts_v5.py"
+  ],
+  "finished_utc": "2026-10-09T12:27:24.980403+00:00",
+  "exit_code": 0,
+  "actual_pytest_output": "......                                                                   [100%]\n6 passed in 0.58s",
+  "source_and_test_sha256_before": {
+    "crest_seat_inertia_probe_v5.py": "a84682f45585e68d599d09c0415de4dc16ebce89859e7ad80edaf27df6229c95",
+    "test_inertia_rejection_artifacts_v5.py": "d3a9bb9c9767f8302aaff123e145e68b89e7b3e89f1f7019194fbbdef69a7b26",
+    "robot_inertia_feedforward_v5.py": "0913f964c940d2fdf0bcbc92a0734c70c4868499439a4e5915e359a186dc17ff",
+    "test_robot_inertia_feedforward_v5.py": "c8197a00c00d1a809a34d30588b05bf0af153aa426f14747c39bcafa471b3133",
+    "reverse_brake_v4.py": "4bc45250cbf1aba271dad51df2781971e323735d631349afcc20ab311afa21c1",
+    "test_reverse_brake_v4.py": "7702d89d3f8959238aa4565d95810813a25683e4a3e57a4b57f5bd2a51f32c6f",
+    "test_crest_seat_observer_v3.py": "d1f3347dcad30c8966eb5fab082ef73cebfaa8e43f9f4f730aad322ad2934ade"
+  },
+  "source_and_test_sha256_after": {
+    "crest_seat_inertia_probe_v5.py": "a84682f45585e68d599d09c0415de4dc16ebce89859e7ad80edaf27df6229c95",
+    "test_inertia_rejection_artifacts_v5.py": "d3a9bb9c9767f8302aaff123e145e68b89e7b3e89f1f7019194fbbdef69a7b26",
+    "robot_inertia_feedforward_v5.py": "0913f964c940d2fdf0bcbc92a0734c70c4868499439a4e5915e359a186dc17ff",
+    "test_robot_inertia_feedforward_v5.py": "c8197a00c00d1a809a34d30588b05bf0af153aa426f14747c39bcafa471b3133",
+    "reverse_brake_v4.py": "4bc45250cbf1aba271dad51df2781971e323735d631349afcc20ab311afa21c1",
+    "test_reverse_brake_v4.py": "7702d89d3f8959238aa4565d95810813a25683e4a3e57a4b57f5bd2a51f32c6f",
+    "test_crest_seat_observer_v3.py": "d1f3347dcad30c8966eb5fab082ef73cebfaa8e43f9f4f730aad322ad2934ade"
+  },
+  "frozen_files_unchanged": true,
+  "canonical_yam_twin_and_tests_git_status": "",
+  "separate_from_existing_67_69_50_and_402_proofs": true,
+  "cases": "Orbital, command, and flatten rejection each at zero and three preexisting synthetic original ticks; preserves all force column bytes/dtypes/empty widths, real pure-helper inertia record keys, original standalone left-pad observer data, sparse trace, exact last completed qpos/qvel/ctrl, and separately labelled unapplied control. No new time/force/inertia row at rejection."
+}

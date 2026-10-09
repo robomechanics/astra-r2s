@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "tests_passed": 31,
+  "exit_code": 0,
+  "wall_seconds": 1.814258736994816,
+  "source_sha256_before": {
+    "independent_cold_crest_inertia_audit_v5.py": "eb81a35079ae1470e117ded8e6c4900627d6fecb2f56aa475187a94f16538c94",
+    "independent_inertia_command_math_v5.py": "75d7d1756368a3dd2c9a80042606dca72063552ac507449656b3beb67d77b37a",
+    "test_independent_cold_crest_inertia_audit_v5.py": "2b73732bc11079c98c62d8de769924614217a3c0d66309ab222af81cca46da90",
+    "test_independent_inertia_command_math_v5.py": "51cb7d390615cf55550addc6f0d13746de1133da9deff03a013162d56faccdc3"
+  },
+  "source_sha256_after": {
+    "independent_cold_crest_inertia_audit_v5.py": "eb81a35079ae1470e117ded8e6c4900627d6fecb2f56aa475187a94f16538c94",
+    "independent_inertia_command_math_v5.py": "75d7d1756368a3dd2c9a80042606dca72063552ac507449656b3beb67d77b37a",
+    "test_independent_cold_crest_inertia_audit_v5.py": "2b73732bc11079c98c62d8de769924614217a3c0d66309ab222af81cca46da90",
+    "test_independent_inertia_command_math_v5.py": "51cb7d390615cf55550addc6f0d13746de1133da9deff03a013162d56faccdc3"
+  },
+  "all_sources_unchanged": true,
+  "log_sha256": "0f7d1a6129aec076286da5766dd23f9711235f028fde9f9f28d381d96b5aec14",
+  "scope": "Pure independent archived reader/observer/clock/inertia/cache/cap regressions, separate from original402/69/50/67/6 producer software proofs. No native imports, model compile, force replay or integration."
+}

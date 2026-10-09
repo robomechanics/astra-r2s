@@ -1,0 +1,23 @@
+{
+  "scope": "Original dense native scalar/matrix ledger plots only. No solver invocation, force replay, interpolation, phase splicing or capture inference.",
+  "native_ticks": 147132,
+  "last_native_time_s": 7.356599999989524,
+  "source_sha256": "31b8a287e5de9d930be312ff4d8bbbfcf8a07f8469198a7cb022fbf4bb99f607",
+  "original_input_sha256": {
+    "native_feedback_force_history.npz": "bf157f0379ab3a4a565f29a13bc59a79b9364299f2940a3356051f92d732d2af",
+    "table_support_force_history.npz": "7cfbf802582d602e1c13b51b160b4a98bd72a081fc359570f322c1d029b6fc81",
+    "robot_inertia_command_history.npz": "e83b042b4e69d40ffbc5b4b50bb0cd125631ec5c432b1f767fbe2f85486a6820",
+    "insertion_validation.json": "2baf180cd5ca9da8767c9e1b3bf592d30f5021ae6cbd6a3451502c44bc595be9"
+  },
+  "originals_unchanged": true,
+  "all_cartesian_force_clip_flags": 0,
+  "all_cartesian_torque_clip_flags": 0,
+  "all_motor_clip_flags": 0,
+  "maximum_radial_error_um": 28.303513922958032,
+  "full_fresh_trajectory_qualified": false,
+  "capture_or_open_reset_qualified": false,
+  "plot_sha256": {
+    "native_closed_trajectory.png": "e5fe383ee03b948a7f8c8bf7130020563e270c5e111d626eaf56520a25d18bde",
+    "native_braking.png": "5c2fd46e5b7fa6c89a86bbcb07da16c2e2d69df98507e961e503d7b1da72d7f5"
+  }
+}

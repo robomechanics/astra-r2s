@@ -30,9 +30,17 @@ with peak axial drift **0.178 / 0.424 µm**. Independent saved-pose audits
 check all four resets. The head remains unseated; full tightening/preload,
 hardware calibration and broad policy-training fidelity remain unqualified.
 
-**402 software tests pass** for the new canonical table-supported feedback
-candidate, with [all 65 exact source files, original log and before/after proof](media/m8_table_supported/software_proof_feedback_v1).
-Its fresh unspliced native attempt from producer `6e7d0d2` closed with a
+**672 software tests pass** for the current table-supported C2/inertia
+controller, with [all 74 exact source files, original log and before/after proof](media/m8_table_supported/software_proof_c2_inertia_v2).
+Producer `da69a9c` starts a new fresh, unspliced table/rest-spawn attempt,
+`full_c2_inertia_v2`, at **13:12:50 UTC on 2026-10-09**. That native attempt is
+in progress; capture, lead/reset and complete assembly remain unqualified.
+The [current exact checkout/fresh-run recipe](docs/m8_supported_agent_handoff.md#current-producer-fresh-run)
+binds the new producer, source/runtime checks and finite C2/inertia controller.
+
+The historical `6e7d0d2` producer retains its separate
+[402-test / 65-source proof](media/m8_table_supported/software_proof_feedback_v1).
+Its fresh unspliced native attempt closed with a
 failure at **16.47615 s** (**2194.916 s** launch wall time); all 65 tested
 source files stayed unchanged. The original report passes **19/27 checks**
 and aborts in `stop_reverse_seat_1`: final stopped axial drop is **19.121 µm**,
@@ -42,7 +50,7 @@ The closed independent compatibility audit passes **14/19 checks** and
 remains overall false. The frozen reader's original boundary exception and
 the separate narrow correction/eight standalone regressions are preserved.
 This software proof does not qualify capture, lead or reset. See the
-[candidate full-run recipe and controls](docs/m8_table_supported.md#run-current-canonical-candidate).
+[historical failed-run recipe and controls](docs/m8_table_supported.md#historical-6e7d0d2-canonical-attempt).
 The [supported-agent handoff](docs/m8_supported_agent_handoff.md) gives exact
 checkout, lossless original-layout restoration, replay and serial audit commands.
 The older alternate-grip `b2b13ff` source retains its separate
@@ -96,11 +104,18 @@ The separate V5 cold trial now has an actual
 and [immutable recording/replay instructions](media/m8_table_supported/diagnostics/crest_seat_search_v5_stopped_progress/README.md).
 It completes the 150 ms brake and a fresh 100 ms quiet/load gate, with
 15.317 µm radial error; formed overlap/interior contacts remain zero.
-The trial subsequently closed at 7.3566 s without an abort, after 0.553 mm
-forward advance; formed overlap is only 0.0216 mm with zero interior contacts.
-This progress package contains sparse records; complete dense ledgers and
-the independent audit are being prepared for publication. Its 67+6
-synthetic checks remain separate from 69/50/402 and do not qualify capture.
+The [complete closed V5 recording](media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/README.md)
+now preserves **7.3566 s / 147,132 native steps**, with no abort:
+[normal 1× clip](media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/render/demo.gif),
+[final thread detail](media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/render/endpoint_detail.png)
+and [dense native trajectory](media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/scientific_plot/native_closed_trajectory.png).
+Forward travel is **552.970 µm over 2.842942 rad**, but formed overlap is only
+**21.615 µm**, with zero interior contacts or opening. The original
+`passed=false` remains; this cold branch does not qualify capture, reset or a
+fresh complete trajectory. Its [lossless restore, isolated repeat and recorded-state replay](media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/README.md#repeat-the-exact-cold-native-branch)
+include every dense force/command row and the frozen independent audit.
+The 31 reader tests, 67+6 synthetic checks and historical 69/50/402 proofs
+remain separate. The earlier stopped-prefix package stays immutable.
 The [complete closed failed attempt](media/m8_table_supported/full_canonical_v1_failed_evidence/README.md)
 has [normal 1× GIF](media/m8_table_supported/full_canonical_v1_failed_evidence/demo.gif),
 [MP4](media/m8_table_supported/full_canonical_v1_failed_evidence/demo.mp4),

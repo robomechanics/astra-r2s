@@ -1,0 +1,31 @@
+{
+  "scope": "Pure ignored V5 robot-command mechanics and mocked retained-cache controller tests. No native integration, motor/contact tracking, thread support, capture, release, or full trajectory qualification.",
+  "command": [
+    "scripts/run_m8.sh",
+    "-m",
+    "pytest",
+    "-q",
+    "outputs/m8_table_supported/diagnostics/test_robot_inertia_feedforward_v5.py"
+  ],
+  "finished_utc": "2026-10-09T12:14:56.541365+00:00",
+  "exit_code": 0,
+  "actual_pytest_output": "...................................................................      [100%]\n67 passed in 0.78s",
+  "source_and_test_sha256_before": {
+    "robot_inertia_feedforward_v5.py": "0913f964c940d2fdf0bcbc92a0734c70c4868499439a4e5915e359a186dc17ff",
+    "test_robot_inertia_feedforward_v5.py": "c8197a00c00d1a809a34d30588b05bf0af153aa426f14747c39bcafa471b3133",
+    "reverse_brake_v4.py": "4bc45250cbf1aba271dad51df2781971e323735d631349afcc20ab311afa21c1",
+    "test_reverse_brake_v4.py": "7702d89d3f8959238aa4565d95810813a25683e4a3e57a4b57f5bd2a51f32c6f",
+    "test_crest_seat_observer_v3.py": "d1f3347dcad30c8966eb5fab082ef73cebfaa8e43f9f4f730aad322ad2934ade"
+  },
+  "source_and_test_sha256_after": {
+    "robot_inertia_feedforward_v5.py": "0913f964c940d2fdf0bcbc92a0734c70c4868499439a4e5915e359a186dc17ff",
+    "test_robot_inertia_feedforward_v5.py": "c8197a00c00d1a809a34d30588b05bf0af153aa426f14747c39bcafa471b3133",
+    "reverse_brake_v4.py": "4bc45250cbf1aba271dad51df2781971e323735d631349afcc20ab311afa21c1",
+    "test_reverse_brake_v4.py": "7702d89d3f8959238aa4565d95810813a25683e4a3e57a4b57f5bd2a51f32c6f",
+    "test_crest_seat_observer_v3.py": "d1f3347dcad30c8966eb5fab082ef73cebfaa8e43f9f4f730aad322ad2934ade"
+  },
+  "frozen_files_unchanged": true,
+  "canonical_yam_twin_and_tests_git_status": "",
+  "separate_from_frozen_69_50_and_402_proofs": true,
+  "limitations": "The analytic mass plant uses held-finger M_aa approximation. Mocked native reads validate command plumbing only, not native Jdot cache interpretation or physical tracking."
+}

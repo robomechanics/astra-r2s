@@ -1,0 +1,41 @@
+{
+  "scope": "Original trace/metadata/still-state checksums and exact frame-index/time map, three decoded video frames, no native replay/solver call or force/capture proof.",
+  "passed": true,
+  "render_manifest_sha256": "7396138f8d4548104406bf2d66d2bf4c967af2ebfd7b86dd60fbbcbf231c9f08",
+  "trace_sha256": "40ef0163f6ad2690962562c8632d8aaa9be083edeb68ec1e26f8fbd7985f7ea7",
+  "renderer_source_sha256": "4be54332d4c47f986d50305db9699d8172b0424288121a1de08caae0a1062504",
+  "verify_source_sha256": "7a10ae3fca0b76eb75f687d00d5a63fbd1700ee7e805b96be7bdcf1166574389",
+  "video_frames": 89,
+  "fps": 12.0,
+  "decoded_frame_checks": [
+    {
+      "video_frame": 0,
+      "saved_native_time_s": 5e-05,
+      "shape": [
+        720,
+        1296,
+        3
+      ]
+    },
+    {
+      "video_frame": 44,
+      "saved_native_time_s": 3.671299999998113,
+      "shape": [
+        720,
+        1296,
+        3
+      ]
+    },
+    {
+      "video_frame": 88,
+      "saved_native_time_s": 7.356599999989524,
+      "shape": [
+        720,
+        1296,
+        3
+      ]
+    }
+  ],
+  "all_original_sample_qpos_qvel_hashes_exact": true,
+  "no_renderer_step_forward_collision_inverse_calls": true
+}

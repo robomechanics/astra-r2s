@@ -14,6 +14,16 @@ establish completion of this new table-supported trajectory.
 
 ## Start here
 
+The current producer **`da69a9cd44a8312cc7b97365faf5e09c27a646e2`** passes
+[672 whole-suite software tests on 74 unchanged source files](../media/m8_table_supported/software_proof_c2_inertia_v2/README.md).
+Its fresh **`full_c2_inertia_v2`** native attempt starts at **13:12:50 UTC on
+2026-10-09**, from independent table/rest spawns, with no cold checkpoint or
+stitched trajectory. Native integration is in progress; physical capture,
+qualified lead/reset and full assembly remain unqualified. Use the
+[current exact source-bound launch recipe](#run-current-canonical-candidate)
+and [agent setup/provenance handoff](m8_supported_agent_handoff.md#current-producer-fresh-run).
+The closed V5 branch below is separate evidence, using the old 6e7/402 source.
+
 The earlier [crest-search V3 cold diagnostic](../media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/README.md)
 fails at **1.6254 s**, radial error **150.848 µm** above the unchanged
 150 µm guard, after requesting a closed stop at 1.61915 s. It never reaches
@@ -38,20 +48,29 @@ records **1.90625 s**, a completed 150 ms C2 brake and fresh 100 ms quiet/load
 gate, with radial error **15.317 µm** and tilt **1.027 mrad**:
 [normal 1× clip](../media/m8_table_supported/diagnostics/crest_seat_search_v5_stopped_progress/render/demo.gif)
 and [actual endpoint](../media/m8_table_supported/diagnostics/crest_seat_search_v5_stopped_progress/render/endpoint_detail.png).
-Formed overlap/interior contacts are zero at this stopped prefix. The trial
-subsequently closed at 7.3566 s without an abort, after 0.553 mm forward
-advance; final formed overlap is only 0.0216 mm with zero interior contacts.
-The copied prefix contains sparse records; complete dense ledgers and the
-independent audit are being prepared for publication. Its 67+6 synthetic
-proofs remain separate from historical 69/50 and canonical 402.
+Formed overlap/interior contacts are zero at this historical stopped prefix.
+The [complete closed V5 packet](../media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/README.md)
+now preserves **7.3566 s / 147,132 native steps**, without an abort:
+[normal 1× clip](../media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/render/demo.gif),
+[final thread detail](../media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/render/endpoint_detail.png)
+and [dense original trajectory](../media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/scientific_plot/native_closed_trajectory.png).
+Forward travel is **552.970 µm over 2.842942 rad**; final formed overlap is
+only **21.615 µm**, with zero loaded interior contacts or opening. Original
+`passed=false`, `partial=true` remain; the bounded cold diagnostic completes,
+while capture/reset and a fresh whole trajectory stay unqualified.
+Its [complete isolated-copy/native-repeat recipe](../media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/README.md#repeat-the-exact-cold-native-branch)
+and [nonintegrating replay/replot commands](../media/m8_table_supported/diagnostics/crest_seat_search_v5_closed/README.md#replay-and-replot-preserved-evidence)
+preserve every dense force/command row and frozen independent binding
+`3fb45a37…`. Its 31 arithmetic-reader tests, 67+6 controller tests,
+historical 69/50 contracts and canonical 402 tests have separate scopes.
 These crest trials are distinct from the older opening/reset V4 diagnostic below.
 Use the [cold-search handoff](m8_supported_agent_handoff.md#separate-cold-crest-search-diagnostics)
 for exact frozen sources, restoration/replay differences and proof scopes.
 
-The new canonical feedback candidate passes
+The historical `6e7d0d2` feedback producer passes
 [402 software tests on 65 unchanged source files](../media/m8_table_supported/software_proof_feedback_v1).
-Use its [full-run candidate recipe](#run-current-canonical-candidate) for the
-new 30 mm opening/B200 controller, pinned to producer
+Use its [historical failed-run recipe](#historical-6e7d0d2-canonical-attempt) for the
+30 mm opening/B200 controller, pinned to producer
 `6e7d0d2ac3d28ff2538e122a10d7ffb2febf83b1`. Its fresh unspliced
 `full_canonical_v1` native attempt closed with exit 1 at **16.47615 s**,
 after **2194.916 s** launch wall time. All 65 tested source bytes stayed
@@ -110,7 +129,7 @@ isolated `b2b13ff` model/reference prefix. The 30 mm opening changes the
 finite finger command within unchanged model/force limits. Perfect native
 pose feedback at 20 kHz drives bounded robot motors; this is not a trained
 policy. Its historical 281-test producer binding, earlier failed 24 mm branch
-and static preflight are separate from the new 402-test producer's continuous
+and static preflight are separate from the historical 402-test producer's continuous
 attempt.
 
 The historical continuous result is the
@@ -480,6 +499,52 @@ the current CLI's implicit output is `outputs/m8_supported/demo`.
 
 ## Run current canonical candidate
 
+Producer **`da69a9cd44a8312cc7b97365faf5e09c27a646e2`** contains the new
+crest/C2/inertia controller and its [672-test / 74-source packet](../media/m8_table_supported/software_proof_c2_inertia_v2/README.md).
+Use a complete unused clone, exact detached producer and the matched native
+runtime. On a fresh host run `scripts/setup.sh` there first; do not rebuild a
+shared runtime during another native integration. If that binary differs from
+the archived SHA, use the handoff's [new local-proof/runtime recipe](m8_supported_agent_handoff.md#different-host-local-proof)
+before launching; the published proof is not relabeled.
+
+```sh
+task_producer=da69a9cd44a8312cc7b97365faf5e09c27a646e2
+git clone https://github.com/robomechanics/astra-r2s.git /workspace/astra-r2s-supported-c2-inertia
+git -C /workspace/astra-r2s-supported-c2-inertia switch --detach "$task_producer"
+cd /workspace/astra-r2s-supported-c2-inertia
+python media/m8_table_supported/software_proof_c2_inertia_v2/launch_supported_c2_inertia_v2.py --repository-root "$PWD" --proof media/m8_table_supported/software_proof_c2_inertia_v2 --producer "$task_producer" --output outputs/m8_table_supported/agent_full_c2_inertia --prepare-only
+python media/m8_table_supported/software_proof_c2_inertia_v2/launch_supported_c2_inertia_v2.py --repository-root "$PWD" --proof media/m8_table_supported/software_proof_c2_inertia_v2 --producer "$task_producer" --output outputs/m8_table_supported/agent_full_c2_inertia
+```
+
+Preparation verifies HEAD, all 74 tested source bytes and runtime hashes,
+with zero model initialization/integration and no output creation. The second
+command runs one continuous native attempt and preserves before/after source/
+runtime maps, exact command, original stdout/stderr and exit. The destination
+must be absent; do not also run the bare CLI into it. The exact native child
+command is:
+
+```sh
+scripts/run_m8.sh -m yam_twin.m8_supported_demo --output outputs/m8_table_supported/agent_full_c2_inertia --dt .00005 --starting-angular-speed 1 --angular-speed 2 --maximum-entry-dwell 10 --maximum-starting-strokes 5 --qualifying-strokes 2 --axial-damping 200
+```
+
+Omit replay, maximum-phases and cold-parent state. Actual 30 mm opening,
+18.4 mm closure, finite 2 N left downward stabilization and privileged native
+pose feedback remain. Measured crest return requests only CLOSED deceleration;
+a 150 ms C2 brake and fresh 100 ms actual quiet/load windows precede forward
+search. Approximate five-axis robot-arm inertia feedforward excludes the axial
+row and is disabled during pickup/transport/open/regrasp; combined Cartesian
+and native motor caps remain. No pitch-clock or object driver is introduced.
+The explicit 10 s entry bound changes the timeout only. Expect 1–2 h CPU or
+more for a longer bounded attempt; the live run has no closed outcome yet.
+
+Use the [current agent handoff](m8_supported_agent_handoff.md#current-producer-fresh-run)
+for source/runtime closure, required raw ledgers, nonintegrating replay/audits
+and policy limits. Its new 74-file auditor/launcher binding must not be
+replaced by historical 65-file/e468 helpers. First and older supported recipes
+retain their separate producer pins.
+
+## Historical 6e7d0d2 canonical attempt
+
 The [software-only packet](../media/m8_table_supported/software_proof_feedback_v1/README.md)
 preserves all 65 tested files and the original proof/log/verifier. Detach an
 unused complete checkout at its exact producer. Reuse the matched runtime,
@@ -626,7 +691,7 @@ A new run archives `scene.xml`, `supported_scene.zip`,
 `engagement_observer_source.py`, imported `recorded_sources/yam_twin/*.py`,
 `insertion_trace.npz`, `insertion_validation.json`,
 `left_pad_force_history.npz` and `table_support_force_history.npz`.
-The new canonical feedback producer also archives
+The historical 6e7d0d2 feedback producer also archives
 `native_feedback_force_history.npz` with every original native feedback force,
 motor command, actual aperture and readiness observation. Preserve it whole.
 Phase-end partial traces are progress evidence. Require the final closed

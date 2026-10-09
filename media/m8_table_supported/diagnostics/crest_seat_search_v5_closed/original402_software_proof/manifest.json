@@ -1,0 +1,21 @@
+{
+  "scope": "Software tests for this exact supported-controller source; independent from historical producer proofs and native physics qualification.",
+  "files": {
+    "software_tests.json": {
+      "bytes": 7295,
+      "sha256": "9da72f28802082dbe5bae649607fd8f4959167a5f8320882f0d3aeb3b864061d"
+    },
+    "software_tests.log": {
+      "bytes": 1260,
+      "sha256": "d20a182ab8493975d91177f0af4cb8995d59e740a5120ea2ca66439558796316"
+    },
+    "verify_sources.py": {
+      "bytes": 1895,
+      "sha256": "38884b1f737814bc5ea5965bd2c93806e107fd2dfc371f6ededff755617a3260"
+    },
+    "launch_source.py": {
+      "bytes": 4466,
+      "sha256": "21a49f7ee65ed69c816184b921d4fd0e7e20add9874a7c06ba539932505c2d70"
+    }
+  }
+}
