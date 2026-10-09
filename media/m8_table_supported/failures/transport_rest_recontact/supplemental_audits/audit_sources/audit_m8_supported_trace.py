@@ -135,21 +135,15 @@ def rolling_load_shares(table_N, hand_N, active, dt, weight_N, *, duration_s=.10
         sums = np.r_[0., np.cumsum(values)]
         means.append((sums[ends]-sums[ends-length])/length)
     table_fraction, hand_fraction, duty = means[0]/weight_N, means[1]/weight_N, means[2]
-    # Match the original TableLoadWindow transition: a settled mean/duty
-    # window still fails when its actual final native timestep is unloaded.
-    # Preserve that failure separately from continuous all-substep retention.
-    final_tick_loaded = table[ends-1] > .1*weight_N
-    failed = ((table_fraction < minimum_table_fraction)
-        | (hand_fraction > maximum_hand_fraction) | (duty < minimum_duty)
-        | ~final_tick_loaded)
     return {"complete_active_rolling_windows": True, "window_substeps": length,
         "window_duration_s": float(length*dt), "checked_active_windows": len(ends),
         "minimum_mean_table_weight_fraction": float(table_fraction.min()),
         "maximum_mean_positive_hand_upward_weight_fraction": float(hand_fraction.max()),
         "minimum_loaded_table_duty": float(duty.min()),
-        "unloaded_final_tick_windows": int(np.count_nonzero(~final_tick_loaded)),
-        "failed_windows": int(np.count_nonzero(failed)),
-        "passed": bool(not np.any(failed))}
+        "failed_windows": int(np.count_nonzero((table_fraction < minimum_table_fraction)
+            | (hand_fraction > maximum_hand_fraction) | (duty < minimum_duty))),
+        "passed": bool(np.all(table_fraction >= minimum_table_fraction)
+            and np.all(hand_fraction <= maximum_hand_fraction) and np.all(duty >= minimum_duty))}
 
 
 def transform_contact_wrench(frame, local_force, position, origin, sign):
@@ -435,52 +429,6 @@ def all_step_bolt_measurements(columns, labels, metadata):
     return phases
 
 
-def saved_grasp_retention(rows, records, held_poses, metadata):
-    """Measure every closed phase against its separately replayed grasp reference."""
-    acquisitions = metadata["right_grasp_acquisitions"]
-    events = {float(event["time_s"]): event for event in acquisitions}
-    if len(events) != len(acquisitions):
-        raise ValueError("Right native grasp acquisitions must have unique original times")
-    reference, replayed_acquisitions = None, []
-    missing_reference = False
-    maximum_grip_translation = maximum_grip_rotation = 0.
-    for row, record, held_pose in zip(rows, records, held_poses):
-        label = row["phase"]
-        if label.startswith(("release_", "reset_open_", "regrip_")):
-            reference = None
-        event = events.get(row["time_s"])
-        if event is not None:
-            if (event["phase"] != label or not label.startswith(("settle_bolt", "settle_regrip_"))
-                    or not np.all(np.asarray(event["pad_normal_force_N"]) > .1)
-                    or np.linalg.norm(event["grasp_relative_bolt_head_position_m"]) >= .001
-                    or not np.allclose(event["pad_normal_force_N"],
-                        record["contact"]["pad_normal_force_N"], rtol=1e-12, atol=1e-12)):
-                raise ValueError("Right acquisition lacks its original settled, centered bilateral native load proof")
-            reference = held_pose
-            replayed_acquisitions.append({"time_s": row["time_s"], "phase": label,
-                "original_pre_integration_head_relative_position_m": event["grasp_relative_bolt_head_position_m"],
-                "independent_post_integration_head_relative_position_m": held_pose[0].tolist(),
-                "reference_timing_offset_note": "Native contact/reference belongs to t-dt; this independent retention reference is derived from corresponding saved qpos at t"})
-        closed_manipulation = (label in {"lift_bolt", "transport_bolt", "align_over_hole", "feed_to_entry"}
-                              or label.startswith(("start_thread_", "turn_", "stop_")))
-        if closed_manipulation:
-            if reference is None:
-                missing_reference = True
-            else:
-                shift = float(np.linalg.norm(held_pose[0]-reference[0]))
-                angle = float(Rotation.from_matrix(held_pose[1]@reference[1].T).magnitude())
-                maximum_grip_translation = max(maximum_grip_translation, shift)
-                maximum_grip_rotation = max(maximum_grip_rotation, angle)
-                row["independent_post_grasp_translation_slip_m"] = shift
-                row["independent_post_grasp_rotation_slip_rad"] = angle
-    if len(replayed_acquisitions) != len(acquisitions):
-        raise ValueError("Declared right native grasp acquisition has no corresponding saved pose")
-    return {"right_grasp_acquisition_replay": replayed_acquisitions,
-        "closed_manipulation_without_measured_grasp_reference": missing_reference,
-        "maximum_independent_post_grasp_translation_slip_m": maximum_grip_translation,
-        "maximum_independent_post_grasp_rotation_slip_rad": maximum_grip_rotation}
-
-
 def saved_geometry_audit(model, times, poses, records, metadata):
     """Exact saved qpos kinematics/candidates, explicitly separate from loads."""
     if (poses.shape != (len(times), model.nq) or len(records) != len(times)
@@ -566,7 +514,44 @@ def saved_geometry_audit(model, times, poses, records, metadata):
     yaw = np.unwrap(angles)
     for row, angle in zip(rows, yaw):
         row["male_yaw_unwrapped_in_female_rad"] = float(angle)
-    grip = saved_grasp_retention(rows, records, held_poses, metadata)
+    acquisitions = metadata["right_grasp_acquisitions"]
+    events = {float(event["time_s"]): event for event in acquisitions}
+    if len(events) != len(acquisitions):
+        raise ValueError("Right native grasp acquisitions must have unique original times")
+    reference, replayed_acquisitions = None, []
+    missing_reference = False
+    maximum_grip_translation = maximum_grip_rotation = 0.
+    for row, record, held_pose in zip(rows, records, held_poses):
+        label = row["phase"]
+        if label.startswith(("release_", "reset_open_", "regrip_")):
+            reference = None
+        event = events.get(row["time_s"])
+        if event is not None:
+            if (event["phase"] != label or not label.startswith(("settle_bolt", "settle_regrip_"))
+                    or not np.all(np.asarray(event["pad_normal_force_N"]) > .1)
+                    or np.linalg.norm(event["grasp_relative_bolt_head_position_m"]) >= .001
+                    or not np.allclose(event["pad_normal_force_N"],
+                        record["contact"]["pad_normal_force_N"], rtol=1e-12, atol=1e-12)):
+                raise ValueError("Right acquisition lacks its original settled, centered bilateral native load proof")
+            reference = held_pose
+            replayed_acquisitions.append({"time_s": row["time_s"], "phase": label,
+                "original_pre_integration_head_relative_position_m": event["grasp_relative_bolt_head_position_m"],
+                "independent_post_integration_head_relative_position_m": held_pose[0].tolist(),
+                "reference_timing_offset_note": "Native contact/reference belongs to t-dt; this independent retention reference is derived from corresponding saved qpos at t"})
+        closed_manipulation = (label in {"lift_bolt", "transport_bolt", "align_over_hole", "feed_to_entry"}
+                              or label.startswith(("start_thread_", "stop_start_", "turn_", "stop_turn_")))
+        if closed_manipulation:
+            if reference is None:
+                missing_reference = True
+            else:
+                shift = float(np.linalg.norm(held_pose[0]-reference[0]))
+                angle = float(Rotation.from_matrix(held_pose[1]@reference[1].T).magnitude())
+                maximum_grip_translation = max(maximum_grip_translation, shift)
+                maximum_grip_rotation = max(maximum_grip_rotation, angle)
+                row["independent_post_grasp_translation_slip_m"] = shift
+                row["independent_post_grasp_rotation_slip_rad"] = angle
+    if len(replayed_acquisitions) != len(acquisitions):
+        raise ValueError("Declared right native grasp acquisition has no corresponding saved pose")
     turns = []
     for label in sorted({row["phase"] for row in rows if row["phase"].startswith("turn_")}):
         mask = np.array([row["phase"] == label for row in rows])
@@ -583,7 +568,10 @@ def saved_geometry_audit(model, times, poses, records, metadata):
         "scope": "Candidates do not prove native loads. Original mj_step derived geometry precedes these integrated poses by one step.",
         "sample_count": len(rows), "sampled_native_joint_margins_rad": margins,
         "minimum_sampled_tip_table_clearance_m": min(row["tip_table_clearance_m"] for row in rows),
-        **grip,
+        "right_grasp_acquisition_replay": replayed_acquisitions,
+        "closed_manipulation_without_measured_grasp_reference": missing_reference,
+        "maximum_independent_post_grasp_translation_slip_m": maximum_grip_translation,
+        "maximum_independent_post_grasp_rotation_slip_rad": maximum_grip_rotation,
         "unexpected_sampled_penetration_count": sum(len(row["unexpected_penetrating_contacts"]) for row in rows),
         "qualified_sampled_lead_fits": turns, "rows": rows}
 

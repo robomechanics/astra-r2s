@@ -1,0 +1,30 @@
+{
+  "kind": "Post-closure independent auditor corrections; original native trial unchanged",
+  "trajectory_sha256": "0ac7460f5c9aafaf14ed7823bfdcd66b7382f7113de482b99aeb048658640c22",
+  "historical_native_producer_software_tests": 210,
+  "corrected_auditor_focused_tests": 13,
+  "corrected_auditor_focused_seconds": 0.79,
+  "historical_auditor_sha256": "f24aaa56d8ac9fd16777b2873244532789af0455c05afb4114697343311ba487",
+  "corrected_auditor_sha256": "53a2d18660986ce6cb77eee4c576db6c922722913abb0e07850c354a23927681",
+  "corrections": [
+    "Include actual unloaded final native tick in whole active rolling-window failure counts, matching original TableLoadWindow.ready",
+    "Include qualified closed stop_1/stop_2 samples in independently replayed per-grasp slip and missing-reference checks"
+  ],
+  "original_native_trace_and_report_bytes_modified": false,
+  "historical_audit_preserved": true,
+  "original_report_passed": false,
+  "historical_audit_passed": false,
+  "corrected_audit_passed": false,
+  "independent_gate_outcomes_changed_on_this_failed_trace": false,
+  "scope": "These are read-only auditor corrections after native simulation closed. Original force records, physical source/model/runtime and failure are immutable. Fresh physical retries require fresh unspliced runs and their own producer proof.",
+  "files_sha256": {
+    "audit_sources/audit_m8_supported_trace.py": "f24aaa56d8ac9fd16777b2873244532789af0455c05afb4114697343311ba487",
+    "audit_sources/test_m8_supported_audit.py": "665cc817bb08312226f74c7f276ae231a2bbeea04430f2f7be3bb6ea63a12e29",
+    "corrected_audit_sources/audit_m8_supported_trace.py": "53a2d18660986ce6cb77eee4c576db6c922722913abb0e07850c354a23927681",
+    "corrected_audit_sources/test_m8_supported_audit.py": "1d09f461014334941737c8b43bbd8b5e20fcd58c1228bfd7f8e6bd0aed63a943",
+    "independent_supported_audit.json": "4456bd260ba9bf72109dc9b741c15a400fb0efa142456baf721e68dab72d3e1a",
+    "independent_supported_audit_corrected.json": "873421325d3277d345b146ac943f07b1a78cd3a6847713b6353f54ae495c958c",
+    "independent_left_pad_force_history_audit.json": "c31435856f49dfe95a4ba73b94f92d4f180f7b96fd1509588bc2e8e3d66466c4",
+    "independent_free_joint_properties.json": "85eea907ed9fa8b61c107bbd74d193a63491d6ce59b68be33f320958c5d79ea6"
+  }
+}

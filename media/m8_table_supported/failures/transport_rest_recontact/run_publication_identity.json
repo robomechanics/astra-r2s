@@ -1,0 +1,12 @@
+{
+  "producer_commit": "4ea910e",
+  "started_utc": "2026-10-09 05:56:01 UTC",
+  "scope": "Fresh full table-supported native attempt; source-bound210 software tests do not imply trajectory completion. Original pilot is separate.",
+  "frozen_audit_sources": {
+    "scripts/audit_m8_supported_trace.py": "f24aaa56d8ac9fd16777b2873244532789af0455c05afb4114697343311ba487",
+    "scripts/audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+    "scripts/audit_m8_free_joint_properties.py": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+    "scripts/audit_m8_left_pad_force_history.py": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc",
+    "thread_lab/runtime.py": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+  }
+}

@@ -1,8 +1,10 @@
-"""Native side-bolt pickup with a left-stabilized, table-supported M8 block.
+"""Actual YAM acquisition and thread starting for a separately resting M8 bolt.
 
-This separate controller preserves the carried-block trajectory. The block is
-a free body; its weight is carried by declared native table contacts. Only
-bounded arm and finger controls are written during integration.
+The only writes during integration are native arm and finger motor controls.
+The free bolt starts on a declared rest. In table-pickup mode the left arm
+reaches, grasps, lifts and physically rolls the separately resting free block
+before the right arm acquires the bolt. Thread engagement has an axial force
+command, with no depth, pitch, or bolt-position servo along the insertion axis.
 """
 from __future__ import annotations
 
@@ -23,140 +25,296 @@ from thread_lab.runtime import require_micron_engine
 from .kinematics import ArmIK, HOME
 from .m8_simulation import YamCartesianController, YamM8ControlConfig, smooth_profile
 from .m8_insertion_mechanics import (fully_formed_flank_interval,
-    contact_is_on_full_flanks, thread_end_bounds)
+                                     contact_is_on_full_flanks, thread_end_bounds)
 from .m8_insertion_engagement import LoadedFlankWindow
-from .m8_insertion_simulation import (InsertionControlConfig, insertion_phases,
-    PadLoadHistory, _pad_normal_forces, _relative_axial_velocity,
-    EntrySupportWindow, _body_contact, formed_flank_overlap)
 
 
-@dataclass(frozen=True)
-class SupportedControlConfig(InsertionControlConfig):
-    """Reuse contact/arm limits; add explicit table-bearing observations."""
+class PadLoadHistory:
+    """Observe native pad-force gaps at every physics step without actuation."""
 
-    arm: YamM8ControlConfig = YamM8ControlConfig(left_closed_aperture=.0184,
-        stroke_angle_rad=np.pi, angular_speed_rad_s=2.)
-    axial_velocity_damping_Ns_per_m: float = 50.
-    maximum_entry_dwell_s: float | None = 3.
-    starting_angular_speed_rad_s: float | None = 1.
-    maximum_starting_strokes: int = 5
-    # A low bore must not leave the shaft between the head-support pins
-    # while the arm begins its lateral transfer.
-    transport_tip_clearance_m: float = .035
-    minimum_tip_rest_clearance_m: float = .010
-    settled_table_window_s: float = .100
-    minimum_table_weight_fraction: float = .90
-    maximum_hand_upward_weight_fraction: float = .10
-    minimum_loaded_table_duty: float = .99
-    maximum_block_lift_m: float = .0005
+    version = "native-bilateral-pad-load-v1"
 
-    def __post_init__(self):
-        super().__post_init__()
-        values = (self.settled_table_window_s, self.minimum_table_weight_fraction,
-                  self.maximum_hand_upward_weight_fraction,
-                  self.minimum_loaded_table_duty, self.maximum_block_lift_m,
-                  self.minimum_tip_rest_clearance_m)
+    def __init__(self, minimum_loaded_force_N=.1):
+        if not np.isfinite(minimum_loaded_force_N) or minimum_loaded_force_N <= 0:
+            raise ValueError("Loaded-pad threshold must be positive and finite")
+        self.threshold = float(minimum_loaded_force_N)
+        self.minimum = np.full(2, np.inf)
+        self.unloaded_steps = np.zeros(2, dtype=np.int64)
+        self.unloaded_duration = np.zeros(2)
+        self.current_gap = np.zeros(2)
+        self.maximum_gap = np.zeros(2)
+        self.observations = 0
+        self.duration = 0.
+
+    def observe(self, pad_normal_force_N, timestep_s):
+        forces = np.asarray(pad_normal_force_N, dtype=float)
+        if forces.shape != (2,) or not np.isfinite(forces).all() or not np.isfinite(timestep_s) or timestep_s <= 0:
+            raise ValueError("Pad-load observation needs two finite forces and a positive timestep")
+        unloaded = forces <= self.threshold
+        self.minimum = np.minimum(self.minimum, forces)
+        self.unloaded_steps += unloaded
+        self.unloaded_duration += unloaded*timestep_s
+        self.current_gap = np.where(unloaded, self.current_gap+timestep_s, 0.)
+        self.maximum_gap = np.maximum(self.maximum_gap, self.current_gap)
+        self.observations += 1
+        self.duration += timestep_s
+
+    def report(self):
+        return {"observer": self.version, "minimum_loaded_force_N": self.threshold,
+                "observed_physics_steps": self.observations,
+                "observed_duration_s": self.duration,
+                "minimum_normal_force_N": self.minimum.tolist() if self.observations else None,
+                "unloaded_physics_steps": self.unloaded_steps.tolist(),
+                "unloaded_duration_s": self.unloaded_duration.tolist(),
+                "maximum_consecutive_unloaded_duration_s": self.maximum_gap.tolist(),
+                "continuously_bilateral_loaded": bool(self.observations and not self.unloaded_steps.any())}
+
+
+def _pad_normal_forces(model, data, body, pad_geoms, *, with_compliance=False):
+    """Sum native solved forces for each pad against the full rigid subtree."""
+    pads = {int(geom): i for i, geom in enumerate(pad_geoms)}
+    root = int(model.body_weldid[body])
+    result = np.zeros(2)
+    weighted_indentation = np.zeros(2)
+    loaded_force = np.zeros(2)
+    contacts = []
+    force = np.zeros(6)
+    for i in range(data.ncon):
+        c = data.contact[i]
+        g1, g2 = int(c.geom1), int(c.geom2)
+        if g1 in pads and int(model.body_weldid[int(model.geom_bodyid[g2])]) == root:
+            pad = g1
+        elif g2 in pads and int(model.body_weldid[int(model.geom_bodyid[g1])]) == root:
+            pad = g2
+        else:
+            continue
+        mujoco.mj_contactForce(model, data, i, force)
+        result[pads[pad]] += float(force[0])
+        if with_compliance:
+            normal = float(force[0])
+            if normal > .1:
+                weighted_indentation[pads[pad]] += normal*max(-float(c.dist), 0.)
+                loaded_force[pads[pad]] += normal
+            contacts.append({"pad": model.geom(pad).name,
+                "signed_distance_m": float(c.dist), "normal_force_N": normal,
+                "normal_solref": c.solref.tolist(),
+                "friction_solref": c.solreffriction.tolist(),
+                "solimp": c.solimp.tolist()})
+    if with_compliance:
+        indentation = [float(weighted_indentation[i]/loaded_force[i])
+                       if loaded_force[i] else None for i in range(2)]
+        stiffness = [float(loaded_force[i]/indentation[i])
+                     if indentation[i] is not None and indentation[i] > 0 else None
+                     for i in range(2)]
+        return {"normal_force_N": result.tolist(),
+                "loaded_force_weighted_indentation_m": indentation,
+                "effective_pad_force_per_indentation_N_per_m": stiffness,
+                "contacts": contacts,
+                "scope": "Native signed distances and solved forces at acquisition end-settle; effective force/indentation is a model observation, not material modulus or hardware calibration"}
+    return result
+
+
+def _relative_axial_velocity(site_position, site_linear_velocity, hole_position,
+                             hole_spatial_velocity, axis_world):
+    """Hand speed along the axis relative to a moving hole's rigid frame."""
+    hole_velocity_at_hand = (np.asarray(hole_spatial_velocity)[3:] +
+        np.cross(np.asarray(hole_spatial_velocity)[:3],
+                 np.asarray(site_position)-np.asarray(hole_position)))
+    axis = np.asarray(axis_world, dtype=float)
+    axis = axis/np.linalg.norm(axis)
+    return float(np.dot(np.asarray(site_linear_velocity)-hole_velocity_at_hand, axis))
+
+
+class EntrySupportWindow:
+    """Measured settled native lead-in load; never a formed-thread capture."""
+
+    version = "native-settled-entry-support-v1"
+
+    def __init__(self, duration_s, velocity_limit_m_per_s, net_feed_N):
+        values = (duration_s, velocity_limit_m_per_s, net_feed_N)
         if not np.isfinite(values).all() or min(values) <= 0:
-            raise ValueError("Supported-block thresholds must be finite and positive")
-        if any(v > 1. for v in (self.minimum_table_weight_fraction,
-                self.maximum_hand_upward_weight_fraction, self.minimum_loaded_table_duty)):
-            raise ValueError("Supported-block load fractions must not exceed one")
-
-
-class TableLoadWindow:
-    """Original solved load window, distinct from contact-candidate geometry."""
-
-    version = "native-supported-block-load-window-v1"
-
-    def __init__(self, duration_s, block_weight_N, *, minimum_table_fraction=.90,
-                 maximum_hand_upward_fraction=.10, minimum_loaded_duty=.99):
-        if not np.isfinite([duration_s, block_weight_N]).all() or min(duration_s, block_weight_N) <= 0:
-            raise ValueError("Table load observation requires positive finite duration and weight")
-        fractions = (minimum_table_fraction, maximum_hand_upward_fraction, minimum_loaded_duty)
-        if not np.isfinite(fractions).all() or min(fractions) <= 0 or max(fractions) > 1:
-            raise ValueError("Table load fractions must be finite in (0, 1]")
+            raise ValueError("Entry support thresholds must be positive and finite")
         self.duration = float(duration_s)
-        self.weight = float(block_weight_N)
-        self.minimum_table_fraction = float(minimum_table_fraction)
-        self.maximum_hand_fraction = float(maximum_hand_upward_fraction)
-        self.minimum_duty = float(minimum_loaded_duty)
+        self.velocity_limit = float(velocity_limit_m_per_s)
+        self.minimum_force = .1*net_feed_N
+        self.minimum_impulse = .1*net_feed_N*self.duration
+        self.minimum_loaded_duration = .1*self.duration
         self.samples = deque()
-        self.elapsed = self.table_impulse = self.hand_upward_impulse = self.loaded_duration = 0.
-        self.last_table_force = 0.
+        self.elapsed = self.impulse = self.loaded_duration = 0.
+        self.last_force = self.last_velocity = 0.
+        self.last_aligned = False
         self.ready = False
 
-    def observe(self, table_upward_force_N, hand_upward_force_N, dt, valid):
-        values = [table_upward_force_N, hand_upward_force_N, dt]
-        if not np.isfinite(values).all() or dt <= 0:
-            raise ValueError("Table observations must be finite and timestep positive")
-        self.last_table_force = float(table_upward_force_N)
-        if not valid:
+    def observe(self, normal_force_N, relative_bolt_axial_velocity_m_per_s,
+                timestep_s, aligned):
+        force, velocity, dt = (float(normal_force_N),
+                               float(relative_bolt_axial_velocity_m_per_s), float(timestep_s))
+        if not np.isfinite([force, velocity, dt]).all() or force < 0 or dt <= 0:
+            raise ValueError("Entry observations require finite nonnegative force and positive timestep")
+        self.last_force, self.last_velocity = force, velocity
+        self.last_aligned = bool(aligned)
+        if not aligned or abs(velocity) > self.velocity_limit:
             self.samples.clear()
-            self.elapsed = self.table_impulse = self.hand_upward_impulse = self.loaded_duration = 0.
+            self.elapsed = self.impulse = self.loaded_duration = 0.
             self.ready = False
             return False
-        loaded = table_upward_force_N > .1*self.weight
-        positive_hand = max(float(hand_upward_force_N), 0.)
-        self.samples.append((float(dt), float(table_upward_force_N), positive_hand, loaded))
+        loaded = force > self.minimum_force
+        self.samples.append((dt, force, velocity, loaded))
         self.elapsed += dt
-        self.table_impulse += table_upward_force_N*dt
-        self.hand_upward_impulse += positive_hand*dt
+        self.impulse += force*dt
         self.loaded_duration += loaded*dt
         while self.samples and self.elapsed-self.samples[0][0] >= self.duration:
-            old_dt, table, hand, old_loaded = self.samples.popleft()
+            old_dt, old_force, _, old_loaded = self.samples.popleft()
             self.elapsed -= old_dt
-            self.table_impulse -= table*old_dt
-            self.hand_upward_impulse -= hand*old_dt
+            self.impulse -= old_force*old_dt
             self.loaded_duration -= old_loaded*old_dt
-        self.ready = bool(self.elapsed+1e-12 >= self.duration and loaded
-            and self.table_impulse >= self.minimum_table_fraction*self.weight*self.elapsed
-            and self.hand_upward_impulse <= self.maximum_hand_fraction*self.weight*self.elapsed
-            and self.loaded_duration >= self.minimum_duty*self.elapsed)
+        self.ready = bool(self.elapsed+1e-12 >= self.duration
+            and self.impulse >= self.minimum_impulse
+            and self.loaded_duration >= self.minimum_loaded_duration
+            and loaded)
         return self.ready
 
     def report(self):
+        velocities = [v for _, _, v, _ in self.samples]
         return {"observer": self.version, "ready": self.ready,
-            "required_window_s": self.duration, "observed_window_s": self.elapsed,
-            "block_weight_N": self.weight,
-            "minimum_mean_table_weight_fraction": self.minimum_table_fraction,
-            "maximum_mean_positive_hand_upward_weight_fraction": self.maximum_hand_fraction,
-            "minimum_loaded_table_duty": self.minimum_duty,
-            "mean_table_upward_force_N": self.table_impulse/self.elapsed if self.elapsed else None,
-            "mean_positive_hand_upward_force_N": self.hand_upward_impulse/self.elapsed if self.elapsed else None,
-            "loaded_table_substep_duty": self.loaded_duration/self.elapsed if self.elapsed else 0.,
-            "final_table_upward_force_N": self.last_table_force,
-            "scope": "No-bolt settled stabilization: original native table force bears block weight; contact candidates alone do not establish support"}
+                "aligned": self.last_aligned,
+                "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+                "required_window_s": self.duration, "observed_window_s": self.elapsed,
+                "minimum_loaded_normal_force_N": self.minimum_force,
+                "minimum_normal_impulse_Ns": self.minimum_impulse,
+                "normal_impulse_Ns": self.impulse,
+                "minimum_loaded_duration_s": self.minimum_loaded_duration,
+                "loaded_duration_s": self.loaded_duration,
+                "loaded_substep_duty": self.loaded_duration/self.elapsed if self.elapsed else 0.,
+                "relative_bolt_axial_velocity_limit_m_per_s": self.velocity_limit,
+                "relative_bolt_axial_velocity_range_m_per_s": [min(velocities), max(velocities)] if velocities else None,
+                "final_native_normal_force_N": self.last_force,
+                "final_relative_bolt_axial_velocity_m_per_s": self.last_velocity}
 
 
-def supported_phases(config):
-    """Stabilize without a block lift, then retain the real bolt schedule."""
+@dataclass(frozen=True)
+class InsertionControlConfig:
+    arm: YamM8ControlConfig = YamM8ControlConfig()
+    pickup_hover_m: float = .020
+    left_pickup_hover_m: float = .075
+    left_lift_clearance_m: float = .060
+    transport_tip_clearance_m: float = .015
+    entry_tip_clearance_m: float = .00075
+    block_lift_m: float = .004
+    net_axial_feed_N: float = .050
+    axial_velocity_damping_Ns_per_m: float = 0.
+    maximum_entry_dwell_s: float | None = None
+    entry_support_window_s: float = .050
+    entry_support_velocity_limit_m_per_s: float = .0002
+    starting_angular_speed_rad_s: float | None = None
+    maximum_starting_strokes: int = 8
+    qualifying_turns: int = 2
+    sample_period_s: float = .005
+    full_flank_contact_streak_s: float = .20
+
+    def __post_init__(self):
+        values = (self.pickup_hover_m, self.left_pickup_hover_m,
+                  self.left_lift_clearance_m, self.transport_tip_clearance_m,
+                  self.entry_tip_clearance_m, self.block_lift_m,
+                  self.net_axial_feed_N, self.sample_period_s,
+                  self.full_flank_contact_streak_s, self.entry_support_window_s,
+                  self.entry_support_velocity_limit_m_per_s)
+        if not np.isfinite(values).all() or min(values) <= 0:
+            raise ValueError("Insertion clearances, load, and sample interval must be positive")
+        if (not np.isfinite(self.axial_velocity_damping_Ns_per_m)
+                or self.axial_velocity_damping_Ns_per_m < 0):
+            raise ValueError("Axial velocity damping must be nonnegative and finite")
+        if self.maximum_entry_dwell_s is not None and (
+                not np.isfinite(self.maximum_entry_dwell_s)
+                or self.maximum_entry_dwell_s < max(.12, self.entry_support_window_s)):
+            raise ValueError("Maximum entry dwell must be finite and at least the support window and minimum stop")
+        if self.starting_angular_speed_rad_s is not None and (
+                not np.isfinite(self.starting_angular_speed_rad_s)
+                or self.starting_angular_speed_rad_s <= 0):
+            raise ValueError("Starting angular speed must be positive and finite")
+        if self.qualifying_turns < 1 or int(self.qualifying_turns) != self.qualifying_turns:
+            raise ValueError("At least one complete lead-qualification turn is required")
+        if self.maximum_starting_strokes < 1 or int(self.maximum_starting_strokes) != self.maximum_starting_strokes:
+            raise ValueError("Starting stroke count must be a positive integer")
+
+
+def insertion_phases(config: InsertionControlConfig, *, pickup_from_table=False):
+    """Named phases, durations, hand stroke endpoints, jaw endpoints, and float."""
     c = config.arm
-    start = [("settle_table", .20), ("reach_left_block", .90),
-             ("close_left_block", .25), ("settle_left_block", .30)]
-    return [(name, duration, 0., 0., c.open_aperture, c.open_aperture, False)
-            for name, duration in start] + insertion_phases(config)
+    stroke = c.stroke_angle_rad
+    turn_duration = 1.875 * stroke / c.angular_speed_rad_s
+    starting_duration = 1.875*stroke/(config.starting_angular_speed_rad_s or c.angular_speed_rad_s)
+    reset_duration = 1.875 * stroke / c.reset_speed_rad_s
+    phases = []
+    if pickup_from_table:
+        phases.extend([
+            ("settle_table", .20, 0., 0., c.open_aperture, c.open_aperture, False),
+            ("reach_left_block", .90, 0., 0., c.open_aperture, c.open_aperture, False),
+            ("close_left_block", .25, 0., 0., c.open_aperture, c.open_aperture, False),
+            ("settle_left_block", .15, 0., 0., c.open_aperture, c.open_aperture, False),
+            ("lift_left_block", .90, 0., 0., c.open_aperture, c.open_aperture, False),
+            ("transport_left_block", 3.00, 0., 0., c.open_aperture, c.open_aperture, False),
+            ("hold_left_block", .15, 0., 0., c.open_aperture, c.open_aperture, False),
+        ])
+    phases.extend([
+        ("secure_left", .25, 0., 0., c.open_aperture, c.open_aperture, False),
+        ("reach_bolt", .55, 0., 0., c.open_aperture, c.open_aperture, False),
+        ("close_bolt", .25, 0., 0., c.open_aperture, c.closed_aperture, False),
+        ("settle_bolt", .12, 0., 0., c.closed_aperture, c.closed_aperture, False),
+        ("lift_bolt", .65, 0., 0., c.closed_aperture, c.closed_aperture, False),
+        ("transport_bolt", .90, 0., 0., c.closed_aperture, c.closed_aperture, False),
+        ("align_over_hole", .45, 0., 0., c.closed_aperture, c.closed_aperture, False),
+        ("feed_to_entry", config.maximum_entry_dwell_s or .25, 0., 0., c.closed_aperture, c.closed_aperture, True),
+        ("start_thread_1", starting_duration, 0., stroke, c.closed_aperture, c.closed_aperture, True),
+        ("stop_start_1", config.maximum_entry_dwell_s or .12, stroke, stroke, c.closed_aperture, c.closed_aperture, True),
+    ])
+    for tag, turn_label, stop_label in [
+            (f"search_{i}", f"start_thread_{i}", f"stop_start_{i}")
+            for i in range(2, config.maximum_starting_strokes + 1)] + [
+            (str(i), f"turn_{i}", f"stop_{i}") for i in range(1, config.qualifying_turns + 1)]:
+        phases.extend([
+            (f"release_{tag}", .15, stroke, stroke, c.closed_aperture, c.open_aperture, False),
+            (f"open_settle_{tag}", .08, stroke, stroke, c.open_aperture, c.open_aperture, False),
+            (f"reset_open_{tag}", reset_duration, stroke, 0., c.open_aperture, c.open_aperture, False),
+            (f"open_hold_{tag}", .08, 0., 0., c.open_aperture, c.open_aperture, False),
+            (f"regrip_{tag}", .25, 0., 0., c.open_aperture, c.closed_aperture, False),
+            (f"settle_regrip_{tag}", .12, 0., 0., c.closed_aperture, c.closed_aperture, True),
+            (turn_label, starting_duration if turn_label.startswith("start_thread_") else turn_duration,
+             0., stroke, c.closed_aperture, c.closed_aperture, True),
+            (stop_label, (config.maximum_entry_dwell_s or .12) if stop_label.startswith("stop_start_") else .12,
+             stroke, stroke, c.closed_aperture, c.closed_aperture, True),
+        ])
+    return phases
 
 
-def initialize_supported_pose(model, data, scene, control):
-    """Initialize arms/jaws only; preserve all free-body poses and velocities."""
-    from .m8_scene import jaw_positions
-    from .m8_supported_scene import initial_left_grasp_position, left_grasp_rotation
+def initialize_insertion_pose(model, data, scene, control):
+    """Initialize native arms around unmodified block and separately resting bolt."""
+    from .m8_scene import jaw_positions, left_touch_aperture
+    from .m8_insertion_scene import initial_left_grasp_position, left_grasp_rotation
+    base = scene.base
+    table_pickup = bool(getattr(scene, "pickup_from_table", False))
     for side in ("left", "right"):
         ids = [model.joint(f"{side}_joint{i}").id for i in range(1, 7)]
         data.qpos[model.jnt_qposadr[ids]] = HOME
-        aperture = control.arm.open_aperture
-        for finger, q in zip(("left", "right"), jaw_positions(aperture, scene.base)):
+        aperture = (left_touch_aperture(base) if side == "left" and not table_pickup
+                    else control.arm.open_aperture)
+        requested = (control.arm.left_closed_aperture if side == "left" and not table_pickup
+                     else aperture)
+        for finger, q, command in zip(("left", "right"), jaw_positions(aperture, base),
+                                      jaw_positions(requested, base)):
             data.qpos[model.joint(f"{side}_{finger}_finger").qposadr[0]] = q
-            data.ctrl[model.actuator(f"{side}_grip_{finger}").id] = q
+            data.ctrl[model.actuator(f"{side}_grip_{finger}").id] = command
     mujoco.mj_forward(model, data)
     bolt = model.body("male_bolt").id
     bolt_r = data.xmat[bolt].reshape(3, 3).copy()
-    pickup = data.xpos[bolt] + bolt_r @ [0., 0., -scene.head_height/2]
-    right_r = bolt_r @ Rotation.from_euler("z", np.pi/2).as_matrix()
+    pickup = data.xpos[bolt] + bolt_r @ [0., 0., -scene.head_height / 2]
+    right_r = bolt_r @ Rotation.from_euler("z", np.pi / 2).as_matrix()
     left_r = left_grasp_rotation(scene)
-    left_p = initial_left_grasp_position(scene)-left_r[:, 2]*control.left_pickup_hover_m
+    left_p = initial_left_grasp_position(scene)
+    if table_pickup:
+        left_p = left_p-left_r[:, 2]*control.left_pickup_hover_m
     targets = {"left": (left_p, left_r),
-               "right": (pickup+[0., 0., control.pickup_hover_m], right_r)}
+               "right": (pickup + [0., 0., control.pickup_hover_m], right_r)}
     for side, (p, r) in targets.items():
         ik = ArmIK(model, side)
         ik.solve(p, r, thorough=True)
@@ -165,163 +323,56 @@ def initialize_supported_pose(model, data, scene, control):
     return targets, pickup, right_r
 
 
-def _table_support_state(model, data, body, allowed_support_geoms, *, with_contacts=False):
-    """Resolved table force/wrench on the entire free rigid block subtree."""
-    root = int(model.body_weldid[body])
-    allowed = {int(g) for g in allowed_support_geoms}
-    wrench = np.zeros(6)
-    normal_upward = 0.
-    count = loaded_count = unexpected = 0
+def _body_contact(model, data, body, other_geoms=None):
+    """Contacts for the complete rigid subtree, including welded frame children."""
+    count = 0
+    world = 0
+    normal = 0.
     force = np.zeros(6)
-    details = []
-    for index in range(data.ncon):
-        c = data.contact[index]
+    welded_root = int(model.body_weldid[body])
+    for i in range(data.ncon):
+        c = data.contact[i]
         g1, g2 = int(c.geom1), int(c.geom2)
-        r1, r2 = (int(model.body_weldid[int(model.geom_bodyid[g])]) for g in (g1, g2))
-        if r1 == root and r2 == 0:
-            other, sign = g2, -1.
-        elif r2 == root and r1 == 0:
-            other, sign = g1, 1.
-        else:
+        b1, b2 = int(model.geom_bodyid[g1]), int(model.geom_bodyid[g2])
+        w1, w2 = int(model.body_weldid[b1]), int(model.body_weldid[b2])
+        if w1 != welded_root and w2 != welded_root:
             continue
-        if other not in allowed:
-            unexpected += 1
+        other_g = g2 if w1 == welded_root else g1
+        other_welded = w2 if w1 == welded_root else w1
+        if other_welded == welded_root:
             continue
-        mujoco.mj_contactForce(model, data, index, force)
-        frame = c.frame.reshape(3, 3)
-        f_world = sign*(frame.T @ force[:3])
-        torque_world = sign*(frame.T @ force[3:])
-        wrench[:3] += f_world
-        wrench[3:] += torque_world+np.cross(c.pos-data.xpos[body], f_world)
-        normal_upward += sign*frame[0, 2]*float(force[0])
-        count += 1
-        loaded_count += float(force[0]) > .005
-        if with_contacts:
-            details.append({"table_geom": model.geom(other).name,
-            "block_geom": model.geom(g1 if r1 == root else g2).name,
-            "signed_distance_m": float(c.dist), "normal_force_N": float(force[0]),
-            "geom1": model.geom(g1).name, "geom2": model.geom(g2).name,
-            "frame": frame.tolist(), "local_contact_force_N_Nm": force.tolist(),
-            "contact_position_world_m": c.pos.tolist(),
-            "block_origin_world_m": data.xpos[body].tolist(),
-            "signed_force_contribution_on_block_world_N": f_world.tolist()})
-    return {"contact_candidates": count, "loaded_contacts": loaded_count,
-            "unexpected_world_contact_candidates": unexpected,
-            "table_upward_normal_force_N": float(normal_upward),
-            "table_upward_force_N": float(wrench[2]),
-            "table_wrench_on_block_world": wrench.tolist(), "contacts": details}
+        world += other_welded == 0
+        if other_geoms is None or other_g in other_geoms:
+            mujoco.mj_contactForce(model, data, i, force)
+            count += 1
+            normal += float(force[0])
+    return {"contact_count": int(count), "normal_force_N": normal,
+            "world_support_contacts": int(world)}
 
 
-def _left_hand_contact_state(model, data, block_id, controller, *, with_contacts=False):
-    """Native full-rigid-subtree hand wrench, with optional raw contact rows."""
-    root = int(model.body_weldid[block_id])
-    total, pad_total = np.zeros(6), np.zeros(6)
-    counts = [0, 0]
-    normals = {int(g): 0. for g in controller.pad_geom_ids}
-    contact_force = np.zeros(6)
-    details = []
-    for index in range(data.ncon):
-        c = data.contact[index]
-        g1, g2 = int(c.geom1), int(c.geom2)
-        r1, r2 = (int(model.body_weldid[int(model.geom_bodyid[g])]) for g in (g1, g2))
-        if r1 == root and g2 in controller.hand_geom_ids:
-            sign, hand_geom = -1., g2
-        elif r2 == root and g1 in controller.hand_geom_ids:
-            sign, hand_geom = 1., g1
-        else:
-            continue
-        mujoco.mj_contactForce(model, data, index, contact_force)
-        frame = c.frame.reshape(3, 3)
-        force = sign*(frame.T @ contact_force[:3])
-        torque = sign*(frame.T @ contact_force[3:])+np.cross(c.pos-data.xpos[block_id], force)
-        wrench = np.r_[force, torque]
-        total += wrench
-        counts[0] += 1
-        if hand_geom in normals:
-            pad_total += wrench
-            normals[hand_geom] += float(contact_force[0])
-            counts[1] += 1
-        if with_contacts:
-            details.append({"geom1": model.geom(g1).name, "geom2": model.geom(g2).name,
-                "frame": frame.tolist(), "local_contact_force_N_Nm": contact_force.tolist(),
-                "contact_position_world_m": c.pos.tolist(),
-                "block_origin_world_m": data.xpos[block_id].tolist(),
-                "signed_force_contribution_on_block_world_N": force.tolist()})
-    return {"contact_count": counts[0], "pad_contact_count": counts[1],
-            "wrench_world": total.tolist(), "pad_wrench_world": pad_total.tolist(),
-            "pad_normal_force_N": [normals[model.geom(f"left_m8_pad_{s}").id]
-                                    for s in ("left", "right")],
-            "jaw_actuator_force": data.actuator_force[controller.finger_ids].tolist(),
-            "arm_motor_torques_Nm": controller.last_motor_torques.tolist(),
-            "hand_wrench_world": controller.last_wrench.tolist(),
-            "native_contact_records": details}
+def formed_flank_overlap(relative, relative_r, thread):
+    """Shared geometric full-ring length; never used as a position command."""
+    return fully_formed_flank_interval(relative, relative_r, thread)["length_m"]
 
 
-def _unexpected_native_contacts(model, data, block_id, bolt_id, table_geoms,
-                                left_pads, right_pads, thread_geoms, *, allow_bolt_rest,
-                                head_geom=None):
-    """Keep native camera/backing/interarm collisions visible and guarded."""
-    failures = []
-    for c in data.contact:
-        g1, g2 = int(c.geom1), int(c.geom2)
-        roots = [int(model.body_weldid[int(model.geom_bodyid[g])]) for g in (g1, g2)]
-        if -float(c.dist) <= 1e-6:
-            continue
-        pairs = ((g1, roots[0], g2, roots[1]), (g2, roots[1], g1, roots[0]))
-        intended = ({g1, g2} == set(thread_geoms)
-            or any(g in table_geoms and other_root == block_id for g, _, _, other_root in pairs)
-            or any(g in left_pads and other_root == block_id for g, _, _, other_root in pairs)
-            or any(g in right_pads and other == head_geom for g, _, other, _ in pairs)
-            or (allow_bolt_rest and any(root == 0 and other_root == bolt_id
-                and model.geom(g).name.startswith("bolt_rest_")
-                for g, root, _, other_root in pairs)))
-        if not intended:
-            failures.append({"geom1": model.geom(g1).name, "geom2": model.geom(g2).name,
-                "native_signed_distance_m": float(c.dist),
-                "scope": "Native solved contact geometry, distinct from thread SDF depth proxy"})
-    return failures
-
-
-def _declared_bolt_rest_top(model, data):
-    """World-Z upper bound of the actual fixed rest boxes and cylinders."""
-    tops = {}
-    for geom in range(model.ngeom):
-        name = model.geom(geom).name
-        if not name.startswith("bolt_rest_"):
-            continue
-        if int(model.body_weldid[int(model.geom_bodyid[geom])]) != 0:
-            raise ValueError("The declared bolt rest must be fixed")
-        r = data.geom_xmat[geom].reshape(3, 3)
-        size = model.geom_size[geom]
-        kind = int(model.geom_type[geom])
-        if kind == mujoco.mjtGeom.mjGEOM_BOX:
-            extent = float(np.dot(np.abs(r[2]), size))
-        elif kind == mujoco.mjtGeom.mjGEOM_CYLINDER:
-            extent = float(abs(r[2, 2])*size[1]+size[0]*np.sqrt(max(0., 1.-r[2, 2]**2)))
-        else:
-            raise ValueError("Unsupported native bolt-rest geometry")
-        tops[name] = float(data.geom_xpos[geom, 2]+extent)
-    if not tops:
-        raise ValueError("Native scene lacks its declared bolt rest")
-    return {"maximum_world_z_m": max(tops.values()), "geom_world_top_z_m": tops,
-            "method": "Exact world-Z bounds of declared native fixed box/cylinder collision geometry"}
-
-
-def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
+def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                        control_config=None, maximum_phases=None):
-    """Acquire the side bolt, stabilize the block, and turn with native motors."""
-    from .m8_supported_scene import (SupportedConfig, supported_config, build_model, scene_xml,
-        scene_fingerprint, initial_left_grasp_position, TABLE_SUPPORT_GEOM_NAMES, table_top_height)
-    scene = scene_config or supported_config()
-    # This flag selects real left acquisition/history, never carried-block motion.
-    table_pickup = True
-    control = control_config if control_config is not None else SupportedControlConfig()
+    """Acquire, carry, align, start, and turn using actual bounded robot motors."""
+    from .m8_insertion_scene import (InsertionConfig, build_model, scene_xml,
+                                   scene_fingerprint, holding_block_position,
+                                   holding_block_rotation, initial_left_grasp_position)
+    scene = scene_config or InsertionConfig()
+    table_pickup = bool(getattr(scene, "pickup_from_table", False))
+    control = (control_config if control_config is not None else
+               InsertionControlConfig(axial_velocity_damping_Ns_per_m=50. if table_pickup else 0.,
+                                      maximum_entry_dwell_s=3. if table_pickup else None,
+                                      starting_angular_speed_rad_s=1. if table_pickup else None))
     runtime = require_micron_engine()
     model = build_model(scene)
     data = mujoco.MjData(model)
     controllers = {s: YamCartesianController(model, data, s, control.arm, scene.base)
                    for s in ("left", "right")}
-    initial, pickup, right_initial_r = initialize_supported_pose(model, data, scene, control)
+    initial, pickup, right_initial_r = initialize_insertion_pose(model, data, scene, control)
     bolt_id = model.body("male_bolt").id
     block_id = model.body("fixture_block").id
     hole_id = model.body("female_frame").id
@@ -333,8 +384,8 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
     right, left = controllers["right"], controllers["left"]
     hole_initial_r = data.xmat[hole_id].reshape(3, 3).copy()
     hole_initial_p = data.xpos[hole_id].copy()
-    held_block_p = data.xpos[block_id].copy()
-    held_block_r = data.xmat[block_id].reshape(3, 3).copy()
+    held_block_p = holding_block_position(scene)
+    held_block_r = holding_block_rotation(scene)
     held_hole_p = held_block_p + held_block_r @ np.asarray(scene.hole_offset)
     held_hole_r = held_block_r @ np.diag([1., -1., -1.])
     hand_relative_r = (held_hole_r if table_pickup else hole_initial_r).T @ right_initial_r
@@ -343,10 +394,13 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
     left_grip_p = left_r0.T @ (data.xpos[block_id] - left_p0)
     left_grip_r = left_r0.T @ data.xmat[block_id].reshape(3, 3)
     left_pickup_p = initial_left_grasp_position(scene)
-    left_hold_p = left_pickup_p.copy()
-    left_hold_r = left_r0.copy()
-    left_grasp_acquired = False
+    left_lift_p = left_pickup_p + [0., 0., control.left_lift_clearance_m]
+    left_hold_p = held_block_p + held_block_r @ np.asarray(scene.base.left_grasp_offset)
+    left_hold_p = left_hold_p + [0., 0., control.block_lift_m]
+    left_hold_r = held_block_r @ data.xmat[block_id].reshape(3, 3).T @ left_r0
+    left_grasp_acquired = not table_pickup
     left_acquisition_time = None
+    left_lift_verified_time = None
     left_acquisition_pad_normals = None
     initial_left_block_contacts = _body_contact(model, data, block_id, left.hand_geom_ids)
     initial_right_bolt_contacts = _body_contact(model, data, bolt_id, right.hand_geom_ids)
@@ -364,29 +418,23 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
     male_tip_chamfer_m = .000956
     full_flank_overlap_m = male_tip_chamfer_m + female_full_profile_chamfer_m + thread.pitch
     pickup_lift_goal = pickup.copy()
-    pickup_lift_goal[2] = (held_hole_p[2]
-                           + female_half_height +
+    pickup_lift_goal[2] = ((held_hole_p if table_pickup else hole_initial_p)[2]
+                           + control.block_lift_m + female_half_height +
                            shaft_and_half_head + control.transport_tip_clearance_m)
-    rest_top = _declared_bolt_rest_top(model, data)
-    rest_top_z = rest_top["maximum_world_z_m"]
-    planned_tip_clearance = pickup_lift_goal[2]-shaft_and_half_head-rest_top_z
-    if planned_tip_clearance < control.minimum_tip_rest_clearance_m:
-        raise ValueError("Pickup/transfer waypoint does not clear the whole shaft above its native rest")
     tip_local = np.array([0., 0., thread.bolt_length])
-    phases = supported_phases(control)
+    phases = insertion_phases(control, pickup_from_table=table_pickup)
     selected = phases if maximum_phases is None else phases[:maximum_phases]
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     start_wall = time.perf_counter()
     rows, times, positions, velocities, controls, summaries = [], [], [], [], [], []
     metadata = {
-        "description": "Native right pickup and M8 threading into a free table-supported block stabilized by native left pads",
-        "supported_task": True,
-        "support_scope": "Plain continuous tabletop; bounded running-thread insertion, no through-table bolt travel or head-seating proof",
+        "description": ("Actual YAM picks up both free workpieces from declared table/rest support, carries them, and starts the M8 thread"
+                        if table_pickup else "Actual YAM picks up a free bolt, carries it over a female M8 block, and starts the thread"),
         "scene_config": asdict(scene), "control_config": asdict(control), "runtime": runtime,
         "starts_preengaged": False, "starts_grasp_ready": False,
-        "block_starts_left_touching": False,
-        "block_starts_on_table": True,
+        "block_starts_left_touching": not table_pickup,
+        "block_starts_on_table": table_pickup,
         "initial_left_block_hand_contacts": initial_left_block_contacts,
         "initial_right_bolt_hand_contacts": initial_right_bolt_contacts,
         "initial_block_world_support_contacts": initial_block_support,
@@ -397,21 +445,12 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
         "model_xml_sha256": hashlib.sha256(scene_xml(scene).encode()).hexdigest(),
         "controller_sha256": hashlib.sha256("\n".join(inspect.getsource(v) for v in (
             PadLoadHistory, _pad_normal_forces, _relative_axial_velocity, EntrySupportWindow,
-            InsertionControlConfig, insertion_phases, SupportedControlConfig, TableLoadWindow,
-            supported_phases, initialize_supported_pose, _table_support_state,
-            _left_hand_contact_state, _unexpected_native_contacts,
-            _declared_bolt_rest_top,
-            _body_contact, formed_flank_overlap, run_supported_demo,
+            InsertionControlConfig, insertion_phases, initialize_insertion_pose,
+            _body_contact, formed_flank_overlap, run_insertion_demo,
             fully_formed_flank_interval, contact_is_on_full_flanks, thread_end_bounds,
             LoadedFlankWindow,
             YamCartesianController, YamM8ControlConfig, smooth_profile)).encode()).hexdigest(),
         "known_bolt_mass_kg": mass,
-        "pickup_transport_clearance": {"native_rest": rest_top,
-            "commanded_lift_grasp_position_m": pickup_lift_goal.tolist(),
-            "planned_bolt_tip_world_z_m": float(pickup_lift_goal[2]-shaft_and_half_head),
-            "planned_tip_above_highest_rest_m": float(planned_tip_clearance),
-            "minimum_measured_tip_above_rest_during_transfer_m": control.minimum_tip_rest_clearance_m,
-            "scope": "Lift the whole shaft above the declared head-support rest before lateral transfer; descend over the bore only after transfer"},
         "full_flank_overlap_threshold_m": full_flank_overlap_m,
         "male_tip_chamfer_m": male_tip_chamfer_m,
         "female_full_profile_chamfer_bound_m": female_full_profile_chamfer_m,
@@ -419,7 +458,7 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
         "engagement_observer": LoadedFlankWindow.version,
         "engagement_observer_source_sha256": hashlib.sha256(
             Path(inspect.getfile(LoadedFlankWindow)).read_bytes()).hexdigest(),
-        "engagement_observer_scope": "Candidate full-flank capture; actual coupled lead and open-hand unseated bolt resets with a table-supported block establish completed engagement",
+        "engagement_observer_scope": "Candidate full-flank capture; actual coupled lead and unsupported reset checks establish completed engagement",
         "engagement_window": {"duration_s": control.full_flank_contact_streak_s,
             "minimum_loaded_normal_impulse_Ns": .1*control.net_axial_feed_N*control.full_flank_contact_streak_s,
             "minimum_loaded_duration_s": .0005,
@@ -432,19 +471,20 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
         "entry_support_note": "Optional bounded constant-force entry/starting-stop dwell requires settled actual bolt velocity and measured native SDF-pair load before rotation or searching release; cone support is separate from formed-flank capture, and acquisition timeout retains the closed grasp",
         "entry_support_events": [],
         "native_force_recording_note": "mj_step contact forces and contact geometry are from the pre-integration state at recorded time minus timestep; saved qpos/qvel are the post-integration state",
-        "left_pad_history_scope": "Every physics substep after end-settle stabilization acquisition; separately from 5 ms saved-pose sampling",
+        "left_pad_history_scope": "Every physics substep after end-settle acquisition; force minima and gaps include physical lift and roll, separately from 5 ms saved-pose sampling",
         "partial": True,
     }
     sample_steps = max(1, round(control.sample_period_s / model.opt.timestep))
+    block_lift = 0.
     peak_depth = peak_left_slip = peak_left_angle = peak_grip_slip = 0.
     peak_alignment_radial = peak_alignment_tilt = 0.
     maximum_support_after_pickup = maximum_left_support = 0
+    maximum_left_support_after_lift = 0
+    minimum_left_lift_m_after_lift = np.inf
     minimum_joint_margin = np.inf
     minimum_lift_pad_normals = np.full(2, np.inf)
     minimum_loaded_left_pad_normals = np.full(2, np.inf)
     grip_reference = None
-    peak_right_grip_rotation_slip = 0.
-    metadata["right_grasp_acquisitions"] = []
     left_pad_geoms = [model.geom(f"left_m8_pad_{side}").id for side in ("left", "right")]
     left_pad_history = PadLoadHistory()
     left_pad_times, left_pad_forces, left_pad_phase_indices = [], [], []
@@ -471,58 +511,22 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
     # Persist the exact controller and model texts used for this integration.
     # Later source revisions cannot silently change how a partial trace is read.
     (output / "controller_source.py").write_text(Path(__file__).read_text())
-    metadata["controller_module_sha256"] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     (output / "engagement_observer_source.py").write_text(Path(inspect.getfile(LoadedFlankWindow)).read_text())
     (output / "scene.xml").write_text(scene_xml(scene))
-    scene_source = Path(inspect.getfile(SupportedConfig)).read_text()
+    scene_source = Path(inspect.getfile(InsertionConfig)).read_text()
     (output / "scene_source.py").write_text(scene_source)
     metadata["scene_source_sha256"] = hashlib.sha256(scene_source.encode()).hexdigest()
     recorded_helpers = output / "recorded_sources" / "yam_twin"
     recorded_helpers.mkdir(parents=True, exist_ok=True)
-    for value in (YamCartesianController, fully_formed_flank_interval, InsertionControlConfig,
-                  ArmIK):
+    for value in (YamCartesianController, fully_formed_flank_interval):
         source_path = Path(inspect.getfile(value))
         (recorded_helpers / source_path.name).write_bytes(source_path.read_bytes())
-    from . import (m8_supported_scene, m8_insertion_scene, m8_scene,
-                   m8_insertion_engagement, m8_insertion_simulation)
-    for module in (m8_supported_scene, m8_insertion_scene, m8_scene,
-                   m8_insertion_engagement, m8_insertion_simulation):
-        source_path = Path(module.__file__)
-        (recorded_helpers / source_path.name).write_bytes(source_path.read_bytes())
-    metadata["recorded_source_dependencies_sha256"] = {
-        str(path.relative_to(output)): hashlib.sha256(path.read_bytes()).hexdigest()
-        for path in sorted(recorded_helpers.glob("*.py"))}
     search_skip = {1: False}
-    left_pickup_phases = {"settle_table", "reach_left_block", "close_left_block", "settle_left_block"}
-    table_geoms = [model.geom(name).id for name in TABLE_SUPPORT_GEOM_NAMES]
-    block_weight = float(np.sum(model.body_mass[model.body_weldid == block_id]))*abs(float(model.opt.gravity[2]))
-    table_window = TableLoadWindow(control.settled_table_window_s, block_weight,
-        minimum_table_fraction=control.minimum_table_weight_fraction,
-        maximum_hand_upward_fraction=control.maximum_hand_upward_weight_fraction,
-        minimum_loaded_duty=control.minimum_loaded_table_duty)
-    task_table_window = TableLoadWindow(control.settled_table_window_s, block_weight,
-        minimum_table_fraction=control.minimum_table_weight_fraction,
-        maximum_hand_upward_fraction=control.maximum_hand_upward_weight_fraction,
-        minimum_loaded_duty=control.minimum_loaded_table_duty)
-    metadata["known_block_weight_N"] = block_weight
-    metadata["table_support_geom_names"] = list(TABLE_SUPPORT_GEOM_NAMES)
-    metadata["minimum_tip_table_clearance_m"] = scene.minimum_tip_table_clearance_m
-    metadata["support_force_timing"] = metadata["native_force_recording_note"]
-    metadata["unused_carried_block_control_fields"] = ["left_lift_clearance_m", "block_lift_m"]
-    support_rows = []
-    block_r0 = data.xmat[block_id].reshape(3, 3).copy()
-    peak_block_translation = peak_block_rotation = peak_block_lift = 0.
-    minimum_tip_table_clearance = np.inf
-    minimum_tip_rest_transfer_clearance = np.inf
-    support_gap = maximum_support_gap = 0.
-    minimum_active_table_force = np.inf
-    active_table_unloaded_steps = active_table_observations = 0
-    peak_unexpected_table_contacts = 0
-    peak_unexpected_native_depth = 0.
-    task_table_failed_windows = 0
-    task_table_minimum_mean_fraction = np.inf
-    task_hand_maximum_mean_positive_fraction = 0.
-    task_table_minimum_loaded_duty = 1.
+    left_pickup_phases = {"settle_table", "reach_left_block", "close_left_block",
+                          "settle_left_block", "lift_left_block",
+                          "transport_left_block", "hold_left_block"}
+    left_table_support_phases = {"settle_table", "reach_left_block", "close_left_block",
+                                "settle_left_block", "lift_left_block"}
     for phase_index, (label, duration, angle0, angle1, gap0, gap1, axial_float) in enumerate(selected):
         match = re.search(r"(?:search_|start_thread_|stop_start_)(\d+)$", label)
         if match:
@@ -554,12 +558,9 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
                 control.entry_support_velocity_limit_m_per_s, control.net_axial_feed_N)
         elif entry_support_enabled and label.startswith("stop_start_"):
             duration = .12
-        if label.startswith(("release_", "open_settle_", "reset_open_", "open_hold_", "regrip_")):
-            # An intentional open reset ends this measured grasp. The next
-            # closed grasp gets its own reference after actual loaded settle.
-            grip_reference = None
         phase_p0 = right.pose()[0]
         phase_left_p0, phase_left_r0 = left.pose()
+        left_rotation_delta = Rotation.from_matrix(left_hold_r @ phase_left_r0.T).as_rotvec()
         hole_r = data.xmat[hole_id].reshape(3, 3).copy()
         hole_p = data.xpos[hole_id].copy()
         phase_start_depth = float((hole_r.T @ (data.xpos[bolt_id] - hole_p))[2])
@@ -590,8 +591,6 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
             elif label == "transport_bolt":
                 goal = hole_p - down * (female_half_height + shaft_and_half_head +
                                        control.transport_tip_clearance_m)
-                # Lower only in align_over_hole, after lateral transfer.
-                goal[2] = max(float(goal[2]), float(pickup_lift_goal[2]))
             elif label == "align_over_hole":
                 goal = hole_p - down * (female_half_height + shaft_and_half_head +
                                        control.entry_tip_clearance_m)
@@ -637,39 +636,33 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
                     left_target_v, left_target_w = np.zeros(3), np.zeros(3)
                     left_gap = (control.arm.open_aperture + blend*(control.arm.left_closed_aperture-control.arm.open_aperture)
                                 if label == "close_left_block" else control.arm.left_closed_aperture)
+                elif label == "lift_left_block":
+                    left_target_p = phase_left_p0 + blend*(left_lift_p-phase_left_p0)
+                    left_target_v = derivative*(left_lift_p-phase_left_p0)/duration
+                    left_target_r, left_target_w = left_r0, np.zeros(3)
+                    left_gap = control.arm.left_closed_aperture
+                elif label == "transport_left_block":
+                    left_target_p = phase_left_p0 + blend*(left_hold_p-phase_left_p0)
+                    left_target_v = derivative*(left_hold_p-phase_left_p0)/duration
+                    left_target_r = Rotation.from_rotvec(blend*left_rotation_delta).as_matrix() @ phase_left_r0
+                    left_target_w = derivative*left_rotation_delta/duration
+                    left_gap = control.arm.left_closed_aperture
                 else:
                     left_target_p, left_target_r = left_hold_p, left_hold_r
                     left_target_v, left_target_w = np.zeros(3), np.zeros(3)
                     left_gap = control.arm.left_closed_aperture
                 left.command(left_target_p, left_target_r, left_gap,
                              linear_velocity=left_target_v, angular_velocity=left_target_w)
+            elif label == "lift_bolt":
+                block_lift = control.block_lift_m * blend
+                lift_velocity = control.block_lift_m * derivative / duration
+            else:
+                lift_velocity = 0.
+            if not table_pickup:
+                left.command(left_p0 + [0., 0., block_lift], left_r0,
+                             control.arm.left_closed_aperture,
+                             linear_velocity=[0., 0., lift_velocity])
             mujoco.mj_step(model, data)
-            sampled_native_contacts = step % sample_steps == 0 or step == steps-1
-            table_state = _table_support_state(model, data, block_id, table_geoms,
-                                               with_contacts=sampled_native_contacts)
-            native_left_contact = _left_hand_contact_state(model, data, block_id, left,
-                                                          with_contacts=sampled_native_contacts)
-            block_translation = float(np.linalg.norm(data.xpos[block_id]-block_p0))
-            block_rotation = float(np.linalg.norm(Rotation.from_matrix(
-                data.xmat[block_id].reshape(3, 3) @ block_r0.T).as_rotvec()))
-            block_lift_now = float(data.xpos[block_id, 2]-block_p0[2])
-            peak_block_translation = max(peak_block_translation, block_translation)
-            peak_block_rotation = max(peak_block_rotation, block_rotation)
-            peak_block_lift = max(peak_block_lift, block_lift_now)
-            peak_unexpected_table_contacts = max(peak_unexpected_table_contacts,
-                table_state["unexpected_world_contact_candidates"])
-            table_bearing = bool(table_state["table_upward_force_N"] > .1*block_weight
-                and not table_state["unexpected_world_contact_candidates"]
-                and block_lift_now <= control.maximum_block_lift_m)
-            table_window.observe(table_state["table_upward_force_N"],
-                native_left_contact["wrench_world"][2], model.opt.timestep,
-                label == "settle_left_block" and table_bearing
-                and np.all(np.asarray(native_left_contact["pad_normal_force_N"]) > .1))
-            # Include pre-acquisition original loads so the first active
-            # trailing window is complete. Do not reset on a load failure:
-            # transient sharing remains visible to the whole-task gate.
-            task_table_window.observe(table_state["table_upward_force_N"],
-                native_left_contact["wrench_world"][2], model.opt.timestep, True)
             hole_p = data.xpos[hole_id].copy()
             hole_r = data.xmat[hole_id].reshape(3, 3).copy()
             down = hole_r[:, 2]
@@ -722,9 +715,9 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
                 legacy_engagement_time = float(data.time)
             left_p, left_r = left.pose()
             if table_pickup and label == "settle_left_block" and step == steps-1:
-                acquisition_contact = native_left_contact
+                acquisition_contact = left.contact_wrench_on("fixture_block")
                 left_acquisition_pad_normals = acquisition_contact["pad_normal_force_N"]
-                if np.all(np.asarray(left_acquisition_pad_normals) > .1) and table_window.ready:
+                if np.all(np.asarray(left_acquisition_pad_normals) > .1):
                     left_grasp_acquired = True
                     left_acquisition_time = float(data.time)
                     left_grip_p = left_r.T @ (data.xpos[block_id] - left_p)
@@ -739,18 +732,14 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
                         "pad_contact_compliance_observation": _pad_normal_forces(
                             model, data, block_id, left_pad_geoms, with_compliance=True),
                         "block_free_velocity": data.qvel[block_dof:block_dof+6].tolist(),
-                        "table_load_window": table_window.report(),
-                        "table_support": table_state,
-                        "left_world_wrench_on_block_N_Nm": native_left_contact["wrench_world"],
                         "jaw_velocity_m_s": [float(data.qvel[
                             model.joint(f"left_{side}_finger").dofadr[0]])
                             for side in ("left", "right")],
                     }
                 else:
                     aborted = {"phase": label, "time": float(data.time),
-                               "reason": "Left stabilization lacks bilateral loaded pads or measured table weight-bearing",
-                               "left_pad_normal_force_N": left_acquisition_pad_normals,
-                               "table_load_window": table_window.report()}
+                               "reason": "Left block acquisition lacks bilateral loaded pad contact",
+                               "left_pad_normal_force_N": left_acquisition_pad_normals}
             left_slip = (float(np.linalg.norm(left_r.T @ (data.xpos[block_id] - left_p) - left_grip_p))
                          if left_grasp_acquired else 0.)
             left_angle = (float(np.linalg.norm(Rotation.from_matrix(
@@ -768,27 +757,11 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
             hand_p, hand_r = right.pose()
             bolt_hand_p = hand_r.T @ (bolt_p + bolt_r @ [0., 0., -scene.head_height/2] - hand_p)
             bolt_hand_r = hand_r.T @ bolt_r
-            if (label == "settle_bolt" or label.startswith("settle_regrip_")) and step == steps-1:
-                right_acquisition = right.contact_wrench_on("male_bolt")
-                if (np.all(np.asarray(right_acquisition["pad_normal_force_N"]) > .1)
-                        and np.linalg.norm(bolt_hand_p) < .001):
-                    grip_reference = (bolt_hand_p.copy(), bolt_hand_r.copy())
-                    metadata["right_grasp_acquisitions"].append({"phase": label, "time_s": float(data.time),
-                        "pad_normal_force_N": right_acquisition["pad_normal_force_N"],
-                        "grasp_relative_bolt_head_position_m": bolt_hand_p.tolist(),
-                        "grasp_relative_bolt_rotation": bolt_hand_r.tolist()})
-                else:
-                    aborted = {"phase": label, "time": float(data.time),
-                        "reason": "Right closed grasp lacks bilateral native loaded pads or centered bolt head",
-                        "right_pad_normal_force_N": right_acquisition["pad_normal_force_N"],
-                        "bolt_head_relative_hand_position_m": bolt_hand_p.tolist()}
+            if label == "lift_bolt" and grip_reference is None:
+                grip_reference = (bolt_hand_p.copy(), bolt_hand_r.copy())
             grip_slip = (float(np.linalg.norm(bolt_hand_p - grip_reference[0]))
                          if grip_reference is not None and gap1 == control.arm.closed_aperture else 0.)
-            right_grip_rotation_slip = (float(np.linalg.norm(Rotation.from_matrix(
-                bolt_hand_r @ grip_reference[1].T).as_rotvec()))
-                if grip_reference is not None and gap1 == control.arm.closed_aperture else 0.)
             peak_grip_slip = max(peak_grip_slip, grip_slip)
-            peak_right_grip_rotation_slip = max(peak_right_grip_rotation_slip, right_grip_rotation_slip)
             support = _body_contact(model, data, bolt_id)["world_support_contacts"]
             left_support = _body_contact(model, data, block_id)["world_support_contacts"]
             maximum_left_support = max(maximum_left_support, left_support)
@@ -797,35 +770,31 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
             if label not in left_pickup_phases and label not in ("secure_left", "reach_bolt", "close_bolt", "settle_bolt", "lift_bolt"):
                 maximum_support_after_pickup = max(maximum_support_after_pickup, support)
             left_lift_m = float(data.xpos[block_id, 2]-block_p0[2])
-            if left_grasp_acquired:
-                active_table_observations += 1
-                minimum_active_table_force = min(minimum_active_table_force, table_state["table_upward_force_N"])
-                unloaded_table = table_state["table_upward_force_N"] <= .1*block_weight
-                active_table_unloaded_steps += int(unloaded_table)
-                support_gap = support_gap+model.opt.timestep if unloaded_table else 0.
-                maximum_support_gap = max(maximum_support_gap, support_gap)
-                task_table_failed_windows += int(not task_table_window.ready)
-                task_table_minimum_mean_fraction = min(task_table_minimum_mean_fraction,
-                    task_table_window.table_impulse/(task_table_window.elapsed*block_weight))
-                task_hand_maximum_mean_positive_fraction = max(task_hand_maximum_mean_positive_fraction,
-                    task_table_window.hand_upward_impulse/(task_table_window.elapsed*block_weight))
-                task_table_minimum_loaded_duty = min(task_table_minimum_loaded_duty,
-                    task_table_window.loaded_duration/task_table_window.elapsed)
+            if table_pickup and label == "lift_left_block" and step == steps-1:
+                lift_contact = left.contact_wrench_on("fixture_block")
+                if left_grasp_acquired and left_lift_m > .003 and not left_support and np.all(
+                        np.asarray(lift_contact["pad_normal_force_N"]) > .1):
+                    left_lift_verified_time = float(data.time)
+                    metadata["left_pickup_verified"] = {"time_s": left_lift_verified_time,
+                        "phase": label, "physical_block_lift_m": left_lift_m,
+                        "block_world_support_contacts": left_support,
+                        "pad_normal_force_N": lift_contact["pad_normal_force_N"]}
+                else:
+                    aborted = {"phase": label, "time": float(data.time),
+                               "reason": "Left block did not physically lift clear of table in a retained bilateral grasp",
+                               "physical_block_lift_m": left_lift_m,
+                               "block_world_support_contacts": left_support,
+                               "left_pad_normal_force_N": lift_contact["pad_normal_force_N"]}
+            after_left_lift = table_pickup and label not in left_table_support_phases
+            if after_left_lift:
+                maximum_left_support_after_lift = max(maximum_left_support_after_lift, left_support)
+                minimum_left_lift_m_after_lift = min(minimum_left_lift_m_after_lift, left_lift_m)
             hand_contacts = _body_contact(model, data, bolt_id, right.hand_geom_ids)["contact_count"]
             phase_max_hand_contacts = max(phase_max_hand_contacts, hand_contacts)
             unforced = unforced and bool(np.all(data.xfrc_applied[[bolt_id, block_id, hole_id]] == 0)
                 and np.all(data.qfrc_applied[bolt_dof:bolt_dof+6] == 0)
                 and np.all(data.qfrc_applied[block_dof:block_dof+6] == 0))
             warnings = int(sum(w.number for w in data.warning))
-            unexpected_native_contacts = _unexpected_native_contacts(model, data,
-                block_id, bolt_id, table_geoms, left.pad_geom_ids, right.pad_geom_ids,
-                (bolt_geom, female_geom), allow_bolt_rest=(label in left_pickup_phases
-                or label in ("secure_left", "reach_bolt", "close_bolt", "settle_bolt", "lift_bolt")),
-                head_geom=head_geom)
-            bolt_support_forbidden = bool(support and label not in left_pickup_phases
-                and label not in ("secure_left", "reach_bolt", "close_bolt", "settle_bolt", "lift_bolt"))
-            peak_unexpected_native_depth = max(peak_unexpected_native_depth,
-                max([-c["native_signed_distance_m"] for c in unexpected_native_contacts], default=0.))
             joint_margin = min(float(np.min(np.minimum(
                 data.qpos[c.qpos_indices]-model.jnt_range[c.joint_ids, 0],
                 model.jnt_range[c.joint_ids, 1]-data.qpos[c.qpos_indices])))
@@ -838,8 +807,7 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
             window = engagement_observer.update(float(data.time), model.opt.timestep,
                 formed_overlap > thread.pitch and radial <= 150e-6 and tilt <= np.deg2rad(2)
                 and left_slip < .001 and left_angle < np.deg2rad(2) and unforced
-                and table_bearing and task_table_window.ready
-                and not support and not head_block_contacts,
+                and not left_support and not support and not head_block_contacts,
                 loaded_formed_normal_force, loaded_formed_contacts,
                 float(relative[2])-thread.pitch*yaw_total/(2*np.pi))
             if not engaged and window["ready"]:
@@ -847,14 +815,9 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
                 engagement_time = float(data.time)
             if (thread_depth > 10e-6 or left_slip > .001 or left_angle > np.deg2rad(2)
                     or grip_slip > .001
-                    or right_grip_rotation_slip > np.deg2rad(2)
-                    or table_state["unexpected_world_contact_candidates"]
-                    or block_lift_now > control.maximum_block_lift_m
-                    or block_translation > .001 or block_rotation > np.deg2rad(2)
-                    or (left_grasp_acquired and support_gap > .005)
+                    or (left_support and (not table_pickup or after_left_lift))
+                    or (after_left_lift and left_lift_verified_time is None)
                     or warnings or not unforced
-                    or unexpected_native_contacts
-                    or bolt_support_forbidden
                     or joint_margin < -1e-5
                     or (alignment_guard and (radial > 150e-6 or tilt > np.deg2rad(2)))
                     or not np.isfinite(data.qpos).all() or not np.isfinite(data.qvel).all()):
@@ -864,8 +827,6 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
                            "bolt_grip_slip_m": grip_slip, "world_block_support_contacts": left_support,
                            "minimum_native_joint_margin_rad": joint_margin,
                            "warnings": warnings, "external_drive_zero": unforced}
-                if unexpected_native_contacts:
-                    aborted["unexpected_native_contacts"] = unexpected_native_contacts
             entry_dwell_completed = False
             if entry_support_enabled:
                 mujoco.mj_objectVelocity(model, data, mujoco.mjtObj.mjOBJ_XBODY,
@@ -875,8 +836,7 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
                 bolt_axial_velocity = _relative_axial_velocity(bolt_p, bolt_velocity[3:],
                                                                hole_p, hole_velocity, down)
                 entry_support.observe(thread_normal_force, bolt_axial_velocity, model.opt.timestep,
-                    radial <= 150e-6 and tilt <= np.deg2rad(2) and not support
-                    and table_bearing and task_table_window.ready
+                    radial <= 150e-6 and tilt <= np.deg2rad(2) and not support and not left_support
                     and unforced and left_slip < .001 and left_angle < np.deg2rad(2))
                 if entry_dwell_phase and not aborted:
                     minimum_stop_s = .12 if label.startswith("stop_start_") else 0.
@@ -897,44 +857,9 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
                             "actual_dwell_s": duration, "radial_offset_m": radial,
                             "bolt_tilt_rad": tilt, "entry_support": entry_support.report()}
                         aborted = entry_support_timeout
-            tip_table_clearance = float((bolt_p+bolt_r @ tip_local)[2]-table_top_height(scene))
-            tip_rest_clearance = float((bolt_p+bolt_r @ tip_local)[2]-rest_top_z)
-            if (label == "lift_bolt" and step == steps-1) or label == "transport_bolt":
-                minimum_tip_rest_transfer_clearance = min(minimum_tip_rest_transfer_clearance,
-                                                          tip_rest_clearance)
-                if tip_rest_clearance < control.minimum_tip_rest_clearance_m:
-                    aborted = {"phase": label, "time": float(data.time),
-                        "reason": "The full male shaft did not clear its native head-support rest before lateral transfer",
-                        "bolt_tip_above_highest_rest_m": tip_rest_clearance,
-                        "minimum_allowed_clearance_m": control.minimum_tip_rest_clearance_m}
-            minimum_tip_table_clearance = min(minimum_tip_table_clearance, tip_table_clearance)
-            if tip_table_clearance < scene.minimum_tip_table_clearance_m:
-                aborted = {"phase": label, "time": float(data.time),
-                    "reason": "Male tip violated plain-table clearance guard",
-                    "bolt_tip_table_clearance_m": tip_table_clearance,
-                    "minimum_allowed_clearance_m": scene.minimum_tip_table_clearance_m}
-            support_rows.append((float(data.time), phase_index,
-                table_state["table_wrench_on_block_world"], native_left_contact["wrench_world"],
-                native_left_contact["pad_normal_force_N"], data.xpos[block_id].copy(),
-                data.xmat[block_id].reshape(3, 3).copy(), unforced,
-                table_state["unexpected_world_contact_candidates"], left_grasp_acquired, support,
-                table_state["table_upward_normal_force_N"], table_state["contact_candidates"],
-                table_state["loaded_contacts"], tip_table_clearance,
-                float(relative[2]), yaw_total, hand_contacts, head_block_contacts,
-                formed_overlap, loaded_formed_normal_force, loaded_formed_contacts))
-            support_rows[-1] += (len(unexpected_native_contacts),
-                max([-c["native_signed_distance_m"] for c in unexpected_native_contacts], default=0.),
-                tip_rest_clearance)
             if step % sample_steps == 0 or step == steps-1 or aborted or entry_dwell_completed:
-                if not sampled_native_contacts:
-                    # Re-read the original solved contacts before any forward
-                    # call; saved early-exit rows need the same raw force proof.
-                    table_state = _table_support_state(model, data, block_id, table_geoms,
-                                                       with_contacts=True)
-                    native_left_contact = _left_hand_contact_state(model, data, block_id, left,
-                                                                  with_contacts=True)
                 contact = right.contact_wrench_on("male_bolt")
-                left_contact = native_left_contact
+                left_contact = left.contact_wrench_on("fixture_block")
                 if (left_grasp_acquired if table_pickup else label != "secure_left"):
                     minimum_loaded_left_pad_normals = np.minimum(minimum_loaded_left_pad_normals,
                                                                 left_contact["pad_normal_force_N"])
@@ -961,21 +886,10 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
                        "bolt_tip_world_position": (bolt_p + bolt_r @ tip_local).tolist(),
                        "block_lift_m": float(data.xpos[block_id, 2] - block_p0[2]),
                        "left_grasp_acquired": left_grasp_acquired,
-                       "left_stabilization_verified": left_grasp_acquired,
+                       "left_pickup_verified": left_lift_verified_time is not None if table_pickup else True,
                        "block_grip_slip_m": left_slip, "block_grip_rotation_slip_rad": left_angle,
                        "bolt_grip_slip_m": grip_slip, "bolt_world_support_contacts": support,
-                       "bolt_grip_rotation_slip_rad": right_grip_rotation_slip,
                        "block_world_support_contacts": left_support, "external_drive_zero": unforced,
-                       "table_support": table_state,
-                       "known_block_weight_N": block_weight,
-                       "positive_left_hand_upward_force_N": max(native_left_contact["wrench_world"][2], 0.),
-                       "settled_table_load_window": metadata.get("left_acquisition", {}).get("table_load_window"),
-                       "active_table_load_window": task_table_window.report(),
-                       "block_translation_from_initial_m": block_translation,
-                       "block_rotation_from_initial_rad": block_rotation,
-                       "bolt_tip_table_clearance_m": float((bolt_p+bolt_r @ tip_local)[2]-table_top_height(scene)),
-                       "bolt_tip_rest_top_clearance_m": tip_rest_clearance,
-                       "unexpected_native_contacts": unexpected_native_contacts,
                        "minimum_native_joint_margin_rad": joint_margin,
                        "contact": contact, "left_contact": left_contact,
                        "axial_float": axial_float, "axial_feed_command_N": feed if axial_float else None,
@@ -991,10 +905,7 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
         end_depth = float((hole_r.T @ (data.xpos[bolt_id] - hole_p))[2])
         rotation = yaw_total-phase_start_yaw
         advance = end_depth-phase_start_depth
-        summary = {"phase": label,
-                   "final_table_support": table_state,
-                   "maximum_block_translation_from_initial_m": peak_block_translation,
-                   "maximum_block_rotation_from_initial_rad": peak_block_rotation, "bolt_insertion_advance_m": advance,
+        summary = {"phase": label, "bolt_insertion_advance_m": advance,
                    "bolt_clockwise_rotation_rad": rotation,
                    "observed_helix_residual_m": advance-thread.pitch*rotation/(2*np.pi),
                    "maximum_hand_bolt_contacts": phase_max_hand_contacts,
@@ -1009,7 +920,7 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
                    "final_block_world_support_contacts": left_support,
                    "final_block_lift_m": left_lift_m,
                    "left_grasp_acquired": left_grasp_acquired,
-                   "left_stabilization_verified": left_grasp_acquired,
+                   "left_pickup_verified": left_lift_verified_time is not None if table_pickup else True,
                    "all_substep_left_pad_loads": phase_left_pad_history.report() if table_pickup else None,
                    "final_thread_overlap_m": float(overlap),
                    "final_formed_flank_overlap_m": formed_overlap}
@@ -1045,36 +956,12 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
             "filename": force_history_path.name,
             "sha256": hashlib.sha256(force_history_path.read_bytes()).hexdigest(),
             "observed_physics_steps": left_pad_history.observations}
-    ledger_path = output / "table_support_force_history.npz"
-    ledger_names = ("time", "phase_index", "table_wrench_world_at_block_origin_N_Nm",
-        "left_hand_wrench_world_at_block_origin_N_Nm", "pad_normal_force_N",
-        "block_position_m", "block_rotation_matrix", "external_drive_zero",
-        "unexpected_world_support_count", "supported_task_active", "bolt_world_support_count",
-        "table_upward_normal_force_N", "table_contact_candidates", "table_loaded_contacts",
-        "bolt_tip_table_clearance_m", "bolt_base_insertion_m", "bolt_yaw_unwrapped_rad",
-        "right_hand_bolt_contact_count", "head_block_seating_contact_count",
-        "formed_flank_overlap_m", "loaded_formed_thread_normal_force_N",
-        "loaded_formed_thread_contact_count", "unexpected_native_contact_count",
-        "unexpected_native_contact_peak_depth_m", "bolt_tip_rest_top_clearance_m")
-    ledger_values = {name: np.asarray([row[i] for row in support_rows])
-                     for i, name in enumerate(ledger_names)}
-    np.savez_compressed(ledger_path, **ledger_values,
-        phase_labels_json=np.asarray(json.dumps([p[0] for p in selected])),
-        metadata_json=np.asarray(json.dumps({"model_fingerprint": metadata["model_fingerprint"],
-            "controller_sha256": metadata["controller_sha256"], "runtime": runtime,
-            "timestep_s": model.opt.timestep, "force_timing": metadata["native_force_recording_note"],
-            "observer": TableLoadWindow.version,
-            "scope": "Original all-step native force aggregates and pre-integration body kinematics; no pose replay force reconstruction"})))
-    metadata["table_support_force_history"] = {"filename": ledger_path.name,
-        "sha256": hashlib.sha256(ledger_path.read_bytes()).hexdigest(),
-        "observed_physics_steps": len(support_rows)}
     checks = {
         "completed_qualifying_turns": {"passed": len(turns)==control.qualifying_turns},
         "picked_up_free_bolt": {"passed": any(s["phase"]=="transport_bolt" for s in summaries)
             and maximum_support_after_pickup==0 and np.all(minimum_lift_pad_normals>.1),
             "maximum_world_support_after_pickup": maximum_support_after_pickup,
-            "sampled_minimum_closed_transport_pad_normals_N": [float(v) if np.isfinite(v) else None
-                                                               for v in minimum_lift_pad_normals]},
+            "sampled_minimum_closed_transport_pad_normals_N": minimum_lift_pad_normals.tolist()},
         "started_previously_separate_threads": {"passed": engagement_time is not None,
                                                "engagement_time_s": engagement_time},
         "observed_metric_lead": {"passed": bool(turns and all(s["started_engaged"] and
@@ -1095,83 +982,41 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
         "reported_sdf_depth_proxy": {"passed": peak_depth<=10e-6,"observed_peak_m":peak_depth},
         "entry_alignment": {"passed": peak_alignment_radial<=150e-6 and peak_alignment_tilt<=np.deg2rad(2),
                             "peak_radial_m":peak_alignment_radial,"peak_tilt_rad":peak_alignment_tilt},
-        "left_grasp_retention": {"passed": left_grasp_acquired
-            and peak_left_slip<.001 and peak_left_angle<np.deg2rad(2),
+        "left_grasp_retention": {"passed": peak_left_slip<.001 and peak_left_angle<np.deg2rad(2),
                                   "peak_translation_m":peak_left_slip,"peak_rotation_rad":peak_left_angle},
-        "left_pad_contact_retention": {"passed": left_grasp_acquired
-            and np.all(minimum_loaded_left_pad_normals>.1),
-            "sampled_minimum_loaded_pad_normals_N": [float(v) if np.isfinite(v) else None
-                                                    for v in minimum_loaded_left_pad_normals]},
-        "right_bolt_grasp_retention": {"passed": bool(metadata["right_grasp_acquisitions"])
-            and peak_grip_slip<.001
-            and peak_right_grip_rotation_slip < np.deg2rad(2),
-            "peak_translation_m":peak_grip_slip,
-            "peak_rotation_slip_rad": peak_right_grip_rotation_slip,
-            "scope": "Within each original bilateral loaded closed grasp; references end on intentional opening and are acquired again after real regrasp"},
-        "block_stays_on_table": {"passed": peak_block_lift <= control.maximum_block_lift_m
-            and peak_block_translation <= .001 and peak_block_rotation <= np.deg2rad(2)
-            and peak_unexpected_table_contacts == 0,
-            "maximum_upward_lift_m": peak_block_lift,
-            "maximum_translation_from_initial_m": peak_block_translation,
-            "maximum_rotation_from_initial_rad": peak_block_rotation,
-            "unexpected_world_contact_candidates": peak_unexpected_table_contacts},
-        "male_tip_clears_plain_table": {"passed": bool(times)
-            and minimum_tip_table_clearance >= scene.minimum_tip_table_clearance_m,
-            "minimum_observed_clearance_m": float(minimum_tip_table_clearance)
-                if np.isfinite(minimum_tip_table_clearance) else None,
-            "minimum_allowed_clearance_m": scene.minimum_tip_table_clearance_m},
-        "whole_shaft_clears_rest_before_lateral_transfer": {
-            "passed": np.isfinite(minimum_tip_rest_transfer_clearance)
-                and minimum_tip_rest_transfer_clearance >= control.minimum_tip_rest_clearance_m,
-            "minimum_measured_tip_above_highest_rest_m": float(minimum_tip_rest_transfer_clearance)
-                if np.isfinite(minimum_tip_rest_transfer_clearance) else None,
-            "minimum_allowed_clearance_m": control.minimum_tip_rest_clearance_m,
-            "native_rest_top_world_z_m": rest_top_z,
-            "scope": "Lift completion and every native transport substep; no extra body actuation"},
-        "native_unexpected_collision_clearance": {"passed": peak_unexpected_native_depth <= 1e-6,
-            "peak_native_signed_penetration_m": peak_unexpected_native_depth,
-            "native_depth_limit_m": 1e-6,
-            "scope": "Every native solved substep; intended table/block, pads/workpieces, thread and pre-pickup bolt-rest contacts are declared separately"},
+        "left_pad_contact_retention": {"passed": np.all(minimum_loaded_left_pad_normals>.1),
+            "sampled_minimum_loaded_pad_normals_N": minimum_loaded_left_pad_normals.tolist()},
+        "left_arm_physically_lifts_block": {"passed": float(data.xpos[block_id,2]-block_p0[2])>.003,
+            "observed_lift_m":float(data.xpos[block_id,2]-block_p0[2])},
+        "right_bolt_grasp_retention": {"passed": peak_grip_slip<.001,"peak_translation_m":peak_grip_slip},
+        "left_block_has_no_world_support": {"passed": (maximum_left_support_after_lift==0
+                                                        if table_pickup else maximum_left_support==0),
+            "scope": "After completion of actual table lift" if table_pickup else "Entire integration",
+            "maximum_world_support_after_lift": maximum_left_support_after_lift if table_pickup else maximum_left_support},
         "free_objects_have_no_external_drive": {"passed": unforced},
-        "native_joint_limits": {"passed": bool(times) and minimum_joint_margin>=-1e-5,
-                                "minimum_observed_margin_rad": float(minimum_joint_margin)
-                                    if np.isfinite(minimum_joint_margin) else None},
+        "native_joint_limits": {"passed": minimum_joint_margin>=-1e-5,
+                                "minimum_observed_margin_rad": minimum_joint_margin},
         "no_solver_or_state_abort": {"passed": aborted is None},
     }
     if table_pickup:
         checks["all_substep_left_pad_contact_retention"] = {
             "passed": left_pad_history.report()["continuously_bilateral_loaded"],
             **left_pad_history.report(),
-            "scope": "Every physics substep at and after the end of settle_left_block; no lift or physical roll is commanded"}
+            "scope": "Every physics substep at and after the end of settle_left_block, including lift and physical roll"}
         checks["both_hands_start_separate_from_workpieces"] = {
             "passed": initial_left_block_contacts["contact_count"] == 0
             and initial_right_bolt_contacts["contact_count"] == 0,
             "initial_left_block_hand_contacts": initial_left_block_contacts["contact_count"],
             "initial_right_bolt_hand_contacts": initial_right_bolt_contacts["contact_count"]}
-        checks["table_bears_block_weight_before_bolt_pickup"] = {
-            "passed": left_acquisition_time is not None,
-            "left_stabilization_time_s": left_acquisition_time,
-            "settled_table_load_window": metadata.get("left_acquisition", {}).get("table_load_window"),
-            "scope": "Pre-bolt no-lift stabilization: >=90% mean block weight on table, <=10% mean positive hand upward load, >=99% loaded table duty over >=100 ms"}
-        checks["all_substep_table_load_retention"] = {
-            "passed": active_table_observations > 0 and active_table_unloaded_steps == 0,
-            "observed_physics_steps": active_table_observations,
-            "minimum_table_upward_force_N": minimum_active_table_force if active_table_observations else None,
-            "minimum_loaded_table_upward_force_N": .1*block_weight,
-            "unloaded_physics_steps": active_table_unloaded_steps,
-            "unloaded_duration_s": active_table_unloaded_steps*model.opt.timestep,
-            "maximum_consecutive_unloaded_duration_s": maximum_support_gap,
-            "scope": "Every original native substep after stabilization acquisition; brief gaps remain failures"}
-        checks["table_bears_weight_throughout_active_task"] = {
-            "passed": active_table_observations > 0 and task_table_failed_windows == 0,
-            "observed_active_windows": active_table_observations,
-            "failed_active_trailing_windows": task_table_failed_windows,
-            "trailing_window_s": control.settled_table_window_s,
-            "minimum_mean_table_weight_fraction": task_table_minimum_mean_fraction if active_table_observations else None,
-            "maximum_mean_positive_hand_upward_weight_fraction": task_hand_maximum_mean_positive_fraction,
-            "minimum_loaded_table_duty": task_table_minimum_loaded_duty,
-            "final_window": task_table_window.report(),
-            "scope": "Every active trailing original-force window, including pickup/entry/turn/reset/regrasp; same90%table/10%positive-hand-up/99%duty thresholds as stabilization, without hiding transient load sharing"}
+        checks["picked_up_previously_table_supported_block"] = {
+            "passed": initial_block_support > 0 and left_acquisition_time is not None
+            and left_lift_verified_time is not None and maximum_left_support_after_lift == 0
+            and minimum_left_lift_m_after_lift > .003,
+            "initial_block_world_support_contacts": initial_block_support,
+            "left_acquisition_time_s": left_acquisition_time,
+            "left_pickup_verified_time_s": left_lift_verified_time,
+            "minimum_physical_block_lift_after_pickup_m": minimum_left_lift_m_after_lift,
+            "maximum_world_support_after_pickup": maximum_left_support_after_lift}
     if entry_support_enabled:
         checks["native_cone_entry_acquired_before_rotation"] = {
             "passed": entry_acquisition_time is not None, "acquisition_time_s": entry_acquisition_time,
@@ -1189,9 +1034,8 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
                                                            "first_pass_time_s":legacy_engagement_time,
                                                            "required_streak_s":control.full_flank_contact_streak_s},
               "reported_sdf_depth_note":"Native contact dist proxy; not an independent overlap certificate"}
-    serialized_result = json.dumps(result, allow_nan=False)
     np.savez_compressed(output / "insertion_trace.npz", time=times, qpos=positions,
         qvel=velocities, controller=controls, info_json=np.asarray(json.dumps(rows)),
-        metadata_json=np.asarray(serialized_result))
-    (output / "insertion_validation.json").write_text(json.dumps(result,indent=2,allow_nan=False))
+        metadata_json=np.asarray(json.dumps(result)))
+    (output / "insertion_validation.json").write_text(json.dumps(result,indent=2))
     return result

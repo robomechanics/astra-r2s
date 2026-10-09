@@ -10,8 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from audit_m8_supported_trace import (load_statistics, settled_baseline_passes,
                                      transform_contact_wrench, recorded_contact_wrench,
                                      rolling_load_shares, all_step_bolt_measurements,
-                                     strict_original_checks, rotation_changes,
-                                     saved_grasp_retention)
+                                     strict_original_checks, rotation_changes)
 from scipy.spatial.transform import Rotation
 
 
@@ -161,48 +160,3 @@ def test_rotated_initial_block_is_not_mislabeled_as_tabletop_motion():
     later = Rotation.from_euler("x", .01).as_matrix()@initial
     result = rotation_changes(np.array([initial, later]), initial)
     np.testing.assert_allclose(result, [0., .01], atol=1e-12)
-
-
-def test_isolated_unloaded_endpoint_preserves_original_rolling_gate_failure():
-    from yam_twin.m8_supported_simulation import TableLoadWindow
-    dt, weight, count, acquisition = .00005, 1., 5000, 2500
-    table, hand = np.ones(count), np.zeros(count)
-    table[3500] = 0.
-    active = np.arange(count) >= acquisition
-    original = TableLoadWindow(.100, weight)
-    source_failures, duration = 0, None
-    for index in range(count):
-        original.observe(table[index], hand[index], dt, True)
-        if active[index]:
-            source_failures += int(not original.ready)
-        duration = original.report()["observed_window_s"]
-    audited = rolling_load_shares(table, hand, active, dt, weight,
-                                       duration_s=duration)
-    assert audited["minimum_mean_table_weight_fraction"] >= .90
-    assert audited["minimum_loaded_table_duty"] >= .99
-    assert audited["maximum_mean_positive_hand_upward_weight_fraction"] <= .10
-    assert source_failures == audited["failed_windows"] == 1
-    assert audited["unloaded_final_tick_windows"] == 1
-    assert not audited["passed"]
-    # The strict all-step criterion independently retains the same real gap.
-    strict = load_statistics(table[active], hand[active],
-        np.ones((np.count_nonzero(active), 2)), dt, weight)
-    assert not strict["continuous_table_load"]
-    assert strict["table_unloaded_steps"] == 1
-
-
-def test_qualified_closed_stops_detect_grasp_slip_and_missing_measured_reference():
-    rows = [{"phase": "settle_bolt", "time_s": 1.}, {"phase": "stop_1", "time_s": 1.12}]
-    records = [{"contact": {"pad_normal_force_N": [16., 16.]}}, {}]
-    poses = [(np.zeros(3), np.eye(3)),
-             (np.array([.0015, 0., 0.]), Rotation.from_euler("z", .05).as_matrix())]
-    metadata = {"right_grasp_acquisitions": [{"phase": "settle_bolt", "time_s": 1.,
-        "pad_normal_force_N": [16., 16.], "grasp_relative_bolt_head_position_m": [0., 0., 0.]}]}
-    measured = saved_grasp_retention(rows, records, poses, metadata)
-    assert not measured["closed_manipulation_without_measured_grasp_reference"]
-    assert measured["maximum_independent_post_grasp_translation_slip_m"] > .001
-    assert measured["maximum_independent_post_grasp_rotation_slip_rad"] > np.deg2rad(2)
-    assert rows[1]["independent_post_grasp_translation_slip_m"] == pytest.approx(.0015)
-    missing = saved_grasp_retention([{"phase": "stop_2", "time_s": 2.}], [{}],
-        [(np.zeros(3), np.eye(3))], {"right_grasp_acquisitions": []})
-    assert missing["closed_manipulation_without_measured_grasp_reference"]

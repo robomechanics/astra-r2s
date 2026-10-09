@@ -30,8 +30,8 @@ with peak axial drift **0.178 / 0.424 µm**. Independent saved-pose audits
 check all four resets. The head remains unseated; full tightening/preload,
 hardware calibration and broad policy-training fidelity remain unqualified.
 
-**210 current software tests pass** after the additive table-supported scene,
-controller and auditor. The first-demo publication retains its separate
+**213 current software tests pass** after the additive table-supported scene,
+controller and auditor, higher bolt-transfer path and audit coverage checks. The first-demo publication retains its separate
 [181-test proof](media/m8_table_pickup/software_tests.json), and the completed
 native trial retains its historical
 [176-test source proof](media/m8_table_pickup/full/software_tests.json).
@@ -61,7 +61,7 @@ upward left-hand load. It has not attempted bolt pickup or threading;
 only one active tick follows stabilization acquisition. See the
 [separate guide and run/replay instructions](docs/m8_table_supported.md),
 [independent pilot audit](media/m8_table_supported/progress_stabilized_audit)
-and [current 210-test source proof](media/m8_table_supported/software_proof).
+and [current 213-test source proof](media/m8_table_supported/software_proof_213).
 
 ## Earlier left-touching block rollout
 
@@ -160,7 +160,7 @@ scripts/run_m8.sh -m thread_lab.load_benchmark --help
 ```
 
 `thread_lab.validate` retains strict physics gates and can exit with failure.
-The current source passes **210 software tests**. Software tests, numerical geometry checks,
+The current source passes **213 software tests**. Software tests, numerical geometry checks,
 and physics acceptance answer different questions.
 [Setup and engine provenance](docs/m8_setup.md) explain the separate runtimes.
 

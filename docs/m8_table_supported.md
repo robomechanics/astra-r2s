@@ -78,9 +78,10 @@ because the complete sequence was not executed. Its one active tick does
 not establish sustained support.
 
 The pilot's recorded source archive remains authoritative: the supported
-controller changed afterward. The current additive scene/controller/auditor
-source is frozen and passes **210 software tests** in **80.07 s** wrapper
-time, with unchanged source hashes. The
+controller changed afterward. The initial additive scene/controller/auditor
+revision `4ea910e0854bb47049484eb24f1afe5037ce0662` passes
+**210 software tests** in **80.07 s** wrapper time, with unchanged source
+hashes. The
 [software result](../media/m8_table_supported/software_proof/software_tests.json),
 [log](../media/m8_table_supported/software_proof/software_tests.log) and
 [manifest/verifier](../media/m8_table_supported/software_proof/manifest.json)
@@ -90,6 +91,27 @@ first native trial's 176-test proof remain separate and unchanged.
 No complete table-supported bolt/thread rollout has been qualified yet.
 Software tests and a stabilization clip cannot stand in for successful
 threading or hardware fidelity.
+
+The first full attempt, `full_v1`, used that exact producer revision and
+aborted during `transport_bolt` at **3.571 s**, before thread starting. The
+[closed failed trial and actual lift screenshot](../media/m8_table_supported/failures/transport_rest_recontact)
+preserve its original report, raw states/forces and independent audits.
+Its original `partial=false` only means the full phase list was selected;
+the non-null abort and failed result remain. A revised bolt-transport path
+and a fresh full attempt are being checked separately. Their source proof
+and producer revision must be recorded independently.
+
+The corrected supported-only path uses 35 mm tip clearance above the block
+top, putting its nominal bolt tip at 51 mm versus the native rest tops at
+36 mm. A measured 10 mm minimum full-shaft clearance is guarded at lift
+completion and every transport timestep. Lateral transfer holds this height;
+only `align_over_hole` then descends. The current corrected sources pass
+**213 tests** in 79.24 s with unchanged source hashes, recorded in the
+[separate proof](../media/m8_table_supported/software_proof_213). This remains
+a software and static-path check until a new physical rollout closes. The
+prior 210-test proof stays bound to its initial producer. Post-closure audit
+corrections cover unloaded window endpoints and qualified closed hold phases;
+they do not alter the original failed trajectory.
 
 ## Scene and physical support
 
@@ -176,8 +198,31 @@ points are `yam_twin/m8_supported_scene.py`,
 Explicit output paths below keep this work separate from the first task;
 the current CLI's implicit output is `outputs/m8_supported/demo`.
 
+To check the exact initial full-attempt producer without switching a shared
+checkout, clone into an unused directory and pin the full commit SHA:
+
 ```bash
-cd /workspace/astra-r2s
+git clone https://github.com/robomechanics/astra-r2s.git \
+  /workspace/astra-r2s-supported-4ea910e
+git -C /workspace/astra-r2s-supported-4ea910e switch --detach \
+  4ea910e0854bb47049484eb24f1afe5037ce0662
+cd /workspace/astra-r2s-supported-4ea910e
+scripts/run_m8.sh -m pytest -q
+```
+
+At that revision expect 210 tests. Reuse the verified matched runtime when
+it is already installed; otherwise run `scripts/setup.sh` from this pinned
+checkout first. Its launcher changes into its own checkout, so module
+commands use the pinned source. This revision reproduces the failed first
+full attempt's source, not a later successful trajectory. It also contains
+the exact archived **earlier** stabilization pilot, whose whole controller
+hash is `189009b40d959325873bc6d215f9031ce9546cf56e01fcfd6b11ada32ef99e6d`.
+
+Run the following commands from the checkout you chose. Remain in the pinned
+clone when examining that producer; the ordinary cloud checkout is
+`/workspace/astra-r2s` when working with newer source.
+
+```bash
 scripts/run_m8.sh -m yam_twin.m8_supported_demo --help
 scripts/run_m8.sh scripts/audit_m8_supported_trace.py --help
 scripts/run_m8.sh -m yam_twin.m8_supported_demo \
@@ -189,7 +234,8 @@ The export compiles the scene and writes `scene.xml` and
 result. This CLI has no `--preview` flag. Use an actual recorded pilot for
 progress pictures.
 
-To reproduce the four-phase stabilization pilot in a **new** output directory:
+To run a **fresh** four-phase stabilization diagnostic on the source in the
+active checkout, use a new output directory:
 
 ```bash
 scripts/run_m8.sh -m yam_twin.m8_supported_demo \
@@ -201,8 +247,21 @@ The four phases are `settle_table`, `reach_left_block`, `close_left_block` and
 `settle_left_block`. This is intentionally a partial task and contains no
 bolt pickup or thread turn. Read its original validation; the CLI can exit
 1 for absent full-task checks even when stabilization itself succeeds.
+This is not byte-exact reproduction of the published earlier pilot: the
+controller changed afterward. Record the new source IDs and actual result.
+For the preserved pilot itself, replay the archive without integrating:
 
-With the current verified sources frozen, a fresh full attempt uses:
+```bash
+scripts/run_m8.sh -m yam_twin.m8_supported_demo \
+  --replay media/m8_table_supported/progress_stabilized/trace.npz \
+  --output outputs/m8_table_supported/archived_stabilization_replay \
+  --fps 12 --slow-motion 1
+```
+
+A fresh full attempt uses the following explicit parameters. Pin and freeze
+its producer source first; running them at `4ea910e` recreates the initial
+failed transport configuration, while a revised path needs its own source
+revision and software proof:
 
 ```bash
 scripts/run_m8.sh -m yam_twin.m8_supported_demo \

@@ -40,10 +40,6 @@ class SupportedControlConfig(InsertionControlConfig):
     maximum_entry_dwell_s: float | None = 3.
     starting_angular_speed_rad_s: float | None = 1.
     maximum_starting_strokes: int = 5
-    # A low bore must not leave the shaft between the head-support pins
-    # while the arm begins its lateral transfer.
-    transport_tip_clearance_m: float = .035
-    minimum_tip_rest_clearance_m: float = .010
     settled_table_window_s: float = .100
     minimum_table_weight_fraction: float = .90
     maximum_hand_upward_weight_fraction: float = .10
@@ -54,8 +50,7 @@ class SupportedControlConfig(InsertionControlConfig):
         super().__post_init__()
         values = (self.settled_table_window_s, self.minimum_table_weight_fraction,
                   self.maximum_hand_upward_weight_fraction,
-                  self.minimum_loaded_table_duty, self.maximum_block_lift_m,
-                  self.minimum_tip_rest_clearance_m)
+                  self.minimum_loaded_table_duty, self.maximum_block_lift_m)
         if not np.isfinite(values).all() or min(values) <= 0:
             raise ValueError("Supported-block thresholds must be finite and positive")
         if any(v > 1. for v in (self.minimum_table_weight_fraction,
@@ -282,31 +277,6 @@ def _unexpected_native_contacts(model, data, block_id, bolt_id, table_geoms,
     return failures
 
 
-def _declared_bolt_rest_top(model, data):
-    """World-Z upper bound of the actual fixed rest boxes and cylinders."""
-    tops = {}
-    for geom in range(model.ngeom):
-        name = model.geom(geom).name
-        if not name.startswith("bolt_rest_"):
-            continue
-        if int(model.body_weldid[int(model.geom_bodyid[geom])]) != 0:
-            raise ValueError("The declared bolt rest must be fixed")
-        r = data.geom_xmat[geom].reshape(3, 3)
-        size = model.geom_size[geom]
-        kind = int(model.geom_type[geom])
-        if kind == mujoco.mjtGeom.mjGEOM_BOX:
-            extent = float(np.dot(np.abs(r[2]), size))
-        elif kind == mujoco.mjtGeom.mjGEOM_CYLINDER:
-            extent = float(abs(r[2, 2])*size[1]+size[0]*np.sqrt(max(0., 1.-r[2, 2]**2)))
-        else:
-            raise ValueError("Unsupported native bolt-rest geometry")
-        tops[name] = float(data.geom_xpos[geom, 2]+extent)
-    if not tops:
-        raise ValueError("Native scene lacks its declared bolt rest")
-    return {"maximum_world_z_m": max(tops.values()), "geom_world_top_z_m": tops,
-            "method": "Exact world-Z bounds of declared native fixed box/cylinder collision geometry"}
-
-
 def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
                        control_config=None, maximum_phases=None):
     """Acquire the side bolt, stabilize the block, and turn with native motors."""
@@ -367,11 +337,6 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
     pickup_lift_goal[2] = (held_hole_p[2]
                            + female_half_height +
                            shaft_and_half_head + control.transport_tip_clearance_m)
-    rest_top = _declared_bolt_rest_top(model, data)
-    rest_top_z = rest_top["maximum_world_z_m"]
-    planned_tip_clearance = pickup_lift_goal[2]-shaft_and_half_head-rest_top_z
-    if planned_tip_clearance < control.minimum_tip_rest_clearance_m:
-        raise ValueError("Pickup/transfer waypoint does not clear the whole shaft above its native rest")
     tip_local = np.array([0., 0., thread.bolt_length])
     phases = supported_phases(control)
     selected = phases if maximum_phases is None else phases[:maximum_phases]
@@ -400,18 +365,11 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
             InsertionControlConfig, insertion_phases, SupportedControlConfig, TableLoadWindow,
             supported_phases, initialize_supported_pose, _table_support_state,
             _left_hand_contact_state, _unexpected_native_contacts,
-            _declared_bolt_rest_top,
             _body_contact, formed_flank_overlap, run_supported_demo,
             fully_formed_flank_interval, contact_is_on_full_flanks, thread_end_bounds,
             LoadedFlankWindow,
             YamCartesianController, YamM8ControlConfig, smooth_profile)).encode()).hexdigest(),
         "known_bolt_mass_kg": mass,
-        "pickup_transport_clearance": {"native_rest": rest_top,
-            "commanded_lift_grasp_position_m": pickup_lift_goal.tolist(),
-            "planned_bolt_tip_world_z_m": float(pickup_lift_goal[2]-shaft_and_half_head),
-            "planned_tip_above_highest_rest_m": float(planned_tip_clearance),
-            "minimum_measured_tip_above_rest_during_transfer_m": control.minimum_tip_rest_clearance_m,
-            "scope": "Lift the whole shaft above the declared head-support rest before lateral transfer; descend over the bore only after transfer"},
         "full_flank_overlap_threshold_m": full_flank_overlap_m,
         "male_tip_chamfer_m": male_tip_chamfer_m,
         "female_full_profile_chamfer_bound_m": female_full_profile_chamfer_m,
@@ -513,7 +471,6 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
     block_r0 = data.xmat[block_id].reshape(3, 3).copy()
     peak_block_translation = peak_block_rotation = peak_block_lift = 0.
     minimum_tip_table_clearance = np.inf
-    minimum_tip_rest_transfer_clearance = np.inf
     support_gap = maximum_support_gap = 0.
     minimum_active_table_force = np.inf
     active_table_unloaded_steps = active_table_observations = 0
@@ -590,8 +547,6 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
             elif label == "transport_bolt":
                 goal = hole_p - down * (female_half_height + shaft_and_half_head +
                                        control.transport_tip_clearance_m)
-                # Lower only in align_over_hole, after lateral transfer.
-                goal[2] = max(float(goal[2]), float(pickup_lift_goal[2]))
             elif label == "align_over_hole":
                 goal = hole_p - down * (female_half_height + shaft_and_half_head +
                                        control.entry_tip_clearance_m)
@@ -898,15 +853,6 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
                             "bolt_tilt_rad": tilt, "entry_support": entry_support.report()}
                         aborted = entry_support_timeout
             tip_table_clearance = float((bolt_p+bolt_r @ tip_local)[2]-table_top_height(scene))
-            tip_rest_clearance = float((bolt_p+bolt_r @ tip_local)[2]-rest_top_z)
-            if (label == "lift_bolt" and step == steps-1) or label == "transport_bolt":
-                minimum_tip_rest_transfer_clearance = min(minimum_tip_rest_transfer_clearance,
-                                                          tip_rest_clearance)
-                if tip_rest_clearance < control.minimum_tip_rest_clearance_m:
-                    aborted = {"phase": label, "time": float(data.time),
-                        "reason": "The full male shaft did not clear its native head-support rest before lateral transfer",
-                        "bolt_tip_above_highest_rest_m": tip_rest_clearance,
-                        "minimum_allowed_clearance_m": control.minimum_tip_rest_clearance_m}
             minimum_tip_table_clearance = min(minimum_tip_table_clearance, tip_table_clearance)
             if tip_table_clearance < scene.minimum_tip_table_clearance_m:
                 aborted = {"phase": label, "time": float(data.time),
@@ -923,8 +869,7 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
                 float(relative[2]), yaw_total, hand_contacts, head_block_contacts,
                 formed_overlap, loaded_formed_normal_force, loaded_formed_contacts))
             support_rows[-1] += (len(unexpected_native_contacts),
-                max([-c["native_signed_distance_m"] for c in unexpected_native_contacts], default=0.),
-                tip_rest_clearance)
+                max([-c["native_signed_distance_m"] for c in unexpected_native_contacts], default=0.))
             if step % sample_steps == 0 or step == steps-1 or aborted or entry_dwell_completed:
                 if not sampled_native_contacts:
                     # Re-read the original solved contacts before any forward
@@ -974,7 +919,6 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
                        "block_translation_from_initial_m": block_translation,
                        "block_rotation_from_initial_rad": block_rotation,
                        "bolt_tip_table_clearance_m": float((bolt_p+bolt_r @ tip_local)[2]-table_top_height(scene)),
-                       "bolt_tip_rest_top_clearance_m": tip_rest_clearance,
                        "unexpected_native_contacts": unexpected_native_contacts,
                        "minimum_native_joint_margin_rad": joint_margin,
                        "contact": contact, "left_contact": left_contact,
@@ -1055,7 +999,7 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
         "right_hand_bolt_contact_count", "head_block_seating_contact_count",
         "formed_flank_overlap_m", "loaded_formed_thread_normal_force_N",
         "loaded_formed_thread_contact_count", "unexpected_native_contact_count",
-        "unexpected_native_contact_peak_depth_m", "bolt_tip_rest_top_clearance_m")
+        "unexpected_native_contact_peak_depth_m")
     ledger_values = {name: np.asarray([row[i] for row in support_rows])
                      for i, name in enumerate(ledger_names)}
     np.savez_compressed(ledger_path, **ledger_values,
@@ -1120,14 +1064,6 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
             "minimum_observed_clearance_m": float(minimum_tip_table_clearance)
                 if np.isfinite(minimum_tip_table_clearance) else None,
             "minimum_allowed_clearance_m": scene.minimum_tip_table_clearance_m},
-        "whole_shaft_clears_rest_before_lateral_transfer": {
-            "passed": np.isfinite(minimum_tip_rest_transfer_clearance)
-                and minimum_tip_rest_transfer_clearance >= control.minimum_tip_rest_clearance_m,
-            "minimum_measured_tip_above_highest_rest_m": float(minimum_tip_rest_transfer_clearance)
-                if np.isfinite(minimum_tip_rest_transfer_clearance) else None,
-            "minimum_allowed_clearance_m": control.minimum_tip_rest_clearance_m,
-            "native_rest_top_world_z_m": rest_top_z,
-            "scope": "Lift completion and every native transport substep; no extra body actuation"},
         "native_unexpected_collision_clearance": {"passed": peak_unexpected_native_depth <= 1e-6,
             "peak_native_signed_penetration_m": peak_unexpected_native_depth,
             "native_depth_limit_m": 1e-6,

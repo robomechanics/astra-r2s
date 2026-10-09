@@ -1,6 +1,7 @@
 """Native load proofs and free-body preservation for the supported task."""
 import hashlib
 import json
+from dataclasses import replace
 
 import mujoco
 import numpy as np
@@ -9,6 +10,7 @@ import pytest
 from yam_twin.m8_supported_simulation import (
     SupportedControlConfig, TableLoadWindow, initialize_supported_pose,
     supported_phases, _table_support_state, _unexpected_native_contacts,
+    _declared_bolt_rest_top,
 )
 
 
@@ -140,3 +142,31 @@ def test_snapshot_binds_all_reused_controller_and_scene_sources(tmp_path):
         assert f"recorded_sources/yam_twin/{name}" in dependencies
     for path, digest in dependencies.items():
         assert hashlib.sha256((tmp_path/path).read_bytes()).hexdigest() == digest
+
+
+def test_transfer_waypoint_clears_shaft_not_only_head_above_native_rest(tmp_path):
+    from yam_twin.m8_supported_scene import supported_config, build_model
+    from yam_twin.m8_supported_simulation import run_supported_demo
+    scene = supported_config()
+    model = build_model(scene)
+    data = mujoco.MjData(model)
+    mujoco.mj_forward(model, data)
+    rest = _declared_bolt_rest_top(model, data)
+    # Derive the support top from compiled collision geometry, not the config
+    # constant. The earlier bore-relative waypoint cleared the head while its
+    # shaft still intersected the upright support pins during XY transfer.
+    actual_pin_tops = [float(data.geom_xpos[model.geom(f"bolt_rest_pin_{k}").id, 2]
+        +model.geom(f"bolt_rest_pin_{k}").size[1]) for k in range(3)]
+    assert rest["maximum_world_z_m"] == pytest.approx(max(actual_pin_tops))
+    old = replace(SupportedControlConfig(), transport_tip_clearance_m=.015)
+    with pytest.raises(ValueError, match="whole shaft"):
+        run_supported_demo(tmp_path/"unsafe", scene_config=scene, control_config=old,
+                           maximum_phases=0)
+    report = run_supported_demo(tmp_path/"safe", scene_config=scene, maximum_phases=0)
+    clearance = report["pickup_transport_clearance"]
+    commanded_tip = (clearance["commanded_lift_grasp_position_m"][2]
+                     -scene.head_height/2-scene.thread.bolt_length)
+    assert commanded_tip-rest["maximum_world_z_m"] > .010
+    assert clearance["planned_tip_above_highest_rest_m"] == pytest.approx(
+        commanded_tip-rest["maximum_world_z_m"])
+    assert clearance["planned_bolt_tip_world_z_m"] == pytest.approx(commanded_tip)
