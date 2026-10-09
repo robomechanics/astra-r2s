@@ -1,0 +1,8 @@
+{
+  "scope": "The independent recipe smoke copied and verified the initial prepublication64-entry v3 package. Final publication adds guarded replay restoration/dependency comparisons and separate smoke evidence; original native inputs, controller/model and media bytes stay unchanged. Final publication ledger is validated separately and is not retroactively the smoke copied ledger.",
+  "reviewed_prepublication_v3_checksum_entries": 64,
+  "reviewed_prepublication_v3_ledger_sha256": "ffae83a77e9dc7faa8887c862daed11c05b87fc9ec94ab74c4bc6db055352424",
+  "reviewed_prepublication_v3_readme_sha256": "d276cba896edfe298182bba5b6b63ef90a5791087d571bcc2dda5b3d112fb10b",
+  "original_native_trial_trace_sha256": "8148b80ef7db5bbba06afa08096f54f6d02b3153847c4185cf630a712f320d1e",
+  "original_native_trial_harness_sha256": "b735c16a0b60136e1593501286c13d215ad0f75bb27af89ad0befda423612629"
+}

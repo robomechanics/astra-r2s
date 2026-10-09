@@ -1,0 +1,59 @@
+{
+  "scope": "Closed privileged native-pose visual-servo cold entry diagnostic. All25 original diagnostic guards held. Actual partial helical load and21.6um conservative complete-ring geometry do not qualify capture/full-pitch/unsupported reset or a continuous full trajectory. Original native contact forces remain independent of post-qpos force reconstruction.",
+  "canonical_parent_code_commit": "b2b13ff39cd47c48afd19b38f83e9a405c9d6e32",
+  "harness_source_sha256": "b735c16a0b60136e1593501286c13d215ad0f75bb27af89ad0befda423612629",
+  "canonical_model_reference_parent_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+  "actual_cold_state_parent_sha256": "0d87e71cc5f85a1210d5b6e3fc43484b6f48d0ecc08ae1e3f941d74acbc5ac3c",
+  "original_files": {
+    "declaration.json": "01685027722d18196ed95b88e75edd61ffbd96b3dcd361c630ad4b58c0657a1a",
+    "report.json": "9c5d8dc33e4e510fe6d7f64f4f3c320e028cbb792eddddd6d633aa557d69ca6c",
+    "diagnostic_source.py": "b735c16a0b60136e1593501286c13d215ad0f75bb27af89ad0befda423612629",
+    "observer_source.py": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+    "original_native_force_ledger.npz": "d773bf3247fbcfb4c97cd0d56370b26c87e5ad609c4e817cd49a3b2879396d67",
+    "checkpoint_trace.npz": "8148b80ef7db5bbba06afa08096f54f6d02b3153847c4185cf630a712f320d1e",
+    "declared_cold_initialization.npz": "64074b58f4539aef564e16cb076c2a66d419a3bc5a2aeb3407a556e3269bcffb",
+    "scene.xml": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "supported_scene.zip": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93"
+  },
+  "closed_independent_reports": {
+    "independent_native_force_audit.json": "e67c79549f5f2a40eac5ac48e97ac22ca459b5247d9a2f7a7bf36feb32a57d64",
+    "independent_phase_depth_audit.json": "582d4fa53fd7f5e16949232d25d4ff8ef348c75e4ad0c288d49af29d8fbf1781",
+    "independent_table_press_audit.json": "155cbf312967f1f2e300638942e46b96b8ce765373044cde86680040c3f4f4a6",
+    "independent_formed_entry_audit.json": "8d635b19de93d5f6f3d097ad8e090c9d0ec3ea00611b60575ed0850f5a70cabe"
+  },
+  "source_snapshots": {
+    "independent_formed_entry_audit.py": "17060b6589e9880cb83fbe33d3f5c1d131726d702213abc849f0c1e99b117953",
+    "test_independent_formed_entry_audit.py": "7890a13c64a1848fbe1528883b050d1da49cb749fdb045b1f1b708d6a2af05ef",
+    "formed_entry_software_proof.json": "d1d2ad632e8545d54ddac0e7f9561f6b36ea43463937613746f4fd96572b5485",
+    "independent_archived_native_force_audit_v3.py": "711647a84fe9518449c0f3eed82c0b2ec02652b28a0e972dc298d365d649a586",
+    "independent_archived_phase_depth_audit_v3.py": "505b1ed6be80e7052cced5bdb1a721c334a93aed76ed40c5f4b1c41af5222c53",
+    "independent_cold_chain_audit.py": "9a2cc4737d7f3960f4211ff93989ec2c502c473035b16a9943aa1017e6f4f3f7",
+    "independent_yaw_counter_origin.py": "7313b5acac8f57e81e45c0fbe1c72045c12b11c079c5a65f235b44287f38acc6",
+    "independent_table_press_audit.py": "3e46b3f00bbe67845e8f42b0f337b9a3f654e4fe6c69613ed6f7a988cbbd77e0",
+    "test_independent_cold_chain_audit.py": "f246f24816b9bbcf98e31bbcb88b37aba136b9c3dfecdeecdf4c4ac91ca0ad35",
+    "test_independent_yaw_counter_origin.py": "03e6a96ee49cbc801b44116c70374cf92a802cd78a79cfa0019c6660703eaba8",
+    "test_independent_table_press_audit.py": "9e09d371138940e7c37ec5ed2b01330347d171ae9ec904edf474a58b2fa00a0d",
+    "test_independent_archived_native_force_audit.py": "5888ad13e47113536fd15b8f2cc06e10c1035b005072f316046d4e135e23c27d",
+    "independent_archived_native_force_audit.py": "36f40e7b4ea11fe86f252281a2b77ebd13cabe5c786ca3eaa79f7f9a02072487",
+    "cold_chain_auditors_software_proof.json": "5f5ce483727187255cdf554e4ddf4e2f49dd95d176becd2d1b497fdb098910fd",
+    "yaw_origin_and_press_auditors_software_proof.json": "7f3ac92ee5a21308c7a844159b13b29fecc2d6ea3064fe16b606b5b4807321b4",
+    "archived_diagnostic_auditors_software_proof.json": "26af0b7de186adca77b16f6bee575544eff87362c4a78292a28df86d85e52671",
+    "independent_phase_depth_software_proof.json": "ee12a2bfd7e9dcb65324720af72f2fd4e4cee106647e31e593883d3f211d9340"
+  },
+  "canonical281_software_proof_sha256": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+  "canonical281_app_and_loaded_helper_subset_checks": {
+    "yam_twin/kinematics.py": true,
+    "yam_twin/m8_insertion_engagement.py": true,
+    "yam_twin/m8_insertion_mechanics.py": true,
+    "yam_twin/m8_insertion_scene.py": true,
+    "yam_twin/m8_insertion_simulation.py": true,
+    "yam_twin/m8_scene.py": true,
+    "yam_twin/m8_simulation.py": true,
+    "yam_twin/m8_supported_scene.py": true,
+    "yam_twin/m8_supported_simulation.py": true,
+    "yam_twin/m8_supported_start.py": true
+  },
+  "software_scope": "281 tests cover frozen application/helper sources; output-only visual-servo harness is not a canonical full-run proof. Additional10 frame/6 lineage/4 origin/3 block-wrench/2 normal-shape arithmetic checks are separate diagnostic proof artifacts.",
+  "classification_scope": "No positive native contacts were inside both conservative full-axial-profile spans. Original loaded normals still show helical slope1.2486\u20131.2513mm estimated pitch outside those bounds; entry-only must not be equated to purely axisymmetric cones.",
+  "frozen": true
+}

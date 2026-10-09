@@ -1,0 +1,26 @@
+{
+  "scope": "Separate one-native-step reproduction recipe check; validates source/input layout and native runtime, not a repeated full diagnostic, capture, lead, reset or trajectory qualification. Not added to the historical 281-test producer proof.",
+  "isolated_checkout": "/workspace/astra-r2s-supported-v3-review",
+  "producer_commit": "b2b13ff39cd47c48afd19b38f83e9a405c9d6e32",
+  "proof_source_files_verified": 63,
+  "complete_input_package_ledgers_verified": [
+    "prefix",
+    "trials",
+    "v3"
+  ],
+  "harness_sha256": "b735c16a0b60136e1593501286c13d215ad0f75bb27af89ad0befda423612629",
+  "canonical_parent_trace_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+  "actual_state_parent_sha256": "0d87e71cc5f85a1210d5b6e3fc43484b6f48d0ecc08ae1e3f941d74acbc5ac3c",
+  "model_xml_sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+  "producer_dependencies_verified": 9,
+  "native_steps": 1,
+  "native_duration_s": 5e-05,
+  "wall_seconds": 0.015611661001457833,
+  "exit_code": 0,
+  "aborted": null,
+  "files": {
+    "/workspace/astra-r2s-supported-v3-review/outputs/m8_table_supported/diagnostics/v3_recipe_smoke/report.json": "1afca2057c8afc5d9cf0e1d1e781f17f7bcb4d30aeb037358fc588a79553d79c",
+    "/workspace/astra-r2s-supported-v3-review/outputs/m8_table_supported/diagnostics/v3_recipe_smoke/declaration.json": "1a0d54f3ff151905f4a317f26d885de756fb32835c3bf95014dcca59484ef4b7",
+    "/workspace/astra-r2s-supported-v3-review/outputs/m8_table_supported/diagnostics/v3_recipe_smoke.log": "bce463bed806d282a52a076a2943aad5fbc786c71c02cedcc64085beefe41f58"
+  }
+}

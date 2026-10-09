@@ -1,0 +1,109 @@
+{
+  "scope": "Read-only original pre-integration measured phase/depth and sampled radial-profile geometry. No integration, forces, prescribed helix, or capture qualification. Actual interior contacts/full-ring geometry remain separate from coaxial bulk profile estimates.",
+  "source_sha256": "505b1ed6be80e7052cced5bdb1a721c334a93aed76ed40c5f4b1c41af5222c53",
+  "ledger_sha256": "d773bf3247fbcfb4c97cd0d56370b26c87e5ad609c4e817cd49a3b2879396d67",
+  "archived_xml_sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+  "cold_chain": {
+    "scope": "Separate cold diagnostic state/model parents explicitly verified. Quaternion composition from declared native free-joint qpos and exact local female frame; no native replay, integration or force reconstruction.",
+    "auditor_source_sha256": "9a2cc4737d7f3960f4211ff93989ec2c502c473035b16a9943aa1017e6f4f3f7",
+    "state_parent_trace_sha256": "0d87e71cc5f85a1210d5b6e3fc43484b6f48d0ecc08ae1e3f941d74acbc5ac3c",
+    "canonical_model_reference_parent_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+    "exact_qpos_qvel_and_reconstructed_ctrl_verified": true,
+    "original_warmstart_solver_state_missing": true,
+    "actual_initial_relative_wrapped_yaw_rad": -0.5541917868144928,
+    "retained_canonical_counter_origin_rad": 1.3407990357558652,
+    "actual_relative_yaw_equals_raw_plus_constant_rad": 0.0,
+    "original_raw_counter_is_unchanged": true,
+    "yaw_origin_note": null,
+    "full_trajectory_qualified": false,
+    "potential_offset_if_canonical_origin_retained_rad": -1.894990822570358,
+    "archived_counter_origin": "actual_cold_state_wrapped_yaw",
+    "first_original_counter_vs_declared_origin_rad": 2.220446049250313e-16,
+    "counter_origin_auditor_source_sha256": "7313b5acac8f57e81e45c0fbe1c72045c12b11c079c5a65f235b44287f38acc6"
+  },
+  "raw_counter_bytes_unchanged": true,
+  "phase_formula": "wrap(-base_z+pitch*relative_yaw/(2*pi)+male_plugin_phase-female_plugin_phase)",
+  "zero_isosurface_sampling_error_bound_m": 1.3214498959113139e-07,
+  "nominal_cone_coincidence_overlap_m": 0.0014,
+  "common_unchamfered_axial_span_overlap_threshold_m": 0.001992582346706593,
+  "actual_base_z_range_m": [
+    -0.022549780199326953,
+    -0.021985732411085656
+  ],
+  "nominal_overlap_range_m": [
+    0.0014502198006730478,
+    0.0020142675889143445
+  ],
+  "actual_yaw_range_rad": [
+    -0.554218220502511,
+    2.340834245237654
+  ],
+  "maximum_withdrawal_from_initial_m": 3.7989454590898336e-05,
+  "actual_loaded_interior_contact_substeps": 0,
+  "actual_positive_full_ring_overlap_substeps": 27583,
+  "estimated_coaxial_phase_fit_substeps": 22103,
+  "estimated_phase_fit_and_sufficient_nominal_depth_substeps": 3353,
+  "selected_original_native_samples": {
+    "initial": {
+      "index": 0,
+      "time_s": 9.949099999983483,
+      "elapsed_s": 5e-05,
+      "base_z_m": -0.022511790744736054,
+      "yaw_unwrapped_rad": -0.5541917868144925,
+      "phase_residual_m": -9.846220812951417e-05,
+      "nominal_overlap_m": 0.0014882092552639462,
+      "actual_formed_full_ring_overlap_m": 0.0,
+      "loaded_actual_interior_contact_count": 0,
+      "profile_maximum_radial_interference_lower_bound_m": 8.654154710574036e-05
+    },
+    "final": {
+      "index": 136561,
+      "time_s": 16.777149999995178,
+      "elapsed_s": 6.8281,
+      "base_z_m": -0.021985733163977422,
+      "yaw_unwrapped_rad": 2.340795330171002,
+      "phase_residual_m": -4.858040156865279e-05,
+      "nominal_overlap_m": 0.0020142668360225782,
+      "actual_formed_full_ring_overlap_m": 2.1621698831296096e-05,
+      "loaded_actual_interior_contact_count": 0,
+      "profile_maximum_radial_interference_lower_bound_m": 1.4372376900585737e-07
+    },
+    "closest_phase0": {
+      "index": 63270,
+      "time_s": 13.11259999997611,
+      "elapsed_s": 3.1635500000000003,
+      "base_z_m": -0.022363187803719587,
+      "yaw_unwrapped_rad": 0.4510017573452658,
+      "phase_residual_m": -4.708824749962218e-05,
+      "nominal_overlap_m": 0.0016368121962804134,
+      "actual_formed_full_ring_overlap_m": 0.0,
+      "loaded_actual_interior_contact_count": 0,
+      "profile_maximum_radial_interference_lower_bound_m": -2.4407628912755802e-06
+    },
+    "deepest": {
+      "index": 128238,
+      "time_s": 16.360999999981363,
+      "elapsed_s": 6.41195,
+      "base_z_m": -0.021985732411085656,
+      "yaw_unwrapped_rad": 2.340814143622963,
+      "phase_residual_m": -4.857741164307136e-05,
+      "nominal_overlap_m": 0.0020142675889143445,
+      "actual_formed_full_ring_overlap_m": 2.1364430111499647e-05,
+      "loaded_actual_interior_contact_count": 0,
+      "profile_maximum_radial_interference_lower_bound_m": 1.3854506598822564e-07
+    },
+    "most_withdrawn": {
+      "index": 23729,
+      "time_s": 11.135549999980718,
+      "elapsed_s": 1.1865,
+      "base_z_m": -0.022549780199326953,
+      "yaw_unwrapped_rad": -0.5503169540748223,
+      "phase_residual_m": -5.9701880058399964e-05,
+      "nominal_overlap_m": 0.0014502198006730478,
+      "actual_formed_full_ring_overlap_m": 0.0,
+      "loaded_actual_interior_contact_count": 0,
+      "profile_maximum_radial_interference_lower_bound_m": 1.9406689568532507e-05
+    }
+  },
+  "capture_qualified": false
+}

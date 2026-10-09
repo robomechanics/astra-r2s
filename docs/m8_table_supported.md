@@ -23,7 +23,29 @@ below. It ends at cone entry, with zero formed capture and original overall
 validation false. The older `full_v1`/`full_v2` commands reproduce failed
 attempts; no complete second trajectory is qualified.
 
-The subsequent [three closed cold search trials](../media/m8_table_supported/diagnostics/face120_closed_search_trials/README.md)
+The newer [closed partial helical starting-load diagnostic](../media/m8_table_supported/diagnostics/face120_partial_helical_start_v3/README.md)
+runs **6.8281 s** in **861.33 s** CPU wall time with all **25 original guards**
+held. Its [normal-speed clip](../media/m8_table_supported/diagnostics/face120_partial_helical_start_v3/render/demo.gif)
+and [actual endpoint](../media/m8_table_supported/diagnostics/face120_partial_helical_start_v3/render/endpoint_open_side.png)
+show closed jaws and finite native motors. In the final stopped 100 ms,
+mean signed thread reaction is **99.9966% of bolt weight**, mean positive
+right-hand support is **0.01512%**, and loaded thread duty is 100%.
+Conservative formed geometry reaches **21.622 µm**; original loaded entry
+normals show partial helical-flank contact consistent with 1.25 mm pitch.
+Conservative full-interior loaded contacts remain zero throughout. This
+short entry does not qualify capture, full-pitch lead, opening or passive reset.
+
+Its [exact cold-input repeat/replay instructions](../media/m8_table_supported/diagnostics/face120_partial_helical_start_v3/README.md#repeat-the-exact-cold-native-input)
+pin canonical producer `b2b13ff` and separate output-only harness `b735c16a`,
+restore all three complete packages, and preserve the failed reverse-seat
+checkpoint as the actual input. The 281-test proof covers the canonical
+source. It does not cover this harness. Privileged perfect simulator poses
+at 20 kHz drive finite arm motors; desired yaw is independently scheduled,
+with no axial position or pitch feedback. No trained/perception policy or
+continuous full trajectory is demonstrated. The canonical longer schedule
+does not include this experimental controller.
+
+The earlier [three closed cold search trials](../media/m8_table_supported/diagnostics/face120_closed_search_trials/README.md)
 preserve exact local inputs, native force records, frozen harnesses, media and
 independent audits:
 
@@ -243,9 +265,6 @@ complete second trajectory. Its
 eventual full producer will require a fresh unspliced rollout and its own
 source proof, raw forces, lead/reset audits and acceptance result.
 
-Further output-only feedback diagnostics are in progress. Their measured
-head/tool pose feedback uses privileged perfect simulation state at 20 kHz,
-through finite arm motors; no trained or perception-policy result is claimed.
 A new continuous full attempt will need its own producer, source proof, trajectory
 and acceptance result. Post-closure audit
 corrections cover unloaded window endpoints and qualified closed hold phases;

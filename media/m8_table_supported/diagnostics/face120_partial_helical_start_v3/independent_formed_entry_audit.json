@@ -1,0 +1,90 @@
+{
+  "scope": "Original matched pre-integration body measurements/contact normals, with no native force reconstruction or integration. Body-state timestamp=logged_time\u2212dt; saved qpos is post-integration. Native partial helical contacts remain distinct from conservative full-interior tags and full-thread qualification.",
+  "auditor_source_sha256": "17060b6589e9880cb83fbe33d3f5c1d131726d702213abc849f0c1e99b117953",
+  "input_sha256": {
+    "original_native_force_ledger.npz": "d773bf3247fbcfb4c97cd0d56370b26c87e5ad609c4e817cd49a3b2879396d67",
+    "checkpoint_trace.npz": "8148b80ef7db5bbba06afa08096f54f6d02b3153847c4185cf630a712f320d1e",
+    "scene.xml": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "declaration.json": "01685027722d18196ed95b88e75edd61ffbd96b3dcd361c630ad4b58c0657a1a"
+  },
+  "original_native_steps": 136562,
+  "formed_geometry_substeps": 27583,
+  "actual_loaded_full_interior_substeps": 0,
+  "final_exact100ms": {
+    "native_samples": 2000,
+    "observed_duration_s": 0.1,
+    "every_native_sample_actually_stopped_and_all_original_guards": true,
+    "maximum_actual_bolt_angular_speed_rad_per_s": 0.00016146620350866682,
+    "maximum_actual_hand_angular_speed_rad_per_s": 0.00011854456215550854,
+    "maximum_absolute_actual_bolt_axial_speed_m_per_s": 1.3759068385951047e-06,
+    "mean_signed_thread_weight_fraction": 0.9999664334793895,
+    "mean_positive_hand_weight_fraction": 0.00015116559310023712,
+    "original_upward_thread_loaded_duty": 1.0,
+    "formed_geometry_range_m": [
+      2.1621698831296096e-05,
+      2.1623341832014212e-05
+    ],
+    "actual_loaded_full_interior_substeps": 0,
+    "measured_stopped_weight_transfer_ready": true
+  },
+  "original_loaded_entry_normals": {
+    "original_sampled_positive_normal_contacts": 82,
+    "ranges": {
+      "normal_azimuth_component_world_Z": [
+        -0.05080159365571214,
+        -0.045297505561823354
+      ],
+      "normal_axial_component_world_Z": [
+        0.8648966317028832,
+        0.865136711144183
+      ],
+      "estimated_pitch_from_normal_m": [
+        0.0012485766823632555,
+        0.001251294253336261
+      ],
+      "loose_axis_centroid_uncertainty_context_rad": [
+        0.00012741684383393945,
+        0.00014697625412993844
+      ]
+    },
+    "all_conservative_full_interior_tags_false": true,
+    "scope": "Nonzero native normal azimuthal slope and ~.865 axial component provide helical-flank evidence. WorldZ cylinder uses nearly aligned native pose; inferred pitch and uncertainty are geometric approximations, not an independent replacement of exact contact-point body transforms. Entry tag means outside conservative full-flank spans, not necessarily a pure axisymmetric cone."
+  },
+  "geometric_entry_turn": {
+    "observed": true,
+    "actual_loaded_interior_substeps": 0,
+    "scope": "Geometry-positive native entry interval only. Without original loaded full-flank contacts and a qualified turn span, pitch consistency alone is not capture or qualified lead.",
+    "first_original_native_index": 108979,
+    "last_original_native_index": 126560,
+    "first_solved_state_time_s": 15.397999999970784,
+    "last_solved_state_time_s": 16.277049999978576,
+    "actual_yaw_span_rad": 0.09489190506146183,
+    "actual_axial_advance_m": 1.8806562995903053e-05,
+    "ideal_pitch_comparison_only_m": 1.887814468742312e-05,
+    "endpoint_error_from_pitch_m": -7.158169152006558e-08,
+    "inferred_pitch_over_this_short_span_m": 0.001245260280293344,
+    "spans_full_pitch_rotation": false,
+    "qualified_lead": false
+  },
+  "cumulative_original_grip_minimum_load_N": {
+    "left": [
+      15.97064148686713,
+      15.881815905966114
+    ],
+    "right": [
+      5.412241591614016,
+      5.958917202904386
+    ]
+  },
+  "cumulative_original_grip_slip_maximum_m": {
+    "left": 2.8021632190251926e-06,
+    "right": 0.00011465184318079074
+  },
+  "cumulative_original_grip_rotation_slip_maximum_rad": {
+    "left": 6.199856543003863e-05,
+    "right": 0.022655027879064867
+  },
+  "capture_qualified": false,
+  "unsupported_reset_qualified": false,
+  "full_trajectory_qualified": false
+}

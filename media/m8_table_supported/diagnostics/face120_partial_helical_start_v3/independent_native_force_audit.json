@@ -1,0 +1,260 @@
+{
+  "scope": "Original all-step scalar forces and original sampled contact-local forces, without integration, model recompilation or force replay. Cold diagnostic only. Interior tags are archived producer geometry classifications, not independently rebuilt body transforms.",
+  "auditor_source_sha256": "711647a84fe9518449c0f3eed82c0b2ec02652b28a0e972dc298d365d649a586",
+  "input_sha256": {
+    "declaration.json": "01685027722d18196ed95b88e75edd61ffbd96b3dcd361c630ad4b58c0657a1a",
+    "diagnostic_source.py": "b735c16a0b60136e1593501286c13d215ad0f75bb27af89ad0befda423612629",
+    "observer_source.py": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+    "report.json": "9c5d8dc33e4e510fe6d7f64f4f3c320e028cbb792eddddd6d633aa557d69ca6c",
+    "original_native_force_ledger.npz": "d773bf3247fbcfb4c97cd0d56370b26c87e5ad609c4e817cd49a3b2879396d67",
+    "checkpoint_trace.npz": "8148b80ef7db5bbba06afa08096f54f6d02b3153847c4185cf630a712f320d1e",
+    "declared_cold_initialization.npz": "64074b58f4539aef564e16cb076c2a66d419a3bc5a2aeb3407a556e3269bcffb"
+  },
+  "identity": {
+    "parent_trace_matches": true,
+    "archived_xml_matches": true,
+    "archived_xml_equals_parent": true,
+    "archived_scene_bundle_equals_parent": true,
+    "loaded_observer_copy_matches": true,
+    "archived_observer_dependency_matches": true,
+    "archived_diagnostic_matches": true,
+    "producer_ledger_sha_matches": true,
+    "producer_trace_sha_matches": true,
+    "archived_source_checks": {
+      "yam_twin/kinematics.py": true,
+      "yam_twin/m8_insertion_engagement.py": true,
+      "yam_twin/m8_insertion_mechanics.py": true,
+      "yam_twin/m8_insertion_scene.py": true,
+      "yam_twin/m8_insertion_simulation.py": true,
+      "yam_twin/m8_scene.py": true,
+      "yam_twin/m8_simulation.py": true,
+      "yam_twin/m8_supported_scene.py": true,
+      "yam_twin/m8_supported_simulation.py": true
+    }
+  },
+  "cold_initialization_matches_parent_saved_post_state": false,
+  "cold_chain": {
+    "scope": "Separate cold diagnostic state/model parents explicitly verified. Quaternion composition from declared native free-joint qpos and exact local female frame; no native replay, integration or force reconstruction.",
+    "auditor_source_sha256": "9a2cc4737d7f3960f4211ff93989ec2c502c473035b16a9943aa1017e6f4f3f7",
+    "state_parent_trace_sha256": "0d87e71cc5f85a1210d5b6e3fc43484b6f48d0ecc08ae1e3f941d74acbc5ac3c",
+    "canonical_model_reference_parent_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+    "exact_qpos_qvel_and_reconstructed_ctrl_verified": true,
+    "original_warmstart_solver_state_missing": true,
+    "actual_initial_relative_wrapped_yaw_rad": -0.5541917868144928,
+    "retained_canonical_counter_origin_rad": 1.3407990357558652,
+    "actual_relative_yaw_equals_raw_plus_constant_rad": 0.0,
+    "original_raw_counter_is_unchanged": true,
+    "yaw_origin_note": null,
+    "full_trajectory_qualified": false,
+    "potential_offset_if_canonical_origin_retained_rad": -1.894990822570358,
+    "archived_counter_origin": "actual_cold_state_wrapped_yaw",
+    "first_original_counter_vs_declared_origin_rad": 2.220446049250313e-16,
+    "counter_origin_auditor_source_sha256": "7313b5acac8f57e81e45c0fbe1c72045c12b11c079c5a65f235b44287f38acc6"
+  },
+  "missing_original_warmstart_state": true,
+  "original_native_steps": 136562,
+  "actual_duration_s": 6.8281,
+  "force_frame": {
+    "original_sampled_local_solves_retransformed": 1367,
+    "extra_final_rows_without_contact_local_archive": [],
+    "maximum_wrench_error_N_Nm": 0.0,
+    "maximum_scalar_error": 0.0,
+    "right_pad_scope": "Original right-pad world wrench reprojected; individual original pad-local solves are not archived here."
+  },
+  "independent_exact100ms_weight_transfer": {
+    "observed": true,
+    "duration_s": 0.1,
+    "original_native_samples": 2000,
+    "mean_signed_thread_weight_fraction": 0.9999664334795101,
+    "mean_positive_hand_upward_weight_fraction": 0.00015116559325397183,
+    "mean_signed_hand_weight_fraction": 3.354771298192859e-05,
+    "contiguous_geometry_motion_drive_guard_window": true,
+    "final_thread_force_loaded": true,
+    "loaded_thread_gravity_support_duty": 1.0,
+    "ready": true,
+    "ever_ready": true,
+    "ready_endpoint_count": 27136,
+    "first_ready_elapsed_s": 0.7374,
+    "last_ready_elapsed_s": 6.8281,
+    "scope": "Individual qualifying trailing windows; earliest/latest do not assert a continuous ready interval. No engagement or unsupported-reset qualification."
+  },
+  "independent_exact100ms_continuously_formed_support": {
+    "observed": true,
+    "duration_s": 0.1,
+    "original_native_samples": 2000,
+    "mean_signed_thread_weight_fraction": 0.9999664334795101,
+    "mean_positive_hand_upward_weight_fraction": 0.00015116559325397183,
+    "mean_signed_hand_weight_fraction": 3.354771298192859e-05,
+    "contiguous_geometry_motion_drive_guard_window": false,
+    "final_thread_force_loaded": true,
+    "loaded_thread_gravity_support_duty": 1.0,
+    "ready": false,
+    "ever_ready": false,
+    "ready_endpoint_count": 0,
+    "first_ready_elapsed_s": null,
+    "last_ready_elapsed_s": null,
+    "scope": "Individual qualifying trailing windows; earliest/latest do not assert a continuous ready interval. No engagement or unsupported-reset qualification."
+  },
+  "table_support": {
+    "minimum_rolling_weight_fraction": 1.354230560092713,
+    "maximum_positive_left_upward_weight_fraction": 4.632967887508772e-05,
+    "minimum_loaded_duty": 1.0,
+    "failed_rolling_window_endpoints": 0,
+    "strict_unloaded_native_ticks": 0
+  },
+  "observed_phases": {
+    "center_measured_grasp": {
+      "observed": false
+    },
+    "transfer_bolt_weight": {
+      "observed": false
+    },
+    "reverse_seat_1": {
+      "observed": false
+    },
+    "stop_reverse_seat_1": {
+      "observed": false
+    },
+    "start_thread_1": {
+      "observed": true,
+      "original_native_steps": 108562,
+      "first_elapsed_s": 0.9,
+      "last_elapsed_s": 6.32805,
+      "base_z_range_m": [
+        -0.022549780199326953,
+        -0.02198573426796254
+      ],
+      "actual_yaw_range_rad": [
+        -0.554218220502511,
+        2.340834245237654
+      ],
+      "original_recorded_yaw_counter_range_rad": [
+        -0.554218220502511,
+        2.340834245237654
+      ],
+      "maximum_formed_full_ring_overlap_m": 2.1032985644757474e-05,
+      "loaded_actual_interior_substeps": 0,
+      "radial_range_m": [
+        1.4660267348303915e-06,
+        1.679304317834911e-05
+      ]
+    },
+    "stop_start_1": {
+      "observed": true,
+      "original_native_steps": 10001,
+      "first_elapsed_s": 6.3281,
+      "last_elapsed_s": 6.8281,
+      "base_z_range_m": [
+        -0.021985771358889676,
+        -0.021985732411085656
+      ],
+      "actual_yaw_range_rad": [
+        2.340795330171002,
+        2.340831431207519
+      ],
+      "original_recorded_yaw_counter_range_rad": [
+        2.340795330171002,
+        2.340831431207519
+      ],
+      "maximum_formed_full_ring_overlap_m": 2.1623846920818326e-05,
+      "loaded_actual_interior_substeps": 0,
+      "radial_range_m": [
+        2.183940670356375e-07,
+        1.465370307152239e-06
+      ]
+    },
+    "stabilize_table_down": {
+      "observed": true,
+      "original_native_steps": 6000,
+      "first_elapsed_s": 5e-05,
+      "last_elapsed_s": 0.3,
+      "base_z_range_m": [
+        -0.022511790744736054,
+        -0.02247966615740838
+      ],
+      "actual_yaw_range_rad": [
+        -0.5542069527822386,
+        -0.5541917868144925
+      ],
+      "original_recorded_yaw_counter_range_rad": [
+        -0.5542069527822386,
+        -0.5541917868144925
+      ],
+      "maximum_formed_full_ring_overlap_m": 0.0,
+      "loaded_actual_interior_substeps": 0,
+      "radial_range_m": [
+        6.376314834515247e-05,
+        8.140251199937606e-05
+      ]
+    },
+    "align_measured_head": {
+      "observed": true,
+      "original_native_steps": 6000,
+      "first_elapsed_s": 0.30005000000000004,
+      "last_elapsed_s": 0.6,
+      "base_z_range_m": [
+        -0.022534870807851753,
+        -0.02247921979853404
+      ],
+      "actual_yaw_range_rad": [
+        -0.5542006955566063,
+        -0.5541062452351802
+      ],
+      "original_recorded_yaw_counter_range_rad": [
+        -0.5542006955566063,
+        -0.5541062452351802
+      ],
+      "maximum_formed_full_ring_overlap_m": 0.0,
+      "loaded_actual_interior_substeps": 0,
+      "radial_range_m": [
+        2.3466402046106214e-05,
+        8.144587259606515e-05
+      ]
+    },
+    "settle_measured_grasp": {
+      "observed": true,
+      "original_native_steps": 5999,
+      "first_elapsed_s": 0.6000500000000001,
+      "last_elapsed_s": 0.89995,
+      "base_z_range_m": [
+        -0.022548161569282257,
+        -0.022534167035146074
+      ],
+      "actual_yaw_range_rad": [
+        -0.554217848614468,
+        -0.5541159873075925
+      ],
+      "original_recorded_yaw_counter_range_rad": [
+        -0.554217848614468,
+        -0.5541159873075925
+      ],
+      "maximum_formed_full_ring_overlap_m": 0.0,
+      "loaded_actual_interior_substeps": 0,
+      "radial_range_m": [
+        1.6793814930362822e-05,
+        2.5540994742414846e-05
+      ]
+    }
+  },
+  "all_native_diagnostic_checks_held": true,
+  "producer_original_observer_window": {
+    "observer": "diagnostic-native-bolt-weight-transfer-v1",
+    "ready_for_diagnostic_release_attempt": true,
+    "bolt_weight_N": 0.26241400403581094,
+    "required_window_s": 0.1,
+    "observed_window_s": 0.09999999999999715,
+    "original_native_samples": 2000,
+    "mean_thread_weight_fraction": 0.9999664334794205,
+    "mean_positive_hand_upward_weight_fraction": 0.000151165593100242,
+    "signed_thread_gravity_opposing_impulse_Ns": 0.02624051957107366,
+    "positive_hand_upward_impulse_Ns": 3.966796855788152e-06,
+    "loaded_actual_interior_flank_duration_s": 0.0,
+    "loaded_thread_gravity_support_duty_fraction": 1.0,
+    "entry_only_native_contact_window": true,
+    "loaded_actual_interior_flank_contact_observed": false,
+    "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+  },
+  "producer_failure": null,
+  "capture_qualified": false,
+  "full_trajectory_qualified": false
+}

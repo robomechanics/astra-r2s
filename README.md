@@ -65,6 +65,16 @@ The [table close-up](media/m8_table_supported/face120_pickup_entry_v1/render/tab
 shows both actual grips. Its [exact sources, forces and four audits](media/m8_table_supported/face120_pickup_entry_v1)
 are bound to `b2b13ff` and its 281-test proof. This is a partial cone-entry
 pilot with zero formed capture; the original overall result stays false.
+The newer [partial helical starting-load clip](media/m8_table_supported/diagnostics/face120_partial_helical_start_v3/render/demo.gif)
+runs a separate cold **6.8281 s** closed-jaw diagnostic with all **25 guards**
+held. Its final stopped 100 ms has 99.9966% mean thread reaction of bolt
+weight and 0.01512% mean positive right-hand support. Formed geometry reaches
+21.622 µm and loaded entry normals show partial helical contact; conservative
+full-interior loaded contacts stay zero. [Exact sources, native records and repeat instructions](media/m8_table_supported/diagnostics/face120_partial_helical_start_v3/README.md)
+preserve privileged perfect pose feedback at 20 kHz through finite robot
+motors, independently scheduled yaw and no axial pitch feedback. Capture,
+full-pitch lead, opening/reset and a trained/perception policy remain
+unqualified. The separate harness leaves the canonical `b2b13ff` app unchanged.
 The [three closed cold search trials](media/m8_table_supported/diagnostics/face120_closed_search_trials/README.md)
 retain separate native videos and exact repeat instructions:
 [reverse seat](media/m8_table_supported/diagnostics/face120_closed_search_trials/face120_seat_search_v1/README.md)
@@ -75,9 +85,7 @@ aborts table support; and
 aborts left-pad load after a 100 µm downward robot target. Each has zero formed
 capture and no opening/reset. They cold-start archived states and cannot be
 combined into a continuous trajectory. Further feedback diagnostics remain
-output-only experiments using privileged perfect simulator poses at 20 kHz
-through finite arm motors, with no trained/perception-policy result. The
-canonical source stays pinned to `b2b13ff`.
+output-only experiments; the canonical source stays pinned to `b2b13ff`.
 The [actual bolt-over-bore screenshot](media/m8_table_supported/progress_bolt_over_bore/demo.png)
 shows the fresh corrected run after physical bolt pickup, lift and transport;
 that recorded frame precedes thread contact. The

@@ -1,0 +1,415 @@
+{
+  "scope": "Closed separate cold local v3 partial-helical starting-load trial. All25 original guards hold, jaws remain closed, geometry formed overlap is positive and original entry normals show helical slope, conservative full-interior count is zero. No qualified capture/full-pitch lead/opening/unsupported reset/continuous full trajectory. Perfect native pose feedback is privileged.",
+  "original_directory": "outputs/m8_table_supported/diagnostics/face120_closed_forward_visual_v3",
+  "native_duration_s": 6.8281,
+  "native_wall_seconds": 861.3270074480024,
+  "original_native_rows": 136562,
+  "original_saved_state_rows": 1367,
+  "all25_original_guards_held": true,
+  "original_abort": null,
+  "actual_positive_formed_geometry_substeps": 27583,
+  "maximum_formed_geometry_m": 2.1623846920818326e-05,
+  "actual_loaded_full_interior_substeps": 0,
+  "original_sampled_final100ms_positive_normal_contacts": 82,
+  "original_loaded_entry_normal_inference": {
+    "original_sampled_positive_normal_contacts": 82,
+    "ranges": {
+      "normal_azimuth_component_world_Z": [
+        -0.05080159365571214,
+        -0.045297505561823354
+      ],
+      "normal_axial_component_world_Z": [
+        0.8648966317028832,
+        0.865136711144183
+      ],
+      "estimated_pitch_from_normal_m": [
+        0.0012485766823632555,
+        0.001251294253336261
+      ],
+      "loose_axis_centroid_uncertainty_context_rad": [
+        0.00012741684383393945,
+        0.00014697625412993844
+      ]
+    },
+    "all_conservative_full_interior_tags_false": true,
+    "scope": "Nonzero native normal azimuthal slope and ~.865 axial component provide helical-flank evidence. WorldZ cylinder uses nearly aligned native pose; inferred pitch and uncertainty are geometric approximations, not an independent replacement of exact contact-point body transforms. Entry tag means outside conservative full-flank spans, not necessarily a pure axisymmetric cone."
+  },
+  "geometric_short_entry_turn": {
+    "observed": true,
+    "actual_loaded_interior_substeps": 0,
+    "scope": "Geometry-positive native entry interval only. Without original loaded full-flank contacts and a qualified turn span, pitch consistency alone is not capture or qualified lead.",
+    "first_original_native_index": 108979,
+    "last_original_native_index": 126560,
+    "first_solved_state_time_s": 15.397999999970784,
+    "last_solved_state_time_s": 16.277049999978576,
+    "actual_yaw_span_rad": 0.09489190506146183,
+    "actual_axial_advance_m": 1.8806562995903053e-05,
+    "ideal_pitch_comparison_only_m": 1.887814468742312e-05,
+    "endpoint_error_from_pitch_m": -7.158169152006558e-08,
+    "inferred_pitch_over_this_short_span_m": 0.001245260280293344,
+    "spans_full_pitch_rotation": false,
+    "qualified_lead": false
+  },
+  "final_exact100ms": {
+    "native_samples": 2000,
+    "observed_duration_s": 0.1,
+    "every_native_sample_actually_stopped_and_all_original_guards": true,
+    "maximum_actual_bolt_angular_speed_rad_per_s": 0.00016146620350866682,
+    "maximum_actual_hand_angular_speed_rad_per_s": 0.00011854456215550854,
+    "maximum_absolute_actual_bolt_axial_speed_m_per_s": 1.3759068385951047e-06,
+    "mean_signed_thread_weight_fraction": 0.9999664334793895,
+    "mean_positive_hand_weight_fraction": 0.00015116559310023712,
+    "original_upward_thread_loaded_duty": 1.0,
+    "formed_geometry_range_m": [
+      2.1621698831296096e-05,
+      2.1623341832014212e-05
+    ],
+    "actual_loaded_full_interior_substeps": 0,
+    "measured_stopped_weight_transfer_ready": true
+  },
+  "capture_qualified": false,
+  "full_pitch_lead_qualified": false,
+  "unsupported_reset_qualified": false,
+  "opening_executed": false,
+  "continuous_full_trajectory_qualified": false,
+  "perfect_native_pose_visual_servo": true,
+  "executed_control_schedule": {
+    "scope": "Executed schedules from exact frozen native controller and original scalar ledger; no prescribed axial lead or free-body drive.",
+    "constant_right_net_feed_N_from_first_cold_step": 0.26241400403581094,
+    "right_axial_damping_Ns_per_m": 200.0,
+    "left_downward_forcefeed_N": 2.0,
+    "left_force_preload_ramp_s": 0.3,
+    "left_worldZ_velocity_damping_Ns_per_m": 200.0,
+    "alignment_s": 0.3,
+    "closed_pre_turn_hold_s": 0.3,
+    "post_turn_hold_s": 0.5,
+    "strong_right_aperture_m": 0.0184,
+    "unused_legacy_left_down_offset_cli_option": true,
+    "privileged_perfect_native_pose_measurement": true,
+    "measurement_control_rate_Hz": 20000,
+    "native_arm_cartesian_force_cap_N": 8,
+    "native_arm_cartesian_torque_cap_Nm": 2,
+    "original_harness_sha256": "b735c16a0b60136e1593501286c13d215ad0f75bb27af89ad0befda423612629",
+    "original_ledger_sha256": "d773bf3247fbcfb4c97cd0d56370b26c87e5ad609c4e817cd49a3b2879396d67"
+  },
+  "canonical_producer_commit": "b2b13ff39cd47c48afd19b38f83e9a405c9d6e32",
+  "canonical_source_tests_passed": 281,
+  "canonical_source_proof_sha256": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+  "canonical281_proof_covers_output_only_harness": false,
+  "additional_auditor_proofs_not_combined_with281": true,
+  "canonical_model_reference_parent_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+  "actual_state_parent_sha256": "0d87e71cc5f85a1210d5b6e3fc43484b6f48d0ecc08ae1e3f941d74acbc5ac3c",
+  "exact_cold_initialization_state_sha256": "843b0e42486dac7b0a177940f7ec9d2a4e1c0735de2e7cd662ebe689cca36958",
+  "original_harness_sha256": "b735c16a0b60136e1593501286c13d215ad0f75bb27af89ad0befda423612629",
+  "original_helper_sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+  "runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "original_force_ledger_sha256": "d773bf3247fbcfb4c97cd0d56370b26c87e5ad609c4e817cd49a3b2879396d67",
+  "original_trace_sha256": "8148b80ef7db5bbba06afa08096f54f6d02b3153847c4185cf630a712f320d1e",
+  "original_report_sha256": "9c5d8dc33e4e510fe6d7f64f4f3c320e028cbb792eddddd6d633aa557d69ca6c",
+  "independent_audit_binding_sha256": "255d56ed0d746b5cad0ebc97b12d15c168c19219c43b77c1a8bf63d6c4dd8d97",
+  "independent_original_and_source_binding_hash_checks": 30,
+  "complete_original_scalar_force_ledger_preserved": true,
+  "complete_original_saved_states_preserved": true,
+  "all_original_sampled_contact_normal_records_preserved": true,
+  "contact_vector_archive_scope": "Original complete checkpoint contact-local force/normal records every100 native steps (5ms) plus final endpoint; scalar ledger retains every50us native step. No missing per-step vectors are invented.",
+  "media_physics_integration": false,
+  "media_state_interpolation": false,
+  "media_physical_body_hiding": false,
+  "media_normal1x_frames": 82,
+  "media_fps": 12,
+  "render_manifest_sha256": "f4f486f339315f20578d4d9ec6e564e56689369a4fb2501358fbd2fe062da25a",
+  "scientific_plot_manifest_sha256": "3c922fec624c71bfb444c1a4bbb870f0a69cdde565435ee68842efcf2191c40f",
+  "all_original_logs_sources_and_audits_preserved": true,
+  "upcoming_open_v4_files_touched": false,
+  "separate_recipe_validation_native_steps": 1,
+  "separate_recipe_validation_duration_s": 5e-05,
+  "separate_recipe_validation_summary_sha256": "37dc4cc47072b00f50952cdd6253e4ce9af8aeb1bbab03ad6a7eab6a4265abf2",
+  "recipe_validation_scope": "Fresh isolated matching-source/model/input one-step layout/runtime smoke only. Not a repeated full native trial or physics qualification; not combined with281. Reviewed prepublication ledger identity retained separately from final publication ledger.",
+  "all_artifacts_below45MB_no_chunks_needed": true,
+  "maximum_artifact_bytes": 27731181,
+  "files": {
+    "README.md": {
+      "sha256": "5a6da5968392dbcfb756b41ccc349d65c2f880f3d8df4d2b8e259aa45d83c386",
+      "bytes": 12283
+    },
+    "audit_sources/archived_diagnostic_auditors_software_proof.json": {
+      "sha256": "26af0b7de186adca77b16f6bee575544eff87362c4a78292a28df86d85e52671",
+      "bytes": 947
+    },
+    "audit_sources/canonical281_software_proof.json": {
+      "sha256": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+      "bytes": 7071
+    },
+    "audit_sources/cold_chain_auditors_software_proof.json": {
+      "sha256": "5f5ce483727187255cdf554e4ddf4e2f49dd95d176becd2d1b497fdb098910fd",
+      "bytes": 1049
+    },
+    "audit_sources/formed_entry_software_proof.json": {
+      "sha256": "d1d2ad632e8545d54ddac0e7f9561f6b36ea43463937613746f4fd96572b5485",
+      "bytes": 588
+    },
+    "audit_sources/independent_archived_native_force_audit.py": {
+      "sha256": "36f40e7b4ea11fe86f252281a2b77ebd13cabe5c786ca3eaa79f7f9a02072487",
+      "bytes": 13761
+    },
+    "audit_sources/independent_archived_native_force_audit_v3.py": {
+      "sha256": "711647a84fe9518449c0f3eed82c0b2ec02652b28a0e972dc298d365d649a586",
+      "bytes": 14492
+    },
+    "audit_sources/independent_archived_phase_depth_audit_v3.py": {
+      "sha256": "505b1ed6be80e7052cced5bdb1a721c334a93aed76ed40c5f4b1c41af5222c53",
+      "bytes": 6742
+    },
+    "audit_sources/independent_cold_chain_audit.py": {
+      "sha256": "9a2cc4737d7f3960f4211ff93989ec2c502c473035b16a9943aa1017e6f4f3f7",
+      "bytes": 4534
+    },
+    "audit_sources/independent_formed_entry_audit.py": {
+      "sha256": "17060b6589e9880cb83fbe33d3f5c1d131726d702213abc849f0c1e99b117953",
+      "bytes": 8186
+    },
+    "audit_sources/independent_phase_depth_software_proof.json": {
+      "sha256": "ee12a2bfd7e9dcb65324720af72f2fd4e4cee106647e31e593883d3f211d9340",
+      "bytes": 685
+    },
+    "audit_sources/independent_table_press_audit.py": {
+      "sha256": "3e46b3f00bbe67845e8f42b0f337b9a3f654e4fe6c69613ed6f7a988cbbd77e0",
+      "bytes": 6482
+    },
+    "audit_sources/independent_yaw_counter_origin.py": {
+      "sha256": "7313b5acac8f57e81e45c0fbe1c72045c12b11c079c5a65f235b44287f38acc6",
+      "bytes": 2598
+    },
+    "audit_sources/test_independent_archived_native_force_audit.py": {
+      "sha256": "5888ad13e47113536fd15b8f2cc06e10c1035b005072f316046d4e135e23c27d",
+      "bytes": 3990
+    },
+    "audit_sources/test_independent_cold_chain_audit.py": {
+      "sha256": "f246f24816b9bbcf98e31bbcb88b37aba136b9c3dfecdeecdf4c4ac91ca0ad35",
+      "bytes": 4673
+    },
+    "audit_sources/test_independent_formed_entry_audit.py": {
+      "sha256": "7890a13c64a1848fbe1528883b050d1da49cb749fdb045b1f1b708d6a2af05ef",
+      "bytes": 1259
+    },
+    "audit_sources/test_independent_table_press_audit.py": {
+      "sha256": "9e09d371138940e7c37ec5ed2b01330347d171ae9ec904edf474a58b2fa00a0d",
+      "bytes": 1306
+    },
+    "audit_sources/test_independent_yaw_counter_origin.py": {
+      "sha256": "03e6a96ee49cbc801b44116c70374cf92a802cd78a79cfa0019c6660703eaba8",
+      "bytes": 1128
+    },
+    "audit_sources/yaw_origin_and_press_auditors_software_proof.json": {
+      "sha256": "7f3ac92ee5a21308c7a844159b13b29fecc2d6ea3064fe16b606b5b4807321b4",
+      "bytes": 1496
+    },
+    "canonical281_software_proof.json": {
+      "sha256": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+      "bytes": 7071
+    },
+    "canonical_prefix_published_producer_binding.json": {
+      "sha256": "217bb754ffeb4ed06970e6a1ffd436b62fa82212ad5ca0c79e6260ce654211d1",
+      "bytes": 7897
+    },
+    "canonical_prefix_reference_binding.json": {
+      "sha256": "7a5b55886707b42e5e950d834cc133415c2808ac5872faae06ecd4cbf37d423e",
+      "bytes": 55006
+    },
+    "canonical_prefix_validation_original.json": {
+      "sha256": "e2145096aa0a8878074a0a3a070cec043b1b9b6905965362161da645c27f2799",
+      "bytes": 778326
+    },
+    "checkpoint_trace.npz": {
+      "sha256": "8148b80ef7db5bbba06afa08096f54f6d02b3153847c4185cf630a712f320d1e",
+      "bytes": 16754126
+    },
+    "declaration.json": {
+      "sha256": "01685027722d18196ed95b88e75edd61ffbd96b3dcd361c630ad4b58c0657a1a",
+      "bytes": 9552
+    },
+    "declared_cold_initialization.npz": {
+      "sha256": "64074b58f4539aef564e16cb076c2a66d419a3bc5a2aeb3407a556e3269bcffb",
+      "bytes": 1362
+    },
+    "diagnostic_source.py": {
+      "sha256": "b735c16a0b60136e1593501286c13d215ad0f75bb27af89ad0befda423612629",
+      "bytes": 33711
+    },
+    "executed_control_schedule.json": {
+      "sha256": "6b82183da1bf71aec7566e31683b143f6a4d22d465c66f89b355adb6c4e4af98",
+      "bytes": 924
+    },
+    "independent_audit_binding.json": {
+      "sha256": "255d56ed0d746b5cad0ebc97b12d15c168c19219c43b77c1a8bf63d6c4dd8d97",
+      "bytes": 5283
+    },
+    "independent_formed_entry_audit.json": {
+      "sha256": "8d635b19de93d5f6f3d097ad8e090c9d0ec3ea00611b60575ed0850f5a70cabe",
+      "bytes": 4116
+    },
+    "independent_native_force_audit.json": {
+      "sha256": "e67c79549f5f2a40eac5ac48e97ac22ca459b5247d9a2f7a7bf36feb32a57d64",
+      "bytes": 10297
+    },
+    "independent_phase_depth_audit.json": {
+      "sha256": "582d4fa53fd7f5e16949232d25d4ff8ef348c75e4ad0c288d49af29d8fbf1781",
+      "bytes": 5241
+    },
+    "independent_table_press_audit.json": {
+      "sha256": "155cbf312967f1f2e300638942e46b96b8ce765373044cde86680040c3f4f4a6",
+      "bytes": 2739
+    },
+    "observer_source.py": {
+      "sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "bytes": 17063
+    },
+    "original_native_force_ledger.npz": {
+      "sha256": "d773bf3247fbcfb4c97cd0d56370b26c87e5ad609c4e817cd49a3b2879396d67",
+      "bytes": 27731181
+    },
+    "original_stdout_stderr.log": {
+      "sha256": "3d5c210394f252f29b5dc480a2030eb05ba40edd4036633d244ec3805edda608",
+      "bytes": 12598
+    },
+    "package_source.py": {
+      "sha256": "ea926b952ece3d22ab265bd25c2c2b8ae51b82c0d52021b1293bbf044e2db97d",
+      "bytes": 16946
+    },
+    "plot/native_load_geometry.png": {
+      "sha256": "38f026a0dd58db5869f75201e92efda58f5bb066859aab962baebe38b6a592d3",
+      "bytes": 188658
+    },
+    "plot/plot_face120_partial_helical_v3.py": {
+      "sha256": "86dde42de42012ea8f31b82b29962cbbbd1dcf293d4d379ac8e3c2fdc1fad714",
+      "bytes": 5200
+    },
+    "plot/plot_manifest.json": {
+      "sha256": "3c922fec624c71bfb444c1a4bbb870f0a69cdde565435ee68842efcf2191c40f",
+      "bytes": 1365
+    },
+    "publication_readme_source.md": {
+      "sha256": "5a6da5968392dbcfb756b41ccc349d65c2f880f3d8df4d2b8e259aa45d83c386",
+      "bytes": 12283
+    },
+    "recipe_validation/one_step_declaration.json": {
+      "sha256": "1a0d54f3ff151905f4a317f26d885de756fb32835c3bf95014dcca59484ef4b7",
+      "bytes": 9582
+    },
+    "recipe_validation/one_step_report.json": {
+      "sha256": "1afca2057c8afc5d9cf0e1d1e781f17f7bcb4d30aeb037358fc588a79553d79c",
+      "bytes": 89559
+    },
+    "recipe_validation/one_step_stdout_stderr_original.log": {
+      "sha256": "bce463bed806d282a52a076a2943aad5fbc786c71c02cedcc64085beefe41f58",
+      "bytes": 3247
+    },
+    "recipe_validation/reviewed_prepublication_binding.json": {
+      "sha256": "b048b34bf397c2013271751fed737d5c29e2b1763fc40b22c3df910a56d53ce0",
+      "bytes": 886
+    },
+    "recipe_validation/summary_original.json": {
+      "sha256": "37dc4cc47072b00f50952cdd6253e4ce9af8aeb1bbab03ad6a7eab6a4265abf2",
+      "bytes": 1623
+    },
+    "recorded_sources/yam_twin/kinematics.py": {
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+      "bytes": 2796
+    },
+    "recorded_sources/yam_twin/m8_insertion_engagement.py": {
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "bytes": 4752
+    },
+    "recorded_sources/yam_twin/m8_insertion_mechanics.py": {
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+      "bytes": 4321
+    },
+    "recorded_sources/yam_twin/m8_insertion_scene.py": {
+      "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+      "bytes": 25139
+    },
+    "recorded_sources/yam_twin/m8_insertion_simulation.py": {
+      "sha256": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294",
+      "bytes": 67946
+    },
+    "recorded_sources/yam_twin/m8_scene.py": {
+      "sha256": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f",
+      "bytes": 20849
+    },
+    "recorded_sources/yam_twin/m8_simulation.py": {
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+      "bytes": 30270
+    },
+    "recorded_sources/yam_twin/m8_supported_scene.py": {
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+      "bytes": 7969
+    },
+    "recorded_sources/yam_twin/m8_supported_simulation.py": {
+      "sha256": "0f652eb1cf245c21ba018a0d2156d8d7b6064e6cdf0611e051c4cdeb79f4cdfa",
+      "bytes": 81380
+    },
+    "recorded_sources/yam_twin/m8_supported_start.py": {
+      "sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "bytes": 17063
+    },
+    "render/audit_m8_insertion_trace.py": {
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+      "bytes": 30341
+    },
+    "render/demo.gif": {
+      "sha256": "bb36e77c25070798fc2ba151f9e014b1f172f1fb8ccd603d33e7971561ceb646",
+      "bytes": 6789314
+    },
+    "render/demo.mp4": {
+      "sha256": "c9a25f5ea24a792f9db8ca5169604674577f86abe7502da078ef651e64434696",
+      "bytes": 940000
+    },
+    "render/endpoint_detail.png": {
+      "sha256": "50b620390ec24655c75676b08be0ccac1e03a8958aef42191a8cf99aaa49ea65",
+      "bytes": 153318
+    },
+    "render/endpoint_open_side.png": {
+      "sha256": "c4d276cb0d61f2baa268c92c58d80de6d942d4c6dc900f57e261454341bd343d",
+      "bytes": 136856
+    },
+    "render/entry_detail.png": {
+      "sha256": "1e3b641efe92f172dbbbdd4761a42be0efd7cf3fc173a077daa9859b4b62f813",
+      "bytes": 140776
+    },
+    "render/render_face120_partial_helical_v3.py": {
+      "sha256": "496891a3cec63ce23fec09f95f4506530d8c7b0b1b65e1c140b2b3e9b86c23ea",
+      "bytes": 10190
+    },
+    "render/render_manifest.json": {
+      "sha256": "f4f486f339315f20578d4d9ec6e564e56689369a4fb2501358fbd2fe062da25a",
+      "bytes": 238754
+    },
+    "render/runtime.py": {
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd",
+      "bytes": 2177
+    },
+    "report.json": {
+      "sha256": "9c5d8dc33e4e510fe6d7f64f4f3c320e028cbb792eddddd6d633aa557d69ca6c",
+      "bytes": 69354
+    },
+    "scene.xml": {
+      "sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+      "bytes": 43813
+    },
+    "supported_scene.zip": {
+      "sha256": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+      "bytes": 5325454
+    }
+  }
+}

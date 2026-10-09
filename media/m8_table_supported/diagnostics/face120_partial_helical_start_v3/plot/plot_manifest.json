@@ -1,0 +1,18 @@
+{
+  "scope": "Read-only scientific presentation of complete original all-step native scalar loads/geometry. No qstate force reconstruction or integration. Trailing100ms means are explicitly new presentation derivatives; originals remain unchanged. Jaws closed; no capture/full-pitch/reset qualification.",
+  "original_ledger_sha256": "d773bf3247fbcfb4c97cd0d56370b26c87e5ad609c4e817cd49a3b2879396d67",
+  "original_report_sha256": "9c5d8dc33e4e510fe6d7f64f4f3c320e028cbb792eddddd6d633aa557d69ca6c",
+  "formed_entry_audit_sha256": "8d635b19de93d5f6f3d097ad8e090c9d0ec3ea00611b60575ed0850f5a70cabe",
+  "source_sha256": "86dde42de42012ea8f31b82b29962cbbbd1dcf293d4d379ac8e3c2fdc1fad714",
+  "original_native_rows": 136562,
+  "force_geometry_timing": "Preintegration original solve at logged absolute time\u221250\u00b5s; elapsed clock starts at declared cold initialization, first row50\u00b5s.",
+  "rolling_window_native_samples": 2000,
+  "rolling_window_s": 0.1,
+  "no_interpolation_or_force_replay": true,
+  "final_computed_signed_thread_weight_fraction": 0.9999664334795101,
+  "final_computed_positive_hand_weight_fraction": 0.00015116559325397183,
+  "maximum_actual_formed_geometry_m": 2.1623846920818326e-05,
+  "actual_loaded_full_interior_substeps": 0,
+  "plot_sha256": "38f026a0dd58db5869f75201e92efda58f5bb066859aab962baebe38b6a592d3",
+  "plot_bytes": 188658
+}

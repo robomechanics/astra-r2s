@@ -1,0 +1,10 @@
+{
+  "scope": "Output-only helical-normal geometry arithmetic checks; distinct from281 application checks and native qualification. No integration or force replay.",
+  "command": "scripts/run_m8.sh -m pytest outputs/m8_table_supported/diagnostics/test_independent_formed_entry_audit.py -q",
+  "result": "2 passed in0.08s",
+  "frozen_files": {
+    "independent_formed_entry_audit.py": "17060b6589e9880cb83fbe33d3f5c1d131726d702213abc849f0c1e99b117953",
+    "test_independent_formed_entry_audit.py": "7890a13c64a1848fbe1528883b050d1da49cb749fdb045b1f1b708d6a2af05ef"
+  },
+  "frozen": true
+}

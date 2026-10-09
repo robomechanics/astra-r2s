@@ -1,0 +1,19 @@
+{
+  "scope": "Executed schedules from exact frozen native controller and original scalar ledger; no prescribed axial lead or free-body drive.",
+  "constant_right_net_feed_N_from_first_cold_step": 0.26241400403581094,
+  "right_axial_damping_Ns_per_m": 200.0,
+  "left_downward_forcefeed_N": 2.0,
+  "left_force_preload_ramp_s": 0.3,
+  "left_worldZ_velocity_damping_Ns_per_m": 200.0,
+  "alignment_s": 0.3,
+  "closed_pre_turn_hold_s": 0.3,
+  "post_turn_hold_s": 0.5,
+  "strong_right_aperture_m": 0.0184,
+  "unused_legacy_left_down_offset_cli_option": true,
+  "privileged_perfect_native_pose_measurement": true,
+  "measurement_control_rate_Hz": 20000,
+  "native_arm_cartesian_force_cap_N": 8,
+  "native_arm_cartesian_torque_cap_Nm": 2,
+  "original_harness_sha256": "b735c16a0b60136e1593501286c13d215ad0f75bb27af89ad0befda423612629",
+  "original_ledger_sha256": "d773bf3247fbcfb4c97cd0d56370b26c87e5ad609c4e817cd49a3b2879396d67"
+}
