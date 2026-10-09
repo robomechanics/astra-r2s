@@ -1,0 +1,39 @@
+{
+  "progress_snapshot_path": "media/m8_table_pickup/progress_damped_entry.json",
+  "progress_snapshot_sha256": "e0635ceeee8324c7bc0d5d1769ddda34a9410845b3eb32dd649e6ade71017a73",
+  "screenshot_path": "media/m8_table_pickup/progress_damped_entry.png",
+  "screenshot_sha256": "2810a79578fbcb2bd4a7abc5f8c9f4cf76138205c2cd8f9e7e965024dce65faf",
+  "source_prefix_sha256": "4402f91a9c5742c3e47bf9be800577900b300ce7ce6e55e92a6dec54ba62e2c8",
+  "source_prefix_file_at_render_time": "outputs/m8_table_pickup/full_damped/insertion_trace_partial.npz",
+  "prefix_identity_scope": "This SHA identifies the render-time unfinished prefix only; the prefix file has since advanced and this is not the final whole-trace SHA.",
+  "source_trace_path": "media/m8_table_pickup/failures/damped_second_release_abort/trace.npz",
+  "audited_source_run_trace_path": "outputs/m8_table_pickup/full_damped/insertion_trace.npz",
+  "source_trace_sha256": "fbb07d1dc6f9931ace2cd4a68b1cef13d6f747b6a6807bb7bb597c4b06d0c166",
+  "exact_saved_state_and_native_sample_match": true,
+  "metadata_identity_match": true,
+  "sample_index": 1808,
+  "physics_time_s": 8.969999999985765,
+  "phase": "feed_to_entry",
+  "qpos_f64_sha256": "38278cbfc1a9fefc4e9fa14fc7a863b1a18263d1a17b100b606a9c9da106983b",
+  "qvel_f64_sha256": "7738523b2136c14f79c7956060c95eb992a94454729673dc26b5c155397f70c8",
+  "source_outcome": {
+    "passed": false,
+    "partial": false,
+    "aborted": {
+      "phase": "release_search_3",
+      "time": 17.323850000013326,
+      "reported_sdf_depth_m": 1.012878059265791e-05,
+      "radial_offset_m": 0.00013940633908414356,
+      "bolt_tilt_rad": 0.010652627365572783,
+      "block_grip_slip_m": 0.00022762458881005592,
+      "block_grip_rotation_slip_rad": 0.00037791291367456255,
+      "bolt_grip_slip_m": 0.0,
+      "world_block_support_contacts": 0,
+      "minimum_native_joint_margin_rad": 0.17671550916954515,
+      "warnings": 0,
+      "external_drive_zero": true
+    }
+  },
+  "scope": "The published progress screenshot is crossmatched against this aborted continuous attempt; no formed-flank capture, qualified screw turn, or complete end-to-end demonstration is claimed.",
+  "method": "Exact float64 qpos/qvel byte hashes and arrays, unique saved timestamp, complete original native sample dictionary, metadata identity, and published PNG bytes checked against the immutable final NPZ. No integration or fresh force evaluation."
+}

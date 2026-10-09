@@ -1,80 +1,95 @@
 {
-  "status": "incomplete_progress_prefix",
-  "passed": false,
+  "video": "insertion_demo.mp4",
+  "screenshot": "insertion_demo.png",
+  "gif": "insertion_demo.gif",
+  "frames": 312,
+  "fps": 12,
+  "slow_motion": 1.5,
+  "source_recording": "outputs/m8_table_pickup/full_damped/insertion_trace.npz",
+  "trajectory_sha256": "fbb07d1dc6f9931ace2cd4a68b1cef13d6f747b6a6807bb7bb597c4b06d0c166",
+  "recorded_validation_passed": false,
+  "status": "aborted_trial",
   "finished_rollout": false,
+  "partial_task_scope": false,
+  "partial_flag_note": "The recorded partial flag records requested phase selection, not completion. The real trajectory aborted.",
+  "actual_abort": {
+    "phase": "release_search_3",
+    "time": 17.323850000013326,
+    "reported_sdf_depth_m": 1.012878059265791e-05,
+    "radial_offset_m": 0.00013940633908414356,
+    "bolt_tilt_rad": 0.010652627365572783,
+    "block_grip_slip_m": 0.00022762458881005592,
+    "block_grip_rotation_slip_rad": 0.00037791291367456255,
+    "bolt_grip_slip_m": 0.0,
+    "world_block_support_contacts": 0,
+    "minimum_native_joint_margin_rad": 0.17671550916954515,
+    "warnings": 0,
+    "external_drive_zero": true
+  },
+  "source_end_time_s": 17.323850000013326,
+  "source_end_phase": "release_search_3",
   "formed_thread_support_claim": false,
+  "capture_claim": false,
   "qualified_thread_claim": false,
-  "trajectory": "insertion_trace.npz",
-  "trajectory_sha256": "da6b1e9e2037c465f0b956a6560234e533a517c2d7139de38754f346d53aeed8",
-  "source_end_time_s": 14.187849999973604,
-  "source_end_phase": "settle_regrip_search_2",
-  "video": {
-    "file": "demo.mp4",
-    "frames": 142,
-    "fps": 10,
-    "slow_motion": 1,
-    "metadata": {
-      "plugin": "ffmpeg",
-      "nframes": null,
-      "ffmpeg_version": "7.0.2-static https://johnvansickle.com/ffmpeg/ built with gcc 8 (Debian 8.3.0-6)",
-      "codec": "h264",
-      "pix_fmt": "yuv420p(progressive)",
-      "fps": 10.0,
-      "source_size": [
-        1296,
-        720
-      ],
-      "size": [
-        1296,
-        720
-      ],
-      "rotate": 0,
-      "duration": 14.2
-    },
-    "top_level_atoms": [
-      {
-        "name": "ftyp",
-        "offset": 0,
-        "length": 32
-      },
-      {
-        "name": "moov",
-        "offset": 32,
-        "length": 2506
-      },
-      {
-        "name": "free",
-        "offset": 2538,
-        "length": 8
-      },
-      {
-        "name": "mdat",
-        "offset": 2546,
-        "length": 2131161
-      }
-    ],
-    "faststart_moov_before_mdat": true,
-    "closed_container_and_all_frames_decoded": true
-  },
-  "gif": {
-    "file": "demo.gif",
-    "frames": 85,
-    "fps_filter": 6,
-    "width_pixels": 800,
-    "duration_ms": 14170,
-    "all_frames_decoded": true
-  },
+  "scope_note": "Both genuine pickups and first cone-start opening/reset/regrasp recovery are shown. The second starting stroke was followed by a second release that exceeded the unchanged 10 micrometre SDF depth guard. The rollout stopped before formed-thread capture or qualified lead.",
+  "render_method": "Native recorded qpos/qvel samples selected at frame time with searchsorted. mj_forward computes display transforms; no dynamics integration, no q interpolation, no reconstructed-force claim.",
   "still": {
-    "file": "demo.png",
+    "requested_time_s": 17.28,
+    "recorded_time_s": 17.283150000011975,
+    "recorded_phase": "release_search_3",
     "size_pixels": [
       1296,
       720
-    ],
-    "requested_time_s": 12.3,
-    "recorded_time_s": 12.300299999978003,
-    "recorded_phase": "reset_open_search_2"
+    ]
   },
-  "method": "Native recorded qpos/qvel samples only. mj_forward computes display transforms. No dynamics integration and no q interpolation.",
+  "video_metadata": {
+    "plugin": "ffmpeg",
+    "nframes": null,
+    "ffmpeg_version": "7.0.2-static https://johnvansickle.com/ffmpeg/ built with gcc 8 (Debian 8.3.0-6)",
+    "codec": "h264",
+    "pix_fmt": "yuv420p(progressive)",
+    "fps": 12.0,
+    "source_size": [
+      1296,
+      720
+    ],
+    "size": [
+      1296,
+      720
+    ],
+    "rotate": 0,
+    "duration": 26.0,
+    "nframes_note": "imageio reports an unbounded container estimate; normalized to null for strict JSON. The independent complete decode count is recorded as frames=312."
+  },
+  "video_top_level_atoms": [
+    {
+      "name": "ftyp",
+      "offset": 0,
+      "length": 32
+    },
+    {
+      "name": "moov",
+      "offset": 32,
+      "length": 4558
+    },
+    {
+      "name": "free",
+      "offset": 4590,
+      "length": 8
+    },
+    {
+      "name": "mdat",
+      "offset": 4598,
+      "length": 4273305
+    }
+  ],
+  "faststart_moov_before_mdat": true,
+  "closed_container_and_all_frames_decoded": true,
+  "gif_frames": 156,
+  "gif_fps_filter": 6,
+  "gif_width_pixels": 800,
+  "gif_duration_ms": 26000,
+  "all_gif_frames_decoded": true,
   "model_identity": {
     "model_fingerprint": "d8ef2669aff4b4e871d1e09bed2a00e7482649c554bcfce5b7fb234e220bf635",
     "model_xml_sha256": "19dd6fcd1081b03ad1c5c584be4a4635b03b32ab5ffa183bbc5b1c71ce2e847e",
@@ -103,7 +118,7 @@
     "method": "Exact hash-verified archived XML; current scene generator is not used"
   },
   "controller_source_identity": {
-    "source_path": "/workspace/astra-r2s/media/m8_table_pickup/progress_first_start/controller_source.py",
+    "source_path": "/workspace/astra-r2s/outputs/m8_table_pickup/full_damped/controller_source.py",
     "module_sha256": "b55187427445a55c9128d74e8a099741f896ef2e18b771a4ba225d5f9f9d0814",
     "controller_sha256": "87f2cc95ed1fbadab60c6e0efbb1cf9f0eb19b7f17a692a6119559240f2fac69",
     "hashed_function_names": [
@@ -133,19 +148,11 @@
     "inspection_method": "Static exact function blocks and archived helper sources; controller code is not executed"
   },
   "renderer_source_sha256": "c71688a75fb56ef73117b739d98c70575ae674abdf60f6e444d9c771517aae94",
-  "scope_note": "Both actual pickups and first cone-start opening/reset/regrasp recovery. This prefix is not a final rollout or a formed-thread support/capture/qualified lead proof.",
+  "chart_metadata": "insertion_trajectory.json",
+  "source_private_videos_included": false,
   "container_metadata_normalization": {
-    "note": "The previously published render_manifest.json contained the nonstandard Python-JSON value Infinity in video.metadata.nframes. Only that diagnostic container-metadata field is normalized to null. The separately decoded frame count remains 142. No video, trace, archived source, physical metadata or physical result changed.",
-    "original_file": "render_manifest_original_python_json.txt",
-    "original_sha256": "7fd5a6fb88bb0ea69c039a31e416775ce8148573b7a3dae25d4ca03ec2160a0f",
-    "normalized_fields": [
-      {
-        "path": "/video/metadata/nframes",
-        "original_python_json_value": "inf",
-        "strict_json_value": null
-      }
-    ],
-    "serialization": "Strict JSON with allow_nan=false",
-    "helper_source": "normalize_render_json_source.py"
+    "original_manifest_sha256": "44eadc5e54cbe571685aff1d4f249d8dc1b884ab508437c6322ddfcdf9810b86",
+    "normalized_field": "video_metadata.nframes",
+    "scope": "Nonphysical imageio container metadata only; trace, media bytes, model, controller, outcomes and independent frame count unchanged."
   }
 }

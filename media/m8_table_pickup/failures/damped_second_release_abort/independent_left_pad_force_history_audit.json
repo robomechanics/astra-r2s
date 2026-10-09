@@ -1,0 +1,762 @@
+{
+  "kind": "Original every-substep pad-force diagnostic consistency audit",
+  "method": "Raw-array identity, timestep coverage and independent aggregation only; zero integration or force solve",
+  "force_scope": "Normal loads originate from the recorded native contact solve. Reaggregation does not independently establish contact-law accuracy or reconstruct forces from saved poses.",
+  "timing": "mj_step contact forces and contact geometry are from the pre-integration state at recorded time minus timestep; saved qpos/qvel are the post-integration state",
+  "scope": "Every physics substep after end-settle acquisition; force minima and gaps include physical lift and roll, separately from 5 ms saved-pose sampling",
+  "raw_history_filename": "left_pad_force_history.npz",
+  "raw_history_sha256": "13dca215e18b62d5fc52c3b71f473b8615972057f7a8a9f0de73b37c30a91e70",
+  "raw_history_metadata": {
+    "model_fingerprint": "d8ef2669aff4b4e871d1e09bed2a00e7482649c554bcfce5b7fb234e220bf635",
+    "controller_sha256": "87f2cc95ed1fbadab60c6e0efbb1cf9f0eb19b7f17a692a6119559240f2fac69",
+    "runtime": {
+      "mujoco_version": "3.15.0",
+      "libraries": [
+        {
+          "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+          "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+          "sdf_minimum_search_step_m": 1e-07,
+          "sdf_initial_search_step_m": 0.002
+        }
+      ],
+      "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+    },
+    "observer": "native-bilateral-pad-load-v1",
+    "timestep_s": 5e-05,
+    "minimum_loaded_force_N": 0.1,
+    "scope": "Every physics substep after end-settle acquisition; force minima and gaps include physical lift and roll, separately from 5 ms saved-pose sampling",
+    "timing": "mj_step contact forces and contact geometry are from the pre-integration state at recorded time minus timestep; saved qpos/qvel are the post-integration state"
+  },
+  "raw_force_data_matches_recorded_sha": true,
+  "consecutive_physics_step_coverage_verified": true,
+  "first_recorded_force_time_s": 1.5000000000009532,
+  "last_recorded_force_time_s": 17.323850000013326,
+  "coverage_note": "Force evaluation is at recorded time minus timestep; saved qpos/qvel are post-integration. Coverage runs from the acquisition step through the final step; initial ungrasped phases are outside this retention scope.",
+  "recomputed_stats": {
+    "observer": "native-bilateral-pad-load-v1",
+    "minimum_loaded_force_N": 0.1,
+    "observed_physics_steps": 316478,
+    "observed_duration_s": 15.8239,
+    "minimum_normal_force_N": [
+      0.0,
+      0.0
+    ],
+    "unloaded_physics_steps": [
+      9,
+      6
+    ],
+    "unloaded_duration_s": [
+      0.00045000000000000004,
+      0.00030000000000000003
+    ],
+    "maximum_consecutive_unloaded_duration_s": [
+      5e-05,
+      5e-05
+    ],
+    "continuously_bilateral_loaded": false
+  },
+  "matches_recorded_global_stats": true,
+  "matches_recorded_acceptance_gate": true,
+  "matches_declared_step_count": true,
+  "sampled_diagnostic_rows_checked": 3191,
+  "sampled_diagnostics_match_raw": true,
+  "per_phase_stats": [
+    {
+      "phase": "settle_table",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 0,
+        "observed_duration_s": 0.0,
+        "minimum_normal_force_N": null,
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": false
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "reach_left_block",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 0,
+        "observed_duration_s": 0.0,
+        "minimum_normal_force_N": null,
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": false
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "close_left_block",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 0,
+        "observed_duration_s": 0.0,
+        "minimum_normal_force_N": null,
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": false
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "settle_left_block",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 1,
+        "observed_duration_s": 5e-05,
+        "minimum_normal_force_N": [
+          15.985915814634085,
+          15.984269015069643
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "lift_left_block",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 18000,
+        "observed_duration_s": 0.9,
+        "minimum_normal_force_N": [
+          0.0,
+          5.337297959478738
+        ],
+        "unloaded_physics_steps": [
+          3,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.00015000000000000001,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          5e-05,
+          0.0
+        ],
+        "continuously_bilateral_loaded": false
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "transport_left_block",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 60000,
+        "observed_duration_s": 3.0,
+        "minimum_normal_force_N": [
+          0.0,
+          0.0
+        ],
+        "unloaded_physics_steps": [
+          6,
+          6
+        ],
+        "unloaded_duration_s": [
+          0.00030000000000000003,
+          0.00030000000000000003
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          5e-05,
+          5e-05
+        ],
+        "continuously_bilateral_loaded": false
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "hold_left_block",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 3000,
+        "observed_duration_s": 0.15,
+        "minimum_normal_force_N": [
+          16.496062852123554,
+          15.49735395898432
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "secure_left",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 5000,
+        "observed_duration_s": 0.25,
+        "minimum_normal_force_N": [
+          16.496165740194726,
+          15.4974106321481
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "reach_bolt",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 11000,
+        "observed_duration_s": 0.55,
+        "minimum_normal_force_N": [
+          16.496212123413738,
+          15.49741381238281
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "close_bolt",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 5000,
+        "observed_duration_s": 0.25,
+        "minimum_normal_force_N": [
+          16.49622139053354,
+          15.497424116123211
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "settle_bolt",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 2400,
+        "observed_duration_s": 0.12000000000000001,
+        "minimum_normal_force_N": [
+          16.49622318643382,
+          15.497425909746026
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "lift_bolt",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 13000,
+        "observed_duration_s": 0.65,
+        "minimum_normal_force_N": [
+          16.49622377434437,
+          15.497426496652754
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "transport_bolt",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 18000,
+        "observed_duration_s": 0.9,
+        "minimum_normal_force_N": [
+          16.496225408577956,
+          15.49742812748838
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "align_over_hole",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 9000,
+        "observed_duration_s": 0.45,
+        "minimum_normal_force_N": [
+          16.496226043023803,
+          15.497428760192442
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "feed_to_entry",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 5000,
+        "observed_duration_s": 0.25,
+        "minimum_normal_force_N": [
+          16.496226151526024,
+          15.497428868358949
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "start_thread_1",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 58905,
+        "observed_duration_s": 2.94525,
+        "minimum_normal_force_N": [
+          16.4582265187771,
+          14.257491778630499
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "stop_start_1",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 2400,
+        "observed_duration_s": 0.12000000000000001,
+        "minimum_normal_force_N": [
+          16.49768362441192,
+          15.420841733284067
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "release_search_2",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 3000,
+        "observed_duration_s": 0.15,
+        "minimum_normal_force_N": [
+          16.498292230729252,
+          14.70439108173814
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "open_settle_search_2",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 1600,
+        "observed_duration_s": 0.08,
+        "minimum_normal_force_N": [
+          16.6272350436272,
+          15.365983315640008
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "reset_open_search_2",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 29452,
+        "observed_duration_s": 1.4726000000000001,
+        "minimum_normal_force_N": [
+          16.625620304913575,
+          15.363694426220444
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "open_hold_search_2",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 1600,
+        "observed_duration_s": 0.08,
+        "minimum_normal_force_N": [
+          16.626794509616953,
+          15.365770929966374
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "regrip_search_2",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 5000,
+        "observed_duration_s": 0.25,
+        "minimum_normal_force_N": [
+          16.5116294820533,
+          14.717157648779969
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "settle_regrip_search_2",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 2400,
+        "observed_duration_s": 0.12000000000000001,
+        "minimum_normal_force_N": [
+          16.49522557405746,
+          15.35708314565835
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "start_thread_2",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 58905,
+        "observed_duration_s": 2.94525,
+        "minimum_normal_force_N": [
+          16.46861237922311,
+          14.069403031144367
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "stop_start_2",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 2400,
+        "observed_duration_s": 0.12000000000000001,
+        "minimum_normal_force_N": [
+          16.49748419762828,
+          14.755888832910149
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    },
+    {
+      "phase": "release_search_3",
+      "recomputed_stats": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 1415,
+        "observed_duration_s": 0.07075000000000001,
+        "minimum_normal_force_N": [
+          16.49759894071557,
+          13.852658328241732
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "matches_recorded_phase_stats": true
+    }
+  ],
+  "all_consistency_checks_passed": true,
+  "auditor_source_sha256": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc",
+  "trajectory": "outputs/m8_table_pickup/full_damped/insertion_trace.npz",
+  "trajectory_sha256": "fbb07d1dc6f9931ace2cd4a68b1cef13d6f747b6a6807bb7bb597c4b06d0c166"
+}

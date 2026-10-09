@@ -1,0 +1,60 @@
+{
+  "kind": "distinct_controller_function_bundle_and_whole_source_identities",
+  "trajectory_sha256": "fbb07d1dc6f9931ace2cd4a68b1cef13d6f747b6a6807bb7bb597c4b06d0c166",
+  "controller_function_class_bundle": {
+    "sha256": "87f2cc95ed1fbadab60c6e0efbb1cf9f0eb19b7f17a692a6119559240f2fac69",
+    "matches_capture_inspection": true,
+    "ordered_definition_names": [
+      "PadLoadHistory",
+      "_pad_normal_forces",
+      "_relative_axial_velocity",
+      "InsertionControlConfig",
+      "insertion_phases",
+      "initialize_insertion_pose",
+      "_body_contact",
+      "formed_flank_overlap",
+      "run_insertion_demo",
+      "fully_formed_flank_interval",
+      "contact_is_on_full_flanks",
+      "thread_end_bounds",
+      "LoadedFlankWindow",
+      "YamCartesianController",
+      "YamM8ControlConfig",
+      "smooth_profile"
+    ],
+    "scope": "Ordered exact selected controller, mechanics, observer and Cartesian controller definitions, independently extracted statically from archived source files."
+  },
+  "controller_whole_file": {
+    "archive": "controller_source.py",
+    "sha256": "b55187427445a55c9128d74e8a099741f896ef2e18b771a4ba225d5f9f9d0814",
+    "matches_capture_module_inspection": true,
+    "scope": "Whole frozen application controller module bytes; this SHA is distinct from the selected-definition bundle SHA."
+  },
+  "whole_source_archives": {
+    "controller_source.py": "b55187427445a55c9128d74e8a099741f896ef2e18b771a4ba225d5f9f9d0814",
+    "recorded_sources/yam_twin/m8_insertion_mechanics.py": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+    "recorded_sources/yam_twin/m8_insertion_engagement.py": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "recorded_sources/yam_twin/m8_simulation.py": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+    "engagement_observer_source.py": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "scene_source.py": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+    "audit_sources/audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+    "audit_sources/audit_m8_insertion_capture.py": "15ba607ac3277b4f8ef3f02aaf8df677e285e20511f0a7b9f8d07a202bad1233",
+    "audit_sources/audit_m8_left_pad_force_history.py": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc"
+  },
+  "additional_exact_whole_source_archives": {
+    "audit_sources/audit_m8_insertion_reset_contacts.py": "b8b14448a2fba7074ebed84669a7a6015b1f831e45e7a647ff7acc9cdb10ab0a",
+    "audit_sources/audit_m8_free_joint_properties.py": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+    "audit_sources/package_m8_insertion_demo.py": "96ba1018173e05f18e98d50a24018b1cec55a215c63aae2c648fdb7932324e39",
+    "audit_sources/plot_m8_insertion_trace.py": "4125f08051d2ac8461545bb71d7b6ceda6f26a80ae121ce18ef250534be69dac",
+    "render_sources/renderer_source.py": "c71688a75fb56ef73117b739d98c70575ae674abdf60f6e444d9c771517aae94",
+    "render_sources/container_check_source.py": "4a5469eda6d23509b73561bf35c09466576387a1fd4e941159f37db8fd762a6f"
+  },
+  "renderer_trial_start_and_media_source_same": true,
+  "render_source_sha256": "c71688a75fb56ef73117b739d98c70575ae674abdf60f6e444d9c771517aae94",
+  "software_proof_snapshot": {
+    "file": "software_tests.json",
+    "sha256": "68bc51b465b98662b97529e42daa6047d6bddfa177f905ad9aa42dae33de6470",
+    "passed_tests": 167,
+    "scope": "Old unchanged-source software proof for this failed physical attempt, independent of later controller revisions."
+  }
+}

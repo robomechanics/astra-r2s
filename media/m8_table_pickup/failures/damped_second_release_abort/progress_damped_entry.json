@@ -1,0 +1,251 @@
+{
+  "scope": "Unfinished fresh damped rollout progress; actual physical pickup of both parts, no qualified thread capture claimed by this image.",
+  "physics_time_s": 8.969999999985765,
+  "phase": "feed_to_entry",
+  "qpos": [
+    0.3001492500821272,
+    -0.010134196452959673,
+    0.10709924280432166,
+    0.9999999693001326,
+    -6.697150832232623e-05,
+    9.637021992973325e-07,
+    0.00023856576100640307,
+    -0.4077651437254969,
+    2.271129755998479,
+    0.9139848189044284,
+    1.357465502321099,
+    1.1630311642464106,
+    -1.5710924677055702,
+    0.008599412184709304,
+    -0.008400270578881578,
+    0.781313312329257,
+    2.1203985837954233,
+    1.9926041283811777,
+    -1.442838204317026,
+    0.0002157802280685618,
+    -1.0200151914695754,
+    0.010497937218075801,
+    -0.010497928582663327,
+    0.3001750242782555,
+    -0.06012522398603341,
+    0.131554985505491,
+    -4.712117103809652e-05,
+    0.9933642077544091,
+    0.11501101576628175,
+    0.00012159135191142896
+  ],
+  "qvel": [
+    3.1098080233876903e-13,
+    1.0330989787546039e-11,
+    1.896010969589637e-09,
+    2.046349833533597e-07,
+    -1.2937049747130907e-10,
+    2.736488294120389e-12,
+    -5.267724151724315e-13,
+    3.845278419207562e-12,
+    7.210185212310565e-13,
+    2.1826539759712535e-12,
+    -1.8419405116212503e-12,
+    -1.8715616225597258e-12,
+    -1.5495561072803778e-15,
+    2.7311383146372702e-14,
+    -0.0004407312020182474,
+    0.0035956357857490654,
+    0.0021317134404569386,
+    -0.0018639866836812082,
+    -0.0009459185436680081,
+    0.00019841802861598383,
+    -1.649400165618093e-07,
+    -1.649464013086968e-07,
+    -1.589735108807474e-05,
+    -9.199655582637479e-06,
+    -0.0008490781359450387,
+    -0.0009380422464109017,
+    -0.003330701907110243,
+    0.000638976800838147
+  ],
+  "qpos_f64_sha256": "38278cbfc1a9fefc4e9fa14fc7a863b1a18263d1a17b100b606a9c9da106983b",
+  "qvel_f64_sha256": "7738523b2136c14f79c7956060c95eb992a94454729673dc26b5c155397f70c8",
+  "sample": {
+    "time": 8.969999999985765,
+    "phase": "feed_to_entry",
+    "bolt_base_insertion_m": -0.024449089012339574,
+    "bolt_yaw_unwrapped_rad": -0.2300550371855774,
+    "clockwise_turns": -0.03661439635127444,
+    "thread_overlap_m": -0.0004490899685239136,
+    "thread_contacts": 0,
+    "loaded_formed_thread_contacts": 0,
+    "loaded_formed_thread_normal_force_N": 0.0,
+    "engagement_window": {
+      "version": "loaded_full_flank_window_v1",
+      "ready": false,
+      "continuous_geometry_elapsed_s": 0.0,
+      "window_duration_s": 0.2,
+      "normal_impulse_Ns": 0.0,
+      "loaded_substeps": 0,
+      "loaded_contact_count": 0,
+      "loaded_duration_s": 0.0,
+      "sample_count": 0,
+      "loaded_substep_duty": 0.0,
+      "helix_phase_range_m": 0.0
+    },
+    "legacy_consecutive_loaded_contact_streak_s": 0.0,
+    "head_block_seating_contacts": 0,
+    "formed_flank_overlap_m": 0.0,
+    "thread_engaged": false,
+    "radial_offset_m": 5.991944291822064e-06,
+    "bolt_tilt_rad": 0.00034572104906242405,
+    "reported_sdf_depth_m": 0.0,
+    "bolt_world_position": [
+      0.30017502507312305,
+      -0.06012522352605063,
+      0.1315550279593978
+    ],
+    "hole_world_position": [
+      0.3001731066639495,
+      -0.0601341903130796,
+      0.10710593993237445
+    ],
+    "bolt_tip_world_position": [
+      0.30017871917710537,
+      -0.06012327681608077,
+      0.11555502850427546
+    ],
+    "block_lift_m": 0.04709925280422686,
+    "left_grasp_acquired": true,
+    "left_pickup_verified": true,
+    "block_grip_slip_m": 0.0002241468731645927,
+    "block_grip_rotation_slip_rad": 0.00037254785264157836,
+    "bolt_grip_slip_m": 5.864178609906081e-05,
+    "bolt_world_support_contacts": 0,
+    "block_world_support_contacts": 0,
+    "external_drive_zero": true,
+    "minimum_native_joint_margin_rad": 0.12796179568297394,
+    "contact": {
+      "contact_count": 8,
+      "pad_contact_count": 8,
+      "wrench_world": [
+        -2.445006114459858e-06,
+        -3.128328608603681e-06,
+        0.26240870995024795,
+        -2.938467653745662e-07,
+        -1.250875124002293e-07,
+        7.150461823340892e-09
+      ],
+      "pad_wrench_world": [
+        -2.445006114459858e-06,
+        -3.128328608603681e-06,
+        0.26240870995024795,
+        -2.938467653745662e-07,
+        -1.250875124002293e-07,
+        7.150461823340892e-09
+      ],
+      "pad_normal_force_N": [
+        5.958691335979584,
+        5.9586281533797045
+      ],
+      "jaw_actuator_force": [
+        -5.958743205955443,
+        5.958572808871764
+      ],
+      "arm_motor_torques_Nm": [
+        0.0008870723474404572,
+        -9.389521772255408,
+        5.234929719928421,
+        0.2502439098624504,
+        0.01204384799141325,
+        -1.165911114569011e-06
+      ],
+      "hand_wrench_world": [
+        -0.03132740103819373,
+        -0.027152021306566885,
+        0.2535050321996885,
+        0.0061914603351384285,
+        -0.007367430947668362,
+        0.0016313046369441924
+      ]
+    },
+    "left_contact": {
+      "contact_count": 8,
+      "pad_contact_count": 8,
+      "wrench_world": [
+        -1.9830083145748294e-14,
+        -3.0993523719713423e-13,
+        0.9987972922473958,
+        0.0009151752045729114,
+        3.4810802699083987e-07,
+        5.138101858044586e-17
+      ],
+      "pad_wrench_world": [
+        -1.9830083145748294e-14,
+        -3.0993523719713423e-13,
+        0.9987972922473958,
+        0.0009151752045729114,
+        3.4810802699083987e-07,
+        5.138101858044586e-17
+      ],
+      "pad_normal_force_N": [
+        16.496226187877273,
+        15.49742890459131
+      ],
+      "jaw_actuator_force": [
+        -17.988243694186053,
+        14.00541157763135
+      ],
+      "arm_motor_torques_Nm": [
+        -4.4876916628646473e-13,
+        -9.22813408658103,
+        3.982647506436713,
+        1.509257886809418,
+        -0.0002478106980827762,
+        -0.04432773643145217
+      ],
+      "hand_wrench_world": [
+        1.03654905442225e-12,
+        -8.370486522273853e-13,
+        0.9987972922375835,
+        0.01016983469514183,
+        -0.0001487224694286839,
+        -2.178500756635418e-13
+      ]
+    },
+    "axial_float": true,
+    "axial_feed_command_N": -0.253501333709088,
+    "right_relative_axial_velocity_m_per_s": 0.0008217466405542956,
+    "axial_velocity_damping_force_N": -0.04108733202771478,
+    "right_position_error_m": [
+      -1.6886085362766146e-06,
+      -1.408121486627667e-06,
+      0.00019948935539831902
+    ],
+    "right_rotation_error_rad": [
+      -9.615813091412275e-05,
+      0.0002703506677237834,
+      -5.510971774421996e-05
+    ]
+  },
+  "source_prefix_sha256": "4402f91a9c5742c3e47bf9be800577900b300ce7ce6e55e92a6dec54ba62e2c8",
+  "source_prefix_file_at_render_time": "outputs/m8_table_pickup/full_damped/insertion_trace_partial.npz",
+  "screenshot_sha256": "2810a79578fbcb2bd4a7abc5f8c9f4cf76138205c2cd8f9e7e965024dce65faf",
+  "renderer_sha256": "c71688a75fb56ef73117b739d98c70575ae674abdf60f6e444d9c771517aae94",
+  "render_method": "No integration; replay exact archived scene and original qpos/qvel at the recorded sample.",
+  "source_commit": "63689d5",
+  "metadata_identity": {
+    "model_fingerprint": "d8ef2669aff4b4e871d1e09bed2a00e7482649c554bcfce5b7fb234e220bf635",
+    "model_xml_sha256": "19dd6fcd1081b03ad1c5c584be4a4635b03b32ab5ffa183bbc5b1c71ce2e847e",
+    "controller_sha256": "87f2cc95ed1fbadab60c6e0efbb1cf9f0eb19b7f17a692a6119559240f2fac69",
+    "scene_source_sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+    "runtime": {
+      "mujoco_version": "3.15.0",
+      "libraries": [
+        {
+          "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+          "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+          "sdf_minimum_search_step_m": 1e-07,
+          "sdf_initial_search_step_m": 0.002
+        }
+      ],
+      "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+    }
+  }
+}

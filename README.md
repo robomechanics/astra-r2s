@@ -4,16 +4,34 @@ The current task starts with **both M8 workpieces set aside**: the female
 threaded block rests on the table and the male bolt rests on a separate
 low support. The left arm must reach, close its fingers, lift the block,
 and rotate it into the assembly pose before the right arm picks up the bolt.
-The selected table-pickup source passes **167 software tests** at unchanged
-recorded hashes. Its fresh complete physics rollout is running; threading
-acceptance remains pending. See [task modes, controls and evidence](docs/yam_m8_insertion.md).
+The recorded clip now shows both physical pickups and a first starting/opening/
+reset/regrasp sequence. **The complete tabletop threading task remains
+unfinished.** The damped full attempt stopped before formed-flank capture;
+the next controller revision is being checked. See
+[task modes, controls and evidence](docs/yam_m8_insertion.md).
+
+[![Both physical pickups and first start/recovery; no formed-thread capture](media/m8_table_pickup/progress_first_start/demo.gif)](media/m8_table_pickup/progress_first_start/demo.mp4)
+
+[Pickup/start MP4](media/m8_table_pickup/progress_first_start/demo.mp4) ·
+[GIF](media/m8_table_pickup/progress_first_start/demo.gif) ·
+[Screenshot](media/m8_table_pickup/progress_first_start/demo.png) ·
+[Exact progress sources and scope](media/m8_table_pickup/progress_first_start)
+
+This actual recorded prefix ends at 14.18785 s before the second starting
+stroke. Cone contact and this reset do not establish thread capture or lead.
+
+The [preserved damped failure](media/m8_table_pickup/failures/damped_second_release_abort)
+stops at 17.32385 s when the second search opening reaches **10.129 µm**
+reported depth, exceeding the unchanged **10 µm** guard. Its saved-pose audit
+finds zero unexpected penetrating camera/backing contacts; the strict raw
+pad-preload check still fails 9 / 6 isolated 50 µs gaps.
 
 The [preserved failed full attempt](media/m8_table_pickup/failures/full_v10_depth_abort)
 physically picks up both workpieces, then aborts at thread entry: its depth
 proxy reaches 10.562 µm, exceeding the unchanged 10 µm guard. Capture and
 qualified turns were not reached. Camera/jaw collisions and isolated pad-load
-gaps remain recorded failures. The fresh trial moves the separate bolt farther
-aside and adds native axial velocity damping, with no imposed screw motion.
+gaps remain recorded failures. The later damped trial moved the separate bolt
+farther aside and added native axial velocity damping, with no imposed screw motion.
 
 [Failed-attempt MP4](media/m8_table_pickup/failures/full_v10_depth_abort/demo.mp4) ·
 [GIF](media/m8_table_pickup/failures/full_v10_depth_abort/demo.gif) ·
@@ -24,12 +42,6 @@ block and separate bolt. This is a static preview, not a completed rollout.
 The [physical block-pickup diagnostic](media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us)
 reaches the holding pose but retains a failed pad-load check for isolated
 50 µs force gaps. It is partial evidence, with no bolt/thread qualification.
-
-[![Physical block pickup diagnostic; failed pad-load gate](media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/demo.gif)](media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/demo.mp4)
-
-[Pickup MP4](media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/demo.mp4) ·
-[Pickup GIF](media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/demo.gif) ·
-[Pickup screenshot](media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/demo.png)
 
 The published **earlier bolt-pickup rollout** starts with the left pads
 already touching the free block. The right arm physically picks up the bolt,
@@ -59,9 +71,10 @@ entry. These are explicitly ideal-fixture tests; their results do not replace
 the full robot checks. Timestep and contact-search refinement pass the strict
 2% travel/lead comparisons; the peak reported depth remains search-sensitive.
 See [the numerical comparison and raw traces](media/m8_insertion/refinement/README.md).
-The [current 167-test software proof](media/m8_table_pickup/software_tests.json)
+The [167-test recorded damped-controller proof](media/m8_table_pickup/software_tests.json)
 and [source-bound manifest](media/m8_table_pickup/software_manifest.json)
-are separate from physical acceptance. The earlier bolt-pickup snapshot's
+are separate from physical acceptance and do not cover the next contact-dwell
+revision until it is rerun. The earlier bolt-pickup snapshot's
 126-test proof remains archived with its own sources.
 
 ## Verified turning baseline
@@ -153,7 +166,7 @@ scripts/run_m8.sh -m thread_lab.load_benchmark --help
 ```
 
 `thread_lab.validate` retains strict physics gates and can exit with failure.
-The current table-pickup source passes **167 software tests**. Software tests, numerical geometry checks,
+The recorded damped-controller source passed **167 software tests**. Software tests, numerical geometry checks,
 and physics acceptance answer different questions.
 [Setup and engine provenance](docs/m8_setup.md) explain the separate runtimes.
 

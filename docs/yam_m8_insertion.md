@@ -8,12 +8,14 @@ transports it over the female M8 × 1.25 through-hole, and searches for the
 thread with finite motor torques and an axially floating hand. The bolt has
 a 16 mm shaft and an AF20 × 8 mm solid head.
 
-The frozen table-pickup source passes [167 software tests](../media/m8_table_pickup/software_tests.json)
+The recorded damped-controller source passed [167 software tests](../media/m8_table_pickup/software_tests.json)
 in 79.45 s with unchanged recorded source hashes; the
 [manifest](../media/m8_table_pickup/software_manifest.json) binds the proof and executed verification script.
-Its fresh full physics run starts again with both workpieces separately
-supported, without reusing a checkpoint. The completed result and final
-independent audits are pending. The
+Its fresh full physics run started again with both workpieces separately
+supported, without reusing a checkpoint, and aborted before formed-flank
+capture. **No completed current full tabletop threading task is demonstrated.**
+The next contact-dwell controller revision is under study; the 167-test proof
+does not cover new source changes until rerun. The
 published earlier nominal rollout farther below starts with the left pads
 touching the block. Its result establishes bolt pickup and threading,
 not block pickup.
@@ -25,6 +27,40 @@ The current CLI defaults are 50 µs physics steps, 180° strokes, 2 rad/s peak
 angular speed, at most five starting strokes, and two qualification strokes;
 table-mode axial velocity damping defaults to 50 N·s/m. Recorded preview
 configurations retain their own original parameters.
+
+[![Both physical pickups and first start/recovery; no formed-thread capture](../media/m8_table_pickup/progress_first_start/demo.gif)](../media/m8_table_pickup/progress_first_start/demo.mp4)
+
+[Pickup/start MP4](../media/m8_table_pickup/progress_first_start/demo.mp4) ·
+[GIF](../media/m8_table_pickup/progress_first_start/demo.gif) ·
+[Screenshot](../media/m8_table_pickup/progress_first_start/demo.png) ·
+[Exact progress sources and scope](../media/m8_table_pickup/progress_first_start)
+
+This actual recorded progress prefix ends at **14.18785 s**, before the
+second starting stroke. It shows block pickup and reorientation, separate
+bolt pickup, the first cone-start attempt, and opening/reset/regrasp. That
+sequence supplies no formed-thread capture, support or qualified lead proof.
+
+The [closed damped full attempt](../media/m8_table_pickup/failures/damped_second_release_abort)
+later aborts at **17.32385 s** during `release_search_3`: native depth reaches
+**10.1288 µm**, exceeding the unchanged 10 µm guard. Tip overlap is only
+1.648 mm and fully formed flank overlap is zero. The second shallow cone
+stroke carries the bolt upward, stops without loaded thread contact, and
+the following opening allows about 280 µm free fall before the guard stops
+the run. It never reaches capture or qualifying turns. The first reset is
+an unengaged recovery, rather than a formed-thread self-locking test.
+
+Its saved-pose audit finds zero unexpected penetrating camera/backing
+candidates with the revised side-bolt layout. Raw loads cover **316,478**
+post-acquisition physics steps and retain the same strict preload failure:
+9 / 6 isolated 50 µs unilateral gaps. Actual pickups and zero post-lift world
+support do not override these recorded failures. The next revision adds
+bounded waits for measured contact before rotation and unengaged opening,
+with no axial position spring, pitch servo or relaxed physics guards.
+
+[Damped-failure MP4](../media/m8_table_pickup/failures/damped_second_release_abort/demo.mp4) ·
+[GIF](../media/m8_table_pickup/failures/damped_second_release_abort/demo.gif) ·
+[Original report](../media/m8_table_pickup/failures/damped_second_release_abort/validation.json) ·
+[Measured trajectory](../media/m8_table_pickup/failures/damped_second_release_abort/trajectory.png)
 
 The [preserved failed full attempt](../media/m8_table_pickup/failures/full_v10_depth_abort)
 actually picks up both objects, with a 59.965 mm block lift and zero world
@@ -46,7 +82,7 @@ did not finish.
 
 The earlier [feed screenshot's exact trace link](../media/m8_table_pickup/progress_feed_trace_link.json)
 binds it to this failed attempt. Its preserved 158-test source proof is
-separate from the current 167-test corrected-controller result.
+separate from the recorded 167-test damped-controller result.
 
 The [recorded block-pickup diagnostic](../media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us)
 physically acquires the table-supported block, lifts it and rolls it into the
@@ -190,7 +226,7 @@ has no final validation and supplies no checkpoint for the fresh trial.
 The [158-test proof for that rejected source snapshot](../media/m8_table_pickup/rejected_soft_pad_software)
 is retained as software evidence, rather than physical acceptance of that model.
 The earlier 158-test numerical-contact source proof remains inside the
-failed full attempt. The current 167-test result was rerun after moving the
+failed full attempt. The recorded 167-test result was rerun after moving the
 bolt and adding the native axial damping; it has a separate source-bound record.
 
 The explicit `--preheld-block` mode preserves the earlier initial left pad

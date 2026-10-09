@@ -15,7 +15,7 @@
     "slow_motion": 1,
     "metadata": {
       "plugin": "ffmpeg",
-      "nframes": null,
+      "nframes": Infinity,
       "ffmpeg_version": "7.0.2-static https://johnvansickle.com/ffmpeg/ built with gcc 8 (Debian 8.3.0-6)",
       "codec": "h264",
       "pix_fmt": "yuv420p(progressive)",
@@ -133,19 +133,5 @@
     "inspection_method": "Static exact function blocks and archived helper sources; controller code is not executed"
   },
   "renderer_source_sha256": "c71688a75fb56ef73117b739d98c70575ae674abdf60f6e444d9c771517aae94",
-  "scope_note": "Both actual pickups and first cone-start opening/reset/regrasp recovery. This prefix is not a final rollout or a formed-thread support/capture/qualified lead proof.",
-  "container_metadata_normalization": {
-    "note": "The previously published render_manifest.json contained the nonstandard Python-JSON value Infinity in video.metadata.nframes. Only that diagnostic container-metadata field is normalized to null. The separately decoded frame count remains 142. No video, trace, archived source, physical metadata or physical result changed.",
-    "original_file": "render_manifest_original_python_json.txt",
-    "original_sha256": "7fd5a6fb88bb0ea69c039a31e416775ce8148573b7a3dae25d4ca03ec2160a0f",
-    "normalized_fields": [
-      {
-        "path": "/video/metadata/nframes",
-        "original_python_json_value": "inf",
-        "strict_json_value": null
-      }
-    ],
-    "serialization": "Strict JSON with allow_nan=false",
-    "helper_source": "normalize_render_json_source.py"
-  }
+  "scope_note": "Both actual pickups and first cone-start opening/reset/regrasp recovery. This prefix is not a final rollout or a formed-thread support/capture/qualified lead proof."
 }

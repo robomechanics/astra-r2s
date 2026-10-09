@@ -1,0 +1,147 @@
+{
+  "kind": "immutable_failed_damped_full_tabletop_attempt",
+  "trajectory_sha256": "fbb07d1dc6f9931ace2cd4a68b1cef13d6f747b6a6807bb7bb597c4b06d0c166",
+  "recorded_outcome": {
+    "passed": false,
+    "partial": false,
+    "aborted": {
+      "phase": "release_search_3",
+      "time": 17.323850000013326,
+      "reported_sdf_depth_m": 1.012878059265791e-05,
+      "radial_offset_m": 0.00013940633908414356,
+      "bolt_tilt_rad": 0.010652627365572783,
+      "block_grip_slip_m": 0.00022762458881005592,
+      "block_grip_rotation_slip_rad": 0.00037791291367456255,
+      "bolt_grip_slip_m": 0.0,
+      "world_block_support_contacts": 0,
+      "minimum_native_joint_margin_rad": 0.17671550916954515,
+      "warnings": 0,
+      "external_drive_zero": true
+    }
+  },
+  "task_scope_note": "partial=false records the requested full-task scope; the unchanged depth guard stopped this attempt before formed-flank capture or qualifying turns.",
+  "all_substep_raw_left_pad_loads": {
+    "observer": "native-bilateral-pad-load-v1",
+    "minimum_loaded_force_N": 0.1,
+    "observed_physics_steps": 316478,
+    "observed_duration_s": 15.8239,
+    "minimum_normal_force_N": [
+      0.0,
+      0.0
+    ],
+    "unloaded_physics_steps": [
+      9,
+      6
+    ],
+    "unloaded_duration_s": [
+      0.00045000000000000004,
+      0.00030000000000000003
+    ],
+    "maximum_consecutive_unloaded_duration_s": [
+      5e-05,
+      5e-05
+    ],
+    "continuously_bilateral_loaded": false
+  },
+  "force_timing_scope": "Originally recorded native contact forces are evaluated at recorded time minus timestep, while saved qpos/qvel are post-integration; no reconstructed-force or new integration claim.",
+  "saved_pose_geometry": {
+    "table_block_pickup_audit": {
+      "enabled": true,
+      "initial_sample_time_s": 5e-05,
+      "initial_sample_phase": "settle_table",
+      "initial_sample_block_table_candidates": 16,
+      "initial_sample_has_table_support_candidates": true,
+      "initial_sample_left_hand_block_candidates": 0,
+      "initial_sample_left_pad_block_candidates": 0,
+      "initial_sample_has_no_left_hand_block_candidates": true,
+      "acquisition_phases_present": [
+        "settle_table",
+        "reach_left_block",
+        "close_left_block",
+        "settle_left_block",
+        "lift_left_block",
+        "transport_left_block",
+        "hold_left_block"
+      ],
+      "post_grasp_reference_present": true,
+      "maximum_post_lift_world_support_candidates": 0,
+      "post_lift_samples_have_no_world_support_candidates": true,
+      "scope": "Saved-pose geometry samples only. Initial/pre-lift table contact is expected; after lift all block world candidates are prohibited. Original all-substep loads, initial diagnostics and motor-only checks remain rollout evidence."
+    },
+    "maximum_sampled_left_pad_block_reported_depth_m": 1.0315099070676174e-05,
+    "maximum_sampled_left_hand_block_nonpad_candidates": 0,
+    "unexpected_sampled_penetrating_contact_count": 0,
+    "scope": "Actual saved-pose native candidates only; zero candidates does not certify every-substep backing clearance."
+  },
+  "executed_open_reset_audit": [
+    {
+      "phase": "reset_open_search_2",
+      "recorded_all_substep_phase_summary": {
+        "phase": "reset_open_search_2",
+        "bolt_insertion_advance_m": 3.4472364705828706e-08,
+        "bolt_clockwise_rotation_rad": 3.862019263412009e-05,
+        "observed_helix_residual_m": 2.6789121504726933e-08,
+        "maximum_hand_bolt_contacts": 0,
+        "maximum_bolt_world_support_contacts": 0,
+        "maximum_block_world_support_contacts": 0,
+        "maximum_head_block_seating_contacts": 0,
+        "sampled_peak_pad_contact_torque_Nm": 0.0,
+        "maximum_absolute_bolt_rotation_from_phase_start_rad": 3.862019263412009e-05,
+        "maximum_absolute_bolt_axial_motion_from_phase_start_m": 1.1282910927432055e-07,
+        "started_engaged": false,
+        "ended_engaged": false,
+        "final_bolt_world_support_contacts": 0,
+        "final_block_world_support_contacts": 0,
+        "final_block_lift_m": 0.047081695839053944,
+        "left_grasp_acquired": true,
+        "left_pickup_verified": true,
+        "all_substep_left_pad_loads": {
+          "observer": "native-bilateral-pad-load-v1",
+          "minimum_loaded_force_N": 0.1,
+          "observed_physics_steps": 29452,
+          "observed_duration_s": 1.4726000000008954,
+          "minimum_normal_force_N": [
+            16.625620304913575,
+            15.363694426220444
+          ],
+          "unloaded_physics_steps": [
+            0,
+            0
+          ],
+          "unloaded_duration_s": [
+            0.0,
+            0.0
+          ],
+          "maximum_consecutive_unloaded_duration_s": [
+            0.0,
+            0.0
+          ],
+          "continuously_bilateral_loaded": true
+        },
+        "final_thread_overlap_m": 0.0013997425948236303,
+        "final_formed_flank_overlap_m": 0.0
+      },
+      "phase_started_with_recorded_candidate_capture": false,
+      "first_saved_reset_sample_has_candidate_capture": false,
+      "sample_count": 296,
+      "sampled_peak_absolute_axial_drift_m": 1.122662500394056e-07,
+      "sampled_peak_absolute_yaw_drift_rad": 3.8619160025454846e-05,
+      "unexpected_workpiece_candidate_count": 0,
+      "all_sampled_workpiece_candidates_are_thread_or_left_grip": true,
+      "maximum_expected_thread_candidates": 4,
+      "maximum_expected_left_pad_block_candidates": 8,
+      "maximum_world_workpiece_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_other_robot_workpiece_candidates": 0,
+      "maximum_unrelated_scene_candidates": 0
+    }
+  ],
+  "reset_qualification_note": "The one executed open reset is stable lead-in/cone contact, with zero formed-flank overlap and no capture; it does not establish formed-thread self-locking.",
+  "formed_flank_capture_time_s": null,
+  "qualified_turns": 0,
+  "native_actuation_note": "Both free objects have zero artificial passive terms and no object actuators. Only16 native robot joint actuators and2 native finger coupling equalities; no workpiece welds.",
+  "damping_command_evidence": "independent_axial_damping_command_audit.json verifies1308 saved original pre-integration commands F=-50*v and nonpositive command power products; it does not certify realized actuator passivity or object wrench.",
+  "progress_screenshot_link": "progress_damped_entry_trace_link.json exact-crossmatches published progress qpos/qvel/sample/metadata/PNG against the immutable aborted trace; the render-time prefix SHA remains distinct from final trace SHA.",
+  "contact_model_scope": "Normal(-31250,-2500), tangent0.0008s, original box geometry/zero margins/friction/thread guards unchanged. Numerical contact compliance is not hardware material calibration.",
+  "software_scope": "167 passing unchanged-source software tests are archived separately; this physical rollout is failed."
+}

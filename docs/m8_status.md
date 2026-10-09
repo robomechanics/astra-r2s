@@ -12,12 +12,19 @@ qualified revolution. Its raw evidence is published alongside this older
 fixed-bolt experiment. Those nominal results do not erase the load/search
 failures or calibration limits documented here. That earlier rollout starts
 with the left pads touching the block. The current extension physically picks
-the block up from the table as well; its complete rollout is pending.
-Its [167-test software proof](../media/m8_table_pickup/software_tests.json)
-checks the selected source snapshot and does not override failed physics gates.
+up both workpieces, as shown in the [native progress clip](../media/m8_table_pickup/progress_first_start/demo.mp4),
+but has no completed tabletop threading rollout.
+The [167-test software proof](../media/m8_table_pickup/software_tests.json)
+checks the recorded damped-controller snapshot; it does not cover the next
+contact-dwell revision or override failed physics gates.
 The [earlier full attempt](../media/m8_table_pickup/failures/full_v10_depth_abort)
 physically picked up both workpieces but aborted at the unchanged depth guard
 before capture. Recorded preload gaps and camera/jaw collisions remain failures.
+The later [damped attempt](../media/m8_table_pickup/failures/damped_second_release_abort)
+has no sampled unexpected camera/backing penetrations but still stops before
+capture at 10.129 µm depth, above the unchanged 10 µm guard. Its strict
+per-step pad-preload check remains failed. A first unengaged recovery is
+recorded; it supplies no formed-thread holding or qualified lead proof.
 
 ![Recorded contact-driven turn](../media/m8_contact.png)
 

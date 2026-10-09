@@ -35,6 +35,10 @@
     "bytes": 3158,
     "sha256": "e51273f4ff3a56849344f9584ca4c44d8f517aa8619cec39cf3b537954f85511"
   },
+  "normalize_render_json_source.py": {
+    "bytes": 4120,
+    "sha256": "cd92740e4ad16ea714efeb695249ce1cda24de60dbaffadd96e56c316531630d"
+  },
   "package_source.py": {
     "bytes": 4975,
     "sha256": "739a62a3155843998e3d1f306726d8d528f3eb6035e54eac990094ff6dd9060e"
@@ -56,6 +60,10 @@
     "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449"
   },
   "render_manifest.json": {
+    "bytes": 6511,
+    "sha256": "3b17454d1e7263565838379d536edfa2a422a74145aaafdb5f1ad93fc7283dbf"
+  },
+  "render_manifest_original_python_json.txt": {
     "bytes": 5692,
     "sha256": "7fd5a6fb88bb0ea69c039a31e416775ce8148573b7a3dae25d4ca03ec2160a0f"
   },

@@ -1,0 +1,13 @@
+{
+  "kind": "saved_native_arm_axial_damping_command_consistency",
+  "trace_sha256": "fbb07d1dc6f9931ace2cd4a68b1cef13d6f747b6a6807bb7bb597c4b06d0c166",
+  "damping_coefficient_Ns_per_m": 50.0,
+  "saved_axial_float_commands": 1308,
+  "maximum_abs_F_plus_B_v_residual_N": 0.0,
+  "maximum_damping_force_times_relative_velocity_W": 0.0,
+  "minimum_damping_force_times_relative_velocity_W": -0.001570011698224555,
+  "all_saved_commands_match_F_equals_minus_B_v": true,
+  "all_saved_command_power_products_nonpositive": true,
+  "timing_scope": "Velocity and damping-force commands were calculated together before integration at saved time minus timestep. Saved qpos/qvel are after integration; this check compares original reported commands without reconstructing forces or controller velocities.",
+  "physical_scope": "Only native arm motor feed receives this damping command. This proves saved-command algebra/sign, not realized actuator passivity, object-wrench realization, or overall physics qualification."
+}

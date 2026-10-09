@@ -64,12 +64,14 @@ a passing import or image is insufficient evidence for policy training.
 
 ## Verified in this cloud workspace
 
-The selected numerical table-pickup setting and corrected damped controller
-pass **167 software tests** in 79.45 s. The [current proof](../media/m8_table_pickup/software_tests.json)
+The recorded numerical table-pickup setting and damped controller
+passed **167 software tests** in 79.45 s. The [snapshot proof](../media/m8_table_pickup/software_tests.json)
 records unchanged source hashes, and its [manifest](../media/m8_table_pickup/software_manifest.json)
 binds the log and executed verifier. This rerun follows the separated bolt
-placement and native velocity-only axial damping correction. The fresh complete physical table-pickup
-rollout and final audits remain pending; software checks do not certify
+placement and native velocity-only axial damping correction. Its complete
+physical attempt aborted before capture, and the next contact-dwell controller
+revision needs a new source-bound test run. The 167-test snapshot does not
+certify those changes. Software checks do not certify
 pickup, hardware response or policy-training fidelity.
 
 The earlier expanded source snapshot passed **126 tests** in 52.78 s wall time using the
@@ -84,7 +86,7 @@ The [rejected softer-pad source snapshot](../media/m8_table_pickup/rejected_soft
 subsequently passed 158 software tests, then failed a separate physical
 clearance audit. Those tests remain historical proof. A later 158-test snapshot
 for the numerical-contact setting is retained in the [failed full attempt](../media/m8_table_pickup/failures/full_v10_depth_abort).
-Both are separate from the current 167-test corrected-controller result.
+Both are separate from the recorded 167-test damped-controller result.
 The installation checks below retain their original
 date and suite size.
 

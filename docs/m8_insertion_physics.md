@@ -171,9 +171,17 @@ while the force-driven floating hand moved upward; the original trace and
 failed report are retained. A corrected fresh trial places the bolt farther
 aside to clear the opposite hand and adds velocity-only axial damping of
 50 N·s/m through native arm torques. The damping acts relative to the moving
-hole and contains no axial position spring or pitch-following command. Its
-completed outcome remains pending, with every depth, alignment and force
-retention gate unchanged.
+hole and contains no axial position spring or pitch-following command.
+The [closed damped attempt](../media/m8_table_pickup/failures/damped_second_release_abort)
+also stops before capture: opening after the second shallow cone stroke
+allows a free fall into the entry, reaching 10.1288 µm reported depth and
+the unchanged 10 µm abort guard. Fully formed flank overlap remains zero.
+The revised layout has no sampled unexpected camera/backing penetrations;
+strict every-substep left-pad preload still fails isolated 50 µs gaps.
+A bounded measured-contact dwell before rotation and unengaged opening is
+under investigation. No completed current tabletop threading task or
+formed-thread reset proof is claimed, and every depth, alignment and force
+retention gate remains unchanged.
 
 The declared μ=0.8 pad friction and numerical contact assumptions still
 require physical force/displacement and friction measurements. Isolated

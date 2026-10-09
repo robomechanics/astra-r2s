@@ -1,0 +1,3082 @@
+{
+  "kind": "Independent all-candidate workpiece geometry audit during open resets",
+  "method": "Saved qpos kinematics and collision queries only; zero integration or force solve",
+  "scope": "All workpiece collision candidates are counted, including nonpenetrating candidates. Zero unexpected candidates means neither free workpiece has other sampled geometry contacts. It does not establish zero contacts between saved samples or zero unrelated scene contacts.",
+  "expected_contacts": [
+    "True male/female SDF thread pair",
+    "Actual left finger pads gripping the free block"
+  ],
+  "force_scope": "Original rollout all-substep hand, world-support, head-seating and drift instrumentation remains the acceptance evidence. Candidate geometry does not reconstruct contact forces.",
+  "model_fingerprint": "d8ef2669aff4b4e871d1e09bed2a00e7482649c554bcfce5b7fb234e220bf635",
+  "archived_model_identity": {
+    "model_fingerprint": "d8ef2669aff4b4e871d1e09bed2a00e7482649c554bcfce5b7fb234e220bf635",
+    "model_xml_sha256": "19dd6fcd1081b03ad1c5c584be4a4635b03b32ab5ffa183bbc5b1c71ce2e847e",
+    "mesh_sha256": {
+      "model2.stl": "5ac61c0313ed00c38655e41681af1b8b307cf8d5ef57209a75f215cea02df754",
+      "model2__2.stl": "30dab41f14bae95d737abca3c934eb5d570ab107dff0b40952fbdfb9d07eab79",
+      "model2__3.stl": "9fd96f5ad387fe7dd96eaa65e386637800e2f5637b6167fbad4ecb37d8598f47",
+      "model2__4.stl": "33c0e7ef538e2c4473efa9c4ef2a8441b6094b65090b4dec71abe82001d974df",
+      "model2__5.stl": "09f08e7dead2d6363618471adadb1b94af39e8056676670f3fd21ec06c197b20",
+      "model2__6.stl": "888b5919d10dbfb59b964c3cafc2ddbdac3b5426e20dd13bcaf4baedd5ee15c9",
+      "model2__7.stl": "2d64b18f1e70b0460eb53335d340b7c879976a3093ec67b07bcb7245e371a91d",
+      "model2__8.stl": "db3708da6b14daf3fc9a1909a8325b68f65ff69146cdd20b69a9ddc4ce51f50d",
+      "model2__9.stl": "74969d09b8b7f75cc984c5c7e5526d2941c6724f48b3efa1fa8730cc7820f4f5",
+      "model2__10.stl": "b879cc07f547b7a2ac52e428dd206e80a0d4b0e805cb56b9a8230df04a690923",
+      "model2__11.stl": "af220d2a51e8444392aef36e2fe4a6f69aed22bc292a7f38e54da3b4f5253434",
+      "model2__12.stl": "e79614869bd2283f70fafa150ce748d5b6c03377a651448c6fe9893a22f6d1de",
+      "model2__13.stl": "32b62f14f00ea82bfc79b935f7dac32c7cb276a3abc0aae8362cbba3fb1326de",
+      "model2__14.stl": "72d2178789dd5e0358c2caf9dad90b8881e505f4c52a8d6d18c71b5e93e8c84b",
+      "model2__15.stl": "ca8788184d54f30c18482cb9b48dffb010a93dbc029054b6cc515083a740d324",
+      "model2__16.stl": "18bb99691eed524393e8f3a0ff29e79d97ab75689bc92144bbdfafa2cc79d37b",
+      "model2__17.stl": "6513dbd192d2bf3a4f7016231f1ba5eca93916c9ebfdc334e9b435ca1d302ff6",
+      "d405.stl": "6617f3fb22b604a66c27e16d2397f305fcdca8a781248abdbabbf69c9fe6a3c5"
+    },
+    "scene_source_sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+    "scene_source_matches_recorded": true,
+    "method": "Exact hash-verified archived XML; current scene generator is not used"
+  },
+  "audit_runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "recorded_controller_sha256": "87f2cc95ed1fbadab60c6e0efbb1cf9f0eb19b7f17a692a6119559240f2fac69",
+  "recorded_observer_sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+  "original_trial_partial": false,
+  "original_trial_passed": false,
+  "phases": [
+    {
+      "phase": "reset_open_search_2",
+      "recorded_all_substep_phase_summary": {
+        "phase": "reset_open_search_2",
+        "bolt_insertion_advance_m": 3.4472364705828706e-08,
+        "bolt_clockwise_rotation_rad": 3.862019263412009e-05,
+        "observed_helix_residual_m": 2.6789121504726933e-08,
+        "maximum_hand_bolt_contacts": 0,
+        "maximum_bolt_world_support_contacts": 0,
+        "maximum_block_world_support_contacts": 0,
+        "maximum_head_block_seating_contacts": 0,
+        "sampled_peak_pad_contact_torque_Nm": 0.0,
+        "maximum_absolute_bolt_rotation_from_phase_start_rad": 3.862019263412009e-05,
+        "maximum_absolute_bolt_axial_motion_from_phase_start_m": 1.1282910927432055e-07,
+        "started_engaged": false,
+        "ended_engaged": false,
+        "final_bolt_world_support_contacts": 0,
+        "final_block_world_support_contacts": 0,
+        "final_block_lift_m": 0.047081695839053944,
+        "left_grasp_acquired": true,
+        "left_pickup_verified": true,
+        "all_substep_left_pad_loads": {
+          "observer": "native-bilateral-pad-load-v1",
+          "minimum_loaded_force_N": 0.1,
+          "observed_physics_steps": 29452,
+          "observed_duration_s": 1.4726000000008954,
+          "minimum_normal_force_N": [
+            16.625620304913575,
+            15.363694426220444
+          ],
+          "unloaded_physics_steps": [
+            0,
+            0
+          ],
+          "unloaded_duration_s": [
+            0.0,
+            0.0
+          ],
+          "maximum_consecutive_unloaded_duration_s": [
+            0.0,
+            0.0
+          ],
+          "continuously_bilateral_loaded": true
+        },
+        "final_thread_overlap_m": 0.0013997425948236303,
+        "final_formed_flank_overlap_m": 0.0
+      },
+      "phase_started_with_recorded_candidate_capture": false,
+      "first_saved_reset_sample_has_candidate_capture": false,
+      "sample_count": 296,
+      "sampled_peak_absolute_axial_drift_m": 1.122662500394056e-07,
+      "sampled_peak_absolute_yaw_drift_rad": 3.8619160025454846e-05,
+      "unexpected_workpiece_candidate_count": 0,
+      "all_sampled_workpiece_candidates_are_thread_or_left_grip": true,
+      "maximum_expected_thread_candidates": 4,
+      "maximum_expected_left_pad_block_candidates": 8,
+      "maximum_world_workpiece_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_other_robot_workpiece_candidates": 0,
+      "maximum_unrelated_scene_candidates": 0,
+      "rows": [
+        {
+          "time_s": 12.265299999978085,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 4,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.270299999978073,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.275299999978062,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.28029999997805,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.285299999978038,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.290299999978027,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 4,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.295299999978015,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.300299999978003,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.305299999977992,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.31029999997798,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.315299999977968,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.320299999977957,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.325299999977945,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.330299999977933,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.335299999977922,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.34029999997791,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.345299999977899,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.350299999977887,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.355299999977875,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.360299999977864,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.365299999977852,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.37029999997784,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.375299999977829,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.380299999977817,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.385299999977805,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.390299999977794,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.395299999977782,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.40029999997777,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.405299999977759,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.410299999977747,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.415299999977735,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.420299999977724,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.425299999977712,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.4302999999777,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.435299999977689,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.440299999977677,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.445299999977665,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.450299999977654,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.455299999977642,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.46029999997763,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.465299999977619,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.470299999977607,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.475299999977596,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.480299999977584,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.485299999977572,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.49029999997756,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.495299999977549,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.500299999977537,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.505299999977526,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.510299999977514,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.515299999977502,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.52029999997749,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.525299999977479,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.530299999977467,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.535299999977456,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.540299999977444,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.545299999977432,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.55029999997742,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.555299999977409,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.560299999977397,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.565299999977386,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.570299999977374,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.575299999977362,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.58029999997735,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.58529999997734,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.590299999977328,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.595299999977316,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.600299999977304,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.605299999977293,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.610299999977281,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.61529999997727,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.620299999977258,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.625299999977246,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.630299999977234,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.635299999977223,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.640299999977211,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.6452999999772,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.650299999977188,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.655299999977176,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.660299999977164,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.665299999977153,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.670299999977141,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.67529999997713,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.680299999977118,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.685299999977106,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.690299999977094,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.695299999977083,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.700299999977071,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.70529999997706,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.710299999977048,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.715299999977036,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.720299999977025,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.725299999977013,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.730299999977001,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.73529999997699,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.740299999976978,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.745299999976966,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.750299999976955,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.755299999976943,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.760299999976931,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.76529999997692,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.770299999976908,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.775299999976896,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.780299999976885,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.785299999976873,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.790299999976861,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.79529999997685,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.800299999976838,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.805299999976826,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.810299999976815,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.815299999976803,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.820299999976791,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.82529999997678,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.830299999976768,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.835299999976757,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.840299999976745,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.845299999976733,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.850299999976722,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.85529999997671,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.860299999976698,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.865299999976687,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.870299999976675,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.875299999976663,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.880299999976652,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.88529999997664,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.890299999976628,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.895299999976617,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.900299999976605,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.905299999976593,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.910299999976582,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.91529999997657,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.920299999976558,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.925299999976547,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.930299999976535,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.935299999976523,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.940299999976512,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.9452999999765,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.950299999976489,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.955299999976477,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.960299999976465,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.965299999976454,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.970299999976442,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.97529999997643,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.980299999976419,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.985299999976407,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.990299999976395,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 12.995299999976384,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.000299999976372,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.00529999997636,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.010299999976349,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.015299999976337,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.020299999976325,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.025299999976314,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.030299999976302,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.03529999997629,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.040299999976279,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.045299999976267,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.050299999976255,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.055299999976244,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.060299999976232,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.06529999997622,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.070299999976209,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.075299999976197,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.080299999976186,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.085299999976174,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.090299999976162,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.09529999997615,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.100299999976139,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.105299999976127,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.110299999976116,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.115299999976104,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.120299999976092,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.12529999997608,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.130299999976069,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.135299999976057,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.140299999976046,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.145299999976034,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.150299999976022,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.15529999997601,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.160299999975999,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.165299999975987,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.170299999975976,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.175299999975964,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.180299999975952,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.18529999997594,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.19029999997593,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.195299999975918,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.200299999975906,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.205299999975894,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.210299999975883,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.215299999975871,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.22029999997586,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.225299999975848,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.230299999975836,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.235299999975824,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.240299999975813,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.245299999975801,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.25029999997579,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.255299999975778,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.260299999975766,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.265299999975754,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.270299999975743,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.275299999975731,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.28029999997572,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.285299999975708,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.290299999975696,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.295299999975684,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.300299999975673,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.305299999975661,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.31029999997565,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.315299999975638,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.320299999975626,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.325299999975615,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.330299999975603,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.335299999975591,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.34029999997558,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.345299999975568,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.350299999975556,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.355299999975545,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.360299999975533,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.365299999975521,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.37029999997551,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.375299999975498,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.380299999975486,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.385299999975475,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.390299999975463,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.395299999975451,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.40029999997544,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.405299999975428,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.410299999975416,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.415299999975405,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.420299999975393,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.425299999975381,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.43029999997537,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.435299999975358,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.440299999975347,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.445299999975335,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.450299999975323,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.455299999975312,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.4602999999753,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.465299999975288,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.470299999975277,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.475299999975265,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.480299999975253,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.485299999975242,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.49029999997523,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.495299999975218,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.500299999975207,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.505299999975195,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.510299999975183,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.515299999975172,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.52029999997516,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.525299999975148,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.530299999975137,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.535299999975125,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.540299999975113,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.545299999975102,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.55029999997509,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.555299999975079,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.560299999975067,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.565299999975055,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.570299999975044,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.575299999975032,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.58029999997502,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.585299999975009,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.590299999974997,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.595299999974985,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.600299999974974,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.605299999974962,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.61029999997495,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.615299999974939,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.620299999974927,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.625299999974915,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.630299999974904,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.635299999974892,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.64029999997488,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.645299999974869,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.650299999974857,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.655299999974845,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.660299999974834,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.665299999974822,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.67029999997481,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.675299999974799,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.680299999974787,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.685299999974776,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.690299999974764,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.695299999974752,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.70029999997474,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.705299999974729,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.710299999974717,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.715299999974706,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.720299999974694,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.725299999974682,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.73029999997467,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.735299999974659,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        },
+        {
+          "time_s": 13.737849999974653,
+          "unexpected_workpiece_candidates": [],
+          "expected_thread_candidates": 3,
+          "expected_left_pad_block_candidates": 8,
+          "world_workpiece_candidates": 0,
+          "head_block_seating_candidates": 0,
+          "other_robot_workpiece_candidates": 0,
+          "unrelated_scene_candidates": 0
+        }
+      ]
+    }
+  ],
+  "auditor_sha256": "b8b14448a2fba7074ebed84669a7a6015b1f831e45e7a647ff7acc9cdb10ab0a",
+  "trajectory": "outputs/m8_table_pickup/full_damped/insertion_trace.npz",
+  "trajectory_sha256": "fbb07d1dc6f9931ace2cd4a68b1cef13d6f747b6a6807bb7bb597c4b06d0c166"
+}
