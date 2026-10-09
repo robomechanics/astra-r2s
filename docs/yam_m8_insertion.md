@@ -8,14 +8,14 @@ transports it over the female M8 × 1.25 through-hole, and searches for the
 thread with finite motor torques and an axially floating hand. The bolt has
 a 16 mm shaft and an AF20 × 8 mm solid head.
 
-The recorded damped-controller source passed [167 software tests](../media/m8_table_pickup/software_tests.json)
-in 79.45 s with unchanged recorded source hashes; the
+The frozen measured-entry controller and CLI pass [176 software tests](../media/m8_table_pickup/software_tests.json)
+in 75.52 s with unchanged recorded source hashes; the
 [manifest](../media/m8_table_pickup/software_manifest.json) binds the proof and executed verification script.
-Its fresh full physics run started again with both workpieces separately
-supported, without reusing a checkpoint, and aborted before formed-flank
-capture. **No completed current full tabletop threading task is demonstrated.**
-The next contact-dwell controller revision is under study; the 167-test proof
-does not cover new source changes until rerun. The
+Its fresh full physics run starts again with both workpieces separately
+supported, without reusing a checkpoint. **No completed current full tabletop
+threading task is demonstrated; the fresh result remains pending.**
+The earlier damped full attempt and its separate 167-test source proof remain
+preserved below. The
 published earlier nominal rollout farther below starts with the left pads
 touching the block. Its result establishes bolt pickup and threading,
 not block pickup.
@@ -23,9 +23,10 @@ not block pickup.
 The [earlier initial table layout](../media/m8_table_pickup/preview.png) and its
 [configuration](../media/m8_table_pickup/preview.json) are a static preview,
 with the earlier side-bolt placement.
-The current CLI defaults are 50 µs physics steps, 180° strokes, 2 rad/s peak
-angular speed, at most five starting strokes, and two qualification strokes;
-table-mode axial velocity damping defaults to 50 N·s/m. Recorded preview
+The current table CLI defaults are 50 µs physics steps, 180° strokes,
+0.5 rad/s peak starting speed, 2 rad/s peak qualified-turn speed, at most
+five starting strokes, and two qualification strokes. Entry/support dwells
+are bounded to 3 s and axial velocity damping defaults to 50 N·s/m. Recorded preview
 configurations retain their own original parameters.
 
 [![Both physical pickups and first start/recovery; no formed-thread capture](../media/m8_table_pickup/progress_first_start/demo.gif)](../media/m8_table_pickup/progress_first_start/demo.mp4)
@@ -53,7 +54,7 @@ Its saved-pose audit finds zero unexpected penetrating camera/backing
 candidates with the revised side-bolt layout. Raw loads cover **316,478**
 post-acquisition physics steps and retain the same strict preload failure:
 9 / 6 isolated 50 µs unilateral gaps. Actual pickups and zero post-lift world
-support do not override these recorded failures. The next revision adds
+support do not override these recorded failures. The current revision adds
 bounded waits for measured contact before rotation and unengaged opening,
 with no axial position spring, pitch servo or relaxed physics guards.
 
@@ -252,6 +253,34 @@ The historical `--preheld-block` default remains zero damping. The policy
 environment continues to expose actual torque actions, without this scripted
 pickup controller.
 
+Starting strokes use a declared 0.5 rad/s peak speed; qualification strokes
+remain at 2 rad/s. `--starting-angular-speed` overrides the starting speed
+independently. The slower command is a trajectory change, not evidence of
+reduced contact error until the new continuous physics run is assessed.
+
+The table demo uses `EntrySupportWindow v1` as a starting-contact readiness
+test. It requires 50 ms of aligned geometry and actual bolt axial velocity
+relative to the hole no greater than 0.2 mm/s, with at least 0.00025 N·s
+native thread-pair normal impulse, at least 5 ms above 0.005 N normal load,
+and a load above that threshold at the transition. This summed load includes
+cone contact and is not a measurement of axial weight support. Readiness
+with closed jaws permits a physical release attempt; it proves neither
+unsupported holding nor formed-flank capture.
+
+Force-only entry and uncaptured starting-stop dwells are each bounded to
+3 s by `--maximum-entry-dwell`. Their acquisition timeouts retain closed
+jaws. A separate guard requires current measured thread contact before
+moving the open hand through a reset; that check can fail after the jaws
+have opened. Actual open-grip contact/drift records, rather than the readiness
+tag, determine whether the released bolt held. Feed, native force/torque
+bounds, solver/depth/alignment limits and formed-capture/lead/reset gates
+remain unchanged.
+
+The historical `--preheld-block` mode disables these entry dwells and defaults
+starting speed to the qualified speed. Limited cold-state branches retain
+documented target mismatches and are diagnostic trials; they do not qualify
+the new continuous table-pickup run.
+
 Full engagement is distinct from cone contact. The geometry observer requires
 one whole pitch of complete, unchamfered flank overlap, accounting for tilt
 and the female exit. It also checks actual loaded contacts inside both
@@ -288,7 +317,8 @@ MJLab bridge; no GPU or learned policy is used.
 scripts/run_m8.sh -m yam_twin.m8_insertion_demo --preview
 scripts/run_m8.sh -m yam_twin.m8_insertion_demo \
   --output outputs/m8_table_pickup/demo --dt .00005 \
-  --stroke-degrees 180 --angular-speed 2 --maximum-starting-strokes 5 \
+  --stroke-degrees 180 --angular-speed 2 --starting-angular-speed .5 \
+  --maximum-starting-strokes 5 --maximum-entry-dwell 3 \
   --axial-damping 50 --video
 scripts/run_m8.sh -m yam_twin.m8_insertion_demo --preheld-block \
   --output outputs/m8_insertion/preheld_demo --dt .00005 \

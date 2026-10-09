@@ -6,7 +6,7 @@ import pytest
 from yam_twin.m8_insertion_scene import InsertionConfig, build_model
 from yam_twin.m8_insertion_simulation import (
     InsertionControlConfig, initialize_insertion_pose, insertion_phases, _body_contact,
-    PadLoadHistory, _pad_normal_forces, _relative_axial_velocity,
+    PadLoadHistory, _pad_normal_forces, _relative_axial_velocity, EntrySupportWindow,
 )
 
 
@@ -232,3 +232,91 @@ def test_demo_default_damping_preserves_legacy_and_explicit_configuration(tmp_pa
     result = run_insertion_demo(tmp_path, scene_config=scene, control_config=control,
                                 maximum_phases=0)
     assert result["control_config"]["axial_velocity_damping_Ns_per_m"] == expected
+    assert result["control_config"]["maximum_entry_dwell_s"] == (3. if table and not explicit_zero else None)
+    assert result["control_config"]["starting_angular_speed_rad_s"] == (.5 if table and not explicit_zero else None)
+
+
+def test_entry_window_needs_native_load_and_settled_aligned_bolt_motion():
+    observer = EntrySupportWindow(.05, .0002, .05)
+    for _ in range(100):
+        assert not observer.observe(0., 0., .001, True)
+    # A cone impact with actual bolt motion must not authorize jaw opening.
+    for _ in range(100):
+        assert not observer.observe(.2, .001, .001, True)
+    for _ in range(100):
+        assert not observer.observe(.05, 0., .001, False)
+    # Resolved unilateral contact gaps remain explicitly observable. The
+    # acquisition window requires load impulse/duration and load at release,
+    # without inventing continuous contact or formed-flank engagement.
+    for step in range(51):
+        ready = observer.observe(0. if step%5 == 1 else .05, .00001, .001, True)
+        if step < 49:
+            assert not ready
+    assert observer.ready
+    report = observer.report()
+    assert .7 < report["loaded_substep_duty"] < .9
+    assert report["normal_impulse_Ns"] >= report["minimum_normal_impulse_Ns"]
+    assert report["final_native_normal_force_N"] == .05
+    assert report["relative_bolt_axial_velocity_range_m_per_s"] == [.00001, .00001]
+    assert not observer.observe(0., .00001, .001, True)
+    assert not observer.observe(.05, .001, .001, True)
+    assert observer.report()["observed_window_s"] == 0.
+
+
+@pytest.mark.parametrize("field,value", [("maximum_entry_dwell_s", .01),
+                                        ("maximum_entry_dwell_s", np.inf),
+                                        ("entry_support_window_s", 0.),
+                                        ("entry_support_velocity_limit_m_per_s", np.nan),
+                                        ("starting_angular_speed_rad_s", 0.),
+                                        ("starting_angular_speed_rad_s", np.inf)])
+def test_entry_and_starting_profile_reject_invalid_configuration(field, value):
+    with pytest.raises(ValueError):
+        InsertionControlConfig(**{field: value})
+
+
+def test_bounded_entry_holds_closed_jaws_and_starting_speed_matches_yaw_profile():
+    from dataclasses import replace
+    from yam_twin.m8_simulation import smooth_profile
+    control = InsertionControlConfig(arm=replace(InsertionControlConfig().arm,
+                                                 angular_speed_rad_s=2., stroke_angle_rad=np.pi),
+        maximum_entry_dwell_s=3., starting_angular_speed_rad_s=.5)
+    phases = insertion_phases(control, pickup_from_table=True)
+    for name, duration, a0, a1, gap0, gap1, floating in phases:
+        if name == "feed_to_entry" or name.startswith("stop_start_"):
+            assert duration == 3.
+            assert gap0 == gap1 == control.arm.closed_aperture
+            assert floating
+        if name.startswith(("start_thread_", "turn_")):
+            expected_speed = .5 if name.startswith("start_thread_") else 2.
+            _, peak_derivative = smooth_profile(.5)
+            np.testing.assert_allclose(peak_derivative*(a1-a0)/duration, expected_speed)
+
+
+def test_native_entry_timeout_aborts_before_unsupported_jaw_opening(tmp_path, monkeypatch):
+    from dataclasses import replace
+    import yam_twin.m8_insertion_simulation as simulation
+    # A supported bolt far above the hole cannot acquire native thread load
+    # during this short force-only dwell. Exercise the actual motor loop and
+    # its failure path, with the next scheduled phase explicitly opening jaws.
+    scene = replace(InsertionConfig(), bolt_head_position=(.36, -.15, .14))
+    control = InsertionControlConfig(maximum_entry_dwell_s=.12,
+                                    axial_velocity_damping_Ns_per_m=50.)
+
+    def short_schedule(config, *, pickup_from_table=False):
+        c = config.arm
+        return [("feed_to_entry", .12, 0., 0., c.closed_aperture, c.closed_aperture, True),
+                ("release_search_2", .15, 0., 0., c.closed_aperture, c.open_aperture, False)]
+
+    monkeypatch.setattr(simulation, "insertion_phases", short_schedule)
+    result = simulation.run_insertion_demo(tmp_path, scene_config=scene, control_config=control)
+    assert result["aborted"]["phase"] == "feed_to_entry"
+    assert "closed grasp retained" in result["aborted"]["reason"]
+    assert [p["phase"] for p in result["phases"]] == ["feed_to_entry"]
+    assert not result["acceptance_checks"]["native_cone_entry_acquired_before_rotation"]["passed"]
+    saved = np.load(tmp_path/"insertion_trace.npz")
+    model = build_model(scene)
+    fingers = [model.actuator(f"right_grip_{side}").id for side in ("left", "right")]
+    from yam_twin.m8_scene import jaw_positions
+    np.testing.assert_allclose(saved["controller"][-1, fingers],
+                               jaw_positions(control.arm.closed_aperture, scene.base))
+    assert result["acceptance_checks"]["free_objects_have_no_external_drive"]["passed"]

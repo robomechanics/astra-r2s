@@ -6,8 +6,9 @@ low support. The left arm must reach, close its fingers, lift the block,
 and rotate it into the assembly pose before the right arm picks up the bolt.
 The recorded clip now shows both physical pickups and a first starting/opening/
 reset/regrasp sequence. **The complete tabletop threading task remains
-unfinished.** The damped full attempt stopped before formed-flank capture;
-the next controller revision is being checked. See
+unfinished.** The damped full attempt stopped before formed-flank capture.
+The measured-entry controller now passes **176 software tests**; its fresh
+continuous physics rollout is running, with full results pending. See
 [task modes, controls and evidence](docs/yam_m8_insertion.md).
 
 [![Both physical pickups and first start/recovery; no formed-thread capture](media/m8_table_pickup/progress_first_start/demo.gif)](media/m8_table_pickup/progress_first_start/demo.mp4)
@@ -71,10 +72,10 @@ entry. These are explicitly ideal-fixture tests; their results do not replace
 the full robot checks. Timestep and contact-search refinement pass the strict
 2% travel/lead comparisons; the peak reported depth remains search-sensitive.
 See [the numerical comparison and raw traces](media/m8_insertion/refinement/README.md).
-The [167-test recorded damped-controller proof](media/m8_table_pickup/software_tests.json)
+The [current 176-test measured-entry proof](media/m8_table_pickup/software_tests.json)
 and [source-bound manifest](media/m8_table_pickup/software_manifest.json)
-are separate from physical acceptance and do not cover the next contact-dwell
-revision until it is rerun. The earlier bolt-pickup snapshot's
+are separate from physical acceptance. The previous 167-test proof is
+preserved with the damped failed attempt. The earlier bolt-pickup snapshot's
 126-test proof remains archived with its own sources.
 
 ## Verified turning baseline
@@ -166,7 +167,7 @@ scripts/run_m8.sh -m thread_lab.load_benchmark --help
 ```
 
 `thread_lab.validate` retains strict physics gates and can exit with failure.
-The recorded damped-controller source passed **167 software tests**. Software tests, numerical geometry checks,
+The current measured-entry source passes **176 software tests**. Software tests, numerical geometry checks,
 and physics acceptance answer different questions.
 [Setup and engine provenance](docs/m8_setup.md) explain the separate runtimes.
 

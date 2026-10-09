@@ -9,6 +9,7 @@ command, with no depth, pitch, or bolt-position servo along the insertion axis.
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
+from collections import deque
 import hashlib
 import inspect
 import json
@@ -124,6 +125,73 @@ def _relative_axial_velocity(site_position, site_linear_velocity, hole_position,
     return float(np.dot(np.asarray(site_linear_velocity)-hole_velocity_at_hand, axis))
 
 
+class EntrySupportWindow:
+    """Measured settled native lead-in load; never a formed-thread capture."""
+
+    version = "native-settled-entry-support-v1"
+
+    def __init__(self, duration_s, velocity_limit_m_per_s, net_feed_N):
+        values = (duration_s, velocity_limit_m_per_s, net_feed_N)
+        if not np.isfinite(values).all() or min(values) <= 0:
+            raise ValueError("Entry support thresholds must be positive and finite")
+        self.duration = float(duration_s)
+        self.velocity_limit = float(velocity_limit_m_per_s)
+        self.minimum_force = .1*net_feed_N
+        self.minimum_impulse = .1*net_feed_N*self.duration
+        self.minimum_loaded_duration = .1*self.duration
+        self.samples = deque()
+        self.elapsed = self.impulse = self.loaded_duration = 0.
+        self.last_force = self.last_velocity = 0.
+        self.last_aligned = False
+        self.ready = False
+
+    def observe(self, normal_force_N, relative_bolt_axial_velocity_m_per_s,
+                timestep_s, aligned):
+        force, velocity, dt = (float(normal_force_N),
+                               float(relative_bolt_axial_velocity_m_per_s), float(timestep_s))
+        if not np.isfinite([force, velocity, dt]).all() or force < 0 or dt <= 0:
+            raise ValueError("Entry observations require finite nonnegative force and positive timestep")
+        self.last_force, self.last_velocity = force, velocity
+        self.last_aligned = bool(aligned)
+        if not aligned or abs(velocity) > self.velocity_limit:
+            self.samples.clear()
+            self.elapsed = self.impulse = self.loaded_duration = 0.
+            self.ready = False
+            return False
+        loaded = force > self.minimum_force
+        self.samples.append((dt, force, velocity, loaded))
+        self.elapsed += dt
+        self.impulse += force*dt
+        self.loaded_duration += loaded*dt
+        while self.samples and self.elapsed-self.samples[0][0] >= self.duration:
+            old_dt, old_force, _, old_loaded = self.samples.popleft()
+            self.elapsed -= old_dt
+            self.impulse -= old_force*old_dt
+            self.loaded_duration -= old_loaded*old_dt
+        self.ready = bool(self.elapsed+1e-12 >= self.duration
+            and self.impulse >= self.minimum_impulse
+            and self.loaded_duration >= self.minimum_loaded_duration
+            and loaded)
+        return self.ready
+
+    def report(self):
+        velocities = [v for _, _, v, _ in self.samples]
+        return {"observer": self.version, "ready": self.ready,
+                "aligned": self.last_aligned,
+                "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+                "required_window_s": self.duration, "observed_window_s": self.elapsed,
+                "minimum_loaded_normal_force_N": self.minimum_force,
+                "minimum_normal_impulse_Ns": self.minimum_impulse,
+                "normal_impulse_Ns": self.impulse,
+                "minimum_loaded_duration_s": self.minimum_loaded_duration,
+                "loaded_duration_s": self.loaded_duration,
+                "loaded_substep_duty": self.loaded_duration/self.elapsed if self.elapsed else 0.,
+                "relative_bolt_axial_velocity_limit_m_per_s": self.velocity_limit,
+                "relative_bolt_axial_velocity_range_m_per_s": [min(velocities), max(velocities)] if velocities else None,
+                "final_native_normal_force_N": self.last_force,
+                "final_relative_bolt_axial_velocity_m_per_s": self.last_velocity}
+
+
 @dataclass(frozen=True)
 class InsertionControlConfig:
     arm: YamM8ControlConfig = YamM8ControlConfig()
@@ -135,6 +203,10 @@ class InsertionControlConfig:
     block_lift_m: float = .004
     net_axial_feed_N: float = .050
     axial_velocity_damping_Ns_per_m: float = 0.
+    maximum_entry_dwell_s: float | None = None
+    entry_support_window_s: float = .050
+    entry_support_velocity_limit_m_per_s: float = .0002
+    starting_angular_speed_rad_s: float | None = None
     maximum_starting_strokes: int = 8
     qualifying_turns: int = 2
     sample_period_s: float = .005
@@ -145,12 +217,21 @@ class InsertionControlConfig:
                   self.left_lift_clearance_m, self.transport_tip_clearance_m,
                   self.entry_tip_clearance_m, self.block_lift_m,
                   self.net_axial_feed_N, self.sample_period_s,
-                  self.full_flank_contact_streak_s)
+                  self.full_flank_contact_streak_s, self.entry_support_window_s,
+                  self.entry_support_velocity_limit_m_per_s)
         if not np.isfinite(values).all() or min(values) <= 0:
             raise ValueError("Insertion clearances, load, and sample interval must be positive")
         if (not np.isfinite(self.axial_velocity_damping_Ns_per_m)
                 or self.axial_velocity_damping_Ns_per_m < 0):
             raise ValueError("Axial velocity damping must be nonnegative and finite")
+        if self.maximum_entry_dwell_s is not None and (
+                not np.isfinite(self.maximum_entry_dwell_s)
+                or self.maximum_entry_dwell_s < max(.12, self.entry_support_window_s)):
+            raise ValueError("Maximum entry dwell must be finite and at least the support window and minimum stop")
+        if self.starting_angular_speed_rad_s is not None and (
+                not np.isfinite(self.starting_angular_speed_rad_s)
+                or self.starting_angular_speed_rad_s <= 0):
+            raise ValueError("Starting angular speed must be positive and finite")
         if self.qualifying_turns < 1 or int(self.qualifying_turns) != self.qualifying_turns:
             raise ValueError("At least one complete lead-qualification turn is required")
         if self.maximum_starting_strokes < 1 or int(self.maximum_starting_strokes) != self.maximum_starting_strokes:
@@ -162,6 +243,7 @@ def insertion_phases(config: InsertionControlConfig, *, pickup_from_table=False)
     c = config.arm
     stroke = c.stroke_angle_rad
     turn_duration = 1.875 * stroke / c.angular_speed_rad_s
+    starting_duration = 1.875*stroke/(config.starting_angular_speed_rad_s or c.angular_speed_rad_s)
     reset_duration = 1.875 * stroke / c.reset_speed_rad_s
     phases = []
     if pickup_from_table:
@@ -182,9 +264,9 @@ def insertion_phases(config: InsertionControlConfig, *, pickup_from_table=False)
         ("lift_bolt", .65, 0., 0., c.closed_aperture, c.closed_aperture, False),
         ("transport_bolt", .90, 0., 0., c.closed_aperture, c.closed_aperture, False),
         ("align_over_hole", .45, 0., 0., c.closed_aperture, c.closed_aperture, False),
-        ("feed_to_entry", .25, 0., 0., c.closed_aperture, c.closed_aperture, True),
-        ("start_thread_1", turn_duration, 0., stroke, c.closed_aperture, c.closed_aperture, True),
-        ("stop_start_1", .12, stroke, stroke, c.closed_aperture, c.closed_aperture, True),
+        ("feed_to_entry", config.maximum_entry_dwell_s or .25, 0., 0., c.closed_aperture, c.closed_aperture, True),
+        ("start_thread_1", starting_duration, 0., stroke, c.closed_aperture, c.closed_aperture, True),
+        ("stop_start_1", config.maximum_entry_dwell_s or .12, stroke, stroke, c.closed_aperture, c.closed_aperture, True),
     ])
     for tag, turn_label, stop_label in [
             (f"search_{i}", f"start_thread_{i}", f"stop_start_{i}")
@@ -197,8 +279,10 @@ def insertion_phases(config: InsertionControlConfig, *, pickup_from_table=False)
             (f"open_hold_{tag}", .08, 0., 0., c.open_aperture, c.open_aperture, False),
             (f"regrip_{tag}", .25, 0., 0., c.open_aperture, c.closed_aperture, False),
             (f"settle_regrip_{tag}", .12, 0., 0., c.closed_aperture, c.closed_aperture, True),
-            (turn_label, turn_duration, 0., stroke, c.closed_aperture, c.closed_aperture, True),
-            (stop_label, .12, stroke, stroke, c.closed_aperture, c.closed_aperture, True),
+            (turn_label, starting_duration if turn_label.startswith("start_thread_") else turn_duration,
+             0., stroke, c.closed_aperture, c.closed_aperture, True),
+            (stop_label, (config.maximum_entry_dwell_s or .12) if stop_label.startswith("stop_start_") else .12,
+             stroke, stroke, c.closed_aperture, c.closed_aperture, True),
         ])
     return phases
 
@@ -280,7 +364,9 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
     scene = scene_config or InsertionConfig()
     table_pickup = bool(getattr(scene, "pickup_from_table", False))
     control = (control_config if control_config is not None else
-               InsertionControlConfig(axial_velocity_damping_Ns_per_m=50. if table_pickup else 0.))
+               InsertionControlConfig(axial_velocity_damping_Ns_per_m=50. if table_pickup else 0.,
+                                      maximum_entry_dwell_s=3. if table_pickup else None,
+                                      starting_angular_speed_rad_s=.5 if table_pickup else None))
     runtime = require_micron_engine()
     model = build_model(scene)
     data = mujoco.MjData(model)
@@ -358,7 +444,7 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
         "model_fingerprint": scene_fingerprint(scene),
         "model_xml_sha256": hashlib.sha256(scene_xml(scene).encode()).hexdigest(),
         "controller_sha256": hashlib.sha256("\n".join(inspect.getsource(v) for v in (
-            PadLoadHistory, _pad_normal_forces, _relative_axial_velocity,
+            PadLoadHistory, _pad_normal_forces, _relative_axial_velocity, EntrySupportWindow,
             InsertionControlConfig, insertion_phases, initialize_insertion_pose,
             _body_contact, formed_flank_overlap, run_insertion_demo,
             fully_formed_flank_interval, contact_is_on_full_flanks, thread_end_bounds,
@@ -382,6 +468,8 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                                if control.axial_velocity_damping_Ns_per_m else
                                "Gravity compensation of known bolt weight plus constant net axial feed; no axial motion servo during entry or turns"),
         "axial_velocity_reference_note": "Actual hand SITE linear velocity minus hole rigid-frame velocity evaluated at the hand point; pre-command native kinematics retained from the preceding mj_step's pre-integration state (the initialized state on the first command), with requested feed subject to the existing Cartesian-force and native motor-torque caps",
+        "entry_support_note": "Optional bounded constant-force entry/starting-stop dwell requires settled actual bolt velocity and measured native SDF-pair load before rotation or searching release; cone support is separate from formed-flank capture, and acquisition timeout retains the closed grasp",
+        "entry_support_events": [],
         "native_force_recording_note": "mj_step contact forces and contact geometry are from the pre-integration state at recorded time minus timestep; saved qpos/qvel are the post-integration state",
         "left_pad_history_scope": "Every physics substep after end-settle acquisition; force minima and gaps include physical lift and roll, separately from 5 ms saved-pose sampling",
         "partial": True,
@@ -414,6 +502,12 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
     aborted = None
     hole_velocity = np.zeros(6)
     right_site_velocity = np.zeros(6)
+    bolt_velocity = np.zeros(6)
+    entry_support_enabled = control.maximum_entry_dwell_s is not None
+    entry_support = EntrySupportWindow(control.entry_support_window_s,
+        control.entry_support_velocity_limit_m_per_s, control.net_axial_feed_N)
+    entry_acquisition_time = None
+    entry_support_timeout = None
     # Persist the exact controller and model texts used for this integration.
     # Later source revisions cannot silently change how a partial trace is read.
     (output / "controller_source.py").write_text(Path(__file__).read_text())
@@ -445,6 +539,25 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
             aborted = {"phase": label, "time": float(data.time),
                        "reason": "No full-flank engagement after all allowed physical starting strokes"}
             break
+        if entry_support_enabled and label.startswith(("release_search_", "reset_open_search_")):
+            if not entry_support.ready:
+                entry_support_timeout = {"phase": label, "time": float(data.time),
+                    "reason": "No measured settled native starting support before jaw opening or open reset",
+                    "radial_offset_m": radial, "bolt_tilt_rad": tilt,
+                    "entry_support": entry_support.report()}
+                aborted = entry_support_timeout
+                break
+            metadata["entry_support_events"].append({"phase": label, "time_s": float(data.time),
+                "event": "Measured native starting support permits searching release/reset",
+                "radial_offset_m": radial, "bolt_tilt_rad": tilt,
+                **entry_support.report()})
+        entry_dwell_phase = entry_support_enabled and (label == "feed_to_entry"
+            or (label.startswith("stop_start_") and not engaged))
+        if entry_dwell_phase:
+            entry_support = EntrySupportWindow(control.entry_support_window_s,
+                control.entry_support_velocity_limit_m_per_s, control.net_axial_feed_N)
+        elif entry_support_enabled and label.startswith("stop_start_"):
+            duration = .12
         phase_p0 = right.pose()[0]
         phase_left_p0, phase_left_r0 = left.pose()
         left_rotation_delta = Rotation.from_matrix(left_hold_r @ phase_left_r0.T).as_rotvec()
@@ -496,7 +609,7 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
             feed = control.net_axial_feed_N + mass * float(np.dot(model.opt.gravity, down)) * -1
             axial_velocity = None
             axial_damping_force = 0.
-            if axial_float and control.axial_velocity_damping_Ns_per_m:
+            if axial_float and (control.axial_velocity_damping_Ns_per_m or entry_support_enabled):
                 mujoco.mj_objectVelocity(model, data, mujoco.mjtObj.mjOBJ_SITE,
                                         right.site_id, right_site_velocity, 0)
                 axial_velocity = _relative_axial_velocity(data.site_xpos[right.site_id],
@@ -571,6 +684,7 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
             thread_count = 0
             loaded_formed_contacts = 0
             loaded_formed_normal_force = 0.
+            thread_normal_force = 0.
             head_block_contacts = 0
             thread_force = np.zeros(6)
             for contact_index, c in enumerate(data.contact):
@@ -581,9 +695,13 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                 if {int(c.geom1), int(c.geom2)} == {bolt_geom, female_geom}:
                     thread_count += 1
                     thread_depth = max(thread_depth, -float(c.dist))
+                    if entry_support_enabled:
+                        mujoco.mj_contactForce(model, data, contact_index, thread_force)
+                        thread_normal_force += float(thread_force[0])
                     if contact_is_on_full_flanks(hole_r.T @ (c.pos-hole_p),
                                                bolt_r.T @ (c.pos-bolt_p), thread):
-                        mujoco.mj_contactForce(model, data, contact_index, thread_force)
+                        if not entry_support_enabled:
+                            mujoco.mj_contactForce(model, data, contact_index, thread_force)
                         if float(thread_force[0]) > 1e-5:
                             loaded_formed_contacts += 1
                             loaded_formed_normal_force += float(thread_force[0])
@@ -709,7 +827,37 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                            "bolt_grip_slip_m": grip_slip, "world_block_support_contacts": left_support,
                            "minimum_native_joint_margin_rad": joint_margin,
                            "warnings": warnings, "external_drive_zero": unforced}
-            if step % sample_steps == 0 or step == steps-1 or aborted:
+            entry_dwell_completed = False
+            if entry_support_enabled:
+                mujoco.mj_objectVelocity(model, data, mujoco.mjtObj.mjOBJ_XBODY,
+                                        hole_id, hole_velocity, 0)
+                mujoco.mj_objectVelocity(model, data, mujoco.mjtObj.mjOBJ_XBODY,
+                                        bolt_id, bolt_velocity, 0)
+                bolt_axial_velocity = _relative_axial_velocity(bolt_p, bolt_velocity[3:],
+                                                               hole_p, hole_velocity, down)
+                entry_support.observe(thread_normal_force, bolt_axial_velocity, model.opt.timestep,
+                    radial <= 150e-6 and tilt <= np.deg2rad(2) and not support and not left_support
+                    and unforced and left_slip < .001 and left_angle < np.deg2rad(2))
+                if entry_dwell_phase and not aborted:
+                    minimum_stop_s = .12 if label.startswith("stop_start_") else 0.
+                    entry_dwell_completed = ((step+1)*model.opt.timestep >= minimum_stop_s
+                        and (entry_support.ready or (label.startswith("stop_start_") and engaged)))
+                    if entry_dwell_completed:
+                        event = {"phase": label, "time_s": float(data.time),
+                            "actual_dwell_s": (step+1)*model.opt.timestep,
+                            "maximum_dwell_s": duration, "radial_offset_m": radial,
+                            "bolt_tilt_rad": tilt, "formed_flank_capture_observed": engaged,
+                            **entry_support.report()}
+                        metadata["entry_support_events"].append(event)
+                        if label == "feed_to_entry":
+                            entry_acquisition_time = float(data.time)
+                    elif step == steps-1:
+                        entry_support_timeout = {"phase": label, "time": float(data.time),
+                            "reason": "Bounded native starting acquisition timed out; closed grasp retained",
+                            "actual_dwell_s": duration, "radial_offset_m": radial,
+                            "bolt_tilt_rad": tilt, "entry_support": entry_support.report()}
+                        aborted = entry_support_timeout
+            if step % sample_steps == 0 or step == steps-1 or aborted or entry_dwell_completed:
                 contact = right.contact_wrench_on("male_bolt")
                 left_contact = left.contact_wrench_on("fixture_block")
                 if (left_grasp_acquired if table_pickup else label != "secure_left"):
@@ -726,6 +874,8 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                        "thread_overlap_m": float(overlap), "thread_contacts": thread_count,
                        "loaded_formed_thread_contacts": int(loaded_formed_contacts),
                        "loaded_formed_thread_normal_force_N": loaded_formed_normal_force,
+                       "native_thread_pair_normal_force_N": thread_normal_force if entry_support_enabled else None,
+                       "entry_support": entry_support.report() if entry_support_enabled else None,
                        "engagement_window": window,
                        "legacy_consecutive_loaded_contact_streak_s": engagement_streak,
                        "head_block_seating_contacts": head_block_contacts,
@@ -745,11 +895,12 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                        "axial_float": axial_float, "axial_feed_command_N": feed if axial_float else None,
                        "right_relative_axial_velocity_m_per_s": axial_velocity,
                        "axial_velocity_damping_force_N": axial_damping_force if axial_float else None,
+                       "right_commanded_stroke_angular_speed_rad_s": omega,
                        "right_position_error_m": right.last_position_error.tolist(),
                        "right_rotation_error_rad": right.last_rotation_error.tolist()}
                 rows.append(row); times.append(float(data.time)); positions.append(data.qpos.copy())
                 velocities.append(data.qvel.copy()); controls.append(data.ctrl.copy())
-            if aborted:
+            if aborted or entry_dwell_completed:
                 break
         end_depth = float((hole_r.T @ (data.xpos[bolt_id] - hole_p))[2])
         rotation = yaw_total-phase_start_yaw
@@ -773,6 +924,10 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                    "all_substep_left_pad_loads": phase_left_pad_history.report() if table_pickup else None,
                    "final_thread_overlap_m": float(overlap),
                    "final_formed_flank_overlap_m": formed_overlap}
+        if entry_support_enabled:
+            summary["actual_duration_s"] = (step+1)*model.opt.timestep
+            summary["maximum_scheduled_duration_s"] = duration
+            summary["entry_support"] = entry_support.report()
         summaries.append(summary)
         if table_pickup:
             metadata["all_substep_left_pad_loads"] = left_pad_history.report()
@@ -862,6 +1017,14 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
             "left_pickup_verified_time_s": left_lift_verified_time,
             "minimum_physical_block_lift_after_pickup_m": minimum_left_lift_m_after_lift,
             "maximum_world_support_after_pickup": maximum_left_support_after_lift}
+    if entry_support_enabled:
+        checks["native_cone_entry_acquired_before_rotation"] = {
+            "passed": entry_acquisition_time is not None, "acquisition_time_s": entry_acquisition_time,
+            "scope": "Settled native lead-in load only; does not qualify formed-flank capture"}
+        checks["native_starting_support_before_searching_open"] = {
+            "passed": entry_support_timeout is None and entry_acquisition_time is not None,
+            "maximum_dwell_s": control.maximum_entry_dwell_s, "failed_acquisition": entry_support_timeout,
+            "scope": "Every searching release/open reset must have measured settled native thread-pair support; pre-release acquisition timeout retains closed jaws"}
     checks = {k:{**v,"passed":bool(v["passed"])} for k,v in checks.items()}
     result = {**metadata,"partial":len(selected)<len(phases),"passed":all(v["passed"] for v in checks.values()),
               "phases":summaries,"acceptance_checks":checks,"aborted":aborted,

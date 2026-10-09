@@ -179,9 +179,24 @@ the unchanged 10 µm abort guard. Fully formed flank overlap remains zero.
 The revised layout has no sampled unexpected camera/backing penetrations;
 strict every-substep left-pad preload still fails isolated 50 µs gaps.
 A bounded measured-contact dwell before rotation and unengaged opening is
-under investigation. No completed current tabletop threading task or
+implemented in the frozen current controller and under continuous physics
+evaluation. No completed current tabletop threading task or
 formed-thread reset proof is claimed, and every depth, alignment and force
 retention gate remains unchanged.
+
+This `EntrySupportWindow v1` tags starting-contact readiness using 50 ms of
+aligned geometry and slow actual axial bolt motion (≤0.2 mm/s relative to
+the hole), at least 0.00025 N·s of summed native thread-pair normal impulse,
+at least 5 ms above 0.005 N load, and positive loaded contact at transition.
+The summed cone-inclusive normal load is not axial weight support. A
+closed-jaw readiness tag merely permits a physical release attempt; it does
+not establish unsupported holding. Entry or uncaptured-stop acquisition
+timeouts keep the jaws closed, while a pre-reset readiness failure may occur
+after opening. The actual open-reset/contact/passive-motion audits and
+unchanged formed-flank capture and lead gates provide decisive evidence.
+The declared 0.5 rad/s starting trajectory is separate from 2 rad/s qualified
+turning. Neither its slower command nor a limited cold-state branch substitutes
+for the fresh continuous rollout.
 
 The declared μ=0.8 pad friction and numerical contact assumptions still
 require physical force/displacement and friction measurements. Isolated

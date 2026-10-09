@@ -14,9 +14,9 @@ failures or calibration limits documented here. That earlier rollout starts
 with the left pads touching the block. The current extension physically picks
 up both workpieces, as shown in the [native progress clip](../media/m8_table_pickup/progress_first_start/demo.mp4),
 but has no completed tabletop threading rollout.
-The [167-test software proof](../media/m8_table_pickup/software_tests.json)
-checks the recorded damped-controller snapshot; it does not cover the next
-contact-dwell revision or override failed physics gates.
+The [176-test software proof](../media/m8_table_pickup/software_tests.json)
+checks the frozen measured-entry controller and CLI; it does not override
+failed physics gates. Its fresh continuous full rollout remains pending.
 The [earlier full attempt](../media/m8_table_pickup/failures/full_v10_depth_abort)
 physically picked up both workpieces but aborted at the unchanged depth guard
 before capture. Recorded preload gaps and camera/jaw collisions remain failures.
