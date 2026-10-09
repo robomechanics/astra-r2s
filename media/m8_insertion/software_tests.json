@@ -1,10 +1,10 @@
 {
   "passed": true,
-  "tests_passed": 124,
-  "wall_seconds": 54.44772258699959,
+  "tests_passed": 126,
+  "wall_seconds": 52.77945387900036,
   "source_hashes": {
     "tests/test_m8_env.py": "f1aa01a7e8f49481f152be4fa4e7d81d0512c9529234e7ab0c7f334c1ffb9ad0",
-    "tests/test_m8_insertion_env.py": "01e8b6e62f9171b18c2689860a9d1a654f34c04f2ddce1951a87fa9be98cb617",
+    "tests/test_m8_insertion_env.py": "df7daba9f6ee9abe2602efa89e2b361a5362a3aa5593699daf06f4beb8997792",
     "tests/test_m8_insertion_mechanics.py": "38c3500352177b5ab5ff2799d645ec2f402c1c8cb7dfe05927b672f2ba5d260a",
     "tests/test_m8_physics.py": "1ef772e1e4af6cd864577176ab8c1c088c30c4856944ce5948ba1894c897f7e0",
     "tests/test_m8_sdf.py": "b21ab6a5fd8b2af14c50a6cdea5358a77fcec3ee8883dc475e4e3d4bc6a1dd37",
@@ -21,7 +21,7 @@
     "yam_twin/m8_env.py": "88eab5fc877341db0bed0f5b81e0c45c25995493b7c368dd3e182dd9d43f510a",
     "yam_twin/m8_insertion_demo.py": "c7391a9d89ba728cd410fe59968da8179c0424fddc9357322260699ed3719648",
     "yam_twin/m8_insertion_engagement.py": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
-    "yam_twin/m8_insertion_env.py": "6ff2294c1e5f799f7c628d4c46cff816734eb6019a3d228c6e79807787c498d7",
+    "yam_twin/m8_insertion_env.py": "31e217fd81d5bd4adb1922f8c1d7ee5c244e18c752ce24ca130d22dd4df544f9",
     "yam_twin/m8_insertion_mechanics.py": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
     "yam_twin/m8_insertion_scene.py": "e5c58732ea89e166fc4095a63a927fdfab42181a103bd645faa3fea08386fa42",
     "yam_twin/m8_insertion_simulation.py": "5f721923e499d7ce5f52ad3a91c0a074f256767a6c799ff4c2914ac7c107f46f",

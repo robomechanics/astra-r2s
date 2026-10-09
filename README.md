@@ -15,7 +15,7 @@ entry. These are explicitly ideal-fixture tests; their results do not replace
 the full robot checks. Timestep and contact-search refinement pass the strict
 2% travel/lead comparisons; the peak reported depth remains search-sensitive.
 See [the numerical comparison and raw traces](media/m8_insertion/refinement/README.md).
-**124 software tests pass.**
+**126 software tests pass.**
 
 ## Verified turning baseline
 

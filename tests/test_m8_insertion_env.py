@@ -163,3 +163,30 @@ def test_shared_engagement_observer_receives_only_real_physics_substeps(model):
     info["engagement_window"]["ready"] = True
     assert not env._engagement_metrics["ready"]
     env.close()
+
+
+@pytest.mark.parametrize("bound,sign", [(0, -1), (1, 1)])
+def test_actual_native_joint_bounds_stop_out_of_range_policy_state(model, bound, sign):
+    env = YamM8InsertionEnv(model, control_dt=.001)
+    _, info = env.reset()
+    assert info["minimum_native_joint_margin_rad"] >= 0
+    joint, address = env.arm_joints[-1], env.arm_qpos[-1]
+    limit = model.jnt_range[joint, bound]
+    # Native soft limits can have tiny solver excursions. The demo and policy
+    # interface permit the same 10-microradian tolerance, not an unbounded wrist.
+    env.data.qpos[address] = limit+sign*5e-6
+    mujoco.mj_forward(model, env.data)
+    assert "native_arm_joint_range_violation" not in env._failures(env._contacts())
+    assert env._info()["minimum_native_joint_margin_rad"] == pytest.approx(-5e-6)
+    # Test-only simulator fault at the actual compiled bound; no policy action
+    # assigns joint positions or changes those limits.
+    env.data.qpos[address] = limit+sign*1e-4
+    mujoco.mj_forward(model, env.data)
+    _, reward, terminated, _, info = env.step(np.r_[np.zeros(12), [1., -1.]])
+    assert terminated and reward == -1 and not info["success"]
+    assert "native_arm_joint_range_violation" in info["failure_reasons"]
+    assert info["minimum_native_joint_margin_rad"] < -1e-5
+    assert info["episode_minimum_native_joint_margin_rad"] <= info["minimum_native_joint_margin_rad"]
+    assert info["native_joint_limit_violation_tolerance_rad"] == 1e-5
+    assert env.data.time <= model.opt.timestep*1.01
+    env.close()

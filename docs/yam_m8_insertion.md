@@ -122,10 +122,15 @@ diagnostic passes; inspect every result and its scope.
 
 `yam_twin.m8_insertion_env.YamM8InsertionEnv` exposes 14 bounded actual
 motor/jaw actions and 118 privileged observations, including pickup history,
-grasp slips, moving-thread geometry and measured contact impulse. Policy
-steps contain no scripted pickup controller. Success requires retained,
+grasp slips and moving-thread geometry. Contact impulse and capture-window
+diagnostics are available in `info`. Policy steps contain no scripted pickup
+controller. Success requires retained,
 unsupported grasps and independently measured rotation/advance within 2%
-of pitch after full-flank engagement. No policy has been trained.
+of pitch after full-flank engagement. Actual arm joints outside their native
+ranges by more than 10 µrad terminate the episode; current and episode-minimum
+margins appear in `info`. The temporal capture-window state is diagnostic
+information rather than part of the 118-number observation vector. No policy
+has been trained or validated over a useful training horizon.
 
 This task does not yet demonstrate full head seating, tightening preload,
 thread damage or calibrated hardware response. Original independent

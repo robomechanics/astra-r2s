@@ -166,6 +166,7 @@ class YamM8InsertionEnv(gym.Env):
         self._right_reference = None
         self._left_reference = (np.zeros(3), np.eye(3))
         self._initial_head_height = 0.
+        self._minimum_joint_margin = self._native_joint_margin()
         self.engagement_observer = LoadedFlankWindow()
         self.engagement_sustain_s = self.engagement_observer.duration_s
         # No synthetic observer sample is submitted at reset. These are the
@@ -343,6 +344,10 @@ class YamM8InsertionEnv(gym.Env):
         if not np.isfinite(self.data.qpos).all() or not np.isfinite(self.data.qvel).all():
             return ["nonfinite_state"]
         reasons = []
+        joint_margin = self._native_joint_margin()
+        self._minimum_joint_margin = min(self._minimum_joint_margin, joint_margin)
+        if joint_margin < -1e-5:
+            reasons.append("native_arm_joint_range_violation")
         if contacts["thread_depth"] > 10e-6:
             reasons.append("reported_thread_sdf_depth_above_10_um")
         if contacts["rigid_workpiece_depth"] > 50e-6:
@@ -366,6 +371,11 @@ class YamM8InsertionEnv(gym.Env):
             if abs(metrics["observed_lead_residual_m"]) > 150e-6:
                 reasons.append("observed_lead_residual_above_150_um")
         return reasons
+
+    def _native_joint_margin(self):
+        positions = self.data.qpos[self.arm_qpos]
+        ranges = self.model.jnt_range[self.arm_joints]
+        return float(np.min(np.minimum(positions-ranges[:, 0], ranges[:, 1]-positions)))
 
     def step(self, action):
         if not self._active:
@@ -471,6 +481,9 @@ class YamM8InsertionEnv(gym.Env):
             "pad_normal_forces_N": c["pad_normals"].tolist(),
             "elapsed_seconds": float(self.data.time), "control_dt": self.control_dt,
             "model_timestep_s": float(self.model.opt.timestep),
+            "minimum_native_joint_margin_rad": self._native_joint_margin(),
+            "episode_minimum_native_joint_margin_rad": self._minimum_joint_margin,
+            "native_joint_limit_violation_tolerance_rad": 1e-5,
             "gravity_bias_compensation": self.gravity_compensation,
             "privileged_state_observations": True, "observation_fields": dict(OBSERVATION_FIELDS),
             "runtime": deepcopy(self.runtime_info),
