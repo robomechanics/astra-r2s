@@ -1,0 +1,549 @@
+{
+  "kind": "completed_physical_sequence_with_failed_preload_diagnostic",
+  "trajectory_sha256": "c25daaf438f36c8b1617c989c8441b0414305a1c90648b397fb096cab484b9db",
+  "outcome": {
+    "passed": false,
+    "partial": false,
+    "aborted": null
+  },
+  "acceptance_checks_passed": 22,
+  "acceptance_checks_total": 23,
+  "executed_phases": 49,
+  "measured_turns": [
+    {
+      "phase": "turn_1",
+      "bolt_insertion_advance_m": 0.0006225913727029506,
+      "bolt_clockwise_rotation_rad": 3.141860691561316,
+      "observed_helix_residual_m": -2.46195175717973e-06,
+      "maximum_hand_bolt_contacts": 8,
+      "maximum_bolt_world_support_contacts": 0,
+      "maximum_block_world_support_contacts": 0,
+      "maximum_head_block_seating_contacts": 0,
+      "sampled_peak_pad_contact_torque_Nm": 0.0009951515348300562,
+      "maximum_absolute_bolt_rotation_from_phase_start_rad": 3.1418810514411426,
+      "maximum_absolute_bolt_axial_motion_from_phase_start_m": 0.0006229504285511292,
+      "started_engaged": true,
+      "ended_engaged": true,
+      "final_bolt_world_support_contacts": 0,
+      "final_block_world_support_contacts": 0,
+      "final_block_lift_m": 0.04709540364447401,
+      "left_grasp_acquired": true,
+      "left_pickup_verified": true,
+      "all_substep_left_pad_loads": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 58905,
+        "observed_duration_s": 2.945249999999805,
+        "minimum_normal_force_N": [
+          15.870622339650735,
+          14.675633276580246
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "final_thread_overlap_m": 0.003999395186039655,
+      "final_formed_flank_overlap_m": 0.0019957425971678846,
+      "actual_duration_s": 2.94525,
+      "maximum_scheduled_duration_s": 2.945243112740431,
+      "entry_support": {
+        "observer": "native-settled-entry-support-v1",
+        "ready": true,
+        "aligned": true,
+        "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+        "required_window_s": 0.05,
+        "observed_window_s": 0.05000000000000092,
+        "minimum_loaded_normal_force_N": 0.005000000000000001,
+        "minimum_normal_impulse_Ns": 0.00025000000000000006,
+        "normal_impulse_Ns": 0.0031461579102384464,
+        "minimum_loaded_duration_s": 0.005000000000000001,
+        "loaded_duration_s": 0.04720000000000084,
+        "loaded_substep_duty": 0.9439999999999994,
+        "relative_bolt_axial_velocity_limit_m_per_s": 0.0002,
+        "relative_bolt_axial_velocity_range_m_per_s": [
+          -1.8961249308904064e-05,
+          4.378091800977448e-05
+        ],
+        "final_native_normal_force_N": 0.05971546057040272,
+        "final_relative_bolt_axial_velocity_m_per_s": -1.1200938556821745e-05
+      }
+    },
+    {
+      "phase": "turn_2",
+      "bolt_insertion_advance_m": 0.0006228969690539148,
+      "bolt_clockwise_rotation_rad": 3.141860512563719,
+      "observed_helix_residual_m": -2.1563197957750503e-06,
+      "maximum_hand_bolt_contacts": 8,
+      "maximum_bolt_world_support_contacts": 0,
+      "maximum_block_world_support_contacts": 0,
+      "maximum_head_block_seating_contacts": 0,
+      "sampled_peak_pad_contact_torque_Nm": 0.0010871605295681298,
+      "maximum_absolute_bolt_rotation_from_phase_start_rad": 3.141880831342492,
+      "maximum_absolute_bolt_axial_motion_from_phase_start_m": 0.0006231343458717765,
+      "started_engaged": true,
+      "ended_engaged": true,
+      "final_bolt_world_support_contacts": 0,
+      "final_block_world_support_contacts": 0,
+      "final_block_lift_m": 0.047095435840525876,
+      "left_grasp_acquired": true,
+      "left_pickup_verified": true,
+      "all_substep_left_pad_loads": {
+        "observer": "native-bilateral-pad-load-v1",
+        "minimum_loaded_force_N": 0.1,
+        "observed_physics_steps": 58905,
+        "observed_duration_s": 2.945249999999805,
+        "minimum_normal_force_N": [
+          15.543283841047991,
+          14.647530662512896
+        ],
+        "unloaded_physics_steps": [
+          0,
+          0
+        ],
+        "unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "maximum_consecutive_unloaded_duration_s": [
+          0.0,
+          0.0
+        ],
+        "continuously_bilateral_loaded": true
+      },
+      "final_thread_overlap_m": 0.0046244414560379435,
+      "final_formed_flank_overlap_m": 0.0026197666080057386,
+      "actual_duration_s": 2.94525,
+      "maximum_scheduled_duration_s": 2.945243112740431,
+      "entry_support": {
+        "observer": "native-settled-entry-support-v1",
+        "ready": true,
+        "aligned": true,
+        "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+        "required_window_s": 0.05,
+        "observed_window_s": 0.05000000000000092,
+        "minimum_loaded_normal_force_N": 0.005000000000000001,
+        "minimum_normal_impulse_Ns": 0.00025000000000000006,
+        "normal_impulse_Ns": 0.003096340731884114,
+        "minimum_loaded_duration_s": 0.005000000000000001,
+        "loaded_duration_s": 0.04345000000000073,
+        "loaded_substep_duty": 0.8689999999999987,
+        "relative_bolt_axial_velocity_limit_m_per_s": 0.0002,
+        "relative_bolt_axial_velocity_range_m_per_s": [
+          -2.453564197397618e-05,
+          6.306235289819759e-05
+        ],
+        "final_native_normal_force_N": 0.09070403200449607,
+        "final_relative_bolt_axial_velocity_m_per_s": 2.4610766050457907e-05
+      }
+    }
+  ],
+  "original_candidate_capture_time_s": 31.340300000478624,
+  "first_saved_candidate_tag_time_s": 31.34495000047878,
+  "all_substep_original_left_pad_loads": {
+    "observer": "native-bilateral-pad-load-v1",
+    "minimum_loaded_force_N": 0.1,
+    "observed_physics_steps": 842723,
+    "observed_duration_s": 42.13615,
+    "minimum_normal_force_N": [
+      0.0,
+      0.0
+    ],
+    "unloaded_physics_steps": [
+      9,
+      6
+    ],
+    "unloaded_duration_s": [
+      0.00045000000000000004,
+      0.00030000000000000003
+    ],
+    "maximum_consecutive_unloaded_duration_s": [
+      5e-05,
+      5e-05
+    ],
+    "continuously_bilateral_loaded": false
+  },
+  "saved_native_geometry": {
+    "unexpected_penetrating_contact_count": 0,
+    "maximum_nonpad_left_hand_block_candidates": 0,
+    "maximum_left_pad_block_reported_depth_m": 1.0315099070676174e-05,
+    "table_pickup_audit": {
+      "enabled": true,
+      "initial_sample_time_s": 5e-05,
+      "initial_sample_phase": "settle_table",
+      "initial_sample_block_table_candidates": 16,
+      "initial_sample_has_table_support_candidates": true,
+      "initial_sample_left_hand_block_candidates": 0,
+      "initial_sample_left_pad_block_candidates": 0,
+      "initial_sample_has_no_left_hand_block_candidates": true,
+      "acquisition_phases_present": [
+        "settle_table",
+        "reach_left_block",
+        "close_left_block",
+        "settle_left_block",
+        "lift_left_block",
+        "transport_left_block",
+        "hold_left_block"
+      ],
+      "post_grasp_reference_present": true,
+      "maximum_post_lift_world_support_candidates": 0,
+      "post_lift_samples_have_no_world_support_candidates": true,
+      "scope": "Saved-pose geometry samples only. Initial/pre-lift table contact is expected; after lift all block world candidates are prohibited. Original all-substep loads, initial diagnostics and motor-only checks remain rollout evidence."
+    }
+  },
+  "reset_audits": [
+    {
+      "phase": "reset_open_search_2",
+      "recorded_all_substep_phase_summary": {
+        "phase": "reset_open_search_2",
+        "bolt_insertion_advance_m": 2.551379377005447e-07,
+        "bolt_clockwise_rotation_rad": 0.0005432589420917289,
+        "observed_helix_residual_m": 1.4706000518457924e-07,
+        "maximum_hand_bolt_contacts": 0,
+        "maximum_bolt_world_support_contacts": 0,
+        "maximum_block_world_support_contacts": 0,
+        "maximum_head_block_seating_contacts": 0,
+        "sampled_peak_pad_contact_torque_Nm": 0.0,
+        "maximum_absolute_bolt_rotation_from_phase_start_rad": 0.0005432589420917289,
+        "maximum_absolute_bolt_axial_motion_from_phase_start_m": 2.551379377005447e-07,
+        "started_engaged": false,
+        "ended_engaged": false,
+        "final_bolt_world_support_contacts": 0,
+        "final_block_world_support_contacts": 0,
+        "final_block_lift_m": 0.04708169820739111,
+        "left_grasp_acquired": true,
+        "left_pickup_verified": true,
+        "all_substep_left_pad_loads": {
+          "observer": "native-bilateral-pad-load-v1",
+          "minimum_loaded_force_N": 0.1,
+          "observed_physics_steps": 29452,
+          "observed_duration_s": 1.4726000000008954,
+          "minimum_normal_force_N": [
+            16.516269096148456,
+            15.335535513032063
+          ],
+          "unloaded_physics_steps": [
+            0,
+            0
+          ],
+          "unloaded_duration_s": [
+            0.0,
+            0.0
+          ],
+          "maximum_consecutive_unloaded_duration_s": [
+            0.0,
+            0.0
+          ],
+          "continuously_bilateral_loaded": true
+        },
+        "final_thread_overlap_m": 0.002127553592074897,
+        "final_formed_flank_overlap_m": 0.0001260977941131055,
+        "actual_duration_s": 1.4726000000000001,
+        "maximum_scheduled_duration_s": 1.4726215563702154,
+        "entry_support": {
+          "observer": "native-settled-entry-support-v1",
+          "ready": true,
+          "aligned": true,
+          "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+          "required_window_s": 0.05,
+          "observed_window_s": 0.05000000000000092,
+          "minimum_loaded_normal_force_N": 0.005000000000000001,
+          "minimum_normal_impulse_Ns": 0.00025000000000000006,
+          "normal_impulse_Ns": 0.014908118205403002,
+          "minimum_loaded_duration_s": 0.005000000000000001,
+          "loaded_duration_s": 0.05000000000000092,
+          "loaded_substep_duty": 1.0,
+          "relative_bolt_axial_velocity_limit_m_per_s": 0.0002,
+          "relative_bolt_axial_velocity_range_m_per_s": [
+            -1.6778310972727736e-05,
+            0.00010668232854731333
+          ],
+          "final_native_normal_force_N": 0.2993937879524515,
+          "final_relative_bolt_axial_velocity_m_per_s": 4.401603015506534e-07
+        }
+      },
+      "phase_started_with_recorded_candidate_capture": false,
+      "first_saved_reset_sample_has_candidate_capture": false,
+      "sample_count": 296,
+      "sampled_peak_absolute_axial_drift_m": 2.5526089280844544e-07,
+      "sampled_peak_absolute_yaw_drift_rad": 0.00054327823432887,
+      "unexpected_workpiece_candidate_count": 0,
+      "all_sampled_workpiece_candidates_are_thread_or_left_grip": true,
+      "maximum_expected_thread_candidates": 6,
+      "maximum_expected_left_pad_block_candidates": 8,
+      "maximum_world_workpiece_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_other_robot_workpiece_candidates": 0,
+      "maximum_unrelated_scene_candidates": 0
+    },
+    {
+      "phase": "reset_open_search_3",
+      "recorded_all_substep_phase_summary": {
+        "phase": "reset_open_search_3",
+        "bolt_insertion_advance_m": 1.0869943469632437e-08,
+        "bolt_clockwise_rotation_rad": 9.949797874586608e-05,
+        "observed_helix_residual_m": -8.924550461688722e-09,
+        "maximum_hand_bolt_contacts": 0,
+        "maximum_bolt_world_support_contacts": 0,
+        "maximum_block_world_support_contacts": 0,
+        "maximum_head_block_seating_contacts": 0,
+        "sampled_peak_pad_contact_torque_Nm": 0.0,
+        "maximum_absolute_bolt_rotation_from_phase_start_rad": 9.949797874586608e-05,
+        "maximum_absolute_bolt_axial_motion_from_phase_start_m": 1.675387574159859e-08,
+        "started_engaged": false,
+        "ended_engaged": false,
+        "final_bolt_world_support_contacts": 0,
+        "final_block_world_support_contacts": 0,
+        "final_block_lift_m": 0.047081699173014566,
+        "left_grasp_acquired": true,
+        "left_pickup_verified": true,
+        "all_substep_left_pad_loads": {
+          "observer": "native-bilateral-pad-load-v1",
+          "minimum_loaded_force_N": 0.1,
+          "observed_physics_steps": 29452,
+          "observed_duration_s": 1.4726000000008954,
+          "minimum_normal_force_N": [
+            16.627144021680206,
+            15.365901947205963
+          ],
+          "unloaded_physics_steps": [
+            0,
+            0
+          ],
+          "unloaded_duration_s": [
+            0.0,
+            0.0
+          ],
+          "maximum_consecutive_unloaded_duration_s": [
+            0.0,
+            0.0
+          ],
+          "continuously_bilateral_loaded": true
+        },
+        "final_thread_overlap_m": 0.0027527894374812893,
+        "final_formed_flank_overlap_m": 0.0007597802115718658,
+        "actual_duration_s": 1.4726000000000001,
+        "maximum_scheduled_duration_s": 1.4726215563702154,
+        "entry_support": {
+          "observer": "native-settled-entry-support-v1",
+          "ready": true,
+          "aligned": true,
+          "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+          "required_window_s": 0.05,
+          "observed_window_s": 0.05000000000000092,
+          "minimum_loaded_normal_force_N": 0.005000000000000001,
+          "minimum_normal_impulse_Ns": 0.00025000000000000006,
+          "normal_impulse_Ns": 0.015141403192776294,
+          "minimum_loaded_duration_s": 0.005000000000000001,
+          "loaded_duration_s": 0.05000000000000092,
+          "loaded_substep_duty": 1.0,
+          "relative_bolt_axial_velocity_limit_m_per_s": 0.0002,
+          "relative_bolt_axial_velocity_range_m_per_s": [
+            -3.1129817120069633e-06,
+            5.331264588096495e-07
+          ],
+          "final_native_normal_force_N": 0.30103028819686234,
+          "final_relative_bolt_axial_velocity_m_per_s": 8.006519501045223e-08
+        }
+      },
+      "phase_started_with_recorded_candidate_capture": false,
+      "first_saved_reset_sample_has_candidate_capture": false,
+      "sample_count": 296,
+      "sampled_peak_absolute_axial_drift_m": 1.6591519186315296e-08,
+      "sampled_peak_absolute_yaw_drift_rad": 9.949929499467047e-05,
+      "unexpected_workpiece_candidate_count": 0,
+      "all_sampled_workpiece_candidates_are_thread_or_left_grip": true,
+      "maximum_expected_thread_candidates": 12,
+      "maximum_expected_left_pad_block_candidates": 8,
+      "maximum_world_workpiece_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_other_robot_workpiece_candidates": 0,
+      "maximum_unrelated_scene_candidates": 0
+    },
+    {
+      "phase": "reset_open_1",
+      "recorded_all_substep_phase_summary": {
+        "phase": "reset_open_1",
+        "bolt_insertion_advance_m": 1.5753336259777262e-07,
+        "bolt_clockwise_rotation_rad": 0.0003633991283322757,
+        "observed_helix_residual_m": 8.523740311106298e-08,
+        "maximum_hand_bolt_contacts": 0,
+        "maximum_bolt_world_support_contacts": 0,
+        "maximum_block_world_support_contacts": 0,
+        "maximum_head_block_seating_contacts": 0,
+        "sampled_peak_pad_contact_torque_Nm": 0.0,
+        "maximum_absolute_bolt_rotation_from_phase_start_rad": 0.0003633991283322757,
+        "maximum_absolute_bolt_axial_motion_from_phase_start_m": 1.7802544924686026e-07,
+        "started_engaged": true,
+        "ended_engaged": true,
+        "final_bolt_world_support_contacts": 0,
+        "final_block_world_support_contacts": 0,
+        "final_block_lift_m": 0.04708169813721497,
+        "left_grasp_acquired": true,
+        "left_pickup_verified": true,
+        "all_substep_left_pad_loads": {
+          "observer": "native-bilateral-pad-load-v1",
+          "minimum_loaded_force_N": 0.1,
+          "observed_physics_steps": 29452,
+          "observed_duration_s": 1.4726000000008954,
+          "minimum_normal_force_N": [
+            16.59868586104617,
+            15.358646418445435
+          ],
+          "unloaded_physics_steps": [
+            0,
+            0
+          ],
+          "unloaded_duration_s": [
+            0.0,
+            0.0
+          ],
+          "maximum_consecutive_unloaded_duration_s": [
+            0.0,
+            0.0
+          ],
+          "continuously_bilateral_loaded": true
+        },
+        "final_thread_overlap_m": 0.003376950158971135,
+        "final_formed_flank_overlap_m": 0.0013759543388920398,
+        "actual_duration_s": 1.4726000000000001,
+        "maximum_scheduled_duration_s": 1.4726215563702154,
+        "entry_support": {
+          "observer": "native-settled-entry-support-v1",
+          "ready": true,
+          "aligned": true,
+          "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+          "required_window_s": 0.05,
+          "observed_window_s": 0.05000000000000092,
+          "minimum_loaded_normal_force_N": 0.005000000000000001,
+          "minimum_normal_impulse_Ns": 0.00025000000000000006,
+          "normal_impulse_Ns": 0.01495615993365143,
+          "minimum_loaded_duration_s": 0.005000000000000001,
+          "loaded_duration_s": 0.05000000000000092,
+          "loaded_substep_duty": 1.0,
+          "relative_bolt_axial_velocity_limit_m_per_s": 0.0002,
+          "relative_bolt_axial_velocity_range_m_per_s": [
+            -2.1930300462320143e-05,
+            0.00010635950641671888
+          ],
+          "final_native_normal_force_N": 0.29904512958717594,
+          "final_relative_bolt_axial_velocity_m_per_s": -6.123504708751216e-09
+        }
+      },
+      "phase_started_with_recorded_candidate_capture": true,
+      "first_saved_reset_sample_has_candidate_capture": true,
+      "sample_count": 296,
+      "sampled_peak_absolute_axial_drift_m": 1.6451391016830685e-07,
+      "sampled_peak_absolute_yaw_drift_rad": 0.0003633969429706063,
+      "unexpected_workpiece_candidate_count": 0,
+      "all_sampled_workpiece_candidates_are_thread_or_left_grip": true,
+      "maximum_expected_thread_candidates": 4,
+      "maximum_expected_left_pad_block_candidates": 8,
+      "maximum_world_workpiece_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_other_robot_workpiece_candidates": 0,
+      "maximum_unrelated_scene_candidates": 0
+    },
+    {
+      "phase": "reset_open_2",
+      "recorded_all_substep_phase_summary": {
+        "phase": "reset_open_2",
+        "bolt_insertion_advance_m": 4.0689442385236085e-07,
+        "bolt_clockwise_rotation_rad": 0.00037672013303335916,
+        "observed_helix_residual_m": 3.3194833468424147e-07,
+        "maximum_hand_bolt_contacts": 0,
+        "maximum_bolt_world_support_contacts": 0,
+        "maximum_block_world_support_contacts": 0,
+        "maximum_head_block_seating_contacts": 0,
+        "sampled_peak_pad_contact_torque_Nm": 0.0,
+        "maximum_absolute_bolt_rotation_from_phase_start_rad": 0.00037672013303335916,
+        "maximum_absolute_bolt_axial_motion_from_phase_start_m": 4.2417328561389356e-07,
+        "started_engaged": true,
+        "ended_engaged": true,
+        "final_bolt_world_support_contacts": 0,
+        "final_block_world_support_contacts": 0,
+        "final_block_lift_m": 0.047081698543108605,
+        "left_grasp_acquired": true,
+        "left_pickup_verified": true,
+        "all_substep_left_pad_loads": {
+          "observer": "native-bilateral-pad-load-v1",
+          "minimum_loaded_force_N": 0.1,
+          "observed_physics_steps": 29452,
+          "observed_duration_s": 1.4726000000008954,
+          "minimum_normal_force_N": [
+            16.626881477337527,
+            15.365581633675056
+          ],
+          "unloaded_physics_steps": [
+            0,
+            0
+          ],
+          "unloaded_duration_s": [
+            0.0,
+            0.0
+          ],
+          "maximum_consecutive_unloaded_duration_s": [
+            0.0,
+            0.0
+          ],
+          "continuously_bilateral_loaded": true
+        },
+        "final_thread_overlap_m": 0.004001525642505749,
+        "final_formed_flank_overlap_m": 0.0020007221142342366,
+        "actual_duration_s": 1.4726000000000001,
+        "maximum_scheduled_duration_s": 1.4726215563702154,
+        "entry_support": {
+          "observer": "native-settled-entry-support-v1",
+          "ready": true,
+          "aligned": true,
+          "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+          "required_window_s": 0.05,
+          "observed_window_s": 0.05000000000000092,
+          "minimum_loaded_normal_force_N": 0.005000000000000001,
+          "minimum_normal_impulse_Ns": 0.00025000000000000006,
+          "normal_impulse_Ns": 0.015013454255170571,
+          "minimum_loaded_duration_s": 0.005000000000000001,
+          "loaded_duration_s": 0.05000000000000092,
+          "loaded_substep_duty": 1.0,
+          "relative_bolt_axial_velocity_limit_m_per_s": 0.0002,
+          "relative_bolt_axial_velocity_range_m_per_s": [
+            -8.380308565486445e-06,
+            8.745464558271797e-06
+          ],
+          "final_native_normal_force_N": 0.30758644782733574,
+          "final_relative_bolt_axial_velocity_m_per_s": -1.7795607752637965e-06
+        }
+      },
+      "phase_started_with_recorded_candidate_capture": true,
+      "first_saved_reset_sample_has_candidate_capture": true,
+      "sample_count": 296,
+      "sampled_peak_absolute_axial_drift_m": 4.2420342299953617e-07,
+      "sampled_peak_absolute_yaw_drift_rad": 0.0003767239677426315,
+      "unexpected_workpiece_candidate_count": 0,
+      "all_sampled_workpiece_candidates_are_thread_or_left_grip": true,
+      "maximum_expected_thread_candidates": 4,
+      "maximum_expected_left_pad_block_candidates": 8,
+      "maximum_world_workpiece_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_other_robot_workpiece_candidates": 0,
+      "maximum_unrelated_scene_candidates": 0
+    }
+  ],
+  "entry_and_motor_command_audit": "independent_entry_command_audit.json",
+  "scope_notes": [
+    "Early search resets have partial formed-flank overlap below a complete 1.25 mm ring and candidate capture false; only later captured resets qualify formed-thread stability.",
+    "Every-substep original left normal forces are hash/coverage/reaggregation checked. Sparse saved geometry does not reconstruct original contact forces or prove every-substep backing clearance.",
+    "Entry event thresholds/chronology/saved command algebra are independently checked against the archived source; unsaved every-substep entry-window force/velocity observations are not reconstructed.",
+    "Both workpieces have zero artificial passive terms/actuators, only 16 native robot joint actuators and 2 native finger coupling equalities. No workpiece welds or external body drive.",
+    "Idealized M8 geometry and declared numerical contact compliance are computational assumptions, not hardware material calibration."
+  ]
+}

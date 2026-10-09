@@ -366,7 +366,7 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
     control = (control_config if control_config is not None else
                InsertionControlConfig(axial_velocity_damping_Ns_per_m=50. if table_pickup else 0.,
                                       maximum_entry_dwell_s=3. if table_pickup else None,
-                                      starting_angular_speed_rad_s=.5 if table_pickup else None))
+                                      starting_angular_speed_rad_s=1. if table_pickup else None))
     runtime = require_micron_engine()
     model = build_model(scene)
     data = mujoco.MjData(model)

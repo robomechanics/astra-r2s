@@ -1,0 +1,172 @@
+{
+  "command": [
+    "scripts/run_m8.sh",
+    "-m",
+    "yam_twin.m8_insertion_demo",
+    "--output",
+    "/workspace/astra-r2s/outputs/m8_table_pickup/default_effective_parameter_check",
+    "--maximum-phases",
+    "0"
+  ],
+  "exit_code": 1,
+  "zero_executed_phases": true,
+  "canonical_report": "/workspace/astra-r2s/outputs/m8_table_pickup/full_faster_entry/insertion_validation.json",
+  "comparisons": {
+    "control_config": {
+      "exact_equal": true,
+      "differences": {}
+    },
+    "scene_config": {
+      "exact_equal": true,
+      "differences": {}
+    }
+  },
+  "scope": "Configuration equivalence only: zero physics steps, no new rollout or physics qualification. The current default matches the archived completed faster trial after the default-only source change.",
+  "current_source_sha256": {
+    "yam_twin/m8_insertion_demo.py": "3531a3659ded5b4a7fe66868989c1bac6437a008282ec1229bf2f8a5ccb97a91",
+    "yam_twin/m8_insertion_simulation.py": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294"
+  },
+  "current_default_control_config": {
+    "arm": {
+      "position_stiffness": 20000.0,
+      "position_damping": 650.0,
+      "rotation_stiffness": 40.0,
+      "rotation_damping": 6.0,
+      "left_rotation_stiffness": 80.0,
+      "left_rotation_damping": 10.0,
+      "maximum_cartesian_force": 8.0,
+      "maximum_cartesian_torque": 2.0,
+      "axial_feed_N": -0.05,
+      "open_aperture": 0.024,
+      "closed_aperture": 0.0194,
+      "left_closed_aperture": 0.0144,
+      "stroke_angle_rad": 3.141592653589793,
+      "angular_speed_rad_s": 2.0,
+      "reset_speed_rad_s": 4.0,
+      "strokes": 3,
+      "sample_period_s": 0.005
+    },
+    "pickup_hover_m": 0.02,
+    "left_pickup_hover_m": 0.075,
+    "left_lift_clearance_m": 0.06,
+    "transport_tip_clearance_m": 0.015,
+    "entry_tip_clearance_m": 0.00075,
+    "block_lift_m": 0.004,
+    "net_axial_feed_N": 0.05,
+    "axial_velocity_damping_Ns_per_m": 50.0,
+    "maximum_entry_dwell_s": 3.0,
+    "entry_support_window_s": 0.05,
+    "entry_support_velocity_limit_m_per_s": 0.0002,
+    "starting_angular_speed_rad_s": 1.0,
+    "maximum_starting_strokes": 5,
+    "qualifying_turns": 2,
+    "sample_period_s": 0.005,
+    "full_flank_contact_streak_s": 0.2
+  },
+  "current_default_scene_config": {
+    "base": {
+      "thread": {
+        "timestep": 5e-05,
+        "friction": 0.15,
+        "contact_time_constant": 0.0005,
+        "contact_margin": 0.0,
+        "contact_impratio": 1.0,
+        "sdf_initpoints": 40,
+        "sdf_iterations": 30,
+        "bolt_length": 0.016,
+        "pitch": 0.00125,
+        "male_pitch_diameter": 0.0071,
+        "female_pitch_diameter": 0.007268,
+        "nut_height": 0.016,
+        "nut_across_flats": 0.016,
+        "nut_mass": 0.018984665656908355,
+        "nut_transverse_inertia": 6.946182225160569e-07,
+        "nut_axial_inertia": 1.1886877420788483e-06,
+        "initial_z": 0.00875,
+        "gravity": -9.81,
+        "with_gripper": false,
+        "with_bolt": true,
+        "guided": false
+      },
+      "bolt_position": [
+        0.3,
+        -0.06,
+        0.11125
+      ],
+      "bolt_quaternion": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pad_friction": 0.8,
+      "jaw_stiffness": 20000.0,
+      "jaw_damping": 8.0,
+      "maximum_jaw_force": 20.0,
+      "open_aperture": 0.024,
+      "closed_aperture": 0.0194,
+      "left_closed_aperture": 0.0144,
+      "left_grasp_roll_rad": -1.5707963267948966,
+      "left_block_contact_impedance": [
+        0.9999,
+        0.9999,
+        0.0001
+      ],
+      "left_block_contact_time_constant": 0.0008,
+      "pad_inner_offset": 0.0005,
+      "block_size": [
+        0.02,
+        0.12,
+        0.016
+      ],
+      "block_density": 2700.0,
+      "bolt_offset": [
+        0.0,
+        -0.05,
+        0.008
+      ],
+      "left_grasp_offset": [
+        0.0,
+        -0.0094,
+        0.0
+      ]
+    },
+    "block_position": [
+      0.25,
+      0.15,
+      0.059999989999999996
+    ],
+    "hole_offset": [
+      0.0,
+      -0.05,
+      0.0
+    ],
+    "bolt_head_position": [
+      0.36,
+      -0.22,
+      0.04
+    ],
+    "bolt_yaw_rad": 0.23,
+    "head_across_flats": 0.02,
+    "head_height": 0.008,
+    "steel_density": 7850.0,
+    "rest_radius": 0.007,
+    "rest_pin_radius": 0.001,
+    "rest_base_height": 0.01,
+    "pickup_from_table": true,
+    "held_block_position": [
+      0.3,
+      -0.01,
+      0.10325
+    ],
+    "left_block_friction_time_constant": 0.0008,
+    "left_pad_collision_geometry": "box",
+    "left_block_direct_normal_solref": [
+      -31250.0,
+      -2500.0
+    ]
+  },
+  "zero_step_report_sha256": "aaa1d5186dd0748f2eeaf895eb5c60f19be31208959f8a6d012c3638ae0bd162",
+  "reference_validation_sha256": "c2647298f59e7b8d832ac140df243a26d4d403ac62e0de2353ab0760da693a3d",
+  "reference_trace_sha256": "c25daaf438f36c8b1617c989c8441b0414305a1c90648b397fb096cab484b9db"
+}

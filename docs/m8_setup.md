@@ -64,13 +64,16 @@ a passing import or image is insufficient evidence for policy training.
 
 ## Verified in this cloud workspace
 
-The frozen measured-entry controller and CLI
-pass **176 software tests** in 75.52 s. The [current proof](../media/m8_table_pickup/software_tests.json)
+The current controller, CLI and policy interface
+pass **181 software tests** in 75.88 s wrapper time. The [current proof](../media/m8_table_pickup/software_tests.json)
 records unchanged source hashes, and its [manifest](../media/m8_table_pickup/software_manifest.json)
-binds the log and executed verifier. This rerun covers the table defaults for
-separated bolt placement, native axial velocity damping, bounded measured
-starting-contact dwells and independent starting speed. Its fresh continuous
-physical rollout remains pending. The earlier [167-test snapshot](../media/m8_table_pickup/failures/damped_second_release_abort/software_tests.json)
+binds the log and executed verifier. This rerun covers the demonstrated
+1 rad/s table default and policy reward correction. The completed native
+[tabletop rollout](yam_m8_insertion.md) retains its historical 176-test
+snapshot and exact loaded sources: 22/23 physics checks pass, with the strict
+continuous preload failure preserved. The [default-configuration comparison](../media/m8_table_pickup/default_configuration_match.json)
+verifies exact scene/control equivalence without integrating another rollout.
+The earlier [167-test snapshot](../media/m8_table_pickup/failures/damped_second_release_abort/software_tests.json)
 is preserved with that aborted attempt. Software checks do not certify
 pickup, hardware response or policy-training fidelity.
 
@@ -86,7 +89,7 @@ The [rejected softer-pad source snapshot](../media/m8_table_pickup/rejected_soft
 subsequently passed 158 software tests, then failed a separate physical
 clearance audit. Those tests remain historical proof. A later 158-test snapshot
 for the numerical-contact setting is retained in the [failed full attempt](../media/m8_table_pickup/failures/full_v10_depth_abort).
-Those proofs are separate from the current 176-test measured-entry result.
+Those proofs are separate from the current 181-test result.
 The installation checks below retain their original
 date and suite size.
 

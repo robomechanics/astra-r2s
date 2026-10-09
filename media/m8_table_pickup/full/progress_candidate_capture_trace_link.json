@@ -1,0 +1,32 @@
+{
+  "kind": "exact_immutable_progress_prefix_to_final_trace_link",
+  "prefix_path": "outputs/m8_table_pickup/full_faster_entry/progress_candidate_capture.npz",
+  "render_time_prefix_sha256": "920d7270d68c780fa85570015f3309aecb38080b11d7cd09233b80dd3050add6",
+  "final_trace_path": "media/m8_table_pickup/full/trace.npz",
+  "audited_source_run_trace_path": "outputs/m8_table_pickup/full_faster_entry/insertion_trace.npz",
+  "final_trace_sha256": "c25daaf438f36c8b1617c989c8441b0414305a1c90648b397fb096cab484b9db",
+  "prefix_and_final_whole_hashes_are_distinct": true,
+  "all_prefix_state_arrays_and_native_samples_match_final_prefix": true,
+  "fixed_metadata_identities_match": true,
+  "prefix_rows": 7038,
+  "final_rows": 8783,
+  "prefix_end_time_s": 34.983000000599546,
+  "prefix_end_phase": "open_hold_1",
+  "original_source_outcome": {
+    "passed": false,
+    "partial": false,
+    "aborted": null
+  },
+  "scope": "Progress prefix identity stays separate from final whole-trace identity. Final outcome is preserved; matching earlier rows does not convert a progress capture candidate into overall acceptance.",
+  "progress_metadata_path": "media/m8_table_pickup/progress_candidate_capture.json",
+  "progress_metadata_sha256": "a89ad5d9cb83a78f1b25ff0038dacedc3df542b678bce3876da16566480f9a6e",
+  "published_image_path": "media/m8_table_pickup/progress_candidate_capture.png",
+  "published_image_sha256": "a3065ca766e52dbd43c1fb731cb929b6b56ee77ae120963b2a598e64df8616d0",
+  "exact_image_state_qpos_qvel_native_sample_match": true,
+  "final_sample_index": 7037,
+  "image_physics_time_s": 34.983000000599546,
+  "image_phase": "open_hold_1",
+  "qpos_f64_le_sha256": "b6c950be2cdf6db752a22e444fe9071af6ac1a1c0bbce753aceeb032d59eb5fc",
+  "qvel_f64_le_sha256": "f81398b8c03a36cae7f83e469289f92391b0c892376ab8399d8dedbd5a9504b8",
+  "force_timing_note": "Original force/geometry sample inputs are evaluated before integration; saved qpos/qvel are after integration. This crossmatch does not reconstruct forces or integrate physics."
+}

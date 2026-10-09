@@ -1,0 +1,211 @@
+{
+  "video": "insertion_demo.mp4",
+  "screenshot": "insertion_demo.png",
+  "gif": "insertion_demo.gif",
+  "frames": 524,
+  "fps": 12,
+  "slow_motion": 1,
+  "normal_speed_playback": true,
+  "source_recording": "outputs/m8_table_pickup/full_faster_entry/insertion_trace.npz",
+  "trajectory_sha256": "c25daaf438f36c8b1617c989c8441b0414305a1c90648b397fb096cab484b9db",
+  "source_report": "outputs/m8_table_pickup/full_faster_entry/insertion_validation.json",
+  "source_report_sha256": "c2647298f59e7b8d832ac140df243a26d4d403ac62e0de2353ab0760da693a3d",
+  "status": "complete_native_sequence_with_failed_strict_preload_gate",
+  "passed": false,
+  "recorded_validation_passed": false,
+  "partial_task_scope": false,
+  "native_sequence_completed": true,
+  "aborted": null,
+  "executed_phases": 49,
+  "source_end_time_s": 43.6361000008868,
+  "source_end_phase": "stop_2",
+  "acceptance_checks_passed": 22,
+  "acceptance_checks_total": 23,
+  "failed_acceptance_checks": [
+    "all_substep_left_pad_contact_retention"
+  ],
+  "failed_strict_left_pad_preload_check": {
+    "passed": false,
+    "observer": "native-bilateral-pad-load-v1",
+    "minimum_loaded_force_N": 0.1,
+    "observed_physics_steps": 842723,
+    "observed_duration_s": 42.136150000837006,
+    "minimum_normal_force_N": [
+      0.0,
+      0.0
+    ],
+    "unloaded_physics_steps": [
+      9,
+      6
+    ],
+    "unloaded_duration_s": [
+      0.0004500000000000001,
+      0.00030000000000000003
+    ],
+    "maximum_consecutive_unloaded_duration_s": [
+      5e-05,
+      5e-05
+    ],
+    "continuously_bilateral_loaded": false,
+    "scope": "Every physics substep at and after the end of settle_left_block, including lift and physical roll"
+  },
+  "capture_tag_time_s": 31.340300000478624,
+  "qualified_turn_phases": [
+    "turn_1",
+    "turn_2"
+  ],
+  "qualified_turn_insertion_advance_m": 0.0012454883417568653,
+  "qualified_turn_clockwise_rotation_rad": 6.283721204125035,
+  "qualified_turn_observed_helix_residuals_m": [
+    -2.46195175717973e-06,
+    -2.1563197957750503e-06
+  ],
+  "scope": "The actual complete native sequence contains both table pickups, settled entry, three starting strokes, formed-flank observer capture, physical opening/reset/regrasp and two qualifying half-turns. Overall validation remains false because the strict left-pad preload gate observed 9/6 isolated 50-microsecond unloaded substeps. The gate, forces and original report are preserved.",
+  "qualification_scope": "This manifest verifies recorded replay identities and closed renders. Independent capture, reset, raw-force and free-body audits accompany the canonical package separately. No hardware calibration, full bolt seating or trained-policy claim is made.",
+  "chart_metadata": "insertion_trajectory.json",
+  "chart_pitch_reference_scope": "Only turn_1 and turn_2, after the recorded formed-flank capture; no starting/cone travel receives a pitch reference.",
+  "video_metadata": {
+    "plugin": "ffmpeg",
+    "nframes": null,
+    "ffmpeg_version": "7.0.2-static https://johnvansickle.com/ffmpeg/ built with gcc 8 (Debian 8.3.0-6)",
+    "codec": "h264",
+    "pix_fmt": "yuv420p(progressive)",
+    "fps": 12.0,
+    "source_size": [
+      1296,
+      720
+    ],
+    "size": [
+      1296,
+      720
+    ],
+    "rotate": 0,
+    "duration": 43.67
+  },
+  "video_metadata_normalization": [
+    {
+      "path": "/video_metadata/nframes",
+      "diagnostic_original": "inf",
+      "strict_json_value": null
+    }
+  ],
+  "normalization_note": "Nonfinite diagnostic imageio container estimates are null. The independently decoded finite frame count is frames. All JSON is serialized with allow_nan=false and parse_constant rejection.",
+  "video_top_level_atoms": [
+    {
+      "name": "ftyp",
+      "offset": 0,
+      "length": 32
+    },
+    {
+      "name": "moov",
+      "offset": 32,
+      "length": 7066
+    },
+    {
+      "name": "free",
+      "offset": 7098,
+      "length": 8
+    },
+    {
+      "name": "mdat",
+      "offset": 7106,
+      "length": 8115689
+    }
+  ],
+  "faststart_moov_before_mdat": true,
+  "closed_container_and_all_frames_decoded": true,
+  "gif_frames": 218,
+  "gif_size_pixels": [
+    700,
+    389
+  ],
+  "gif_fps_filter": 5,
+  "gif_duration_ms": 43600,
+  "all_gif_frames_decoded": true,
+  "still": {
+    "requested_time_s": 43.6361000008868,
+    "recorded_time_s": 43.6361000008868,
+    "recorded_phase": "stop_2",
+    "size_pixels": [
+      1296,
+      720
+    ]
+  },
+  "model_identity": {
+    "model_fingerprint": "d8ef2669aff4b4e871d1e09bed2a00e7482649c554bcfce5b7fb234e220bf635",
+    "model_xml_sha256": "19dd6fcd1081b03ad1c5c584be4a4635b03b32ab5ffa183bbc5b1c71ce2e847e",
+    "mesh_sha256": {
+      "model2.stl": "5ac61c0313ed00c38655e41681af1b8b307cf8d5ef57209a75f215cea02df754",
+      "model2__2.stl": "30dab41f14bae95d737abca3c934eb5d570ab107dff0b40952fbdfb9d07eab79",
+      "model2__3.stl": "9fd96f5ad387fe7dd96eaa65e386637800e2f5637b6167fbad4ecb37d8598f47",
+      "model2__4.stl": "33c0e7ef538e2c4473efa9c4ef2a8441b6094b65090b4dec71abe82001d974df",
+      "model2__5.stl": "09f08e7dead2d6363618471adadb1b94af39e8056676670f3fd21ec06c197b20",
+      "model2__6.stl": "888b5919d10dbfb59b964c3cafc2ddbdac3b5426e20dd13bcaf4baedd5ee15c9",
+      "model2__7.stl": "2d64b18f1e70b0460eb53335d340b7c879976a3093ec67b07bcb7245e371a91d",
+      "model2__8.stl": "db3708da6b14daf3fc9a1909a8325b68f65ff69146cdd20b69a9ddc4ce51f50d",
+      "model2__9.stl": "74969d09b8b7f75cc984c5c7e5526d2941c6724f48b3efa1fa8730cc7820f4f5",
+      "model2__10.stl": "b879cc07f547b7a2ac52e428dd206e80a0d4b0e805cb56b9a8230df04a690923",
+      "model2__11.stl": "af220d2a51e8444392aef36e2fe4a6f69aed22bc292a7f38e54da3b4f5253434",
+      "model2__12.stl": "e79614869bd2283f70fafa150ce748d5b6c03377a651448c6fe9893a22f6d1de",
+      "model2__13.stl": "32b62f14f00ea82bfc79b935f7dac32c7cb276a3abc0aae8362cbba3fb1326de",
+      "model2__14.stl": "72d2178789dd5e0358c2caf9dad90b8881e505f4c52a8d6d18c71b5e93e8c84b",
+      "model2__15.stl": "ca8788184d54f30c18482cb9b48dffb010a93dbc029054b6cc515083a740d324",
+      "model2__16.stl": "18bb99691eed524393e8f3a0ff29e79d97ab75689bc92144bbdfafa2cc79d37b",
+      "model2__17.stl": "6513dbd192d2bf3a4f7016231f1ba5eca93916c9ebfdc334e9b435ca1d302ff6",
+      "d405.stl": "6617f3fb22b604a66c27e16d2397f305fcdca8a781248abdbabbf69c9fe6a3c5"
+    },
+    "scene_source_sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+    "scene_source_matches_recorded": true,
+    "method": "Exact hash-verified archived XML; current scene generator is not used"
+  },
+  "runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "controller_archived_identity": {
+    "source_path": "/workspace/astra-r2s/outputs/m8_table_pickup/full_faster_entry/controller_source.py",
+    "module_sha256": "199ac49380e95b5849caf98e6bbfda1c0e85d1626fc97e468a421463a03394e8",
+    "controller_sha256": "dce8a1e1a8bc53d6caf4b717bf846a04fee1c5ebfafac9428b94f8e705385121",
+    "hashed_function_names": [
+      "PadLoadHistory",
+      "_pad_normal_forces",
+      "_relative_axial_velocity",
+      "EntrySupportWindow",
+      "InsertionControlConfig",
+      "insertion_phases",
+      "initialize_insertion_pose",
+      "_body_contact",
+      "formed_flank_overlap",
+      "run_insertion_demo",
+      "fully_formed_flank_interval",
+      "contact_is_on_full_flanks",
+      "thread_end_bounds",
+      "LoadedFlankWindow",
+      "YamCartesianController",
+      "YamM8ControlConfig",
+      "smooth_profile"
+    ],
+    "helper_source_sha256": {
+      "recorded_sources/yam_twin/m8_insertion_mechanics.py": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+      "recorded_sources/yam_twin/m8_insertion_engagement.py": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "recorded_sources/yam_twin/m8_simulation.py": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449"
+    },
+    "support_helper_mentions_welded_body_groups": true,
+    "inspection_method": "Static exact function blocks and archived helper sources; controller code is not executed"
+  },
+  "controller_whole_source_sha256": "199ac49380e95b5849caf98e6bbfda1c0e85d1626fc97e468a421463a03394e8",
+  "scene_source_sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+  "observer_source_sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+  "renderer_whole_source_sha256": "fcf1cb1ce92bfcbe1a91777af1a92ee49fa2bd97a6c5f6225cfb40c03a06d6a9",
+  "renderer_source_identity_note": "Exact module bytes frozen at this renderer process start as renderer_source.py. Later CLI default edits are not loaded by the running renderer and are not used as its source identity.",
+  "method": "Native recorded qpos/qvel/time samples selected by searchsorted. mj_forward computes display transforms only. No dynamics integration, state/object interpolation, pose editing or reconstructed-force claim.",
+  "source_private_videos_included": false
+}

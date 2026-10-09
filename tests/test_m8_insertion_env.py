@@ -171,6 +171,59 @@ def test_projected_depth_away_from_hole_is_not_progress_or_success(model):
     env.close()
 
 
+@pytest.mark.parametrize("captured,path,expected_rewards", [
+    pytest.param(True, [(-.25, False), (0., True)], [-.25, .25],
+                 id="unloaded-retreat-and-loaded-return"),
+    pytest.param(True, [(-.25, True), (0., True)], [-.25, .25],
+                 id="loaded-retreat-and-return"),
+    pytest.param(True, [(.25, False), (.25, True)], [0., 0.],
+                 id="unloaded-advance-is-not-credited-after-recapture"),
+    pytest.param(True, [(.1, True)], [.1], id="validated-new-advance"),
+    pytest.param(False, [(.25, False), (.5, False)], [0., 0.],
+                 id="projected-motion-before-capture"),
+])
+def test_thread_progress_reward_requires_new_validated_advance(
+        table_model, table_scene, monkeypatch, captured, path, expected_rewards):
+    env = YamM8InsertionEnv(table_model, scene_config=table_scene,
+                           control_dt=table_model.opt.timestep)
+    env.reset()
+    reference_depth = .004
+    env._pickup_observed = True
+    if captured:
+        env._start_depth = env._last_scored_depth = reference_depth
+        env._start_yaw = env._yaw_total
+    # Isolate reward bookkeeping with controlled measurement diagnostics.
+    # Each public step still integrates one native substep; these diagnostics
+    # do not claim a physically executed retract/reinsert trajectory.
+    monkeypatch.setattr(env, "_observe_task_events", lambda contacts: None)
+    monkeypatch.setattr(env, "_failures", lambda contacts: [])
+    rewards = []
+    try:
+        for pitch_fraction, loaded in path:
+            depth = reference_depth+pitch_fraction*env.pitch
+            diagnostic = {
+                "pickup_observed": True, "engagement_window": {"ready": loaded},
+                "whole_ring_full_flank_length_m": 2*env.pitch,
+                "loaded_flank_engagement_candidate": captured,
+                "left_block_grasp_secure": True, "right_bolt_grasp_secure": loaded,
+                "axis_radial_offset_at_entry_m": 0., "axis_tilt_rad": 0.,
+                "tip_depth_from_entry_m": depth,
+                "observed_engaged_advance_m": depth-reference_depth,
+                "relative_rotation_since_engagement_rad": 0.,
+                "one_turn_lead_observed": False,
+            }
+            monkeypatch.setattr(env, "_info", lambda diagnostic=diagnostic: diagnostic.copy())
+            _, reward, terminated, truncated, info = env.step(np.r_[np.zeros(12), [-1., -1.]])
+            assert not terminated and not truncated and not info["success"]
+            rewards.append(reward)
+        assert rewards == pytest.approx(expected_rewards)
+        assert env.data.time == pytest.approx(len(path)*table_model.opt.timestep)
+        if len(path) > 1:
+            assert sum(rewards) <= 1e-12
+    finally:
+        env.close()
+
+
 def test_entry_cone_contacts_are_not_loaded_full_flank_engagement(model):
     env = YamM8InsertionEnv(model)
     env.reset()

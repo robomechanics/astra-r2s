@@ -1,0 +1,21 @@
+{
+  "kind": "exact_immutable_progress_prefix_to_final_trace_link",
+  "prefix_path": "media/m8_table_pickup/progress_faster_start/insertion_trace.npz",
+  "render_time_prefix_sha256": "b5f8e812b0fee489d4c8f4ad2865c06e38b30efa0b6fa5be6a11d31dace1eb02",
+  "final_trace_path": "media/m8_table_pickup/full/trace.npz",
+  "audited_source_run_trace_path": "outputs/m8_table_pickup/full_faster_entry/insertion_trace.npz",
+  "final_trace_sha256": "c25daaf438f36c8b1617c989c8441b0414305a1c90648b397fb096cab484b9db",
+  "prefix_and_final_whole_hashes_are_distinct": true,
+  "all_prefix_state_arrays_and_native_samples_match_final_prefix": true,
+  "fixed_metadata_identities_match": true,
+  "prefix_rows": 3830,
+  "final_rows": 8783,
+  "prefix_end_time_s": 19.02680000006986,
+  "prefix_end_phase": "settle_regrip_search_2",
+  "original_source_outcome": {
+    "passed": false,
+    "partial": false,
+    "aborted": null
+  },
+  "scope": "Progress prefix identity stays separate from final whole-trace identity. Final outcome is preserved; matching earlier rows does not convert a progress capture candidate into overall acceptance."
+}

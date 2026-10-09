@@ -6,30 +6,33 @@ male/female fit, a rounded bolt root, and entry chamfers. The nut is a free
 rigid body; the hand transmits forces through finite frictional pad contacts.
 The collision plugin contains no force law or rotation-to-translation rule.
 
-The separate [YAM bolt-pickup and female-block task](yam_m8_insertion.md)
-has an earlier published rollout passing all 18 nominal gates, including actual thread capture and one
-qualified revolution. Its raw evidence is published alongside this older
-fixed-bolt experiment. Those nominal results do not erase the load/search
-failures or calibration limits documented here. That earlier rollout starts
-with the left pads touching the block. The current extension physically picks
-up both workpieces, as shown in the [faster native progress clip](../media/m8_table_pickup/progress_faster_start/demo.mp4)
-at a 1 rad/s starting command and normal 1× playback,
-but has no completed tabletop threading rollout.
-The [176-test software proof](../media/m8_table_pickup/software_tests.json)
-checks the frozen measured-entry controller and CLI; it does not override
-failed physics gates. Fresh continuous full runs at 0.5 and 1 rad/s starting
-speed remain pending. The conservative CLI default stays 0.5 rad/s;
-`--starting-angular-speed 1 --slow-motion 1` selects the faster demonstrated
-command and normal playback. The [settled-entry screenshot](../media/m8_table_pickup/progress_settled_entry.png)
-is actual native entry from the conservative run, rather than formed capture.
-The [earlier full attempt](../media/m8_table_pickup/failures/full_v10_depth_abort)
-physically picked up both workpieces but aborted at the unchanged depth guard
-before capture. Recorded preload gaps and camera/jaw collisions remain failures.
-The later [damped attempt](../media/m8_table_pickup/failures/damped_second_release_abort)
-has no sampled unexpected camera/backing penetrations but still stops before
-capture at 10.129 µm depth, above the unchanged 10 µm guard. Its strict
-per-step pad-preload check remains failed. A first unengaged recovery is
-recorded; it supplies no formed-thread holding or qualified lead proof.
+The separate [YAM tabletop task](yam_m8_insertion.md) now physically picks
+up both workpieces, captures the M8 thread and completes two qualified
+half-turns. [Normal-speed video](../media/m8_table_pickup/full/demo.mp4)
+and [unchanged original validation](../media/m8_table_pickup/full/validation.json)
+record **1.245488 mm** travel over one measured revolution. **22/23 checks
+pass; the overall result remains false** from 9/6 isolated 50 µs left-pad
+preload gaps. The captured open-reset, lead and native-actuation checks pass.
+These nominal results do not erase older load/search or calibration limits.
+
+The table default now matches the completed 1 rad/s starting trajectory,
+with 2 rad/s qualified turning and normal playback available through
+`--slow-motion 1`. The [configuration comparison](../media/m8_table_pickup/default_configuration_match.json)
+checks exact scene/control equivalence without another physics rollout.
+The [explicit 0.5 rad/s trial](../media/m8_table_pickup/failures/conservative_second_turn_grasp_abort)
+aborts in its second turn at the unchanged 1 mm grasp-slip guard; no successful
+slow result or full speed comparison is claimed.
+
+[181 current software tests](../media/m8_table_pickup/software_tests.json)
+pass after the table-default and policy reward corrections. The native trials
+retain their own historical 176-test snapshots. Policy success does not
+require the demo's open-release/reset self-locking or strict zero-gap preload
+sequence, and no trained or hardware-calibrated policy is established.
+The [earlier left-touching-block mode](../media/m8_insertion/full) separately
+passes all 18 original checks; it has a different pickup scope. Earlier
+[depth/camera-contact](../media/m8_table_pickup/failures/full_v10_depth_abort)
+and [damped opening-depth](../media/m8_table_pickup/failures/damped_second_release_abort)
+failures remain unchanged archived evidence.
 
 ![Recorded contact-driven turn](../media/m8_contact.png)
 

@@ -233,7 +233,7 @@ def test_demo_default_damping_preserves_legacy_and_explicit_configuration(tmp_pa
                                 maximum_phases=0)
     assert result["control_config"]["axial_velocity_damping_Ns_per_m"] == expected
     assert result["control_config"]["maximum_entry_dwell_s"] == (3. if table and not explicit_zero else None)
-    assert result["control_config"]["starting_angular_speed_rad_s"] == (.5 if table and not explicit_zero else None)
+    assert result["control_config"]["starting_angular_speed_rad_s"] == (1. if table and not explicit_zero else None)
 
 
 def test_entry_window_needs_native_load_and_settled_aligned_bolt_motion():

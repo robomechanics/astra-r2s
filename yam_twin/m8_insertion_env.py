@@ -491,8 +491,11 @@ class YamM8InsertionEnv(gym.Env):
             and info["relative_rotation_since_engagement_rad"] >= 2*np.pi
             and info["one_turn_lead_observed"])
         reward = -.0002*float(np.dot(action[:12], action[:12]))
-        if valid and self._last_scored_depth is not None:
-            reward += (info["tip_depth_from_entry_m"]-self._last_scored_depth)/self.pitch
+        if self._start_depth is not None and self._last_scored_depth is not None:
+            progress = (info["tip_depth_from_entry_m"]-self._last_scored_depth)/self.pitch
+            # Unloaded retreat cannot reset the baseline for rewarded
+            # reinsertion. Positive motion still requires validated contact.
+            reward += progress if valid else min(progress, 0.)
         if self._start_depth is not None:
             self._last_scored_depth = info["tip_depth_from_entry_m"]
         reward += .25*int(self._pickup_observed and not picked_before)+.25*int(info["loaded_flank_engagement_candidate"] and not started_before)

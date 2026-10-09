@@ -194,7 +194,7 @@ def main():
     parser.add_argument("--angular-speed", type=float, default=2.,
                         help="Peak qualified-turn speed in rad/s (also legacy starting speed)")
     parser.add_argument("--starting-angular-speed", type=float,
-                        help="Peak starting-turn speed in rad/s (table: 0.5, legacy: qualified speed)")
+                        help="Peak starting-turn speed in rad/s (table: 1, legacy: qualified speed)")
     parser.add_argument("--maximum-entry-dwell", type=float,
                         help="Maximum native support acquisition dwell in seconds (table: 3, legacy: disabled)")
     parser.add_argument("--maximum-starting-strokes", type=int, default=5)
@@ -234,7 +234,7 @@ def main():
         maximum_entry_dwell_s=(args.maximum_entry_dwell if args.maximum_entry_dwell is not None
                                else None if args.preheld_block else 3.),
         starting_angular_speed_rad_s=(args.starting_angular_speed
-            if args.starting_angular_speed is not None else None if args.preheld_block else .5),
+            if args.starting_angular_speed is not None else None if args.preheld_block else 1.),
         axial_velocity_damping_Ns_per_m=(args.axial_damping if args.axial_damping is not None
                                         else 0. if args.preheld_block else 50.))
     report = run_insertion_demo(args.output, scene_config=config, control_config=control,

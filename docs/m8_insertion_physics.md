@@ -5,7 +5,9 @@ geometry, zero-margin contact, specified male/female pitch diameters, and
 Coulomb friction. It changes which part is held: the left arm manipulates a
 free aluminum block with a female through-hole, while the right arm picks up
 a separate free headed steel bolt. The table-pickup extension acquires both
-workpieces from physical support; its completed threading checks are pending.
+workpieces from physical support and completes pickup, capture and running
+thread motion. Its strict continuous pad-preload check still fails; the
+original overall result remains false.
 The earlier published rollout starts with the left pads touching the block.
 Nothing couples yaw to axial displacement.
 
@@ -157,8 +159,9 @@ backing candidates and 18.46 µm maximum penetration. The selected full trial
 uses the original box collision
 geometry with `solref=(-31250, -2500)` and 0.8 ms tangential regularization.
 This is an explicit numerical contact-compliance assumption, rather than a
-soft-rubber material model. Its completed full rollout and final audits are
-still pending. All earlier trial failures remain separate evidence.
+soft-rubber material model. Its completed faster rollout has independent
+capture/geometry/force/reset/free-joint audits, while the strict continuous
+pad-load gate remains failed. All earlier trial failures remain separate evidence.
 The selected [direct-normal pickup pilot](../media/m8_table_pickup/failures/roll_3s_direct_normal_50us_allsteps)
 has no sampled nonpad hand/block candidates, but its raw every-substep load
 history still fails the same strict retention criterion. This selects a
@@ -179,10 +182,12 @@ the unchanged 10 µm abort guard. Fully formed flank overlap remains zero.
 The revised layout has no sampled unexpected camera/backing penetrations;
 strict every-substep left-pad preload still fails isolated 50 µs gaps.
 A bounded measured-contact dwell before rotation and unengaged opening is
-implemented in the frozen current controller and under continuous physics
-evaluation. No completed current tabletop threading task or
-formed-thread reset proof is claimed, and every depth, alignment and force
-retention gate remains unchanged.
+implemented in the completed faster controller. It reaches formed capture,
+two qualified half-turns and two captured open resets with every depth,
+alignment and force-retention gate unchanged. The two earlier search resets
+have partial formed geometry below one pitch, rather than strictly cone-only
+contact, and remain unqualified starting recoveries. The overall raw result
+is still false from isolated initial handling/preload gaps.
 
 This `EntrySupportWindow v1` tags starting-contact readiness using 50 ms of
 aligned geometry and slow actual axial bolt motion (≤0.2 mm/s relative to
@@ -194,9 +199,10 @@ not establish unsupported holding. Entry or uncaptured-stop acquisition
 timeouts keep the jaws closed, while a pre-reset readiness failure may occur
 after opening. The actual open-reset/contact/passive-motion audits and
 unchanged formed-flank capture and lead gates provide decisive evidence.
-The declared 0.5 rad/s starting trajectory is separate from 2 rad/s qualified
-turning. Neither its slower command nor a limited cold-state branch substitutes
-for the fresh continuous rollout.
+The completed trajectory uses 1 rad/s starting and 2 rad/s qualified turning,
+now the table default. The separate 0.5 rad/s trial aborts in its second turn
+at the unchanged 1 mm grasp-slip guard; it is not a successful speed comparison.
+Limited cold-state branches do not replace the continuous canonical rollout.
 
 The declared μ=0.8 pad friction and numerical contact assumptions still
 require physical force/displacement and friction measurements. Isolated
@@ -207,16 +213,16 @@ measurements while its overall strict acceptance remains failed.
 
 ## Qualification before policy-training claims
 
-The [published earlier nominal YAM rollout](yam_m8_insertion.md) demonstrates
-physical bolt pickup, contact-driven capture, unsupported open resets and two
-qualified half-turns. All 18 nominal gates pass; source/runtime identities and
-saved-pose contacts have independent audits. The measured travel is 1.245793 mm
-over 1.000085 revolutions. This is evidence for the declared rigid-contact
-condition, alongside the retained numerical and load failures below. Its left
-arm starts touching the free block, so it is not evidence of block pickup.
-The current table-pickup mode must independently demonstrate initial separation
-from both hands, native finger closure, loss of table/rest support after each
-lift, and retention through the block's roll into the assembly pose.
+The [completed tabletop YAM rollout](yam_m8_insertion.md) demonstrates both
+physical pickups, contact-driven capture, unsupported captured resets and
+two qualified half-turns totaling 1.245488 mm over 1.000085 revolutions.
+22/23 recorded gates pass. The strict per-step pad-preload gate fails 9/6
+isolated 50 µs unilateral gaps, and the original overall result remains false.
+Independent audits preserve that result, not replace it with a success claim.
+The [earlier left-touching mode](../media/m8_insertion/full) separately passes
+all 18 original nominal gates and remains evidence for its different initial
+condition. The new table mode checks initial separation from both hands,
+actual closure/lift, zero support afterward, and retention through its roll.
 Its first [raw all-substep pickup diagnostic](../media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us)
 retains an explicit failed pad-load check: isolated 50 µs unilateral force
 gaps appear during the roll, although the sampled force check passes. A
@@ -237,3 +243,6 @@ torque and contact/preload checks. Rigid contacts do not establish plastic
 cross-thread damage, stripping, wear, or realistic bolt/joint elasticity.
 Successful starting and running lead remain a nominal mechanics proof
 of concept rather than a trained or hardware-calibrated policy.
+The policy interface's success condition does not require the demo's
+open-release/reset self-locking sequence or continuous zero-gap left-pad
+loading; policy success must remain distinct from full demo acceptance.
