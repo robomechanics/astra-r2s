@@ -14,6 +14,13 @@ establish completion of this new table-supported trajectory.
 
 ## Start here
 
+The new canonical feedback candidate passes
+[402 software tests on 65 unchanged source files](../media/m8_table_supported/software_proof_feedback_v1).
+Use its [full-run candidate recipe](#run-current-canonical-candidate) for the
+new 30 mm opening/B200 controller. A fresh unspliced full native attempt is
+still required; software success does not qualify assembly. Historical
+results and recipes below retain their exact older producer bindings.
+
 The latest reproducible continuous result is the
 [6.3983 s pickup-to-entry prefix](../media/m8_table_supported/face120_pickup_entry_v1/README.md),
 using producer `b2b13ff39cd47c48afd19b38f83e9a405c9d6e32` and its separate
@@ -42,7 +49,7 @@ checkpoint as the actual input. The 281-test proof covers the canonical
 source. It does not cover this harness. Privileged perfect simulator poses
 at 20 kHz drive finite arm motors; desired yaw is independently scheduled,
 with no axial position or pitch feedback. No trained/perception policy or
-continuous full trajectory is demonstrated. The canonical longer schedule
+continuous full trajectory is demonstrated. The pinned `b2b13ff` schedule
 does not include this experimental controller.
 
 The historical [opening/wait v1 and v2 trials](../media/m8_table_supported/diagnostics/entry_supported_open_wait_trials/README.md)
@@ -379,6 +386,43 @@ points are `yam_twin/m8_supported_scene.py`,
 Explicit output paths below keep this work separate from the first task;
 the current CLI's implicit output is `outputs/m8_supported/demo`.
 
+## Run current canonical candidate
+
+The [software-only packet](../media/m8_table_supported/software_proof_feedback_v1/README.md)
+preserves all 65 tested files and the original proof/log/verifier. After its
+publication, identify the producer from the packet's publishing commit and
+detach an unused complete checkout at that source. Reuse the matched runtime,
+or run `scripts/setup.sh` there first if needed:
+
+```sh
+task_producer=$(git log -1 --format=%H -- media/m8_table_supported/software_proof_feedback_v1)
+git clone https://github.com/robomechanics/astra-r2s.git /workspace/astra-r2s-supported-feedback
+git -C /workspace/astra-r2s-supported-feedback switch --detach "$task_producer"
+cd /workspace/astra-r2s-supported-feedback
+scripts/run_m8.sh -m yam_twin.m8_supported_demo --output outputs/m8_table_supported/full_canonical_v1 --dt .00005 --starting-angular-speed 1 --angular-speed 2 --maximum-entry-dwell 10 --maximum-starting-strokes 5 --qualifying-strokes 2 --axial-damping 200
+```
+
+Use an absent output directory and omit `--maximum-phases`. This begins at
+independent table/rest spawns. Actual 30 mm opening, 18.4 mm closure, finite
+2 N left downward hold, privileged pose feedback and live bounded phase gates
+come from this producer's supported defaults. The **10 s entry bound** is an
+explicit configuration override for the slow 0.05 N/B200 initial feed; it
+changes the timeout, not the entry criterion, forces or geometry. Historical
+`b2b13ff` prefix commands stay at 3 s/B50. No capture/full-trajectory outcome
+is claimed for this new candidate. Budget roughly 1–2 h CPU, refined by live
+throughput and native events; exhausting the maximum plan can take longer.
+
+The packet also preserves the output-only launcher's original source. Copy
+it to `outputs/m8_table_supported/launch_continuous_supported_v3.py` before
+using its `--proof`, `--producer` and fresh `--output` arguments; its root lookup
+requires that depth. It binds tested source bytes before/after and retains
+the original native exit/log. Frozen auditor snapshots are provenance;
+replay/audit from the complete producer checkout and restore all closed
+scene/source/force sidecars. Preserve the new
+`native_feedback_force_history.npz` with the table and pad histories.
+
+## Historical controller recipes
+
 To check the exact initial full-attempt producer without switching a shared
 checkout, clone into an unused directory and pin the full commit SHA:
 
@@ -490,6 +534,9 @@ A new run archives `scene.xml`, `supported_scene.zip`,
 `engagement_observer_source.py`, imported `recorded_sources/yam_twin/*.py`,
 `insertion_trace.npz`, `insertion_validation.json`,
 `left_pad_force_history.npz` and `table_support_force_history.npz`.
+The new canonical feedback producer also archives
+`native_feedback_force_history.npz` with every original native feedback force,
+motor command, actual aperture and readiness observation. Preserve it whole.
 Phase-end partial traces are progress evidence. Require the final closed
 trace and original report before final auditing.
 

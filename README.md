@@ -30,8 +30,13 @@ with peak axial drift **0.178 / 0.424 µm**. Independent saved-pose audits
 check all four resets. The head remains unseated; full tightening/preload,
 hardware calibration and broad policy-training fidelity remain unqualified.
 
-**281 software tests pass** for the frozen alternate-grip source and new
-measured load/seat observations, with [exact before/after source hashes](media/m8_table_supported/software_proof_281).
+**402 software tests pass** for the new canonical table-supported feedback
+candidate, with [all 65 exact source files, original log and before/after proof](media/m8_table_supported/software_proof_feedback_v1).
+Its fresh unspliced native full attempt is still required; this software proof
+does not qualify capture, lead or reset. See the
+[candidate full-run recipe and controls](docs/m8_table_supported.md#run-current-canonical-candidate).
+The older alternate-grip `b2b13ff` source retains its separate
+[281-test proof](media/m8_table_supported/software_proof_281).
 The pinned supported producer `66276d0` retains its separate 213-test proof.
 Reverse seating and the later full table-supported turn/reset sequence remain
 under development; software tests do not qualify those motions.
