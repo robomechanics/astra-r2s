@@ -1,0 +1,168 @@
+{
+  "adaptive_event_and_actual_clock": {
+    "verified_event": {
+      "event": "Live unchanged100ms fully-open support/quiet readiness",
+      "elapsed_s": 0.37,
+      "time_s": 17.14715000000746,
+      "force_time_s": 17.14710000000746,
+      "actual_open_settle_s": 0.12,
+      "first_reset_command_elapsed_s": 0.37005,
+      "open_weight_window": {
+        "observer": "diagnostic-native-bolt-weight-transfer-v1",
+        "ready_for_diagnostic_release_attempt": true,
+        "bolt_weight_N": 0.26241400403581094,
+        "required_window_s": 0.1,
+        "observed_window_s": 0.09999999999999715,
+        "original_native_samples": 2000,
+        "mean_thread_weight_fraction": 0.9999994999869694,
+        "mean_positive_hand_upward_weight_fraction": 0.0,
+        "signed_thread_gravity_opposing_impulse_Ns": 0.0262413872825382,
+        "positive_hand_upward_impulse_Ns": 0.0,
+        "loaded_actual_interior_flank_duration_s": 0.0,
+        "loaded_thread_gravity_support_duty_fraction": 1.0,
+        "entry_only_native_contact_window": true,
+        "loaded_actual_interior_flank_contact_observed": false,
+        "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+      },
+      "actual_bolt_angular_speed_rad_per_s": 0.0004850599595067318,
+      "actual_bolt_axial_velocity_m_per_s": -9.726846601606919e-08,
+      "right_bolt_contact_count": 0,
+      "all_original_checks_held": true
+    },
+    "event_original_native_index": 7399,
+    "event_saved_state_index": 74,
+    "event_original_native_force_and_post_state_saved_at_actual_time": true,
+    "first_reset_native_index": 7400,
+    "first_reset_command_elapsed_s": 0.37005,
+    "declared_maximum_schedule": [
+      [
+        "release_search_2",
+        0.25
+      ],
+      [
+        "open_settle_search_2",
+        0.75
+      ],
+      [
+        "reset_open_search_2",
+        1.4726215563702154
+      ],
+      [
+        "open_hold_search_2",
+        0.12
+      ],
+      [
+        "regrip_search_2",
+        0.25
+      ],
+      [
+        "settle_regrip_search_2",
+        0.25
+      ],
+      [
+        "start_thread_2",
+        5.890486225480862
+      ],
+      [
+        "stop_start_2",
+        0.5
+      ]
+    ],
+    "actual_shifted_schedule": [
+      [
+        "release_search_2",
+        0.25
+      ],
+      [
+        "open_settle_search_2",
+        0.12
+      ],
+      [
+        "reset_open_search_2",
+        1.4726215563702154
+      ],
+      [
+        "open_hold_search_2",
+        0.12
+      ],
+      [
+        "regrip_search_2",
+        0.25
+      ],
+      [
+        "settle_regrip_search_2",
+        0.25
+      ],
+      [
+        "start_thread_2",
+        5.890486225480862
+      ],
+      [
+        "stop_start_2",
+        0.5
+      ]
+    ],
+    "all_original_native_phase_indices_match_actual_clock": true,
+    "actual_executed_native_duration_s": 8.853100000000001,
+    "actual_shifted_planned_duration_s": 8.853107781851078,
+    "scope": "The immutable maximum plan and actual event-shifted plan remain distinct. The event uses retained original pre-integration solved forces with an actual post-integration saved qpos/qvel. Reset starts one native tick later; no sample/state is retimestamped."
+  },
+  "original_open_robot_contact_observations": {
+    "fully_open_robot_contact_ticks": 0,
+    "first_open_contact_elapsed_s": null,
+    "final_native_whole_right_contact_count": 8,
+    "final_native_right_pad_normals_N": [
+      15.890130815194988,
+      15.89040953864497
+    ],
+    "final_original_thread_upward_N": 0.2624032196752447,
+    "final_original_signed_hand_upward_N": 1.0748293007103185e-05,
+    "final_commanded_aperture_m": 0.0184,
+    "final_commanded_tool_clock_rad": 1.0000693981811326,
+    "final_original_native_checks": {
+      "radial": true,
+      "tilt": true,
+      "thread_depth": true,
+      "left_slip": true,
+      "left_rotation": true,
+      "right_slip": true,
+      "right_rotation": true,
+      "no_bolt_world_support": true,
+      "no_head_seating": true,
+      "no_external_drive": true,
+      "no_unexpected_native_contacts": true,
+      "joint_limits": true,
+      "no_lift": true,
+      "block_translation": true,
+      "block_rotation": true,
+      "table_original_load": true,
+      "no_unexpected_block_world_support": true,
+      "male_tip_table_clearance": true,
+      "no_warnings": true,
+      "finite_state": true,
+      "bilateral_left_pad_load": true,
+      "bilateral_right_pad_load": true,
+      "active_table_rolling_share": true,
+      "finite_motor_caps": true,
+      "finite_wrench_caps": true,
+      "genuine_no_right_robot_contacts_while_open": true
+    },
+    "original_right_hand_wrench_on_bolt_world_N_Nm": [
+      0.00028004434153716673,
+      3.42292934680799e-05,
+      1.0748293007103185e-05,
+      -2.0211586847098707e-05,
+      5.5814499333364104e-05,
+      5.2401714103880725e-05
+    ],
+    "scope": "Fully-open contacts are forbidden and reported separately from intentional later closed regrasp contacts. Any actual original abort remains unchanged. Individual original right pad contact-local solves were not archived; original hand world wrench and pad loads are available. No post-qpos collision/force reconstruction may replace the original solution."
+  },
+  "timing": {
+    "last_original_solved_data_time_s": 25.63020000028907,
+    "last_integrated_elapsed_s": 8.853100000000001,
+    "pre_step_abort_elapsed_s": null,
+    "last_saved_post_state_elapsed_s": 8.853100000000001,
+    "saved_state_tail_gap_s": 0.0,
+    "scope": "Retained solved forces/geometry describe time-dt; saved qpos/qvel are post-integration. A pre-command timeout step was not integrated; any sparse trace tail gap remains absent."
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "scope": "Original all-step scalar forces and original sampled contact-local forces, without integration, model recompilation or force replay. Cold diagnostic only. Interior tags are archived producer geometry classifications, not independently rebuilt body transforms.",
+  "auditor_source_sha256": "711647a84fe9518449c0f3eed82c0b2ec02652b28a0e972dc298d365d649a586",
+  "input_sha256": {
+    "declaration.json": "4e601b99ecc96036eeb97a533b4883189bb3bec1214a79828adbc923198013e1",
+    "diagnostic_source.py": "890f486dcc9c520f6d46b04e6a46665236db9bcd918a6afa42db288d867446a1",
+    "observer_source.py": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+    "report.json": "0949f6988c17fe32df06c5c091cca9e81ad719e9688cf7ca0dec79989549679e",
+    "original_native_force_ledger.npz": "bfdfcccd26e8c6192fcd8a3ef3fb75832d6d689501bc7902623c5422abc3aabb",
+    "checkpoint_trace.npz": "8247dda3595b80ea7eff8f680d9a7a7da12fba52f85af5afb25aee1f4942797d",
+    "declared_cold_initialization.npz": "9e01436e05098eb57f567b79f7fea42e937c8e245c3eb5378aa5fe94e14a8da1"
+  },
+  "identity": {
+    "parent_trace_matches": true,
+    "archived_xml_matches": true,
+    "archived_xml_equals_parent": true,
+    "archived_scene_bundle_equals_parent": true,
+    "loaded_observer_copy_matches": true,
+    "archived_observer_dependency_matches": true,
+    "archived_diagnostic_matches": true,
+    "producer_ledger_sha_matches": true,
+    "producer_trace_sha_matches": true,
+    "archived_source_checks": {
+      "yam_twin/kinematics.py": true,
+      "yam_twin/m8_insertion_engagement.py": true,
+      "yam_twin/m8_insertion_mechanics.py": true,
+      "yam_twin/m8_insertion_scene.py": true,
+      "yam_twin/m8_insertion_simulation.py": true,
+      "yam_twin/m8_scene.py": true,
+      "yam_twin/m8_simulation.py": true,
+      "yam_twin/m8_supported_scene.py": true,
+      "yam_twin/m8_supported_simulation.py": true
+    }
+  },
+  "cold_initialization_matches_parent_saved_post_state": false,
+  "cold_chain": {
+    "scope": "Separate cold diagnostic state/model parents explicitly verified. Quaternion composition from declared native free-joint qpos and exact local female frame; no native replay, integration or force reconstruction.",
+    "auditor_source_sha256": "9a2cc4737d7f3960f4211ff93989ec2c502c473035b16a9943aa1017e6f4f3f7",
+    "state_parent_trace_sha256": "8148b80ef7db5bbba06afa08096f54f6d02b3153847c4185cf630a712f320d1e",
+    "canonical_model_reference_parent_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+    "exact_qpos_qvel_and_reconstructed_ctrl_verified": true,
+    "original_warmstart_solver_state_missing": true,
+    "actual_initial_relative_wrapped_yaw_rad": 2.3407953300111894,
+    "retained_canonical_counter_origin_rad": 1.3407990357558652,
+    "actual_relative_yaw_equals_raw_plus_constant_rad": 0.0,
+    "original_raw_counter_is_unchanged": true,
+    "yaw_origin_note": null,
+    "full_trajectory_qualified": false,
+    "potential_offset_if_canonical_origin_retained_rad": 0.9999962942553242,
+    "archived_counter_origin": "actual_cold_state_wrapped_yaw",
+    "first_original_counter_vs_declared_origin_rad": 0.0,
+    "counter_origin_auditor_source_sha256": "7313b5acac8f57e81e45c0fbe1c72045c12b11c079c5a65f235b44287f38acc6"
+  },
+  "missing_original_warmstart_state": true,
+  "original_native_steps": 28618,
+  "actual_duration_s": 1.4309,
+  "force_frame": {
+    "original_sampled_local_solves_retransformed": 289,
+    "extra_final_rows_without_contact_local_archive": [],
+    "maximum_wrench_error_N_Nm": 0.0,
+    "maximum_scalar_error": 0.0,
+    "right_pad_scope": "Original right-pad world wrench reprojected; individual original pad-local solves are not archived here."
+  },
+  "independent_exact100ms_weight_transfer": {
+    "observed": true,
+    "duration_s": 0.1,
+    "original_native_samples": 2000,
+    "mean_signed_thread_weight_fraction": 1.001511822783991,
+    "mean_positive_hand_upward_weight_fraction": 0.0,
+    "mean_signed_hand_weight_fraction": -0.0012910385430758362,
+    "contiguous_geometry_motion_drive_guard_window": false,
+    "final_thread_force_loaded": true,
+    "loaded_thread_gravity_support_duty": 1.0,
+    "ready": false,
+    "ever_ready": true,
+    "ready_endpoint_count": 24618,
+    "first_ready_elapsed_s": 0.1,
+    "last_ready_elapsed_s": 1.4308500000000002,
+    "scope": "Individual qualifying trailing windows; earliest/latest do not assert a continuous ready interval. No engagement or unsupported-reset qualification."
+  },
+  "independent_exact100ms_continuously_formed_support": {
+    "observed": true,
+    "duration_s": 0.1,
+    "original_native_samples": 2000,
+    "mean_signed_thread_weight_fraction": 1.001511822783991,
+    "mean_positive_hand_upward_weight_fraction": 0.0,
+    "mean_signed_hand_weight_fraction": -0.0012910385430758362,
+    "contiguous_geometry_motion_drive_guard_window": false,
+    "final_thread_force_loaded": true,
+    "loaded_thread_gravity_support_duty": 1.0,
+    "ready": false,
+    "ever_ready": false,
+    "ready_endpoint_count": 0,
+    "first_ready_elapsed_s": null,
+    "last_ready_elapsed_s": null,
+    "scope": "Individual qualifying trailing windows; earliest/latest do not assert a continuous ready interval. No engagement or unsupported-reset qualification."
+  },
+  "table_support": {
+    "minimum_rolling_weight_fraction": 3.264996865284793,
+    "maximum_positive_left_upward_weight_fraction": 0.0,
+    "minimum_loaded_duty": 1.0,
+    "failed_rolling_window_endpoints": 0,
+    "strict_unloaded_native_ticks": 0
+  },
+  "observed_phases": {
+    "release_search_2": {
+      "observed": true,
+      "original_native_steps": 5000,
+      "first_elapsed_s": 5e-05,
+      "last_elapsed_s": 0.25,
+      "base_z_range_m": [
+        -0.021985746029067377,
+        -0.02198566940440671
+      ],
+      "actual_yaw_range_rad": [
+        2.340795284707684,
+        2.340921055435601
+      ],
+      "original_recorded_yaw_counter_range_rad": [
+        2.340795284707684,
+        2.340921055435601
+      ],
+      "maximum_formed_full_ring_overlap_m": 2.1622660775186958e-05,
+      "loaded_actual_interior_substeps": 0,
+      "radial_range_m": [
+        2.715847328830264e-07,
+        1.2784474108720028e-06
+      ]
+    },
+    "open_settle_search_2": {
+      "observed": true,
+      "original_native_steps": 4241,
+      "first_elapsed_s": 0.25005,
+      "last_elapsed_s": 0.46205,
+      "base_z_range_m": [
+        -0.021985714164221,
+        -0.02198561578123463
+      ],
+      "actual_yaw_range_rad": [
+        2.3409211173144504,
+        2.341066726348412
+      ],
+      "original_recorded_yaw_counter_range_rad": [
+        2.3409211173144504,
+        2.341066726348412
+      ],
+      "maximum_formed_full_ring_overlap_m": 2.1404564730532344e-05,
+      "loaded_actual_interior_substeps": 0,
+      "radial_range_m": [
+        1.0867650845312166e-06,
+        1.7495346633190009e-06
+      ]
+    },
+    "reset_open_search_2": {
+      "observed": true,
+      "original_native_steps": 19377,
+      "first_elapsed_s": 0.4621,
+      "last_elapsed_s": 1.4309,
+      "base_z_range_m": [
+        -0.021985670059646033,
+        -0.021985521395907627
+      ],
+      "actual_yaw_range_rad": [
+        2.3410667432107646,
+        2.341542151669971
+      ],
+      "original_recorded_yaw_counter_range_rad": [
+        2.3410667432107646,
+        2.341542151669971
+      ],
+      "maximum_formed_full_ring_overlap_m": 2.1216428635510015e-05,
+      "loaded_actual_interior_substeps": 0,
+      "radial_range_m": [
+        1.470462797881368e-06,
+        3.0264946429854394e-06
+      ]
+    },
+    "open_hold_search_2": {
+      "observed": false
+    },
+    "regrip_search_2": {
+      "observed": false
+    },
+    "settle_regrip_search_2": {
+      "observed": false
+    },
+    "start_thread_2": {
+      "observed": false
+    },
+    "stop_start_2": {
+      "observed": false
+    }
+  },
+  "all_native_diagnostic_checks_held": false,
+  "producer_original_observer_window": {
+    "observer": "diagnostic-native-bolt-weight-transfer-v1",
+    "ready_for_diagnostic_release_attempt": false,
+    "bolt_weight_N": 0.26241400403581094,
+    "required_window_s": 0.1,
+    "observed_window_s": 0.0,
+    "original_native_samples": 0,
+    "mean_thread_weight_fraction": null,
+    "mean_positive_hand_upward_weight_fraction": null,
+    "signed_thread_gravity_opposing_impulse_Ns": 0.0,
+    "positive_hand_upward_impulse_Ns": 0.0,
+    "loaded_actual_interior_flank_duration_s": 0.0,
+    "loaded_thread_gravity_support_duty_fraction": null,
+    "entry_only_native_contact_window": false,
+    "loaded_actual_interior_flank_contact_observed": false,
+    "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+  },
+  "producer_failure": {
+    "elapsed_s": 1.4309,
+    "failed_checks": [
+      "genuine_no_right_robot_contacts_while_open"
+    ]
+  },
+  "capture_qualified": false,
+  "full_trajectory_qualified": false
+}

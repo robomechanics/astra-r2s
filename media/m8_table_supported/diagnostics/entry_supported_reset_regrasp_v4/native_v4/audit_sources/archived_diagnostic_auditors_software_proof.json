@@ -1,0 +1,12 @@
+{
+  "scope": "Additional output-only diagnostic arithmetic audit tests, separate from canonical281-test proof. No native integration or force replay. New phase auditor copies frozen d041 radial-profile calculation and reads local archived XML instead of a hardcoded parent path.",
+  "command": "scripts/run_m8.sh -m pytest outputs/m8_table_supported/diagnostics/test_independent_archived_native_force_audit.py -q",
+  "result": "10 passed in0.09s",
+  "files": {
+    "independent_archived_native_force_audit.py": "36f40e7b4ea11fe86f252281a2b77ebd13cabe5c786ca3eaa79f7f9a02072487",
+    "test_independent_archived_native_force_audit.py": "5888ad13e47113536fd15b8f2cc06e10c1035b005072f316046d4e135e23c27d",
+    "independent_archived_phase_depth_audit.py": "3e400c59085d62f4e2872830a30e6a2f7c4a6e3b36c174a4a61e642e28458148"
+  },
+  "phase_calculation_origin_sha256": "d0419e4ac7dbbba4c7cbf918b622a3ea724ba582f70ac894e7a4cd71384f4fb9",
+  "frozen": true
+}

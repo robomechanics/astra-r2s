@@ -1,0 +1,67 @@
+{
+  "scope": "Closed adaptive native entry-supported opening SEARCH. Same strict100ms live readiness event passed at0.46205; reset began one native tick later. One forbidden real robot/bolt contact at1.4309 preserved as the abort. Original support, guard and force records are immutable; no captured reset/regrasp/fullcapture reward or continuous full-rollout claim.",
+  "canonical_parent_code_commit": "b2b13ff39cd47c48afd19b38f83e9a405c9d6e32",
+  "harness_source_sha256": "890f486dcc9c520f6d46b04e6a46665236db9bcd918a6afa42db288d867446a1",
+  "helper_sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+  "canonical_model_reference_parent_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+  "actual_cold_state_parent_sha256": "8148b80ef7db5bbba06afa08096f54f6d02b3153847c4185cf630a712f320d1e",
+  "original_files": {
+    "declaration.json": "4e601b99ecc96036eeb97a533b4883189bb3bec1214a79828adbc923198013e1",
+    "report.json": "0949f6988c17fe32df06c5c091cca9e81ad719e9688cf7ca0dec79989549679e",
+    "diagnostic_source.py": "890f486dcc9c520f6d46b04e6a46665236db9bcd918a6afa42db288d867446a1",
+    "observer_source.py": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+    "original_native_force_ledger.npz": "bfdfcccd26e8c6192fcd8a3ef3fb75832d6d689501bc7902623c5422abc3aabb",
+    "checkpoint_trace.npz": "8247dda3595b80ea7eff8f680d9a7a7da12fba52f85af5afb25aee1f4942797d",
+    "declared_cold_initialization.npz": "9e01436e05098eb57f567b79f7fea42e937c8e245c3eb5378aa5fe94e14a8da1",
+    "scene.xml": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "supported_scene.zip": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93"
+  },
+  "closed_independent_reports": {
+    "independent_native_force_audit.json": "2066ad41806cbfe9f6bdd1b86bb0bd50e26c2ce3b95a6aa850ce8b869d2db1e5",
+    "independent_phase_depth_audit.json": "e3adac05b7f2963c2155e890e4e95a15f9df3c3a060fc5793606014734027e8c",
+    "independent_table_press_audit.json": "32858bc2978fe93bc1336db3faf5ddb728121db92098dd72c32c13bfa3604be8",
+    "independent_adaptive_open_audit.json": "e7f1b61cfc7c4c2b0eca1af5aadb8b1add36c30816afd62b3be85a479bd2f553",
+    "independent_open_tracking_geometry.json": "ab4b81a7b5b8360f9bca15a5540d77cf8e7e5053b7d23d50e1b720457c4405fc",
+    "independent_control_guard_ast_identity.json": "3feba45d433c8611f28a219be8323149657d08a2bdf15207938b295992c374d7",
+    "independent_pre_event_prefix_identity.json": "e126fd8aad6bdb4df0ee6f7ecfc0545502fbd8e05db985c9a0630be80f916f83"
+  },
+  "source_snapshots": {
+    "archived_diagnostic_auditors_software_proof.json": "26af0b7de186adca77b16f6bee575544eff87362c4a78292a28df86d85e52671",
+    "canonical281_software_proof.json": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+    "cold_chain_auditors_software_proof.json": "5f5ce483727187255cdf554e4ddf4e2f49dd95d176becd2d1b497fdb098910fd",
+    "independent_adaptive_open_audit_v1.py": "2be0ed0df7951d706e188b857dbc5d355ff0ef4fb5b87648a2f901393fc837e8",
+    "independent_adaptive_open_software_proof_v1.json": "a3f672384c858ee9556e9cd4f0b4715ed87ac4dfa3c65d048bef4fe80f22c200",
+    "independent_archived_native_force_audit.py": "36f40e7b4ea11fe86f252281a2b77ebd13cabe5c786ca3eaa79f7f9a02072487",
+    "independent_archived_native_force_audit_v3.py": "711647a84fe9518449c0f3eed82c0b2ec02652b28a0e972dc298d365d649a586",
+    "independent_archived_phase_depth_audit_v3.py": "505b1ed6be80e7052cced5bdb1a721c334a93aed76ed40c5f4b1c41af5222c53",
+    "independent_cold_chain_audit.py": "9a2cc4737d7f3960f4211ff93989ec2c502c473035b16a9943aa1017e6f4f3f7",
+    "independent_open_search_audit_v1.py": "e3c191a5a08681e3e392f9950d71da618bf03c2b2f7f589a97a825352e6d5b13",
+    "independent_open_search_software_proof_v1.json": "e3bf96f36dc5f7c2dfc0f0509319a98440bf8fd03c7958b74478d1b1acfe7e20",
+    "independent_open_tracking_geometry_v1.py": "4b15c0efc513fb7e0447acfc9f1c58192f6669f4b0c78715661c386fbf4c999a",
+    "independent_phase_depth_software_proof.json": "ee12a2bfd7e9dcb65324720af72f2fd4e4cee106647e31e593883d3f211d9340",
+    "independent_table_press_audit.py": "3e46b3f00bbe67845e8f42b0f337b9a3f654e4fe6c69613ed6f7a988cbbd77e0",
+    "independent_yaw_counter_origin.py": "7313b5acac8f57e81e45c0fbe1c72045c12b11c079c5a65f235b44287f38acc6",
+    "test_independent_adaptive_open_audit_v1.py": "978ef03cf981e363a44bfd24594fa49cfc902a1cd64b86e162c026c0bc1abd1c",
+    "test_independent_archived_native_force_audit.py": "5888ad13e47113536fd15b8f2cc06e10c1035b005072f316046d4e135e23c27d",
+    "test_independent_cold_chain_audit.py": "f246f24816b9bbcf98e31bbcb88b37aba136b9c3dfecdeecdf4c4ac91ca0ad35",
+    "test_independent_open_search_audit_v1.py": "dbb1788c0bbd7ebba6d4d32e5ad10c68acf586cac5dc917326d652a5c1a7fd75",
+    "test_independent_open_tracking_geometry_v1.py": "5557e02e9fb49c199eefe508078063244d1a2558572ad90a453db0417f609c67",
+    "test_independent_table_press_audit.py": "9e09d371138940e7c37ec5ed2b01330347d171ae9ec904edf474a58b2fa00a0d",
+    "test_independent_yaw_counter_origin.py": "03e6a96ee49cbc801b44116c70374cf92a802cd78a79cfa0019c6660703eaba8",
+    "yaw_origin_and_press_auditors_software_proof.json": "7f3ac92ee5a21308c7a844159b13b29fecc2d6ea3064fe16b606b5b4807321b4"
+  },
+  "software_scope": "Canonical281 proof covers frozen parent application/helper sources; output-only adaptive harness is a separate cold diagnostic. Four event/two support-plane tests and inherited arithmetic proofs cannot certify task success.",
+  "adaptive_live_readiness_elapsed_s": 0.46205,
+  "first_reset_command_elapsed_s": 0.4621,
+  "original_producer_failure": {
+    "elapsed_s": 1.4309,
+    "failed_checks": [
+      "genuine_no_right_robot_contacts_while_open"
+    ]
+  },
+  "original_overall_guards_held": false,
+  "geometry_attempt_scope": "A first read-only model compile exited at an incorrect body-name lookup without producing geometry; the corrected successful audit used mj_kinematics only, never mj_forward or dynamics. Original solved forces came solely from native archives.",
+  "full_capture": false,
+  "qualified_reset": false,
+  "full_trajectory_qualified": false
+}

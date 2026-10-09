@@ -1,0 +1,32 @@
+{
+  "scope": "Four adaptive-event provenance and two pure inner-pad-plane geometry regressions, separate from281 canonical source proof and native qualification. No dynamics, no force replay.",
+  "results": [
+    {
+      "command": "python outputs/m8_table_supported/diagnostics/test_independent_adaptive_open_audit_v1.py",
+      "tests_passed": 4,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_event_forces_cannot_be_retimestamped_to_post_state (__main__.AdaptiveEventTests.test_event_forces_cannot_be_retimestamped_to_post_state) ... ok\ntest_missing_off_grid_event_state_is_not_reconstructed (__main__.AdaptiveEventTests.test_missing_off_grid_event_state_is_not_reconstructed) ... ok\ntest_native_event_shifts_next_tick_and_preserves_maximum_plan (__main__.AdaptiveEventTests.test_native_event_shifts_next_tick_and_preserves_maximum_plan) ... ok\ntest_old_maximum_phase_clock_cannot_describe_actual_rows (__main__.AdaptiveEventTests.test_old_maximum_phase_clock_cannot_describe_actual_rows) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": "python outputs/m8_table_supported/diagnostics/test_independent_open_tracking_geometry_v1.py",
+      "tests_passed": 2,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_centered_full_hex_clearance_can_be_lost_by_native_translation (__main__.InnerPlaneTests.test_centered_full_hex_clearance_can_be_lost_by_native_translation) ... ok\ntest_projection_is_rotationally_invariant (__main__.InnerPlaneTests.test_projection_is_rotationally_invariant) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.024s\n\nOK\n"
+    }
+  ],
+  "sources_before": {
+    "independent_adaptive_open_audit_v1.py": "2be0ed0df7951d706e188b857dbc5d355ff0ef4fb5b87648a2f901393fc837e8",
+    "test_independent_adaptive_open_audit_v1.py": "978ef03cf981e363a44bfd24594fa49cfc902a1cd64b86e162c026c0bc1abd1c",
+    "independent_open_tracking_geometry_v1.py": "4b15c0efc513fb7e0447acfc9f1c58192f6669f4b0c78715661c386fbf4c999a",
+    "test_independent_open_tracking_geometry_v1.py": "5557e02e9fb49c199eefe508078063244d1a2558572ad90a453db0417f609c67"
+  },
+  "sources_after": {
+    "independent_adaptive_open_audit_v1.py": "2be0ed0df7951d706e188b857dbc5d355ff0ef4fb5b87648a2f901393fc837e8",
+    "test_independent_adaptive_open_audit_v1.py": "978ef03cf981e363a44bfd24594fa49cfc902a1cd64b86e162c026c0bc1abd1c",
+    "independent_open_tracking_geometry_v1.py": "4b15c0efc513fb7e0447acfc9f1c58192f6669f4b0c78715661c386fbf4c999a",
+    "test_independent_open_tracking_geometry_v1.py": "5557e02e9fb49c199eefe508078063244d1a2558572ad90a453db0417f609c67"
+  },
+  "sources_unchanged": true
+}

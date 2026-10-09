@@ -1,0 +1,11 @@
+{
+  "scope": "Exact AST expressions for existing finite arm commands, hard native guard assignments and physical jaw aperture assignments match original v2. Adaptive phase/event scheduler is separately audited. This does not treat a failed trial as passed.",
+  "original_fixed_source_sha256": "34a2f60014e0efbf3c3b1c3440a256c95e82fbf335a088ed40afdc21cf64a250",
+  "adaptive_source_sha256": "890f486dcc9c520f6d46b04e6a46665236db9bcd918a6afa42db288d867446a1",
+  "identical_selected_expressions": {
+    "arm_finite_command_calls": true,
+    "native_guard_assignments": true,
+    "jaw_aperture_assignments": true
+  },
+  "computation_source": "ast.dump over Call left/right.command, Assign checks and Assign right_aperture nodes, preserving traversal order"
+}

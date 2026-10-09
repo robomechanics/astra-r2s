@@ -1,0 +1,1029 @@
+{
+  "scope": "Separate closed cold native30mm V4 open/reset/regrasp/nextpi with all original guards; earlier failed24mm V3 realpad recontact; separate static30mm sampled preflight NO ROLLOUT. Partial formed engagement below onepitch; capture/passive-reset/full-pitch/fulltrajectory qualification remains false.",
+  "canonical_producer_commit": "b2b13ff39cd47c48afd19b38f83e9a405c9d6e32",
+  "canonical_software_tests_passed": 281,
+  "canonical281_covers_output_only_harnesses": false,
+  "newer_canonical_producer_proof_not_relabelled_as_historical_native_trial": true,
+  "audit_arithmetic_tests_remain_separate": true,
+  "trials": {
+    "native_v4": {
+      "original_native_trial_name": "entry_supported_open_search_v4",
+      "native_duration_s": 8.853100000000001,
+      "native_wall_seconds": 1048.916170028002,
+      "native_scalar_rows": 177062,
+      "original_overall_guards_held": true,
+      "original_abort": null,
+      "original_trace_sha256": "ea9c69eb87bcf1e32d59f03d41a62c5f7134befff9d37e26bae7fa9029f0ee31",
+      "original_ledger_sha256": "0595680149098f3c56034f1af4f424be638283fc3a609a29128946f77e20d8ac",
+      "original_report_sha256": "4fcea103731aa668ebcee6d62a5588312c46eaca7fc80f9f22a296e657e51677",
+      "original_harness_sha256": "42ed0d3b150e34d9109de45eef0a4816bb891cb93933bf5f40dc6c098bb5e868",
+      "original_helper_sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "final_formed_overlap_m": 0.0006466371352841453,
+      "final_loaded_interior_count": 4,
+      "final_native_weight_window": {
+        "observer": "diagnostic-native-bolt-weight-transfer-v1",
+        "ready_for_diagnostic_release_attempt": true,
+        "bolt_weight_N": 0.26241400403581094,
+        "required_window_s": 0.1,
+        "observed_window_s": 0.09999999999999715,
+        "original_native_samples": 2000,
+        "mean_thread_weight_fraction": 0.9999792837391834,
+        "mean_positive_hand_upward_weight_fraction": 0.00014985230776580176,
+        "signed_thread_gravity_opposing_impulse_Ns": 0.026240856779885392,
+        "positive_hand_upward_impulse_Ns": 3.932334409482956e-06,
+        "loaded_actual_interior_flank_duration_s": 0.09999999999999715,
+        "loaded_thread_gravity_support_duty_fraction": 1.0,
+        "entry_only_native_contact_window": false,
+        "loaded_actual_interior_flank_contact_observed": true,
+        "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+      },
+      "observed_native_open_reset_and_regrasp": {
+        "scope": "Actual native entry-supported SEARCH open/reindex/regrasp and next independent closedpi; never fullcapture or qualified passive-reset reward",
+        "events": [
+          {
+            "event": "First fully-open zero-right-contact native state",
+            "reference": {
+              "time_s": 17.02720000000348,
+              "base_z_m": -0.02198570099576722,
+              "yaw_unwrapped_rad": 2.340899082952885
+            }
+          },
+          {
+            "event": "Live unchanged100ms fully-open support/quiet readiness",
+            "elapsed_s": 0.37,
+            "time_s": 17.14715000000746,
+            "force_time_s": 17.14710000000746,
+            "actual_open_settle_s": 0.12,
+            "first_reset_command_elapsed_s": 0.37005,
+            "open_weight_window": {
+              "observer": "diagnostic-native-bolt-weight-transfer-v1",
+              "ready_for_diagnostic_release_attempt": true,
+              "bolt_weight_N": 0.26241400403581094,
+              "required_window_s": 0.1,
+              "observed_window_s": 0.09999999999999715,
+              "original_native_samples": 2000,
+              "mean_thread_weight_fraction": 0.9999994999869694,
+              "mean_positive_hand_upward_weight_fraction": 0.0,
+              "signed_thread_gravity_opposing_impulse_Ns": 0.0262413872825382,
+              "positive_hand_upward_impulse_Ns": 0.0,
+              "loaded_actual_interior_flank_duration_s": 0.0,
+              "loaded_thread_gravity_support_duty_fraction": 1.0,
+              "entry_only_native_contact_window": true,
+              "loaded_actual_interior_flank_contact_observed": false,
+              "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+            },
+            "actual_bolt_angular_speed_rad_per_s": 0.0004850599595067318,
+            "actual_bolt_axial_velocity_m_per_s": -9.726846601606919e-08,
+            "right_bolt_contact_count": 0,
+            "all_original_checks_held": true
+          },
+          {
+            "event": "Actual quiet bilateral regrasp acquired",
+            "reference": {
+              "time_s": 19.089750000071948,
+              "phase": "settle_regrip_search_2",
+              "continuous_quiet_bilateral_streak_s": 0.09999999999999715,
+              "pad_normal_force_N": [
+                15.883152502048233,
+                15.897430312385335
+              ],
+              "grasp_relative_bolt_head_position_m": [
+                7.911387580483e-06,
+                -4.107316420178203e-07,
+                9.916865942030144e-05
+              ],
+              "grasp_relative_bolt_rotation": [
+                [
+                  0.8658127293995775,
+                  0.4998772870074864,
+                  0.0221588705417877
+                ],
+                [
+                  -0.499999973328187,
+                  0.8660254191727126,
+                  -4.305660929466933e-06
+                ],
+                [
+                  -0.019192297451449767,
+                  -0.01107570678383539,
+                  0.9997544620744498
+                ]
+              ],
+              "desired_next_head_yaw_anchor_rad": 2.3408573901550245,
+              "scope": "Actual native loaded quiet opposite-flat regrasp; new cumulative within-grasp reference starts here"
+            }
+          }
+        ],
+        "termination": "Entry-supported SEARCH open/reindex/regrasp and next physical pi completed",
+        "entry_supported_open_reference": {
+          "time_s": 17.02720000000348,
+          "base_z_m": -0.02198570099576722,
+          "yaw_unwrapped_rad": 2.340899082952885
+        },
+        "peak_unsupported_axial_drift_m": 2.8499775050344622e-08,
+        "peak_unsupported_yaw_drift_rad": 0.00023575294977273842,
+        "actual_regrasp_acquisition": {
+          "time_s": 19.089750000071948,
+          "phase": "settle_regrip_search_2",
+          "continuous_quiet_bilateral_streak_s": 0.09999999999999715,
+          "pad_normal_force_N": [
+            15.883152502048233,
+            15.897430312385335
+          ],
+          "grasp_relative_bolt_head_position_m": [
+            7.911387580483e-06,
+            -4.107316420178203e-07,
+            9.916865942030144e-05
+          ],
+          "grasp_relative_bolt_rotation": [
+            [
+              0.8658127293995775,
+              0.4998772870074864,
+              0.0221588705417877
+            ],
+            [
+              -0.499999973328187,
+              0.8660254191727126,
+              -4.305660929466933e-06
+            ],
+            [
+              -0.019192297451449767,
+              -0.01107570678383539,
+              0.9997544620744498
+            ]
+          ],
+          "desired_next_head_yaw_anchor_rad": 2.3408573901550245,
+          "scope": "Actual native loaded quiet opposite-flat regrasp; new cumulative within-grasp reference starts here"
+        },
+        "fully_open_weight_ready_observed": true,
+        "adaptive_open_readiness_event": {
+          "event": "Live unchanged100ms fully-open support/quiet readiness",
+          "elapsed_s": 0.37,
+          "time_s": 17.14715000000746,
+          "force_time_s": 17.14710000000746,
+          "actual_open_settle_s": 0.12,
+          "first_reset_command_elapsed_s": 0.37005,
+          "open_weight_window": {
+            "observer": "diagnostic-native-bolt-weight-transfer-v1",
+            "ready_for_diagnostic_release_attempt": true,
+            "bolt_weight_N": 0.26241400403581094,
+            "required_window_s": 0.1,
+            "observed_window_s": 0.09999999999999715,
+            "original_native_samples": 2000,
+            "mean_thread_weight_fraction": 0.9999994999869694,
+            "mean_positive_hand_upward_weight_fraction": 0.0,
+            "signed_thread_gravity_opposing_impulse_Ns": 0.0262413872825382,
+            "positive_hand_upward_impulse_Ns": 0.0,
+            "loaded_actual_interior_flank_duration_s": 0.0,
+            "loaded_thread_gravity_support_duty_fraction": 1.0,
+            "entry_only_native_contact_window": true,
+            "loaded_actual_interior_flank_contact_observed": false,
+            "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+          },
+          "actual_bolt_angular_speed_rad_per_s": 0.0004850599595067318,
+          "actual_bolt_axial_velocity_m_per_s": -9.726846601606919e-08,
+          "right_bolt_contact_count": 0,
+          "all_original_checks_held": true
+        },
+        "maximum_planned_duration_s": 9.483107781851077,
+        "actual_shifted_phase_schedule": [
+          [
+            "release_search_2",
+            0.25
+          ],
+          [
+            "open_settle_search_2",
+            0.12
+          ],
+          [
+            "reset_open_search_2",
+            1.4726215563702154
+          ],
+          [
+            "open_hold_search_2",
+            0.12
+          ],
+          [
+            "regrip_search_2",
+            0.25
+          ],
+          [
+            "settle_regrip_search_2",
+            0.25
+          ],
+          [
+            "start_thread_2",
+            5.890486225480862
+          ],
+          [
+            "stop_start_2",
+            0.5
+          ]
+        ],
+        "actual_shifted_planned_duration_s": 8.853107781851078
+      },
+      "actual_guarded_closed_grasp_slip": {
+        "native_ticks": 130810,
+        "maximum_translation_slip_m": 3.062911855154159e-05,
+        "maximum_rotation_slip_rad": 0.003324946782196665
+      },
+      "global_unmasked_slip_includes_intentional_opening": true,
+      "model_or_runtime_range_override": false,
+      "physical_command_open_aperture_m": 0.03,
+      "canonical281_covers_output_only_harness": false,
+      "capture_qualified": false,
+      "qualified_passive_reset": false,
+      "full_pitch_lead_qualified": false,
+      "continuous_full_trajectory": false,
+      "media_frames": 107,
+      "media_fps": 12,
+      "encoded_video_duration_s": 8.916666666666666,
+      "gif_duration_ms": 8920,
+      "missing_original_saved_state_tail_s": 0.0,
+      "tail_synthesized": false,
+      "render_manifest_sha256": "a57f5493ddb3d46215fbee6d9102ea6c0e55e0800bcfafdea94c857f9f280c26",
+      "independent_audit_binding_sha256": "85de337ce1c0bf898eede6c3cd52d640b8e690b104793f1df5b84bdca507001f"
+    },
+    "earlier_adaptive_v3_failure": {
+      "original_native_trial_name": "entry_supported_open_search_v3",
+      "native_duration_s": 1.4309,
+      "native_wall_seconds": 175.78453502900084,
+      "native_scalar_rows": 28618,
+      "original_overall_guards_held": false,
+      "original_abort": {
+        "elapsed_s": 1.4309,
+        "failed_checks": [
+          "genuine_no_right_robot_contacts_while_open"
+        ]
+      },
+      "original_trace_sha256": "8247dda3595b80ea7eff8f680d9a7a7da12fba52f85af5afb25aee1f4942797d",
+      "original_ledger_sha256": "bfdfcccd26e8c6192fcd8a3ef3fb75832d6d689501bc7902623c5422abc3aabb",
+      "original_report_sha256": "0949f6988c17fe32df06c5c091cca9e81ad719e9688cf7ca0dec79989549679e",
+      "original_harness_sha256": "890f486dcc9c520f6d46b04e6a46665236db9bcd918a6afa42db288d867446a1",
+      "original_helper_sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "final_formed_overlap_m": 2.0702499475286698e-05,
+      "final_loaded_interior_count": 0,
+      "final_native_weight_window": {
+        "observer": "diagnostic-native-bolt-weight-transfer-v1",
+        "ready_for_diagnostic_release_attempt": false,
+        "bolt_weight_N": 0.26241400403581094,
+        "required_window_s": 0.1,
+        "observed_window_s": 0.0,
+        "original_native_samples": 0,
+        "mean_thread_weight_fraction": null,
+        "mean_positive_hand_upward_weight_fraction": null,
+        "signed_thread_gravity_opposing_impulse_Ns": 0.0,
+        "positive_hand_upward_impulse_Ns": 0.0,
+        "loaded_actual_interior_flank_duration_s": 0.0,
+        "loaded_thread_gravity_support_duty_fraction": null,
+        "entry_only_native_contact_window": false,
+        "loaded_actual_interior_flank_contact_observed": false,
+        "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+      },
+      "observed_native_open_reset_and_regrasp": {
+        "scope": "Actual native entry-supported SEARCH open/reindex/regrasp and next independent closedpi; never fullcapture or qualified passive-reset reward",
+        "events": [
+          {
+            "event": "First fully-open zero-right-contact native state",
+            "reference": {
+              "time_s": 17.02720000000348,
+              "base_z_m": -0.021985713912487267,
+              "yaw_unwrapped_rad": 2.3409211173144504
+            }
+          },
+          {
+            "event": "Live unchanged100ms fully-open support/quiet readiness",
+            "elapsed_s": 0.46205,
+            "time_s": 17.239200000010516,
+            "force_time_s": 17.239150000010515,
+            "actual_open_settle_s": 0.21205000000000002,
+            "first_reset_command_elapsed_s": 0.4621,
+            "open_weight_window": {
+              "observer": "diagnostic-native-bolt-weight-transfer-v1",
+              "ready_for_diagnostic_release_attempt": true,
+              "bolt_weight_N": 0.26241400403581094,
+              "required_window_s": 0.1,
+              "observed_window_s": 0.09999999999999715,
+              "original_native_samples": 2000,
+              "mean_thread_weight_fraction": 0.9999685882074553,
+              "mean_positive_hand_upward_weight_fraction": 0.0,
+              "signed_thread_gravity_opposing_impulse_Ns": 0.026240576114154784,
+              "positive_hand_upward_impulse_Ns": 0.0,
+              "loaded_actual_interior_flank_duration_s": 0.0,
+              "loaded_thread_gravity_support_duty_fraction": 1.0,
+              "entry_only_native_contact_window": true,
+              "loaded_actual_interior_flank_contact_observed": false,
+              "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+            },
+            "actual_bolt_angular_speed_rad_per_s": 0.0016184586739777008,
+            "actual_bolt_axial_velocity_m_per_s": -7.180030190216737e-07,
+            "right_bolt_contact_count": 0,
+            "all_original_checks_held": true
+          }
+        ],
+        "termination": null,
+        "entry_supported_open_reference": {
+          "time_s": 17.02720000000348,
+          "base_z_m": -0.021985713912487267,
+          "yaw_unwrapped_rad": 2.3409211173144504
+        },
+        "peak_unsupported_axial_drift_m": 1.925165796397288e-07,
+        "peak_unsupported_yaw_drift_rad": 0.0006210343555204112,
+        "actual_regrasp_acquisition": null,
+        "fully_open_weight_ready_observed": true,
+        "adaptive_open_readiness_event": {
+          "event": "Live unchanged100ms fully-open support/quiet readiness",
+          "elapsed_s": 0.46205,
+          "time_s": 17.239200000010516,
+          "force_time_s": 17.239150000010515,
+          "actual_open_settle_s": 0.21205000000000002,
+          "first_reset_command_elapsed_s": 0.4621,
+          "open_weight_window": {
+            "observer": "diagnostic-native-bolt-weight-transfer-v1",
+            "ready_for_diagnostic_release_attempt": true,
+            "bolt_weight_N": 0.26241400403581094,
+            "required_window_s": 0.1,
+            "observed_window_s": 0.09999999999999715,
+            "original_native_samples": 2000,
+            "mean_thread_weight_fraction": 0.9999685882074553,
+            "mean_positive_hand_upward_weight_fraction": 0.0,
+            "signed_thread_gravity_opposing_impulse_Ns": 0.026240576114154784,
+            "positive_hand_upward_impulse_Ns": 0.0,
+            "loaded_actual_interior_flank_duration_s": 0.0,
+            "loaded_thread_gravity_support_duty_fraction": 1.0,
+            "entry_only_native_contact_window": true,
+            "loaded_actual_interior_flank_contact_observed": false,
+            "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+          },
+          "actual_bolt_angular_speed_rad_per_s": 0.0016184586739777008,
+          "actual_bolt_axial_velocity_m_per_s": -7.180030190216737e-07,
+          "right_bolt_contact_count": 0,
+          "all_original_checks_held": true
+        },
+        "maximum_planned_duration_s": 9.483107781851077,
+        "actual_shifted_phase_schedule": [
+          [
+            "release_search_2",
+            0.25
+          ],
+          [
+            "open_settle_search_2",
+            0.21205000000000002
+          ],
+          [
+            "reset_open_search_2",
+            1.4726215563702154
+          ],
+          [
+            "open_hold_search_2",
+            0.12
+          ],
+          [
+            "regrip_search_2",
+            0.25
+          ],
+          [
+            "settle_regrip_search_2",
+            0.25
+          ],
+          [
+            "start_thread_2",
+            5.890486225480862
+          ],
+          [
+            "stop_start_2",
+            0.5
+          ]
+        ],
+        "actual_shifted_planned_duration_s": 8.945157781851076
+      },
+      "actual_guarded_closed_grasp_slip": null,
+      "global_unmasked_slip_includes_intentional_opening": true,
+      "model_or_runtime_range_override": false,
+      "physical_command_open_aperture_m": 0.024,
+      "canonical281_covers_output_only_harness": false,
+      "capture_qualified": false,
+      "qualified_passive_reset": false,
+      "full_pitch_lead_qualified": false,
+      "continuous_full_trajectory": false,
+      "media_frames": 18,
+      "media_fps": 12,
+      "encoded_video_duration_s": 1.5,
+      "gif_duration_ms": 1500,
+      "missing_original_saved_state_tail_s": 0.0,
+      "tail_synthesized": false,
+      "render_manifest_sha256": "8907d8b3135edcc5b08430a51ac8560fc720a462ac7bff5c22b5dd0c6026ef4f",
+      "independent_audit_binding_sha256": "06a5899b5b58f06c6cad1bc9033ace9e645b893631c32eb707467c3492cd8d58"
+    }
+  },
+  "static_preflight_scope": "Native static reach/geometry only; no integration, mj_forward, force solve, controller command, dynamic clearance or physical30mm actuation proof. Hypothetical finger coordinates changed only in scratch copied states. Native asset joint bounds are not independently measured real hardware certification. Nominal127-point reset route is sampled, not a continuous swept-volume certificate.",
+  "static_preflight_sample_count": 416,
+  "exact_original_archives_preserved": true,
+  "no_splice_no_interpolation_no_integration_no_geometry_edit": true,
+  "native_v4_source_runtime_before_after_hashes_unchanged": true,
+  "original_audit_provenance_hash_checks": 109,
+  "all_artifacts_below45MB_no_chunks_needed": true,
+  "maximum_artifact_bytes": 39346670,
+  "full_capture_qualified": false,
+  "qualified_passive_reset": false,
+  "full_pitch_lead_qualified": false,
+  "continuous_full_trajectory": false,
+  "files": {
+    "README.md": {
+      "sha256": "c10414111b818bfcf28fd237f9fb922e558dfa445d22c3b44dcc04f25266ea3c",
+      "bytes": 15359
+    },
+    "canonical281_software_proof.json": {
+      "sha256": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+      "bytes": 7071
+    },
+    "canonical_prefix_published_producer_binding.json": {
+      "sha256": "217bb754ffeb4ed06970e6a1ffd436b62fa82212ad5ca0c79e6260ce654211d1",
+      "bytes": 7897
+    },
+    "canonical_prefix_validation_original.json": {
+      "sha256": "e2145096aa0a8878074a0a3a070cec043b1b9b6905965362161da645c27f2799",
+      "bytes": 778326
+    },
+    "closed_v3_state_parent_report_original.json": {
+      "sha256": "9c5d8dc33e4e510fe6d7f64f4f3c320e028cbb792eddddd6d633aa557d69ca6c",
+      "bytes": 69354
+    },
+    "earlier_adaptive_v3_failure/audit_sources/__pycache__/independent_open_search_audit_v1.cpython-312.pyc": {
+      "sha256": "19c8f76c10809c6fb5b6567a554200c9c06fb25709385aac3bbb888699210426",
+      "bytes": 23542
+    },
+    "earlier_adaptive_v3_failure/audit_sources/archived_diagnostic_auditors_software_proof.json": {
+      "sha256": "26af0b7de186adca77b16f6bee575544eff87362c4a78292a28df86d85e52671",
+      "bytes": 947
+    },
+    "earlier_adaptive_v3_failure/audit_sources/canonical281_software_proof.json": {
+      "sha256": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+      "bytes": 7071
+    },
+    "earlier_adaptive_v3_failure/audit_sources/cold_chain_auditors_software_proof.json": {
+      "sha256": "5f5ce483727187255cdf554e4ddf4e2f49dd95d176becd2d1b497fdb098910fd",
+      "bytes": 1049
+    },
+    "earlier_adaptive_v3_failure/audit_sources/independent_adaptive_open_audit_v1.py": {
+      "sha256": "2be0ed0df7951d706e188b857dbc5d355ff0ef4fb5b87648a2f901393fc837e8",
+      "bytes": 7033
+    },
+    "earlier_adaptive_v3_failure/audit_sources/independent_adaptive_open_software_proof_v1.json": {
+      "sha256": "a3f672384c858ee9556e9cd4f0b4715ed87ac4dfa3c65d048bef4fe80f22c200",
+      "bytes": 2755
+    },
+    "earlier_adaptive_v3_failure/audit_sources/independent_archived_native_force_audit.py": {
+      "sha256": "36f40e7b4ea11fe86f252281a2b77ebd13cabe5c786ca3eaa79f7f9a02072487",
+      "bytes": 13761
+    },
+    "earlier_adaptive_v3_failure/audit_sources/independent_archived_native_force_audit_v3.py": {
+      "sha256": "711647a84fe9518449c0f3eed82c0b2ec02652b28a0e972dc298d365d649a586",
+      "bytes": 14492
+    },
+    "earlier_adaptive_v3_failure/audit_sources/independent_archived_phase_depth_audit_v3.py": {
+      "sha256": "505b1ed6be80e7052cced5bdb1a721c334a93aed76ed40c5f4b1c41af5222c53",
+      "bytes": 6742
+    },
+    "earlier_adaptive_v3_failure/audit_sources/independent_cold_chain_audit.py": {
+      "sha256": "9a2cc4737d7f3960f4211ff93989ec2c502c473035b16a9943aa1017e6f4f3f7",
+      "bytes": 4534
+    },
+    "earlier_adaptive_v3_failure/audit_sources/independent_open_search_audit_v1.py": {
+      "sha256": "e3c191a5a08681e3e392f9950d71da618bf03c2b2f7f589a97a825352e6d5b13",
+      "bytes": 14724
+    },
+    "earlier_adaptive_v3_failure/audit_sources/independent_open_search_software_proof_v1.json": {
+      "sha256": "e3bf96f36dc5f7c2dfc0f0509319a98440bf8fd03c7958b74478d1b1acfe7e20",
+      "bytes": 1872
+    },
+    "earlier_adaptive_v3_failure/audit_sources/independent_open_tracking_geometry_v1.py": {
+      "sha256": "4b15c0efc513fb7e0447acfc9f1c58192f6669f4b0c78715661c386fbf4c999a",
+      "bytes": 7176
+    },
+    "earlier_adaptive_v3_failure/audit_sources/independent_phase_depth_software_proof.json": {
+      "sha256": "ee12a2bfd7e9dcb65324720af72f2fd4e4cee106647e31e593883d3f211d9340",
+      "bytes": 685
+    },
+    "earlier_adaptive_v3_failure/audit_sources/independent_table_press_audit.py": {
+      "sha256": "3e46b3f00bbe67845e8f42b0f337b9a3f654e4fe6c69613ed6f7a988cbbd77e0",
+      "bytes": 6482
+    },
+    "earlier_adaptive_v3_failure/audit_sources/independent_yaw_counter_origin.py": {
+      "sha256": "7313b5acac8f57e81e45c0fbe1c72045c12b11c079c5a65f235b44287f38acc6",
+      "bytes": 2598
+    },
+    "earlier_adaptive_v3_failure/audit_sources/test_independent_adaptive_open_audit_v1.py": {
+      "sha256": "978ef03cf981e363a44bfd24594fa49cfc902a1cd64b86e162c026c0bc1abd1c",
+      "bytes": 3386
+    },
+    "earlier_adaptive_v3_failure/audit_sources/test_independent_archived_native_force_audit.py": {
+      "sha256": "5888ad13e47113536fd15b8f2cc06e10c1035b005072f316046d4e135e23c27d",
+      "bytes": 3990
+    },
+    "earlier_adaptive_v3_failure/audit_sources/test_independent_cold_chain_audit.py": {
+      "sha256": "f246f24816b9bbcf98e31bbcb88b37aba136b9c3dfecdeecdf4c4ac91ca0ad35",
+      "bytes": 4673
+    },
+    "earlier_adaptive_v3_failure/audit_sources/test_independent_open_search_audit_v1.py": {
+      "sha256": "dbb1788c0bbd7ebba6d4d32e5ad10c68acf586cac5dc917326d652a5c1a7fd75",
+      "bytes": 3158
+    },
+    "earlier_adaptive_v3_failure/audit_sources/test_independent_open_tracking_geometry_v1.py": {
+      "sha256": "5557e02e9fb49c199eefe508078063244d1a2558572ad90a453db0417f609c67",
+      "bytes": 1707
+    },
+    "earlier_adaptive_v3_failure/audit_sources/test_independent_table_press_audit.py": {
+      "sha256": "9e09d371138940e7c37ec5ed2b01330347d171ae9ec904edf474a58b2fa00a0d",
+      "bytes": 1306
+    },
+    "earlier_adaptive_v3_failure/audit_sources/test_independent_yaw_counter_origin.py": {
+      "sha256": "03e6a96ee49cbc801b44116c70374cf92a802cd78a79cfa0019c6660703eaba8",
+      "bytes": 1128
+    },
+    "earlier_adaptive_v3_failure/audit_sources/yaw_origin_and_press_auditors_software_proof.json": {
+      "sha256": "7f3ac92ee5a21308c7a844159b13b29fecc2d6ea3064fe16b606b5b4807321b4",
+      "bytes": 1496
+    },
+    "earlier_adaptive_v3_failure/checkpoint_trace.npz": {
+      "sha256": "8247dda3595b80ea7eff8f680d9a7a7da12fba52f85af5afb25aee1f4942797d",
+      "bytes": 3883586
+    },
+    "earlier_adaptive_v3_failure/declaration.json": {
+      "sha256": "4e601b99ecc96036eeb97a533b4883189bb3bec1214a79828adbc923198013e1",
+      "bytes": 13119
+    },
+    "earlier_adaptive_v3_failure/declared_cold_initialization.npz": {
+      "sha256": "9e01436e05098eb57f567b79f7fea42e937c8e245c3eb5378aa5fe94e14a8da1",
+      "bytes": 1360
+    },
+    "earlier_adaptive_v3_failure/diagnostic_source.py": {
+      "sha256": "890f486dcc9c520f6d46b04e6a46665236db9bcd918a6afa42db288d867446a1",
+      "bytes": 42857
+    },
+    "earlier_adaptive_v3_failure/independent_adaptive_open_audit.json": {
+      "sha256": "e7f1b61cfc7c4c2b0eca1af5aadb8b1add36c30816afd62b3be85a479bd2f553",
+      "bytes": 17826
+    },
+    "earlier_adaptive_v3_failure/independent_audit_binding.json": {
+      "sha256": "06a5899b5b58f06c6cad1bc9033ace9e645b893631c32eb707467c3492cd8d58",
+      "bytes": 6160
+    },
+    "earlier_adaptive_v3_failure/independent_control_guard_ast_identity.json": {
+      "sha256": "3feba45d433c8611f28a219be8323149657d08a2bdf15207938b295992c374d7",
+      "bytes": 754
+    },
+    "earlier_adaptive_v3_failure/independent_native_force_audit.json": {
+      "sha256": "2066ad41806cbfe9f6bdd1b86bb0bd50e26c2ce3b95a6aa850ce8b869d2db1e5",
+      "bytes": 8984
+    },
+    "earlier_adaptive_v3_failure/independent_open_tracking_geometry.json": {
+      "sha256": "ab4b81a7b5b8360f9bca15a5540d77cf8e7e5053b7d23d50e1b720457c4405fc",
+      "bytes": 451997
+    },
+    "earlier_adaptive_v3_failure/independent_phase_depth_audit.json": {
+      "sha256": "e3adac05b7f2963c2155e890e4e95a15f9df3c3a060fc5793606014734027e8c",
+      "bytes": 5266
+    },
+    "earlier_adaptive_v3_failure/independent_pre_event_prefix_identity.json": {
+      "sha256": "e126fd8aad6bdb4df0ee6f7ecfc0545502fbd8e05db985c9a0630be80f916f83",
+      "bytes": 2607
+    },
+    "earlier_adaptive_v3_failure/independent_table_press_audit.json": {
+      "sha256": "32858bc2978fe93bc1336db3faf5ddb728121db92098dd72c32c13bfa3604be8",
+      "bytes": 2809
+    },
+    "earlier_adaptive_v3_failure/observer_source.py": {
+      "sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "bytes": 17063
+    },
+    "earlier_adaptive_v3_failure/original_native_force_ledger.npz": {
+      "sha256": "bfdfcccd26e8c6192fcd8a3ef3fb75832d6d689501bc7902623c5422abc3aabb",
+      "bytes": 5498682
+    },
+    "earlier_adaptive_v3_failure/original_stdout_stderr.log": {
+      "sha256": "017be1032c84c884a686ffc3e52648658c315699a19d6f6b60e76d2d077f8438",
+      "bytes": 5789
+    },
+    "earlier_adaptive_v3_failure/recorded_sources/yam_twin/kinematics.py": {
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+      "bytes": 2796
+    },
+    "earlier_adaptive_v3_failure/recorded_sources/yam_twin/m8_insertion_engagement.py": {
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "bytes": 4752
+    },
+    "earlier_adaptive_v3_failure/recorded_sources/yam_twin/m8_insertion_mechanics.py": {
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+      "bytes": 4321
+    },
+    "earlier_adaptive_v3_failure/recorded_sources/yam_twin/m8_insertion_scene.py": {
+      "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+      "bytes": 25139
+    },
+    "earlier_adaptive_v3_failure/recorded_sources/yam_twin/m8_insertion_simulation.py": {
+      "sha256": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294",
+      "bytes": 67946
+    },
+    "earlier_adaptive_v3_failure/recorded_sources/yam_twin/m8_scene.py": {
+      "sha256": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f",
+      "bytes": 20849
+    },
+    "earlier_adaptive_v3_failure/recorded_sources/yam_twin/m8_simulation.py": {
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+      "bytes": 30270
+    },
+    "earlier_adaptive_v3_failure/recorded_sources/yam_twin/m8_supported_scene.py": {
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+      "bytes": 7969
+    },
+    "earlier_adaptive_v3_failure/recorded_sources/yam_twin/m8_supported_simulation.py": {
+      "sha256": "0f652eb1cf245c21ba018a0d2156d8d7b6064e6cdf0611e051c4cdeb79f4cdfa",
+      "bytes": 81380
+    },
+    "earlier_adaptive_v3_failure/recorded_sources/yam_twin/m8_supported_start.py": {
+      "sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "bytes": 17063
+    },
+    "earlier_adaptive_v3_failure/render/demo.gif": {
+      "sha256": "b7153c6870426bd6a6a898169db1f1015c1b6813a4d8a0b9804102dee813f402",
+      "bytes": 1494121
+    },
+    "earlier_adaptive_v3_failure/render/demo.mp4": {
+      "sha256": "7a9c293f46b2680f9c818efb2b204ad0a1202fe15f320f76c35fe703af12672c",
+      "bytes": 315694
+    },
+    "earlier_adaptive_v3_failure/render/endpoint_detail.png": {
+      "sha256": "d6e198b233098d7f60867308ea1452de460c892847bfb1a6acde7060633b4837",
+      "bytes": 157906
+    },
+    "earlier_adaptive_v3_failure/render/entry_detail.png": {
+      "sha256": "eab90a69071b0eaea30803233d7e89bdb710adbd7a999a2d2d32a2eae9dde05d",
+      "bytes": 135399
+    },
+    "earlier_adaptive_v3_failure/render/open_reset.png": {
+      "sha256": "d6e198b233098d7f60867308ea1452de460c892847bfb1a6acde7060633b4837",
+      "bytes": 157906
+    },
+    "earlier_adaptive_v3_failure/render/render_manifest.json": {
+      "sha256": "8907d8b3135edcc5b08430a51ac8560fc720a462ac7bff5c22b5dd0c6026ef4f",
+      "bytes": 225770
+    },
+    "earlier_adaptive_v3_failure/render/renderer_sources/render_entry_supported_trial.py": {
+      "sha256": "d5cfa518bef68005c81a37ac7c38b085b4f6e9d35be15fd581746e480df1a83c",
+      "bytes": 11752
+    },
+    "earlier_adaptive_v3_failure/render/renderer_sources/scripts/audit_m8_insertion_trace.py": {
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+      "bytes": 30341
+    },
+    "earlier_adaptive_v3_failure/render/renderer_sources/thread_lab/runtime.py": {
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd",
+      "bytes": 2177
+    },
+    "earlier_adaptive_v3_failure/report.json": {
+      "sha256": "0949f6988c17fe32df06c5c091cca9e81ad719e9688cf7ca0dec79989549679e",
+      "bytes": 75702
+    },
+    "earlier_adaptive_v3_failure/scene.xml": {
+      "sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+      "bytes": 43813
+    },
+    "earlier_adaptive_v3_failure/supported_scene.zip": {
+      "sha256": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+      "bytes": 5325454
+    },
+    "lineage.json": {
+      "sha256": "982bf51c540f65dd79a843e4d184a4d634e9b4a5c538cb6feb742a135f5131dc",
+      "bytes": 56317
+    },
+    "native_v4/audit_sources/archived_diagnostic_auditors_software_proof.json": {
+      "sha256": "26af0b7de186adca77b16f6bee575544eff87362c4a78292a28df86d85e52671",
+      "bytes": 947
+    },
+    "native_v4/audit_sources/canonical281_software_proof.json": {
+      "sha256": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+      "bytes": 7071
+    },
+    "native_v4/audit_sources/cold_chain_auditors_software_proof.json": {
+      "sha256": "5f5ce483727187255cdf554e4ddf4e2f49dd95d176becd2d1b497fdb098910fd",
+      "bytes": 1049
+    },
+    "native_v4/audit_sources/freeze_entry_supported_v4_audits.py": {
+      "sha256": "23ac75c027c6bd8f717caf90c0aa73e15bbfa62bee167f97099cb251ffc0115a",
+      "bytes": 8100
+    },
+    "native_v4/audit_sources/independent_adaptive_and_grasp_software_proof_v2.json": {
+      "sha256": "91da95fa78861da53cf3320e3e57711e3530705e7c30d05066c7cbbbee4b3e3b",
+      "bytes": 3749
+    },
+    "native_v4/audit_sources/independent_adaptive_open_audit_v1.py": {
+      "sha256": "2be0ed0df7951d706e188b857dbc5d355ff0ef4fb5b87648a2f901393fc837e8",
+      "bytes": 7033
+    },
+    "native_v4/audit_sources/independent_adaptive_open_audit_v2.py": {
+      "sha256": "cf049eba705c0046c342b17afe71e40e72f408e878043345632053ff91390200",
+      "bytes": 9736
+    },
+    "native_v4/audit_sources/independent_adaptive_open_software_proof_v1.json": {
+      "sha256": "a3f672384c858ee9556e9cd4f0b4715ed87ac4dfa3c65d048bef4fe80f22c200",
+      "bytes": 2755
+    },
+    "native_v4/audit_sources/independent_archived_native_force_audit.py": {
+      "sha256": "36f40e7b4ea11fe86f252281a2b77ebd13cabe5c786ca3eaa79f7f9a02072487",
+      "bytes": 13761
+    },
+    "native_v4/audit_sources/independent_archived_native_force_audit_v3.py": {
+      "sha256": "711647a84fe9518449c0f3eed82c0b2ec02652b28a0e972dc298d365d649a586",
+      "bytes": 14492
+    },
+    "native_v4/audit_sources/independent_archived_phase_depth_audit_v3.py": {
+      "sha256": "505b1ed6be80e7052cced5bdb1a721c334a93aed76ed40c5f4b1c41af5222c53",
+      "bytes": 6742
+    },
+    "native_v4/audit_sources/independent_cold_chain_audit.py": {
+      "sha256": "9a2cc4737d7f3960f4211ff93989ec2c502c473035b16a9943aa1017e6f4f3f7",
+      "bytes": 4534
+    },
+    "native_v4/audit_sources/independent_guarded_grasp_lead_v1.py": {
+      "sha256": "0f1a173b2003eca9f11c97101f47d218483eb245a8b6408cc55f2a27071d8ec9",
+      "bytes": 9416
+    },
+    "native_v4/audit_sources/independent_open_search_audit_v1.py": {
+      "sha256": "e3c191a5a08681e3e392f9950d71da618bf03c2b2f7f589a97a825352e6d5b13",
+      "bytes": 14724
+    },
+    "native_v4/audit_sources/independent_open_search_software_proof_v1.json": {
+      "sha256": "e3bf96f36dc5f7c2dfc0f0509319a98440bf8fd03c7958b74478d1b1acfe7e20",
+      "bytes": 1872
+    },
+    "native_v4/audit_sources/independent_phase_depth_software_proof.json": {
+      "sha256": "ee12a2bfd7e9dcb65324720af72f2fd4e4cee106647e31e593883d3f211d9340",
+      "bytes": 685
+    },
+    "native_v4/audit_sources/independent_table_press_audit.py": {
+      "sha256": "3e46b3f00bbe67845e8f42b0f337b9a3f654e4fe6c69613ed6f7a988cbbd77e0",
+      "bytes": 6482
+    },
+    "native_v4/audit_sources/independent_yaw_counter_origin.py": {
+      "sha256": "7313b5acac8f57e81e45c0fbe1c72045c12b11c079c5a65f235b44287f38acc6",
+      "bytes": 2598
+    },
+    "native_v4/audit_sources/test_independent_adaptive_open_audit_v1.py": {
+      "sha256": "978ef03cf981e363a44bfd24594fa49cfc902a1cd64b86e162c026c0bc1abd1c",
+      "bytes": 3386
+    },
+    "native_v4/audit_sources/test_independent_adaptive_open_audit_v2.py": {
+      "sha256": "3be7fc79d44c93de1035ce6963e1ded3cc00dac4bd9aad390a9a338c34a0434c",
+      "bytes": 5092
+    },
+    "native_v4/audit_sources/test_independent_archived_native_force_audit.py": {
+      "sha256": "5888ad13e47113536fd15b8f2cc06e10c1035b005072f316046d4e135e23c27d",
+      "bytes": 3990
+    },
+    "native_v4/audit_sources/test_independent_cold_chain_audit.py": {
+      "sha256": "f246f24816b9bbcf98e31bbcb88b37aba136b9c3dfecdeecdf4c4ac91ca0ad35",
+      "bytes": 4673
+    },
+    "native_v4/audit_sources/test_independent_guarded_grasp_lead_v1.py": {
+      "sha256": "b40a5752b0d543efcc7beef6ab652053a03f15f556116252e9d15122ad90dd6e",
+      "bytes": 1769
+    },
+    "native_v4/audit_sources/test_independent_open_search_audit_v1.py": {
+      "sha256": "dbb1788c0bbd7ebba6d4d32e5ad10c68acf586cac5dc917326d652a5c1a7fd75",
+      "bytes": 3158
+    },
+    "native_v4/audit_sources/test_independent_table_press_audit.py": {
+      "sha256": "9e09d371138940e7c37ec5ed2b01330347d171ae9ec904edf474a58b2fa00a0d",
+      "bytes": 1306
+    },
+    "native_v4/audit_sources/test_independent_yaw_counter_origin.py": {
+      "sha256": "03e6a96ee49cbc801b44116c70374cf92a802cd78a79cfa0019c6660703eaba8",
+      "bytes": 1128
+    },
+    "native_v4/audit_sources/yaw_origin_and_press_auditors_software_proof.json": {
+      "sha256": "7f3ac92ee5a21308c7a844159b13b29fecc2d6ea3064fe16b606b5b4807321b4",
+      "bytes": 1496
+    },
+    "native_v4/checkpoint_trace.npz": {
+      "sha256": "ea9c69eb87bcf1e32d59f03d41a62c5f7134befff9d37e26bae7fa9029f0ee31",
+      "bytes": 23335541
+    },
+    "native_v4/declaration.json": {
+      "sha256": "9a0e5b2d893318b6513c52f991822bc40194eb67f588dc6351927726e6ac3501",
+      "bytes": 14604
+    },
+    "native_v4/declared_cold_initialization.npz": {
+      "sha256": "9e01436e05098eb57f567b79f7fea42e937c8e245c3eb5378aa5fe94e14a8da1",
+      "bytes": 1360
+    },
+    "native_v4/diagnostic_source.py": {
+      "sha256": "42ed0d3b150e34d9109de45eef0a4816bb891cb93933bf5f40dc6c098bb5e868",
+      "bytes": 44175
+    },
+    "native_v4/entry_supported_open_search_v4_execution_after.json": {
+      "sha256": "cf8a9fa1a15d711aca4455d26d09502bab7f2c1415265a028e5d635e6627b51c",
+      "bytes": 10272
+    },
+    "native_v4/entry_supported_open_search_v4_execution_before.json": {
+      "sha256": "14f98e44348aeae4d6f84bf8d402c8aa62b591a87e281945698d3bea2f942256",
+      "bytes": 7449
+    },
+    "native_v4/execution_after_original.json": {
+      "sha256": "cf8a9fa1a15d711aca4455d26d09502bab7f2c1415265a028e5d635e6627b51c",
+      "bytes": 10272
+    },
+    "native_v4/execution_before_original.json": {
+      "sha256": "14f98e44348aeae4d6f84bf8d402c8aa62b591a87e281945698d3bea2f942256",
+      "bytes": 7449
+    },
+    "native_v4/independent_adaptive_open_audit.json": {
+      "sha256": "e42e7ff17a2c97a6b5b711498eb4dc423f2ba8836beff0e3ca4a04faff1a1785",
+      "bytes": 14957
+    },
+    "native_v4/independent_adaptive_open_audit_v2.log": {
+      "sha256": "fc0a1abbedf9aec4ad089d7e7e13e2cf5b7fd7f3d739da3904a96ad140ae625c",
+      "bytes": 5764
+    },
+    "native_v4/independent_audit_binding.json": {
+      "sha256": "85de337ce1c0bf898eede6c3cd52d640b8e690b104793f1df5b84bdca507001f",
+      "bytes": 20659
+    },
+    "native_v4/independent_guarded_grasp_lead_audit.json": {
+      "sha256": "55e7e78b3859b65d5ec6791b74f38eebc9c73e118adcdab8bde0ade638928f06",
+      "bytes": 5285
+    },
+    "native_v4/independent_native_force_audit.json": {
+      "sha256": "ed9422de9dc30be952191afc0a8b3a93a5bdf0956221b4cca7059f31025f4209",
+      "bytes": 12167
+    },
+    "native_v4/independent_phase_depth_audit.json": {
+      "sha256": "7135ac1699abfcb971afbf0801816c314930365a654197daa901162092c168bb",
+      "bytes": 5269
+    },
+    "native_v4/independent_table_press_audit.json": {
+      "sha256": "112e21bd5503097ea2f2f62c5186d3875aa6fedfd3fdd20bee4c5a2f4cc3b66d",
+      "bytes": 2710
+    },
+    "native_v4/observer_source.py": {
+      "sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "bytes": 17063
+    },
+    "native_v4/original_native_force_ledger.npz": {
+      "sha256": "0595680149098f3c56034f1af4f424be638283fc3a609a29128946f77e20d8ac",
+      "bytes": 39346670
+    },
+    "native_v4/original_stdout_stderr.log": {
+      "sha256": "bc3f47c5623d452539a229b3ad7dbe7716cb71df7862214a4219b1e74c8e0113",
+      "bytes": 16002
+    },
+    "native_v4/recorded_sources/yam_twin/kinematics.py": {
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+      "bytes": 2796
+    },
+    "native_v4/recorded_sources/yam_twin/m8_insertion_engagement.py": {
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "bytes": 4752
+    },
+    "native_v4/recorded_sources/yam_twin/m8_insertion_mechanics.py": {
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+      "bytes": 4321
+    },
+    "native_v4/recorded_sources/yam_twin/m8_insertion_scene.py": {
+      "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+      "bytes": 25139
+    },
+    "native_v4/recorded_sources/yam_twin/m8_insertion_simulation.py": {
+      "sha256": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294",
+      "bytes": 67946
+    },
+    "native_v4/recorded_sources/yam_twin/m8_scene.py": {
+      "sha256": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f",
+      "bytes": 20849
+    },
+    "native_v4/recorded_sources/yam_twin/m8_simulation.py": {
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+      "bytes": 30270
+    },
+    "native_v4/recorded_sources/yam_twin/m8_supported_scene.py": {
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+      "bytes": 7969
+    },
+    "native_v4/recorded_sources/yam_twin/m8_supported_simulation.py": {
+      "sha256": "0f652eb1cf245c21ba018a0d2156d8d7b6064e6cdf0611e051c4cdeb79f4cdfa",
+      "bytes": 81380
+    },
+    "native_v4/recorded_sources/yam_twin/m8_supported_start.py": {
+      "sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "bytes": 17063
+    },
+    "native_v4/render/demo.gif": {
+      "sha256": "5cbd9da612f2801b76e16b2f33a300ca444400503c5863fe38356b42d3145b10",
+      "bytes": 9172490
+    },
+    "native_v4/render/demo.mp4": {
+      "sha256": "d3d85ab27880ec42b7494626c5fc33d068deb036d5a9ea6f728be7ecc12614cf",
+      "bytes": 1410081
+    },
+    "native_v4/render/endpoint_detail.png": {
+      "sha256": "c84e6e7a2729a7086363c8c625e8f706456a125c7038e57a6f44034ad7e18166",
+      "bytes": 135274
+    },
+    "native_v4/render/entry_detail.png": {
+      "sha256": "43006c256018aa2e3363646773fea74645c1fd85156c2a0eccaf7d1a5c9bbc8b",
+      "bytes": 135680
+    },
+    "native_v4/render/next_turn_stopped.png": {
+      "sha256": "c84e6e7a2729a7086363c8c625e8f706456a125c7038e57a6f44034ad7e18166",
+      "bytes": 135274
+    },
+    "native_v4/render/open_reset.png": {
+      "sha256": "fe5586b179a07b7df6de2b4a00529057d6ebb816990f5a1023bb97f8b054c04f",
+      "bytes": 156829
+    },
+    "native_v4/render/quiet_regrasp.png": {
+      "sha256": "ba5f180440c8b19af65a33f841942498755b4ced9f3a033e3623fd159baba3e4",
+      "bytes": 158584
+    },
+    "native_v4/render/render_manifest.json": {
+      "sha256": "a57f5493ddb3d46215fbee6d9102ea6c0e55e0800bcfafdea94c857f9f280c26",
+      "bytes": 381989
+    },
+    "native_v4/render/renderer_sources/render_entry_supported_trial.py": {
+      "sha256": "d5cfa518bef68005c81a37ac7c38b085b4f6e9d35be15fd581746e480df1a83c",
+      "bytes": 11752
+    },
+    "native_v4/render/renderer_sources/scripts/audit_m8_insertion_trace.py": {
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+      "bytes": 30341
+    },
+    "native_v4/render/renderer_sources/thread_lab/runtime.py": {
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd",
+      "bytes": 2177
+    },
+    "native_v4/report.json": {
+      "sha256": "4fcea103731aa668ebcee6d62a5588312c46eaca7fc80f9f22a296e657e51677",
+      "bytes": 84989
+    },
+    "native_v4/scene.xml": {
+      "sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+      "bytes": 43813
+    },
+    "native_v4/supported_scene.zip": {
+      "sha256": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+      "bytes": 5325454
+    },
+    "package_source.py": {
+      "sha256": "d9217f066c5e90e957e4df203e756e1ebf0e6e51bb22ee9be1651be2a0cffe43",
+      "bytes": 16857
+    },
+    "plot/native_open_reset_history.png": {
+      "sha256": "920c1a01a43eacd65160011aa965a1bf127a83aa7c7295aaaa5108715040ffc8",
+      "bytes": 218849
+    },
+    "plot/plot_entry_supported_reset_regrasp.py": {
+      "sha256": "260787b1f709e941417d44a04b68848456fa434524950de7e41b14bb1a1fe331",
+      "bytes": 5043
+    },
+    "plot/plot_manifest.json": {
+      "sha256": "2ac1b60343400817d09a1eb4df9b12ad45b44825e03a8c25a074b02dd73ad82a",
+      "bytes": 2825
+    },
+    "publication_readme_source.md": {
+      "sha256": "c10414111b818bfcf28fd237f9fb922e558dfa445d22c3b44dcc04f25266ea3c",
+      "bytes": 15359
+    },
+    "static30mm_preflight/diagnostic_source.py": {
+      "sha256": "67b018d30e38dc946d3246cc5529fca443be6f80055b08a1c519c025772c6b03",
+      "bytes": 8101
+    },
+    "static30mm_preflight/inputs/audit_m8_insertion_trace.py": {
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+      "bytes": 30341
+    },
+    "static30mm_preflight/inputs/controller_source.py": {
+      "sha256": "0f652eb1cf245c21ba018a0d2156d8d7b6064e6cdf0611e051c4cdeb79f4cdfa",
+      "bytes": 81380
+    },
+    "static30mm_preflight/inputs/declaration.json": {
+      "sha256": "4e601b99ecc96036eeb97a533b4883189bb3bec1214a79828adbc923198013e1",
+      "bytes": 13119
+    },
+    "static30mm_preflight/inputs/diagnostic_source.py": {
+      "sha256": "890f486dcc9c520f6d46b04e6a46665236db9bcd918a6afa42db288d867446a1",
+      "bytes": 42857
+    },
+    "static30mm_preflight/inputs/kinematics.py": {
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+      "bytes": 2796
+    },
+    "static30mm_preflight/sampled_kinematic_coordinates.npz": {
+      "sha256": "429d7c556a95ea687ea5f039ffff4066b1800cdcda44335b6b8188e5fb40c836",
+      "bytes": 58000
+    },
+    "static30mm_preflight/study.json": {
+      "sha256": "76bf1c217e42f922dabfef3baaeb20b8b994d41c4b40cb2601471e5dbc9bc7f5",
+      "bytes": 223096
+    }
+  }
+}

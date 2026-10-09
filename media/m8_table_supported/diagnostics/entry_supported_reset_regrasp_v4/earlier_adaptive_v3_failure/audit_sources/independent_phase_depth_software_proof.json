@@ -1,0 +1,13 @@
+{
+  "scope": "Output-only pure geometry helper, separate from canonical producer213 and independent force observer15 tests. Radial zero-isosurface estimates exclude tilt/eccentricity/chamfers and do not qualify force or thread capture.",
+  "tests": {
+    "passed": 4,
+    "failed": 0,
+    "elapsed_s": 0.08,
+    "command": "scripts/run_m8.sh -m pytest -q outputs/m8_table_supported/diagnostics/test_independent_phase_depth_audit.py"
+  },
+  "source_sha256": {
+    "independent_phase_depth_audit.py": "d0419e4ac7dbbba4c7cbf918b622a3ea724ba582f70ac894e7a4cd71384f4fb9",
+    "test_independent_phase_depth_audit.py": "201b8e9afba1b6246f872bbef3d558076890836f527cf00606ee449448c192ff"
+  }
+}

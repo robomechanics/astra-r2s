@@ -1,0 +1,50 @@
+{
+  "scope": "All original 177062 native scalar rows of one closed cold V4. No integration, force recomputation, resampling, or splice. Curves preserve original values; only display-unit conversions and positive-hand clipping apply.",
+  "original_ledger_sha256": "0595680149098f3c56034f1af4f424be638283fc3a609a29128946f77e20d8ac",
+  "original_report_sha256": "4fcea103731aa668ebcee6d62a5588312c46eaca7fc80f9f22a296e657e51677",
+  "source_sha256": "260787b1f709e941417d44a04b68848456fa434524950de7e41b14bb1a1fe331",
+  "native_rows": 177062,
+  "native_duration_s": 8.853100000000001,
+  "first_elapsed_s": 5e-05,
+  "last_elapsed_s": 8.853100000000001,
+  "force_time_scope": "Original preintegration contact solves at logged time\u221250us. Actual aperture, alignment/overlap are saved postintegration state metrics; no causal identity implied.",
+  "actual_open_readiness_event": {
+    "event": "Live unchanged100ms fully-open support/quiet readiness",
+    "elapsed_s": 0.37,
+    "time_s": 17.14715000000746,
+    "force_time_s": 17.14710000000746,
+    "actual_open_settle_s": 0.12,
+    "first_reset_command_elapsed_s": 0.37005,
+    "open_weight_window": {
+      "observer": "diagnostic-native-bolt-weight-transfer-v1",
+      "ready_for_diagnostic_release_attempt": true,
+      "bolt_weight_N": 0.26241400403581094,
+      "required_window_s": 0.1,
+      "observed_window_s": 0.09999999999999715,
+      "original_native_samples": 2000,
+      "mean_thread_weight_fraction": 0.9999994999869694,
+      "mean_positive_hand_upward_weight_fraction": 0.0,
+      "signed_thread_gravity_opposing_impulse_Ns": 0.0262413872825382,
+      "positive_hand_upward_impulse_Ns": 0.0,
+      "loaded_actual_interior_flank_duration_s": 0.0,
+      "loaded_thread_gravity_support_duty_fraction": 1.0,
+      "entry_only_native_contact_window": true,
+      "loaded_actual_interior_flank_contact_observed": false,
+      "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+    },
+    "actual_bolt_angular_speed_rad_per_s": 0.0004850599595067318,
+    "actual_bolt_axial_velocity_m_per_s": -9.726846601606919e-08,
+    "right_bolt_contact_count": 0,
+    "all_original_checks_held": true
+  },
+  "guarded_grasp_slip": {
+    "native_ticks": 130810,
+    "maximum_translation_slip_m": 3.062911855154159e-05,
+    "maximum_rotation_slip_rad": 0.003324946782196665
+  },
+  "global_unmasked_slip_scope": "Intentional opening suspends cumulative closed-grasp guards. Global3.975mm includes opening; original right_grasp_guard_active mask defines reported guarded maxima.",
+  "capture_qualified": false,
+  "continuous_full_trajectory": false,
+  "full_pitch_lead_qualified": false,
+  "plot_sha256": "920c1a01a43eacd65160011aa965a1bf127a83aa7c7295aaaa5108715040ffc8"
+}

@@ -1,0 +1,39 @@
+{
+  "scope": "Output-only pure original-array auditor regressions. Eight event/readiness/minimum-dwell/source-positive-hand tests and four per-acquisition grasp-scope tests; no application/native integration or task qualification. Legacy frozen v1 source and producer/helper/force archives unchanged.",
+  "passed": 12,
+  "failed": 0,
+  "elapsed_s": 0.3170514980010921,
+  "sources_before": {
+    "independent_adaptive_open_audit_v2.py": "cf049eba705c0046c342b17afe71e40e72f408e878043345632053ff91390200",
+    "test_independent_adaptive_open_audit_v2.py": "3be7fc79d44c93de1035ce6963e1ded3cc00dac4bd9aad390a9a338c34a0434c",
+    "independent_guarded_grasp_lead_v1.py": "0f1a173b2003eca9f11c97101f47d218483eb245a8b6408cc55f2a27071d8ec9",
+    "test_independent_guarded_grasp_lead_v1.py": "b40a5752b0d543efcc7beef6ab652053a03f15f556116252e9d15122ad90dd6e"
+  },
+  "sources_after": {
+    "independent_adaptive_open_audit_v2.py": "cf049eba705c0046c342b17afe71e40e72f408e878043345632053ff91390200",
+    "test_independent_adaptive_open_audit_v2.py": "3be7fc79d44c93de1035ce6963e1ded3cc00dac4bd9aad390a9a338c34a0434c",
+    "independent_guarded_grasp_lead_v1.py": "0f1a173b2003eca9f11c97101f47d218483eb245a8b6408cc55f2a27071d8ec9",
+    "test_independent_guarded_grasp_lead_v1.py": "b40a5752b0d543efcc7beef6ab652053a03f15f556116252e9d15122ad90dd6e"
+  },
+  "sources_unchanged": true,
+  "runs": [
+    {
+      "command": [
+        "python",
+        "outputs/m8_table_supported/diagnostics/test_independent_adaptive_open_audit_v2.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_event_forces_cannot_be_retimestamped_to_post_state (__main__.AdaptiveEventTests.test_event_forces_cannot_be_retimestamped_to_post_state) ... ok\ntest_missing_off_grid_event_state_is_not_reconstructed (__main__.AdaptiveEventTests.test_missing_off_grid_event_state_is_not_reconstructed) ... ok\ntest_native_event_shifts_next_tick_and_preserves_maximum_plan (__main__.AdaptiveEventTests.test_native_event_shifts_next_tick_and_preserves_maximum_plan) ... ok\ntest_old_maximum_phase_clock_cannot_describe_actual_rows (__main__.AdaptiveEventTests.test_old_maximum_phase_clock_cannot_describe_actual_rows) ... ok\ntest_first_ever_ready_before_minimum_is_not_consumed (__main__.MinimumDwellReadinessTests.test_first_ever_ready_before_minimum_is_not_consumed) ... ok\ntest_historical_ready_cannot_waive_current_spike (__main__.MinimumDwellReadinessTests.test_historical_ready_cannot_waive_current_spike) ... ok\ntest_no_live_eligible_ready_returns_none (__main__.MinimumDwellReadinessTests.test_no_live_eligible_ready_returns_none) ... ok\ntest_source_window_rejects_signed_hand_cancellation (__main__.MinimumDwellReadinessTests.test_source_window_rejects_signed_hand_cancellation) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "outputs/m8_table_supported/diagnostics/test_independent_guarded_grasp_lead_v1.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_absent_guard_execution_is_not_vacuous_success (__main__.GuardedGraspTests.test_absent_guard_execution_is_not_vacuous_success) ... ok\ntest_cached_acquisition_row_and_remaining_settle_are_explicit (__main__.GuardedGraspTests.test_cached_acquisition_row_and_remaining_settle_are_explicit) ... ok\ntest_intentional_open_global_slip_is_separate (__main__.GuardedGraspTests.test_intentional_open_global_slip_is_separate) ... ok\ntest_one_guarded_pad_gap_remains_failure (__main__.GuardedGraspTests.test_one_guarded_pad_gap_remains_failure) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.030s\n\nOK\n"
+    }
+  ]
+}

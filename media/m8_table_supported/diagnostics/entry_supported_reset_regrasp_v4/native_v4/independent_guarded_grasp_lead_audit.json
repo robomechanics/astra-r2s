@@ -1,0 +1,101 @@
+{
+  "auditor_source_sha256": "0f1a173b2003eca9f11c97101f47d218483eb245a8b6408cc55f2a27071d8ec9",
+  "trace_sha256": "ea9c69eb87bcf1e32d59f03d41a62c5f7134befff9d37e26bae7fa9029f0ee31",
+  "ledger_sha256": "0595680149098f3c56034f1af4f424be638283fc3a609a29128946f77e20d8ac",
+  "source_sha256": "42ed0d3b150e34d9109de45eef0a4816bb891cb93933bf5f40dc6c098bb5e868",
+  "helper_sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+  "timestep_s": 5e-05,
+  "raw_native_ticks": 177062,
+  "guarded_grasp": {
+    "original_guarded_tick_count": 130810,
+    "maximum_original_translation_slip_m": 3.062911855154159e-05,
+    "maximum_original_rotation_slip_rad": 0.003324946782196665,
+    "minimum_original_bilateral_pad_force_N": [
+      15.53240577681161,
+      15.584772257709561
+    ],
+    "every_original_guarded_tick_retains_1mm_2deg_loaded_pads": true,
+    "measured_acquisition": {
+      "time_s": 19.089750000071948,
+      "phase": "settle_regrip_search_2",
+      "continuous_quiet_bilateral_streak_s": 0.09999999999999715,
+      "pad_normal_force_N": [
+        15.883152502048233,
+        15.897430312385335
+      ],
+      "grasp_relative_bolt_head_position_m": [
+        7.911387580483e-06,
+        -4.107316420178203e-07,
+        9.916865942030144e-05
+      ],
+      "grasp_relative_bolt_rotation": [
+        [
+          0.8658127293995775,
+          0.4998772870074864,
+          0.0221588705417877
+        ],
+        [
+          -0.499999973328187,
+          0.8660254191727126,
+          -4.305660929466933e-06
+        ],
+        [
+          -0.019192297451449767,
+          -0.01107570678383539,
+          0.9997544620744498
+        ]
+      ],
+      "desired_next_head_yaw_anchor_rad": 2.3408573901550245,
+      "scope": "Actual native loaded quiet opposite-flat regrasp; new cumulative within-grasp reference starts here"
+    },
+    "original_acquisition_native_index": 46251,
+    "original_acquisition_elapsed_s": 2.3126,
+    "acquisition_row_uses_old_reference_and_guard_is_inactive": true,
+    "new_reference_guard_starts_next_native_tick": true,
+    "exact_acquisition_post_state_archived": false,
+    "global_including_intentionally_open_translation_slip_m": 0.003975249938569431,
+    "scope": "Only active native closed-grasp ticks use the original per-acquisition reference. Global intentional open/reindex displacement is separately reported. All original slip inputs describe retained solved pose at time-dt, not sampled qpost replay."
+  },
+  "fully_open_unassisted": {
+    "original_fully_open_ticks": 34252,
+    "whole_right_robot_to_bolt_contact_ticks": 0,
+    "maximum_absolute_original_hand_upward_force_N": 0.0,
+    "maximum_unassisted_axial_drift_m": 2.8499775050344622e-08,
+    "maximum_unassisted_yaw_drift_rad": 0.00023575294977273842,
+    "no_extra_axial_feed_or_closed_feedback_while_open": true,
+    "scope": "Entry-supported SEARCH only. Unloaded whole-robot contact absence proves the moving robot provides no bolt contact support; this is not full-flank capture or qualified passive-reset reward."
+  },
+  "actual_original_forward_half_turn": {
+    "original_reference_native_index": 49251,
+    "original_reference_elapsed_s": 2.4626,
+    "original_final_turn_native_index": 167061,
+    "original_final_turn_elapsed_s": 8.3531,
+    "actual_relative_turn_rad": 3.141668242958148,
+    "actual_axial_advance_m": 0.0006247518335409132,
+    "native_pitch_m": 0.00125,
+    "pitch_expected_advance_from_actual_angle_m": 0.0006250150380270236,
+    "final_pitch_residual_m": -2.6320448611046564e-07,
+    "maximum_absolute_original_turn_pitch_residual_m": 3.1817632808639647e-06,
+    "maximum_original_turn_withdrawal_m": 3.4864278818796945e-07,
+    "scope": "Both advance and unwrapped yaw come from simultaneous original retained solved geometry. Reference is the original solve immediately before actual forward-turn phase. The half-turn begins in partial entry; this measured pitch comparison does not satisfy a full-pitch capture/qualified-lead proof."
+  },
+  "final_stopped_100ms": {
+    "original_native_ticks": 2000,
+    "duration_s": 0.1,
+    "mean_thread_gravity_opposing_force_in_bolt_weight_units": 0.9999792837391555,
+    "mean_positive_hand_upward_force_in_bolt_weight_units": 0.00014985230776294486,
+    "loaded_thread_support_duty": 1.0,
+    "loaded_actual_interior_duty": 1.0,
+    "maximum_actual_bolt_angular_speed_rad_s": 0.0002247513464251204,
+    "maximum_actual_hand_angular_speed_rad_s": 6.22588928852887e-05,
+    "maximum_actual_absolute_axial_speed_m_s": 1.0478608338508531e-06,
+    "final_formed_overlap_m": 0.0006466371352841453,
+    "final_loaded_actual_interior_contact_count": 4,
+    "maximum_formed_overlap_m": 0.0006466389421904157,
+    "formed_overlap_reaches_full_pitch": false,
+    "scope": "Partial formed axial interval and actual conservative interior-contact force tags are different observations. Positive interior loading does not imply a full pitch of overlap."
+  },
+  "all_original_raw_guards_held": true,
+  "external_drive_zero_every_tick": true,
+  "scope": "Cold diagnostic branch only; no native replay/integration or original evidence alteration. Original pre-force geometry/wrenches and post-q saved state timing remain distinct. No continuous full-trajectory/capture/passive-reset qualification."
+}
