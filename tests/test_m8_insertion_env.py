@@ -5,6 +5,7 @@ import pytest
 
 from yam_twin.m8_insertion_env import OBSERVATION_FIELDS, YamM8InsertionEnv
 from yam_twin.m8_insertion_scene import InsertionConfig, build_model
+from yam_twin.m8_insertion_engagement import LoadedFlankWindow
 
 
 @pytest.fixture(scope="module")
@@ -126,4 +127,39 @@ def test_relative_velocity_accounts_for_moving_female_frame_and_bolt_com(model):
     d.qvel[env.male_dadr+3:env.male_dadr+6] = female_r.T@omega+dw
     mujoco.mj_forward(model, d)
     assert np.allclose(env._relative_velocity(), np.r_[dv, dw], atol=2e-14)
+    env.close()
+
+
+def test_shared_engagement_observer_receives_only_real_physics_substeps(model):
+    class RecordedWindow(LoadedFlankWindow):
+        def __init__(self):
+            super().__init__()
+            self.samples = []
+
+        def update(self, *sample):
+            self.samples.append(sample)
+            return super().update(*sample)
+
+    env = YamM8InsertionEnv(model, control_dt=4*model.opt.timestep)
+    _, reset_info = env.reset()
+    assert isinstance(env.engagement_observer, LoadedFlankWindow)
+    settings = reset_info["engagement_observer"]
+    assert settings["version"] == "loaded_full_flank_window_v1"
+    assert settings["duration_s"] == .2
+    assert settings["minimum_normal_impulse_Ns"] == .001
+    assert settings["minimum_loaded_duration_s"] == .0005
+    assert settings["maximum_helix_phase_range_m"] == 150e-6
+    assert reset_info["engagement_window"]["sample_count"] == 0
+    observer = RecordedWindow()
+    env.engagement_observer = observer
+    _, _, terminated, _, info = env.step(np.r_[np.zeros(12), [1., -1.]])
+    assert not terminated and len(observer.samples) == env.frame_skip == 4
+    assert np.allclose([s[0] for s in observer.samples], np.arange(1, 5)*model.opt.timestep)
+    assert all(s[1] == model.opt.timestep for s in observer.samples)
+    assert all(not s[2] and s[3] == 0 and s[4] == 0 for s in observer.samples)
+    expected_phase = env._relative_pose()[0][2]-env.pitch*env._yaw_total/(2*np.pi)
+    assert observer.samples[-1][5] == expected_phase
+    assert not info["loaded_flank_engagement_candidate"] and not info["thread_started"]
+    info["engagement_window"]["ready"] = True
+    assert not env._engagement_metrics["ready"]
     env.close()

@@ -12,7 +12,10 @@ See [task controls, policy interface and measured results](docs/yam_m8_insertion
 The separate disengaged contact benchmark measures **1.250052 mm/revolution**
 after capture. Without a rotation command, the bolt stops at the thread
 entry. These are explicitly ideal-fixture tests; their results do not replace
-the full robot checks. **118 software tests pass.**
+the full robot checks. Timestep and contact-search refinement pass the strict
+2% travel/lead comparisons; the peak reported depth remains search-sensitive.
+See [the numerical comparison and raw traces](media/m8_insertion/refinement/README.md).
+**124 software tests pass.**
 
 ## Verified turning baseline
 

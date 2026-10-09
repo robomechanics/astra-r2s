@@ -107,6 +107,22 @@ angularly damped, not constrained by a rotation lock. Reported depth stayed
 below 0.953 µm with no guard abort. Its positive-threading `passed=false`
 is the expected negative result, not a discarded failed experiment.
 
+The frozen 5.5 s fixture benchmark was repeated at 25 µs with 40 SDF
+starting points and at 50 µs with 80 points. Both pass strict 2% comparisons
+for total travel, travel within the complete-flank window, and late lead.
+The largest changes were 0.00329% total travel, 0.766% complete-flank travel,
+and 0.00399% lead. Probe source, geometry, mass, plugin source and loaded
+core identities match after excluding only the two refined options.
+The original broad-fit failures remain in every raw report.
+
+Peak reported depth does **not** pass the separate 2% search-refinement
+comparison: 40→80 points lowers it from 3.932 to 2.162 µm, a 45.02% change.
+Both remain below the unchanged 10 µm guard. These results establish stable
+travel/lead in this ideal fixture; they do not establish convergence of all
+contact metrics or the whole robot task. The
+[compact refinement report and traces](../media/m8_insertion/refinement/README.md)
+retain the failed depth diagnostic, hashes and reproducible comparison.
+
 ## Qualification before policy-training claims
 
 The nominal robot trace must show initially separated male/female bodies,

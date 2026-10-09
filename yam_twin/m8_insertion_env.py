@@ -8,8 +8,11 @@ result of rigid-body contacts, never command a helix.
 """
 from __future__ import annotations
 
-from collections import OrderedDict, deque
+from collections import OrderedDict
 from copy import deepcopy
+import hashlib
+import inspect
+from pathlib import Path
 
 import gymnasium as gym
 from gymnasium import spaces
@@ -21,6 +24,7 @@ from thread_lab.runtime import require_micron_engine
 from .m8_env import _quaternion
 from .m8_insertion_scene import InsertionConfig, build_model, jaw_positions
 from .m8_insertion_mechanics import fully_formed_flank_interval, contact_is_on_full_flanks
+from .m8_insertion_engagement import LoadedFlankWindow
 
 
 OBSERVATION_FIELDS = OrderedDict([
@@ -63,6 +67,8 @@ class YamM8InsertionEnv(gym.Env):
     The provisional thread guard begins after a 0.2-second valid geometry/grasp
     window with measured normal impulse inside both unchamfered regions and one
     pitch of whole-ring flank overlap. Unilateral contact gaps are allowed.
+    Capture uses the demo's versioned observer: at least 0.001 N s of normal
+    impulse, 0.5 ms of loaded contact and at most 150 micrometers of phase range.
     Independent observed lead is still required for the thread-start marker and
     completion. Starting physics must be qualified separately.
     """
@@ -146,12 +152,12 @@ class YamM8InsertionEnv(gym.Env):
         self.last_motor_torques = np.zeros(12)
         self.last_apertures = np.array([self.scene_config.base.left_closed_aperture,
                                         self.scene_config.base.open_aperture])
-        self.engagement_sustain_s = .2
-        self.engagement_sustain_substeps = max(1, int(np.ceil(self.engagement_sustain_s/self.model.opt.timestep)))
+        self.engagement_observer_source_sha256 = hashlib.sha256(
+            Path(inspect.getfile(LoadedFlankWindow)).read_bytes()).hexdigest()
         self._clear_episode()
 
     def _clear_episode(self):
-        self._steps = self._valid_contact_controls = self._starting_contact_substeps = 0
+        self._steps = self._valid_contact_controls = 0
         self._warnings = 0
         self._yaw_total = self._last_yaw = self._peak_thread_depth = 0.
         self._start_depth = self._start_yaw = self._last_scored_depth = None
@@ -160,12 +166,15 @@ class YamM8InsertionEnv(gym.Env):
         self._right_reference = None
         self._left_reference = (np.zeros(3), np.eye(3))
         self._initial_head_height = 0.
-        self._window_start_depth = self._window_start_yaw = None
-        self._window_full_flank_impulse = 0.
-        self._window_loaded_substeps = 0
-        self._window_phase_residual = 0.
-        self._recent_flank_impulses = deque()
-        self._recent_flank_impulse = 0.
+        self.engagement_observer = LoadedFlankWindow()
+        self.engagement_sustain_s = self.engagement_observer.duration_s
+        # No synthetic observer sample is submitted at reset. These are the
+        # unobserved initial diagnostics, replaced after a real physics substep.
+        self._engagement_metrics = {"version": self.engagement_observer.version,
+            "ready": False, "continuous_geometry_elapsed_s": 0.,
+            "window_duration_s": self.engagement_sustain_s, "normal_impulse_Ns": 0.,
+            "loaded_substeps": 0, "loaded_contact_count": 0, "loaded_duration_s": 0.,
+            "sample_count": 0, "loaded_substep_duty": 0., "helix_phase_range_m": 0.}
 
     def reset(self, *, seed=None, options=None):
         super().reset(seed=seed)
@@ -305,14 +314,6 @@ class YamM8InsertionEnv(gym.Env):
             "observed_lead_residual_m": residual, "observed_lead_relative_error": lead_relative_error}
 
     def _observe_task_events(self, contacts):
-        impulse = contacts["loaded_full_flank_normal_force_N"]*self.model.opt.timestep
-        if impulse > 0:
-            self._recent_flank_impulses.append((float(self.data.time), impulse))
-            self._recent_flank_impulse += impulse
-        cutoff = self.data.time-self.engagement_sustain_s
-        while self._recent_flank_impulses and self._recent_flank_impulses[0][0] < cutoff:
-            self._recent_flank_impulse -= self._recent_flank_impulses.popleft()[1]
-        self._recent_flank_impulse = max(0., self._recent_flank_impulse)
         self._ever_rest_support |= contacts["bolt_rest_support_contacts"] > 0
         right_loaded = bool(np.all(contacts["pad_normals"][2:] > .1))
         if right_loaded and not self._right_loaded_last:
@@ -327,22 +328,14 @@ class YamM8InsertionEnv(gym.Env):
             and metrics["right_bolt_grasp_secure"]
             and metrics["whole_ring_full_flank_length_m"] > self.pitch
             and metrics["axis_radial_offset_at_entry_m"] <= 150e-6 and metrics["axis_tilt_rad"] <= np.deg2rad(2.))
-        if valid_geometry:
-            if self._window_start_depth is None:
-                self._window_start_depth, self._window_start_yaw = metrics["tip_depth_from_entry_m"], self._yaw_total
-            self._window_phase_residual = (metrics["tip_depth_from_entry_m"]-self._window_start_depth
-                - self.pitch*(self._yaw_total-self._window_start_yaw)/(2*np.pi))
-            valid_geometry = abs(self._window_phase_residual) <= 150e-6
-        if valid_geometry:
-            self._starting_contact_substeps += 1
-            self._window_full_flank_impulse += impulse
-            self._window_loaded_substeps += contacts["loaded_full_flank_contact_count"] > 0
-        else:
-            self._starting_contact_substeps = self._window_loaded_substeps = 0
-            self._window_start_depth = self._window_start_yaw = None
-            self._window_full_flank_impulse = self._window_phase_residual = 0.
-        if (self._start_depth is None and self._starting_contact_substeps >= self.engagement_sustain_substeps
-                and self._window_loaded_substeps >= 10 and self._window_full_flank_impulse > 1e-8):
+        # Use the same base-position helix phase and rolling observer as the
+        # frozen demo. Normal impulse is measured load, not axial force balance.
+        relative_position = self._relative_pose()[0]
+        self._engagement_metrics = self.engagement_observer.update(float(self.data.time),
+            self.model.opt.timestep, valid_geometry, contacts["loaded_full_flank_normal_force_N"],
+            contacts["loaded_full_flank_contact_count"],
+            float(relative_position[2])-self.pitch*self._yaw_total/(2*np.pi))
+        if self._start_depth is None and self._engagement_metrics["ready"]:
             self._start_depth, self._start_yaw = metrics["tip_depth_from_entry_m"], self._yaw_total
             self._last_scored_depth = self._start_depth
 
@@ -411,7 +404,7 @@ class YamM8InsertionEnv(gym.Env):
             reasons = list(dict.fromkeys(reasons+self._failures(contacts)))
         self._steps += 1
         info = self._info()
-        valid = (not reasons and info["recent_full_flank_normal_impulse_Ns"] > 1e-8
+        valid = (not reasons and info["engagement_window"]["ready"]
                  and info["whole_ring_full_flank_length_m"] > self.pitch and info["loaded_flank_engagement_candidate"]
                  and info["left_block_grasp_secure"] and info["right_bolt_grasp_secure"]
                  and info["axis_radial_offset_at_entry_m"] <= 150e-6 and info["axis_tilt_rad"] <= np.deg2rad(2.))
@@ -458,11 +451,19 @@ class YamM8InsertionEnv(gym.Env):
             "loaded_full_flank_contact_count": c["loaded_full_flank_contact_count"],
             "loaded_full_flank_normal_force_N": c["loaded_full_flank_normal_force_N"],
             "engagement_candidate_sustain_seconds": self.engagement_sustain_s,
-            "current_valid_flank_geometry_window_seconds": self._starting_contact_substeps*self.model.opt.timestep,
-            "window_loaded_full_flank_substeps": int(self._window_loaded_substeps),
-            "window_full_flank_normal_impulse_Ns": self._window_full_flank_impulse,
-            "window_observed_phase_residual_m": self._window_phase_residual,
-            "recent_full_flank_normal_impulse_Ns": self._recent_flank_impulse,
+            "engagement_observer": {"version": self.engagement_observer.version,
+                "source_sha256": self.engagement_observer_source_sha256,
+                "duration_s": self.engagement_observer.duration_s,
+                "minimum_normal_impulse_Ns": self.engagement_observer.minimum_normal_impulse_Ns,
+                "minimum_loaded_duration_s": self.engagement_observer.minimum_loaded_duration_s,
+                "maximum_helix_phase_range_m": self.engagement_observer.maximum_helix_phase_range_m},
+            "engagement_window": deepcopy(self._engagement_metrics),
+            "current_valid_flank_geometry_window_seconds": self._engagement_metrics["continuous_geometry_elapsed_s"],
+            "window_loaded_full_flank_substeps": self._engagement_metrics["loaded_substeps"],
+            "window_full_flank_normal_impulse_Ns": self._engagement_metrics["normal_impulse_Ns"],
+            "window_helix_phase_range_m": self._engagement_metrics["helix_phase_range_m"],
+            "recent_full_flank_normal_impulse_Ns": self._engagement_metrics["normal_impulse_Ns"],
+            "normal_impulse_note": "Resolved normal-contact impulse; not net axial support or momentum balance",
             "episode_peak_reported_thread_sdf_depth_m": self._peak_thread_depth,
             "block_world_support_contacts": c["block_world_support_contacts"],
             "bolt_world_support_contacts": c["bolt_world_support_contacts"],

@@ -1,0 +1,34 @@
+{
+  "declared_at_utc": "2026-10-08T23:53:47.686086+00:00",
+  "scope": "Frozen 5.5 second bounded ideal-fixture thread-start benchmark only",
+  "baseline": "dt50us/40starts",
+  "cases": [
+    "dt25us/40starts",
+    "dt50us/80starts"
+  ],
+  "unchanged_controls": [
+    "0.5mm initial gap",
+    "0.37rad initial yaw",
+    "0.05N constant feed",
+    "10N/(m/s) axial drag",
+    "3rad/s target yaw speed",
+    "same lateral/tilt impedance and force caps"
+  ],
+  "strict_relative_comparisons": {
+    "total_travel_percent": 2,
+    "late_full_flank_lead_percent": 2,
+    "late_full_ring_travel_percent": 2
+  },
+  "unchanged_absolute_gates": {
+    "reported_depth_um": 10,
+    "radial_offset_um": 150,
+    "tilt_deg": 2,
+    "pitch_error_percent": 2,
+    "steady_turns_minimum": 0.1
+  },
+  "original_broad_fit_failures_retained": true,
+  "proxy_depth_change_reported_separately": true,
+  "source_sha256": "547430f31396c6bb1bfed0d83a688bd06b6ceba2ab0c3975ece602ec9dddedfb",
+  "shared_geometry_sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+  "late_travel_note": "Additional strict formed-window travel comparison prevents initial separated gap/lead-in from obscuring a local difference; declared while both refinement jobs still run."
+}

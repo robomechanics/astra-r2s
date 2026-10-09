@@ -37,6 +37,13 @@ does not push through the threads. These tests use an explicitly declared
 bounded ideal fixture wrench; they do not qualify robot force transmission.
 See [the physics investigation and limits](m8_insertion_physics.md).
 
+Halving the timestep and doubling the search points both pass the declared
+strict 2% total-travel, complete-flank-window travel and lead comparisons.
+Doubling search points changes the peak reported contact depth by 45.02%,
+so this depth proxy fails its separate 2% comparison. These refinements
+qualify motion in the ideal fixture only. The [comparison, raw cases and
+preserved failures](../media/m8_insertion/refinement/README.md) are published.
+
 ## Geometry and controls
 
 The block is 20 × 120 × 16 mm and weighs 101.814 g after subtracting the real
@@ -66,11 +73,19 @@ measured pitch agreement within 2%. Search resets and qualified unseated
 thread resets have separate reports; head/block seating cannot supply a
 thread self-locking claim.
 
-The source currently retains a conservative consecutive loaded-contact
-criterion for the robot demo. The ideal-fixture experiment shows that valid
-zero-margin unilateral contacts can have gaps. The policy interface uses
-a separately declared valid-geometry/contact-impulse window, followed by an
-independent lead test. No positive collision margin is added to disguise gaps.
+The current demo uses a versioned capture observer: 0.2 s of valid complete-ring
+geometry, at least 0.001 N·s of measured interior-contact normal impulse,
+at least 0.5 ms of loaded contact, and at most 150 µm helix-phase variation.
+Normal impulse establishes loaded contact; it does not establish axial force
+balance. Actual lead and unsupported open resets independently qualify
+engagement. Every saved sample records the window metrics.
+
+The earlier observer required 0.2 s of uninterrupted positive contact force.
+Zero-margin unilateral contacts have real force gaps even during correct
+pitch-following motion. That criterion remains a separate diagnostic, and
+the original trial retains its executed source and outcome. The new trial
+starts again from the unengaged pickup. Contact geometry, force laws, motor
+bounds, lead limits and reset limits are unchanged.
 
 ## Run and replay
 

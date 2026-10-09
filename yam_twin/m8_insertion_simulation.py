@@ -24,6 +24,7 @@ from .kinematics import ArmIK, HOME
 from .m8_simulation import YamCartesianController, YamM8ControlConfig, smooth_profile
 from .m8_insertion_mechanics import (fully_formed_flank_interval,
                                      contact_is_on_full_flanks, thread_end_bounds)
+from .m8_insertion_engagement import LoadedFlankWindow
 
 
 @dataclass(frozen=True)
@@ -209,12 +210,22 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
             InsertionControlConfig, insertion_phases, initialize_insertion_pose,
             _body_contact, formed_flank_overlap, run_insertion_demo,
             fully_formed_flank_interval, contact_is_on_full_flanks, thread_end_bounds,
+            LoadedFlankWindow,
             YamCartesianController, YamM8ControlConfig, smooth_profile)).encode()).hexdigest(),
         "known_bolt_mass_kg": mass,
         "full_flank_overlap_threshold_m": full_flank_overlap_m,
         "male_tip_chamfer_m": male_tip_chamfer_m,
         "female_full_profile_chamfer_bound_m": female_full_profile_chamfer_m,
         "minimum_engagement_contact_normal_force_N": 1e-5,
+        "engagement_observer": LoadedFlankWindow.version,
+        "engagement_observer_source_sha256": hashlib.sha256(
+            Path(inspect.getfile(LoadedFlankWindow)).read_bytes()).hexdigest(),
+        "engagement_observer_scope": "Candidate full-flank capture; actual coupled lead and unsupported reset checks establish completed engagement",
+        "engagement_window": {"duration_s": control.full_flank_contact_streak_s,
+            "minimum_loaded_normal_impulse_Ns": .1*control.net_axial_feed_N*control.full_flank_contact_streak_s,
+            "minimum_loaded_duration_s": .0005,
+            "maximum_helix_phase_range_m": 150e-6},
+        "legacy_engagement_note": "Consecutive positive force for 0.2 s retained as a diagnostic; unilateral contact may have valid resolved gaps",
         "axial_command_note": "Gravity compensation of known bolt weight plus constant net axial feed; no axial motion servo during entry or turns",
         "partial": True,
     }
@@ -230,6 +241,9 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
     engaged = False
     engagement_streak = 0.
     engagement_time = None
+    legacy_engagement_time = None
+    engagement_observer = LoadedFlankWindow(duration_s=control.full_flank_contact_streak_s,
+        minimum_normal_impulse_Ns=.1*control.net_axial_feed_N*control.full_flank_contact_streak_s)
     last_yaw = float(np.arctan2((hole_initial_r.T @ data.xmat[bolt_id].reshape(3, 3))[1, 0],
                                (hole_initial_r.T @ data.xmat[bolt_id].reshape(3, 3))[0, 0]))
     yaw_total = last_yaw
@@ -240,6 +254,7 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
     # Persist the exact controller and model texts used for this integration.
     # Later source revisions cannot silently change how a partial trace is read.
     (output / "controller_source.py").write_text(Path(__file__).read_text())
+    (output / "engagement_observer_source.py").write_text(Path(inspect.getfile(LoadedFlankWindow)).read_text())
     (output / "scene.xml").write_text(scene_xml(scene))
     search_skip = {1: False}
     for label, duration, angle0, angle1, gap0, gap1, axial_float in selected:
@@ -329,6 +344,7 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
             thread_depth = 0.
             thread_count = 0
             loaded_formed_contacts = 0
+            loaded_formed_normal_force = 0.
             head_block_contacts = 0
             thread_force = np.zeros(6)
             for contact_index, c in enumerate(data.contact):
@@ -342,16 +358,17 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                     if contact_is_on_full_flanks(hole_r.T @ (c.pos-hole_p),
                                                bolt_r.T @ (c.pos-bolt_p), thread):
                         mujoco.mj_contactForce(model, data, contact_index, thread_force)
-                        loaded_formed_contacts += float(thread_force[0]) > 1e-5
+                        if float(thread_force[0]) > 1e-5:
+                            loaded_formed_contacts += 1
+                            loaded_formed_normal_force += float(thread_force[0])
             peak_depth = max(peak_depth, thread_depth)
             phase_max_head_block_contacts = max(phase_max_head_block_contacts, head_block_contacts)
             # Initial cone contact can stall near 1.4 mm without matching the
             # groove. Exclude both entire chamfers plus require a formed pitch.
             engagement_streak = (engagement_streak + model.opt.timestep
                                  if formed_overlap > thread.pitch and loaded_formed_contacts else 0.)
-            if not engaged and engagement_streak >= control.full_flank_contact_streak_s:
-                engaged = True
-                engagement_time = float(data.time)
+            if legacy_engagement_time is None and engagement_streak >= control.full_flank_contact_streak_s:
+                legacy_engagement_time = float(data.time)
             left_p, left_r = left.pose()
             left_slip = float(np.linalg.norm(left_r.T @ (data.xpos[block_id] - left_p) - left_grip_p))
             left_angle = float(np.linalg.norm(Rotation.from_matrix(
@@ -387,6 +404,15 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
             if alignment_guard:
                 peak_alignment_radial = max(peak_alignment_radial, radial)
                 peak_alignment_tilt = max(peak_alignment_tilt, tilt)
+            window = engagement_observer.update(float(data.time), model.opt.timestep,
+                formed_overlap > thread.pitch and radial <= 150e-6 and tilt <= np.deg2rad(2)
+                and left_slip < .001 and left_angle < np.deg2rad(2) and unforced
+                and not left_support and not support and not head_block_contacts,
+                loaded_formed_normal_force, loaded_formed_contacts,
+                float(relative[2])-thread.pitch*yaw_total/(2*np.pi))
+            if not engaged and window["ready"]:
+                engaged = True
+                engagement_time = float(data.time)
             if (thread_depth > 10e-6 or left_slip > .001 or left_angle > np.deg2rad(2)
                     or grip_slip > .001 or left_support or warnings or not unforced
                     or joint_margin < -1e-5
@@ -414,6 +440,9 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                        "clockwise_turns": (yaw_total-metadata["initial_bolt_yaw_rad"])/(2*np.pi),
                        "thread_overlap_m": float(overlap), "thread_contacts": thread_count,
                        "loaded_formed_thread_contacts": int(loaded_formed_contacts),
+                       "loaded_formed_thread_normal_force_N": loaded_formed_normal_force,
+                       "engagement_window": window,
+                       "legacy_consecutive_loaded_contact_streak_s": engagement_streak,
                        "head_block_seating_contacts": head_block_contacts,
                        "formed_flank_overlap_m": formed_overlap,
                        "thread_engaged": engaged, "radial_offset_m": radial,
@@ -475,6 +504,7 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
         "open_reset_contact_decoupling": {"passed": len(resets)==expected_resets and
             all(s["maximum_hand_bolt_contacts"]==0 for s in resets)},
         "passive_self_locking_during_open_reset": {"passed": len(resets)==expected_resets and
+            bool([s for s in resets if s["started_engaged"]]) and
             all(s["maximum_absolute_bolt_rotation_from_phase_start_rad"]<.02
                 and s["maximum_absolute_bolt_axial_motion_from_phase_start_m"]<10e-6
                 and s["maximum_head_block_seating_contacts"]==0
@@ -501,6 +531,9 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
     result = {**metadata,"partial":len(selected)<len(phases),"passed":all(v["passed"] for v in checks.values()),
               "phases":summaries,"acceptance_checks":checks,"aborted":aborted,
               "wall_seconds":time.perf_counter()-start_wall,
+              "legacy_continuous_loaded_force_criterion": {"would_have_tagged_engagement":legacy_engagement_time is not None,
+                                                           "first_pass_time_s":legacy_engagement_time,
+                                                           "required_streak_s":control.full_flank_contact_streak_s},
               "reported_sdf_depth_note":"Native contact dist proxy; not an independent overlap certificate"}
     np.savez_compressed(output / "insertion_trace.npz", time=times, qpos=positions,
         qvel=velocities, controller=controls, info_json=np.asarray(json.dumps(rows)),

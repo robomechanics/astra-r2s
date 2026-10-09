@@ -1,0 +1,27 @@
+{
+  "scope": "Frozen fixed-female/free-six-DOF headed-male ideal-fixture start only; not whole robot, load suite, seating, or trained-policy qualification",
+  "travel_and_lead_refinement_passed": true,
+  "reported_sdf_depth_diagnostic_below_2_percent_passed": false,
+  "baseline_artifact_directory": "media/m8_insertion/start_probe_extended",
+  "baseline_raw_artifact_sha256": {
+    "trace.npz": "1edb9b39d5a98db42a4565f14e921e79444ec91d4cd98371c17b495f8803aa3a",
+    "report.json": "335858005f418b2072c4203667644efaefe227266924ce6baa5bbbb8d7fe1eb9",
+    "scene.xml": "0d433460491fcdb8fc62a8fdc71753500d9cefe7fcafed22279734d89b0feb3e"
+  },
+  "artifact_sha256": {
+    "README.md": "002780b8d90a0e35f92f75932b7f488b1026c253ee23fc4f26613db61f22b137",
+    "comparison_plan.json": "a275107cc765c45caff9ff3ebcfa7f35d00a7540bd16ea7f3e3f75c6d9b1bd7c",
+    "comparison_source.py": "a202391a03ea0ff9697f1219be0260881396dd7b0c2bf704d0032d7a2c25a67f",
+    "dt25_points40/probe_source.py": "547430f31396c6bb1bfed0d83a688bd06b6ceba2ab0c3975ece602ec9dddedfb",
+    "dt25_points40/report.json": "8cd1d420a4bb83f0956d41442816e2a9411b1891977ffe1ca3a310a7433fb627",
+    "dt25_points40/scene.xml": "cd8079b130bbc668548fba4be7871b29cc8551455cb3ff2ee0beb0a9ed394ce2",
+    "dt25_points40/trace.npz": "e29140e34c464d24d31e1b359d38ccec17ba772bfebfecbd1143096af74ca4b2",
+    "dt50_points80/probe_source.py": "547430f31396c6bb1bfed0d83a688bd06b6ceba2ab0c3975ece602ec9dddedfb",
+    "dt50_points80/report.json": "f56bbc55adf686daa6043c697e6ce83517e376cadb8ecd41f433c53407bcfa82",
+    "dt50_points80/scene.xml": "098a622b6f827e0d03a6cfbe1f00f713b0e691807094af26ac7836d9b14edcb1",
+    "dt50_points80/trace.npz": "23175829008c648da61f215242b59db4f581da797cc8ee901c41f5abd5db6c17",
+    "geometry_source.py": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+    "refinement.png": "0b71beb0b94ae3d02b52b470338a54eccbb0fad4dfe6485854f8421c3b50bb11",
+    "summary.json": "51c2996618b3e9e8b7ab35efcb656e616ca831bc3022b3a60451a8d284ec8660"
+  }
+}

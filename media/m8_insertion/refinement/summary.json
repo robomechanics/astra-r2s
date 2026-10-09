@@ -1,0 +1,438 @@
+{
+  "scope": "Frozen fixed-female/free-six-DOF headed-male ideal-fixture start only; not whole robot, load suite, seating, or trained-policy qualification",
+  "strict_relative_travel_and_lead_limit_percent": 2.0,
+  "limits_note": "Relative total travel, late full-ring travel and lead changes must be strictly below 2%; original 2% absolute pitch, 10um reported depth, 150um radial and 2deg tilt guards remain. Proxy-depth change is disclosed, not included in the requested 2% travel/lead convergence gate.",
+  "comparison_source_sha256": "a202391a03ea0ff9697f1219be0260881396dd7b0c2bf704d0032d7a2c25a67f",
+  "shared_geometry_source_sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+  "baseline": {
+    "directory": "outputs/m8_insertion/start_probe_extended",
+    "dt_us": 50.0,
+    "sdf_initpoints": 40,
+    "sampled_end_time_s": 5.499049999993853,
+    "total_axial_travel_mm": 4.051801099064643,
+    "late_complete_ring_fitted_lead_mm": 1.2500515505841867,
+    "late_complete_ring_lead_error_percent": 0.004124046734932385,
+    "late_complete_ring_turns": 0.2451488638699244,
+    "late_complete_ring_travel_mm": 0.30657035742463756,
+    "late_complete_ring_residual_range_um": 0.32467700915306263,
+    "first_thread_contact_time_s": 0.38244999999996604,
+    "first_complete_ring_geometry_time_s": 4.980049999995063,
+    "complete_ring_contact_sample_count": 177,
+    "complete_ring_geometry_sample_count": 520,
+    "maximum_reported_sdf_depth_um": 3.932025423497318,
+    "maximum_radial_offset_um": 14.620354804485078,
+    "maximum_tilt_deg": 0.11939174993595503,
+    "warnings": {},
+    "guard_abort": null,
+    "original_broad_fit_passed": false,
+    "original_broad_fit_lead_error_percent": 19.869636258960067,
+    "original_broad_fit_checks": {
+      "initially_disengaged": true,
+      "contact_captured": true,
+      "sustained_thread_lead": false,
+      "reported_depth_below_10um": true,
+      "coaxial_fixture_bounds": true,
+      "solver_finite": true,
+      "no_axial_yaw_equality": true
+    },
+    "declared_coaxial_full_flank_diagnostic": {
+      "minimum_total_overlap_m": 0.003242582346706593,
+      "female_chamfer_maximum_axial_extent_m": 0.0010365823467065928,
+      "male_tip_chamfer_m": 0.000956,
+      "fully_formed_shared_flank_length_minimum_m": 0.00125,
+      "turns": 0.2451488638699244,
+      "lead_error_percent": 0.004124046734932385,
+      "fitted_lead_mm": 1.2500515505841867,
+      "helix_residual_range_um": 0.32467700915306263,
+      "note": "Separate stricter geometry-based window. Original broad >one-pitch lead test and its failures are preserved."
+    },
+    "declared_coaxial_full_flank_start_passed": true,
+    "unchanged_absolute_guards": {
+      "initially_disengaged": true,
+      "contact_captured": true,
+      "reported_depth_below_10um": true,
+      "coaxial_fixture_bounds": true,
+      "solver_finite": true,
+      "no_axial_yaw_equality": true
+    },
+    "late_complete_ring_absolute_lead_passed": true,
+    "source_snapshot_matches_report": true,
+    "xml_matches_report": true,
+    "raw_artifact_sha256": {
+      "trace.npz": "1edb9b39d5a98db42a4565f14e921e79444ec91d4cd98371c17b495f8803aa3a",
+      "report.json": "335858005f418b2072c4203667644efaefe227266924ce6baa5bbbb8d7fe1eb9",
+      "scene.xml": "0d433460491fcdb8fc62a8fdc71753500d9cefe7fcafed22279734d89b0feb3e"
+    },
+    "identities": {
+      "probe_source_sha256": "547430f31396c6bb1bfed0d83a688bd06b6ceba2ab0c3975ece602ec9dddedfb",
+      "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a",
+      "mujoco_version": "3.15.0",
+      "mujoco_core_sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+      "sdf_minimum_search_step_m": 1e-07,
+      "sdf_initial_search_step_m": 0.002,
+      "scene_xml_except_timestep_and_search_count_sha256": "09e28f5352c19755a03373b65e9174f3ea10fd67963210aec56466eb126006d5"
+    },
+    "physical_inputs": {
+      "duration": 5.5,
+      "gap": 0.0005,
+      "yaw": 0.37,
+      "speed": 3.0,
+      "feed": 0.05,
+      "axial_drag": 10.0
+    },
+    "physical_config": {
+      "friction": 0.15,
+      "contact_time_constant": 0.0005,
+      "contact_margin": 0.0,
+      "contact_impratio": 1.0,
+      "sdf_iterations": 30,
+      "bolt_length": 0.016,
+      "pitch": 0.00125,
+      "male_pitch_diameter": 0.0071,
+      "female_pitch_diameter": 0.007268,
+      "nut_height": 0.016,
+      "nut_across_flats": 0.016,
+      "nut_mass": 0.005195807,
+      "nut_transverse_inertia": 9.70861e-08,
+      "nut_axial_inertia": 1.58804e-07,
+      "initial_z": 0.0175,
+      "gravity": 0.0,
+      "with_gripper": false,
+      "with_bolt": true,
+      "guided": false
+    },
+    "mass_properties": {
+      "mass_kg": 0.026749601402495507,
+      "centroid_m": [
+        4.7283421325714466e-07,
+        1.158516516585161e-06,
+        -0.0017689775694136264
+      ],
+      "inertia_kg_m2": [
+        [
+          1.4216334974737535e-06,
+          -6.365261899204182e-12,
+          -2.0862196784183195e-10
+        ],
+        [
+          -6.365261899204182e-12,
+          1.4216390039131532e-06,
+          -1.6299677134553207e-10
+        ],
+        [
+          -2.0862196784183195e-10,
+          -1.6299677134553207e-10,
+          1.2409665459658619e-06
+        ]
+      ],
+      "steel_density_kg_m3": 7850.0,
+      "shaft_quadrature_samples": 262144,
+      "head_across_flats_m": 0.02,
+      "head_height_m": 0.008
+    }
+  },
+  "cases": {
+    "dt25_points40": {
+      "directory": "outputs/m8_insertion/refinement_dt25_points40",
+      "dt_us": 25.0,
+      "sdf_initpoints": 40,
+      "sampled_end_time_s": 5.499024999990519,
+      "total_axial_travel_mm": 4.0519343007620785,
+      "late_complete_ring_fitted_lead_mm": 1.2500445970767555,
+      "late_complete_ring_lead_error_percent": 0.003567766140433193,
+      "late_complete_ring_turns": 0.24705706611651462,
+      "late_complete_ring_travel_mm": 0.3089185176840987,
+      "late_complete_ring_residual_range_um": 0.2542596648259787,
+      "first_thread_contact_time_s": 0.382449999999962,
+      "first_complete_ring_geometry_time_s": 4.980024999991729,
+      "complete_ring_contact_sample_count": 187,
+      "complete_ring_geometry_sample_count": 520,
+      "maximum_reported_sdf_depth_um": 3.9352489299917384,
+      "maximum_radial_offset_um": 14.57223501987928,
+      "maximum_tilt_deg": 0.11873299508175528,
+      "warnings": {},
+      "guard_abort": null,
+      "original_broad_fit_passed": false,
+      "original_broad_fit_lead_error_percent": 19.480617264611556,
+      "original_broad_fit_checks": {
+        "initially_disengaged": true,
+        "contact_captured": true,
+        "sustained_thread_lead": false,
+        "reported_depth_below_10um": true,
+        "coaxial_fixture_bounds": true,
+        "solver_finite": true,
+        "no_axial_yaw_equality": true
+      },
+      "declared_coaxial_full_flank_diagnostic": {
+        "minimum_total_overlap_m": 0.003242582346706593,
+        "female_chamfer_maximum_axial_extent_m": 0.0010365823467065928,
+        "male_tip_chamfer_m": 0.000956,
+        "fully_formed_shared_flank_length_minimum_m": 0.00125,
+        "turns": 0.24705706611651462,
+        "lead_error_percent": 0.003567766140433193,
+        "fitted_lead_mm": 1.2500445970767555,
+        "helix_residual_range_um": 0.2542596648259787,
+        "note": "Separate stricter geometry-based window. Original broad >one-pitch lead test and its failures are preserved."
+      },
+      "declared_coaxial_full_flank_start_passed": true,
+      "unchanged_absolute_guards": {
+        "initially_disengaged": true,
+        "contact_captured": true,
+        "reported_depth_below_10um": true,
+        "coaxial_fixture_bounds": true,
+        "solver_finite": true,
+        "no_axial_yaw_equality": true
+      },
+      "late_complete_ring_absolute_lead_passed": true,
+      "source_snapshot_matches_report": true,
+      "xml_matches_report": true,
+      "raw_artifact_sha256": {
+        "trace.npz": "e29140e34c464d24d31e1b359d38ccec17ba772bfebfecbd1143096af74ca4b2",
+        "report.json": "8cd1d420a4bb83f0956d41442816e2a9411b1891977ffe1ca3a310a7433fb627",
+        "scene.xml": "cd8079b130bbc668548fba4be7871b29cc8551455cb3ff2ee0beb0a9ed394ce2"
+      },
+      "identities": {
+        "probe_source_sha256": "547430f31396c6bb1bfed0d83a688bd06b6ceba2ab0c3975ece602ec9dddedfb",
+        "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a",
+        "mujoco_version": "3.15.0",
+        "mujoco_core_sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002,
+        "scene_xml_except_timestep_and_search_count_sha256": "09e28f5352c19755a03373b65e9174f3ea10fd67963210aec56466eb126006d5"
+      },
+      "physical_inputs": {
+        "duration": 5.5,
+        "gap": 0.0005,
+        "yaw": 0.37,
+        "speed": 3.0,
+        "feed": 0.05,
+        "axial_drag": 10.0
+      },
+      "physical_config": {
+        "friction": 0.15,
+        "contact_time_constant": 0.0005,
+        "contact_margin": 0.0,
+        "contact_impratio": 1.0,
+        "sdf_iterations": 30,
+        "bolt_length": 0.016,
+        "pitch": 0.00125,
+        "male_pitch_diameter": 0.0071,
+        "female_pitch_diameter": 0.007268,
+        "nut_height": 0.016,
+        "nut_across_flats": 0.016,
+        "nut_mass": 0.005195807,
+        "nut_transverse_inertia": 9.70861e-08,
+        "nut_axial_inertia": 1.58804e-07,
+        "initial_z": 0.0175,
+        "gravity": 0.0,
+        "with_gripper": false,
+        "with_bolt": true,
+        "guided": false
+      },
+      "mass_properties": {
+        "mass_kg": 0.026749601402495507,
+        "centroid_m": [
+          4.7283421325714466e-07,
+          1.158516516585161e-06,
+          -0.0017689775694136264
+        ],
+        "inertia_kg_m2": [
+          [
+            1.4216334974737535e-06,
+            -6.365261899204182e-12,
+            -2.0862196784183195e-10
+          ],
+          [
+            -6.365261899204182e-12,
+            1.4216390039131532e-06,
+            -1.6299677134553207e-10
+          ],
+          [
+            -2.0862196784183195e-10,
+            -1.6299677134553207e-10,
+            1.2409665459658619e-06
+          ]
+        ],
+        "steel_density_kg_m3": 7850.0,
+        "shaft_quadrature_samples": 262144,
+        "head_across_flats_m": 0.02,
+        "head_height_m": 0.008
+      }
+    },
+    "dt50_points80": {
+      "directory": "outputs/m8_insertion/refinement_dt50_points80",
+      "dt_us": 50.0,
+      "sdf_initpoints": 80,
+      "sampled_end_time_s": 5.499049999993853,
+      "total_axial_travel_mm": 4.051878919069264,
+      "late_complete_ring_fitted_lead_mm": 1.2500016426204885,
+      "late_complete_ring_lead_error_percent": 0.00013140963908142567,
+      "late_complete_ring_turns": 0.24515097473317912,
+      "late_complete_ring_travel_mm": 0.3064465753420606,
+      "late_complete_ring_residual_range_um": 0.2897774132037956,
+      "first_thread_contact_time_s": 0.38239999999996604,
+      "first_complete_ring_geometry_time_s": 4.980049999995063,
+      "complete_ring_contact_sample_count": 152,
+      "complete_ring_geometry_sample_count": 520,
+      "maximum_reported_sdf_depth_um": 2.1616933778236533,
+      "maximum_radial_offset_um": 13.636834605464562,
+      "maximum_tilt_deg": 0.11358664229204876,
+      "warnings": {},
+      "guard_abort": null,
+      "original_broad_fit_passed": false,
+      "original_broad_fit_lead_error_percent": 20.748358536360932,
+      "original_broad_fit_checks": {
+        "initially_disengaged": true,
+        "contact_captured": true,
+        "sustained_thread_lead": false,
+        "reported_depth_below_10um": true,
+        "coaxial_fixture_bounds": true,
+        "solver_finite": true,
+        "no_axial_yaw_equality": true
+      },
+      "declared_coaxial_full_flank_diagnostic": {
+        "minimum_total_overlap_m": 0.003242582346706593,
+        "female_chamfer_maximum_axial_extent_m": 0.0010365823467065928,
+        "male_tip_chamfer_m": 0.000956,
+        "fully_formed_shared_flank_length_minimum_m": 0.00125,
+        "turns": 0.24515097473317912,
+        "lead_error_percent": 0.00013140963908142567,
+        "fitted_lead_mm": 1.2500016426204885,
+        "helix_residual_range_um": 0.2897774132037956,
+        "note": "Separate stricter geometry-based window. Original broad >one-pitch lead test and its failures are preserved."
+      },
+      "declared_coaxial_full_flank_start_passed": true,
+      "unchanged_absolute_guards": {
+        "initially_disengaged": true,
+        "contact_captured": true,
+        "reported_depth_below_10um": true,
+        "coaxial_fixture_bounds": true,
+        "solver_finite": true,
+        "no_axial_yaw_equality": true
+      },
+      "late_complete_ring_absolute_lead_passed": true,
+      "source_snapshot_matches_report": true,
+      "xml_matches_report": true,
+      "raw_artifact_sha256": {
+        "trace.npz": "23175829008c648da61f215242b59db4f581da797cc8ee901c41f5abd5db6c17",
+        "report.json": "f56bbc55adf686daa6043c697e6ce83517e376cadb8ecd41f433c53407bcfa82",
+        "scene.xml": "098a622b6f827e0d03a6cfbe1f00f713b0e691807094af26ac7836d9b14edcb1"
+      },
+      "identities": {
+        "probe_source_sha256": "547430f31396c6bb1bfed0d83a688bd06b6ceba2ab0c3975ece602ec9dddedfb",
+        "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a",
+        "mujoco_version": "3.15.0",
+        "mujoco_core_sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002,
+        "scene_xml_except_timestep_and_search_count_sha256": "09e28f5352c19755a03373b65e9174f3ea10fd67963210aec56466eb126006d5"
+      },
+      "physical_inputs": {
+        "duration": 5.5,
+        "gap": 0.0005,
+        "yaw": 0.37,
+        "speed": 3.0,
+        "feed": 0.05,
+        "axial_drag": 10.0
+      },
+      "physical_config": {
+        "friction": 0.15,
+        "contact_time_constant": 0.0005,
+        "contact_margin": 0.0,
+        "contact_impratio": 1.0,
+        "sdf_iterations": 30,
+        "bolt_length": 0.016,
+        "pitch": 0.00125,
+        "male_pitch_diameter": 0.0071,
+        "female_pitch_diameter": 0.007268,
+        "nut_height": 0.016,
+        "nut_across_flats": 0.016,
+        "nut_mass": 0.005195807,
+        "nut_transverse_inertia": 9.70861e-08,
+        "nut_axial_inertia": 1.58804e-07,
+        "initial_z": 0.0175,
+        "gravity": 0.0,
+        "with_gripper": false,
+        "with_bolt": true,
+        "guided": false
+      },
+      "mass_properties": {
+        "mass_kg": 0.026749601402495507,
+        "centroid_m": [
+          4.7283421325714466e-07,
+          1.158516516585161e-06,
+          -0.0017689775694136264
+        ],
+        "inertia_kg_m2": [
+          [
+            1.4216334974737535e-06,
+            -6.365261899204182e-12,
+            -2.0862196784183195e-10
+          ],
+          [
+            -6.365261899204182e-12,
+            1.4216390039131532e-06,
+            -1.6299677134553207e-10
+          ],
+          [
+            -2.0862196784183195e-10,
+            -1.6299677134553207e-10,
+            1.2409665459658619e-06
+          ]
+        ],
+        "steel_density_kg_m3": 7850.0,
+        "shaft_quadrature_samples": 262144,
+        "head_across_flats_m": 0.02,
+        "head_height_m": 0.008
+      }
+    }
+  },
+  "comparisons": {
+    "dt25_points40": {
+      "travel_relative_change_percent": 0.003287468811495474,
+      "travel_comparison_passed_below_2_percent": true,
+      "late_complete_ring_travel_relative_change_percent": 0.7659449788906606,
+      "late_complete_ring_travel_comparison_passed_below_2_percent": true,
+      "late_complete_ring_lead_relative_change_percent": -0.0005562576541691267,
+      "late_complete_ring_lead_comparison_passed_below_2_percent": true,
+      "declared_coaxial_lead_relative_change_percent": -0.0005562576541691267,
+      "declared_coaxial_lead_comparison_passed_below_2_percent": true,
+      "reported_sdf_depth_relative_change_percent": 0.08198081515844449,
+      "reported_sdf_depth_diagnostic_below_2_percent": true,
+      "depth_diagnostic_note": "Disclosed additional diagnostic, not part of the requested travel/lead gate. The unchanged absolute reported-depth guard is 10um.",
+      "first_contact_time_difference_ms": -4.052314039881821e-12,
+      "complete_ring_geometry_time_difference_ms": -0.025000003334163523,
+      "unchanged_absolute_guards_passed": true,
+      "source_runtime_and_normalized_xml_identities_match": true,
+      "physical_inputs_and_config_match": true,
+      "mass_properties_match": true,
+      "raw_provenance_passed": true,
+      "travel_and_lead_refinement_passed": true
+    },
+    "dt50_points80": {
+      "travel_relative_change_percent": 0.0019206274621604493,
+      "travel_comparison_passed_below_2_percent": true,
+      "late_complete_ring_travel_relative_change_percent": -0.04037640286451721,
+      "late_complete_ring_travel_comparison_passed_below_2_percent": true,
+      "late_complete_ring_lead_relative_change_percent": -0.003992472444425912,
+      "late_complete_ring_lead_comparison_passed_below_2_percent": true,
+      "declared_coaxial_lead_relative_change_percent": -0.003992472444425912,
+      "declared_coaxial_lead_comparison_passed_below_2_percent": true,
+      "reported_sdf_depth_relative_change_percent": -45.023412999681284,
+      "reported_sdf_depth_diagnostic_below_2_percent": false,
+      "depth_diagnostic_note": "Disclosed additional diagnostic, not part of the requested travel/lead gate. The unchanged absolute reported-depth guard is 10um.",
+      "first_contact_time_difference_ms": -0.04999999999999449,
+      "complete_ring_geometry_time_difference_ms": 0.0,
+      "unchanged_absolute_guards_passed": true,
+      "source_runtime_and_normalized_xml_identities_match": true,
+      "physical_inputs_and_config_match": true,
+      "mass_properties_match": true,
+      "raw_provenance_passed": true,
+      "travel_and_lead_refinement_passed": true
+    }
+  },
+  "travel_and_lead_refinement_passed": true,
+  "reported_sdf_depth_diagnostic_below_2_percent_passed": false,
+  "original_broad_fit_failures_preserved": true,
+  "late_complete_ring_method": "Same geometric whole-ring interval for all cases, positive measured thread/end normal above 1e-5 N, >0.2 s since first contact; fit measured axial position against unwrapped measured yaw. No state/force/control changes."
+}
