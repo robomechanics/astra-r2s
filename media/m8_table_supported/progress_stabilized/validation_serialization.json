@@ -1,0 +1,11 @@
+{
+  "original_report_sha256": "da2a08b7261808cf98778bce35b72fc38379599f86f88da15380259c60f4a94b",
+  "strict_report_sha256": "72f5da8b2f02f1da2a9ef38ea02256b9dbbb18053d4c655a8293edb6fa75efe9",
+  "unobserved_value_paths_converted_from_infinity_to_null": [
+    "/acceptance_checks/picked_up_free_bolt/sampled_minimum_closed_transport_pad_normals_N/0",
+    "/acceptance_checks/picked_up_free_bolt/sampled_minimum_closed_transport_pad_normals_N/1"
+  ],
+  "original_report_preserved_as": "validation_original.json.txt",
+  "trace_preserved_byte_exact": true,
+  "scope": "Only unobserved minima of a phase that was not selected are represented as null; no measured force or acceptance result is changed."
+}
