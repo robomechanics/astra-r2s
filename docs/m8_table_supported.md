@@ -93,7 +93,8 @@ Software tests and a stabilization clip cannot stand in for successful
 threading or hardware fidelity.
 
 The first full attempt, `full_v1`, used that exact producer revision and
-aborted during `transport_bolt` at **3.571 s**, before thread starting. The
+aborted during `transport_bolt` at **3.571 s**, when the lifted bolt recontacted
+its original rest, before thread starting. The
 [closed failed trial and actual lift screenshot](../media/m8_table_supported/failures/transport_rest_recontact)
 preserve its original report, raw states/forces and independent audits.
 Its original `partial=false` only means the full phase list was selected;
@@ -109,7 +110,10 @@ only `align_over_hole` then descends. The current corrected sources pass
 **213 tests** in 79.24 s with unchanged source hashes, recorded in the
 [separate proof](../media/m8_table_supported/software_proof_213). This remains
 a software and static-path check until a new physical rollout closes. The
-prior 210-test proof stays bound to its initial producer. Post-closure audit
+prior 210-test proof stays bound to its initial producer. The fresh `full_v2`
+attempt uses producer
+`66276d0dd2188c763ada69e7426e5d74cf64fd29` and is in progress; its complete
+support, pickup and threading outcomes remain pending. Post-closure audit
 corrections cover unloaded window endpoints and qualified closed hold phases;
 they do not alter the original failed trajectory.
 
@@ -185,9 +189,12 @@ opening; no reference is reset to hide slip during a closed stroke.
 The additive `scripts/audit_m8_supported_trace.py` checks the new original
 all-step load/contact archive, source/model/runtime identities, saved-pose
 geometry and actual bolt lead/reset measurements. It does not reinterpret
-the first carried-block report. Original solved force/derived geometry inputs
-belong to recorded time minus one timestep; saved qpos/qvel are
-post-integration. Replayed geometry does not reconstruct original forces.
+the first carried-block report. Original solved forces and derived geometry,
+including the raw ledger's block position and rotation, belong to the
+pre-integration state at recorded time minus one timestep. Saved trajectory
+qpos/qvel are post-integration. These are different state observations, not
+interchangeable poses for force reconstruction. Replayed geometry does not
+reconstruct original forces.
 
 ## Run the separate controller
 
@@ -217,6 +224,25 @@ commands use the pinned source. This revision reproduces the failed first
 full attempt's source, not a later successful trajectory. It also contains
 the exact archived **earlier** stabilization pilot, whose whole controller
 hash is `189009b40d959325873bc6d215f9031ce9546cf56e01fcfd6b11ada32ef99e6d`.
+
+To check or recreate the **revised `full_v2` attempt**, use a separate unused
+checkout pinned to its exact producer instead:
+
+```bash
+git clone https://github.com/robomechanics/astra-r2s.git \
+  /workspace/astra-r2s-supported-66276d0
+git -C /workspace/astra-r2s-supported-66276d0 switch --detach \
+  66276d0dd2188c763ada69e7426e5d74cf64fd29
+cd /workspace/astra-r2s-supported-66276d0
+scripts/run_m8.sh -m pytest -q
+```
+
+At this revised producer expect 213 tests, as bound by the separate
+[213-test source manifest](../media/m8_table_supported/software_proof_213/manifest.json).
+The higher 35 mm transfer target and measured 10 mm full-shaft/rest clearance
+guard come from that pinned source. Reusing the same CLI flags on `4ea910e`
+does not select this revised path. A passing source proof does not predict
+the still-running attempt's physics result.
 
 Run the following commands from the checkout you chose. Remain in the pinned
 clone when examining that producer; the ordinary cloud checkout is
@@ -258,14 +284,15 @@ scripts/run_m8.sh -m yam_twin.m8_supported_demo \
   --fps 12 --slow-motion 1
 ```
 
-A fresh full attempt uses the following explicit parameters. Pin and freeze
-its producer source first; running them at `4ea910e` recreates the initial
-failed transport configuration, while a revised path needs its own source
-revision and software proof:
+A fresh attempt with the revised path uses the following explicit parameters
+from the pinned `66276d0` checkout. Choose a new output directory; the actual
+active production attempt is under `outputs/m8_table_supported/full_v2/`.
+Running these flags at `4ea910e` instead recreates the initial failed
+transport configuration:
 
 ```bash
 scripts/run_m8.sh -m yam_twin.m8_supported_demo \
-  --output outputs/m8_table_supported/agent_full --dt .00005 \
+  --output outputs/m8_table_supported/agent_full_v2 --dt .00005 \
   --starting-angular-speed 1 --angular-speed 2 \
   --maximum-starting-strokes 5 --qualifying-strokes 2 \
   --maximum-entry-dwell 3 --axial-damping 50 \
@@ -294,13 +321,13 @@ trace and original report before final auditing.
 
 ```bash
 scripts/run_m8.sh -m yam_twin.m8_supported_demo \
-  --replay outputs/m8_table_supported/agent_full/insertion_trace.npz \
-  --output outputs/m8_table_supported/agent_full_replay \
+  --replay outputs/m8_table_supported/agent_full_v2/insertion_trace.npz \
+  --output outputs/m8_table_supported/agent_full_v2_replay \
   --fps 12 --slow-motion 1
-mkdir -p outputs/m8_table_supported/agent_full_audits
+mkdir -p outputs/m8_table_supported/agent_full_v2_audits
 scripts/run_m8.sh scripts/audit_m8_supported_trace.py \
-  outputs/m8_table_supported/agent_full/insertion_trace.npz \
-  --output outputs/m8_table_supported/agent_full_audits/supported.json
+  outputs/m8_table_supported/agent_full_v2/insertion_trace.npz \
+  --output outputs/m8_table_supported/agent_full_v2_audits/supported.json
 ```
 
 Replay itself writes `supported_demo.mp4` and `supported_demo.png`; it needs
