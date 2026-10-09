@@ -1,0 +1,352 @@
+{
+  "kind": "Compiled free-workpiece passive-properties audit",
+  "method": "Compile exact recorded scene only; zero integration, commands or force solve",
+  "scope": "Zero free-joint passive terms excludes inherited joint drag/stiction or extra rotational inertia as the source of open-reset stability. Physical thread/finger contact friction remains enabled; this does not qualify contact-law accuracy.",
+  "model_fingerprint": "25efc9d79f2a2c9fe95313571e0d25cb586077f44a66ff747d994ace75744c22",
+  "scene_config": {
+    "base": {
+      "thread": {
+        "timestep": 5e-05,
+        "friction": 0.15,
+        "contact_time_constant": 0.0005,
+        "contact_margin": 0.0,
+        "contact_impratio": 1.0,
+        "sdf_initpoints": 40,
+        "sdf_iterations": 30,
+        "bolt_length": 0.016,
+        "pitch": 0.00125,
+        "male_pitch_diameter": 0.0071,
+        "female_pitch_diameter": 0.007268,
+        "nut_height": 0.016,
+        "nut_across_flats": 0.016,
+        "nut_mass": 0.018984665656908355,
+        "nut_transverse_inertia": 6.946182225160569e-07,
+        "nut_axial_inertia": 1.1886877420788483e-06,
+        "initial_z": 0.00875,
+        "gravity": -9.81,
+        "with_gripper": false,
+        "with_bolt": true,
+        "guided": false
+      },
+      "bolt_position": [
+        0.3,
+        -0.06,
+        0.11125
+      ],
+      "bolt_quaternion": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pad_friction": 0.8,
+      "jaw_stiffness": 20000.0,
+      "jaw_damping": 8.0,
+      "maximum_jaw_force": 20.0,
+      "open_aperture": 0.024,
+      "closed_aperture": 0.0194,
+      "left_closed_aperture": 0.0144,
+      "left_grasp_roll_rad": -1.5707963267948966,
+      "left_block_contact_impedance": [
+        0.9999,
+        0.9999,
+        0.0001
+      ],
+      "left_block_contact_time_constant": 0.0008,
+      "pad_inner_offset": 0.0005,
+      "block_size": [
+        0.02,
+        0.12,
+        0.016
+      ],
+      "block_density": 2700.0,
+      "bolt_offset": [
+        0.0,
+        -0.05,
+        0.008
+      ],
+      "left_grasp_offset": [
+        0.0,
+        -0.0094,
+        0.0
+      ]
+    },
+    "block_position": [
+      0.25,
+      0.15,
+      0.059999989999999996
+    ],
+    "hole_offset": [
+      0.0,
+      -0.05,
+      0.0
+    ],
+    "bolt_head_position": [
+      0.36,
+      -0.15,
+      0.04
+    ],
+    "bolt_yaw_rad": 0.23,
+    "head_across_flats": 0.02,
+    "head_height": 0.008,
+    "steel_density": 7850.0,
+    "rest_radius": 0.007,
+    "rest_pin_radius": 0.001,
+    "rest_base_height": 0.01,
+    "pickup_from_table": true,
+    "held_block_position": [
+      0.3,
+      -0.01,
+      0.10325
+    ]
+  },
+  "archived_model_identity": {
+    "model_fingerprint": "25efc9d79f2a2c9fe95313571e0d25cb586077f44a66ff747d994ace75744c22",
+    "model_xml_sha256": "f4f342f65e7eeb65084a5a4974977dd8291fa2473f8f8f77152e4d09323a8aad",
+    "mesh_sha256": {
+      "model2.stl": "5ac61c0313ed00c38655e41681af1b8b307cf8d5ef57209a75f215cea02df754",
+      "model2__2.stl": "30dab41f14bae95d737abca3c934eb5d570ab107dff0b40952fbdfb9d07eab79",
+      "model2__3.stl": "9fd96f5ad387fe7dd96eaa65e386637800e2f5637b6167fbad4ecb37d8598f47",
+      "model2__4.stl": "33c0e7ef538e2c4473efa9c4ef2a8441b6094b65090b4dec71abe82001d974df",
+      "model2__5.stl": "09f08e7dead2d6363618471adadb1b94af39e8056676670f3fd21ec06c197b20",
+      "model2__6.stl": "888b5919d10dbfb59b964c3cafc2ddbdac3b5426e20dd13bcaf4baedd5ee15c9",
+      "model2__7.stl": "2d64b18f1e70b0460eb53335d340b7c879976a3093ec67b07bcb7245e371a91d",
+      "model2__8.stl": "db3708da6b14daf3fc9a1909a8325b68f65ff69146cdd20b69a9ddc4ce51f50d",
+      "model2__9.stl": "74969d09b8b7f75cc984c5c7e5526d2941c6724f48b3efa1fa8730cc7820f4f5",
+      "model2__10.stl": "b879cc07f547b7a2ac52e428dd206e80a0d4b0e805cb56b9a8230df04a690923",
+      "model2__11.stl": "af220d2a51e8444392aef36e2fe4a6f69aed22bc292a7f38e54da3b4f5253434",
+      "model2__12.stl": "e79614869bd2283f70fafa150ce748d5b6c03377a651448c6fe9893a22f6d1de",
+      "model2__13.stl": "32b62f14f00ea82bfc79b935f7dac32c7cb276a3abc0aae8362cbba3fb1326de",
+      "model2__14.stl": "72d2178789dd5e0358c2caf9dad90b8881e505f4c52a8d6d18c71b5e93e8c84b",
+      "model2__15.stl": "ca8788184d54f30c18482cb9b48dffb010a93dbc029054b6cc515083a740d324",
+      "model2__16.stl": "18bb99691eed524393e8f3a0ff29e79d97ab75689bc92144bbdfafa2cc79d37b",
+      "model2__17.stl": "6513dbd192d2bf3a4f7016231f1ba5eca93916c9ebfdc334e9b435ca1d302ff6",
+      "d405.stl": "6617f3fb22b604a66c27e16d2397f305fcdca8a781248abdbabbf69c9fe6a3c5"
+    },
+    "scene_source_sha256": "d9af47fae3e24075eb4bc0abe8b05f1331b67f1c96a40404788e3b80d39c5674",
+    "scene_source_matches_recorded": true,
+    "method": "Exact hash-verified archived XML; current scene generator is not used"
+  },
+  "audit_runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "core_and_plugin_match_recorded": true,
+  "gravity_m_s2": [
+    0.0,
+    0.0,
+    -9.81
+  ],
+  "fluid_density": 0.0,
+  "fluid_viscosity": 0.0,
+  "workpieces": [
+    {
+      "body": "fixture_block",
+      "joint": "fixture_block_free",
+      "joint_type": 0,
+      "is_free_joint": true,
+      "dof_damping": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dof_frictionloss": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dof_armature": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "joint_stiffness": 0.0,
+      "body_gravity_compensation_fraction": 0.0,
+      "joint_actuator_ids": [],
+      "body_mass_kg": 0.1018141990344638,
+      "principal_inertia_kg_m2": [
+        0.00012310891134602138,
+        0.0001218299875488179,
+        5.619972446250878e-06
+      ],
+      "all_tested_passive_artificial_terms_zero": true
+    },
+    {
+      "body": "male_bolt",
+      "joint": "male_bolt_free",
+      "joint_type": 0,
+      "is_free_joint": true,
+      "dof_damping": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dof_frictionloss": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dof_armature": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "joint_stiffness": 0.0,
+      "body_gravity_compensation_fraction": 0.0,
+      "joint_actuator_ids": [],
+      "body_mass_kg": 0.0267496436326005,
+      "principal_inertia_kg_m2": [
+        1.421658947768128e-06,
+        1.4216454206971084e-06,
+        1.240966802194769e-06
+      ],
+      "all_tested_passive_artificial_terms_zero": true
+    }
+  ],
+  "equality_count": 2,
+  "equality_types": [
+    2,
+    2
+  ],
+  "equalities": [
+    {
+      "id": 0,
+      "type": 2,
+      "object_ids": [
+        7,
+        8
+      ],
+      "object_names": [
+        "left_left_finger",
+        "left_right_finger"
+      ]
+    },
+    {
+      "id": 1,
+      "type": 2,
+      "object_ids": [
+        15,
+        16
+      ],
+      "object_names": [
+        "right_left_finger",
+        "right_right_finger"
+      ]
+    }
+  ],
+  "only_native_finger_coupling_equalities": true,
+  "free_object_welds_or_other_equalities_absent": true,
+  "actuators": [
+    {
+      "name": "left_servo1",
+      "transmission_type": 0,
+      "target_joint": "left_joint1"
+    },
+    {
+      "name": "left_servo2",
+      "transmission_type": 0,
+      "target_joint": "left_joint2"
+    },
+    {
+      "name": "left_servo3",
+      "transmission_type": 0,
+      "target_joint": "left_joint3"
+    },
+    {
+      "name": "left_servo4",
+      "transmission_type": 0,
+      "target_joint": "left_joint4"
+    },
+    {
+      "name": "left_servo5",
+      "transmission_type": 0,
+      "target_joint": "left_joint5"
+    },
+    {
+      "name": "left_servo6",
+      "transmission_type": 0,
+      "target_joint": "left_joint6"
+    },
+    {
+      "name": "left_grip_left",
+      "transmission_type": 0,
+      "target_joint": "left_left_finger"
+    },
+    {
+      "name": "left_grip_right",
+      "transmission_type": 0,
+      "target_joint": "left_right_finger"
+    },
+    {
+      "name": "right_servo1",
+      "transmission_type": 0,
+      "target_joint": "right_joint1"
+    },
+    {
+      "name": "right_servo2",
+      "transmission_type": 0,
+      "target_joint": "right_joint2"
+    },
+    {
+      "name": "right_servo3",
+      "transmission_type": 0,
+      "target_joint": "right_joint3"
+    },
+    {
+      "name": "right_servo4",
+      "transmission_type": 0,
+      "target_joint": "right_joint4"
+    },
+    {
+      "name": "right_servo5",
+      "transmission_type": 0,
+      "target_joint": "right_joint5"
+    },
+    {
+      "name": "right_servo6",
+      "transmission_type": 0,
+      "target_joint": "right_joint6"
+    },
+    {
+      "name": "right_grip_left",
+      "transmission_type": 0,
+      "target_joint": "right_left_finger"
+    },
+    {
+      "name": "right_grip_right",
+      "transmission_type": 0,
+      "target_joint": "right_right_finger"
+    }
+  ],
+  "only_native_robot_joint_actuators": true,
+  "reproduce_command": "scripts/run_m8.sh scripts/audit_m8_free_joint_properties.py outputs/m8_insertion/table_left_smoke_v2/insertion_trace.npz",
+  "auditor_sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+  "trajectory": "outputs/m8_insertion/table_left_smoke_v2/insertion_trace.npz",
+  "trajectory_sha256": "f0e7f2758db5698b615f01fd469f821faf9b7601642cb6587665d10f7e2e2297"
+}

@@ -1,0 +1,27 @@
+{
+  "status": "Recorded failed, bounded block-pickup trial; no full bolt/thread qualification",
+  "recorded_passed": false,
+  "recorded_partial": true,
+  "recorded_initial_block_world_support_contacts": 0,
+  "left_pad_contact_retention_check": {
+    "passed": false,
+    "sampled_minimum_loaded_pad_normals_N": [
+      0.0,
+      5.053369188115273
+    ]
+  },
+  "sampled_roll_left_pad_normal_force_gaps": [
+    {
+      "time_s": 2.5650500000006913,
+      "phase": "transport_left_block",
+      "pad_normal_force_N": [
+        0.0,
+        5.053369188115273
+      ]
+    }
+  ],
+  "original_validation_sha256": "b3749734c018b648647d5246b6494a14e54a3ee3d5c89463251d6976351165b0",
+  "original_trace_sha256": "dc66229f659812da23fdb2dfb35ec44ddc86ee1651dd973a9f3a218d024b4371",
+  "helper_archive_note": "The original v1 run did not archive imported helper modules at start. The strict packager verified their exact function blocks against the originally declared controller SHA and archived the matching current helper bytes; it did not claim whole-module start-time capture.",
+  "physics_scope": "Independent saved-pose audit has zero integration or force solve. It cannot negate the original observed pad-force gate failure or infer between-sample force duration."
+}

@@ -1,0 +1,29 @@
+{
+  "trajectory_sha256": "77453b2f0a3add0aa6ca2d486794af822c5676b7e217b5b821d6fe8ae6e8781a",
+  "primary_manifest_sha256": "711dbc8df88520ddfb682ecfda66fc817bd4f248315c2ca751b2b0e18d762c76",
+  "recorded_validation_passed": false,
+  "partial_task_scope": true,
+  "scope": "Actual free block acquisition, lift and roll; no right bolt pickup or thread turn in this bounded trial. Continuous bilateral preload failed. Rendering replays saved poses and performs no integration.",
+  "files": {
+    "demo.mp4": {
+      "sha256": "064aaf269942255749d7928176572ddb96b1fc3daf303fbe391ae798fbe2c224",
+      "bytes": 847846
+    },
+    "demo.gif": {
+      "sha256": "d095aae2bbf8294f68aba17f47a38f2927feb98d5d43663a18b0338d22f2c982",
+      "bytes": 1307177
+    },
+    "demo.png": {
+      "sha256": "43e270c358b8d880d9756090ebb0191bf71978c2f659dc5067571455506ab4c9",
+      "bytes": 251456
+    },
+    "render_manifest.json": {
+      "sha256": "8ad1d76a6fd3a00e8d294b1a900709ed3460a455fab45e10bc37778b30d53daf",
+      "bytes": 546
+    },
+    "media_renderer_source.py": {
+      "sha256": "23f5931e56c8bd147b7fd841c113dbacd00bb772e747dd8aa5ad2e166664ba7d",
+      "bytes": 12644
+    }
+  }
+}

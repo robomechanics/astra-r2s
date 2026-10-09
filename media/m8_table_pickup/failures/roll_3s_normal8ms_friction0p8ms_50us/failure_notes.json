@@ -1,0 +1,75 @@
+{
+  "status": "Recorded failed, bounded block-pickup trial; no full bolt/thread qualification",
+  "recorded_passed": false,
+  "recorded_partial": true,
+  "physical_configuration": "50us timestep; left block normal time constant8ms and tangential time constant0.8ms; original flat box pads, zero margins and unchanged friction/impedance/thread settings",
+  "sampled_left_pad_load_check": {
+    "passed": true,
+    "sampled_minimum_loaded_pad_normals_N": [
+      15.803561074111409,
+      15.308605693837926
+    ]
+  },
+  "all_substep_left_pad_load_check": {
+    "passed": false,
+    "observer": "native-bilateral-pad-load-v1",
+    "minimum_loaded_force_N": 0.1,
+    "observed_physics_steps": 81001,
+    "observed_duration_s": 4.05004999999723,
+    "minimum_normal_force_N": [
+      0.0,
+      0.0
+    ],
+    "unloaded_physics_steps": [
+      26,
+      16
+    ],
+    "unloaded_duration_s": [
+      0.0012999999999999997,
+      0.0008000000000000003
+    ],
+    "maximum_consecutive_unloaded_duration_s": [
+      5e-05,
+      5e-05
+    ],
+    "continuously_bilateral_loaded": false,
+    "scope": "Every physics substep at and after the end of settle_left_block, including lift and physical roll"
+  },
+  "independently_recomputed_raw_history_stats": {
+    "observer": "native-bilateral-pad-load-v1",
+    "minimum_loaded_force_N": 0.1,
+    "observed_physics_steps": 81001,
+    "observed_duration_s": 4.050050000000001,
+    "minimum_normal_force_N": [
+      0.0,
+      0.0
+    ],
+    "unloaded_physics_steps": [
+      26,
+      16
+    ],
+    "unloaded_duration_s": [
+      0.0013000000000000002,
+      0.0008
+    ],
+    "maximum_consecutive_unloaded_duration_s": [
+      5e-05,
+      5e-05
+    ],
+    "continuously_bilateral_loaded": false
+  },
+  "simultaneous_unloaded_physics_steps": 0,
+  "minimum_other_pad_normal_load_during_unilateral_gap_N": 4.816043275751969,
+  "unloaded_steps_by_phase": {
+    "lift_left_block": [
+      9,
+      0
+    ],
+    "transport_left_block": [
+      17,
+      16
+    ]
+  },
+  "physics_scope": "The force aggregation/coverage audit verifies original native solved diagnostics. It does not reconstruct forces, establish contact-law calibration or override the failed bilateral-load gate. No full bolt pickup, capture, reset or qualified turn was run in this bounded trial.",
+  "native_force_timing_note": "mj_step contact forces and contact geometry are from the pre-integration state at recorded time minus timestep; saved qpos/qvel are the post-integration state"
+}

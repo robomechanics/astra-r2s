@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "status": "bounded_unsuccessful_trial",
+  "evidence_only": true,
+  "legacy_inline_observer": false,
+  "recorded_validation_passed": false,
+  "partial_task_scope": true,
+  "physics_claim_scope": "Packaging preserves recorded outcomes; it does not add physics qualification",
+  "packager_source_sha256": "a395fa98a3a10aa110520156d63eb4127dff1763f5ca5e50d98cdbbd34d7ff5f",
+  "source_run_directory": "/workspace/astra-r2s/outputs/m8_insertion/table_left_smoke_v1",
+  "trajectory_sha256": "dc66229f659812da23fdb2dfb35ec44ddc86ee1651dd973a9f3a218d024b4371",
+  "sample_count": 747,
+  "final_recorded_time_s": 3.699999999998046,
+  "identity_checks": {
+    "trace_report_identity": true,
+    "finite_aligned_states": true,
+    "model_xml_sha256": "8ab97ccea9b32895e2184b2295c1e43ca9943f3b8f2246b466942ce31c851482",
+    "model_fingerprint": "664f8ab81bd18741c73834f2763b3c8ef94bc2db2e3b0a0fcd01f9b187cfd94b",
+    "scene_source_sha256": "f2779c61514544fae8b2646c39823ede00a1228b8d8a1f2f085c0c5b65a60c58",
+    "scene_source_matches_recorded": true,
+    "mesh_sha256": {
+      "model2.stl": "5ac61c0313ed00c38655e41681af1b8b307cf8d5ef57209a75f215cea02df754",
+      "model2__2.stl": "30dab41f14bae95d737abca3c934eb5d570ab107dff0b40952fbdfb9d07eab79",
+      "model2__3.stl": "9fd96f5ad387fe7dd96eaa65e386637800e2f5637b6167fbad4ecb37d8598f47",
+      "model2__4.stl": "33c0e7ef538e2c4473efa9c4ef2a8441b6094b65090b4dec71abe82001d974df",
+      "model2__5.stl": "09f08e7dead2d6363618471adadb1b94af39e8056676670f3fd21ec06c197b20",
+      "model2__6.stl": "888b5919d10dbfb59b964c3cafc2ddbdac3b5426e20dd13bcaf4baedd5ee15c9",
+      "model2__7.stl": "2d64b18f1e70b0460eb53335d340b7c879976a3093ec67b07bcb7245e371a91d",
+      "model2__8.stl": "db3708da6b14daf3fc9a1909a8325b68f65ff69146cdd20b69a9ddc4ce51f50d",
+      "model2__9.stl": "74969d09b8b7f75cc984c5c7e5526d2941c6724f48b3efa1fa8730cc7820f4f5",
+      "model2__10.stl": "b879cc07f547b7a2ac52e428dd206e80a0d4b0e805cb56b9a8230df04a690923",
+      "model2__11.stl": "af220d2a51e8444392aef36e2fe4a6f69aed22bc292a7f38e54da3b4f5253434",
+      "model2__12.stl": "e79614869bd2283f70fafa150ce748d5b6c03377a651448c6fe9893a22f6d1de",
+      "model2__13.stl": "32b62f14f00ea82bfc79b935f7dac32c7cb276a3abc0aae8362cbba3fb1326de",
+      "model2__14.stl": "72d2178789dd5e0358c2caf9dad90b8881e505f4c52a8d6d18c71b5e93e8c84b",
+      "model2__15.stl": "ca8788184d54f30c18482cb9b48dffb010a93dbc029054b6cc515083a740d324",
+      "model2__16.stl": "18bb99691eed524393e8f3a0ff29e79d97ab75689bc92144bbdfafa2cc79d37b",
+      "model2__17.stl": "6513dbd192d2bf3a4f7016231f1ba5eca93916c9ebfdc334e9b435ca1d302ff6",
+      "d405.stl": "6617f3fb22b604a66c27e16d2397f305fcdca8a781248abdbabbf69c9fe6a3c5"
+    },
+    "controller_sha256": "de82039173d02d1478cac080f22360611a848b97e7751911d594fa185b7cc06e",
+    "hashed_controller_objects": [
+      "InsertionControlConfig",
+      "insertion_phases",
+      "initialize_insertion_pose",
+      "_body_contact",
+      "formed_flank_overlap",
+      "run_insertion_demo",
+      "fully_formed_flank_interval",
+      "contact_is_on_full_flanks",
+      "thread_end_bounds",
+      "LoadedFlankWindow",
+      "YamCartesianController",
+      "YamM8ControlConfig",
+      "smooth_profile"
+    ],
+    "observer_sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "observer_identity_kind": "separate_hash_verified_module",
+    "legacy_inline_observer_verified": false,
+    "warnings": []
+  },
+  "recorded_runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "independent_audit_file": "independent_capture_audit.json",
+  "audit_source_sha256": {
+    "audit_m8_insertion_trace.py": "cb6d6748aacf8e63992dda210cf2271a53828f352f33054858fe1dc0b70503f6",
+    "audit_m8_insertion_capture.py": "2174dc1c6b6fd9ccf2581575fc38daed431498b4ef8744903d01143fe5159fe9"
+  },
+  "audit_source_archives_verified": true,
+  "media_trajectory_link_verified": false,
+  "asset_scope": "scene.xml requires repository mesh assets and the verified thread plugin",
+  "files": {
+    "trace.npz": {
+      "sha256": "dc66229f659812da23fdb2dfb35ec44ddc86ee1651dd973a9f3a218d024b4371",
+      "bytes": 1027869
+    },
+    "validation.json": {
+      "sha256": "b3749734c018b648647d5246b6494a14e54a3ee3d5c89463251d6976351165b0",
+      "bytes": 16827
+    },
+    "scene.xml": {
+      "sha256": "8ab97ccea9b32895e2184b2295c1e43ca9943f3b8f2246b466942ce31c851482",
+      "bytes": 43326
+    },
+    "controller_source.py": {
+      "sha256": "22dc88733a9fbdb83a8767ace13eebd9fca56e3811ed9b2541e482bb3eee3c98",
+      "bytes": 46491
+    },
+    "recorded_sources/yam_twin/m8_insertion_mechanics.py": {
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+      "bytes": 4321
+    },
+    "recorded_sources/yam_twin/m8_insertion_engagement.py": {
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "bytes": 4752
+    },
+    "recorded_sources/yam_twin/m8_simulation.py": {
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+      "bytes": 30270
+    },
+    "engagement_observer_source.py": {
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "bytes": 4752
+    },
+    "scene_source.py": {
+      "sha256": "f2779c61514544fae8b2646c39823ede00a1228b8d8a1f2f085c0c5b65a60c58",
+      "bytes": 21799
+    },
+    "audit_sources/audit_m8_insertion_trace.py": {
+      "sha256": "cb6d6748aacf8e63992dda210cf2271a53828f352f33054858fe1dc0b70503f6",
+      "bytes": 29275
+    },
+    "audit_sources/audit_m8_insertion_capture.py": {
+      "sha256": "2174dc1c6b6fd9ccf2581575fc38daed431498b4ef8744903d01143fe5159fe9",
+      "bytes": 6991
+    },
+    "independent_capture_audit.json": {
+      "sha256": "72944a4fccb88d9da6679dac734ce7c07c4ecbf58e2e183a845b52f72417bbfb",
+      "bytes": 33887
+    }
+  }
+}

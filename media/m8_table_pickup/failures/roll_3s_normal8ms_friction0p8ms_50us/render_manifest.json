@@ -1,0 +1,11 @@
+{
+  "video": "insertion_demo.mp4",
+  "screenshot": "insertion_demo.png",
+  "frames": 100,
+  "source_recording": "outputs/m8_insertion/table_left_smoke_v8_normal8ms_friction0p8ms/insertion_trace.npz",
+  "trajectory_sha256": "77453b2f0a3add0aa6ca2d486794af822c5676b7e217b5b821d6fe8ae6e8781a",
+  "recorded_validation_passed": false,
+  "physics_scope": "Actual 7-phase native left block acquisition, lift and roll; bounded diagnostic with failed continuous bilateral preload; right bolt remains on separate rest",
+  "fps": 12,
+  "slow_motion": 1.5
+}

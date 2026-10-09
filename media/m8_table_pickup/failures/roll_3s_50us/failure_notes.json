@@ -1,0 +1,43 @@
+{
+  "status": "Recorded failed, bounded block-pickup trial; no full bolt/thread qualification",
+  "recorded_passed": false,
+  "recorded_partial": true,
+  "recorded_initial_block_world_support_contacts": 16,
+  "left_pad_contact_retention_check": {
+    "passed": false,
+    "sampled_minimum_loaded_pad_normals_N": [
+      0.0,
+      0.0
+    ]
+  },
+  "sampled_roll_left_pad_normal_force_gaps": [
+    {
+      "time_s": 3.7750499999978713,
+      "phase": "transport_left_block",
+      "pad_normal_force_N": [
+        0.0,
+        4.891579298931985
+      ]
+    },
+    {
+      "time_s": 4.255049999996753,
+      "phase": "transport_left_block",
+      "pad_normal_force_N": [
+        5.975641798628317,
+        0.0
+      ]
+    },
+    {
+      "time_s": 4.8150499999954475,
+      "phase": "transport_left_block",
+      "pad_normal_force_N": [
+        6.878328608713135,
+        0.0
+      ]
+    }
+  ],
+  "original_validation_sha256": "da8b5bd9fddc6c4d0b82c5bc8d5ace6885157c78547361212df46a084c4a0c4c",
+  "original_trace_sha256": "f0e7f2758db5698b615f01fd469f821faf9b7601642cb6587665d10f7e2e2297",
+  "helper_archive_note": "Imported helper modules were archived at start and their declared function-source bundle is verified.",
+  "physics_scope": "Independent saved-pose audit has zero integration or force solve. It cannot negate the original observed pad-force gate failure or infer between-sample force duration."
+}
