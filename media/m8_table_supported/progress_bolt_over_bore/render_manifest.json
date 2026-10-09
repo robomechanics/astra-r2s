@@ -1,0 +1,2548 @@
+{
+  "status": "incomplete_native_phase_prefix",
+  "trajectory_sha256": "29cf4d3f1754599d1053ae31d55dad90dd803bacd152b11504bd604bf69761ab",
+  "source_recording": "outputs/m8_table_supported/progress_bolt_over_bore/trace.npz",
+  "exact_saved_state_replay": true,
+  "state_interpolation": false,
+  "physics_integration_during_render": false,
+  "forces_from_original_solved_sample_only": true,
+  "state_force_timing_scope": "qpos/qvel are postintegration; original force samples refer to the immediately preceding native solve (time minus dt). mj_forward forces are not reported.",
+  "fps": null,
+  "slow_motion": 1,
+  "video_frames": 0,
+  "first_physics_time_s": 5e-05,
+  "last_physics_time_s": 4.819999999995436,
+  "screenshot_sample_index": 974,
+  "screenshot_time_s": 4.819999999995436,
+  "screenshot_phase": "align_over_hole",
+  "screenshot_qpos_sha256": "1fca72318361a883eda7a3888a1bb510252e4c5be0a96cf7fbe6f1531ae768e6",
+  "screenshot_qvel_sha256": "a0ef9992c58b23c2151eed0b28a9ccbe8d3127e6f5cc1f8e319d42086a0d5e84",
+  "original_saved_sample": {
+    "time": 4.819999999995436,
+    "phase": "align_over_hole",
+    "bolt_base_insertion_m": -0.02464729238399572,
+    "bolt_yaw_unwrapped_rad": 1.3398395949121589,
+    "clockwise_turns": -0.00015226860823713937,
+    "thread_overlap_m": -0.0006474972917283779,
+    "thread_contacts": 0,
+    "loaded_formed_thread_contacts": 0,
+    "loaded_formed_thread_normal_force_N": 0.0,
+    "native_thread_pair_normal_force_N": 0.0,
+    "entry_support": {
+      "observer": "native-settled-entry-support-v1",
+      "ready": false,
+      "aligned": false,
+      "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+      "required_window_s": 0.05,
+      "observed_window_s": 0.0,
+      "minimum_loaded_normal_force_N": 0.005000000000000001,
+      "minimum_normal_impulse_Ns": 0.00025000000000000006,
+      "normal_impulse_Ns": 0.0,
+      "minimum_loaded_duration_s": 0.005000000000000001,
+      "loaded_duration_s": 0.0,
+      "loaded_substep_duty": 0.0,
+      "relative_bolt_axial_velocity_limit_m_per_s": 0.0002,
+      "relative_bolt_axial_velocity_range_m_per_s": null,
+      "final_native_normal_force_N": 0.0,
+      "final_relative_bolt_axial_velocity_m_per_s": -0.0017079690294307818
+    },
+    "engagement_window": {
+      "version": "loaded_full_flank_window_v1",
+      "ready": false,
+      "continuous_geometry_elapsed_s": 0.0,
+      "window_duration_s": 0.2,
+      "normal_impulse_Ns": 0.0,
+      "loaded_substeps": 0,
+      "loaded_contact_count": 0,
+      "loaded_duration_s": 0.0,
+      "sample_count": 0,
+      "loaded_substep_duty": 0.0,
+      "helix_phase_range_m": 0.0
+    },
+    "legacy_consecutive_loaded_contact_streak_s": 0.0,
+    "head_block_seating_contacts": 0,
+    "formed_flank_overlap_m": 0.0,
+    "thread_engaged": false,
+    "radial_offset_m": 0.00015573148641256145,
+    "bolt_tilt_rad": 0.005060980266050868,
+    "reported_sdf_depth_m": 0.0,
+    "bolt_world_position": [
+      0.34989155325662824,
+      -0.010111910757970577,
+      0.03264726420135192
+    ],
+    "hole_world_position": [
+      0.349999913104292,
+      -0.00999993353332728,
+      0.007999972394692682
+    ],
+    "bolt_tip_world_position": [
+      0.3499607636235755,
+      -0.010069729998721308,
+      0.016647469493023415
+    ],
+    "block_lift_m": -3.1095685676559015e-07,
+    "left_grasp_acquired": true,
+    "left_stabilization_verified": true,
+    "block_grip_slip_m": 1.7011347933766643e-06,
+    "block_grip_rotation_slip_rad": 4.087660351615529e-05,
+    "bolt_grip_slip_m": 1.8339508144908247e-05,
+    "bolt_world_support_contacts": 0,
+    "bolt_grip_rotation_slip_rad": 2.2334913551736056e-05,
+    "block_world_support_contacts": 39,
+    "external_drive_zero": true,
+    "table_support": {
+      "contact_candidates": 39,
+      "loaded_contacts": 31,
+      "unexpected_world_contact_candidates": 0,
+      "table_upward_normal_force_N": 0.9901852393317324,
+      "table_upward_force_N": 0.9901852354652172,
+      "table_wrench_on_block_world": [
+        -0.0017011920772472568,
+        0.0008203713648411155,
+        0.9901852354652172,
+        1.4248301472414903e-05,
+        0.0030407881115881107,
+        2.365519972860162e-05
+      ],
+      "contacts": [
+        {
+          "table_geom": "table",
+          "block_geom": "fixture_block_geom",
+          "signed_distance_m": -6.781570062741422e-07,
+          "normal_force_N": 0.22074793909082718,
+          "geom1": "table",
+          "geom2": "fixture_block_geom",
+          "frame": [
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.22074793909082718,
+            5.322269345047786e-05,
+            2.5919344192860056e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.23999995909564295,
+            5.1908893998128816e-08,
+            -3.390785031365251e-07
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -2.5919344192860056e-05,
+            5.322269345047786e-05,
+            0.22074793909082718
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "fixture_block_geom",
+          "signed_distance_m": -6.678001483794654e-07,
+          "normal_force_N": 0.21737800835703108,
+          "geom1": "table",
+          "geom2": "fixture_block_geom",
+          "frame": [
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.21737800835703108,
+            5.3222689001046626e-05,
+            3.3597770678362385e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.23999996098922555,
+            -0.019999948091103194,
+            -3.339000741904574e-07
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -3.3597770678362385e-05,
+            5.3222689001046626e-05,
+            0.21737800835703108
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "fixture_block_geom",
+          "signed_distance_m": -8.109704948440924e-08,
+          "normal_force_N": 0.026400436719163936,
+          "geom1": "table",
+          "geom2": "fixture_block_geom",
+          "frame": [
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.026400436719163936,
+            1.4830536779348784e-05,
+            3.3597723533604026e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.33999996098750385,
+            -0.019999938622886283,
+            -4.0548524742750613e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -3.3597723533604026e-05,
+            1.4830536779348784e-05,
+            0.026400436719163936
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "fixture_block_geom",
+          "signed_distance_m": -9.145390737908613e-08,
+          "normal_force_N": 0.029770341118271534,
+          "geom1": "table",
+          "geom2": "fixture_block_geom",
+          "frame": [
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.029770341118271534,
+            1.4830537245598778e-05,
+            2.591931407815071e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.3399999590939212,
+            6.137711090863085e-08,
+            -4.5726953688818295e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -2.591931407815071e-05,
+            1.4830537245598778e-05,
+            0.029770341118271534
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "block_hole_x_plus",
+          "signed_distance_m": -9.145390737668707e-08,
+          "normal_force_N": 0.029770341117490565,
+          "geom1": "table",
+          "geom2": "block_hole_x_plus",
+          "frame": [
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.029770341117490565,
+            1.4830537245598778e-05,
+            2.591931407815071e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.3399999590939212,
+            6.137711090855279e-08,
+            -4.5726953688818295e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -2.591931407815071e-05,
+            1.4830537245598778e-05,
+            0.029770341117490565
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "block_hole_x_plus",
+          "signed_distance_m": -9.041822158721937e-08,
+          "normal_force_N": 0.029433350672750044,
+          "geom1": "table",
+          "geom2": "block_hole_x_plus",
+          "frame": [
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.029433350672750044,
+            1.4830537198176664e-05,
+            2.6687155029137545e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.3399999592832795,
+            -0.00199993862288881,
+            -4.520911079525236e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -2.6687155029137545e-05,
+            1.4830537198176664e-05,
+            0.029433350672750044
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "block_hole_x_minus",
+          "signed_distance_m": -8.213273527168357e-08,
+          "normal_force_N": 0.026737427153683057,
+          "geom1": "table",
+          "geom2": "block_hole_x_minus",
+          "frame": [
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.026737427153683057,
+            1.4830536825176671e-05,
+            3.282988259317003e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.33999996079814554,
+            -0.017999938622886562,
+            -4.106636763631655e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -3.282988259317003e-05,
+            1.4830536825176671e-05,
+            0.026737427153683057
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "block_hole_x_minus",
+          "signed_distance_m": -8.109704948221589e-08,
+          "normal_force_N": 0.02640043671844993,
+          "geom1": "table",
+          "geom2": "block_hole_x_minus",
+          "frame": [
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.02640043671844993,
+            1.4830536779348806e-05,
+            3.3597723533604026e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.3399999609875038,
+            -0.01999993862288628,
+            -4.0548524742750613e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -3.3597723533604026e-05,
+            1.4830536779348806e-05,
+            0.02640043671844993
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "block_hole_top_left",
+          "signed_distance_m": -8.218246423663533e-08,
+          "normal_force_N": 0.026753085432494217,
+          "geom1": "table",
+          "geom2": "block_hole_top_left",
+          "frame": [
+            [
+              -5.867065000708066e-06,
+              5.178473465287927e-07,
+              0.9999999999826548
+            ],
+            [
+              3.038244042529029e-12,
+              0.999999999999866,
+              -5.1784734651988e-07
+            ],
+            [
+              -0.9999999999827889,
+              -4.0389678347315804e-28,
+              -5.867065000708853e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.026753085432494217,
+            1.4537838107762853e-05,
+            2.9758518298457157e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.3407623548053661,
+            -0.009999938755213374,
+            -4.1091232119030405e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -2.991548038910275e-05,
+            1.455169212206358e-05,
+            0.026753085249906636
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "block_hole_top_left",
+          "signed_distance_m": -8.665546282447811e-08,
+          "normal_force_N": 0.028209085897358023,
+          "geom1": "table",
+          "geom2": "block_hole_top_left",
+          "frame": [
+            [
+              -5.867219648424422e-06,
+              5.178418695594598e-07,
+              0.9999999999826539
+            ],
+            [
+              3.0382919918565074e-12,
+              0.999999999999866,
+              -5.178418695505467e-07
+            ],
+            [
+              -0.999999999982788,
+              4.0389678347315804e-28,
+              -5.867219648425209e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.028209085897358023,
+            1.4830537306355821e-05,
+            2.975851873221787e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.33999995921257686,
+            -0.009999938790983275,
+            -4.332773141299059e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -2.992402763470168e-05,
+            1.4845145152133485e-05,
+            0.028209085714589067
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "block_hole_top_left",
+          "signed_distance_m": -8.251271931686288e-08,
+          "normal_force_N": 0.026861124048912922,
+          "geom1": "table",
+          "geom2": "block_hole_top_left",
+          "frame": [
+            [
+              -5.867128775973606e-06,
+              5.178560228535355e-07,
+              0.9999999999826544
+            ],
+            [
+              3.0383279734956308e-12,
+              0.9999999999998659,
+              -5.178560228446225e-07
+            ],
+            [
+              -0.9999999999827885,
+              -4.0389678347315804e-28,
+              -5.867128775974393e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.026861124048912922,
+            1.4830536779022017e-05,
+            3.2829878890000274e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.3399999600099547,
+            -0.01799993901350428,
+            -4.1256359659147045e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -3.298747656325254e-05,
+            1.4844446973889374e-05,
+            0.02686112384814979
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "block_hole_top_left",
+          "signed_distance_m": -5.094105051672848e-08,
+          "normal_force_N": 0.016584268052524546,
+          "geom1": "table",
+          "geom2": "block_hole_top_left",
+          "frame": [
+            [
+              -5.867017566332794e-06,
+              5.178182410478759e-07,
+              0.999999999982655
+            ],
+            [
+              3.0380487163958446e-12,
+              0.999999999999866,
+              -5.178182410389639e-07
+            ],
+            [
+              -0.9999999999827891,
+              0.0,
+              -5.8670175663335805e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.016584268052524546,
+            1.2764584506860591e-05,
+            3.282987577417362e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.3453811603057301,
+            -0.017999938325141032,
+            -2.5470525258806034e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -3.292717596555874e-05,
+            1.2773172143370906e-05,
+            0.0165842678530137
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "block_hole_top_right",
+          "signed_distance_m": -8.665546299968518e-08,
+          "normal_force_N": 0.028209085954366893,
+          "geom1": "table",
+          "geom2": "block_hole_top_right",
+          "frame": [
+            [
+              -5.867219636561599e-06,
+              5.178418685124449e-07,
+              0.9999999999826538
+            ],
+            [
+              3.0382919795703735e-12,
+              0.999999999999866,
+              -5.178418685035317e-07
+            ],
+            [
+              -0.9999999999827879,
+              0.0,
+              -5.867219636562386e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.028209085954366893,
+            1.4830537306355831e-05,
+            2.9758518603130327e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.33999995921257686,
+            -0.009999938454747776,
+            -4.332773150059413e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -2.9924027505613977e-05,
+            1.4845145152133481e-05,
+            0.028209085771597933
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "block_hole_top_right",
+          "signed_distance_m": -8.218246445000632e-08,
+          "normal_force_N": 0.026753085501920893,
+          "geom1": "table",
+          "geom2": "block_hole_top_right",
+          "frame": [
+            [
+              -5.867064985475359e-06,
+              5.178473451843015e-07,
+              0.9999999999826548
+            ],
+            [
+              3.0382440267525947e-12,
+              0.999999999999866,
+              -5.178473451753888e-07
+            ],
+            [
+              -0.9999999999827889,
+              -4.0389678347315804e-28,
+              -5.867064985476146e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.026753085501920893,
+            1.4537838107762861e-05,
+            2.975851814140933e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.3407623548053661,
+            -0.00999993834614946,
+            -4.10912322257159e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -2.9915480232054732e-05,
+            1.4551692122063571e-05,
+            0.026753085319333313
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "block_hole_top_right",
+          "signed_distance_m": -5.9226537053175266e-08,
+          "normal_force_N": 0.019280191398902732,
+          "geom1": "table",
+          "geom2": "block_hole_top_right",
+          "frame": [
+            [
+              -5.867299085808079e-06,
+              5.178406940749143e-07,
+              0.9999999999826534
+            ],
+            [
+              3.0383262309403736e-12,
+              0.999999999999866,
+              -5.17840694066001e-07
+            ],
+            [
+              -0.9999999999827875,
+              4.0389678347315804e-28,
+              -5.867299085808867e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.019280191398902732,
+            1.276458547995153e-05,
+            2.66871555141932e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.34538115879083964,
+            -0.001999937901598929,
+            -2.9613268527101285e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -2.6800278163064056e-05,
+            1.2774569547645725e-05,
+            0.019280191235376744
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "block_hole_top_right",
+          "signed_distance_m": -9.079820603892508e-08,
+          "normal_force_N": 0.02955704766732759,
+          "geom1": "table",
+          "geom2": "block_hole_top_right",
+          "frame": [
+            [
+              -5.867302247557572e-06,
+              5.178433383950912e-07,
+              0.9999999999826533
+            ],
+            [
+              3.0383433832486427e-12,
+              0.999999999999866,
+              -5.178433383861778e-07
+            ],
+            [
+              -0.9999999999827874,
+              0.0,
+              -5.86730224755836e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.02955704766732759,
+            1.4830537805853596e-05,
+            2.6687158426589217e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.33999995849506426,
+            -0.0019999382322267653,
+            -4.539910302025e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -2.686057855829448e-05,
+            1.484584372608876e-05,
+            0.02955704750255335
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "block_hole_bottom_right",
+          "signed_distance_m": -5.0292377692939816e-09,
+          "normal_force_N": 0.0016384946035214976,
+          "geom1": "table",
+          "geom2": "block_hole_bottom_right",
+          "frame": [
+            [
+              -5.872049366076022e-06,
+              5.178227273743907e-07,
+              0.9999999999826255
+            ],
+            [
+              3.0406806180189554e-12,
+              0.999999999999866,
+              -5.178227273654632e-07
+            ],
+            [
+              -0.9999999999827596,
+              4.0389678347315804e-28,
+              -5.872049366076809e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.0016384946035214976,
+            9.218082392674147e-06,
+            2.668715099323237e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.35461876116633234,
+            -0.0019999367978950824,
+            -2.5146188846906084e-09
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -2.669677231394217e-05,
+            9.218930842417295e-06,
+            0.0016384944420114289
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -2.5514945198368677e-08,
+          "normal_force_N": 0.016266643249747505,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -2.1853916113269907e-06,
+              -4.7320664147343756e-07,
+              0.9999999999975002
+            ],
+            [
+              -1.0341418247003852e-12,
+              0.9999999999998882,
+              4.7320664147230767e-07
+            ],
+            [
+              -0.9999999999976124,
+              0.0,
+              -2.1853916113272355e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.016266643249747505,
+            2.3867034849665282e-05,
+            5.766515858824071e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.3442108260288859,
+            -0.015647368086654064,
+            -3.8272417781852654e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.7700707573830155e-05,
+            2.3859337366042352e-05,
+            0.016266643134979927
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -9.578911736723983e-09,
+          "normal_force_N": 0.0061092412248803405,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -2.465420776946297e-06,
+              -1.9192729087056073e-07,
+              0.9999999999969424
+            ],
+            [
+              -4.731815305753044e-13,
+              0.9999999999999816,
+              1.9192729086997744e-07
+            ],
+            [
+              -0.9999999999969609,
+              0.0,
+              -2.465420776946342e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.0061092412248803405,
+            1.985495828373119e-05,
+            5.682167289869116e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.34999639998581744,
+            -0.014431028057151301,
+            -2.0541993403149544e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.683673474877506e-05,
+            1.985378575361326e-05,
+            0.006109241088583036
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -4.84882773862938e-09,
+          "normal_force_N": 0.0030918850084752135,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -1.4271696461094581e-06,
+              -1.1859336229076476e-06,
+              0.9999999999982784
+            ],
+            [
+              -1.6925284689156053e-12,
+              0.9999999999992968,
+              1.1859336229064398e-06
+            ],
+            [
+              -0.9999999999989816,
+              -2.0194839173657902e-28,
+              -1.4271696461104619e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.0030918850084752135,
+            2.3055500580729075e-05,
+            5.189963853284392e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.34538108714966126,
+            -0.007333265067539679,
+            -5.366074125149748e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.1904051177263446e-05,
+            2.3051833810323148e-05,
+            0.0030918849617425953
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -1.7078775744350145e-08,
+          "normal_force_N": 0.010887961590495716,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -2.4340541925644733e-06,
+              -2.2627125641489223e-07,
+              0.9999999999970122
+            ],
+            [
+              -5.507565003335135e-13,
+              0.9999999999999746,
+              2.2627125641422198e-07
+            ],
+            [
+              -0.9999999999970379,
+              1.0097419586828951e-28,
+              -2.434054192564536e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.010887961590495716,
+            2.4656995050840257e-05,
+            5.436529064895509e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.34307167417236284,
+            -0.010888823021919975,
+            -2.5618163599135875e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.439179253736546e-05,
+            2.465453141809075e-05,
+            0.01088796146371429
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -3.864191810282387e-09,
+          "normal_force_N": 0.002465780453422224,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -2.8193015490192114e-06,
+              1.4832223654017348e-07,
+              0.9999999999960147
+            ],
+            [
+              4.181651112317096e-13,
+              0.9999999999999891,
+              -1.4832223653958403e-07
+            ],
+            [
+              -0.9999999999960258,
+              0.0,
+              -2.8193015490192427e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.002465780453422224,
+            2.1454014553026303e-05,
+            5.683093659466905e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.34769050012602865,
+            -0.014444380976011577,
+            -5.7962876980684424e-09
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.68378883730861e-05,
+            2.1454380283097738e-05,
+            0.0024657802900067425
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -1.3839024365705499e-08,
+          "normal_force_N": 0.008822127635814005,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -1.4254281625266167e-06,
+              -1.1850588609618535e-06,
+              0.999999999998282
+            ],
+            [
+              -1.6892162746679266e-12,
+              0.999999999999298,
+              1.1850588609606499e-06
+            ],
+            [
+              -0.9999999999989844,
+              0.0,
+              -1.425428162527618e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.008822127635814005,
+            2.3999345683682127e-05,
+            5.025963923935004e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.344020023643985,
+            -0.004968322321113801,
+            -5.837571225626228e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.0272214548525026e-05,
+            2.398889094313792e-05,
+            0.00882212759259798
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -3.3318549100269657e-09,
+          "normal_force_N": 0.002127683185949178,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -2.526415317593412e-06,
+              -1.3458662112349326e-07,
+              0.9999999999967997
+            ],
+            [
+              -3.400217011495375e-13,
+              0.999999999999991,
+              1.3458662112306376e-07
+            ],
+            [
+              -0.9999999999968088,
+              0.0,
+              -2.5264153175934347e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.002127683185949178,
+            1.9051777043400396e-05,
+            5.888563706793857e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.35115461959295136,
+            -0.017407345938283813,
+            -1.5328948017168323e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.8891012479149105e-05,
+            1.9051490685709405e-05,
+            0.0021276830397369073
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -6.007730587315913e-09,
+          "normal_force_N": 0.0038314983267120355,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -2.7566655685417918e-06,
+              8.769370538995902e-08,
+              0.9999999999961967
+            ],
+            [
+              2.4174221822634874e-13,
+              0.9999999999999963,
+              -8.769370538962584e-08
+            ],
+            [
+              -0.9999999999962007,
+              0.0,
+              -2.7566655685418028e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.0038314983267120355,
+            2.2675593911249067e-05,
+            5.543894690899648e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.3459289347101745,
+            -0.012437075634076545,
+            -9.011595867083918e-09
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.544950906829354e-05,
+            2.2675929909534448e-05,
+            0.0038314981718823205
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -1.4158860497243131e-08,
+          "normal_force_N": 0.009027578349513366,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -1.6314750567164039e-06,
+              -1.015186272397023e-06,
+              0.999999999998154
+            ],
+            [
+              -1.6562510813375014e-12,
+              0.9999999999994847,
+              1.0151862723956722e-06
+            ],
+            [
+              -0.9999999999986694,
+              -2.0194839173657902e-28,
+              -1.6314750567172445e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.009027578349513366,
+            2.385624735161389e-05,
+            5.765281189223301e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.34422638066101147,
+            -0.01562956696108719,
+            -5.1484247304612545e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.7667540161095596e-05,
+            2.384708267798818e-05,
+            0.009027578279656112
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -1.0247265414684824e-08,
+          "normal_force_N": 0.006533668318964203,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -2.62982579478516e-06,
+              -2.8637588585642086e-08,
+              0.9999999999965417
+            ],
+            [
+              -7.531186916296667e-14,
+              0.9999999999999997,
+              2.863758858554306e-08
+            ],
+            [
+              -0.9999999999965421,
+              -1.262177448353619e-29,
+              -2.6298257947851614e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.006533668318964203,
+            2.0653267937004357e-05,
+            5.0255881130548996e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.34884520661564494,
+            -0.004962893097956168,
+            -1.5370898104658676e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.0273063539856554e-05,
+            2.0653080828499076e-05,
+            0.006533668187368855
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -1.1677527163994617e-08,
+          "normal_force_N": 0.007444261101897194,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -1.0423921275805287e-06,
+              -1.5755206768810039e-06,
+              0.9999999999982156
+            ],
+            [
+              -1.6423103504231428e-12,
+              0.999999999998759,
+              1.5755206768801482e-06
+            ],
+            [
+              -0.9999999999994569,
+              2.0194839173657902e-28,
+              -1.0423921275818226e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.007444261101897194,
+            2.5560359420223218e-05,
+            5.289243071107025e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.34176897859602334,
+            -0.008764914388637067,
+            -7.069737590312607e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.290019055025178e-05,
+            2.5548630832901358e-05,
+            0.007444261087020132
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -2.3877603793492908e-08,
+          "normal_force_N": 0.01522348372049961,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -2.22961904804761e-06,
+              -4.2885505011317507e-07,
+              0.9999999999974225
+            ],
+            [
+              -9.561833885838354e-13,
+              0.9999999999999082,
+              4.288550501121092e-07
+            ],
+            [
+              -0.9999999999975147,
+              0.0,
+              -2.2296190480478153e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.01522348372049961,
+            2.2655130278153336e-05,
+            5.8474695410014576e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.34595844039401336,
+            -0.016814752945882368,
+            -3.584908795682378e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.850863797917178e-05,
+            2.2648601610277404e-05,
+            0.015223483599799845
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -1.0695702139938573e-08,
+          "normal_force_N": 0.006818460706356285,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -2.6203105218615423e-06,
+              -4.195681379726877e-08,
+              0.9999999999965661
+            ],
+            [
+              -1.0993988065676898e-13,
+              0.9999999999999991,
+              4.1956813797124733e-08
+            ],
+            [
+              -0.999999999996567,
+              1.262177448353619e-29,
+              -2.620310521861545e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.006818460706356285,
+            2.4256623361135323e-05,
+            5.1077765852070454e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.3436490274163269,
+            -0.006148079082717609,
+            -1.6043553197742377e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.109563233622953e-05,
+            2.425633728024906e-05,
+            0.006818460573510995
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -2.2270313098857186e-08,
+          "normal_force_N": 0.014197572825283035,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -1.8993781500887023e-06,
+              -7.376367092180017e-07,
+              0.9999999999979242
+            ],
+            [
+              -1.4010510481923876e-12,
+              0.9999999999997281,
+              7.376367092166714e-07
+            ],
+            [
+              -0.9999999999981964,
+              -2.0194839173657902e-28,
+              -1.8993781500892192e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.014197572825283035,
+            2.33306114900493e-05,
+            5.315241620800262e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.3449843676537779,
+            -0.009139817679418544,
+            -4.6342054736148595e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.317938276754808e-05,
+            2.3320138839145232e-05,
+            0.01419757274150654
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -1.2025524031428203e-08,
+          "normal_force_N": 0.007666941930792197,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -1.275902723329042e-06,
+              -1.360254531852501e-06,
+              0.999999999998261
+            ],
+            [
+              -1.735552461612883e-12,
+              0.999999999999075,
+              1.3602545318513942e-06
+            ],
+            [
+              -0.9999999999991862,
+              0.0,
+              -1.2759027233302225e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.007666941930792197,
+            2.4907859126553292e-05,
+            5.5921745175399564e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.3427099126684588,
+            -0.013133302883704756,
+            -6.274075154375287e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.5931527447486387e-05,
+            2.489743013402344e-05,
+            0.007666941893309185
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -6.596795942837967e-09,
+          "normal_force_N": 0.0042058847485810505,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -2.7387939838134767e-06,
+              7.470216099294537e-08,
+              0.9999999999962468
+            ],
+            [
+              2.0459382910534514e-13,
+              0.9999999999999973,
+              -7.470216099266522e-08
+            ],
+            [
+              -0.9999999999962497,
+              0.0,
+              -2.7387939838134847e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.0042058847485810505,
+            2.185438713204709e-05,
+            4.861212018491738e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.3471131468816938,
+            -0.002592521128076567,
+            -9.895193896896376e-09
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -4.862363923657662e-05,
+            2.185470132072664e-05,
+            0.004205884613794112
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -2.3338566242786518e-08,
+          "normal_force_N": 0.014878974137475976,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -1.950675167050283e-06,
+              -6.95202966548665e-07,
+              0.9999999999978559
+            ],
+            [
+              -1.3561151629064974e-12,
+              0.9999999999997585,
+              6.952029665473426e-07
+            ],
+            [
+              -0.9999999999980977,
+              0.0,
+              -1.9506751670507547e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.014878974137475976,
+            2.3455874655897732e-05,
+            5.546112803052765e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.34480373390535163,
+            -0.012469071001637948,
+            -4.5143683643683516e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.5490152075815115e-05,
+            2.3445530748932495e-05,
+            0.014878974045564023
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -7.613136506628981e-09,
+          "normal_force_N": 0.004856225620613987,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -2.332287005224023e-06,
+              -3.2287829034483313e-07,
+              0.9999999999972282
+            ],
+            [
+              -7.530448408402427e-13,
+              0.9999999999999479,
+              3.22878290343955e-07
+            ],
+            [
+              -0.9999999999972804,
+              0.0,
+              -2.3322870052241447e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.004856225620613987,
+            2.025289483058945e-05,
+            5.792677474490467e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.3494225598575898,
+            -0.016024628955296185,
+            -2.406638484156785e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.793810085667178e-05,
+            2.0251326860762482e-05,
+            0.004856225492037882
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -2.2306826439819072e-08,
+          "normal_force_N": 0.014219975335289266,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -1.5135876791190044e-06,
+              -1.1081222458946666e-06,
+              0.9999999999982406
+            ],
+            [
+              -1.677240178344877e-12,
+              0.999999999999386,
+              1.1081222458933974e-06
+            ],
+            [
+              -0.9999999999988546,
+              -2.0194839173657902e-28,
+              -1.5135876791199338e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.014219975335289266,
+            2.4748073897878872e-05,
+            5.127047752074939e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.34294032804450714,
+            -0.006425990789265418,
+            -5.972157636218005e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.1292000700197044e-05,
+            2.473231642685857e-05,
+            0.014219975285085775
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -1.2979869543773906e-08,
+          "normal_force_N": 0.008275404427998088,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -2.5516542651002147e-06,
+              -1.0831102533790809e-07,
+              0.9999999999967388
+            ],
+            [
+              -2.7637228976085225e-13,
+              0.9999999999999942,
+              1.0831102533755551e-07
+            ],
+            [
+              -0.9999999999967448,
+              0.0,
+              -2.55165426510023e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.008275404427998088,
+            2.2855318065478283e-05,
+            5.2995487663517386e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.34566976377183883,
+            -0.008913513047266003,
+            -1.9469804301754593e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.3016603634355325e-05,
+            2.2854421747939467e-05,
+            0.008275404295220423
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -5.829824059264133e-09,
+          "normal_force_N": 0.0037184056511947445,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -1.531500300639927e-06,
+              -1.1119855767238836e-06,
+              0.999999999998209
+            ],
+            [
+              -1.7030062450609434e-12,
+              0.9999999999993818,
+              1.1119855767225795e-06
+            ],
+            [
+              -0.9999999999988274,
+              -2.0194839173657902e-28,
+              -1.531500300640874e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.0037184056511947445,
+            2.32963191970145e-05,
+            5.801547683436852e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.34503381971778563,
+            -0.016152544066329023,
+            -5.0640675827192156e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.802117157371287e-05,
+            2.3292184383547564e-05,
+            0.0037184055882425356
+          ]
+        },
+        {
+          "table_geom": "table",
+          "block_geom": "female_thread",
+          "signed_distance_m": -1.4166431413368841e-08,
+          "normal_force_N": 0.009031832280766287,
+          "geom1": "table",
+          "geom2": "female_thread",
+          "frame": [
+            [
+              -2.5148643126903712e-06,
+              -1.3941353107064856e-07,
+              0.9999999999968282
+            ],
+            [
+              -3.506061139957277e-13,
+              0.9999999999999903,
+              1.394135310702077e-07
+            ],
+            [
+              -0.999999999996838,
+              -1.0097419586828951e-28,
+              -2.5148643126903958e-06
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            0.009031832280766287,
+            2.1501417832766876e-05,
+            5.092828500684828e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.34762214040306466,
+            -0.005932526889511711,
+            -2.1249647102674073e-08
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -5.0950998839375886e-05,
+            2.1500158673136368e-05,
+            0.0090318321556575
+          ]
+        }
+      ]
+    },
+    "known_block_weight_N": 0.9987972925280899,
+    "positive_left_hand_upward_force_N": 0.0086120569808696,
+    "settled_table_load_window": {
+      "observer": "native-supported-block-load-window-v1",
+      "ready": true,
+      "required_window_s": 0.1,
+      "observed_window_s": 0.10004999999999714,
+      "block_weight_N": 0.9987972925280899,
+      "minimum_mean_table_weight_fraction": 0.9,
+      "maximum_mean_positive_hand_upward_weight_fraction": 0.1,
+      "minimum_loaded_table_duty": 0.99,
+      "mean_table_upward_force_N": 0.9895282468139129,
+      "mean_positive_hand_upward_force_N": 0.009269001465986838,
+      "loaded_table_substep_duty": 1.0,
+      "final_table_upward_force_N": 0.9896497437533301,
+      "scope": "No-bolt settled stabilization: original native table force bears block weight; contact candidates alone do not establish support"
+    },
+    "active_table_load_window": {
+      "observer": "native-supported-block-load-window-v1",
+      "ready": true,
+      "required_window_s": 0.1,
+      "observed_window_s": 0.10004999999999714,
+      "block_weight_N": 0.9987972925280899,
+      "minimum_mean_table_weight_fraction": 0.9,
+      "maximum_mean_positive_hand_upward_weight_fraction": 0.1,
+      "minimum_loaded_table_duty": 0.99,
+      "mean_table_upward_force_N": 0.990173639822593,
+      "mean_positive_hand_upward_force_N": 0.008623652623538237,
+      "loaded_table_substep_duty": 1.0,
+      "final_table_upward_force_N": 0.9901852354652172,
+      "scope": "No-bolt settled stabilization: original native table force bears block weight; contact candidates alone do not establish support"
+    },
+    "block_translation_from_initial_m": 3.2871840640866723e-07,
+    "block_rotation_from_initial_rad": 5.89060084497552e-06,
+    "bolt_tip_table_clearance_m": 0.016647469493023415,
+    "bolt_tip_rest_top_clearance_m": -0.019352530506976582,
+    "unexpected_native_contacts": [],
+    "minimum_native_joint_margin_rad": 0.28779179444108705,
+    "contact": {
+      "contact_count": 8,
+      "pad_contact_count": 8,
+      "wrench_world": [
+        0.00030663414588616433,
+        0.00032677776442385786,
+        0.26321604130089493,
+        -3.195218057083348e-06,
+        4.077596210403864e-06,
+        -3.1572479921269936e-07
+      ],
+      "pad_wrench_world": [
+        0.00030663414588616433,
+        0.00032677776442385786,
+        0.26321604130089493,
+        -3.195218057083348e-06,
+        4.077596210403864e-06,
+        -3.1572479921269936e-07
+      ],
+      "pad_normal_force_N": [
+        5.95938552937928,
+        5.95774504565823
+      ],
+      "jaw_actuator_force": [
+        -5.9840231737108525,
+        5.93329414259523
+      ],
+      "arm_motor_torques_Nm": [
+        -0.057814728588450826,
+        -11.29294139525342,
+        5.320300574313167,
+        0.29851816919916585,
+        0.014013607256040207,
+        -0.00045213510358525777
+      ],
+      "hand_wrench_world": [
+        2.1949766774386834,
+        2.016196312860605,
+        0.6051175942754934,
+        -0.47818295846543124,
+        0.5266380052885165,
+        -0.11578316268073718
+      ]
+    },
+    "left_contact": {
+      "contact_count": 8,
+      "pad_contact_count": 8,
+      "wrench_world": [
+        0.0017011918050841637,
+        -0.0008203699520272778,
+        0.0086120569808696,
+        -1.4159837341799764e-05,
+        -0.002125612805707616,
+        -2.36552278742308e-05
+      ],
+      "pad_wrench_world": [
+        0.0017011918050841637,
+        -0.0008203699520272778,
+        0.0086120569808696,
+        -1.4159837341799764e-05,
+        -0.002125612805707616,
+        -2.36552278742308e-05
+      ],
+      "pad_normal_force_N": [
+        15.997237864287506,
+        15.996417489714718
+      ],
+      "jaw_actuator_force": [
+        -15.997192979943236,
+        15.996462532527431
+      ],
+      "arm_motor_torques_Nm": [
+        0.00026475485327252785,
+        -7.676040240707858,
+        4.771397011552642,
+        1.0470433321706851,
+        -0.4480659399618432,
+        -0.0030580661483230014
+      ],
+      "hand_wrench_world": [
+        0.0017016390898745143,
+        -0.0008207643018608388,
+        0.008612480694818389,
+        -1.901072687036113e-05,
+        -0.002523217784707493,
+        -6.048060836476371e-05
+      ],
+      "native_contact_records": [
+        {
+          "geom1": "fixture_block_geom",
+          "geom2": "left_m8_pad_left",
+          "frame": [
+            [
+              -9.467913097971366e-08,
+              0.9999999999998616,
+              -5.178428947338457e-07
+            ],
+            [
+              -4.902891525742643e-14,
+              5.178428947338435e-07,
+              0.999999999999866
+            ],
+            [
+              0.9999999999999957,
+              9.467913097972635e-08,
+              -6.310887241768095e-30
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            4.081631132792867,
+            0.035245594287285006,
+            0.03332840506078872,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.25297911285463553,
+            -1.9733226689841454e-08,
+            0.015999397992406267
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -0.033328018615498216,
+            -4.081631154199487,
+            -0.035243480643599244
+          ]
+        },
+        {
+          "geom1": "fixture_block_geom",
+          "geom2": "left_m8_pad_left",
+          "frame": [
+            [
+              -9.467913097971366e-08,
+              0.9999999999998616,
+              -5.178428947338457e-07
+            ],
+            [
+              -4.902891525742643e-14,
+              5.178428947338435e-07,
+              0.999999999999866
+            ],
+            [
+              0.9999999999999957,
+              9.467913097972635e-08,
+              -6.310887241768095e-30
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            4.036152637471553,
+            0.07558395710560001,
+            -0.03653444590150128,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.2503682547135618,
+            -2.135960817072069e-08,
+            0.011477598312671198
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            0.03653482804092905,
+            -4.03615267315256,
+            -0.07558186701262451
+          ]
+        },
+        {
+          "geom1": "fixture_block_geom",
+          "geom2": "left_m8_pad_left",
+          "frame": [
+            [
+              -9.467913097971366e-08,
+              0.9999999999998616,
+              -5.178428947338457e-07
+            ],
+            [
+              -4.902891525742643e-14,
+              5.178428947338435e-07,
+              0.999999999999866
+            ],
+            [
+              0.9999999999999957,
+              9.467913097972635e-08,
+              -6.310887241768095e-30
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            3.903157620750964,
+            0.00199373214547933,
+            -0.07902497553412259,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.2551313050885932,
+            -1.9504709701523293e-08,
+            0.008727443567045938
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            0.07902534508169395,
+            -3.9031576143008477,
+            -0.001991710923038131
+          ]
+        },
+        {
+          "geom1": "fixture_block_geom",
+          "geom2": "left_m8_pad_left",
+          "frame": [
+            [
+              -9.467913097971366e-08,
+              0.9999999999998616,
+              -5.178428947338457e-07
+            ],
+            [
+              -4.902891525742643e-14,
+              5.178428947338435e-07,
+              0.999999999999866
+            ],
+            [
+              0.9999999999999957,
+              9.467913097972635e-08,
+              -6.310887241768095e-30
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            3.976296473272122,
+            -0.06287872126946918,
+            0.033328978068299125,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.25933010646019833,
+            -1.6889150978791068e-08,
+            0.0159994352538814
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -0.03332860159600746,
+            -3.976296443865831,
+            0.06288078036633679
+          ]
+        },
+        {
+          "geom1": "fixture_block_geom",
+          "geom2": "left_m8_pad_right",
+          "frame": [
+            [
+              9.467913097971366e-08,
+              -0.9999999999998616,
+              5.178428947338457e-07
+            ],
+            [
+              -4.902891525742643e-14,
+              5.178428947338435e-07,
+              0.999999999999866
+            ],
+            [
+              -0.9999999999999957,
+              -9.467913097972635e-08,
+              6.310887241768095e-30
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            4.0954975845086246,
+            -0.025157818160947053,
+            0.055167009488273376,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.25513132110738246,
+            -0.019999860892519955,
+            0.008727437254771693
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            0.05516662173011967,
+            4.0954976027590195,
+            0.025155697336619143
+          ]
+        },
+        {
+          "geom1": "fixture_block_geom",
+          "geom2": "left_m8_pad_right",
+          "frame": [
+            [
+              9.467913097971366e-08,
+              -0.9999999999998616,
+              5.178428947338457e-07
+            ],
+            [
+              -4.902891525742643e-14,
+              5.178428947338435e-07,
+              0.999999999999866
+            ],
+            [
+              -0.9999999999999957,
+              -9.467913097972635e-08,
+              6.310887241768095e-30
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            3.96216883108629,
+            0.048617073560113674,
+            0.012569854437913043,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.250368270732351,
+            -0.019999862747418426,
+            0.011477592000396953
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            0.01256947930321365,
+            3.962168807099838,
+            -0.04861912534108408
+          ]
+        },
+        {
+          "geom1": "fixture_block_geom",
+          "geom2": "left_m8_pad_right",
+          "frame": [
+            [
+              9.467913097971366e-08,
+              -0.9999999999998616,
+              5.178428947338457e-07
+            ],
+            [
+              -4.902891525742643e-14,
+              5.178428947338435e-07,
+              0.999999999999866
+            ],
+            [
+              -0.9999999999999957,
+              -9.467913097972635e-08,
+              6.310887241768095e-30
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            3.916576044295552,
+            0.008177336878654677,
+            -0.05746856802995015,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.2529791384981078,
+            -0.01999986112103095,
+            0.01599940834932137
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -0.05746893884796579,
+            3.91657603461936,
+            -0.008179365049729805
+          ]
+        },
+        {
+          "geom1": "fixture_block_geom",
+          "geom2": "left_m8_pad_right",
+          "frame": [
+            [
+              9.467913097971366e-08,
+              -0.9999999999998616,
+              5.178428947338457e-07
+            ],
+            [
+              -4.902891525742643e-14,
+              5.178428947338435e-07,
+              0.999999999999866
+            ],
+            [
+              -0.9999999999999957,
+              -9.467913097972635e-08,
+              6.310887241768095e-30
+            ]
+          ],
+          "local_contact_force_N_Nm": [
+            4.022175029824252,
+            -0.09019321110276209,
+            -0.05746914247536004,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_position_world_m": [
+            0.2593301321036706,
+            -0.01999985827695524,
+            0.015999445610796505
+          ],
+          "block_origin_world_m": [
+            0.2999999131051529,
+            -0.009999938267435737,
+            0.007999679043143235
+          ],
+          "signed_force_contribution_on_block_world_N": [
+            -0.05746952329140068,
+            4.022175071088481,
+            0.09019112824798943
+          ]
+        }
+      ]
+    },
+    "axial_float": false,
+    "axial_feed_command_N": null,
+    "right_relative_axial_velocity_m_per_s": null,
+    "axial_velocity_damping_force_N": null,
+    "right_commanded_stroke_angular_speed_rad_s": 0.0,
+    "right_position_error_m": [
+      0.00012524954728493354,
+      0.0001185163167918904,
+      8.660322791613495e-05
+    ],
+    "right_rotation_error_rad": [
+      -0.0025702272874963926,
+      0.00433256678137233,
+      -0.0009597459489506529
+    ]
+  },
+  "model_xml_sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+  "model_fingerprint": "dd44ffab2beade32ed4682adb551fdf077dd97d4140bb2794cc995effe35a9ca",
+  "scene_source_sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+  "controller_sha256": "becfdac6c07f06edc3bd42c88f6ecb0c30445836025f1139c07713dcf89c74ee",
+  "archived_model_identity": {
+    "model_fingerprint": "dd44ffab2beade32ed4682adb551fdf077dd97d4140bb2794cc995effe35a9ca",
+    "model_xml_sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "mesh_sha256": {
+      "model2.stl": "5ac61c0313ed00c38655e41681af1b8b307cf8d5ef57209a75f215cea02df754",
+      "model2__2.stl": "30dab41f14bae95d737abca3c934eb5d570ab107dff0b40952fbdfb9d07eab79",
+      "model2__3.stl": "9fd96f5ad387fe7dd96eaa65e386637800e2f5637b6167fbad4ecb37d8598f47",
+      "model2__4.stl": "33c0e7ef538e2c4473efa9c4ef2a8441b6094b65090b4dec71abe82001d974df",
+      "model2__5.stl": "09f08e7dead2d6363618471adadb1b94af39e8056676670f3fd21ec06c197b20",
+      "model2__6.stl": "888b5919d10dbfb59b964c3cafc2ddbdac3b5426e20dd13bcaf4baedd5ee15c9",
+      "model2__7.stl": "2d64b18f1e70b0460eb53335d340b7c879976a3093ec67b07bcb7245e371a91d",
+      "model2__8.stl": "db3708da6b14daf3fc9a1909a8325b68f65ff69146cdd20b69a9ddc4ce51f50d",
+      "model2__9.stl": "74969d09b8b7f75cc984c5c7e5526d2941c6724f48b3efa1fa8730cc7820f4f5",
+      "model2__10.stl": "b879cc07f547b7a2ac52e428dd206e80a0d4b0e805cb56b9a8230df04a690923",
+      "model2__11.stl": "af220d2a51e8444392aef36e2fe4a6f69aed22bc292a7f38e54da3b4f5253434",
+      "model2__12.stl": "e79614869bd2283f70fafa150ce748d5b6c03377a651448c6fe9893a22f6d1de",
+      "model2__13.stl": "32b62f14f00ea82bfc79b935f7dac32c7cb276a3abc0aae8362cbba3fb1326de",
+      "model2__14.stl": "72d2178789dd5e0358c2caf9dad90b8881e505f4c52a8d6d18c71b5e93e8c84b",
+      "model2__15.stl": "ca8788184d54f30c18482cb9b48dffb010a93dbc029054b6cc515083a740d324",
+      "model2__16.stl": "18bb99691eed524393e8f3a0ff29e79d97ab75689bc92144bbdfafa2cc79d37b",
+      "model2__17.stl": "6513dbd192d2bf3a4f7016231f1ba5eca93916c9ebfdc334e9b435ca1d302ff6",
+      "d405.stl": "6617f3fb22b604a66c27e16d2397f305fcdca8a781248abdbabbf69c9fe6a3c5"
+    },
+    "scene_source_sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+    "scene_source_matches_recorded": true,
+    "method": "Exact hash-verified archived XML; current scene generator is not used"
+  },
+  "renderer_source_sha256": "0f0cf03127377ee486cf8ee05c1c018ce5634fe5d0b594bbfbf109b43df72fbd",
+  "renderer_dependency_sha256": "3531a3659ded5b4a7fe66868989c1bac6437a008282ec1229bf2f8a5ccb97a91",
+  "recorded_model_loader_sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+  "runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "original_recorded_runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "renderer_sources_sha256": {
+    "render_supported_prefix.py": "0f0cf03127377ee486cf8ee05c1c018ce5634fe5d0b594bbfbf109b43df72fbd",
+    "m8_insertion_demo.py": "3531a3659ded5b4a7fe66868989c1bac6437a008282ec1229bf2f8a5ccb97a91",
+    "m8_demo.py": "f5989b9ee052a2bb6d68bdec090d90aec4faeed667fd8218bf3fa4dccb3d485d",
+    "audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+    "runtime.py": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+  },
+  "scope": "Actual fresh full_v2 native progress after guarded bolt transport and alignment above the table-supported bore. Prefix only: no thread contact, formed capture, qualified turn or full-task success is claimed. Original all-step table/left ledgers are not yet closed; displayed forces come only from the selected original solved sample.",
+  "media_sha256": {
+    "demo.png": "79f3b51e35eada43351a7e528f43bf0276cf419ac19527b205bc4aa967f11174"
+  }
+}
