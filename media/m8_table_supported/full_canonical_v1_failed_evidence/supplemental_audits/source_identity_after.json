@@ -1,0 +1,21 @@
+{
+  "kind": "Read-only post-closure native producer/auditor source identity",
+  "verifier_source_sha256": "3ac245bb150aed7c850c13ba25f25f14f876fd8b38695f54ab9ee922773ed371",
+  "producer_commit": "6e7d0d2ac3d28ff2538e122a10d7ffb2febf83b1",
+  "software_tests_passed": 402,
+  "source_files_unchanged": 65,
+  "before_identity_sha256": "44f629b1456635e6f456d2b3f0410061fae9f26a8f11447073c6ec2948d4b6e1",
+  "after_identity_sha256": "1edc728af94ab47b607402f81a086c9444306f996cd1a6969abe92f086aafe75",
+  "complete_current_source_matches_producer": true,
+  "frozen_audit_sources": {
+    "scripts/audit_m8_supported_trace.py": "e46808601d7974ffdea1e5e20e07e0f28eb8e0a74a394545b276621a7e856702",
+    "scripts/audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+    "scripts/audit_m8_free_joint_properties.py": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+    "scripts/audit_m8_left_pad_force_history.py": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc",
+    "thread_lab/runtime.py": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+  },
+  "closure_native_exit_code": 1,
+  "final_trace_present": true,
+  "final_trace_sha256": "c4cd0f891ba6c9af51ced80b4802023f54472135649fab2d41122770a4ffc19c",
+  "scope": "Closure identity and exact source bytes only. A native nonzero exit or physics failure is retained. No imports, native compile, collision, force solve, dynamics, report alteration or task success inference."
+}

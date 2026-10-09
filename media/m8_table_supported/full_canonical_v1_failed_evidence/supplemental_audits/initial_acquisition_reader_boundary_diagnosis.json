@@ -1,0 +1,60 @@
+{
+  "kind": "Frozen-e468 initial native acquisition reader boundary diagnosis",
+  "original_auditor_sha256": "e46808601d7974ffdea1e5e20e07e0f28eb8e0a74a394545b276621a7e856702",
+  "trace_sha256": "c4cd0f891ba6c9af51ced80b4802023f54472135649fab2d41122770a4ffc19c",
+  "acquisition": {
+    "phase": "settle_bolt",
+    "time_s": 2.820000000000097,
+    "pad_normal_force_N": [
+      15.890383916314166,
+      15.890156662191977
+    ],
+    "grasp_relative_bolt_head_position_m": [
+      -9.607297155257902e-08,
+      7.653866686025797e-09,
+      -1.7205614519576287e-06
+    ],
+    "grasp_relative_bolt_rotation": [
+      [
+        -0.8660254256930129,
+        -0.49999996158546306,
+        -2.1627994336292775e-05
+      ],
+      [
+        0.49999996176471145,
+        -0.8660254258525631,
+        -3.4889329971142964e-06
+      ],
+      [
+        -1.698592664089338e-05,
+        -1.38355010252341e-05,
+        0.9999999997600282
+      ]
+    ]
+  },
+  "raw_native_index": 56399,
+  "raw_time_s": 2.820000000000097,
+  "raw_original_force_time_s": 2.819950000000097,
+  "raw_guard_active": true,
+  "raw_translation_slip_m": 0.0,
+  "raw_rotation_slip_rad": 0.0,
+  "raw_pad_normal_force_N": [
+    15.890383916314166,
+    15.890156662191977
+  ],
+  "exact_saved_post_state_rows": [
+    {
+      "index": 571,
+      "time_s": 2.820000000000097,
+      "phase": "settle_bolt",
+      "guard_active": true,
+      "native_pad_normals_N": [
+        15.890383916314166,
+        15.890156662191977
+      ]
+    }
+  ],
+  "source_boundary": "Archived producer sets initial settle_bolt reference on the final solved step before computing grasp_guard_active and error; that initial row is active with zero new-reference error. In later settle_regrip source computes/caches guard and errors before acquiring the quiet reference; that acquisition row is inactive and next tick active. Reader incorrectly applies later quiet-regrasp timing to the legacy initial acquisition.",
+  "approved_source_change": false,
+  "proposed_output_only_reader_change": "Branch only the declared settle_bolt acquisition: require original active flag and start expected guard at that index. Retain inactive acquisition/next-tick guard for quiet settle_regrip references; reject other malformed boundary shapes. Preserve original failed native report, frozen-e468 exception and402/65 source proof."
+}

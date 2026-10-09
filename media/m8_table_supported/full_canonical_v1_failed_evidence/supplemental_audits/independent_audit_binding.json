@@ -1,0 +1,395 @@
+{
+  "scope": "Closed FAILED unspliced native attempt from independent table/rest spawns. Original6e7 producer/402proof/65sources and core/plugin are exact. Original direction stop timeout19.121\u00b5m<50\u00b5m preserved, with no forward/open/regrasp/capture/qualified turn. One output-only reader correction is explicitly separate from frozen e468 exception and original native physics.",
+  "producer_commit": "6e7d0d2ac3d28ff2538e122a10d7ffb2febf83b1",
+  "native_exit_code": 1,
+  "original_native_passed": false,
+  "independent_primary_passed": false,
+  "native_duration_s": 16.476149999985186,
+  "original_aborted": {
+    "phase": "stop_reverse_seat_1",
+    "time": 16.476149999985186,
+    "reason": "Bounded physical feedback phase lacked live measured readiness",
+    "weight_window": {
+      "observer": "diagnostic-native-bolt-weight-transfer-v1",
+      "ready_for_diagnostic_release_attempt": true,
+      "bolt_weight_N": 0.26241400403581094,
+      "required_window_s": 0.1,
+      "observed_window_s": 0.09999999999999715,
+      "original_native_samples": 2000,
+      "mean_thread_weight_fraction": 0.9995899766347908,
+      "mean_positive_hand_upward_weight_fraction": 0.0005791554693385235,
+      "signed_thread_gravity_opposing_impulse_Ns": 0.026230640816279065,
+      "positive_hand_upward_impulse_Ns": 1.5197850566835694e-05,
+      "loaded_actual_interior_flank_duration_s": 0.0,
+      "loaded_thread_gravity_support_duty_fraction": 1.0,
+      "entry_only_native_contact_window": true,
+      "loaded_actual_interior_flank_contact_observed": false,
+      "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+    },
+    "open_weight_window": {
+      "observer": "diagnostic-native-bolt-weight-transfer-v1",
+      "ready_for_diagnostic_release_attempt": false,
+      "bolt_weight_N": 0.26241400403581094,
+      "required_window_s": 0.1,
+      "observed_window_s": 0.0,
+      "original_native_samples": 0,
+      "mean_thread_weight_fraction": null,
+      "mean_positive_hand_upward_weight_fraction": null,
+      "signed_thread_gravity_opposing_impulse_Ns": 0.0,
+      "positive_hand_upward_impulse_Ns": 0.0,
+      "loaded_actual_interior_flank_duration_s": 0.0,
+      "loaded_thread_gravity_support_duty_fraction": null,
+      "entry_only_native_contact_window": false,
+      "loaded_actual_interior_flank_contact_observed": false,
+      "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+    },
+    "seat_direction_event": {
+      "observer": "native-measured-seat-direction-impulse-event-v2",
+      "stop_requested_from_measured_drop": false,
+      "first_actual_drop_time_s": null,
+      "actual_axial_drop_m": 1.912141233520459e-05,
+      "minimum_actual_drop_m": 5e-05,
+      "confirmed_search_direction_event": false,
+      "is_engagement_or_release_proof": false,
+      "original_native_impulse_window": {
+        "observer": "native-settled-entry-support-v1",
+        "ready": false,
+        "aligned": false,
+        "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+        "required_window_s": 0.05,
+        "observed_window_s": 0.0,
+        "minimum_loaded_normal_force_N": 0.026241400403581097,
+        "minimum_normal_impulse_Ns": 0.0013120700201790549,
+        "normal_impulse_Ns": 0.0,
+        "minimum_loaded_duration_s": 0.005000000000000001,
+        "loaded_duration_s": 0.0,
+        "loaded_substep_duty": 0.0,
+        "relative_bolt_axial_velocity_limit_m_per_s": 0.0002,
+        "relative_bolt_axial_velocity_range_m_per_s": null,
+        "final_native_normal_force_N": 0.35370715264373054,
+        "final_relative_bolt_axial_velocity_m_per_s": 5.943740752516241e-07
+      },
+      "scope": "Actual persistent drop and continuously aligned/slow/angular-stopped interval with original native entry impulse, loaded-duty and endpoint load rules. CLOSED direction choice only; never jaw-opening/capture/lead/reset qualification."
+    }
+  },
+  "original_partial": false,
+  "exact65_sources_before_after_and_current_verified": true,
+  "original_auditor_sha256": "e46808601d7974ffdea1e5e20e07e0f28eb8e0a74a394545b276621a7e856702",
+  "corrected_auditor_sha256": "abb4e724de91eeec9dcff9c481d1a89674fba5ea3e3c5c2d9a9b76a074f9cf1e",
+  "compatibility_sidecar": {
+    "path": "supported_auditor_compatibility_v1.json",
+    "sha256": "36c7add292b1a29a0305c6e9f39c709236f7a03250274b3a8500b47c09a18421"
+  },
+  "original_closed_files": {
+    "insertion_trace.npz": "c4cd0f891ba6c9af51ced80b4802023f54472135649fab2d41122770a4ffc19c",
+    "insertion_validation.json": "6acdcb02c683204e2ed52230764dc3e556243dedd6089ca7e4701bd25eea79d8",
+    "native_feedback_force_history.npz": "b2329e454086e6251e5ea8b1fff6757ed14dc4c1ad7aaa3536cba098d902026f",
+    "table_support_force_history.npz": "78c23021e24be9cbddd7b2d9406dce12044ccbe5e4386c86d3f9ff3983aad58d",
+    "left_pad_force_history.npz": "a1ede409d52366be6d61fe040d75948259c3dc7f53917c1dc3ed3df8efc88e44",
+    "run_publication_identity.json": "44f629b1456635e6f456d2b3f0410061fae9f26a8f11447073c6ec2948d4b6e1",
+    "run_publication_identity_after.json": "1edc728af94ab47b607402f81a086c9444306f996cd1a6969abe92f086aafe75",
+    "software_tests.json": "9da72f28802082dbe5bae649607fd8f4959167a5f8320882f0d3aeb3b864061d",
+    "software_tests.log": "d20a182ab8493975d91177f0af4cb8995d59e740a5120ea2ca66439558796316",
+    "controller_source.py": "57f430143787317f8dc6f50bd2ea1ff23aab123810284da74da70b53b45a9493",
+    "scene_source.py": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+    "engagement_observer_source.py": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "scene.xml": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "supported_scene.zip": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+    "native_stdout_stderr.log": "04b0c6a0dea325a7e743e012941623b27d03923b02b351357a5c80255451d760"
+  },
+  "closed_independent_reports": {
+    "independent_supported_audit_corrected.json": "48e629f328152d6f827aef9add7f2870ba5f934f548c198575c21dbcf3fc5f13",
+    "independent_left_pad_force_history_audit.json": "c8de7a97d5387706c81fc0b465de5d1513a1a239df3ac63dd8e607723612740d",
+    "independent_free_joint_properties.json": "1c0b3d0051c18093bd2822389e25d623fa3ddcfcfc746069e528af719862ae5a",
+    "independent_rest_clearance_audit.json": "882d3ee3ea09d7436874fc406dbe4ad4eb826273a84972d01adb4e2972391112",
+    "independent_original_seat_arithmetic.json": "40596877a7d32a6375ef01c2855acae4f6ad83ca5ad8b48b638e05e592a276f3"
+  },
+  "source_identity_before_sha256": "b353bf5e7f8e240dc3065d63dd889c87ee25d381c88f1c1697b8fd07c257978c",
+  "source_identity_after_sha256": "b353bf5e7f8e240dc3065d63dd889c87ee25d381c88f1c1697b8fd07c257978c",
+  "source_snapshots": {
+    "audit_m8_supported_trace_initial_boundary_v1.py": "abb4e724de91eeec9dcff9c481d1a89674fba5ea3e3c5c2d9a9b76a074f9cf1e",
+    "independent_original_seat_arithmetic_v1.py": "03e014a86e6b1b76c53aae923629fdb37f475de899a4e421143ef9bc5f93faeb",
+    "independent_rest_clearance_audit.py": "86c2b621de9612aedc64a4f2d6bcff5a5a8bab12ae0f16e93bdfe0ccaa7f6831",
+    "independent_rest_clearance_software_proof.json": "18bad7756812a921a74bb66f5f8dfbc6a0190a25ee7267305ce392a2b96aedd1",
+    "initial_acquisition_reader_boundary_diagnosis.json": "0f7d6d3007bcd4745959a8ccbb90b6757d54380b8ceeddb94ce5dbdbc447584f",
+    "initial_boundary_reader_software_proof_v1.json": "5af19e88c583616e3544a24d2f90e3cc33e3c9838593e2213899f0f827e2030e",
+    "original_e468_auditor.py": "e46808601d7974ffdea1e5e20e07e0f28eb8e0a74a394545b276621a7e856702",
+    "post_closure_audit_checklist_full_canonical_v1.md": "d6cc5f7b1a6a6ed770241b97c0be23d832dc4ee90d1eebc155966766f07b1f09",
+    "supported_auditor_initial_boundary_v1.diff": "b182eef620c4e576803bccc9f58fbd81a97bdc0988eba3b39b3fffdca653f94b",
+    "test_independent_rest_clearance_audit.py": "0cff4f9226b3e3cd7b228126f1fbcdd484271807b486f3a252b9370174dd54c4",
+    "test_supported_initial_boundary_reader_v1.py": "44c0a25331d66f8406c0117c2f3d7b9d519112ba18c5f17e56d0563bf54f995f",
+    "verify_closed_supported_run_identity.py": "3ac245bb150aed7c850c13ba25f25f14f876fd8b38695f54ab9ee922773ed371"
+  },
+  "native_runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "original_acceptance_checks": {
+    "completed_qualifying_turns": {
+      "passed": false
+    },
+    "picked_up_free_bolt": {
+      "passed": true,
+      "maximum_world_support_after_pickup": 0,
+      "sampled_minimum_closed_transport_pad_normals_N": [
+        15.628076055189645,
+        15.870762267559407
+      ]
+    },
+    "started_previously_separate_threads": {
+      "passed": false,
+      "engagement_time_s": null
+    },
+    "observed_metric_lead": {
+      "passed": false
+    },
+    "closed_turn_tracking": {
+      "passed": false
+    },
+    "contact_torque_turns_bolt": {
+      "passed": false
+    },
+    "open_reset_contact_decoupling": {
+      "passed": false
+    },
+    "passive_self_locking_during_open_reset": {
+      "passed": false,
+      "scope": "All-substep maximum yaw/axial drift only after declared formed-flank engagement; starting-cone resets are reported separately",
+      "angular_drift_limit_rad": 0.02,
+      "axial_drift_limit_m": 1e-05
+    },
+    "reported_sdf_depth_proxy": {
+      "passed": true,
+      "observed_peak_m": 4.533896937403079e-06
+    },
+    "entry_alignment": {
+      "passed": true,
+      "peak_radial_m": 0.00012441180699203187,
+      "peak_tilt_rad": 0.019613599107105698
+    },
+    "left_grasp_retention": {
+      "passed": true,
+      "peak_translation_m": 2.884048319084028e-06,
+      "peak_rotation_rad": 6.555845812966773e-05
+    },
+    "left_pad_contact_retention": {
+      "passed": true,
+      "sampled_minimum_loaded_pad_normals_N": [
+        15.971589263963654,
+        15.871581990227927
+      ]
+    },
+    "right_bolt_grasp_retention": {
+      "passed": true,
+      "peak_translation_m": 0.00025318446472979294,
+      "peak_rotation_slip_rad": 0.019415121050005375,
+      "scope": "Within each original bilateral loaded closed grasp; references end on intentional opening and are acquired again after real regrasp"
+    },
+    "block_stays_on_table": {
+      "passed": true,
+      "maximum_upward_lift_m": 0.0,
+      "maximum_translation_from_initial_m": 4.956442839157682e-06,
+      "maximum_rotation_from_initial_rad": 6.0503771951663284e-05,
+      "unexpected_world_contact_candidates": 0
+    },
+    "male_tip_clears_plain_table": {
+      "passed": true,
+      "minimum_observed_clearance_m": 0.014578544807429813,
+      "minimum_allowed_clearance_m": 0.001
+    },
+    "whole_shaft_clears_rest_before_lateral_transfer": {
+      "passed": true,
+      "minimum_measured_tip_above_highest_rest_m": 0.01493886163281661,
+      "minimum_allowed_clearance_m": 0.01,
+      "native_rest_top_world_z_m": 0.036,
+      "scope": "Lift completion and every native transport substep; no extra body actuation"
+    },
+    "native_unexpected_collision_clearance": {
+      "passed": true,
+      "peak_native_signed_penetration_m": 0.0,
+      "native_depth_limit_m": 1e-06,
+      "scope": "Every native solved substep; intended table/block, pads/workpieces, thread and pre-pickup bolt-rest contacts are declared separately"
+    },
+    "free_objects_have_no_external_drive": {
+      "passed": true
+    },
+    "native_joint_limits": {
+      "passed": true,
+      "minimum_observed_margin_rad": 0.017349249517270904
+    },
+    "no_solver_or_state_abort": {
+      "passed": false
+    },
+    "all_substep_left_pad_contact_retention": {
+      "passed": true,
+      "observer": "native-bilateral-pad-load-v1",
+      "minimum_loaded_force_N": 0.1,
+      "observed_physics_steps": 296524,
+      "observed_duration_s": 14.826199999972117,
+      "minimum_normal_force_N": [
+        15.94851763306627,
+        15.83238022021067
+      ],
+      "unloaded_physics_steps": [
+        0,
+        0
+      ],
+      "unloaded_duration_s": [
+        0.0,
+        0.0
+      ],
+      "maximum_consecutive_unloaded_duration_s": [
+        0.0,
+        0.0
+      ],
+      "continuously_bilateral_loaded": true,
+      "scope": "Every physics substep at and after the end of settle_left_block; no lift or physical roll is commanded"
+    },
+    "both_hands_start_separate_from_workpieces": {
+      "passed": true,
+      "initial_left_block_hand_contacts": 0,
+      "initial_right_bolt_hand_contacts": 0
+    },
+    "table_bears_block_weight_before_bolt_pickup": {
+      "passed": true,
+      "left_stabilization_time_s": 1.6500000000012698,
+      "settled_table_load_window": {
+        "observer": "native-supported-block-load-window-v1",
+        "ready": true,
+        "required_window_s": 0.1,
+        "observed_window_s": 0.10004999999999714,
+        "block_weight_N": 0.9987972925280899,
+        "minimum_mean_table_weight_fraction": 0.9,
+        "maximum_mean_positive_hand_upward_weight_fraction": 0.1,
+        "minimum_loaded_table_duty": 0.99,
+        "mean_table_upward_force_N": 0.9895282468139129,
+        "mean_positive_hand_upward_force_N": 0.009269001465986838,
+        "loaded_table_substep_duty": 1.0,
+        "final_table_upward_force_N": 0.9896497437533301,
+        "scope": "No-bolt settled stabilization: original native table force bears block weight; contact candidates alone do not establish support"
+      },
+      "scope": "Pre-bolt no-lift stabilization: >=90% mean block weight on table, <=10% mean positive hand upward load, >=99% loaded table duty over >=100 ms"
+    },
+    "all_substep_table_load_retention": {
+      "passed": true,
+      "observed_physics_steps": 296524,
+      "minimum_table_upward_force_N": 0.9885470057639176,
+      "minimum_loaded_table_upward_force_N": 0.099879729252809,
+      "unloaded_physics_steps": 0,
+      "unloaded_duration_s": 0.0,
+      "maximum_consecutive_unloaded_duration_s": 0.0,
+      "scope": "Every original native substep after stabilization acquisition; brief gaps remain failures"
+    },
+    "table_bears_weight_throughout_active_task": {
+      "passed": true,
+      "observed_active_windows": 296524,
+      "failed_active_trailing_windows": 0,
+      "trailing_window_s": 0.1,
+      "minimum_mean_table_weight_fraction": 0.9904698525550947,
+      "maximum_mean_positive_hand_upward_weight_fraction": 0.009530190335387902,
+      "minimum_loaded_table_duty": 1.0,
+      "final_window": {
+        "observer": "native-supported-block-load-window-v1",
+        "ready": true,
+        "required_window_s": 0.1,
+        "observed_window_s": 0.10004999999999714,
+        "block_weight_N": 0.9987972925280899,
+        "minimum_mean_table_weight_fraction": 0.9,
+        "maximum_mean_positive_hand_upward_weight_fraction": 0.1,
+        "minimum_loaded_table_duty": 0.99,
+        "mean_table_upward_force_N": 3.2610770577891732,
+        "mean_positive_hand_upward_force_N": -3.1502394400969685e-18,
+        "loaded_table_substep_duty": 1.0,
+        "final_table_upward_force_N": 3.261093374326204,
+        "scope": "No-bolt settled stabilization: original native table force bears block weight; contact candidates alone do not establish support"
+      },
+      "scope": "Every active trailing original-force window, including pickup/entry/turn/reset/regrasp; same90%table/10%positive-hand-up/99%duty thresholds as stabilization, without hiding transient load sharing"
+    },
+    "native_cone_entry_acquired_before_rotation": {
+      "passed": true,
+      "acquisition_time_s": 11.49494999997988,
+      "scope": "Settled native lead-in load only; does not qualify formed-flank capture"
+    },
+    "native_starting_support_before_searching_open": {
+      "passed": true,
+      "maximum_dwell_s": 10.0,
+      "failed_acquisition": null,
+      "scope": "Every searching release/open reset must have measured settled native thread-pair support; pre-release acquisition timeout retains closed jaws"
+    }
+  },
+  "independent_acceptance_checks": {
+    "complete_unaborted_native_sequence": {
+      "passed": false
+    },
+    "source_bound_original_feedback_controls_forces_and_events": {
+      "passed": true
+    },
+    "measured_pre_bolt_table_bears_weight": {
+      "passed": true
+    },
+    "whole_task_table_bears_weight_left_merely_stabilizes": {
+      "passed": true
+    },
+    "strict_all_substep_table_load_retention": {
+      "passed": true
+    },
+    "strict_all_substep_bilateral_left_pad_preload": {
+      "passed": true
+    },
+    "block_has_no_lift_or_unintended_world_support": {
+      "passed": true
+    },
+    "male_clears_solid_table_in_original_and_replayed_geometry": {
+      "passed": true
+    },
+    "separately_picked_up_bolt_has_no_later_world_support": {
+      "passed": true
+    },
+    "native_qualified_lead_and_rotation": {
+      "passed": false
+    },
+    "independent_saved_pose_qualified_lead": {
+      "passed": false
+    },
+    "all_open_resets_have_no_hand_bolt_contact": {
+      "passed": false
+    },
+    "captured_bolt_resets_are_passive_and_unseated": {
+      "passed": false
+    },
+    "no_sampled_unintended_penetrations": {
+      "passed": true
+    },
+    "original_all_substep_native_collision_guard": {
+      "passed": true
+    },
+    "native_joint_limits_and_finite_motor_caps": {
+      "passed": true
+    },
+    "each_right_grasp_is_measured_and_retained": {
+      "passed": true
+    },
+    "zero_original_external_drive_and_freebody_artificial_passive_terms": {
+      "passed": true
+    },
+    "no_new_task_collision_exclusions_or_disabled_table_masks": {
+      "passed": true
+    }
+  },
+  "original_raw_feedback_observed_steps": 329523,
+  "fully_open_observed_steps": 0,
+  "actual_loaded_interior_observed_steps": 0,
+  "unexecuted_stage_scope": "Zero fully-open/interior stages are absent, never physically passed. Native/corrected primary sequence/capture/lead/reset gates remain false. Source-bound feedback consistency can pass for executed earlier stages without qualifying the task.",
+  "force_state_timing": "Native original forces/derived geometry describe t-dt; saved qpos/qvel describe t. Input command calibration is separately copied prior solved pose at t-2dt. No integration, warmstart reconstruction, force reconstruction from saved states or stitched cold branches.",
+  "full_capture": false,
+  "qualified_reset": false,
+  "full_trajectory_qualified": false
+}

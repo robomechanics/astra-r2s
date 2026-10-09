@@ -26,10 +26,23 @@ unchanged. The original `passed=false`, `partial=false` report passes
 stop cannot confirm the unchanged 50 µm measured direction drop; the
 final stopped drop is **19.121 µm**. Formed overlap and loaded interior contacts
 stay zero, and no opening, qualified turn or reset is executed. All task
-qualification checks remain failed or unexecuted. The independent full-trace
-audit is not complete: the frozen reader's boundary exception is preserved,
-and separate left-pad/passive/rest audits are pending. Historical results
-and recipes below retain their exact older producer bindings.
+qualification checks remain failed or unexecuted. The closed independent
+compatibility audit reads all 329,523 native ticks and checks 1,717 original
+local thread-force/contact frames; the trajectory has 3,311 saved states.
+**14/19 independent checks pass**, with overall false because five full-task
+stages are absent. The original frozen-reader boundary exception and its
+narrow separate correction/eight standalone tests are preserved. Left-pad,
+passive-property and rest audits are closed without altering native acceptance.
+Historical results and recipes below retain their exact older producer bindings.
+
+Use the [supported-agent handoff](m8_supported_agent_handoff.md) for exact
+checkout, lossless restoration of all original filenames, nonintegrating 1×
+replay, complete serial audits and policy-training limits. The
+[closed failed evidence package](../media/m8_table_supported/full_canonical_v1_failed_evidence/README.md)
+includes [normal 1× GIF](../media/m8_table_supported/full_canonical_v1_failed_evidence/demo.gif),
+[MP4](../media/m8_table_supported/full_canonical_v1_failed_evidence/demo.mp4),
+[actual endpoint](../media/m8_table_supported/full_canonical_v1_failed_evidence/endpoint_detail.png)
+and [direction-gate chart](../media/m8_table_supported/full_canonical_v1_failed_evidence/scientific_plot/native_direction_gate.png).
 
 The [13.1949 s entry/weight-transfer snapshot](../media/m8_table_supported/entry_transfer_progress/README.md)
 preserves a historical prefix captured while the same fresh run continued:

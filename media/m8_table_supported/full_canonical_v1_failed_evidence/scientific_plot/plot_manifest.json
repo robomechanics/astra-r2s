@@ -1,0 +1,72 @@
+{
+  "scope": "Scientific plot of unchanged original all-step native table/feedback ledgers after actual settled reference. No integration, forward/collision/force solve, sparse-q inference, retiming or changed direction/capture criterion.",
+  "original_table_ledger_sha256": "78c23021e24be9cbddd7b2d9406dce12044ccbe5e4386c86d3f9ff3983aad58d",
+  "original_feedback_ledger_sha256": "b2329e454086e6251e5ea8b1fff6757ed14dc4c1ad7aaa3536cba098d902026f",
+  "original_report_sha256": "6acdcb02c683204e2ed52230764dc3e556243dedd6089ca7e4701bd25eea79d8",
+  "native_dense_rows_total": 329523,
+  "native_dense_rows_after_reference": 65626,
+  "original_reference_event": {
+    "event": "Actual post-ramp settled seat reference",
+    "phase": "transfer_bolt_weight",
+    "time_s": 13.194899999975918,
+    "actual_dwell_s": 1.69995,
+    "base_z_m": -0.022599933331474656,
+    "desired_clock_rad": 5.964363130916848e-07,
+    "stable_actual_quiet_streak_s": 0.09999999999999715,
+    "weight_window": {
+      "observer": "diagnostic-native-bolt-weight-transfer-v1",
+      "ready_for_diagnostic_release_attempt": true,
+      "bolt_weight_N": 0.26241400403581094,
+      "required_window_s": 0.1,
+      "observed_window_s": 0.10004999999999714,
+      "original_native_samples": 2001,
+      "mean_thread_weight_fraction": 1.0000000128291788,
+      "mean_positive_hand_upward_weight_fraction": 0.013095003185155043,
+      "signed_thread_gravity_opposing_impulse_Ns": 0.02625452144060608,
+      "positive_hand_upward_impulse_Ns": 0.0003438030374787474,
+      "loaded_actual_interior_flank_duration_s": 0.0,
+      "loaded_thread_gravity_support_duty_fraction": 1.0,
+      "entry_only_native_contact_window": true,
+      "loaded_actual_interior_flank_contact_observed": false,
+      "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+    },
+    "scope": "Actual100ms aligned/slow/angular-stopped reference after complete load ramp; direction baseline only"
+  },
+  "original_reference_row": 263897,
+  "original_reference_geometry_time_s": 13.194849999975919,
+  "original_reference_base_z_m": -0.022599933331474656,
+  "plotted_axial_measurement": "1000000*(original bolt_base_insertion_m \u2212 original settled event base_z_m); positive is deeper gain, negative withdrawal",
+  "final_actual_drop_um": 19.12141233520459,
+  "maximum_actual_deeper_gain_um": 21.669435306119478,
+  "maximum_withdrawal_below_reference_um": 653.0107102656127,
+  "unchanged_minimum_drop_um": 50.0,
+  "loaded_interior_count_max_after_reference": 0,
+  "formed_overlap_max_after_reference_m": 0.0,
+  "force_and_geometry_timing": "Original preintegration force/retained solved geometry at logged t\u221250us. No saved post-q replay forces. Yaw retains original sign convention.",
+  "native_feedback_metadata_original": {
+    "model_fingerprint": "dd44ffab2beade32ed4682adb551fdf077dd97d4140bb2794cc995effe35a9ca",
+    "controller_sha256": "25043b9530c0218dd94620517f9cc8c66fe66ecb04837ab01d1373282402da5f",
+    "runtime": {
+      "mujoco_version": "3.15.0",
+      "libraries": [
+        {
+          "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+          "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+          "sdf_minimum_search_step_m": 1e-07,
+          "sdf_initial_search_step_m": 0.002
+        }
+      ],
+      "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+    },
+    "timestep_s": 5e-05,
+    "force_timing": "mj_step contact forces and contact geometry are from the pre-integration state at recorded time minus timestep; saved qpos/qvel are the post-integration state",
+    "helper_source_sha256": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51",
+    "observer": "supported-original-native-feedback-ledger-v1",
+    "scope": "Every original native force/kinematic observation and executed finite motor command. Actual aperture explicitly uses post-integration qpos. No saved-pose force reconstruction."
+  },
+  "plot_sha256": "349bddc9028ce21ca1f198f45cc743630ed45c6787504aabd0e08225193fb64a",
+  "plot_source_sha256": "1cc0412a94bba47b0c19f8a6e60b17aadcb6155d41f5f55ba11cf04b09a830bf",
+  "capture_or_direction_gate_redefined": false,
+  "capture_qualified": false,
+  "full_trajectory_completed": false
+}

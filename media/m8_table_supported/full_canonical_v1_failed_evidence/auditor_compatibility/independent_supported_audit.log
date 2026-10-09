@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/workspace/astra-r2s/scripts/audit_m8_supported_trace.py", line 1053, in <module>
+    main()
+  File "/workspace/astra-r2s/scripts/audit_m8_supported_trace.py", line 1045, in main
+    result = audit(args.trajectory)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/astra-r2s/scripts/audit_m8_supported_trace.py", line 975, in audit
+    feedback = original_feedback_audit(path, metadata, model, columns, labels, records, poses)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/astra-r2s/scripts/audit_m8_supported_trace.py", line 576, in original_feedback_audit
+    grasp_flags = original_grasp_flag_audit(columns, labels, metadata)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/astra-r2s/scripts/audit_m8_supported_trace.py", line 526, in original_grasp_flag_audit
+    raise ValueError("Acquisition row incorrectly claims the new grasp was already guarded")
+ValueError: Acquisition row incorrectly claims the new grasp was already guarded

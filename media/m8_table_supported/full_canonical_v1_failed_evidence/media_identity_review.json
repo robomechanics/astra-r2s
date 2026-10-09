@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "scope": "Read-only media serialization/state identity check. No simulator imported, integration, force solve, native retry, app test rerun or physical qualification.",
+  "trajectory_sha256": "c4cd0f891ba6c9af51ced80b4802023f54472135649fab2d41122770a4ffc19c",
+  "render_manifest_sha256": "824dce5107603575c6665ca871d1ec65a0da1b6733b4bacb46aeddeff44e04d5",
+  "plot_manifest_sha256": "976f52a145acf3510b4abd963bce93d738fad8e8a32b19aaaf1a5bdfff3d1ae1",
+  "all7_still_original_samples_and_qpos_qvel_exact": true,
+  "all198_frame_original_indices_and_times_exact": true,
+  "all_media_sha256_exact": true,
+  "gif_frames": 198,
+  "gif_duration_ms": 16500,
+  "video": {
+    "r_frame_rate": "12/1",
+    "duration": "16.500000",
+    "nb_read_frames": "198"
+  },
+  "native_last_time_s": 16.476149999985186,
+  "all65_original_source_bytes_archived": true,
+  "review_source_sha256": "7f433a8d17eceadffc92cfdbb1c468dcc0c1180cdd166bbdde5fccd5c276c4fb"
+}

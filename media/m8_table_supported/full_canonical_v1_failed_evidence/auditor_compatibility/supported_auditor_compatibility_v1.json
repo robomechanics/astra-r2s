@@ -1,0 +1,44 @@
+{
+  "schema": "supported-auditor-compatibility-v1",
+  "correction_kind": "initial-settle-bolt-same-row-grasp-flag",
+  "correction_scope": "Archived initial settle_bolt reference is assigned BEFORE guard/error computation, so its final solved acquisition row must be active with new-reference error. Later quiet settle_regrip references are assigned AFTER cached guard/error computation: acquisition inactive, next tick active. Only original_grasp_flag_audit AST changes; malformed scope/flags/missing quiet streak/omitted closed guard still reject. Original native direction failure, frozen402/e468 source and exception remain unchanged.",
+  "original_producer_commit": "6e7d0d2ac3d28ff2538e122a10d7ffb2febf83b1",
+  "original_trace_sha256": "c4cd0f891ba6c9af51ced80b4802023f54472135649fab2d41122770a4ffc19c",
+  "original_native_exit_code": 1,
+  "original_report_passed": false,
+  "original_auditor_sha256": "e46808601d7974ffdea1e5e20e07e0f28eb8e0a74a394545b276621a7e856702",
+  "corrected_auditor_sha256": "abb4e724de91eeec9dcff9c481d1a89674fba5ea3e3c5c2d9a9b76a074f9cf1e",
+  "canonical_source_or_original_report_modified": false,
+  "original_auditor": {
+    "path": "original_e468_auditor.py",
+    "sha256": "e46808601d7974ffdea1e5e20e07e0f28eb8e0a74a394545b276621a7e856702"
+  },
+  "corrected_auditor": {
+    "path": "audit_m8_supported_trace_initial_boundary_v1.py",
+    "sha256": "abb4e724de91eeec9dcff9c481d1a89674fba5ea3e3c5c2d9a9b76a074f9cf1e"
+  },
+  "corrected_report": {
+    "path": "independent_supported_audit_corrected.json",
+    "sha256": "48e629f328152d6f827aef9add7f2870ba5f934f548c198575c21dbcf3fc5f13"
+  },
+  "original_exception": {
+    "path": "independent_supported_audit.log",
+    "sha256": "8cea886761cc589c3be7e2fec7fa5cd452d1254214b8a934a7380b848adb288a"
+  },
+  "narrow_diff": {
+    "path": "supported_auditor_initial_boundary_v1.diff",
+    "sha256": "b182eef620c4e576803bccc9f58fbd81a97bdc0988eba3b39b3fffdca653f94b"
+  },
+  "boundary_diagnosis": {
+    "path": "initial_acquisition_reader_boundary_diagnosis.json",
+    "sha256": "0f7d6d3007bcd4745959a8ccbb90b6757d54380b8ceeddb94ce5dbdbc447584f"
+  },
+  "regression_proof": {
+    "path": "initial_boundary_reader_software_proof_v1.json",
+    "sha256": "5af19e88c583616e3544a24d2f90e3cc33e3c9838593e2213899f0f827e2030e"
+  },
+  "test_source": {
+    "path": "test_supported_initial_boundary_reader_v1.py",
+    "sha256": "44c0a25331d66f8406c0117c2f3d7b9d519112ba18c5f17e56d0563bf54f995f"
+  }
+}

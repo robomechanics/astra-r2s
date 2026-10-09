@@ -1,0 +1,16 @@
+{
+  "scope": "Eight pure source-specific reader-boundary regressions. Original402-test producer software proof/frozen e468/source65/native evidence unchanged. No simulation/task qualification.",
+  "tests_passed": 8,
+  "passed": true,
+  "wall_seconds": 0.3711210730034509,
+  "corrected_auditor_sha256": "abb4e724de91eeec9dcff9c481d1a89674fba5ea3e3c5c2d9a9b76a074f9cf1e",
+  "test_source_sha256": "44c0a25331d66f8406c0117c2f3d7b9d519112ba18c5f17e56d0563bf54f995f",
+  "sources_unchanged": true,
+  "command": [
+    "python",
+    "outputs/m8_table_supported/full_canonical_v1_audits/test_supported_initial_boundary_reader_v1.py"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_initial_acquisition_must_be_final_settle_tick (__main__.SourceSpecificBoundaryTests.test_initial_acquisition_must_be_final_settle_tick) ... ok\ntest_initial_inactive_flag_is_not_waived (__main__.SourceSpecificBoundaryTests.test_initial_inactive_flag_is_not_waived) ... ok\ntest_original_initial_active_and_quiet_next_tick_both_verified (__main__.SourceSpecificBoundaryTests.test_original_initial_active_and_quiet_next_tick_both_verified) ... ok\ntest_post_acquisition_settle_gap_remains_rejected (__main__.SourceSpecificBoundaryTests.test_post_acquisition_settle_gap_remains_rejected) ... ok\ntest_quiet_reference_without_original_continuous_streak_is_rejected (__main__.SourceSpecificBoundaryTests.test_quiet_reference_without_original_continuous_streak_is_rejected) ... ok\ntest_quiet_same_row_active_flag_is_not_waived (__main__.SourceSpecificBoundaryTests.test_quiet_same_row_active_flag_is_not_waived) ... ok\ntest_source_binding_only_the_pure_boundary_function_changes (__main__.SourceSpecificBoundaryTests.test_source_binding_only_the_pure_boundary_function_changes) ... ok\ntest_unknown_or_mismatched_acquisition_phase_is_rejected (__main__.SourceSpecificBoundaryTests.test_unknown_or_mismatched_acquisition_phase_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.047s\n\nOK\n"
+}

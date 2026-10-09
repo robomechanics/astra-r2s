@@ -1,0 +1,54 @@
+--- original_e468_auditor.py
++++ audit_m8_supported_trace_initial_boundary_v1.py
+@@ -512,7 +512,7 @@
+ 
+ 
+ def original_grasp_flag_audit(columns, labels, metadata):
+-    """Original acquisition row is inactive; its measured guard starts next tick."""
++    """Bind same-row initial acquisition and next-tick quiet-regrasp guards."""
+     time, phase = columns["time"], columns["phase_index"].astype(int)
+     names = np.asarray(labels, dtype=object)[phase]
+     count = len(time)
+@@ -522,10 +522,27 @@
+         index = int(np.searchsorted(time, acquisition["time_s"]))
+         if index == count or abs(time[index]-acquisition["time_s"]) > 1e-9:
+             raise ValueError("Measured grasp acquisition is absent from the original feedback ledger")
+-        if active[index]:
+-            raise ValueError("Acquisition row incorrectly claims the new grasp was already guarded")
+-        if index+1 < count:
+-            starts[index+1] = index+1
++        acquisition_phase = acquisition.get("phase")
++        if names[index] != acquisition_phase:
++            raise ValueError("Declared grasp acquisition phase differs from its original native row")
++        if acquisition_phase == "settle_bolt":
++            # Legacy initial grasp is assigned before guard/error evaluation.
++            # This exact solved acquisition row is active with the new reference.
++            if index != np.flatnonzero(names == acquisition_phase)[-1] or not active[index]:
++                raise ValueError("Initial settle_bolt acquisition must guard its final solved row")
++            starts[index] = index
++        elif isinstance(acquisition_phase, str) and acquisition_phase.startswith("settle_regrip_"):
++            # Quiet regrasp is assigned after the cached guard/error evaluation.
++            if active[index]:
++                raise ValueError("Quiet regrasp acquisition row claims an already-active new guard")
++            required = float(metadata["control_config"]["regrasp_window_s"])
++            observed = acquisition.get("continuous_quiet_bilateral_streak_s")
++            if not isinstance(observed, (int, float)) or not np.isfinite(observed) or observed+1e-12 < required:
++                raise ValueError("Quiet regrasp acquisition lacks its declared continuous native streak")
++            if index+1 < count:
++                starts[index+1] = index+1
++        else:
++            raise ValueError("Unknown source grasp-acquisition boundary scope")
+     clear = np.array([name.startswith(("release_", "reset_open_", "open_settle_", "open_hold_", "regrip_"))
+                       for name in names])
+     last_clear = np.maximum.accumulate(np.where(clear, np.arange(count), -1))
+@@ -536,7 +553,9 @@
+     expected = (last_acquired > last_clear) & closed_target
+     if not np.array_equal(active, expected):
+         raise ValueError("Original right grasp guards do not cover every post-acquisition closed native tick")
+-    return {"original_acquisition_rows_inactive_next_tick_guarded": True,
++    return {"source_specific_acquisition_guard_boundaries_verified": True,
++        "initial_same_row_acquisition_count": sum(a["phase"] == "settle_bolt" for a in metadata["right_grasp_acquisitions"]),
++        "quiet_next_tick_acquisition_count": sum(a["phase"].startswith("settle_regrip_") for a in metadata["right_grasp_acquisitions"]),
+         "guarded_native_steps": int(np.sum(active)), "intentional_open_reference_clears_verified": True}
+ 
+ 
