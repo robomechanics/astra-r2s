@@ -1,9 +1,12 @@
 {
+  "screenshot": "media/m8_table_pickup/preview.png",
+  "physics_rollout": false,
+  "model_fingerprint": "25efc9d79f2a2c9fe95313571e0d25cb586077f44a66ff747d994ace75744c22",
   "status": "Static initial scene preview; no physical rollout qualification",
   "scene_config": {
     "base": {
       "thread": {
-        "timestep": 2.5e-05,
+        "timestep": 5e-05,
         "friction": 0.15,
         "contact_time_constant": 0.0005,
         "contact_margin": 0.0,
@@ -71,7 +74,7 @@
     "block_position": [
       0.25,
       0.15,
-      0.06
+      0.059999989999999996
     ],
     "hole_offset": [
       0.0,
@@ -97,7 +100,38 @@
       0.10325
     ]
   },
-  "model_fingerprint": "cd74d45030c8aecd16d20fe40b9c2885cdebb437e61a49c58f4c8c9b4768bffc",
+  "control_config": {
+    "arm": {
+      "position_stiffness": 20000.0,
+      "position_damping": 650.0,
+      "rotation_stiffness": 40.0,
+      "rotation_damping": 6.0,
+      "left_rotation_stiffness": 80.0,
+      "left_rotation_damping": 10.0,
+      "maximum_cartesian_force": 8.0,
+      "maximum_cartesian_torque": 2.0,
+      "axial_feed_N": -0.05,
+      "open_aperture": 0.024,
+      "closed_aperture": 0.0194,
+      "left_closed_aperture": 0.0144,
+      "stroke_angle_rad": 2.0943951023931953,
+      "angular_speed_rad_s": 1.0,
+      "reset_speed_rad_s": 4.0,
+      "strokes": 3,
+      "sample_period_s": 0.005
+    },
+    "pickup_hover_m": 0.02,
+    "left_pickup_hover_m": 0.075,
+    "left_lift_clearance_m": 0.06,
+    "transport_tip_clearance_m": 0.015,
+    "entry_tip_clearance_m": 0.00075,
+    "block_lift_m": 0.004,
+    "net_axial_feed_N": 0.05,
+    "maximum_starting_strokes": 8,
+    "qualifying_turns": 2,
+    "sample_period_s": 0.005,
+    "full_flank_contact_streak_s": 0.2
+  },
   "both_hands_start_open": true,
   "left_block_starts_on_table": true,
   "male_bolt_starts_separately_on_head_support_rest": true,
