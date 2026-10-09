@@ -45,6 +45,27 @@ with no axial position or pitch feedback. No trained/perception policy or
 continuous full trajectory is demonstrated. The canonical longer schedule
 does not include this experimental controller.
 
+The historical [opening/wait v1 and v2 trials](../media/m8_table_supported/diagnostics/entry_supported_open_wait_trials/README.md)
+cold-start from that exact closed-v3 state. Their original readiness failures
+and overall false results remain:
+
+| Trial | Integrated duration | Original readiness result |
+| --- | ---: | --- |
+| [Opening v1](../media/m8_table_supported/diagnostics/entry_supported_open_wait_trials/entry_supported_open_search_v1/render/demo.gif) | 0.37000 s | No strict 100 ms quiet window; gate fails before the unintegrated 0.37005 s command. |
+| [Opening v2](../media/m8_table_supported/diagnostics/entry_supported_open_wait_trials/entry_supported_open_search_v2/render/demo.gif) | 1.00000 s | Earlier strict-ready windows occur, first at 0.46205 s; fixed 1.00005 s gate still fails. |
+
+Every fully open native tick has **zero entire-right-robot/bolt contacts**,
+zero hand load and zero right axial feed, with no external object drive or
+bolt/table support. Maximum open axial drift is **98.131 nm over 0.12 s** in
+v1 and **141.733 nm over 0.75 s** in v2. Hard physics checks hold, but neither
+branch reaches reset or regrasp; capture and a qualified passive reset remain
+unproven. V1's final saved state precedes its scalar endpoint by 4.95 ms;
+the media never synthesizes that missing state tail. The
+[exact frozen-source restore/repeat recipe](../media/m8_table_supported/diagnostics/entry_supported_open_wait_trials/README.md#verify-and-repeat-the-exact-cold-inputs)
+includes the adjacent closed-v3 report/ledger required by the native harness.
+These historical output-only harnesses and separate arithmetic checks do not
+extend the 281-test source proof or establish a continuous full trajectory.
+
 The earlier [three closed cold search trials](../media/m8_table_supported/diagnostics/face120_closed_search_trials/README.md)
 preserve exact local inputs, native force records, frozen harnesses, media and
 independent audits:

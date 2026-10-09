@@ -1,0 +1,17 @@
+{
+  "scope": "Six independent opening-observer arithmetic regressions; separate from281 canonical source tests and native task qualification. No MuJoCo integration/replay.",
+  "command": "python outputs/m8_table_supported/diagnostics/test_independent_open_search_audit_v1.py",
+  "tests_passed": 6,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_live_strict_event_precedes_later_endpoint_timeout (__main__.OpeningWindowTests.test_live_strict_event_precedes_later_endpoint_timeout) ... ok\ntest_loaded_mean_does_not_cover_unloaded_endpoint (__main__.OpeningWindowTests.test_loaded_mean_does_not_cover_unloaded_endpoint) ... ok\ntest_noncontact_robot_speed_is_not_added_to_original_bolt_gate (__main__.OpeningWindowTests.test_noncontact_robot_speed_is_not_added_to_original_bolt_gate) ... ok\ntest_positive_hand_up_cannot_be_cancelled_by_downward_load (__main__.OpeningWindowTests.test_positive_hand_up_cannot_be_cancelled_by_downward_load) ... ok\ntest_source_predicate_changes_are_rejected (__main__.OpeningWindowTests.test_source_predicate_changes_are_rejected) ... ok\ntest_whole_right_candidate_contact_rejects_force_free_tick (__main__.OpeningWindowTests.test_whole_right_candidate_contact_rejects_force_free_tick) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK\n",
+  "sources_before": {
+    "independent_open_search_audit_v1.py": "e3c191a5a08681e3e392f9950d71da618bf03c2b2f7f589a97a825352e6d5b13",
+    "test_independent_open_search_audit_v1.py": "dbb1788c0bbd7ebba6d4d32e5ad10c68acf586cac5dc917326d652a5c1a7fd75"
+  },
+  "sources_after": {
+    "independent_open_search_audit_v1.py": "e3c191a5a08681e3e392f9950d71da618bf03c2b2f7f589a97a825352e6d5b13",
+    "test_independent_open_search_audit_v1.py": "dbb1788c0bbd7ebba6d4d32e5ad10c68acf586cac5dc917326d652a5c1a7fd75"
+  },
+  "sources_unchanged": true
+}

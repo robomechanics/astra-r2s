@@ -1,0 +1,14 @@
+{
+  "scope": "Additional output-only cold-lineage arithmetic checks; separate from281 published application checks and from native qualification. No native replay or integration.",
+  "command": "scripts/run_m8.sh -m pytest outputs/m8_table_supported/diagnostics/test_independent_cold_chain_audit.py -q",
+  "result": "6 passed in0.50s",
+  "frozen_files": {
+    "independent_cold_chain_audit.py": "9a2cc4737d7f3960f4211ff93989ec2c502c473035b16a9943aa1017e6f4f3f7",
+    "test_independent_cold_chain_audit.py": "f246f24816b9bbcf98e31bbcb88b37aba136b9c3dfecdeecdf4c4ac91ca0ad35",
+    "independent_archived_native_force_audit_v2.py": "9c05d684c0fcbf29ccab75722d357b24e0c2c68d7f96972e1965c83cc1983890",
+    "independent_archived_phase_depth_audit_v2.py": "2097cde782935104b03bdec6280916720eac2186591bbefe142a09b11e5bb892"
+  },
+  "force_calculation_origin_sha256": "36f40e7b4ea11fe86f252281a2b77ebd13cabe5c786ca3eaa79f7f9a02072487",
+  "phase_calculation_origin_sha256": "3e400c59085d62f4e2872830a30e6a2f7c4a6e3b36c174a4a61e642e28458148",
+  "frozen": true
+}

@@ -1,0 +1,224 @@
+{
+  "scope": "Independent original all-step opening-window and contact/drive/drift audit. Pure archived arithmetic; no native integration or replay, no capture, qualified reset or continuous-rollout claim.",
+  "auditor_source_sha256": "e3c191a5a08681e3e392f9950d71da618bf03c2b2f7f589a97a825352e6d5b13",
+  "source_sha256": "7bb09632011be06f2ffc33f6dc8ab5c748ebd0396ceaaf696eb5ebe914ef64b8",
+  "helper_sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+  "original_ledger_sha256": "1515305ab8fb4899d366610c715df30fc7d40db38b1f7cef04cd5b0b8a9a1bf3",
+  "original_trace_sha256": "7fd5d05b41e3507ffa0bf5e6de383651cce99cbeb0f141325518b9f81bc262f8",
+  "source_valid_predicate": "bool(fully_open and right_bolt_contacts == 0 and all(checks.values()) and (sample['relative_bolt_angular_speed_rad_per_s'] <= 0.01))",
+  "force_time_scope": "Original new mj_step solved contacts and retained derived kinematics at time-dt; no mj_forward between integration and force recording; saved qpos/qvel post-integration",
+  "native_steps": 7400,
+  "timestep_s": 5e-05,
+  "all_recorded_native_hard_checks_held": true,
+  "original_producer_overall_guards_held": false,
+  "original_producer_failure": {
+    "elapsed_s": 0.37005,
+    "failed_checks": [
+      "fresh_fully_open_unloaded100ms_entry_support_not_ready"
+    ]
+  },
+  "timing": {
+    "last_original_solved_data_time_s": 17.14710000000746,
+    "last_integrated_elapsed_s": 0.37,
+    "pre_step_abort_elapsed_s": 0.37005,
+    "last_saved_post_state_elapsed_s": 0.36505000000000004,
+    "saved_state_tail_gap_s": 0.0049499999999999544,
+    "scope": "Retained solved forces/geometry describe time-dt; saved qpos/qvel are post-integration. A pre-command timeout step was not integrated; any sparse trace tail gap remains absent."
+  },
+  "fully_open": {
+    "native_ticks": 2400,
+    "first_elapsed_s": 0.25005,
+    "last_elapsed_s": 0.37,
+    "duration_s": 0.12000000000000001,
+    "maximum_whole_right_robot_contact_count": 0,
+    "maximum_bolt_world_contact_count": 0,
+    "maximum_nonthread_seating_count": 0,
+    "original_applied_external_drive_zero": true,
+    "maximum_absolute_hand_upward_load_N": 0.0,
+    "maximum_applied_axial_feed_N": 0.0,
+    "maximum_robot_site_axial_wrench_command_N": 0.00010954453268971124,
+    "robot_wrench_scope": "Free hand can receive finite XYZ position-control motor forces; zero whole-right-robot contacts prevents those forces from supporting or driving the bolt."
+  },
+  "original_saved_window_reconstruction": {
+    "sample_rows": 74,
+    "maximum_report_error": 0.0,
+    "final_original_open_window": {
+      "observer": "diagnostic-native-bolt-weight-transfer-v1",
+      "ready_for_diagnostic_release_attempt": false,
+      "bolt_weight_N": 0.26241400403581094,
+      "required_window_s": 0.1,
+      "observed_window_s": 0.00794999999999998,
+      "original_native_samples": 159,
+      "mean_thread_weight_fraction": 0.999579017658212,
+      "mean_positive_hand_upward_weight_fraction": 0.0,
+      "signed_thread_gravity_opposing_impulse_Ns": 0.0020853130823722927,
+      "positive_hand_upward_impulse_Ns": 0.0,
+      "loaded_actual_interior_flank_duration_s": 0.0,
+      "loaded_thread_gravity_support_duty_fraction": 1.0,
+      "entry_only_native_contact_window": true,
+      "loaded_actual_interior_flank_contact_observed": false,
+      "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+    },
+    "final_original_general_window": {
+      "observer": "diagnostic-native-bolt-weight-transfer-v1",
+      "ready_for_diagnostic_release_attempt": false,
+      "bolt_weight_N": 0.26241400403581094,
+      "required_window_s": 0.1,
+      "observed_window_s": 0.01279999999999995,
+      "original_native_samples": 256,
+      "mean_thread_weight_fraction": 1.0014532033164436,
+      "mean_positive_hand_upward_weight_fraction": 0.0,
+      "signed_thread_gravity_opposing_impulse_Ns": 0.003363780415190477,
+      "positive_hand_upward_impulse_Ns": 0.0,
+      "loaded_actual_interior_flank_duration_s": 0.0,
+      "loaded_thread_gravity_support_duty_fraction": 1.0,
+      "entry_only_native_contact_window": true,
+      "loaded_actual_interior_flank_contact_observed": false,
+      "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+    }
+  },
+  "strict_open_ready_original_arithmetic": {
+    "count": 0,
+    "first_elapsed_s": null,
+    "last_elapsed_s": null,
+    "final_fully_open_tick_ready": false
+  },
+  "strict_open_ready_independent_exact100ms": {
+    "count": 0,
+    "first_elapsed_s": null,
+    "last_elapsed_s": null,
+    "final_fully_open_tick_ready": false
+  },
+  "strict_valid_streaks": {
+    "longest_duration_s": 0.07675,
+    "longest_first_elapsed_s": 0.2796,
+    "longest_last_elapsed_s": 0.3563,
+    "final_duration_s": 0.00795
+  },
+  "invalid_original_predicates": {
+    "zero_whole_right_robot_contacts": {
+      "invalid_native_ticks": 0,
+      "first_elapsed_s": null,
+      "last_elapsed_s": null,
+      "native_tick_intervals": []
+    },
+    "all_original_native_checks": {
+      "invalid_native_ticks": 0,
+      "first_elapsed_s": null,
+      "last_elapsed_s": null,
+      "native_tick_intervals": []
+    },
+    "actual_bolt_angular_speed": {
+      "invalid_native_ticks": 72,
+      "first_elapsed_s": 0.2761,
+      "last_elapsed_s": 0.36205000000000004,
+      "native_tick_intervals": [
+        {
+          "first_elapsed_s": 0.2761,
+          "last_elapsed_s": 0.27615,
+          "native_ticks": 2
+        },
+        {
+          "first_elapsed_s": 0.2766,
+          "last_elapsed_s": 0.277,
+          "native_ticks": 9
+        },
+        {
+          "first_elapsed_s": 0.2795,
+          "last_elapsed_s": 0.27955,
+          "native_ticks": 2
+        },
+        {
+          "first_elapsed_s": 0.35635,
+          "last_elapsed_s": 0.35645000000000004,
+          "native_ticks": 3
+        },
+        {
+          "first_elapsed_s": 0.3569,
+          "last_elapsed_s": 0.35785,
+          "native_ticks": 20
+        },
+        {
+          "first_elapsed_s": 0.3603,
+          "last_elapsed_s": 0.36205000000000004,
+          "native_ticks": 36
+        }
+      ]
+    },
+    "actual_bolt_axial_velocity": {
+      "invalid_native_ticks": 1,
+      "first_elapsed_s": 0.3572,
+      "last_elapsed_s": 0.3572,
+      "native_tick_intervals": [
+        {
+          "first_elapsed_s": 0.3572,
+          "last_elapsed_s": 0.3572,
+          "native_ticks": 1
+        }
+      ]
+    },
+    "external_drive_zero": {
+      "invalid_native_ticks": 0,
+      "first_elapsed_s": null,
+      "last_elapsed_s": null,
+      "native_tick_intervals": []
+    },
+    "no_bolt_world_support": {
+      "invalid_native_ticks": 0,
+      "first_elapsed_s": null,
+      "last_elapsed_s": null,
+      "native_tick_intervals": []
+    },
+    "no_nonthread_seating": {
+      "invalid_native_ticks": 0,
+      "first_elapsed_s": null,
+      "last_elapsed_s": null,
+      "native_tick_intervals": []
+    },
+    "radial_alignment": {
+      "invalid_native_ticks": 0,
+      "first_elapsed_s": null,
+      "last_elapsed_s": null,
+      "native_tick_intervals": []
+    },
+    "tilt_alignment": {
+      "invalid_native_ticks": 0,
+      "first_elapsed_s": null,
+      "last_elapsed_s": null,
+      "native_tick_intervals": []
+    }
+  },
+  "fully_open_bolt_motion": {
+    "maximum_angular_speed_rad_per_s": 0.04764210742776836,
+    "rms_angular_speed_rad_per_s": 0.003664735316843095,
+    "median_p95_p99_angular_speed_rad_per_s": [
+      0.0013123385432946368,
+      0.0071607779392982,
+      0.016196796083331085
+    ],
+    "maximum_abs_axial_velocity_m_per_s": 0.00023172640613149616,
+    "cumulative_peak_axial_drift_m": 9.813125263768985e-08,
+    "cumulative_peak_yaw_drift_rad": 9.976247105214497e-05,
+    "final_axial_drift_m": 3.635833069684513e-08,
+    "final_yaw_drift_rad": 9.976247105214497e-05,
+    "mean_cumulative_axial_peak_last100ms_m": 5.581373630704836e-08,
+    "scope": "Cumulative peak, final displacement and mean of a cumulative-peak field are distinct quantities."
+  },
+  "final_fully_open_exact100ms_load": {
+    "duration_s": 0.1,
+    "mean_signed_thread_weight_fraction": 0.9999983654003753,
+    "mean_positive_hand_weight_fraction": 0.0,
+    "loaded_thread_duty": 1.0,
+    "all_native_hard_checks_held": true,
+    "strict_instantaneous_bolt_angular_gate_all_ticks": false
+  },
+  "observed_phase_names": [
+    "release_search_2",
+    "open_settle_search_2"
+  ],
+  "actual_regrasp_acquisition": null,
+  "loaded_actual_conservative_interior_ticks": 0,
+  "full_capture": false,
+  "qualified_reset": false,
+  "full_trajectory_qualified": false
+}

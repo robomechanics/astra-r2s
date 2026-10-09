@@ -1,0 +1,71 @@
+{
+  "scope": "Closed original native entry-supported opening search with preserved pre-command readiness timeout. Recorded hard geometry/contact/drive checks held; strict100ms original quiet endpoint failed. No reset/regrasp/forward stage was reached, no captured or qualified passive-reset reward. No cold-source or original evidence modification.",
+  "canonical_parent_code_commit": "b2b13ff39cd47c48afd19b38f83e9a405c9d6e32",
+  "harness_source_sha256": "7bb09632011be06f2ffc33f6dc8ab5c748ebd0396ceaaf696eb5ebe914ef64b8",
+  "canonical_model_reference_parent_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+  "actual_cold_state_parent_sha256": "8148b80ef7db5bbba06afa08096f54f6d02b3153847c4185cf630a712f320d1e",
+  "original_files": {
+    "declaration.json": "1300e602e54cdfe9226b8305aa5e4d4d00a1151bc04bab162f8c92e5b400cc9c",
+    "report.json": "190cf820c1e421f4b425fd7c60f6434a624ffcb43a30115fe6c51df90816cd78",
+    "diagnostic_source.py": "7bb09632011be06f2ffc33f6dc8ab5c748ebd0396ceaaf696eb5ebe914ef64b8",
+    "observer_source.py": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+    "original_native_force_ledger.npz": "1515305ab8fb4899d366610c715df30fc7d40db38b1f7cef04cd5b0b8a9a1bf3",
+    "checkpoint_trace.npz": "7fd5d05b41e3507ffa0bf5e6de383651cce99cbeb0f141325518b9f81bc262f8",
+    "declared_cold_initialization.npz": "9e01436e05098eb57f567b79f7fea42e937c8e245c3eb5378aa5fe94e14a8da1",
+    "scene.xml": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "supported_scene.zip": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93"
+  },
+  "closed_independent_reports": {
+    "independent_native_force_audit.json": "6fcaba955f3d33f9db5f54f608341c2e094c99e7291de413711466d382d63de8",
+    "independent_phase_depth_audit.json": "68168d7b1d442db3610dbd20cf4315f41e772629a7e79fa4be21fe25e1a35061",
+    "independent_table_press_audit.json": "b5dae402eecf6ed58ada8de004be266a3a21bb8f88aa48079f3ab96bb76c6754",
+    "independent_open_search_audit.json": "ef36c1c46665793cf6be995e731f238e9c3a50983d4d265b7b2807412839297b"
+  },
+  "source_snapshots": {
+    "archived_diagnostic_auditors_software_proof.json": "26af0b7de186adca77b16f6bee575544eff87362c4a78292a28df86d85e52671",
+    "canonical281_software_proof.json": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+    "cold_chain_auditors_software_proof.json": "5f5ce483727187255cdf554e4ddf4e2f49dd95d176becd2d1b497fdb098910fd",
+    "independent_archived_native_force_audit.py": "36f40e7b4ea11fe86f252281a2b77ebd13cabe5c786ca3eaa79f7f9a02072487",
+    "independent_archived_native_force_audit_v3.py": "711647a84fe9518449c0f3eed82c0b2ec02652b28a0e972dc298d365d649a586",
+    "independent_archived_phase_depth_audit_v3.py": "505b1ed6be80e7052cced5bdb1a721c334a93aed76ed40c5f4b1c41af5222c53",
+    "independent_cold_chain_audit.py": "9a2cc4737d7f3960f4211ff93989ec2c502c473035b16a9943aa1017e6f4f3f7",
+    "independent_open_search_audit_v1.py": "e3c191a5a08681e3e392f9950d71da618bf03c2b2f7f589a97a825352e6d5b13",
+    "independent_open_search_software_proof_v1.json": "e3bf96f36dc5f7c2dfc0f0509319a98440bf8fd03c7958b74478d1b1acfe7e20",
+    "independent_phase_depth_software_proof.json": "ee12a2bfd7e9dcb65324720af72f2fd4e4cee106647e31e593883d3f211d9340",
+    "independent_table_press_audit.py": "3e46b3f00bbe67845e8f42b0f337b9a3f654e4fe6c69613ed6f7a988cbbd77e0",
+    "independent_yaw_counter_origin.py": "7313b5acac8f57e81e45c0fbe1c72045c12b11c079c5a65f235b44287f38acc6",
+    "test_independent_archived_native_force_audit.py": "5888ad13e47113536fd15b8f2cc06e10c1035b005072f316046d4e135e23c27d",
+    "test_independent_cold_chain_audit.py": "f246f24816b9bbcf98e31bbcb88b37aba136b9c3dfecdeecdf4c4ac91ca0ad35",
+    "test_independent_open_search_audit_v1.py": "dbb1788c0bbd7ebba6d4d32e5ad10c68acf586cac5dc917326d652a5c1a7fd75",
+    "test_independent_table_press_audit.py": "9e09d371138940e7c37ec5ed2b01330347d171ae9ec904edf474a58b2fa00a0d",
+    "test_independent_yaw_counter_origin.py": "03e6a96ee49cbc801b44116c70374cf92a802cd78a79cfa0019c6660703eaba8",
+    "yaw_origin_and_press_auditors_software_proof.json": "7f3ac92ee5a21308c7a844159b13b29fecc2d6ea3064fe16b606b5b4807321b4"
+  },
+  "canonical281_software_proof_sha256": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+  "software_scope": "281 software tests apply to frozen canonical application/helper sources. Output-only opening harness is not covered as a canonical rollout. Six new arithmetic regressions and inherited auditor proofs are separate and cannot establish native task success.",
+  "timing_scope": {
+    "last_original_solved_data_time_s": 17.14710000000746,
+    "last_integrated_elapsed_s": 0.37,
+    "pre_step_abort_elapsed_s": 0.37005,
+    "last_saved_post_state_elapsed_s": 0.36505000000000004,
+    "saved_state_tail_gap_s": 0.0049499999999999544,
+    "scope": "Retained solved forces/geometry describe time-dt; saved qpos/qvel are post-integration. A pre-command timeout step was not integrated; any sparse trace tail gap remains absent."
+  },
+  "original_producer_failure": {
+    "elapsed_s": 0.37005,
+    "failed_checks": [
+      "fresh_fully_open_unloaded100ms_entry_support_not_ready"
+    ]
+  },
+  "all_recorded_native_hard_checks_held": true,
+  "original_overall_guards_held": false,
+  "strict_live_event_readiness": {
+    "count": 0,
+    "first_elapsed_s": null,
+    "last_elapsed_s": null,
+    "final_fully_open_tick_ready": false
+  },
+  "full_capture": false,
+  "qualified_reset": false,
+  "full_trajectory_qualified": false
+}

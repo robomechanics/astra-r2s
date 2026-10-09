@@ -75,6 +75,16 @@ preserve privileged perfect pose feedback at 20 kHz through finite robot
 motors, independently scheduled yaw and no axial pitch feedback. Capture,
 full-pitch lead, opening/reset and a trained/perception policy remain
 unqualified. The separate harness leaves the canonical `b2b13ff` app unchanged.
+The historical [opening/wait trials](media/m8_table_supported/diagnostics/entry_supported_open_wait_trials/README.md)
+include [v1](media/m8_table_supported/diagnostics/entry_supported_open_wait_trials/entry_supported_open_search_v1/render/demo.gif)
+and [v2](media/m8_table_supported/diagnostics/entry_supported_open_wait_trials/entry_supported_open_search_v2/render/demo.gif).
+Both preserve failed readiness gates and overall false results. V2 has earlier
+strict-ready windows but fails its fixed endpoint gate. Every fully open
+native tick has zero entire-right-robot/bolt contacts and zero hand load;
+maximum open axial drift is 98.131 nm over 0.12 s in v1 and 141.733 nm over
+0.75 s in v2. Neither reaches reset/regrasp or qualifies capture/full assembly.
+The linked package retains exact native records and complete frozen-source
+reproduction instructions, separate from the 281-test proof.
 The [three closed cold search trials](media/m8_table_supported/diagnostics/face120_closed_search_trials/README.md)
 retain separate native videos and exact repeat instructions:
 [reverse seat](media/m8_table_supported/diagnostics/face120_closed_search_trials/face120_seat_search_v1/README.md)

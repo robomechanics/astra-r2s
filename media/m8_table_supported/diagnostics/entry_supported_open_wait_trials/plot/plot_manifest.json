@@ -1,0 +1,98 @@
+{
+  "scope": "Read-only scientific display of original native opening angular speed, drift and exact independent trailing-window arithmetic. No integration/force replay/interpolation. Original fixed-endpoint failures remain failed; no reset/capture qualification.",
+  "source_sha256": "1ded85eda094165e311e96109b8c6c1a40ad238f5b412e04087a4843dbf61625",
+  "archived_arithmetic_dependency_sha256": "e3c191a5a08681e3e392f9950d71da618bf03c2b2f7f589a97a825352e6d5b13",
+  "trials": {
+    "entry_supported_open_search_v1": {
+      "original_ledger_sha256": "1515305ab8fb4899d366610c715df30fc7d40db38b1f7cef04cd5b0b8a9a1bf3",
+      "original_report_sha256": "190cf820c1e421f4b425fd7c60f6434a624ffcb43a30115fe6c51df90816cd78",
+      "original_open_audit_sha256": "ef36c1c46665793cf6be995e731f238e9c3a50983d4d265b7b2807412839297b",
+      "native_steps": 7400,
+      "strict_readiness": {
+        "count": 0,
+        "first_elapsed_s": null,
+        "last_elapsed_s": null,
+        "final_fully_open_tick_ready": false
+      },
+      "tail_gap_s": 0.0049499999999999544,
+      "fully_open": {
+        "native_ticks": 2400,
+        "first_elapsed_s": 0.25005,
+        "last_elapsed_s": 0.37,
+        "duration_s": 0.12000000000000001,
+        "maximum_whole_right_robot_contact_count": 0,
+        "maximum_bolt_world_contact_count": 0,
+        "maximum_nonthread_seating_count": 0,
+        "original_applied_external_drive_zero": true,
+        "maximum_absolute_hand_upward_load_N": 0.0,
+        "maximum_applied_axial_feed_N": 0.0,
+        "maximum_robot_site_axial_wrench_command_N": 0.00010954453268971124,
+        "robot_wrench_scope": "Free hand can receive finite XYZ position-control motor forces; zero whole-right-robot contacts prevents those forces from supporting or driving the bolt."
+      },
+      "motion": {
+        "maximum_angular_speed_rad_per_s": 0.04764210742776836,
+        "rms_angular_speed_rad_per_s": 0.003664735316843095,
+        "median_p95_p99_angular_speed_rad_per_s": [
+          0.0013123385432946368,
+          0.0071607779392982,
+          0.016196796083331085
+        ],
+        "maximum_abs_axial_velocity_m_per_s": 0.00023172640613149616,
+        "cumulative_peak_axial_drift_m": 9.813125263768985e-08,
+        "cumulative_peak_yaw_drift_rad": 9.976247105214497e-05,
+        "final_axial_drift_m": 3.635833069684513e-08,
+        "final_yaw_drift_rad": 9.976247105214497e-05,
+        "mean_cumulative_axial_peak_last100ms_m": 5.581373630704836e-08,
+        "scope": "Cumulative peak, final displacement and mean of a cumulative-peak field are distinct quantities."
+      }
+    },
+    "entry_supported_open_search_v2": {
+      "original_ledger_sha256": "008b212004f7a758527df52a327f5d99bf7f70ad04edc92638939bfe87330c02",
+      "original_report_sha256": "226f2f704e9001d185bd40ae6806f02bc9100c2c90b75373a23bbde51ed048b9",
+      "original_open_audit_sha256": "2609cdd0c5977b8fc1998922610c80a9eb2466141a5ec35c3444369a4a232428",
+      "native_steps": 20000,
+      "strict_readiness": {
+        "count": 5671,
+        "first_elapsed_s": 0.46205,
+        "last_elapsed_s": 0.8711500000000001,
+        "final_fully_open_tick_ready": false
+      },
+      "tail_gap_s": 0.0,
+      "fully_open": {
+        "native_ticks": 15000,
+        "first_elapsed_s": 0.25005,
+        "last_elapsed_s": 1.0,
+        "duration_s": 0.75,
+        "maximum_whole_right_robot_contact_count": 0,
+        "maximum_bolt_world_contact_count": 0,
+        "maximum_nonthread_seating_count": 0,
+        "original_applied_external_drive_zero": true,
+        "maximum_absolute_hand_upward_load_N": 0.0,
+        "maximum_applied_axial_feed_N": 0.0,
+        "maximum_robot_site_axial_wrench_command_N": 0.00014705620593642976,
+        "robot_wrench_scope": "Free hand can receive finite XYZ position-control motor forces; zero whole-right-robot contacts prevents those forces from supporting or driving the bolt."
+      },
+      "motion": {
+        "maximum_angular_speed_rad_per_s": 0.04764210742776836,
+        "rms_angular_speed_rad_per_s": 0.002110074730685867,
+        "median_p95_p99_angular_speed_rad_per_s": [
+          0.0008525814136700761,
+          0.0025275394442069326,
+          0.008941081694949293
+        ],
+        "maximum_abs_axial_velocity_m_per_s": 0.00023172640613149616,
+        "cumulative_peak_axial_drift_m": 1.4173311500831343e-07,
+        "cumulative_peak_yaw_drift_rad": 0.0003936472470802421,
+        "final_axial_drift_m": 1.1089096387320585e-07,
+        "final_yaw_drift_rad": 0.0003936472470802421,
+        "mean_cumulative_axial_peak_last100ms_m": 1.4164085952121305e-07,
+        "scope": "Cumulative peak, final displacement and mean of a cumulative-peak field are distinct quantities."
+      }
+    }
+  },
+  "source_faithful_exact_arithmetic_scope": "Independent fixed2000-native-tick trailing calculation from frozen auditor, verified against original arithmetic readiness count/first/last endpoints.",
+  "force_geometry_timing": "Original preintegration solve at logged absolute time\u221250\u00b5s; elapsed time is branch-local, initialization physical state identical; no warmstarted splice.",
+  "shared_first7400_rows_identical": true,
+  "plot_sha256": "095f7ac6f0f2e59c0213e0e6003e1d589bb7ce2c9c54720342f39a089bfe96f0",
+  "plot_bytes": 217559
+}

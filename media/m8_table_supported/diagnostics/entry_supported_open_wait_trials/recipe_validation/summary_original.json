@@ -1,0 +1,108 @@
+{
+  "scope": "Separate first-native-step reproduction layout/runtime checks only. Each runs50us during initial release; neither repeats full opening/wait or verifies capture/reset/full trajectory. Not combined with281 historical producer tests.",
+  "isolated_checkout": "/workspace/astra-r2s-supported-open-review",
+  "producer_commit": "b2b13ff39cd47c48afd19b38f83e9a405c9d6e32",
+  "proof_source_files_verified": 63,
+  "complete_input_package_checksums_verified": {
+    "prefix": 130,
+    "trials": 146,
+    "closed_v3": 69,
+    "open_trials_prepublication": 121
+  },
+  "reviewed_open_package_ledger_sha256": "6b8f3590c83a475ad83e5fe868ab6080d230528ecdbd87f2e79c9ea25c33f5f0",
+  "actual_state_parent_files_sha256": {
+    "checkpoint_trace.npz": "8148b80ef7db5bbba06afa08096f54f6d02b3153847c4185cf630a712f320d1e",
+    "report.json": "9c5d8dc33e4e510fe6d7f64f4f3c320e028cbb792eddddd6d633aa557d69ca6c",
+    "original_native_force_ledger.npz": "d773bf3247fbcfb4c97cd0d56370b26c87e5ad609c4e817cd49a3b2879396d67"
+  },
+  "smokes": {
+    "v1": {
+      "native_steps": 1,
+      "native_duration_s": 5e-05,
+      "exit_code": 0,
+      "aborted": null,
+      "physical_phase": "release_search_2",
+      "harness_sha256": "7bb09632011be06f2ffc33f6dc8ab5c748ebd0396ceaaf696eb5ebe914ef64b8",
+      "canonical_parent_trace_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+      "actual_state_parent_trace_sha256": "8148b80ef7db5bbba06afa08096f54f6d02b3153847c4185cf630a712f320d1e",
+      "actual_state_parent_report_sha256": "9c5d8dc33e4e510fe6d7f64f4f3c320e028cbb792eddddd6d633aa557d69ca6c",
+      "actual_state_parent_ledger_sha256": "d773bf3247fbcfb4c97cd0d56370b26c87e5ad609c4e817cd49a3b2879396d67",
+      "model_xml_sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+      "initial_qpos_qvel_sha256": "45fd8906cd2947e9e4fcfe7ca8884b6d20c4fd45dfe714c156618ae5cb0002b9",
+      "producer_dependencies_verified": 9,
+      "runtime": {
+        "mujoco_version": "3.15.0",
+        "libraries": [
+          {
+            "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+            "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+            "sdf_minimum_search_step_m": 1e-07,
+            "sdf_initial_search_step_m": 0.002
+          }
+        ],
+        "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+      },
+      "argv": [
+        "outputs/m8_table_supported/diagnostics/entry_supported_open_wait_v1_probe.py",
+        "--parent",
+        "outputs/m8_table_supported/cold_inputs/prefix/insertion_trace.npz",
+        "--state-source",
+        "outputs/m8_table_supported/cold_inputs/closed_v3/checkpoint_trace.npz",
+        "--maximum-native-steps",
+        "1",
+        "--output",
+        "outputs/m8_table_supported/diagnostics/open_wait_recipe_smoke_v1"
+      ],
+      "files": {
+        "/workspace/astra-r2s-supported-open-review/outputs/m8_table_supported/diagnostics/open_wait_recipe_smoke_v1/report.json": "65a65c98292398e86f09a0afa9b3106b7df842c74928373fa68b865c37064487",
+        "/workspace/astra-r2s-supported-open-review/outputs/m8_table_supported/diagnostics/open_wait_recipe_smoke_v1/declaration.json": "b7d77dffcb3e15f887ac9a13fabe3a4bd3a9b3993fd1e7fc2292aa7f92611760",
+        "/workspace/astra-r2s-supported-open-review/outputs/m8_table_supported/diagnostics/open_wait_recipe_smoke_v1.log": "83d15c33076bcb0cf47da84cfd1f610feb1138de4a438abd1a31b5007dd27bee"
+      }
+    },
+    "v2": {
+      "native_steps": 1,
+      "native_duration_s": 5e-05,
+      "exit_code": 0,
+      "aborted": null,
+      "physical_phase": "release_search_2",
+      "harness_sha256": "34a2f60014e0efbf3c3b1c3440a256c95e82fbf335a088ed40afdc21cf64a250",
+      "canonical_parent_trace_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+      "actual_state_parent_trace_sha256": "8148b80ef7db5bbba06afa08096f54f6d02b3153847c4185cf630a712f320d1e",
+      "actual_state_parent_report_sha256": "9c5d8dc33e4e510fe6d7f64f4f3c320e028cbb792eddddd6d633aa557d69ca6c",
+      "actual_state_parent_ledger_sha256": "d773bf3247fbcfb4c97cd0d56370b26c87e5ad609c4e817cd49a3b2879396d67",
+      "model_xml_sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+      "initial_qpos_qvel_sha256": "45fd8906cd2947e9e4fcfe7ca8884b6d20c4fd45dfe714c156618ae5cb0002b9",
+      "producer_dependencies_verified": 9,
+      "runtime": {
+        "mujoco_version": "3.15.0",
+        "libraries": [
+          {
+            "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+            "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+            "sdf_minimum_search_step_m": 1e-07,
+            "sdf_initial_search_step_m": 0.002
+          }
+        ],
+        "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+      },
+      "argv": [
+        "outputs/m8_table_supported/diagnostics/entry_supported_open_wait_v2_probe.py",
+        "--parent",
+        "outputs/m8_table_supported/cold_inputs/prefix/insertion_trace.npz",
+        "--state-source",
+        "outputs/m8_table_supported/cold_inputs/closed_v3/checkpoint_trace.npz",
+        "--maximum-native-steps",
+        "1",
+        "--output",
+        "outputs/m8_table_supported/diagnostics/open_wait_recipe_smoke_v2",
+        "--open-settle",
+        ".75"
+      ],
+      "files": {
+        "/workspace/astra-r2s-supported-open-review/outputs/m8_table_supported/diagnostics/open_wait_recipe_smoke_v2/report.json": "1f0ba38b581e8c0c07054c32e3576f463c67c938107bd596fc1a84fc2e5b9465",
+        "/workspace/astra-r2s-supported-open-review/outputs/m8_table_supported/diagnostics/open_wait_recipe_smoke_v2/declaration.json": "ad9421a5243962279c0039634bab34507cdc64980fd423e7e41fb83af63bfcab",
+        "/workspace/astra-r2s-supported-open-review/outputs/m8_table_supported/diagnostics/open_wait_recipe_smoke_v2.log": "794682c2085d2a61f81e793e4e494826766980ceca1cdad638785042fe16cb7f"
+      }
+    }
+  }
+}
