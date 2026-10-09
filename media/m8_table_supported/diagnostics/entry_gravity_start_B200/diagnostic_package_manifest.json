@@ -1,0 +1,236 @@
+{
+  "status": "closed_cold_checkpoint_turn_diagnostic_only",
+  "parent_package": "media/m8_table_supported/failures/cone_release_alignment_abort",
+  "parent_package_url": "https://github.com/robomechanics/astra-r2s/tree/main/media/m8_table_supported/failures/cone_release_alignment_abort",
+  "parent_trace_sha256": "02a03f0262edfd519a3080bc3d44588f2f2f12ac2da6d40ca44dc379e3acae4c",
+  "parent_model_fingerprint": "dd44ffab2beade32ed4682adb551fdf077dd97d4140bb2794cc995effe35a9ca",
+  "parent_model_xml_sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+  "parent_producer_commit": "66276d0dd2188c763ada69e7426e5d74cf64fd29",
+  "parent_checkpoint_time_s": 6.755149999990926,
+  "parent_checkpoint_index": 1363,
+  "parent_checkpoint_phase": "feed_to_entry",
+  "parent_checkpoint_qpos_qvel_sha256": "063b95de1df608f63c11416f86a638c42ff0d7952a66cfaa0ceb3421d36b90a8",
+  "cold_initialization": "Exact post-integration archived qpos/qvel/ctrl once into new MjData; qacc_warmstart and solver state default zero; one mj_forward initializes a new solve",
+  "warmstarts_or_original_solver_state_restored": false,
+  "continuous_full_trajectory": false,
+  "checkpoint_spliced_into_parent": false,
+  "parent_original_trace_report_sources_modified": false,
+  "current_canonical_producer_tests": 213,
+  "separate_output_only_observer_tests": {
+    "passed": 15,
+    "failed": 0,
+    "elapsed_s": 0.35,
+    "command": "scripts/run_m8.sh -m pytest -q outputs/m8_table_supported/test_bolt_weight_transfer_observer.py"
+  },
+  "separate_output_only_phase_geometry_tests": {
+    "passed": 4,
+    "failed": 0,
+    "elapsed_s": 0.08,
+    "command": "scripts/run_m8.sh -m pytest -q outputs/m8_table_supported/diagnostics/test_independent_phase_depth_audit.py"
+  },
+  "proof_accounting": "Historical 213-test producer proof, separate 15-test observer proof and separate 4-test pure geometry audit proof are not combined or relabeled.",
+  "diagnostic_duration_s": 7.3905,
+  "diagnostic_wall_seconds": 1139.5514893919972,
+  "original_native_steps": 147810,
+  "saved_diagnostic_sample_rows": 1480,
+  "native_timestep_s": 5e-05,
+  "axial_damping_Ns_per_m": 200.0,
+  "net_feed_start_N": 0.05,
+  "net_feed_final_N": 0.26241400403581094,
+  "original_diagnostic_guards_held": true,
+  "original_abort": null,
+  "ever_cone_only_weight_transfer_ready": true,
+  "final_exact100ms_release_ready": false,
+  "capture_qualified": false,
+  "actual_loaded_interior_flank_contacts": 0,
+  "maximum_formed_full_ring_overlap_m": 0,
+  "opening_release_or_passive_reset_executed": false,
+  "qualified_thread_lead_observed": false,
+  "independent_exact100ms": {
+    "duration_s": 0.1,
+    "native_steps": 2000,
+    "mean_signed_thread_weight_fraction": 0.9911246899107516,
+    "mean_positive_hand_upward_weight_fraction": 0.942623585698367,
+    "mean_signed_hand_weight_fraction": 0.008794302250310363,
+    "loaded_thread_gravity_support_duty": 0.0355,
+    "geometry_motion_drive_support_checks_contiguous": true,
+    "ready": false,
+    "ever_ready": true,
+    "last_window_ranges": {
+      "relative_bolt_axial_velocity_m_per_s": [
+        -0.00018840725948921159,
+        0.00012705767923519996
+      ],
+      "radial_offset_m": [
+        1.2365049828459824e-05,
+        1.266506852998157e-05
+      ],
+      "bolt_tilt_rad": [
+        0.007150851132946503,
+        0.007217716615563513
+      ],
+      "thread_gravity_opposing_force_N": [
+        0.0,
+        7.382279963992974
+      ],
+      "hand_gravity_opposing_force_N": [
+        -6.957371135569636,
+        0.25919313019568796
+      ],
+      "native_thread_depth_m": [
+        0.0,
+        3.93389959461539e-06
+      ]
+    }
+  },
+  "comparison_geometry_summary": {
+    "parent_recorded_sample_maximum_withdrawal_m": 0.0013320646468052387,
+    "branch_allstep_maximum_withdrawal_from_first_actual_turn_sample_m": 1.346192151994996e-06,
+    "branch_original_producer_report_withdrawal_m": 1.3154526586831028e-06,
+    "branch_independent_allstep_withdrawal_from_first_cold_native_row_m": 1.3156163099284357e-06,
+    "branch_first_actual_turn_native_base_z_m": -0.022600006480653734,
+    "branch_original_producer_summary_base_z_reference_m": -0.022600006473209856,
+    "branch_first_cold_native_row_base_z_m": -0.0226000370564958,
+    "branch_allstep_minimum_base_z_in_turn_m": -0.02260135267280573,
+    "branch_final_advance_from_first_actual_turn_sample_m": 3.2652832253628195e-05,
+    "parent_recorded_samples": 1180,
+    "branch_original_native_steps_in_turn_plot": 117811,
+    "parent_recorded_maximum_formed_overlap_m": 0.0,
+    "branch_allstep_maximum_formed_overlap_m": 0.0,
+    "branch_loaded_actual_interior_contact_substeps": 0
+  },
+  "independent_precision_correction": {
+    "all_native_from_first_new_cold_solve_row_m": 1.3156163099284357e-06,
+    "all_native_from_motor_turn_preceding_row_m": 1.3461995958738426e-06,
+    "producer_sparse_saved_states_from_motor_turn_reference_m": 1.3154526586831028e-06,
+    "motor_turn_reference_row_index": 19999,
+    "motor_turn_reference_logged_elapsed_s": 1.0,
+    "source_native_geometry_timing": "Retained original solved derived geometry at logged time minus native timestep; saved qpos belongs to integrated logged time."
+  },
+  "comparison_scope": "Scientific comparison of original recorded geometry during each closed starting stroke only. The branch is cold and changes both axial loading and damping. No convergence/capture/full-trajectory qualification or causal isolation is claimed.",
+  "withdrawal_reference_and_sampling_note": "The original producer summary computes its minimum from sparse saved turn_samples, using a raw-ledger pre-turn reference. This plot uses every native ledger row in the actual turn window, from the first actual turn row. Those two reference_z values differ by only ~7.44e-12 m; their withdrawal difference is therefore primarily the sparse versus all-step minimum. The independent phase/depth audit instead uses the first new cold diagnostic native row as its reference and its all-step minimum. All original reports and bindings remain unmodified; each exact value and reference is preserved here.",
+  "immutable_audit_precision_note": "The earlier frozen independent_audit_binding timing_note is preserved verbatim. Its suggestion that a first-physical-turn reference gives the sparse producer 1.31545 micrometre value is superseded by the explicit raw extrema/reference table here and the separate reviewer precision sidecar, when present. The physical-turn all-step value is 1.346192 micrometres; the producer summary additionally uses sparse extrema.",
+  "runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "scope": "Separate cold diagnostic from the parent feed_to_entry checkpoint. All original guards held during a gravity-feed ramp/hold, physical closed pi turn and post-turn hold. Formed overlap and actual loaded interior-flank contact remain zero. Earlier force-readiness windows are cone-only; final readiness fails with high positive hand support. There is no opening/release, passive reset, qualified lead or completed policy-training trajectory. Neither a warmstarted parent continuation nor a full successful trajectory is claimed.",
+  "files": {
+    "audit_sources/independent_phase_depth_audit.py": {
+      "bytes": 6043,
+      "sha256": "d0419e4ac7dbbba4c7cbf918b622a3ea724ba582f70ac894e7a4cd71384f4fb9"
+    },
+    "audit_sources/independent_phase_depth_software_proof.json": {
+      "bytes": 685,
+      "sha256": "ee12a2bfd7e9dcb65324720af72f2fd4e4cee106647e31e593883d3f211d9340"
+    },
+    "audit_sources/independent_ready_window_scope_source.py": {
+      "bytes": 2425,
+      "sha256": "7b4099815d33f2dd0ea17452fcabbe026919c3a1261ac6a66a6ea7d052163291"
+    },
+    "audit_sources/independent_weight_transfer_audit.py": {
+      "bytes": 7728,
+      "sha256": "59d47d49b301ceb6d61925885c67e55a61c8e7f593e3ec477e0957ae2b85fdba"
+    },
+    "audit_sources/software_proof.json": {
+      "bytes": 730,
+      "sha256": "6a8c9d030c3677943ae8bc27fa5c4c1a7092a451f6e31127f6984a15668437c0"
+    },
+    "audit_sources/test_bolt_weight_transfer_observer.py": {
+      "bytes": 6983,
+      "sha256": "1454a1223af738d607d50f67306610bb70401150ef8576133196348fb61cc405"
+    },
+    "audit_sources/test_independent_phase_depth_audit.py": {
+      "bytes": 1096,
+      "sha256": "201b8e9afba1b6246f872bbef3d558076890836f527cf00606ee449448c192ff"
+    },
+    "checkpoint_trace.npz": {
+      "bytes": 3219743,
+      "sha256": "3ea65b85ecc8160ac13ee503e79c1c6c4f294861bcf23503bf7cfe1527ae759c"
+    },
+    "comparison_data.npz": {
+      "bytes": 4045040,
+      "sha256": "17301ba8e7f270d6f0a5b75907bb9c782844b8cfe9d8cbf826f7e002fecd1388"
+    },
+    "declaration.json": {
+      "bytes": 5505,
+      "sha256": "218592caa56d917c430cdcd5c612f6c52856b0f4953b6eca2f406103440119e5"
+    },
+    "diagnostic_source.py": {
+      "bytes": 19583,
+      "sha256": "622b68a8046fae9b4b4d0ac703b2a8ae3f9cdd0c2ab33165993b24758c847d8d"
+    },
+    "entry_gravity_comparison.png": {
+      "bytes": 291734,
+      "sha256": "14e4e53152de54f6795dec78d07869d44f831ccf3c94a2c4d93968814409f47b"
+    },
+    "entry_gravity_comparison.svg": {
+      "bytes": 263938,
+      "sha256": "7a5065a6beb6b43992bfeb81a706eb29caf0dabaa502133f4049c3ce25cc993a"
+    },
+    "entry_gravity_comparison_manifest.json": {
+      "bytes": 3661,
+      "sha256": "817993e2f59b254949faf1212e1473d47354c0736bc2d52143dc42ca3a1f18b2"
+    },
+    "entry_gravity_comparison_source.py": {
+      "bytes": 10742,
+      "sha256": "655565bd3ba0d2696ec63e2df0378c701a9cb19eb7ec7c7c39a0027a28e455a3"
+    },
+    "frozen_observer/bolt_weight_transfer_observer.py": {
+      "bytes": 12852,
+      "sha256": "f384eaa28376a95e64ee93f6bc291b6f028aa2ad411f406070e2133456274432"
+    },
+    "frozen_observer/software_proof.json": {
+      "bytes": 730,
+      "sha256": "6a8c9d030c3677943ae8bc27fa5c4c1a7092a451f6e31127f6984a15668437c0"
+    },
+    "frozen_observer/test_bolt_weight_transfer_observer.py": {
+      "bytes": 6983,
+      "sha256": "1454a1223af738d607d50f67306610bb70401150ef8576133196348fb61cc405"
+    },
+    "independent_audit_binding.json": {
+      "bytes": 2463,
+      "sha256": "fff6faa5de401e7c9bec8886b312886bbc5c1e6284398f059d1745dd188f6f4a"
+    },
+    "independent_phase_depth_audit.json": {
+      "bytes": 3815,
+      "sha256": "0479547cbcad17daeedf9836c1bfc6055007ab1372aedb36be9d88717a1d76b2"
+    },
+    "independent_ready_window_scope.json": {
+      "bytes": 674,
+      "sha256": "65dc9634e5e20a3aff08a435d3b412d9c22078d821d4c5b9c5a3a8a5d8886cfb"
+    },
+    "independent_weight_transfer_audit.json": {
+      "bytes": 4369,
+      "sha256": "647ce7e5fc7df2a3ccbfd26f8aa43c9c255e065ff811be1edc06b81e9b20372d"
+    },
+    "observer_source.py": {
+      "bytes": 12852,
+      "sha256": "f384eaa28376a95e64ee93f6bc291b6f028aa2ad411f406070e2133456274432"
+    },
+    "original_native_force_ledger.npz": {
+      "bytes": 15618760,
+      "sha256": "24d2155e58f8032a09d11b4291b281f42f21fc5f472c3cdabb599d121366391f"
+    },
+    "package_source.py": {
+      "bytes": 16324,
+      "sha256": "9d72eddca96919cddf6e1263cdcc1f4c24d62e86c423ead299c98d5553e7a2c5"
+    },
+    "report.json": {
+      "bytes": 11760,
+      "sha256": "5d556eeff2eaa95327e1515a452223966e8f1ddb57326c38d18cf34e38f49f0a"
+    },
+    "withdrawal_precision_correction.json": {
+      "bytes": 1609,
+      "sha256": "f9c31af01b4c96c436351c98fea66e790085b56b8b7daccdb5fd1e7373d2f137"
+    }
+  }
+}

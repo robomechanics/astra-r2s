@@ -1,0 +1,11 @@
+{
+  "scope": "Supplemental new bolt90/10 criterion. Pass timestamps of exact100ms rolling original-force windows; no actual release, interior geometry, lead or capture is implied. Original solved geometry is at logged time minus native timestep.",
+  "source_sha256": "7b4099815d33f2dd0ea17452fcabbe026919c3a1261ac6a66a6ea7d052163291",
+  "ledger_sha256": "24d2155e58f8032a09d11b4291b281f42f21fc5f472c3cdabb599d121366391f",
+  "qualifying_original_steps": 23107,
+  "first_pass_elapsed_s": 0.41935,
+  "last_pass_elapsed_s": 6.9971000000000005,
+  "maximum_actual_formed_overlap_at_pass_m": 0.0,
+  "maximum_actual_loaded_interior_count_at_pass": 0,
+  "capture_qualified": false
+}

@@ -44,6 +44,9 @@ class SupportedControlConfig(InsertionControlConfig):
     # while the arm begins its lateral transfer.
     transport_tip_clearance_m: float = .035
     minimum_tip_rest_clearance_m: float = .010
+    # Pick a different real hex-head flat pair to center the available wrist
+    # travel. This rotates the robot's grasp frame, never the spawned bolt.
+    pickup_grasp_face_offset_rad: float = 2*np.pi/3
     settled_table_window_s: float = .100
     minimum_table_weight_fraction: float = .90
     maximum_hand_upward_weight_fraction: float = .10
@@ -61,6 +64,10 @@ class SupportedControlConfig(InsertionControlConfig):
         if any(v > 1. for v in (self.minimum_table_weight_fraction,
                 self.maximum_hand_upward_weight_fraction, self.minimum_loaded_table_duty)):
             raise ValueError("Supported-block load fractions must not exceed one")
+        face = self.pickup_grasp_face_offset_rad
+        if not np.isfinite(face) or not np.isclose(face/(np.pi/3),
+                np.rint(face/(np.pi/3)), rtol=0., atol=1e-10):
+            raise ValueError("Pickup grasp must select an actual regular-hex flat pair")
 
 
 class TableLoadWindow:
@@ -152,7 +159,8 @@ def initialize_supported_pose(model, data, scene, control):
     bolt = model.body("male_bolt").id
     bolt_r = data.xmat[bolt].reshape(3, 3).copy()
     pickup = data.xpos[bolt] + bolt_r @ [0., 0., -scene.head_height/2]
-    right_r = bolt_r @ Rotation.from_euler("z", np.pi/2).as_matrix()
+    right_r = bolt_r @ Rotation.from_euler("z",
+        np.pi/2+control.pickup_grasp_face_offset_rad).as_matrix()
     left_r = left_grasp_rotation(scene)
     left_p = initial_left_grasp_position(scene)-left_r[:, 2]*control.left_pickup_hover_m
     targets = {"left": (left_p, left_r),
@@ -406,6 +414,8 @@ def run_supported_demo(output="outputs/m8_supported", *, scene_config=None,
             LoadedFlankWindow,
             YamCartesianController, YamM8ControlConfig, smooth_profile)).encode()).hexdigest(),
         "known_bolt_mass_kg": mass,
+        "pickup_grasp_face": {"offset_rad": control.pickup_grasp_face_offset_rad,
+            "scope": "Actual regular-hex head flat pair selected for robot wrist travel; spawned bolt/block poses and thread phase are unchanged"},
         "pickup_transport_clearance": {"native_rest": rest_top,
             "commanded_lift_grasp_position_m": pickup_lift_goal.tolist(),
             "planned_bolt_tip_world_z_m": float(pickup_lift_goal[2]-shaft_and_half_head),

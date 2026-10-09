@@ -1,0 +1,49 @@
+{
+  "scope": "Scientific comparison of original recorded geometry during each closed starting stroke only. The branch is cold and changes both axial loading and damping. No convergence/capture/full-trajectory qualification or causal isolation is claimed.",
+  "source_sha256": "655565bd3ba0d2696ec63e2df0378c701a9cb19eb7ec7c7c39a0027a28e455a3",
+  "parent_trace_sha256": "02a03f0262edfd519a3080bc3d44588f2f2f12ac2da6d40ca44dc379e3acae4c",
+  "branch_original_ledger_sha256": "24d2155e58f8032a09d11b4291b281f42f21fc5f472c3cdabb599d121366391f",
+  "branch_original_checkpoint_sha256": "3ea65b85ecc8160ac13ee503e79c1c6c4f294861bcf23503bf7cfe1527ae759c",
+  "parent_geometry_clock": "Original row time minus parent timestep; measured retained native geometry",
+  "branch_geometry_clock": "Original native ledger time minus diagnostic timestep; measured retained native geometry",
+  "parent_motor_turn_start_time_s": 6.755149999990926,
+  "branch_motor_turn_start_time_s": 7.755149999990926,
+  "branch_motor_turn_start_elapsed_s": 1.0,
+  "branch_native_timestep_s": 5e-05,
+  "parent_native_timestep_s": 5e-05,
+  "plotted_duration_s": 5.8905,
+  "axial_reference": "Separate first measured native geometry row at actual turn start for each curve. Positive reference_z-current_z means withdrawal; negative means advance.",
+  "sample_density_scope": "Parent curve uses only original stored info_json samples (~5 ms). Branch curve contains every original 50 \u00b5s native ledger row in the turn window. No samples are interpolated or resimulated.",
+  "force_reconstruction": false,
+  "numeric_reference_note": "The original producer summary computes its minimum from sparse saved turn_samples, using a raw-ledger pre-turn reference. This plot uses every native ledger row in the actual turn window, from the first actual turn row. Those two reference_z values differ by only ~7.44e-12 m; their withdrawal difference is therefore primarily the sparse versus all-step minimum. The independent phase/depth audit instead uses the first new cold diagnostic native row as its reference and its all-step minimum. All original reports and bindings remain unmodified; each exact value and reference is preserved here.",
+  "measured_summary": {
+    "parent_recorded_sample_maximum_withdrawal_m": 0.0013320646468052387,
+    "branch_allstep_maximum_withdrawal_from_first_actual_turn_sample_m": 1.346192151994996e-06,
+    "branch_original_producer_report_withdrawal_m": 1.3154526586831028e-06,
+    "branch_independent_allstep_withdrawal_from_first_cold_native_row_m": 1.3156163099284357e-06,
+    "branch_first_actual_turn_native_base_z_m": -0.022600006480653734,
+    "branch_original_producer_summary_base_z_reference_m": -0.022600006473209856,
+    "branch_first_cold_native_row_base_z_m": -0.0226000370564958,
+    "branch_allstep_minimum_base_z_in_turn_m": -0.02260135267280573,
+    "branch_final_advance_from_first_actual_turn_sample_m": 3.2652832253628195e-05,
+    "parent_recorded_samples": 1180,
+    "branch_original_native_steps_in_turn_plot": 117811,
+    "parent_recorded_maximum_formed_overlap_m": 0.0,
+    "branch_allstep_maximum_formed_overlap_m": 0.0,
+    "branch_loaded_actual_interior_contact_substeps": 0
+  },
+  "outputs": {
+    "entry_gravity_comparison.png": {
+      "bytes": 291734,
+      "sha256": "14e4e53152de54f6795dec78d07869d44f831ccf3c94a2c4d93968814409f47b"
+    },
+    "entry_gravity_comparison.svg": {
+      "bytes": 263938,
+      "sha256": "7a5065a6beb6b43992bfeb81a706eb29caf0dabaa502133f4049c3ce25cc993a"
+    },
+    "comparison_data.npz": {
+      "bytes": 4045040,
+      "sha256": "17301ba8e7f270d6f0a5b75907bb9c782844b8cfe9d8cbf826f7e002fecd1388"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "scope": "Closed independent read-only cold-checkpoint audits. Actual native original solve timing and post-qpos are distinct. Supplemental90/10 readiness and coaxial profile estimates never qualify thread capture. Canonical213-source unchanged at audit; archivedoriginalscene/controller/forces preserved.",
+  "files_sha256": {
+    "independent_weight_transfer_audit.json": "647ce7e5fc7df2a3ccbfd26f8aa43c9c255e065ff811be1edc06b81e9b20372d",
+    "independent_phase_depth_audit.json": "0479547cbcad17daeedf9836c1bfc6055007ab1372aedb36be9d88717a1d76b2",
+    "independent_ready_window_scope.json": "65dc9634e5e20a3aff08a435d3b412d9c22078d821d4c5b9c5a3a8a5d8886cfb"
+  },
+  "audit_sources_sha256": {
+    "software_proof.json": "6a8c9d030c3677943ae8bc27fa5c4c1a7092a451f6e31127f6984a15668437c0",
+    "independent_phase_depth_audit.py": "d0419e4ac7dbbba4c7cbf918b622a3ea724ba582f70ac894e7a4cd71384f4fb9",
+    "independent_weight_transfer_audit.py": "59d47d49b301ceb6d61925885c67e55a61c8e7f593e3ec477e0957ae2b85fdba",
+    "independent_ready_window_scope_source.py": "7b4099815d33f2dd0ea17452fcabbe026919c3a1261ac6a66a6ea7d052163291",
+    "test_bolt_weight_transfer_observer.py": "1454a1223af738d607d50f67306610bb70401150ef8576133196348fb61cc405",
+    "independent_phase_depth_software_proof.json": "ee12a2bfd7e9dcb65324720af72f2fd4e4cee106647e31e593883d3f211d9340",
+    "test_independent_phase_depth_audit.py": "201b8e9afba1b6246f872bbef3d558076890836f527cf00606ee449448c192ff"
+  },
+  "commands": [
+    "python outputs/m8_table_supported/diagnostics/independent_weight_transfer_audit.py outputs/m8_table_supported/diagnostics/entry_gravity_start_B200_v1 --output outputs/m8_table_supported/diagnostics/entry_gravity_start_B200_v1/independent_weight_transfer_audit.json",
+    "python outputs/m8_table_supported/diagnostics/independent_phase_depth_audit.py outputs/m8_table_supported/diagnostics/entry_gravity_start_B200_v1 --output outputs/m8_table_supported/diagnostics/entry_gravity_start_B200_v1/independent_phase_depth_audit.json",
+    "python outputs/m8_table_supported/diagnostics/independent_ready_window_scope_source.py outputs/m8_table_supported/diagnostics/entry_gravity_start_B200_v1"
+  ],
+  "timing_note": "Withdrawal1.31562\u00b5m uses first new native pre-integration sample; original parent info_json checkpoint was prior solved state and yields1.3462\u00b5m. A plot using first physical-turn sample may yield1.31545\u00b5m; references are explicit."
+}

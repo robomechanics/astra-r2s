@@ -30,8 +30,12 @@ with peak axial drift **0.178 / 0.424 µm**. Independent saved-pose audits
 check all four resets. The head remains unseated; full tightening/preload,
 hardware calibration and broad policy-training fidelity remain unqualified.
 
-**213 current software tests pass** after the additive table-supported scene,
-controller and auditor, higher bolt-transfer path and audit coverage checks. The first-demo publication retains its separate
+**281 software tests pass** for the frozen alternate-grip source and new
+measured load/seat observations, with [exact before/after source hashes](media/m8_table_supported/software_proof_281).
+The pinned supported producer `66276d0` retains its separate 213-test proof.
+Reverse seating and the later full table-supported turn/reset sequence remain
+under development; software tests do not qualify those motions.
+The first-demo publication retains its separate
 [181-test proof](media/m8_table_pickup/software_tests.json), and the completed
 native trial retains its historical
 [176-test source proof](media/m8_table_pickup/full/software_tests.json).
@@ -69,13 +73,19 @@ mean thread support of bolt weight but 67.08% mean positive right-hand
 support and zero loaded interior-flank contacts. Release readiness stays
 false. Its 15 observer tests are separate from the 213-test producer proof;
 further checkpoint diagnostics remain pending.
+The [closed gravity-first starting-turn comparison](media/m8_table_supported/diagnostics/entry_gravity_start_B200)
+reduces measured withdrawal from 1.332 mm in parent samples to 1.346 µm in
+the cold branch's native rows, but formed overlap stays zero and final mean
+positive right-hand support is 94.26% of bolt weight. It performs no release
+or passive reset. Its 15 observer and four geometry tests remain separate
+from the historical producer proof.
 The [actual 1.65 s stabilization clip](media/m8_table_supported/progress_stabilized/demo.gif)
 records 99.072% mean block weight on the table, with 0.928% mean positive
 upward left-hand load. It has not attempted bolt pickup or threading;
 only one active tick follows stabilization acquisition. See the
 [separate guide and run/replay instructions](docs/m8_table_supported.md),
 [independent pilot audit](media/m8_table_supported/progress_stabilized_audit)
-and [current 213-test source proof](media/m8_table_supported/software_proof_213).
+and [historical 213-test producer proof](media/m8_table_supported/software_proof_213).
 
 ## Earlier left-touching block rollout
 
@@ -174,7 +184,8 @@ scripts/run_m8.sh -m thread_lab.load_benchmark --help
 ```
 
 `thread_lab.validate` retains strict physics gates and can exit with failure.
-The current source passes **213 software tests**. Software tests, numerical geometry checks,
+The alternate-grip source passes **281 software tests** with unchanged source
+hashes. Software tests, numerical geometry checks,
 and physics acceptance answer different questions.
 [Setup and engine provenance](docs/m8_setup.md) explain the separate runtimes.
 

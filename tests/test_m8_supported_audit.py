@@ -206,3 +206,23 @@ def test_qualified_closed_stops_detect_grasp_slip_and_missing_measured_reference
     missing = saved_grasp_retention([{"phase": "stop_2", "time_s": 2.}], [{}],
         [(np.zeros(3), np.eye(3))], {"right_grasp_acquisitions": []})
     assert missing["closed_manipulation_without_measured_grasp_reference"]
+
+
+@pytest.mark.parametrize("phase", ["transfer_bolt_weight", "reverse_seat_1"])
+def test_real_closed_weight_transfer_and_reverse_seating_detect_grasp_slip(phase):
+    rows = [{"phase": "settle_bolt", "time_s": 1.}, {"phase": phase, "time_s": 1.2}]
+    records = [{"contact": {"pad_normal_force_N": [16., 16.]}}, {}]
+    held = [(np.zeros(3), np.eye(3)),
+            (np.array([0., .0015, 0.]), Rotation.from_euler("x", .05).as_matrix())]
+    metadata = {"right_grasp_acquisitions": [{"phase": "settle_bolt", "time_s": 1.,
+        "pad_normal_force_N": [16., 16.], "grasp_relative_bolt_head_position_m": [0., 0., 0.]}]}
+    result = saved_grasp_retention(rows, records, held, metadata)
+    assert not result["closed_manipulation_without_measured_grasp_reference"]
+    assert result["maximum_independent_post_grasp_translation_slip_m"] > .001
+    assert result["maximum_independent_post_grasp_rotation_slip_rad"] > np.deg2rad(2)
+    assert rows[1]["independent_post_grasp_translation_slip_m"] == pytest.approx(.0015)
+    # A real reverse motion must also fail coverage when no measured native
+    # pickup/regrasp reference exists; phase names cannot exempt its grip.
+    missing = saved_grasp_retention([{"phase": phase, "time_s": 2.}], [{}],
+        [(np.zeros(3), np.eye(3))], {"right_grasp_acquisitions": []})
+    assert missing["closed_manipulation_without_measured_grasp_reference"]

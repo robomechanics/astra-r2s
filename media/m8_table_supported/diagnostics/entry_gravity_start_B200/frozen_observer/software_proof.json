@@ -1,0 +1,14 @@
+{
+  "scope": "Independent output-only diagnostic observer tests, separate from 213 producer tests. No native full trajectory or capture qualification.",
+  "files_sha256": {
+    "bolt_weight_transfer_observer.py": "f384eaa28376a95e64ee93f6bc291b6f028aa2ad411f406070e2133456274432",
+    "test_bolt_weight_transfer_observer.py": "1454a1223af738d607d50f67306610bb70401150ef8576133196348fb61cc405"
+  },
+  "tests": {
+    "passed": 15,
+    "failed": 0,
+    "elapsed_s": 0.35,
+    "command": "scripts/run_m8.sh -m pytest -q outputs/m8_table_supported/test_bolt_weight_transfer_observer.py"
+  },
+  "identity": "Copied source equals tested original bytes. Do not edit this versioned directory; create a new version for a changed helper."
+}

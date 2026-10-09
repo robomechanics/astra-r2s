@@ -461,8 +461,9 @@ def saved_grasp_retention(rows, records, held_poses, metadata):
                 "original_pre_integration_head_relative_position_m": event["grasp_relative_bolt_head_position_m"],
                 "independent_post_integration_head_relative_position_m": held_pose[0].tolist(),
                 "reference_timing_offset_note": "Native contact/reference belongs to t-dt; this independent retention reference is derived from corresponding saved qpos at t"})
-        closed_manipulation = (label in {"lift_bolt", "transport_bolt", "align_over_hole", "feed_to_entry"}
-                              or label.startswith(("start_thread_", "turn_", "stop_")))
+        closed_manipulation = (label in {"lift_bolt", "transport_bolt", "align_over_hole",
+                                        "feed_to_entry", "transfer_bolt_weight"}
+                              or label.startswith(("reverse_seat_", "start_thread_", "turn_", "stop_")))
         if closed_manipulation:
             if reference is None:
                 missing_reference = True

@@ -1,0 +1,103 @@
+{
+  "scope": "Original native contact-local forces and frames re-transformed without integration, force solving or post-qpos force reconstruction. Cold-checkpoint diagnostic only; no capture, lead or full-trajectory qualification.",
+  "auditor_source_sha256": "59d47d49b301ceb6d61925885c67e55a61c8e7f593e3ec477e0957ae2b85fdba",
+  "input_sha256": {
+    "declaration.json": "218592caa56d917c430cdcd5c612f6c52856b0f4953b6eca2f406103440119e5",
+    "diagnostic_source.py": "622b68a8046fae9b4b4d0ac703b2a8ae3f9cdd0c2ab33165993b24758c847d8d",
+    "observer_source.py": "f384eaa28376a95e64ee93f6bc291b6f028aa2ad411f406070e2133456274432",
+    "report.json": "5d556eeff2eaa95327e1515a452223966e8f1ddb57326c38d18cf34e38f49f0a",
+    "original_native_force_ledger.npz": "24d2155e58f8032a09d11b4291b281f42f21fc5f472c3cdabb599d121366391f",
+    "checkpoint_trace.npz": "3ea65b85ecc8160ac13ee503e79c1c6c4f294861bcf23503bf7cfe1527ae759c"
+  },
+  "identity": {
+    "parent_trace_matches": true,
+    "archived_xml_matches": true,
+    "loaded_copied_observer_matches": true,
+    "all_sample_observer_identities_match": true,
+    "source_checks": {
+      "yam_twin/kinematics.py": true,
+      "yam_twin/m8_insertion_engagement.py": true,
+      "yam_twin/m8_insertion_mechanics.py": true,
+      "yam_twin/m8_insertion_scene.py": true,
+      "yam_twin/m8_insertion_simulation.py": true,
+      "yam_twin/m8_scene.py": true,
+      "yam_twin/m8_simulation.py": true,
+      "yam_twin/m8_supported_scene.py": true,
+      "yam_twin/m8_supported_simulation.py": true
+    }
+  },
+  "actual_duration_s": 7.3905,
+  "original_native_steps": 147810,
+  "saved_original_sample_rows": 1480,
+  "force_frame": {
+    "original_contact_local_solves_retransformed": 1479,
+    "extra_final_rows_without_local_force_archive": [
+      147809
+    ],
+    "maximum_wrench_retransform_error_N_Nm": 0.0,
+    "maximum_sampled_force_vs_all_step_ledger_error_N": 0.0,
+    "scope": "Right-pad load recomputed from its original native world wrench; individual pad-local contact forces are not archived in this diagnostic."
+  },
+  "independent_exact100ms": {
+    "duration_s": 0.1,
+    "native_steps": 2000,
+    "mean_signed_thread_weight_fraction": 0.9911246899107516,
+    "mean_positive_hand_upward_weight_fraction": 0.942623585698367,
+    "mean_signed_hand_weight_fraction": 0.008794302250310363,
+    "loaded_thread_gravity_support_duty": 0.0355,
+    "geometry_motion_drive_support_checks_contiguous": true,
+    "ready": false,
+    "ever_ready": true,
+    "last_window_ranges": {
+      "relative_bolt_axial_velocity_m_per_s": [
+        -0.00018840725948921159,
+        0.00012705767923519996
+      ],
+      "radial_offset_m": [
+        1.2365049828459824e-05,
+        1.266506852998157e-05
+      ],
+      "bolt_tilt_rad": [
+        0.007150851132946503,
+        0.007217716615563513
+      ],
+      "thread_gravity_opposing_force_N": [
+        0.0,
+        7.382279963992974
+      ],
+      "hand_gravity_opposing_force_N": [
+        -6.957371135569636,
+        0.25919313019568796
+      ],
+      "native_thread_depth_m": [
+        0.0,
+        3.93389959461539e-06
+      ]
+    }
+  },
+  "producer_original100_05ms_observer": {
+    "observer": "diagnostic-native-bolt-weight-transfer-v1",
+    "ready_for_diagnostic_release_attempt": false,
+    "bolt_weight_N": 0.26241400403581094,
+    "required_window_s": 0.1,
+    "observed_window_s": 0.10004999999999714,
+    "original_native_samples": 2001,
+    "mean_thread_weight_fraction": 0.9906293752231979,
+    "mean_positive_hand_upward_weight_fraction": 0.9426427511858761,
+    "signed_thread_gravity_opposing_impulse_Ns": 0.02600849983782396,
+    "positive_hand_upward_impulse_Ns": 0.02474863400433684,
+    "loaded_actual_interior_flank_duration_s": 0.0,
+    "loaded_thread_gravity_support_duty_fraction": 0.03548225887056576,
+    "entry_only_native_contact_window": true,
+    "loaded_actual_interior_flank_contact_observed": false,
+    "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+  },
+  "actual_interior_contact": {
+    "maximum_formed_full_ring_overlap_m": 0.0,
+    "maximum_loaded_interior_flank_count": 0,
+    "maximum_interior_gravity_opposing_force_N": 0.0,
+    "entry_only": true
+  },
+  "all_native_diagnostic_checks_held": true,
+  "capture_qualified": false
+}

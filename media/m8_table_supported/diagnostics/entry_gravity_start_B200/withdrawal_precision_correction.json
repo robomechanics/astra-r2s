@@ -1,0 +1,16 @@
+{
+  "scope": "Precision correction sidecar only. Original native data, producer report and frozen independent audits/binding remain byte unchanged. These micro-withdrawal values do not qualify entry, interior contact, lead or capture.",
+  "original_ledger_sha256": "24d2155e58f8032a09d11b4291b281f42f21fc5f472c3cdabb599d121366391f",
+  "original_report_sha256": "5d556eeff2eaa95327e1515a452223966e8f1ddb57326c38d18cf34e38f49f0a",
+  "original_audit_binding_sha256": "fff6faa5de401e7c9bec8886b312886bbc5c1e6284398f059d1745dd188f6f4a",
+  "reference_and_sampling": {
+    "all_native_from_first_new_cold_solve_row_m": 1.3156163099284357e-06,
+    "all_native_from_motor_turn_preceding_row_m": 1.3461995958738426e-06,
+    "producer_sparse_saved_states_from_motor_turn_reference_m": 1.3154526586831028e-06,
+    "motor_turn_reference_row_index": 19999,
+    "motor_turn_reference_logged_elapsed_s": 1.0,
+    "source_native_geometry_timing": "Retained original solved derived geometry at logged time minus native timestep; saved qpos belongs to integrated logged time."
+  },
+  "corrected_explanation": "The difference reflects both physical reference time and sampling density. The earlier independent binding explanation attributing the31nm solely to parent pre/post timing is superseded. The first-new cold-solve reference and the motor-turn reference differ after the physical ramp/hold; producer sparse saved states miss the exact native minimum.",
+  "formula": "cold=z[0]-min(z); motor=z[start_idx]-min(z[elapsed>ramp+hold]); producer value read unmodified from physical_closed_turn.maximum_measured_withdrawal_m"
+}

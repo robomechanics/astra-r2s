@@ -105,7 +105,7 @@ The corrected supported-only path uses 35 mm tip clearance above the block
 top, putting its nominal bolt tip at 51 mm versus the native rest tops at
 36 mm. A measured 10 mm minimum full-shaft clearance is guarded at lift
 completion and every transport timestep. Lateral transfer holds this height;
-only `align_over_hole` then descends. The current corrected sources pass
+only `align_over_hole` then descends. The corrected producer `66276d0` passes
 **213 tests** in 79.24 s with unchanged source hashes, recorded in the
 [separate proof](../media/m8_table_supported/software_proof_213). The
 prior 210-test proof stays bound to its initial producer. The closed `full_v2`
@@ -146,6 +146,50 @@ false; mean signed force balance does not establish unsupported capture.
 The [original-force plot and evidence](../media/m8_table_supported/diagnostics/cone_weight_transfer_B200)
 retain exact force/frame/source identities. Its **15 diagnostic observer
 tests** remain separate from the historical **213 producer tests**.
+
+The subsequent [closed gravity-first B200 starting-turn diagnostic](../media/m8_table_supported/diagnostics/entry_gravity_start_B200)
+starts a separate cold branch from the parent's `feed_to_entry` checkpoint
+at 6.75515 s. It ramps/holds the changed feed, then performs a physical
+starting half-turn and a closed hold over 7.3905 s. Its original native
+turn rows show **1.346192 µm** peak withdrawal from the first actual turn
+row, compared with **1.332065 mm** in the parent's roughly 5 ms samples.
+Sampling, reference poses, loading, damping and cold initialization have
+explicit separate scopes; the comparison does not isolate one causal change.
+
+Both turns retain zero formed overlap, and the branch has zero loaded
+interior-flank steps. Its final independently evaluated exact 100 ms has
+**99.11%** mean signed thread support but **94.26%** mean positive right-hand
+support and only **3.55%** loaded thread-support duty. Earlier readiness
+windows that pass remain cone-only. No opening, release, passive reset or
+qualified lead is demonstrated. Its separate **15-test observer** and
+**four-test geometry audit** proofs do not extend or combine with the
+historical **213-test producer** proof. The separate alternate-grip source
+has its own [281-test proof](../media/m8_table_supported/software_proof_281),
+including measured load and seat-direction observations. It does not extend
+the older trials' physics results.
+
+The current workspace candidate selects another actual opposed flat pair
+120 degrees around the regular hex head. The independently spawned bolt
+keeps its original world yaw; this is a robot grasp choice, not groove
+registration. The original 35 mm transfer height and unconditional 10 mm
+whole-shaft rest-clearance guard remain unchanged. A fresh pickup-to-entry
+prefix has executed 6.3983 s without an abort, with actual table/left-pad
+support and rest clearance checked independently. Its entry remains cone-only,
+with about 100.65 micrometres radial offset and zero formed overlap.
+
+To repeat that narrow prefix from a checkout whose source hashes match the
+281-test proof, use a fresh output directory:
+
+```sh
+scripts/run_m8.sh -m yam_twin.m8_supported_demo --output outputs/m8_table_supported/face120_repeat --maximum-phases 12 --dt .00005 --starting-angular-speed 1 --angular-speed 2 --maximum-entry-dwell 3 --axial-damping 50
+```
+
+This ends after `feed_to_entry`: `partial=true`, `passed=false` is expected.
+The reverse seat search, measured-grasp centering and dynamic opposite-flat
+reindexing are still separate experimental work. Running the current longer
+schedule does not reproduce a qualified complete second trajectory. Its
+eventual full producer will require a fresh unspliced rollout and its own
+source proof, raw forces, lead/reset audits and acceptance result.
 
 Further bounded native checkpoint diagnostics remain pending. A new
 continuous full attempt will need its own producer, source proof, trajectory

@@ -109,6 +109,48 @@ def test_supported_initialization_leaves_free_parts_unchanged_and_starts_open():
     assert not any("lift_left" in p[0] or "transport_left" in p[0] for p in supported_phases(control))
 
 
+def test_alternate_hex_face_gets_bilateral_native_head_load_without_clocking_bolt():
+    from scipy.spatial.transform import Rotation
+    from yam_twin.kinematics import ArmIK
+    from yam_twin.m8_supported_scene import supported_config, build_model
+    from yam_twin.m8_simulation import YamCartesianController, smooth_profile
+    scene, control = supported_config(), SupportedControlConfig()
+    model = build_model(scene)
+    data = mujoco.MjData(model)
+    targets, pickup, grasp_R = initialize_supported_pose(model, data, scene, control)
+    male_joint = model.joint("male_bolt_free").id
+    male_qadr = int(model.jnt_qposadr[male_joint])
+    initial_part_q = data.qpos[male_qadr:male_qadr+7].copy()
+    ik = ArmIK(model, "right")
+    ik.solve(pickup, grasp_R, thorough=True)
+    data.qpos[ik.qadr] = ik.q
+    mujoco.mj_forward(model, data)
+    # The only position initialization selects the arm pose. The bolt keeps
+    # its independent spawn clock on the real support pins.
+    np.testing.assert_array_equal(data.qpos[male_qadr:male_qadr+7], initial_part_q)
+    before_R = data.xmat[model.body("male_bolt").id].reshape(3, 3).copy()
+    right = YamCartesianController(model, data, "right", control.arm, scene.base)
+    left = YamCartesianController(model, data, "left", control.arm, scene.base)
+    duration = .04
+    steps = round(duration/model.opt.timestep)
+    for tick in range(steps):
+        blend, _ = smooth_profile((tick+1)/steps)
+        gap = control.arm.open_aperture+blend*(control.arm.closed_aperture-control.arm.open_aperture)
+        right.command(pickup, grasp_R, gap)
+        left.command(*targets["left"], control.arm.open_aperture)
+        mujoco.mj_step(model, data)
+    native = right.contact_wrench_on("male_bolt")
+    assert min(native["pad_normal_force_N"]) > .1
+    assert native["pad_contact_count"] >= 2
+    actual_R = data.xmat[model.body("male_bolt").id].reshape(3, 3)
+    assert np.linalg.norm(Rotation.from_matrix(actual_R@before_R.T).as_rotvec()) < .002
+    for c in data.contact:
+        if {int(c.geom1), int(c.geom2)} & right.pad_geom_ids:
+            assert model.geom("bolt_head").id in {int(c.geom1), int(c.geom2)}
+    np.testing.assert_array_equal(data.xfrc_applied, 0.)
+    np.testing.assert_array_equal(data.qfrc_applied, 0.)
+
+
 def test_unexpected_camera_block_collision_is_not_hidden_by_allowed_table_contact():
     model = mujoco.MjModel.from_xml_string("""
       <mujoco><worldbody>
