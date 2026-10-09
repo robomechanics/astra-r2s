@@ -1,0 +1,378 @@
+{
+  "status": "interrupted",
+  "completion": false,
+  "accepted_end_to_end": false,
+  "reason": "Environment runtime restart terminated the integrating process before final qualifying phases; no normal exit status or final validation was produced.",
+  "interruption_time_utc": null,
+  "interruption_time_note": "Exact termination time was not captured; the parent verified original processes were absent after the environment restart.",
+  "interruption_recorded_at_utc": "2026-10-09T00:20:24.853635+00:00",
+  "last_persisted_boundary": {
+    "time_s": 29.50925000041784,
+    "phase": "settle_regrip_1",
+    "kind": "phase-end partial checkpoint"
+  },
+  "observer": "continuous_full_flank_loaded_force_0.2s",
+  "original_metadata_partial": true,
+  "final_trace_present": false,
+  "final_validation_present": false,
+  "original_partial_trace_name_preserved": "insertion_trace_partial.npz",
+  "recorded_controller_bundle_sha256": "fc66bdafd4896ed34b2cfc7adaac0a2c21277c80d8de477291892872f671610d",
+  "recorded_observer_source_sha256": null,
+  "recorded_model_xml_sha256": "ff7fbd30cc1d6eaf892c2dd394900df5e3eab3520f258db11f6dc612c20f2c4e",
+  "model_xml_matches_recorded": true,
+  "observer_source_matches_recorded": null,
+  "files": {
+    "controller_source.py": {
+      "sha256": "824f064b2fd9a744ec9487457e9a0e9323b4123d18558c009a98d1df3e11905e",
+      "size_bytes": 31769
+    },
+    "independent_insertion_audit_partial.json": {
+      "sha256": "871c4b78635cf306e228a30c8f691cb199fb6d46e6253a738b5b11ba30156355",
+      "size_bytes": 6003836
+    },
+    "insertion_trace_partial.npz": {
+      "sha256": "f727eab374a84a7fd34a3222b1fec8f7a362b461469612b539e8459433736b2b",
+      "size_bytes": 9336831
+    },
+    "scene.xml": {
+      "sha256": "ff7fbd30cc1d6eaf892c2dd394900df5e3eab3520f258db11f6dc612c20f2c4e",
+      "size_bytes": 43303
+    }
+  },
+  "persisted_phases": [
+    {
+      "phase": "secure_left",
+      "first_persisted_sample_s": 5e-05,
+      "last_persisted_sample_s": 0.24999999999998063,
+      "saved_samples": 51
+    },
+    {
+      "phase": "reach_bolt",
+      "first_persisted_sample_s": 0.2500499999999806,
+      "last_persisted_sample_s": 0.7999999999999201,
+      "saved_samples": 111
+    },
+    {
+      "phase": "close_bolt",
+      "first_persisted_sample_s": 0.8000499999999201,
+      "last_persisted_sample_s": 1.0500000000000036,
+      "saved_samples": 51
+    },
+    {
+      "phase": "settle_bolt",
+      "first_persisted_sample_s": 1.0500500000000037,
+      "last_persisted_sample_s": 1.1700000000002568,
+      "saved_samples": 25
+    },
+    {
+      "phase": "lift_bolt",
+      "first_persisted_sample_s": 1.170050000000257,
+      "last_persisted_sample_s": 1.8200000000016285,
+      "saved_samples": 131
+    },
+    {
+      "phase": "transport_bolt",
+      "first_persisted_sample_s": 1.8200500000016286,
+      "last_persisted_sample_s": 2.72000000000033,
+      "saved_samples": 181
+    },
+    {
+      "phase": "align_over_hole",
+      "first_persisted_sample_s": 2.72005000000033,
+      "last_persisted_sample_s": 3.1699999999992814,
+      "saved_samples": 91
+    },
+    {
+      "phase": "feed_to_entry",
+      "first_persisted_sample_s": 3.1700499999992813,
+      "last_persisted_sample_s": 3.4199999999986987,
+      "saved_samples": 51
+    },
+    {
+      "phase": "start_thread_1",
+      "first_persisted_sample_s": 3.4200499999986986,
+      "last_persisted_sample_s": 6.365249999991835,
+      "saved_samples": 591
+    },
+    {
+      "phase": "stop_start_1",
+      "first_persisted_sample_s": 6.3652999999918345,
+      "last_persisted_sample_s": 6.485249999991555,
+      "saved_samples": 25
+    },
+    {
+      "phase": "release_search_2",
+      "first_persisted_sample_s": 6.485299999991555,
+      "last_persisted_sample_s": 6.635249999991205,
+      "saved_samples": 31
+    },
+    {
+      "phase": "open_settle_search_2",
+      "first_persisted_sample_s": 6.635299999991205,
+      "last_persisted_sample_s": 6.715249999991019,
+      "saved_samples": 17
+    },
+    {
+      "phase": "reset_open_search_2",
+      "first_persisted_sample_s": 6.715299999991019,
+      "last_persisted_sample_s": 8.187849999987588,
+      "saved_samples": 296
+    },
+    {
+      "phase": "open_hold_search_2",
+      "first_persisted_sample_s": 8.187899999987588,
+      "last_persisted_sample_s": 8.267849999987401,
+      "saved_samples": 17
+    },
+    {
+      "phase": "regrip_search_2",
+      "first_persisted_sample_s": 8.267899999987401,
+      "last_persisted_sample_s": 8.517849999986819,
+      "saved_samples": 51
+    },
+    {
+      "phase": "settle_regrip_search_2",
+      "first_persisted_sample_s": 8.517899999986819,
+      "last_persisted_sample_s": 8.637849999986539,
+      "saved_samples": 25
+    },
+    {
+      "phase": "start_thread_2",
+      "first_persisted_sample_s": 8.637899999986539,
+      "last_persisted_sample_s": 11.583099999979675,
+      "saved_samples": 591
+    },
+    {
+      "phase": "stop_start_2",
+      "first_persisted_sample_s": 11.583149999979675,
+      "last_persisted_sample_s": 11.703099999979395,
+      "saved_samples": 25
+    },
+    {
+      "phase": "release_search_3",
+      "first_persisted_sample_s": 11.703149999979395,
+      "last_persisted_sample_s": 11.853099999979046,
+      "saved_samples": 31
+    },
+    {
+      "phase": "open_settle_search_3",
+      "first_persisted_sample_s": 11.853149999979046,
+      "last_persisted_sample_s": 11.93309999997886,
+      "saved_samples": 17
+    },
+    {
+      "phase": "reset_open_search_3",
+      "first_persisted_sample_s": 11.933149999978859,
+      "last_persisted_sample_s": 13.405699999975427,
+      "saved_samples": 296
+    },
+    {
+      "phase": "open_hold_search_3",
+      "first_persisted_sample_s": 13.405749999975427,
+      "last_persisted_sample_s": 13.48569999997524,
+      "saved_samples": 17
+    },
+    {
+      "phase": "regrip_search_3",
+      "first_persisted_sample_s": 13.48574999997524,
+      "last_persisted_sample_s": 13.735699999974658,
+      "saved_samples": 51
+    },
+    {
+      "phase": "settle_regrip_search_3",
+      "first_persisted_sample_s": 13.735749999974658,
+      "last_persisted_sample_s": 13.855699999974378,
+      "saved_samples": 25
+    },
+    {
+      "phase": "start_thread_3",
+      "first_persisted_sample_s": 13.855749999974378,
+      "last_persisted_sample_s": 16.800949999995968,
+      "saved_samples": 591
+    },
+    {
+      "phase": "stop_start_3",
+      "first_persisted_sample_s": 16.80099999999597,
+      "last_persisted_sample_s": 16.92094999999995,
+      "saved_samples": 25
+    },
+    {
+      "phase": "release_search_4",
+      "first_persisted_sample_s": 16.920999999999953,
+      "last_persisted_sample_s": 17.07095000000493,
+      "saved_samples": 31
+    },
+    {
+      "phase": "open_settle_search_4",
+      "first_persisted_sample_s": 17.071000000004933,
+      "last_persisted_sample_s": 17.150950000007587,
+      "saved_samples": 17
+    },
+    {
+      "phase": "reset_open_search_4",
+      "first_persisted_sample_s": 17.15100000000759,
+      "last_persisted_sample_s": 18.623550000056472,
+      "saved_samples": 296
+    },
+    {
+      "phase": "open_hold_search_4",
+      "first_persisted_sample_s": 18.623600000056474,
+      "last_persisted_sample_s": 18.703550000059128,
+      "saved_samples": 17
+    },
+    {
+      "phase": "regrip_search_4",
+      "first_persisted_sample_s": 18.70360000005913,
+      "last_persisted_sample_s": 18.953550000067427,
+      "saved_samples": 51
+    },
+    {
+      "phase": "settle_regrip_search_4",
+      "first_persisted_sample_s": 18.95360000006743,
+      "last_persisted_sample_s": 19.07355000007141,
+      "saved_samples": 25
+    },
+    {
+      "phase": "start_thread_4",
+      "first_persisted_sample_s": 19.073600000071412,
+      "last_persisted_sample_s": 22.018800000169183,
+      "saved_samples": 591
+    },
+    {
+      "phase": "stop_start_4",
+      "first_persisted_sample_s": 22.018850000169184,
+      "last_persisted_sample_s": 22.138800000173166,
+      "saved_samples": 25
+    },
+    {
+      "phase": "release_search_5",
+      "first_persisted_sample_s": 22.138850000173168,
+      "last_persisted_sample_s": 22.288800000178146,
+      "saved_samples": 31
+    },
+    {
+      "phase": "open_settle_search_5",
+      "first_persisted_sample_s": 22.288850000178147,
+      "last_persisted_sample_s": 22.3688000001808,
+      "saved_samples": 17
+    },
+    {
+      "phase": "reset_open_search_5",
+      "first_persisted_sample_s": 22.368850000180803,
+      "last_persisted_sample_s": 23.841400000229687,
+      "saved_samples": 296
+    },
+    {
+      "phase": "open_hold_search_5",
+      "first_persisted_sample_s": 23.84145000022969,
+      "last_persisted_sample_s": 23.921400000232342,
+      "saved_samples": 17
+    },
+    {
+      "phase": "regrip_search_5",
+      "first_persisted_sample_s": 23.921450000232344,
+      "last_persisted_sample_s": 24.17140000024064,
+      "saved_samples": 51
+    },
+    {
+      "phase": "settle_regrip_search_5",
+      "first_persisted_sample_s": 24.171450000240643,
+      "last_persisted_sample_s": 24.291400000244625,
+      "saved_samples": 25
+    },
+    {
+      "phase": "start_thread_5",
+      "first_persisted_sample_s": 24.291450000244627,
+      "last_persisted_sample_s": 27.236650000342397,
+      "saved_samples": 591
+    },
+    {
+      "phase": "stop_start_5",
+      "first_persisted_sample_s": 27.2367000003424,
+      "last_persisted_sample_s": 27.35665000034638,
+      "saved_samples": 25
+    },
+    {
+      "phase": "release_1",
+      "first_persisted_sample_s": 27.356700000346382,
+      "last_persisted_sample_s": 27.50665000035136,
+      "saved_samples": 31
+    },
+    {
+      "phase": "open_settle_1",
+      "first_persisted_sample_s": 27.506700000351362,
+      "last_persisted_sample_s": 27.586650000354016,
+      "saved_samples": 17
+    },
+    {
+      "phase": "reset_open_1",
+      "first_persisted_sample_s": 27.586700000354018,
+      "last_persisted_sample_s": 29.0592500004029,
+      "saved_samples": 296
+    },
+    {
+      "phase": "open_hold_1",
+      "first_persisted_sample_s": 29.059300000402903,
+      "last_persisted_sample_s": 29.139250000405557,
+      "saved_samples": 17
+    },
+    {
+      "phase": "regrip_1",
+      "first_persisted_sample_s": 29.13930000040556,
+      "last_persisted_sample_s": 29.389250000413856,
+      "saved_samples": 51
+    },
+    {
+      "phase": "settle_regrip_1",
+      "first_persisted_sample_s": 29.389300000413858,
+      "last_persisted_sample_s": 29.50925000041784,
+      "saved_samples": 25
+    }
+  ],
+  "sampled_diagnostics": {
+    "scope": "Saved samples only; interruption has no completed all-substep acceptance report. No turn or end-to-end qualification is inferred.",
+    "first_saved_sample_s": 5e-05,
+    "last_saved_sample_s": 29.50925000041784,
+    "saved_samples": 5957,
+    "arrays_finite": {
+      "time": true,
+      "qpos": true,
+      "qvel": true,
+      "controller": true
+    },
+    "array_shapes": {
+      "time": [
+        5957
+      ],
+      "qpos": [
+        5957,
+        30
+      ],
+      "qvel": [
+        5957,
+        28
+      ],
+      "controller": [
+        5957,
+        16
+      ]
+    },
+    "sampled_candidate_capture_first_time_s": 22.443850000183293,
+    "last_candidate_capture": true,
+    "last_nominal_thread_overlap_m": 0.004625478631265861,
+    "last_complete_ring_formed_flank_overlap_m": 0.002619791583109309,
+    "last_engagement_window": null,
+    "max_sampled_reported_sdf_depth_m": 9.753508933378783e-07,
+    "minimum_sampled_native_joint_margin_rad": 0.03467237837698933,
+    "max_sampled_near_entry_radial_offset_m": 8.31254020166871e-05,
+    "max_sampled_near_entry_bolt_tilt_rad": 0.0069934185442637005,
+    "max_sampled_block_grip_translation_slip_m": 0.0001309919324228848,
+    "max_sampled_block_grip_rotation_slip_rad": 4.924690861165057e-05,
+    "max_sampled_closed_phase_bolt_grip_translation_slip_m": 0.0003673971589805949,
+    "all_saved_external_drive_zero": true,
+    "max_saved_block_world_support_contacts": 0.0,
+    "max_saved_bolt_world_support_contacts_after_lift": 0.0,
+    "max_saved_head_block_seating_contacts": 0.0
+  },
+  "reuse_scope": "Immutable interrupted evidence only. Do not splice into a fresh rollout, rename the partial trace as a final trace, or treat candidate capture as completed engagement."
+}

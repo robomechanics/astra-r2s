@@ -1,0 +1,202 @@
+{
+  "status": "interrupted",
+  "completion": false,
+  "accepted_end_to_end": false,
+  "reason": "Environment runtime restart terminated the integrating process before final qualifying phases; no normal exit status or final validation was produced.",
+  "interruption_time_utc": null,
+  "interruption_time_note": "Exact termination time was not captured; the parent verified original processes were absent after the environment restart.",
+  "interruption_recorded_at_utc": "2026-10-09T00:20:24.853635+00:00",
+  "last_persisted_boundary": {
+    "time_s": 8.637849999986539,
+    "phase": "settle_regrip_search_2",
+    "kind": "phase-end partial checkpoint"
+  },
+  "observer": "loaded_full_flank_window_v1",
+  "original_metadata_partial": true,
+  "final_trace_present": false,
+  "final_validation_present": false,
+  "original_partial_trace_name_preserved": "insertion_trace_partial.npz",
+  "recorded_controller_bundle_sha256": "e59e760ecd1d1c2a9849aa956ba316909b5f31cf3fe47309fbd135b653de1fc6",
+  "recorded_observer_source_sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+  "recorded_model_xml_sha256": "ff7fbd30cc1d6eaf892c2dd394900df5e3eab3520f258db11f6dc612c20f2c4e",
+  "model_xml_matches_recorded": true,
+  "observer_source_matches_recorded": true,
+  "files": {
+    "controller_source.py": {
+      "sha256": "5f721923e499d7ce5f52ad3a91c0a074f256767a6c799ff4c2914ac7c107f46f",
+      "size_bytes": 34388
+    },
+    "engagement_observer_source.py": {
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "size_bytes": 4752
+    },
+    "independent_capture_audit_partial.json": {
+      "sha256": "50ee6a90df838f800b7d6eace15f1dbe7a2fe3c13d742029249aae3b8a5ab3a3",
+      "size_bytes": 2974510
+    },
+    "insertion_trace_partial.npz": {
+      "sha256": "f1333ac83826f62b8befc1f6988683a1e2dc8e4f921d9ebb2522dc63d8f32e65",
+      "size_bytes": 2850790
+    },
+    "scene.xml": {
+      "sha256": "ff7fbd30cc1d6eaf892c2dd394900df5e3eab3520f258db11f6dc612c20f2c4e",
+      "size_bytes": 43303
+    }
+  },
+  "persisted_phases": [
+    {
+      "phase": "secure_left",
+      "first_persisted_sample_s": 5e-05,
+      "last_persisted_sample_s": 0.24999999999998063,
+      "saved_samples": 51
+    },
+    {
+      "phase": "reach_bolt",
+      "first_persisted_sample_s": 0.2500499999999806,
+      "last_persisted_sample_s": 0.7999999999999201,
+      "saved_samples": 111
+    },
+    {
+      "phase": "close_bolt",
+      "first_persisted_sample_s": 0.8000499999999201,
+      "last_persisted_sample_s": 1.0500000000000036,
+      "saved_samples": 51
+    },
+    {
+      "phase": "settle_bolt",
+      "first_persisted_sample_s": 1.0500500000000037,
+      "last_persisted_sample_s": 1.1700000000002568,
+      "saved_samples": 25
+    },
+    {
+      "phase": "lift_bolt",
+      "first_persisted_sample_s": 1.170050000000257,
+      "last_persisted_sample_s": 1.8200000000016285,
+      "saved_samples": 131
+    },
+    {
+      "phase": "transport_bolt",
+      "first_persisted_sample_s": 1.8200500000016286,
+      "last_persisted_sample_s": 2.72000000000033,
+      "saved_samples": 181
+    },
+    {
+      "phase": "align_over_hole",
+      "first_persisted_sample_s": 2.72005000000033,
+      "last_persisted_sample_s": 3.1699999999992814,
+      "saved_samples": 91
+    },
+    {
+      "phase": "feed_to_entry",
+      "first_persisted_sample_s": 3.1700499999992813,
+      "last_persisted_sample_s": 3.4199999999986987,
+      "saved_samples": 51
+    },
+    {
+      "phase": "start_thread_1",
+      "first_persisted_sample_s": 3.4200499999986986,
+      "last_persisted_sample_s": 6.365249999991835,
+      "saved_samples": 591
+    },
+    {
+      "phase": "stop_start_1",
+      "first_persisted_sample_s": 6.3652999999918345,
+      "last_persisted_sample_s": 6.485249999991555,
+      "saved_samples": 25
+    },
+    {
+      "phase": "release_search_2",
+      "first_persisted_sample_s": 6.485299999991555,
+      "last_persisted_sample_s": 6.635249999991205,
+      "saved_samples": 31
+    },
+    {
+      "phase": "open_settle_search_2",
+      "first_persisted_sample_s": 6.635299999991205,
+      "last_persisted_sample_s": 6.715249999991019,
+      "saved_samples": 17
+    },
+    {
+      "phase": "reset_open_search_2",
+      "first_persisted_sample_s": 6.715299999991019,
+      "last_persisted_sample_s": 8.187849999987588,
+      "saved_samples": 296
+    },
+    {
+      "phase": "open_hold_search_2",
+      "first_persisted_sample_s": 8.187899999987588,
+      "last_persisted_sample_s": 8.267849999987401,
+      "saved_samples": 17
+    },
+    {
+      "phase": "regrip_search_2",
+      "first_persisted_sample_s": 8.267899999987401,
+      "last_persisted_sample_s": 8.517849999986819,
+      "saved_samples": 51
+    },
+    {
+      "phase": "settle_regrip_search_2",
+      "first_persisted_sample_s": 8.517899999986819,
+      "last_persisted_sample_s": 8.637849999986539,
+      "saved_samples": 25
+    }
+  ],
+  "sampled_diagnostics": {
+    "scope": "Saved samples only; interruption has no completed all-substep acceptance report. No turn or end-to-end qualification is inferred.",
+    "first_saved_sample_s": 5e-05,
+    "last_saved_sample_s": 8.637849999986539,
+    "saved_samples": 1745,
+    "arrays_finite": {
+      "time": true,
+      "qpos": true,
+      "qvel": true,
+      "controller": true
+    },
+    "array_shapes": {
+      "time": [
+        1745
+      ],
+      "qpos": [
+        1745,
+        30
+      ],
+      "qvel": [
+        1745,
+        28
+      ],
+      "controller": [
+        1745,
+        16
+      ]
+    },
+    "sampled_candidate_capture_first_time_s": null,
+    "last_candidate_capture": false,
+    "last_nominal_thread_overlap_m": 0.002125687982029837,
+    "last_complete_ring_formed_flank_overlap_m": 0.0001128080820396813,
+    "last_engagement_window": {
+      "version": "loaded_full_flank_window_v1",
+      "ready": false,
+      "continuous_geometry_elapsed_s": 0.0,
+      "window_duration_s": 0.2,
+      "normal_impulse_Ns": 0.0,
+      "loaded_substeps": 0,
+      "loaded_contact_count": 0,
+      "loaded_duration_s": 0.0,
+      "sample_count": 0,
+      "loaded_substep_duty": 0.0,
+      "helix_phase_range_m": 0.0
+    },
+    "max_sampled_reported_sdf_depth_m": 8.933498883677645e-07,
+    "minimum_sampled_native_joint_margin_rad": 0.03467237837698933,
+    "max_sampled_near_entry_radial_offset_m": 4.431301786085436e-05,
+    "max_sampled_near_entry_bolt_tilt_rad": 0.00425053804348932,
+    "max_sampled_block_grip_translation_slip_m": 0.0001309919324228848,
+    "max_sampled_block_grip_rotation_slip_rad": 4.924690861165057e-05,
+    "max_sampled_closed_phase_bolt_grip_translation_slip_m": 0.00013622038191565415,
+    "all_saved_external_drive_zero": true,
+    "max_saved_block_world_support_contacts": 0.0,
+    "max_saved_bolt_world_support_contacts_after_lift": 0.0,
+    "max_saved_head_block_seating_contacts": 0.0
+  },
+  "reuse_scope": "Immutable interrupted evidence only. Do not splice into a fresh rollout, rename the partial trace as a final trace, or treat candidate capture as completed engagement."
+}

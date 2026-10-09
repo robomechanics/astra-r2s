@@ -29,6 +29,14 @@ full multi-stroke starting/reset/lead-qualification run is in progress.
 Watch the [recorded first entry stroke](../media/m8_insertion/first_start/demo.mp4)
 and its [independent entry-only audit](../media/m8_insertion/first_start/independent_audit.json).
 
+An environment restart interrupted the earlier full trials. Their original
+partial traces, executed sources, interruption records and audits are preserved
+under [interrupted trials](../media/m8_insertion/interrupted). The legacy
+continuous-force trial reached capture and an unsupported reset, then stopped
+before its first qualification turn. It has no final acceptance result.
+The current full run starts again from the separate bolt's original pickup
+state; no trajectory is spliced from those checkpoints.
+
 The separate fixed-female/free-bolt contact experiment starts from 0.5 mm
 separation and an arbitrary angular phase. Its conservative full-flank window
 measures **1.2500516 mm/revolution**, while the original broad entry-region

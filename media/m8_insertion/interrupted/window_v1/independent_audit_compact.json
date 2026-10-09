@@ -1,0 +1,523 @@
+{
+  "kind": "Actual YAM pickup/insertion saved-geometry replay",
+  "method": "Independent saved-pose kinematics and collision queries; zero integration or force solve",
+  "derived_pose_note": "Original mj_step diagnostics can retain preceding-step derived poses; replay recomputes from integrated qpos",
+  "geometry_scope_note": "Potential full-ring overlap and interior collision candidates do not prove loaded thread engagement",
+  "model_fingerprint": "570387eef1dabf8b6c76c043c6f628f14fbd15cd928bcc123454e49600d69e75",
+  "recorded_metadata": {
+    "description": "Actual YAM picks up a free bolt, carries it over a female M8 block, and starts the thread",
+    "scene_config": {
+      "base": {
+        "thread": {
+          "timestep": 5e-05,
+          "friction": 0.15,
+          "contact_time_constant": 0.0005,
+          "contact_margin": 0.0,
+          "contact_impratio": 1.0,
+          "sdf_initpoints": 40,
+          "sdf_iterations": 30,
+          "bolt_length": 0.016,
+          "pitch": 0.00125,
+          "male_pitch_diameter": 0.0071,
+          "female_pitch_diameter": 0.007268,
+          "nut_height": 0.016,
+          "nut_across_flats": 0.016,
+          "nut_mass": 0.018984665656908355,
+          "nut_transverse_inertia": 6.946182225160569e-07,
+          "nut_axial_inertia": 1.1886877420788483e-06,
+          "initial_z": 0.00875,
+          "gravity": -9.81,
+          "with_gripper": false,
+          "with_bolt": true,
+          "guided": false
+        },
+        "bolt_position": [
+          0.3,
+          -0.06,
+          0.11125
+        ],
+        "bolt_quaternion": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "pad_friction": 0.8,
+        "jaw_stiffness": 20000.0,
+        "jaw_damping": 8.0,
+        "maximum_jaw_force": 20.0,
+        "open_aperture": 0.024,
+        "closed_aperture": 0.0194,
+        "left_closed_aperture": 0.0144,
+        "left_grasp_roll_rad": -1.5707963267948966,
+        "left_block_contact_impedance": [
+          0.9999,
+          0.9999,
+          0.0001
+        ],
+        "left_block_contact_time_constant": 0.0008,
+        "pad_inner_offset": 0.0005,
+        "block_size": [
+          0.02,
+          0.12,
+          0.016
+        ],
+        "block_density": 2700.0,
+        "bolt_offset": [
+          0.0,
+          -0.05,
+          0.008
+        ],
+        "left_grasp_offset": [
+          0.0,
+          -0.0094,
+          0.0
+        ]
+      },
+      "block_position": [
+        0.3,
+        -0.01,
+        0.10325
+      ],
+      "hole_offset": [
+        0.0,
+        -0.05,
+        0.0
+      ],
+      "bolt_head_position": [
+        0.36,
+        -0.15,
+        0.12
+      ],
+      "bolt_yaw_rad": 0.23,
+      "head_across_flats": 0.02,
+      "head_height": 0.008,
+      "steel_density": 7850.0,
+      "rest_radius": 0.007,
+      "rest_pin_radius": 0.001,
+      "rest_base_height": 0.01
+    },
+    "control_config": {
+      "arm": {
+        "position_stiffness": 20000.0,
+        "position_damping": 650.0,
+        "rotation_stiffness": 40.0,
+        "rotation_damping": 6.0,
+        "left_rotation_stiffness": 80.0,
+        "left_rotation_damping": 10.0,
+        "maximum_cartesian_force": 8.0,
+        "maximum_cartesian_torque": 2.0,
+        "axial_feed_N": -0.05,
+        "open_aperture": 0.024,
+        "closed_aperture": 0.0194,
+        "left_closed_aperture": 0.0144,
+        "stroke_angle_rad": 3.141592653589793,
+        "angular_speed_rad_s": 2.0,
+        "reset_speed_rad_s": 4.0,
+        "strokes": 3,
+        "sample_period_s": 0.005
+      },
+      "pickup_hover_m": 0.02,
+      "transport_tip_clearance_m": 0.015,
+      "entry_tip_clearance_m": 0.00075,
+      "block_lift_m": 0.004,
+      "net_axial_feed_N": 0.05,
+      "maximum_starting_strokes": 5,
+      "qualifying_turns": 2,
+      "sample_period_s": 0.005,
+      "full_flank_contact_streak_s": 0.2
+    },
+    "runtime": {
+      "mujoco_version": "3.15.0",
+      "libraries": [
+        {
+          "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+          "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+          "sdf_minimum_search_step_m": 1e-07,
+          "sdf_initial_search_step_m": 0.002
+        }
+      ],
+      "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+    },
+    "starts_preengaged": false,
+    "starts_grasp_ready": false,
+    "block_starts_left_touching": true,
+    "bolt_starts_on_declared_fixed_rest": true,
+    "model_fingerprint": "570387eef1dabf8b6c76c043c6f628f14fbd15cd928bcc123454e49600d69e75",
+    "model_xml_sha256": "ff7fbd30cc1d6eaf892c2dd394900df5e3eab3520f258db11f6dc612c20f2c4e",
+    "controller_sha256": "e59e760ecd1d1c2a9849aa956ba316909b5f31cf3fe47309fbd135b653de1fc6",
+    "known_bolt_mass_kg": 0.0267496436326005,
+    "full_flank_overlap_threshold_m": 0.003242582346706593,
+    "male_tip_chamfer_m": 0.000956,
+    "female_full_profile_chamfer_bound_m": 0.0010365823467065928,
+    "minimum_engagement_contact_normal_force_N": 1e-05,
+    "engagement_observer": "loaded_full_flank_window_v1",
+    "engagement_observer_source_sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "engagement_observer_scope": "Candidate full-flank capture; actual coupled lead and unsupported reset checks establish completed engagement",
+    "engagement_window": {
+      "duration_s": 0.2,
+      "minimum_loaded_normal_impulse_Ns": 0.0010000000000000002,
+      "minimum_loaded_duration_s": 0.0005,
+      "maximum_helix_phase_range_m": 0.00015
+    },
+    "legacy_engagement_note": "Consecutive positive force for 0.2 s retained as a diagnostic; unilateral contact may have valid resolved gaps",
+    "axial_command_note": "Gravity compensation of known bolt weight plus constant net axial feed; no axial motion servo during entry or turns",
+    "partial": true,
+    "initial_bolt_yaw_rad": -0.23000000000071746
+  },
+  "audit_runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "inspected_controller_source": {
+    "source_path": "outputs/m8_insertion/full_window_v1/controller_source.py",
+    "module_sha256": "5f721923e499d7ce5f52ad3a91c0a074f256767a6c799ff4c2914ac7c107f46f",
+    "controller_sha256": "e59e760ecd1d1c2a9849aa956ba316909b5f31cf3fe47309fbd135b653de1fc6",
+    "hashed_function_names": [
+      "InsertionControlConfig",
+      "insertion_phases",
+      "initialize_insertion_pose",
+      "_body_contact",
+      "formed_flank_overlap",
+      "run_insertion_demo",
+      "fully_formed_flank_interval",
+      "contact_is_on_full_flanks",
+      "thread_end_bounds",
+      "LoadedFlankWindow",
+      "YamCartesianController",
+      "YamM8ControlConfig",
+      "smooth_profile"
+    ],
+    "support_helper_mentions_welded_body_groups": true
+  },
+  "controller_source_matches_recorded": true,
+  "runtime_core_and_plugin_identities_match_recorded": true,
+  "post_clamp_reference_time_s": 0.24999999999998063,
+  "maximum_post_clamp_block_slip_m": 3.141289801657112e-05,
+  "maximum_post_clamp_block_rotation_rad": 4.937056265978648e-05,
+  "right_post_grasp_reference_time_s": 1.1700000000002568,
+  "right_post_grasp_and_regrasp_reference_times_s": [
+    1.1700000000002568,
+    8.45289999998697
+  ],
+  "right_retention_scope_note": "First reference is end of pickup settle; intentional opening clears it, and each loaded regrasp establishes its own reference. Open hand motion is not classified as grip slip.",
+  "maximum_post_grasp_right_bolt_slip_m": 0.00013323922746446965,
+  "maximum_post_grasp_right_bolt_rotation_rad": 0.004576194699753183,
+  "actual_sampled_arm_joint_margins_rad": {
+    "left": 0.19999855561282676,
+    "right": 0.03467237837698933
+  },
+  "commands_inside_declared_ranges": true,
+  "free_objects_unactuated": true,
+  "equality_count": 2,
+  "equality_types": [
+    2,
+    2
+  ],
+  "phases": [
+    {
+      "phase": "secure_left",
+      "sampled_advance_m": -0.00013321267434450793,
+      "sampled_rotation_rad": -2.315591962454011e-06,
+      "sampled_lead_residual_m": -0.00013321221367212417,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.009095755430197994,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 0,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 12,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 0
+    },
+    {
+      "phase": "reach_bolt",
+      "sampled_advance_m": 2.5287622823673417e-07,
+      "sampled_rotation_rad": 2.3040222910108987e-06,
+      "sampled_lead_residual_m": 2.524178575659738e-07,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.009124006354284292,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 0,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 12,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 0
+    },
+    {
+      "phase": "close_bolt",
+      "sampled_advance_m": -3.9869535655746857e-07,
+      "sampled_rotation_rad": -3.5300180221881083e-05,
+      "sampled_lead_residual_m": -3.9167260883953464e-07,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.009123451586905099,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 0,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 12,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 8
+    },
+    {
+      "phase": "settle_bolt",
+      "sampled_advance_m": 3.9682033563595565e-07,
+      "sampled_rotation_rad": 2.7537832650831318e-05,
+      "sampled_lead_residual_m": 3.9134185790043416e-07,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.00912372918943798,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 0,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 12,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 8
+    },
+    {
+      "phase": "lift_bolt",
+      "sampled_advance_m": -0.026296077847571278,
+      "sampled_rotation_rad": 0.00035882445341314795,
+      "sampled_lead_residual_m": -0.026296149233428108,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.0,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 0,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 12,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 8
+    },
+    {
+      "phase": "transport_bolt",
+      "sampled_advance_m": 0.00022433405143722218,
+      "sampled_rotation_rad": -0.00048780127509040483,
+      "sampled_lead_residual_m": 0.00022443109641744364,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.0,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 0,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 0,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 8
+    },
+    {
+      "phase": "align_over_hole",
+      "sampled_advance_m": 0.014299816871465806,
+      "sampled_rotation_rad": -0.00016248874973120997,
+      "sampled_lead_residual_m": 0.01429984919757545,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.0,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 0,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 0,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 8
+    },
+    {
+      "phase": "feed_to_entry",
+      "sampled_advance_m": 0.0006173859398105851,
+      "sampled_rotation_rad": 0.0002638521130462479,
+      "sampled_lead_residual_m": 0.0006173334481005394,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.0,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 0,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 0,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 8
+    },
+    {
+      "phase": "start_thread_1",
+      "sampled_advance_m": 0.0021606951833831323,
+      "sampled_rotation_rad": 3.141872377283646,
+      "sampled_lead_residual_m": 0.0015356395341224115,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.0,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 2,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 0,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 8
+    },
+    {
+      "phase": "stop_start_1",
+      "sampled_advance_m": 1.4000548259097967e-06,
+      "sampled_rotation_rad": -0.00014835092079357182,
+      "sampled_lead_residual_m": 1.4295683038554607e-06,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.000114567806486391,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 1,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 0,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 8
+    },
+    {
+      "phase": "release_search_2",
+      "sampled_advance_m": 2.0434984729922334e-06,
+      "sampled_rotation_rad": 0.00011079272439440402,
+      "sampled_lead_residual_m": 2.0214569608097493e-06,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.00011559503395919789,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 4,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 0,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 8
+    },
+    {
+      "phase": "open_settle_search_2",
+      "sampled_advance_m": 1.6720068059250526e-08,
+      "sampled_rotation_rad": 2.8867652870800953e-05,
+      "sampled_lead_residual_m": 1.0977030996939382e-08,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.0001170160672668303,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 3,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 0,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 0
+    },
+    {
+      "phase": "reset_open_search_2",
+      "sampled_advance_m": 5.296494892219339e-07,
+      "sampled_rotation_rad": 0.0018335865996021994,
+      "sampled_lead_residual_m": 1.648690255797465e-07,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.00011443757716127385,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 6,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 0,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 0
+    },
+    {
+      "phase": "open_hold_search_2",
+      "sampled_advance_m": 2.4433217310493305e-08,
+      "sampled_rotation_rad": 0.00010245495023974982,
+      "sampled_lead_residual_m": 4.050452591880364e-09,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.00011487909874085059,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 5,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 0,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 0
+    },
+    {
+      "phase": "regrip_search_2",
+      "sampled_advance_m": -1.1088966920258514e-06,
+      "sampled_rotation_rad": -0.0022480240665081475,
+      "sampled_lead_residual_m": -6.616665140579572e-07,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.0001127876903294963,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 6,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 0,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 8
+    },
+    {
+      "phase": "settle_regrip_search_2",
+      "sampled_advance_m": -5.133530257724062e-07,
+      "sampled_rotation_rad": 5.261723860394696e-05,
+      "sampled_lead_residual_m": -5.23820892791986e-07,
+      "started_with_recorded_engagement": false,
+      "minimum_potential_complete_ring_length_m": 0.00011120327443409073,
+      "unexpected_sampled_penetrating_contact_count": 0,
+      "maximum_all_thread_candidates": 2,
+      "maximum_interior_flank_candidates": 0,
+      "maximum_male_world_support_candidates": 0,
+      "maximum_block_world_support_candidates": 0,
+      "maximum_head_block_seating_candidates": 0,
+      "maximum_right_hand_bolt_candidates": 8
+    }
+  ],
+  "capture_observer_audit": {
+    "version": "loaded_full_flank_window_v1",
+    "archived_source_path": "outputs/m8_insertion/full_window_v1/engagement_observer_source.py",
+    "archived_source_sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "archived_source_matches_recorded": true,
+    "archived_version_matches_recorded": true,
+    "scope": "The window declares candidate full-flank capture. Completed engagement additionally requires coupled metric lead, actual contact torque, and unsupported unseated open resets.",
+    "force_scope": "Resolved interior-contact normal impulse is not axial impulse or axial load balance. Rolling diagnostics originate from every-substep instrumentation; sampled qpos cannot independently reconstruct them.",
+    "limits": {
+      "duration_s": 0.2,
+      "minimum_loaded_normal_impulse_Ns": 0.0010000000000000002,
+      "minimum_loaded_duration_s": 0.0005,
+      "maximum_helix_phase_range_m": 0.00015
+    },
+    "sampled_ready_flags_match_recorded_limits": true,
+    "sampled_flag_inconsistencies": [],
+    "first_sampled_ready_time_s": null,
+    "first_sampled_candidate_capture_time_s": null,
+    "recorded_final_engagement_proof_checks_present_and_passed": false,
+    "recorded_final_proof_checks": {
+      "completed_qualifying_turns": null,
+      "observed_metric_lead": null,
+      "closed_turn_tracking": null,
+      "contact_torque_turns_bolt": null,
+      "open_reset_contact_decoupling": null,
+      "passive_self_locking_during_open_reset": null
+    },
+    "original_trial_overall_passed": null,
+    "legacy_force_streak_outcome": null
+  },
+  "capture_auditor_sha256": "3cd2b533787f62a6cb0bad6e1805053a300b25ca0eb1c0afd90ae21c4a5c175f",
+  "geometry_auditor_sha256": "5d47a251a23f45d0797540857ddef55badff45a5929cc13d9ac16c01ef8e675c",
+  "trajectory": "outputs/m8_insertion/full_window_v1/insertion_trace_partial.npz",
+  "trajectory_sha256": "f1333ac83826f62b8befc1f6988683a1e2dc8e4f921d9ebb2522dc63d8f32e65",
+  "force_scope_note": "Original loaded-contact and between-sample force/support checks remain the rollout's evidence; this audit performs zero integration or force solve",
+  "compact_artifact_provenance": {
+    "scope": "Compact independent audit of interrupted saved samples only. This is not a final qualification report.",
+    "original_audit_path": "outputs/m8_insertion/full_window_v1/independent_capture_audit_partial.json",
+    "original_audit_sha256": "50ee6a90df838f800b7d6eace15f1dbe7a2fe3c13d742029249aae3b8a5ab3a3",
+    "original_audit_size_bytes": 2974510,
+    "copied_trajectory_sha256": "f1333ac83826f62b8befc1f6988683a1e2dc8e4f921d9ebb2522dc63d8f32e65",
+    "omitted_large_arrays": [
+      {
+        "path": "recomputed_rows",
+        "row_count": 1745,
+        "canonical_json_sha256": "891275588af9d0a62010b26dac6f77abcd159c5c78dddba935a0e7569c973d12"
+      },
+      {
+        "path": "capture_observer_audit.recorded_window_rows",
+        "row_count": 1745,
+        "canonical_json_sha256": "a8514d48a4217a5e173cb475ce8278695ee96ededf19d6beeb82fc7aa240e0cf"
+      }
+    ],
+    "regenerate_full_audit_from_repository_root": "./scripts/run_m8.sh scripts/audit_m8_insertion_capture.py media/m8_insertion/interrupted/window_v1/insertion_trace_partial.npz --output /tmp/astra-m8-interrupted-window_v1-audit.json",
+    "regeneration_note": "Uses the exact archived controller/observer with the matched recorded core/plugin and frozen audit helper sources. Regenerated path fields may differ from the original artifact."
+  }
+}
