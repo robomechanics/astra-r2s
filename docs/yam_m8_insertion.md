@@ -165,6 +165,10 @@ The legacy uninterrupted 0.2 s force diagnostic also tags at 33.7902 s.
 
 ## Run and replay
 
+The [agent handoff](m8_agent_handoff.md) provides pinned clean-checkout setup,
+exact archived source identities, historical-controller reproduction,
+expected results and safe audit output paths.
+
 Use the verified native MuJoCo CPU launcher, separately from the legacy
 MJLab bridge. No GPU or learned policy is used. The default now matches
 the completed faster configuration; `--slow-motion 1` selects normal playback.
@@ -179,14 +183,19 @@ scripts/run_m8.sh -m yam_twin.m8_insertion_demo \
 scripts/run_m8.sh -m yam_twin.m8_insertion_demo \
   --replay media/m8_table_pickup/full/trace.npz \
   --output outputs/m8_table_pickup/full_replay --slow-motion 1
+mkdir -p outputs/m8_table_pickup/full_audits
 scripts/run_m8.sh scripts/audit_m8_insertion_capture.py \
-  media/m8_table_pickup/full/trace.npz
+  media/m8_table_pickup/full/trace.npz \
+  --output outputs/m8_table_pickup/full_audits/capture.json
 scripts/run_m8.sh scripts/audit_m8_insertion_reset_contacts.py \
-  media/m8_table_pickup/full/trace.npz
+  media/m8_table_pickup/full/trace.npz \
+  --output outputs/m8_table_pickup/full_audits/reset_contacts.json
 scripts/run_m8.sh scripts/audit_m8_free_joint_properties.py \
-  media/m8_table_pickup/full/trace.npz
+  media/m8_table_pickup/full/trace.npz \
+  --output outputs/m8_table_pickup/full_audits/free_joint_properties.json
 scripts/run_m8.sh scripts/audit_m8_left_pad_force_history.py \
-  media/m8_table_pickup/full/trace.npz
+  media/m8_table_pickup/full/trace.npz \
+  --output outputs/m8_table_pickup/full_audits/left_pad_force_history.json
 scripts/run_m8.sh -m yam_twin.m8_insertion_demo --preheld-block \
   --output outputs/m8_insertion/preheld_demo --dt .00005 \
   --stroke-degrees 180 --angular-speed 2 --maximum-starting-strokes 5 --video

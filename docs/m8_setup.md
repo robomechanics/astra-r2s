@@ -16,6 +16,11 @@ scripts/run_m8.sh scripts/check_m8_distance.py
 scripts/run_m8.sh -m thread_lab.benchmark --help
 ```
 
+For the completed physical pickup trajectory, use the
+[agent handoff](m8_agent_handoff.md): it pins the evidence and exact executed
+source revisions, separates archived replay from fresh integration, and gives
+checksums and audit commands that preserve the original package.
+
 Setup requires `uv`, Git, GCC, and G++, plus network access for the pinned
 dependencies and upstream source. Python 3.12 is selected by `.python-version`.
 The ordinary runtime dependencies are hash-locked in `requirements.lock`;

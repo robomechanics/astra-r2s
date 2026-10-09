@@ -14,7 +14,8 @@ drives this motion, with no grasp welds, imposed helix or free-object drive.
 [Screenshot](media/m8_table_pickup/full/demo.png) ·
 [Raw trajectory and original checks](media/m8_table_pickup/full) ·
 [Measured motion/contact chart](media/m8_table_pickup/full/trajectory.png) ·
-[Controls, audits and limits](docs/yam_m8_insertion.md)
+[Controls, audits and limits](docs/yam_m8_insertion.md) ·
+[Agent checkout, replay and reproduction handoff](docs/m8_agent_handoff.md)
 
 The continuous **43.6361 s** rollout completes all 49 executed phases without
 an abort. **22 of 23 checks pass; the original overall result remains false.**
