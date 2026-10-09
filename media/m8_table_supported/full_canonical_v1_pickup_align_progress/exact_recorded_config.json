@@ -1,0 +1,179 @@
+{
+  "scene_config": {
+    "base": {
+      "thread": {
+        "timestep": 5e-05,
+        "friction": 0.15,
+        "contact_time_constant": 0.0005,
+        "contact_margin": 0.0,
+        "contact_impratio": 1.0,
+        "sdf_initpoints": 40,
+        "sdf_iterations": 30,
+        "bolt_length": 0.016,
+        "pitch": 0.00125,
+        "male_pitch_diameter": 0.0071,
+        "female_pitch_diameter": 0.007268,
+        "nut_height": 0.016,
+        "nut_across_flats": 0.016,
+        "nut_mass": 0.018984665656908355,
+        "nut_transverse_inertia": 6.946182225160569e-07,
+        "nut_axial_inertia": 1.1886877420788483e-06,
+        "initial_z": 0.00875,
+        "gravity": -9.81,
+        "with_gripper": false,
+        "with_bolt": true,
+        "guided": false
+      },
+      "bolt_position": [
+        0.3,
+        -0.06,
+        0.11125
+      ],
+      "bolt_quaternion": [
+        0.7071067811865476,
+        0.0,
+        0.0,
+        0.7071067811865476
+      ],
+      "pad_friction": 0.8,
+      "jaw_stiffness": 20000.0,
+      "jaw_damping": 8.0,
+      "maximum_jaw_force": 20.0,
+      "open_aperture": 0.024,
+      "closed_aperture": 0.0194,
+      "left_closed_aperture": 0.0184,
+      "left_grasp_roll_rad": 0.0,
+      "left_block_contact_impedance": [
+        0.9999,
+        0.9999,
+        0.0001
+      ],
+      "left_block_contact_time_constant": 0.0008,
+      "pad_inner_offset": 0.0005,
+      "block_size": [
+        0.02,
+        0.12,
+        0.016
+      ],
+      "block_density": 2700.0,
+      "bolt_offset": [
+        0.0,
+        -0.05,
+        0.008
+      ],
+      "left_grasp_offset": [
+        0.0,
+        0.045,
+        0.006
+      ]
+    },
+    "block_position": [
+      0.3,
+      -0.01,
+      0.00799999
+    ],
+    "hole_offset": [
+      0.0,
+      -0.05,
+      0.0
+    ],
+    "bolt_head_position": [
+      0.36,
+      -0.22,
+      0.04
+    ],
+    "bolt_yaw_rad": 0.23,
+    "head_across_flats": 0.02,
+    "head_height": 0.008,
+    "steel_density": 7850.0,
+    "rest_radius": 0.007,
+    "rest_pin_radius": 0.001,
+    "rest_base_height": 0.01,
+    "pickup_from_table": false,
+    "held_block_position": [
+      0.3,
+      -0.01,
+      0.00799999
+    ],
+    "left_block_friction_time_constant": 0.0008,
+    "left_pad_collision_geometry": "box",
+    "left_block_direct_normal_solref": [
+      -31250.0,
+      -2500.0
+    ],
+    "minimum_tip_table_clearance_m": 0.001,
+    "left_grasp_tilt_rad": 0.5235987755982988
+  },
+  "control_config": {
+    "arm": {
+      "position_stiffness": 20000.0,
+      "position_damping": 650.0,
+      "rotation_stiffness": 40.0,
+      "rotation_damping": 6.0,
+      "left_rotation_stiffness": 80.0,
+      "left_rotation_damping": 10.0,
+      "maximum_cartesian_force": 8.0,
+      "maximum_cartesian_torque": 2.0,
+      "axial_feed_N": -0.05,
+      "open_aperture": 0.03,
+      "closed_aperture": 0.0184,
+      "left_closed_aperture": 0.0184,
+      "stroke_angle_rad": 3.141592653589793,
+      "angular_speed_rad_s": 2.0,
+      "reset_speed_rad_s": 4.0,
+      "strokes": 3,
+      "sample_period_s": 0.005
+    },
+    "pickup_hover_m": 0.02,
+    "left_pickup_hover_m": 0.075,
+    "left_lift_clearance_m": 0.06,
+    "transport_tip_clearance_m": 0.035,
+    "entry_tip_clearance_m": 0.00075,
+    "block_lift_m": 0.004,
+    "net_axial_feed_N": 0.05,
+    "axial_velocity_damping_Ns_per_m": 200.0,
+    "maximum_entry_dwell_s": 10.0,
+    "entry_support_window_s": 0.05,
+    "entry_support_velocity_limit_m_per_s": 0.0002,
+    "starting_angular_speed_rad_s": 1.0,
+    "maximum_starting_strokes": 5,
+    "qualifying_turns": 2,
+    "sample_period_s": 0.005,
+    "full_flank_contact_streak_s": 0.2,
+    "minimum_tip_rest_clearance_m": 0.01,
+    "pickup_grasp_face_offset_rad": 2.0943951023931953,
+    "settled_table_window_s": 0.1,
+    "minimum_table_weight_fraction": 0.9,
+    "maximum_hand_upward_weight_fraction": 0.1,
+    "minimum_loaded_table_duty": 0.99,
+    "maximum_block_lift_m": 0.0005,
+    "head_centering_s": 0.15,
+    "head_alignment_s": 0.3,
+    "gravity_feed_ramp_s": 0.5,
+    "gravity_feed_hold_s": 0.5,
+    "maximum_reference_settle_s": 1.0,
+    "maximum_reverse_angle_rad": 2.7,
+    "reverse_angular_speed_rad_s": 2.0,
+    "first_forward_clock_rad": 1.0,
+    "maximum_search_stop_s": 0.75,
+    "minimum_open_settle_s": 0.12,
+    "maximum_open_settle_s": 0.75,
+    "regrasp_window_s": 0.1,
+    "left_open_aperture_m": 0.024,
+    "left_downward_hold_N": 2.0,
+    "left_axial_velocity_damping_Ns_per_m": 200.0,
+    "left_hold_ramp_s": 0.3
+  },
+  "runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "programs": [
+
+    ],
+    "stream_groups": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "gif",
+            "width": 864,
+            "height": 480,
+            "nb_frames": "58"
+        }
+    ],
+    "format": {
+        "duration": "4.830000",
+        "size": "1516973"
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "screenshot_visually_reviewed": true,
+  "expected_overview_both_native_arms": true,
+  "expected_block_on_table_bolt_held_over_bore_side_rest": true,
+  "canonical_real_wrist_camera_and_closeups_present": true,
+  "unexpected_blank_buffers": false,
+  "scope": "Visual progress readability only; no full force-ledger or trajectory qualification audit."
+}

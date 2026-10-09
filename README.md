@@ -32,8 +32,9 @@ hardware calibration and broad policy-training fidelity remain unqualified.
 
 **402 software tests pass** for the new canonical table-supported feedback
 candidate, with [all 65 exact source files, original log and before/after proof](media/m8_table_supported/software_proof_feedback_v1).
-Its fresh unspliced native full attempt is still required; this software proof
-does not qualify capture, lead or reset. See the
+Its fresh unspliced native full attempt from producer `6e7d0d2` is running;
+no outcome is available yet. This software proof does not qualify capture,
+lead or reset. See the
 [candidate full-run recipe and controls](docs/m8_table_supported.md#run-current-canonical-candidate).
 The older alternate-grip `b2b13ff` source retains its separate
 [281-test proof](media/m8_table_supported/software_proof_281).
@@ -64,6 +65,20 @@ Older load/search failures also remain. See
 ## Separate table-supported approach in progress
 
 The left arm can stabilize a block that stays on the solid table.
+The fresh `6e7d0d2` attempt has a
+[4.82 s pickup-to-alignment clip](media/m8_table_supported/full_canonical_v1_pickup_align_progress/pickup_align_progress.gif)
+and [actual screenshot](media/m8_table_supported/full_canonical_v1_pickup_align_progress/pickup_align_progress.png).
+Its [exact snapshot and geometry-only replay](media/m8_table_supported/full_canonical_v1_pickup_align_progress/PROGRESS.md)
+preserve physical stabilization, bolt pickup and transfer; threading remains pending.
+The latest [cold opening/reset/regrasp clip](media/m8_table_supported/diagnostics/entry_supported_reset_regrasp_v4/native_v4/render/demo.gif)
+records **8.8531 s** with all original guards held: a contact-free open −π
+reset, quiet bilateral regrasp and the next native π turn. That partial
+half-turn advances **624.7518 µm**, with **−0.2632 µm** pitch residual;
+final formed overlap is **646.637 µm**, below one 1.25 mm pitch.
+[Exact frozen inputs, sources and repeat/replay instructions](media/m8_table_supported/diagnostics/entry_supported_reset_regrasp_v4/README.md)
+keep this `b2b13ff`/281-test producer's cold diagnostic separate from the live
+`6e7d0d2`/402-test producer's continuous attempt. Full capture, a qualified passive
+reset and complete table-supported assembly remain unqualified.
 The [new 120° grip pickup-to-entry clip](media/m8_table_supported/face120_pickup_entry_v1/render/demo.gif)
 records physical block stabilization, bolt pickup and transfer through 6.3983 s.
 The [table close-up](media/m8_table_supported/face120_pickup_entry_v1/render/table_context/table_view.png)
@@ -99,8 +114,9 @@ aborts table support; and
 [forward hold v2](media/m8_table_supported/diagnostics/face120_closed_search_trials/face120_closed_forward_hold_v2/README.md)
 aborts left-pad load after a 100 µm downward robot target. Each has zero formed
 capture and no opening/reset. They cold-start archived states and cannot be
-combined into a continuous trajectory. Further feedback diagnostics remain
-output-only experiments; the canonical source stays pinned to `b2b13ff`.
+combined into a continuous trajectory. Those output-only diagnostics retain
+their canonical `b2b13ff` source binding; the newer continuous candidate is
+a separate producer.
 The [actual bolt-over-bore screenshot](media/m8_table_supported/progress_bolt_over_bore/demo.png)
 shows the fresh corrected run after physical bolt pickup, lift and transport;
 that recorded frame precedes thread contact. The

@@ -1,0 +1,579 @@
+{
+  "scope": "Phase-only fresh native pickup/transport/alignment progress; full producer force ledgers were still open at snapshot. No full audit, loaded-interior capture, qualified-turn, passive-reset or successful-task claim.",
+  "producer_commit": "6e7d0d2ac3d28ff2538e122a10d7ffb2febf83b1",
+  "frozen_utc": "2026-10-09T10:30:17.853582+00:00",
+  "producer_source_file_count": 65,
+  "all_producer_sources_verified_before_package_freeze": true,
+  "archived_software_tests_passed": 402,
+  "software_proof_is_physics_qualification": false,
+  "original_snapshot_files_byte_exact": {
+    "launch_source.py": "21a49f7ee65ed69c816184b921d4fd0e7e20add9874a7c06ba539932505c2d70",
+    "base_renderer_source.py": "3531a3659ded5b4a7fe66868989c1bac6437a008282ec1229bf2f8a5ccb97a91",
+    "supported_scene.zip": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+    "render_manifest.json": "a43288914a5d320ae6885a51a5ec0dfe6e1f7656a998b08f6be30f22f522cae2",
+    "scene_source.py": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+    "render_progress.py": "8ffd2ed37f15ace11efef006888c5b16496c6ae69e20ea85f0c143fe6e83b995",
+    "controller_source.py": "57f430143787317f8dc6f50bd2ea1ff23aab123810284da74da70b53b45a9493",
+    "pickup_align_progress.png": "b95e9e45a1dc4ba8e6aaa2e56a162d4f868ab489e4052c756fb6ce9db0605a58",
+    "insertion_trace_partial.npz": "a18e77ab6763ae0855f8959a0f9a6188da176d828ee6cb4b96c6b2260639467f",
+    "progress_snapshot.json": "8ef2830c0680b7012cc648b5eced0b35d60a3fa5b5330195703c1947e019659e",
+    "engagement_observer_source.py": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "video_probe.json": "5e5faf7cfae1fe80c299bb042ff78533becc2679962210b055abe8f1b12246c8",
+    "visual_review.json": "42bcf6099604659f2a57b6f0024bfd3f34575d9cb27ebfbed0ac80a477f36810",
+    "pickup_align_progress.mp4": "04b385bc5ac86ae6a3637082681e02d2820ebcd5e59b376fd21c492664737def",
+    "renderer_source.py": "a9f3fa23986cc0cd68e572eee2a3dc1bad11a67130fbea5a2d651eb0f21db5f7",
+    "run_publication_identity.json": "44f629b1456635e6f456d2b3f0410061fae9f26a8f11447073c6ec2948d4b6e1",
+    "scene.xml": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "frozen_audit_sources/scripts/audit_m8_free_joint_properties.py": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+    "frozen_audit_sources/scripts/audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+    "frozen_audit_sources/scripts/audit_m8_supported_trace.py": "e46808601d7974ffdea1e5e20e07e0f28eb8e0a74a394545b276621a7e856702",
+    "frozen_audit_sources/scripts/audit_m8_left_pad_force_history.py": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc",
+    "frozen_audit_sources/thread_lab/runtime.py": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd",
+    "recorded_sources/yam_twin/m8_insertion_mechanics.py": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+    "recorded_sources/yam_twin/m8_insertion_simulation.py": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294",
+    "recorded_sources/yam_twin/kinematics.py": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+    "recorded_sources/yam_twin/m8_insertion_engagement.py": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "recorded_sources/yam_twin/m8_supported_start.py": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51",
+    "recorded_sources/yam_twin/m8_supported_scene.py": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+    "recorded_sources/yam_twin/m8_insertion_scene.py": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+    "recorded_sources/yam_twin/m8_simulation.py": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+    "recorded_sources/yam_twin/m8_scene.py": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f"
+  },
+  "portable_mesh_count": 18,
+  "portable_model_matches_original_fingerprint": true,
+  "replay_helper": "replay_geometry_only.py",
+  "replay_scope": "Exact saved post-integration state replay with canonical renderer/cameras and geometry-only mj_kinematics+mj_comPos+mj_camlight refresh. No integration, contact discovery, force solve or interpolated/manual poses.",
+  "source_bound_render_manifest": "render_manifest.json",
+  "gif_encoding": {
+    "input": "pickup_align_progress.mp4",
+    "same_source_frame_count": 58,
+    "new_physics_render": false,
+    "normal_speed_factor": 1,
+    "spatial_resize": [
+      864,
+      480
+    ],
+    "gif_duration_s": 4.83,
+    "mp4_duration_s": 4.833333,
+    "timing_note": "GIF uses centisecond frame-delay quantization; MP4 remains the normal-speed timing reference.",
+    "command": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-y",
+      "-threads",
+      "2",
+      "-filter_complex_threads",
+      "1",
+      "-i",
+      "pickup_align_progress.mp4",
+      "-filter_complex",
+      "[0:v]scale=864:-1:flags=lanczos,split[a][b];[a]palettegen[p];[b][p]paletteuse",
+      "-loop",
+      "0",
+      "pickup_align_progress.gif"
+    ]
+  },
+  "canonical_footer_note": "1x slow motion in the unchanged renderer means factor1, normal playback speed.",
+  "file_limit_bytes": 45000000,
+  "chunking_required": false,
+  "files": {
+    "PROGRESS.md": {
+      "bytes": 3808,
+      "sha256": "e991f063087ba7b838941f1e000822f27677f2bc6107def2c77880dadb0ec094"
+    },
+    "base_renderer_source.py": {
+      "bytes": 13740,
+      "sha256": "3531a3659ded5b4a7fe66868989c1bac6437a008282ec1229bf2f8a5ccb97a91"
+    },
+    "controller_source.py": {
+      "bytes": 113329,
+      "sha256": "57f430143787317f8dc6f50bd2ea1ff23aab123810284da74da70b53b45a9493"
+    },
+    "engagement_observer_source.py": {
+      "bytes": 4752,
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866"
+    },
+    "exact_recorded_config.json": {
+      "bytes": 4970,
+      "sha256": "d0ae89e7eaea0007908550ad2dee3e367d32ee7b4c6c0430744cb13ecac56a31"
+    },
+    "frozen_audit_sources/scripts/audit_m8_free_joint_properties.py": {
+      "bytes": 6934,
+      "sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11"
+    },
+    "frozen_audit_sources/scripts/audit_m8_insertion_trace.py": {
+      "bytes": 30341,
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f"
+    },
+    "frozen_audit_sources/scripts/audit_m8_left_pad_force_history.py": {
+      "bytes": 10265,
+      "sha256": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc"
+    },
+    "frozen_audit_sources/scripts/audit_m8_supported_trace.py": {
+      "bytes": 72219,
+      "sha256": "e46808601d7974ffdea1e5e20e07e0f28eb8e0a74a394545b276621a7e856702"
+    },
+    "frozen_audit_sources/thread_lab/runtime.py": {
+      "bytes": 2177,
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+    },
+    "gif_probe.json": {
+      "bytes": 301,
+      "sha256": "6dbb54e7a9bb7f306482eee76b5ba780ba45fbab8c7ecb919b1905bc2541ba0b"
+    },
+    "insertion_trace_partial.npz": {
+      "bytes": 14140851,
+      "sha256": "a18e77ab6763ae0855f8959a0f9a6188da176d828ee6cb4b96c6b2260639467f"
+    },
+    "launch_source.py": {
+      "bytes": 4466,
+      "sha256": "21a49f7ee65ed69c816184b921d4fd0e7e20add9874a7c06ba539932505c2d70"
+    },
+    "original_software_proof/manifest.json": {
+      "bytes": 725,
+      "sha256": "971053760610668d1797ce10cd7341b773b7e1cb06720e7bf9eb1d2b7693727a"
+    },
+    "original_software_proof/software_tests.json": {
+      "bytes": 7295,
+      "sha256": "9da72f28802082dbe5bae649607fd8f4959167a5f8320882f0d3aeb3b864061d"
+    },
+    "original_software_proof/software_tests.log": {
+      "bytes": 1260,
+      "sha256": "d20a182ab8493975d91177f0af4cb8995d59e740a5120ea2ca66439558796316"
+    },
+    "original_software_proof/verify_sources.py": {
+      "bytes": 1895,
+      "sha256": "38884b1f737814bc5ea5965bd2c93806e107fd2dfc371f6ededff755617a3260"
+    },
+    "pickup_align_progress.gif": {
+      "bytes": 1516973,
+      "sha256": "2806a8f15dd3122e1512caf0fb070212d7768fabf51c5e6da7ba21cf0099cf3e"
+    },
+    "pickup_align_progress.mp4": {
+      "bytes": 712764,
+      "sha256": "04b385bc5ac86ae6a3637082681e02d2820ebcd5e59b376fd21c492664737def"
+    },
+    "pickup_align_progress.png": {
+      "bytes": 256206,
+      "sha256": "b95e9e45a1dc4ba8e6aaa2e56a162d4f868ab489e4052c756fb6ce9db0605a58"
+    },
+    "portable_asset_manifest.json": {
+      "bytes": 5218,
+      "sha256": "06a738c029e3c65883e61a2464d81e216ce9b002d90f42cf7f9f6d8596925cca"
+    },
+    "portable_assets/d405.stl": {
+      "bytes": 50084,
+      "sha256": "6617f3fb22b604a66c27e16d2397f305fcdca8a781248abdbabbf69c9fe6a3c5"
+    },
+    "portable_assets/model2.stl": {
+      "bytes": 524284,
+      "sha256": "5ac61c0313ed00c38655e41681af1b8b307cf8d5ef57209a75f215cea02df754"
+    },
+    "portable_assets/model2__10.stl": {
+      "bytes": 524284,
+      "sha256": "b879cc07f547b7a2ac52e428dd206e80a0d4b0e805cb56b9a8230df04a690923"
+    },
+    "portable_assets/model2__11.stl": {
+      "bytes": 248584,
+      "sha256": "af220d2a51e8444392aef36e2fe4a6f69aed22bc292a7f38e54da3b4f5253434"
+    },
+    "portable_assets/model2__12.stl": {
+      "bytes": 68084,
+      "sha256": "e79614869bd2283f70fafa150ce748d5b6c03377a651448c6fe9893a22f6d1de"
+    },
+    "portable_assets/model2__13.stl": {
+      "bytes": 524284,
+      "sha256": "32b62f14f00ea82bfc79b935f7dac32c7cb276a3abc0aae8362cbba3fb1326de"
+    },
+    "portable_assets/model2__14.stl": {
+      "bytes": 524284,
+      "sha256": "72d2178789dd5e0358c2caf9dad90b8881e505f4c52a8d6d18c71b5e93e8c84b"
+    },
+    "portable_assets/model2__15.stl": {
+      "bytes": 183684,
+      "sha256": "ca8788184d54f30c18482cb9b48dffb010a93dbc029054b6cc515083a740d324"
+    },
+    "portable_assets/model2__16.stl": {
+      "bytes": 183684,
+      "sha256": "18bb99691eed524393e8f3a0ff29e79d97ab75689bc92144bbdfafa2cc79d37b"
+    },
+    "portable_assets/model2__17.stl": {
+      "bytes": 524284,
+      "sha256": "6513dbd192d2bf3a4f7016231f1ba5eca93916c9ebfdc334e9b435ca1d302ff6"
+    },
+    "portable_assets/model2__2.stl": {
+      "bytes": 524284,
+      "sha256": "30dab41f14bae95d737abca3c934eb5d570ab107dff0b40952fbdfb9d07eab79"
+    },
+    "portable_assets/model2__3.stl": {
+      "bytes": 80684,
+      "sha256": "9fd96f5ad387fe7dd96eaa65e386637800e2f5637b6167fbad4ecb37d8598f47"
+    },
+    "portable_assets/model2__4.stl": {
+      "bytes": 80684,
+      "sha256": "33c0e7ef538e2c4473efa9c4ef2a8441b6094b65090b4dec71abe82001d974df"
+    },
+    "portable_assets/model2__5.stl": {
+      "bytes": 524284,
+      "sha256": "09f08e7dead2d6363618471adadb1b94af39e8056676670f3fd21ec06c197b20"
+    },
+    "portable_assets/model2__6.stl": {
+      "bytes": 86284,
+      "sha256": "888b5919d10dbfb59b964c3cafc2ddbdac3b5426e20dd13bcaf4baedd5ee15c9"
+    },
+    "portable_assets/model2__7.stl": {
+      "bytes": 52084,
+      "sha256": "2d64b18f1e70b0460eb53335d340b7c879976a3093ec67b07bcb7245e371a91d"
+    },
+    "portable_assets/model2__8.stl": {
+      "bytes": 524284,
+      "sha256": "db3708da6b14daf3fc9a1909a8325b68f65ff69146cdd20b69a9ddc4ce51f50d"
+    },
+    "portable_assets/model2__9.stl": {
+      "bytes": 52084,
+      "sha256": "74969d09b8b7f75cc984c5c7e5526d2941c6724f48b3efa1fa8730cc7820f4f5"
+    },
+    "producer_sources/scripts/audit_m8_free_joint_properties.py": {
+      "bytes": 6934,
+      "sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11"
+    },
+    "producer_sources/scripts/audit_m8_insertion_capture.py": {
+      "bytes": 7389,
+      "sha256": "15ba607ac3277b4f8ef3f02aaf8df677e285e20511f0a7b9f8d07a202bad1233"
+    },
+    "producer_sources/scripts/audit_m8_insertion_reset_contacts.py": {
+      "bytes": 7681,
+      "sha256": "b8b14448a2fba7074ebed84669a7a6015b1f831e45e7a647ff7acc9cdb10ab0a"
+    },
+    "producer_sources/scripts/audit_m8_insertion_trace.py": {
+      "bytes": 30341,
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f"
+    },
+    "producer_sources/scripts/audit_m8_left_pad_force_history.py": {
+      "bytes": 10265,
+      "sha256": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc"
+    },
+    "producer_sources/scripts/audit_m8_supported_trace.py": {
+      "bytes": 72219,
+      "sha256": "e46808601d7974ffdea1e5e20e07e0f28eb8e0a74a394545b276621a7e856702"
+    },
+    "producer_sources/scripts/audit_yam_m8_geometry.py": {
+      "bytes": 10939,
+      "sha256": "1dac9d46cc585cd01ca5ea759c6bf86ce14edbb1bacaf3b04a39848c1b145fee"
+    },
+    "producer_sources/scripts/audit_yam_m8_trace.py": {
+      "bytes": 17345,
+      "sha256": "8d41f8ea4eea3a905f536a257a707bf953dae7e54f7fc1d7e6d2d151d2a1cfc2"
+    },
+    "producer_sources/scripts/check_m8_distance.py": {
+      "bytes": 2644,
+      "sha256": "6cb40d77aa8dec608ed7a4a9af13c64e463940aa027368e20f118d5fb3a461c9"
+    },
+    "producer_sources/scripts/check_m8_optimization.py": {
+      "bytes": 16201,
+      "sha256": "dc8e68893522fc55dd2da71f3fa7b21be2e4717ab67b305ffb6512e6ee0f677a"
+    },
+    "producer_sources/scripts/compare_m8_thread_start.py": {
+      "bytes": 15848,
+      "sha256": "a202391a03ea0ff9697f1219be0260881396dd7b0c2bf704d0032d7a2c25a67f"
+    },
+    "producer_sources/scripts/compare_yam_m8_hold.py": {
+      "bytes": 4819,
+      "sha256": "85395970bed69b1f1288e03082ca1f2aa677a73384522bf326aac80491c1a7ff"
+    },
+    "producer_sources/scripts/package_m8_insertion_demo.py": {
+      "bytes": 24780,
+      "sha256": "96ba1018173e05f18e98d50a24018b1cec55a215c63aae2c648fdb7932324e39"
+    },
+    "producer_sources/scripts/plot_m8_insertion_trace.py": {
+      "bytes": 24634,
+      "sha256": "4125f08051d2ac8461545bb71d7b6ceda6f26a80ae121ce18ef250534be69dac"
+    },
+    "producer_sources/scripts/probe_m8_thread_start.py": {
+      "bytes": 14088,
+      "sha256": "547430f31396c6bb1bfed0d83a688bd06b6ceba2ab0c3975ece602ec9dddedfb"
+    },
+    "producer_sources/scripts/verify_m8_bindings.py": {
+      "bytes": 4300,
+      "sha256": "fa3c0d3ea85d1dd33a534d1ca36bb2f166d78a958fad4a2e15a7f71ffe7d6af5"
+    },
+    "producer_sources/tests/test_m8_env.py": {
+      "bytes": 2999,
+      "sha256": "f1aa01a7e8f49481f152be4fa4e7d81d0512c9529234e7ab0c7f334c1ffb9ad0"
+    },
+    "producer_sources/tests/test_m8_insertion_env.py": {
+      "bytes": 18203,
+      "sha256": "cd74ac30cc21ead94d62bbb629cc2f6ffbb5f5cf531910d8af67fe4ec82b3cac"
+    },
+    "producer_sources/tests/test_m8_insertion_mechanics.py": {
+      "bytes": 3347,
+      "sha256": "38c3500352177b5ab5ff2799d645ec2f402c1c8cb7dfe05927b672f2ba5d260a"
+    },
+    "producer_sources/tests/test_m8_physics.py": {
+      "bytes": 1884,
+      "sha256": "1ef772e1e4af6cd864577176ab8c1c088c30c4856944ce5948ba1894c897f7e0"
+    },
+    "producer_sources/tests/test_m8_sdf.py": {
+      "bytes": 3492,
+      "sha256": "b21ab6a5fd8b2af14c50a6cdea5358a77fcec3ee8883dc475e4e3d4bc6a1dd37"
+    },
+    "producer_sources/tests/test_m8_supported_audit.py": {
+      "bytes": 21821,
+      "sha256": "c3b8290a2f89aaff2ffdfa0719039d07287dde8fdb62a660f8438b39dd2dd6e8"
+    },
+    "producer_sources/tests/test_m8_supported_feedback.py": {
+      "bytes": 25977,
+      "sha256": "c53717a80eb50a769e4e0a834e38113e972bcd2ce03e05940dfd138a7f620c74"
+    },
+    "producer_sources/tests/test_m8_supported_grasp.py": {
+      "bytes": 6541,
+      "sha256": "18301b45f5f8ee709e9b7080fa45b14217673d2599b73ec42dfa12b2dd9e7892"
+    },
+    "producer_sources/tests/test_m8_supported_phase_gate.py": {
+      "bytes": 10989,
+      "sha256": "d9c4a4be0dfc9ca748d48b60e6c7b87bf30249cda668280e1aa22ed2d4d74a7b"
+    },
+    "producer_sources/tests/test_m8_supported_start.py": {
+      "bytes": 13358,
+      "sha256": "8b6fdf260cc33767aa2f7b742fb299bf4415f025015d2b0b88af849557073892"
+    },
+    "producer_sources/tests/test_m8_theory.py": {
+      "bytes": 3858,
+      "sha256": "a82b341fca21da556e6aa311d2663d229428183ad1687660a5bf9cecb060863b"
+    },
+    "producer_sources/tests/test_twin.py": {
+      "bytes": 10759,
+      "sha256": "2dbf4a42b45b1ec9f804191f10c4bce617d968a4cb875de54656331ec0206458"
+    },
+    "producer_sources/tests/test_yam_m8_control.py": {
+      "bytes": 6353,
+      "sha256": "40956a87183b2100976b9cba5aafc9fbc93524b8191b36e983b11cca39d75be0"
+    },
+    "producer_sources/tests/test_yam_m8_env.py": {
+      "bytes": 10164,
+      "sha256": "47ebd3f925ed0d7330a2f559499dc33d3aaec4e715120f28328120c4eb5a194e"
+    },
+    "producer_sources/tests/test_yam_m8_insertion_controller.py": {
+      "bytes": 18035,
+      "sha256": "1d888f545dece29d595948b5eca8289b21969464973f6f6d9b416006b8f30fe9"
+    },
+    "producer_sources/tests/test_yam_m8_insertion_engagement.py": {
+      "bytes": 2406,
+      "sha256": "f6f571c0bba710a94b6ca072a42615b16dc0261c68aa3cfcd8545de47f71be4a"
+    },
+    "producer_sources/tests/test_yam_m8_insertion_scene.py": {
+      "bytes": 28494,
+      "sha256": "5b6109bd3e4a9a9b25a292c8ac683bdf5188232372ab235c0bd9cba91408d488"
+    },
+    "producer_sources/tests/test_yam_m8_provenance.py": {
+      "bytes": 1457,
+      "sha256": "fd447004b701fe29cd20545cebdc3a3b3961d175d9286d9387e2f423d45adcd6"
+    },
+    "producer_sources/tests/test_yam_m8_scene.py": {
+      "bytes": 11012,
+      "sha256": "806b8daf2e83b21657dc55529083d9182620dc2ebce7b07386ec8ec88c48cf68"
+    },
+    "producer_sources/tests/test_yam_m8_supported_controller.py": {
+      "bytes": 11226,
+      "sha256": "51db0238d81157a7f0890d8cd8a8c7d3140f4bc4210e79f6d259589e46d8c929"
+    },
+    "producer_sources/tests/test_yam_m8_supported_scene.py": {
+      "bytes": 10531,
+      "sha256": "ed4aee425488736d4bb0c79c227cb3b776b0954c90e699e214d861c2d61ebd59"
+    },
+    "producer_sources/thread_lab/__init__.py": {
+      "bytes": 207,
+      "sha256": "d694de2a94fc8dfb2d0937bfd082272270bf94df494feb106b0e96287ffa1fbd"
+    },
+    "producer_sources/thread_lab/benchmark.py": {
+      "bytes": 5182,
+      "sha256": "0456dccc55070fb7e85cc24fb29e213aa79085fd370312d3391364a4f1b069e4"
+    },
+    "producer_sources/thread_lab/build_plugin.py": {
+      "bytes": 899,
+      "sha256": "0ddb419b5dd1d7578c659ace20869699a434a99c578815d5928dc9cd6556b5d0"
+    },
+    "producer_sources/thread_lab/demo.py": {
+      "bytes": 1744,
+      "sha256": "bfd0d601cbb2c7c7fec7522278e23fd0c78dbd80ba9ee927c06bca5c912be5b3"
+    },
+    "producer_sources/thread_lab/env.py": {
+      "bytes": 30087,
+      "sha256": "7850807cadadfbac6511a7a01331a80cb87040d075c15594d06347a9bec75976"
+    },
+    "producer_sources/thread_lab/gripper.py": {
+      "bytes": 35781,
+      "sha256": "dc55f61c7544ea23c9651854bd4151251f335292a87e08fa2cc5b87c7ba00a57"
+    },
+    "producer_sources/thread_lab/load_benchmark.py": {
+      "bytes": 22702,
+      "sha256": "5270e6a9d37720dee81b57981b3b0ec3465224f491f29dd133612e81e1a24f1a"
+    },
+    "producer_sources/thread_lab/model.py": {
+      "bytes": 7229,
+      "sha256": "12d79f294f00ae1a6ae7551877f4dafd705ef54ba4f2ae6af7ab9e21c646b3de"
+    },
+    "producer_sources/thread_lab/plugins/m8_sdf.cc": {
+      "bytes": 8429,
+      "sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+    },
+    "producer_sources/thread_lab/render.py": {
+      "bytes": 9164,
+      "sha256": "1b3049306df5808ae5f6c2034071e07b1d5133012826eb810701cd441d520224"
+    },
+    "producer_sources/thread_lab/runtime.py": {
+      "bytes": 2177,
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+    },
+    "producer_sources/thread_lab/theory.py": {
+      "bytes": 5383,
+      "sha256": "0480828df22825d3c3ce38187c50fb291670b4beaab9de44bb1e10d4e022453d"
+    },
+    "producer_sources/thread_lab/validate.py": {
+      "bytes": 5147,
+      "sha256": "59fb22e6b2ec713eea06c53151dea87358df06f29426f4fc61b91547e7bbe4e1"
+    },
+    "producer_sources/yam_twin/kinematics.py": {
+      "bytes": 2796,
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683"
+    },
+    "producer_sources/yam_twin/m8_demo.py": {
+      "bytes": 13137,
+      "sha256": "f5989b9ee052a2bb6d68bdec090d90aec4faeed667fd8218bf3fa4dccb3d485d"
+    },
+    "producer_sources/yam_twin/m8_env.py": {
+      "bytes": 25978,
+      "sha256": "88eab5fc877341db0bed0f5b81e0c45c25995493b7c368dd3e182dd9d43f510a"
+    },
+    "producer_sources/yam_twin/m8_insertion_demo.py": {
+      "bytes": 13740,
+      "sha256": "3531a3659ded5b4a7fe66868989c1bac6437a008282ec1229bf2f8a5ccb97a91"
+    },
+    "producer_sources/yam_twin/m8_insertion_engagement.py": {
+      "bytes": 4752,
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866"
+    },
+    "producer_sources/yam_twin/m8_insertion_env.py": {
+      "bytes": 38894,
+      "sha256": "fc0d054321a4e76374306bf9f7adeb8fa8366e37f198aac998532dca1b6bea25"
+    },
+    "producer_sources/yam_twin/m8_insertion_mechanics.py": {
+      "bytes": 4321,
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20"
+    },
+    "producer_sources/yam_twin/m8_insertion_scene.py": {
+      "bytes": 25139,
+      "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d"
+    },
+    "producer_sources/yam_twin/m8_insertion_simulation.py": {
+      "bytes": 67946,
+      "sha256": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294"
+    },
+    "producer_sources/yam_twin/m8_scene.py": {
+      "bytes": 20849,
+      "sha256": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f"
+    },
+    "producer_sources/yam_twin/m8_simulation.py": {
+      "bytes": 30270,
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449"
+    },
+    "producer_sources/yam_twin/m8_supported_demo.py": {
+      "bytes": 7793,
+      "sha256": "a9f3fa23986cc0cd68e572eee2a3dc1bad11a67130fbea5a2d651eb0f21db5f7"
+    },
+    "producer_sources/yam_twin/m8_supported_scene.py": {
+      "bytes": 7969,
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4"
+    },
+    "producer_sources/yam_twin/m8_supported_simulation.py": {
+      "bytes": 113329,
+      "sha256": "57f430143787317f8dc6f50bd2ea1ff23aab123810284da74da70b53b45a9493"
+    },
+    "producer_sources/yam_twin/m8_supported_start.py": {
+      "bytes": 26529,
+      "sha256": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51"
+    },
+    "progress_snapshot.json": {
+      "bytes": 9027,
+      "sha256": "8ef2830c0680b7012cc648b5eced0b35d60a3fa5b5330195703c1947e019659e"
+    },
+    "recorded_sources/yam_twin/kinematics.py": {
+      "bytes": 2796,
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683"
+    },
+    "recorded_sources/yam_twin/m8_insertion_engagement.py": {
+      "bytes": 4752,
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866"
+    },
+    "recorded_sources/yam_twin/m8_insertion_mechanics.py": {
+      "bytes": 4321,
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20"
+    },
+    "recorded_sources/yam_twin/m8_insertion_scene.py": {
+      "bytes": 25139,
+      "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d"
+    },
+    "recorded_sources/yam_twin/m8_insertion_simulation.py": {
+      "bytes": 67946,
+      "sha256": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294"
+    },
+    "recorded_sources/yam_twin/m8_scene.py": {
+      "bytes": 20849,
+      "sha256": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f"
+    },
+    "recorded_sources/yam_twin/m8_simulation.py": {
+      "bytes": 30270,
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449"
+    },
+    "recorded_sources/yam_twin/m8_supported_scene.py": {
+      "bytes": 7969,
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4"
+    },
+    "recorded_sources/yam_twin/m8_supported_start.py": {
+      "bytes": 26529,
+      "sha256": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51"
+    },
+    "render_manifest.json": {
+      "bytes": 7685,
+      "sha256": "a43288914a5d320ae6885a51a5ec0dfe6e1f7656a998b08f6be30f22f522cae2"
+    },
+    "render_progress.py": {
+      "bytes": 4241,
+      "sha256": "8ffd2ed37f15ace11efef006888c5b16496c6ae69e20ea85f0c143fe6e83b995"
+    },
+    "renderer_source.py": {
+      "bytes": 7793,
+      "sha256": "a9f3fa23986cc0cd68e572eee2a3dc1bad11a67130fbea5a2d651eb0f21db5f7"
+    },
+    "replay_geometry_only.py": {
+      "bytes": 6921,
+      "sha256": "7280d00754ed0d23310ad2258061c85f443a28466d6777b8529adc7a5af87ed8"
+    },
+    "run_publication_identity.json": {
+      "bytes": 8201,
+      "sha256": "44f629b1456635e6f456d2b3f0410061fae9f26a8f11447073c6ec2948d4b6e1"
+    },
+    "scene.xml": {
+      "bytes": 43813,
+      "sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10"
+    },
+    "scene_source.py": {
+      "bytes": 7969,
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4"
+    },
+    "supported_scene.zip": {
+      "bytes": 5325454,
+      "sha256": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93"
+    },
+    "video_probe.json": {
+      "bytes": 374,
+      "sha256": "5e5faf7cfae1fe80c299bb042ff78533becc2679962210b055abe8f1b12246c8"
+    },
+    "visual_review.json": {
+      "bytes": 355,
+      "sha256": "42bcf6099604659f2a57b6f0024bfd3f34575d9cb27ebfbed0ac80a477f36810"
+    }
+  },
+  "manifest_hash_scope": "The files map covers all artifacts except this self-referential manifest and SHA256SUMS. SHA256SUMS additionally covers this manifest; its own hash is reported at handoff."
+}

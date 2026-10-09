@@ -1,0 +1,113 @@
+{
+  "scope": "Exact mesh bytes referenced by immutable scene.xml; original XML remains unchanged. Portable replayer normalizes only mesh file references in memory.",
+  "assets": [
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2.stl",
+      "portable_asset": "portable_assets/model2.stl",
+      "sha256": "5ac61c0313ed00c38655e41681af1b8b307cf8d5ef57209a75f215cea02df754",
+      "bytes": 524284
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__2.stl",
+      "portable_asset": "portable_assets/model2__2.stl",
+      "sha256": "30dab41f14bae95d737abca3c934eb5d570ab107dff0b40952fbdfb9d07eab79",
+      "bytes": 524284
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__3.stl",
+      "portable_asset": "portable_assets/model2__3.stl",
+      "sha256": "9fd96f5ad387fe7dd96eaa65e386637800e2f5637b6167fbad4ecb37d8598f47",
+      "bytes": 80684
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__4.stl",
+      "portable_asset": "portable_assets/model2__4.stl",
+      "sha256": "33c0e7ef538e2c4473efa9c4ef2a8441b6094b65090b4dec71abe82001d974df",
+      "bytes": 80684
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__5.stl",
+      "portable_asset": "portable_assets/model2__5.stl",
+      "sha256": "09f08e7dead2d6363618471adadb1b94af39e8056676670f3fd21ec06c197b20",
+      "bytes": 524284
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__6.stl",
+      "portable_asset": "portable_assets/model2__6.stl",
+      "sha256": "888b5919d10dbfb59b964c3cafc2ddbdac3b5426e20dd13bcaf4baedd5ee15c9",
+      "bytes": 86284
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__7.stl",
+      "portable_asset": "portable_assets/model2__7.stl",
+      "sha256": "2d64b18f1e70b0460eb53335d340b7c879976a3093ec67b07bcb7245e371a91d",
+      "bytes": 52084
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__8.stl",
+      "portable_asset": "portable_assets/model2__8.stl",
+      "sha256": "db3708da6b14daf3fc9a1909a8325b68f65ff69146cdd20b69a9ddc4ce51f50d",
+      "bytes": 524284
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__9.stl",
+      "portable_asset": "portable_assets/model2__9.stl",
+      "sha256": "74969d09b8b7f75cc984c5c7e5526d2941c6724f48b3efa1fa8730cc7820f4f5",
+      "bytes": 52084
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__10.stl",
+      "portable_asset": "portable_assets/model2__10.stl",
+      "sha256": "b879cc07f547b7a2ac52e428dd206e80a0d4b0e805cb56b9a8230df04a690923",
+      "bytes": 524284
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__11.stl",
+      "portable_asset": "portable_assets/model2__11.stl",
+      "sha256": "af220d2a51e8444392aef36e2fe4a6f69aed22bc292a7f38e54da3b4f5253434",
+      "bytes": 248584
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__12.stl",
+      "portable_asset": "portable_assets/model2__12.stl",
+      "sha256": "e79614869bd2283f70fafa150ce748d5b6c03377a651448c6fe9893a22f6d1de",
+      "bytes": 68084
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__13.stl",
+      "portable_asset": "portable_assets/model2__13.stl",
+      "sha256": "32b62f14f00ea82bfc79b935f7dac32c7cb276a3abc0aae8362cbba3fb1326de",
+      "bytes": 524284
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__14.stl",
+      "portable_asset": "portable_assets/model2__14.stl",
+      "sha256": "72d2178789dd5e0358c2caf9dad90b8881e505f4c52a8d6d18c71b5e93e8c84b",
+      "bytes": 524284
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__15.stl",
+      "portable_asset": "portable_assets/model2__15.stl",
+      "sha256": "ca8788184d54f30c18482cb9b48dffb010a93dbc029054b6cc515083a740d324",
+      "bytes": 183684
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__16.stl",
+      "portable_asset": "portable_assets/model2__16.stl",
+      "sha256": "18bb99691eed524393e8f3a0ff29e79d97ab75689bc92144bbdfafa2cc79d37b",
+      "bytes": 183684
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/model2__17.stl",
+      "portable_asset": "portable_assets/model2__17.stl",
+      "sha256": "6513dbd192d2bf3a4f7016231f1ba5eca93916c9ebfdc334e9b435ca1d302ff6",
+      "bytes": 524284
+    },
+    {
+      "original_xml_path": "/workspace/astra-r2s/assets/yam/mjlab_reference/xmls/assets/d405.stl",
+      "portable_asset": "portable_assets/d405.stl",
+      "sha256": "6617f3fb22b604a66c27e16d2397f305fcdca8a781248abdbabbf69c9fe6a3c5",
+      "bytes": 50084
+    }
+  ]
+}

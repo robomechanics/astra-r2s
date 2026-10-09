@@ -17,9 +17,37 @@ establish completion of this new table-supported trajectory.
 The new canonical feedback candidate passes
 [402 software tests on 65 unchanged source files](../media/m8_table_supported/software_proof_feedback_v1).
 Use its [full-run candidate recipe](#run-current-canonical-candidate) for the
-new 30 mm opening/B200 controller. A fresh unspliced full native attempt is
-still required; software success does not qualify assembly. Historical
-results and recipes below retain their exact older producer bindings.
+new 30 mm opening/B200 controller, pinned to producer
+`6e7d0d2ac3d28ff2538e122a10d7ffb2febf83b1`. Its fresh unspliced
+`full_canonical_v1` native attempt is running, with no closed outcome yet;
+software success does not qualify assembly. Historical results and recipes
+below retain their exact older producer bindings.
+
+The live candidate's [4.82 s pickup/alignment snapshot](../media/m8_table_supported/full_canonical_v1_pickup_align_progress/PROGRESS.md)
+includes [normal-speed video](../media/m8_table_supported/full_canonical_v1_pickup_align_progress/pickup_align_progress.mp4)
+and an [actual approach screenshot](../media/m8_table_supported/full_canonical_v1_pickup_align_progress/pickup_align_progress.png).
+It records real left stabilization and right bolt pickup/transfer. Its force
+ledgers were still open at the snapshot; no capture or full-task audit is claimed.
+
+The latest [cold opening/reset/regrasp V4 diagnostic](../media/m8_table_supported/diagnostics/entry_supported_reset_regrasp_v4/README.md)
+holds every original guard through **8.8531 s**. Its
+[normal-speed clip](../media/m8_table_supported/diagnostics/entry_supported_reset_regrasp_v4/native_v4/render/demo.gif)
+shows a contact-free open −π reset, 100 ms quiet bilateral regrasp and the
+next native π turn. The measured partial half-turn advances **624.7518 µm**,
+with **−0.2632 µm** pitch residual; final formed overlap reaches
+**646.637 µm**, below the 1.25 mm pitch. Every fully open native tick has zero
+whole-right/bolt contacts, hand load and extra axial feed. Full capture,
+full-pitch qualification, a qualified passive reset and complete assembly
+remain unproven.
+
+Use the package's [complete cold-input restore recipe](../media/m8_table_supported/diagnostics/entry_supported_reset_regrasp_v4/README.md#repeat-the-frozen-native-branch-in-an-isolated-checkout)
+for the exact `42ed0d3b` harness, original closed-v3 state/report/ledger and
+isolated `b2b13ff` model/reference prefix. The 30 mm opening changes the
+finite finger command within unchanged model/force limits. Perfect native
+pose feedback at 20 kHz drives bounded robot motors; this is not a trained
+policy. Its historical 281-test producer binding, earlier failed 24 mm branch
+and static preflight are separate from the new 402-test producer's continuous
+attempt.
 
 The latest reproducible continuous result is the
 [6.3983 s pickup-to-entry prefix](../media/m8_table_supported/face120_pickup_entry_v1/README.md),
@@ -389,13 +417,12 @@ the current CLI's implicit output is `outputs/m8_supported/demo`.
 ## Run current canonical candidate
 
 The [software-only packet](../media/m8_table_supported/software_proof_feedback_v1/README.md)
-preserves all 65 tested files and the original proof/log/verifier. After its
-publication, identify the producer from the packet's publishing commit and
-detach an unused complete checkout at that source. Reuse the matched runtime,
+preserves all 65 tested files and the original proof/log/verifier. Detach an
+unused complete checkout at its exact producer. Reuse the matched runtime,
 or run `scripts/setup.sh` there first if needed:
 
 ```sh
-task_producer=$(git log -1 --format=%H -- media/m8_table_supported/software_proof_feedback_v1)
+task_producer=6e7d0d2ac3d28ff2538e122a10d7ffb2febf83b1
 git clone https://github.com/robomechanics/astra-r2s.git /workspace/astra-r2s-supported-feedback
 git -C /workspace/astra-r2s-supported-feedback switch --detach "$task_producer"
 cd /workspace/astra-r2s-supported-feedback
