@@ -1,0 +1,56 @@
+{
+  "correction_kind": "v4-scientific-scope-prose-only",
+  "original_binding": {
+    "path": "../crest_seat_search_v4_audits/independent_audit_binding.json",
+    "sha256": "d524e6f70f004fcce46b43a6de0c005a60ff09553f6f384340587d415a109db4"
+  },
+  "original_reader": {
+    "path": "../crest_seat_search_v4_audits/independent_cold_crest_brake_audit_v1.py",
+    "sha256": "ced78c36c32471b94a732fd7f6d1985d359b6501cac1d4213f46217db796587d"
+  },
+  "original_report": {
+    "path": "../crest_seat_search_v4_audits/independent_cold_crest_brake_audit.json",
+    "sha256": "79fbef4034b136e9c244497c408fa009e02fe4e35e1ffe6719aefd2769a717d8"
+  },
+  "corrected_reader": {
+    "path": "independent_cold_crest_brake_audit_v1.py",
+    "sha256": "61f3e94814d8718a3f5ecea18ae667611923fc8f6f81807c26a966f641c9424c"
+  },
+  "corrected_report": {
+    "path": "independent_cold_crest_brake_audit.json",
+    "sha256": "6917b5e9104e275fd74a7ee1451fe542b71ef3816a4bccb1140ff705bb26bb58"
+  },
+  "narrow_diff": {
+    "path": "v1_to_v2_scientific_scope_only.diff",
+    "sha256": "78325215895d7a09693121e699a8d6a59e5957177ff924d9c85be33163449c0f"
+  },
+  "regression_proof": {
+    "path": "independent_cold_reader_software_proof.json",
+    "sha256": "031e75f874cfdd67e38838c84f37ebae44856ecbd8502a0c827abc6c2b91b563"
+  },
+  "only_source_AST_change": "audit return scientific_scope value; AST identical after replacing that one value with explicit common sentinel",
+  "only_report_fields_changed": [
+    "reader_source_sha256",
+    "scientific_scope"
+  ],
+  "original_scientific_scope": "The moving unloaded 50um crest return only requests closed braking. No stopped direction event, forward action, interior engagement, opening, capture or policy qualification occurred. Final radial failure remains150.848um>150um; C2 commanded braking remained in progress when radial alignment failed. Analytic schedule agreement does not establish actual native tracking or sole causality.",
+  "corrected_scientific_scope": "The moving unloaded50um crest return only requests closed braking. No stopped direction event, forward action, interior engagement, opening, capture or policy qualification occurred. The original V4 radial failure is150.011271511um>150um during incomplete C2 braking. No Cartesian wrench or native motor cap saturation occurred during the observed brake. Analytic schedule agreement does not establish actual native tracking or sole causality.",
+  "all_original_v1_artifact_hashes_unchanged": true,
+  "all_original_native_fields_checks_criteria_unchanged": true,
+  "original_passed": false,
+  "original_aborted": {
+    "phase": "stop_reverse_seat_1",
+    "time": 1.7091000000013945,
+    "reported_sdf_depth_m": 0.0,
+    "radial_offset_m": 0.0001500112715108498,
+    "bolt_tilt_rad": 0.005641198122082151,
+    "block_grip_slip_m": 1.784690683814363e-06,
+    "block_grip_rotation_slip_rad": 4.9186370786002955e-05,
+    "bolt_grip_slip_m": 0.0002476261141182161,
+    "world_block_support_contacts": 26,
+    "minimum_native_joint_margin_rad": 0.2606671319420002,
+    "warnings": 0,
+    "external_drive_zero": true
+  },
+  "scope": "OriginalV4 numeric abort already150.011271511um; derivative corrects staleV3 150.848um prose. CurrentV4 commandcurve/no-cap/native outcome unchanged. No native simulation or retrospective force reconstruction."
+}

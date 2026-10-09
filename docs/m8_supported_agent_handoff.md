@@ -303,8 +303,13 @@ brake before radial error reaches **150.011272 µm**, above the unchanged
 150 µm guard. Final tilt is 5.641 mrad and grasp slip 247.626 µm; no quiet
 direction readiness, forward scan or capture occurs. Its 34,182 ticks and
 50 feedback columns are closed, with all 65 canonical, nine experimental
-source, nine parent-input and runtime hashes unchanged. The frozen V4
-evidence package is pending; no portable V4 reproduction claim is supplied.
+source, nine parent-input and runtime hashes unchanged. The
+[frozen V4 failed package](../media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/README.md)
+preserves all **28 original native files**, 50 columns and raw failed outcomes:
+[normal 1× GIF](../media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/render/demo.gif),
+[MP4](../media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/render/demo.mp4),
+[actual mid-brake detail](../media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/render/mid_brake_detail.png)
+and [six-panel native chart](../media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/render/scientific_plot/native_stop_boundary.png).
 Frozen harness SHA is
 `aee1c3d5f9f9b8b6b8359b9da92726130acc606862975ab66a8b9ba9174cf74b`;
 braking helper SHA is
@@ -318,6 +323,35 @@ and 402-test proof. Frozen input/argv and execution-before records are local
 `crest_seat_search_v4_frozen_inputs.json` / `crest_seat_search_v4_execution_before.json`
 under `outputs/m8_table_supported/diagnostics/`; execution-after SHA is
 `ca60886564935c746d4f497cd46167b82a5d2cbe889cbb8e1176f2afdb3ddfa8`.
-Portable native-repeat instructions await its frozen source/evidence package.
-The original failure is preserved; no V4 readiness, forward scan, capture or
-completed full trajectory is claimed.
+Use its [exact isolated native-repeat recipe](../media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/README.md#native-repeat-in-an-isolated-producer-checkout):
+pin complete producer 6e7, copy both newer COMPLETE packages, restore all
+34 original parent files and place `crest_seat_brake_probe_v4.py`,
+`crest_seat_observer_v3.py` and `reverse_brake_v4.py` directly under
+`outputs/m8_table_supported/diagnostics/`. These placements preserve
+`ROOT=parents[3]` and adjacent imports. The parent remains original row 2651
+at 13.1949 s, never the V3 abort. A fresh native repeat uses the explicit
+`--checkpoint-time 13.1949 --brake-duration .15` flags and an absent output.
+It integrates another cold branch, not the archived trajectory.
+
+The separate [recorded-state media recipe](../media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/README.md#geometry-only-recorded-state-replay-and-raw-plotting)
+uses the archived `render_crest_seat_search_v4.py --repository-root "$PWD"`
+with the complete copied `native_v4` directory and a fresh output. It verifies
+source/runtime/raw bytes and performs kinematics only; 21 exact saved states
+at 12 fps encode 1.75 s, with no interpolated state or native solve. The
+historical independent reader remains path-bound to its original parent and
+sibling layout; this package supplies no auditor portability adapter.
+
+The [original audit binding](../media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/independent_audits/independent_audit_binding.json)
+`d524e6f7…` and [corrected derivative](../media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/independent_audits_v2/independent_audit_binding.json)
+`3c45982e…` remain separate. The latter corrects stale V3 prose while preserving V4 numerical
+failure; rerunning the same **17 reader/mass regressions** is not 17 additional
+tests and does not extend the 50/69/402 proofs. The separate
+[19-state mass diagnostic and scope note](../media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/independent_audits_v2/robot_inertia_scope_note.json)
+uses geometry/CRB/mass/Jacobians without collision, contact/dynamics solve or
+native-force replay. Its right-six-arm subblock holds off-arm finger
+accelerations zero; it excludes bolt inertia, Jdot and calibration-derivative
+reestimation. It is a prospective capacity estimate, not executed feedforward
+or proof of the sole cause of drift. Combined 8 N / 2 N·m and native motor caps
+remain required. No V4 readiness, forward scan, capture or full completion is
+claimed. V5 is a separate output-only prototype with 67 standalone tests and
+native execution pending; it supplies no physical result or capture claim.

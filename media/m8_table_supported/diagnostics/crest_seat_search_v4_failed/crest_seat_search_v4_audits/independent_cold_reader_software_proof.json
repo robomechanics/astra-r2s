@@ -1,0 +1,23 @@
+{
+  "scope": "17 output-only archived C2 reader and pure mass-coupling regressions; separate from historical402/65, Crest69 and C2-helper50 contracts",
+  "command": "python outputs/m8_table_supported/diagnostics/crest_seat_search_v4_audits/test_independent_cold_crest_brake_audit_v1.py",
+  "passed": true,
+  "tests_passed": 17,
+  "return_code": 0,
+  "wall_seconds": 1.1481507459975546,
+  "reader_source_sha256": "ced78c36c32471b94a732fd7f6d1985d359b6501cac1d4213f46217db796587d",
+  "test_source_sha256": "74f3ef1b050e3b7baa8c42fd8852f53e2275c0c48aa1276e9f5669ea47bdff4d",
+  "inertia_source_sha256": "46d83304f7df9f014f30989b7e2d96e8deb16b8adc68db5f7c49a3fc4ea787fa",
+  "test_log_sha256": "25e7d71e5e87c822cb540eb6266844372249603057a1a7effe814a68fa657858",
+  "source_before": {
+    "independent_cold_crest_brake_audit_v1.py": "ced78c36c32471b94a732fd7f6d1985d359b6501cac1d4213f46217db796587d",
+    "test_independent_cold_crest_brake_audit_v1.py": "74f3ef1b050e3b7baa8c42fd8852f53e2275c0c48aa1276e9f5669ea47bdff4d",
+    "independent_robot_inertia_v1.py": "46d83304f7df9f014f30989b7e2d96e8deb16b8adc68db5f7c49a3fc4ea787fa"
+  },
+  "source_after": {
+    "independent_cold_crest_brake_audit_v1.py": "ced78c36c32471b94a732fd7f6d1985d359b6501cac1d4213f46217db796587d",
+    "test_independent_cold_crest_brake_audit_v1.py": "74f3ef1b050e3b7baa8c42fd8852f53e2275c0c48aa1276e9f5669ea47bdff4d",
+    "independent_robot_inertia_v1.py": "46d83304f7df9f014f30989b7e2d96e8deb16b8adc68db5f7c49a3fc4ea787fa"
+  },
+  "all_sources_unchanged": true
+}

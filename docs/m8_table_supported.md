@@ -14,7 +14,7 @@ establish completion of this new table-supported trajectory.
 
 ## Start here
 
-The latest [crest-search V3 cold diagnostic](../media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/README.md)
+The earlier [crest-search V3 cold diagnostic](../media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/README.md)
 fails at **1.6254 s**, radial error **150.848 µm** above the unchanged
 150 µm guard, after requesting a closed stop at 1.61915 s. It never reaches
 stopped direction readiness, forward scan, formed capture or opening/reset.
@@ -25,9 +25,17 @@ preserve the failed physical response. The separate new crest V4 trial
 also closes failed at **1.7091 s** (**260.939 s** native wall time), radial
 error **150.011 µm**, after executing 89.95 ms of its 150 ms C2 brake from
 the same 13.1949 s cold checkpoint. Caps and guards remain unchanged; no
-stopped direction readiness or forward scan occurs. Its frozen evidence
-package is pending. These crest
-trials are distinct from the older opening/reset V4 diagnostic below.
+stopped direction readiness or forward scan occurs. Its
+[frozen V4 evidence and exact isolated recipe](../media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/README.md)
+include [normal 1× video](../media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/render/demo.mp4),
+[actual mid-brake state](../media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/render/mid_brake_detail.png)
+and [dense boundary chart](../media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/render/scientific_plot/native_stop_boundary.png).
+The 17 reader/mass regressions, 50 C2-helper tests, historical 69 contracts
+and 402-test canonical proof retain separate scopes. The 19-state held-finger
+mass diagnostic solves no dynamics/contacts and executes no feedforward.
+V5 is a separate prototype with 67 standalone tests, native execution pending
+and no physical result.
+These crest trials are distinct from the older opening/reset V4 diagnostic below.
 Use the [cold-search handoff](m8_supported_agent_handoff.md#separate-cold-crest-search-diagnostics)
 for exact frozen sources, restoration/replay differences and proof scopes.
 

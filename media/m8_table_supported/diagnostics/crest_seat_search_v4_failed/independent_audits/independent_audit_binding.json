@@ -1,0 +1,147 @@
+{
+  "schema": "independent-cold-crest-c2-audit-binding-v1",
+  "closed": true,
+  "source_frozen": true,
+  "reader_source_sha256": "ced78c36c32471b94a732fd7f6d1985d359b6501cac1d4213f46217db796587d",
+  "primary_report_sha256": "79fbef4034b136e9c244497c408fa009e02fe4e35e1ffe6719aefd2769a717d8",
+  "auditor_artifacts": {
+    "robot_inertia_scope_note.json": {
+      "path": "robot_inertia_scope_note.json",
+      "sha256": "85450b1f51aa26083b10d133ffb83281028fe66528be4cb03dabd6cd468f0a41"
+    },
+    "historical_equal_model_free_joint_properties.json": {
+      "path": "historical_equal_model_free_joint_properties.json",
+      "sha256": "593a7007b8c36673768383f8f42dc9cd451fc447815787f010904089df19dd40"
+    },
+    "independent_cold_crest_brake_audit.json": {
+      "path": "independent_cold_crest_brake_audit.json",
+      "sha256": "79fbef4034b136e9c244497c408fa009e02fe4e35e1ffe6719aefd2769a717d8"
+    },
+    "independent_cold_crest_brake_audit_v1.py": {
+      "path": "independent_cold_crest_brake_audit_v1.py",
+      "sha256": "ced78c36c32471b94a732fd7f6d1985d359b6501cac1d4213f46217db796587d"
+    },
+    "independent_cold_reader_tests.log": {
+      "path": "independent_cold_reader_tests.log",
+      "sha256": "25e7d71e5e87c822cb540eb6266844372249603057a1a7effe814a68fa657858"
+    },
+    "independent_cold_reader_software_proof.json": {
+      "path": "independent_cold_reader_software_proof.json",
+      "sha256": "79ffa71390c3535dd2145ed913b8be7c5f11edb1f8fced2ff07017afa7bb1843"
+    },
+    "test_independent_cold_crest_brake_audit_v1.py": {
+      "path": "test_independent_cold_crest_brake_audit_v1.py",
+      "sha256": "74f3ef1b050e3b7baa8c42fd8852f53e2275c0c48aa1276e9f5669ea47bdff4d"
+    },
+    "independent_robot_inertia_v1.py": {
+      "path": "independent_robot_inertia_v1.py",
+      "sha256": "46d83304f7df9f014f30989b7e2d96e8deb16b8adc68db5f7c49a3fc4ea787fa"
+    },
+    "equal_model_passive_property_binding.json": {
+      "path": "equal_model_passive_property_binding.json",
+      "sha256": "2cfa3dabc8adc6c8e52b7a1d068e6a81f4368fbba325c8eda452c7adec2a5dfa"
+    },
+    "independent_robot_inertia_feasibility.json": {
+      "path": "independent_robot_inertia_feasibility.json",
+      "sha256": "3736fd9b578bb34de5d754387e2016ae0211a72022507fd31caf430ec5a96a54"
+    }
+  },
+  "original_run": "/workspace/astra-r2s/outputs/m8_table_supported/diagnostics/crest_seat_search_v4",
+  "original_native_trace_sha256": "5265961209028da735cd96f49ca33b83de8875e27b26cc3aacbad105e355788e",
+  "original_native_report_sha256": "b583a1b1fd7200031db51b7885d0990f2d6b66a6209a5271bdcf810350976c1b",
+  "original_native_passed": false,
+  "original_native_aborted": {
+    "phase": "stop_reverse_seat_1",
+    "time": 1.7091000000013945,
+    "reported_sdf_depth_m": 0.0,
+    "radial_offset_m": 0.0001500112715108498,
+    "bolt_tilt_rad": 0.005641198122082151,
+    "block_grip_slip_m": 1.784690683814363e-06,
+    "block_grip_rotation_slip_rad": 4.9186370786002955e-05,
+    "bolt_grip_slip_m": 0.0002476261141182161,
+    "world_block_support_contacts": 26,
+    "minimum_native_joint_margin_rad": 0.2606671319420002,
+    "warnings": 0,
+    "external_drive_zero": true
+  },
+  "original_native_exit_code": 1,
+  "original_native_steps": 34182,
+  "original_harness_sha256": "aee1c3d5f9f9b8b6b8359b9da92726130acc606862975ab66a8b9ba9174cf74b",
+  "original_CrestV3_observer_sha256": "1d37ef46382c349e29b4206206e9aac2132587b65abc39467342e7e1b0560c0c",
+  "original_C2_helper_sha256": "4bc45250cbf1aba271dad51df2781971e323735d631349afcc20ab311afa21c1",
+  "original_raw_closed_output_sha256": {
+    "controller_source.py": "aee1c3d5f9f9b8b6b8359b9da92726130acc606862975ab66a8b9ba9174cf74b",
+    "diagnostic_declaration.json": "75d71e1ca1d2b2f084caf08fb972bbde67894fd05bd2e3bc6b9f6ab4bd2f4a9a",
+    "diagnostic_execution_after.json": "7c4d736b89667bbb01425b72d5a71e00c8d2b5391d923b76ea32a33b1022f093",
+    "diagnostic_source.py": "aee1c3d5f9f9b8b6b8359b9da92726130acc606862975ab66a8b9ba9174cf74b",
+    "engagement_observer_source.py": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "experimental_observer_source.py": "1d37ef46382c349e29b4206206e9aac2132587b65abc39467342e7e1b0560c0c",
+    "insertion_trace.npz": "5265961209028da735cd96f49ca33b83de8875e27b26cc3aacbad105e355788e",
+    "insertion_trace_partial.npz": "ebfc370ab6cf1d183e480985e49915556b74f9619a51445fc71d87e856da362d",
+    "insertion_validation.json": "b583a1b1fd7200031db51b7885d0990f2d6b66a6209a5271bdcf810350976c1b",
+    "left_pad_force_history.npz": "3f87125c11f587ef0d25d40c868427937ac92541d8897489f36a0353101d636c",
+    "native_feedback_force_history.npz": "a0376e8876165ec98d5cb02869dc452129d56db1c5cfe476ae8ece4987da0d5d",
+    "original_controller_source.py": "57f430143787317f8dc6f50bd2ea1ff23aab123810284da74da70b53b45a9493",
+    "recorded_sources/yam_twin/crest_seat_observer_v3.py": "1d37ef46382c349e29b4206206e9aac2132587b65abc39467342e7e1b0560c0c",
+    "recorded_sources/yam_twin/kinematics.py": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+    "recorded_sources/yam_twin/m8_insertion_engagement.py": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "recorded_sources/yam_twin/m8_insertion_mechanics.py": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+    "recorded_sources/yam_twin/m8_insertion_scene.py": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+    "recorded_sources/yam_twin/m8_insertion_simulation.py": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294",
+    "recorded_sources/yam_twin/m8_scene.py": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f",
+    "recorded_sources/yam_twin/m8_simulation.py": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+    "recorded_sources/yam_twin/m8_supported_scene.py": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+    "recorded_sources/yam_twin/m8_supported_start.py": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51",
+    "recorded_sources/yam_twin/reverse_brake_v4.py": "4bc45250cbf1aba271dad51df2781971e323735d631349afcc20ab311afa21c1",
+    "robot_yaw_brake_source.py": "4bc45250cbf1aba271dad51df2781971e323735d631349afcc20ab311afa21c1",
+    "scene.xml": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "scene_source.py": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+    "supported_scene.zip": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+    "table_support_force_history.npz": "02ecda6fe2ac2fc55c31ff619709f31587cb1ee3c42520f8c5c9640cd05189aa"
+  },
+  "outer_execution_before": {
+    "path": "../crest_seat_search_v4_execution_before.json",
+    "sha256": "a24aa620f671c2d5d8ef75db078d87e54419dcc466b4e6a972b5d39e19d7a481"
+  },
+  "outer_execution_after": {
+    "path": "../crest_seat_search_v4_execution_after.json",
+    "sha256": "ca60886564935c746d4f497cd46167b82a5d2cbe889cbb8e1176f2afdb3ddfa8"
+  },
+  "producer_source65_unchanged": true,
+  "dedicated_reader_proof": {
+    "scope": "17 output-only archived C2 reader and pure mass-coupling regressions; separate from historical402/65, Crest69 and C2-helper50 contracts",
+    "command": "python outputs/m8_table_supported/diagnostics/crest_seat_search_v4_audits/test_independent_cold_crest_brake_audit_v1.py",
+    "passed": true,
+    "tests_passed": 17,
+    "return_code": 0,
+    "wall_seconds": 1.1481507459975546,
+    "reader_source_sha256": "ced78c36c32471b94a732fd7f6d1985d359b6501cac1d4213f46217db796587d",
+    "test_source_sha256": "74f3ef1b050e3b7baa8c42fd8852f53e2275c0c48aa1276e9f5669ea47bdff4d",
+    "inertia_source_sha256": "46d83304f7df9f014f30989b7e2d96e8deb16b8adc68db5f7c49a3fc4ea787fa",
+    "test_log_sha256": "25e7d71e5e87c822cb540eb6266844372249603057a1a7effe814a68fa657858",
+    "source_before": {
+      "independent_cold_crest_brake_audit_v1.py": "ced78c36c32471b94a732fd7f6d1985d359b6501cac1d4213f46217db796587d",
+      "test_independent_cold_crest_brake_audit_v1.py": "74f3ef1b050e3b7baa8c42fd8852f53e2275c0c48aa1276e9f5669ea47bdff4d",
+      "independent_robot_inertia_v1.py": "46d83304f7df9f014f30989b7e2d96e8deb16b8adc68db5f7c49a3fc4ea787fa"
+    },
+    "source_after": {
+      "independent_cold_crest_brake_audit_v1.py": "ced78c36c32471b94a732fd7f6d1985d359b6501cac1d4213f46217db796587d",
+      "test_independent_cold_crest_brake_audit_v1.py": "74f3ef1b050e3b7baa8c42fd8852f53e2275c0c48aa1276e9f5669ea47bdff4d",
+      "independent_robot_inertia_v1.py": "46d83304f7df9f014f30989b7e2d96e8deb16b8adc68db5f7c49a3fc4ea787fa"
+    },
+    "all_sources_unchanged": true
+  },
+  "software_proof_scopes": "Original canonical402/65, unchangedCrest69, newC2-helper50 and this17-test output-only reader/mass check are separate source-bound scopes. No e468 coverage of the new cold tag or full policy/trajectory qualification is claimed.",
+  "original_native_event_scope": "Fresh100ms local support; first moving/unloaded crest-return event1.61915s requestsC2 braking. Actual150ms curve executedonly89.95ms untilradial150.011um>150um. No completed brake, actualstopped100ms direction confirmation, forward/open/interior/capture occurred.",
+  "cold_original_table_scope": "1999 original undefined/warm-up table windows remain failures. The reader verifies all complete fresh local windows and native instantaneous limits, not a fresh pickup/acquisition prefix or copied parent force history.",
+  "robot_inertia_scope_note_sha256": "85450b1f51aa26083b10d133ffb83281028fe66528be4cb03dabd6cd468f0a41",
+  "timing": {
+    "native_original_forces_and_geometry": "post-step label minus dt",
+    "saved_qpos_qvel": "post-step label",
+    "command_calibration": "previous retained native solve at label minus 2dt; first command uses initialized mj_forward pose at time zero (generic numeric logging label is minus dt)",
+    "source_clock_not_retimed": true
+  },
+  "command": "python outputs/m8_table_supported/diagnostics/crest_seat_search_v4_audits/independent_cold_crest_brake_audit_v1.py outputs/m8_table_supported/diagnostics/crest_seat_search_v4 --output outputs/m8_table_supported/diagnostics/crest_seat_search_v4_audits/independent_cold_crest_brake_audit.json",
+  "geometry_mass_command": "scripts/run_m8.sh outputs/m8_table_supported/diagnostics/crest_seat_search_v4_audits/independent_robot_inertia_v1.py outputs/m8_table_supported/diagnostics/crest_seat_search_v4 --output outputs/m8_table_supported/diagnostics/crest_seat_search_v4_audits/independent_robot_inertia_feasibility.json",
+  "no_canonical_or_native_original_mutation": true
+}

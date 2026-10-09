@@ -80,12 +80,18 @@ closed with a **1.6254 s** radial-guard failure after requesting a stop at
 there is no stopped readiness, forward scan or capture. Its
 [normal-speed clip](media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/render/demo.gif)
 and [original stop-boundary chart](media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/render/scientific_plot/native_stop_boundary.png)
-remain separate from the full failed run. A separate output-only crest V4
-trial closes failed at **1.7091 s**, radial error **150.011 µm**, after
+remain separate from the full failed run. The separate
+[crest V4 failed packet](media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/README.md)
+closes at **1.7091 s**, radial error **150.011 µm**, after
 89.95 ms of its intended 150 ms smooth brake. No stopped direction readiness
-or forward scan occurs; its frozen evidence package is pending.
-Its 50 pure braking tests do not extend the
-69 observer contracts or 402-test canonical proof.
+or forward scan occurs. Its [normal 1× clip](media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/render/demo.gif)
+and [dense brake-boundary chart](media/m8_table_supported/diagnostics/crest_seat_search_v4_failed/render/scientific_plot/native_stop_boundary.png)
+retain the failure and exact repeat/replay instructions. Its 50 pure braking
+tests and separate 17 reader/mass regressions do not extend the historical
+69 observer contracts or 402-test canonical proof. The 19-state held-finger
+mass estimate is a no-solve approximation; no feedforward ran in V4.
+V5 is a separate prototype with 67 standalone tests; native execution is
+pending, with no physical result.
 The [complete closed failed attempt](media/m8_table_supported/full_canonical_v1_failed_evidence/README.md)
 has [normal 1× GIF](media/m8_table_supported/full_canonical_v1_failed_evidence/demo.gif),
 [MP4](media/m8_table_supported/full_canonical_v1_failed_evidence/demo.mp4),

@@ -1,0 +1,23 @@
+{
+  "scope": "Separately corrected V4 reader explanatory scientific_scope only; original predicates unchanged,17 original focused regressions rerun. This is separate from canonical402/65, Crest69 and C2-helper50 proof.",
+  "command": "python outputs/m8_table_supported/diagnostics/crest_seat_search_v4_audits_v2/test_independent_cold_crest_brake_audit_v1.py",
+  "passed": true,
+  "tests_passed": 17,
+  "return_code": 0,
+  "wall_seconds": 1.4181809830042766,
+  "reader_source_sha256": "61f3e94814d8718a3f5ecea18ae667611923fc8f6f81807c26a966f641c9424c",
+  "test_source_sha256": "74f3ef1b050e3b7baa8c42fd8852f53e2275c0c48aa1276e9f5669ea47bdff4d",
+  "inertia_source_sha256": "46d83304f7df9f014f30989b7e2d96e8deb16b8adc68db5f7c49a3fc4ea787fa",
+  "test_log_sha256": "ec765dc066504ed09371b21204546732ec25f9b2310cbb1cc0369aeaa52f0076",
+  "source_before": {
+    "independent_cold_crest_brake_audit_v1.py": "61f3e94814d8718a3f5ecea18ae667611923fc8f6f81807c26a966f641c9424c",
+    "test_independent_cold_crest_brake_audit_v1.py": "74f3ef1b050e3b7baa8c42fd8852f53e2275c0c48aa1276e9f5669ea47bdff4d",
+    "independent_robot_inertia_v1.py": "46d83304f7df9f014f30989b7e2d96e8deb16b8adc68db5f7c49a3fc4ea787fa"
+  },
+  "source_after": {
+    "independent_cold_crest_brake_audit_v1.py": "61f3e94814d8718a3f5ecea18ae667611923fc8f6f81807c26a966f641c9424c",
+    "test_independent_cold_crest_brake_audit_v1.py": "74f3ef1b050e3b7baa8c42fd8852f53e2275c0c48aa1276e9f5669ea47bdff4d",
+    "independent_robot_inertia_v1.py": "46d83304f7df9f014f30989b7e2d96e8deb16b8adc68db5f7c49a3fc4ea787fa"
+  },
+  "all_sources_unchanged": true
+}

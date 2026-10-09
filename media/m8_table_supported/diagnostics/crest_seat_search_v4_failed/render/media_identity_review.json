@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "scope": "Read-only seven-still/native-frame/media serialization verification; no simulator, integration, force solve, native repeat or physical qualification.",
+  "all7_still_samples_and_qpos_qvel_exact": true,
+  "all21_frame_indices_times_exact": true,
+  "all_media_hashes_exact": true,
+  "original_plot_ledger_bindings_exact": true,
+  "original_trace_sha256": "5265961209028da735cd96f49ca33b83de8875e27b26cc3aacbad105e355788e",
+  "render_manifest_sha256": "9d7ff3e0801180e4324518f946e736a71ce83cc2b6aa77a3b8997336ddaccbaa",
+  "plot_manifest_sha256": "893addfacef70de5e51034ba282c6015fed6bdf93ff8a31cffb46a4c30016314",
+  "gif_frames": 21,
+  "gif_duration_ms": 1750,
+  "video": {
+    "r_frame_rate": "12/1",
+    "duration": "1.750000",
+    "nb_read_frames": "21"
+  },
+  "review_source_sha256": "fb3d071a33a26749cd873dcfe00da9ca5428482921f36e7a65f5df33bcabc95e"
+}

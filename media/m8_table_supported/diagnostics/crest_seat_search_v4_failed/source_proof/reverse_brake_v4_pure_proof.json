@@ -1,0 +1,31 @@
+{
+  "scope": "Pure scheduled robot-command C2 braking tests only. No native integration, physical tracking, thread support, capture, release, or full trajectory qualification.",
+  "command": "scripts/run_m8.sh -m pytest -q outputs/m8_table_supported/diagnostics/test_reverse_brake_v4.py",
+  "exit_code": 0,
+  "actual_pytest_output": "50 passed in 0.15s",
+  "source_sha256": "4bc45250cbf1aba271dad51df2781971e323735d631349afcc20ab311afa21c1",
+  "test_sha256": "7702d89d3f8959238aa4565d95810813a25683e4a3e57a4b57f5bd2a51f32c6f",
+  "preceding_schedule": {
+    "duration_s": 2.531250559159044,
+    "last_reverse_step_count": 30383,
+    "total_scheduled_steps": 50625,
+    "theta0_rad": -1.843648993692857,
+    "omega0_rad_s": -1.8427141965956917,
+    "alpha0_rad_s2": 1.215386997053501
+  },
+  "candidate_150ms": {
+    "duration_s": 0.15,
+    "displacement_rad": -0.13592471412520157,
+    "final_theta_rad": -1.9795737078180586,
+    "peak_speed_rad_s": 1.8427141965956917,
+    "peak_acceleration_rad_s2": 18.128566108811516,
+    "peak_jerk_rad_s3": 475.1852924648045
+  },
+  "frozen_v3_preserved": {
+    "observer_sha256": "1d37ef46382c349e29b4206206e9aac2132587b65abc39467342e7e1b0560c0c",
+    "harness_sha256": "85c485e5382adad57e83bc8e3c924e0a9ac3b36dfc896ed77712201baeb02bf9",
+    "separate_69_test_sha256": "d1f3347dcad30c8966eb5fab082ef73cebfaa8e43f9f4f730aad322ad2934ade"
+  },
+  "canonical_yam_twin_and_tests_git_status": "clean",
+  "separate_from_frozen_402_software_proof": true
+}

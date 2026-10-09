@@ -1,0 +1,11 @@
+--- frozen_v1/independent_cold_crest_brake_audit_v1.py
++++ derivative_v2/independent_cold_crest_brake_audit_v1.py
+@@ -375,7 +375,7 @@
+         "direction_confirmation_ticks": int(np.sum(crest_ready)), "forward_native_steps": int(np.sum(feedback["phase_index"]==3)), "fully_open_native_steps": int(np.sum(feedback["fully_open_unassisted"])), "maximum_formed_flank_overlap_m": float(np.max(table["formed_flank_overlap_m"])), "maximum_loaded_actual_interior_contacts": int(np.max(feedback["loaded_actual_interior_flank_contact_count"])),
+         "closed_braking_boundary": boundary, "stop_boundary_radial_secant_speed_m_per_s": float((feedback["radial_offset_m"][last]-feedback["radial_offset_m"][first_request])/(time[last]-time[first_request])), "max_stop_radial_finite_difference_speed_m_per_s": float(np.max(np.diff(feedback["radial_offset_m"][np.r_[first_request,stop]])/dt)),
+         "timing": {"native_original_forces_and_geometry": "post-step label minus dt", "saved_qpos_qvel": "post-step label", "command_calibration": "previous retained native solve at label minus 2dt; first command uses initialized mj_forward pose at time zero (generic numeric logging label is minus dt)", "source_clock_not_retimed": True},
+-        "scientific_scope": "The moving unloaded 50um crest return only requests closed braking. No stopped direction event, forward action, interior engagement, opening, capture or policy qualification occurred. Final radial failure remains150.848um>150um; C2 commanded braking remained in progress when radial alignment failed. Analytic schedule agreement does not establish actual native tracking or sole causality."}
++        "scientific_scope": ("The moving unloaded50um crest return only requests closed braking. No stopped direction event, forward action, interior engagement, opening, capture or policy qualification occurred. " + f"The original V4 radial failure is{metadata["aborted"]["radial_offset_m"]*1e6:.9f}um>150um during incomplete C2 braking. " + "No Cartesian wrench or native motor cap saturation occurred during the observed brake. Analytic schedule agreement does not establish actual native tracking or sole causality.")}
+ 
+ 
+ if __name__ == "__main__":

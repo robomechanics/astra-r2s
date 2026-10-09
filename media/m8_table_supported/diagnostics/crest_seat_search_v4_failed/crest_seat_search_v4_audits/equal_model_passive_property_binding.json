@@ -1,0 +1,23 @@
+{
+  "scope": "Historical native model compile reused only because exact sceneXML/meshzip/runtime are identical; original V3 proof bytes and original trace reference retained unchanged",
+  "historical_report_sha256": "593a7007b8c36673768383f8f42dc9cd451fc447815787f010904089df19dd40",
+  "current_v4_trace_sha256": "5265961209028da735cd96f49ca33b83de8875e27b26cc3aacbad105e355788e",
+  "scene_xml_sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+  "scene_zip_sha256": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+  "runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "model_fingerprint": "dd44ffab2beade32ed4682adb551fdf077dd97d4140bb2794cc995effe35a9ca",
+  "original_v3_passive_auditor_sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+  "free_object_passive_terms_all_zero": true,
+  "no_new_v4_force_solve_or_integration": true
+}

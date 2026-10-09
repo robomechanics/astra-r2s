@@ -1,0 +1,27 @@
+{
+  "scope": "Prospective robot-inertia capacity estimate, not native-force replay or executed control",
+  "original_geometry_mass_source_sha256": "46d83304f7df9f014f30989b7e2d96e8deb16b8adc68db5f7c49a3fc4ea787fa",
+  "original_geometry_mass_report_sha256": "3736fd9b578bb34de5d754387e2016ae0211a72022507fd31caf430ec5a96a54",
+  "evaluated_archived_actual_states": 19,
+  "held_finger_approximation": "Compiled right6arm M_aa includes downstream arm/finger inertias at actual archived configurations. Off-arm finger accelerations are held at zero in this subblock approximation; native pad/jaw compliance dynamics are not solved. Bolt/free-object inertia is not added to the robot mass matrix.",
+  "timing": "Saved post-q state t matches retained geometry for original command labelt+2dt; qvel/J velocity geometry is at the saved post-state time. Original contact force timing remains separatelylabel minusdt. No unsampled state interpolation or solver history reconstruction.",
+  "terms": "Hybrid5 rows:2transverse translations plus3rotations. Scheduled orbital tangential/centripetal acceleration and yawalpha only; axial translation row excluded. Bias/damping/Jdot and calibration Cdot/pdot are not reestimated.",
+  "unit_scope": "Lambda5 translational block kg; translation/rotation blocks kg*m; rotational block kg*m^2. a5 first2 m/s^2,last3 rad/s^2; wrench first2N,last3Nm.",
+  "force_caps_scope": "FF-alone is below8N/2Nm at19sampled poses, but adding it to already lagging archived PD reaches10.161N/2.325Nm. Any physical candidate must apply the original combined8N/2Nm and native motor caps; new PD history will differ. This does not predict full-curve/native tracking or prove the sole cause of radial drift.",
+  "original_failure_preserved": {
+    "phase": "stop_reverse_seat_1",
+    "time": 1.7091000000013945,
+    "reported_sdf_depth_m": 0.0,
+    "radial_offset_m": 0.0001500112715108498,
+    "bolt_tilt_rad": 0.005641198122082151,
+    "block_grip_slip_m": 1.784690683814363e-06,
+    "block_grip_rotation_slip_rad": 4.9186370786002955e-05,
+    "bolt_grip_slip_m": 0.0002476261141182161,
+    "world_block_support_contacts": 26,
+    "minimum_native_joint_margin_rad": 0.2606671319420002,
+    "warnings": 0,
+    "external_drive_zero": true
+  },
+  "no_actual_feedforward_applied": true,
+  "no_capture_or_full_trajectory_proof": true
+}
