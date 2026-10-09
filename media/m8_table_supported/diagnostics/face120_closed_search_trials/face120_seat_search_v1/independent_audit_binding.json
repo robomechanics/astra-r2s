@@ -1,0 +1,50 @@
+{
+  "scope": "Closed output-only cold face120 direction search. Original probe files unchanged, appended independent reports. No forward/opening/capture/native-lead/full-rollout proof; original failed continuous-normal direction criterion retained.",
+  "canonical_producer_commit_at_review": "b2b13ff39cd47c48afd19b38f83e9a405c9d6e32",
+  "parent_trace_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+  "original_files": {
+    "declaration.json": "be81c03711ba809cf2bf3cb4255dfbe1ae4a39ad4342537b6e241ec4b7e24cef",
+    "report.json": "38aec316ce9db72645c675b3233d5b0a1852b05ff63365fa2ae6668a86c6ad4c",
+    "diagnostic_source.py": "c2d8f010c96909a605d13b692f36c431462cbc01f7deb04e209554f719ee2202",
+    "observer_source.py": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+    "scene.xml": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "supported_scene.zip": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+    "original_native_force_ledger.npz": "3576500fc126be22a4e8b0937b5ab489105b3062aee6f8e206053cec9775d6ae",
+    "checkpoint_trace.npz": "0d87e71cc5f85a1210d5b6e3fc43484b6f48d0ecc08ae1e3f941d74acbc5ac3c",
+    "declared_cold_initialization.npz": "e23194676328ca5137bad7dc3a6de6329ad20e9ba9becf0bd0a7456bd447f143"
+  },
+  "independent_reports": {
+    "independent_native_force_audit.json": "21dbded9badd9ff56ae051afc5253efa055088d8769659e4049cfa072ff81f13",
+    "independent_phase_depth_audit.json": "f951a24a791f77844ea02fe7b604a780b5a17033dfe4608173668641bc293244",
+    "independent_seat_direction_audit.json": "5d20b4ee46ff29492d599325bf9735383e41bb0f6dab0b3fd8e580dc035f7b8b"
+  },
+  "auditor_source_snapshots": {
+    "independent_archived_native_force_audit.py": "36f40e7b4ea11fe86f252281a2b77ebd13cabe5c786ca3eaa79f7f9a02072487",
+    "test_independent_archived_native_force_audit.py": "5888ad13e47113536fd15b8f2cc06e10c1035b005072f316046d4e135e23c27d",
+    "independent_archived_phase_depth_audit.py": "3e400c59085d62f4e2872830a30e6a2f7c4a6e3b36c174a4a61e642e28458148",
+    "independent_seat_direction_audit.py": "2e16a94029851be8f9bcbc96704fee637484a1e072195dee6dade658e28b57d6",
+    "archived_diagnostic_auditors_software_proof.json": "26af0b7de186adca77b16f6bee575544eff87362c4a78292a28df86d85e52671",
+    "independent_phase_depth_software_proof.json": "ee12a2bfd7e9dcb65324720af72f2fd4e4cee106647e31e593883d3f211d9340",
+    "test_independent_phase_depth_audit.py": "201b8e9afba1b6246f872bbef3d558076890836f527cf00606ee449448c192ff"
+  },
+  "runtime_record_matches_original_parent": true,
+  "review_time_native_binary_hash_checks": {
+    "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0": true
+  },
+  "canonical281_source_proof_sha256": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+  "canonical281_parent_and_observer_source_checks": {
+    "yam_twin/kinematics.py": true,
+    "yam_twin/m8_insertion_engagement.py": true,
+    "yam_twin/m8_insertion_mechanics.py": true,
+    "yam_twin/m8_insertion_scene.py": true,
+    "yam_twin/m8_insertion_simulation.py": true,
+    "yam_twin/m8_scene.py": true,
+    "yam_twin/m8_simulation.py": true,
+    "yam_twin/m8_supported_scene.py": true,
+    "yam_twin/m8_supported_simulation.py": true,
+    "yam_twin/m8_supported_start.py": true
+  },
+  "proof_scope": "281 checks cover published app/helper sources. Output-only cold harness is an experiment, not that full native trajectory. Additional10 output-only auditor arithmetic tests do not qualify physics or the harness; frozen phase arithmetic had4 separate tests.",
+  "original_report_termination": "Measured drop did not retain continuously stable loaded stop",
+  "frozen": true
+}

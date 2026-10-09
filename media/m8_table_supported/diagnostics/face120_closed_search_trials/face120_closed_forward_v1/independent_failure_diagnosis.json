@@ -1,0 +1,19 @@
+{
+  "scope": "Original native failure retained: closed cold forward experiment aborts when solved table compressive load disappears; no interior/engagement/opening qualification.",
+  "original_failed_checks": {
+    "elapsed_s": 1.2617500000000001,
+    "failed_checks": [
+      "table_original_load",
+      "active_table_rolling_share"
+    ]
+  },
+  "original_native_final_table_upward_N": 0.039964610814125744,
+  "original_native_final_thread_force_on_bolt_upward_N": -1.614681630691099,
+  "equal_opposite_thread_vertical_force_on_female_N": 1.614681630691099,
+  "original_native_final_left_hand_upward_N": -0.5950397169538744,
+  "actual_bolt_tilt_rad": 0.012757628790592312,
+  "right_grip_rotation_slip_rad": 0.013248034846178538,
+  "raw_ledger_sha256": "8718f6def3d1637f1abd2ec98d5708a8626cf76a8c957911f250d2818acdf183",
+  "actual_yaw_origin_correction_sha256": "9b55341301a486e8307a4c6d1f847e09830f310c764ad879472ba53cdc740e2d",
+  "no_full_trajectory_qualification": true
+}

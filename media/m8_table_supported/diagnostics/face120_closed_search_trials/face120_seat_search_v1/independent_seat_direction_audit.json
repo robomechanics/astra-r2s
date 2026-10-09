@@ -1,0 +1,54 @@
+{
+  "scope": "Original all-step persistent measured drop and actual aligned/slow physical stop. Candidate intervals only, not retroactive passes for the producer criterion or engagement/opening qualification.",
+  "source_sha256": "2e16a94029851be8f9bcbc96704fee637484a1e072195dee6dade658e28b57d6",
+  "ledger_sha256": "3576500fc126be22a4e8b0937b5ab489105b3062aee6f8e206053cec9775d6ae",
+  "report_sha256": "38aec316ce9db72645c675b3233d5b0a1852b05ff63365fa2ae6668a86c6ad4c",
+  "reference_observed": true,
+  "reference_base_z_m": -0.022599962654076794,
+  "stop_original_native_steps": 15000,
+  "failed_stop_ticks_by_independent_condition": {
+    "persistent_measured_drop": 0,
+    "actual_linear_speed": 1608,
+    "actual_bolt_angular_speed": 8004,
+    "actual_hand_angular_speed": 7314,
+    "all_original_guards": 0
+  },
+  "stop_condition_failure_counts_overlap": true,
+  "maximum_continuously_aligned_slow_drop_stop_s": 0.072699999999992,
+  "candidate_continuous50ms_stops": [
+    {
+      "start_index": 64286,
+      "endpoint_index": 65285,
+      "start_elapsed_s": 3.21435,
+      "endpoint_elapsed_s": 3.2643,
+      "continuous_interval_duration_s": 0.072699999999992,
+      "initial_axial_drop_m": 7.378739788365535e-05,
+      "endpoint_axial_drop_m": 7.103639078083826e-05,
+      "endpoint_nominal_overlap_m": 0.0014710737367040448,
+      "original_signed_thread_upward_impulse_Ns": 0.012879847296921864,
+      "mean_signed_thread_weight_fraction": 0.9816432887602755,
+      "mean_positive_hand_upward_weight_fraction": 0.454773210450596,
+      "original_upward_thread_loaded_duty": 0.558,
+      "maximum_actual_formed_overlap_m": 0.0,
+      "actual_loaded_interior_substeps": 0
+    }
+  ],
+  "per_step_original_thread_normal_available": false,
+  "normal_impulse_scope": "Exact per-step normal impulse cannot be recreated when the scalar was omitted. Sparse original samples and world vertical force are not substitutes for original every-step normal forces.",
+  "producer_original_final_event": {
+    "observer": "native-measured-seat-direction-event-v1",
+    "stop_requested_from_measured_drop": true,
+    "first_actual_drop_time_s": 9.199049999985231,
+    "actual_axial_drop_m": 8.817089458756575e-05,
+    "minimum_actual_drop_m": 5e-05,
+    "stable_stop_duration_s": 0.009749999999999969,
+    "required_stable_stop_duration_s": 0.05,
+    "maximum_stopped_angular_speed_rad_per_s": 0.01,
+    "confirmed_search_direction_event": false,
+    "is_engagement_or_release_proof": false,
+    "scope": "Real native axial drop followed by continuously aligned, slow, contact-loaded physical stop. A direction-search event only; cone or arm motion may cause it."
+  },
+  "producer_original_termination": "Measured drop did not retain continuously stable loaded stop",
+  "capture_qualified": false,
+  "full_trajectory_qualified": false
+}

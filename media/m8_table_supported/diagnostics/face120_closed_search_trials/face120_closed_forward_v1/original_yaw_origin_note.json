@@ -1,0 +1,11 @@
+{
+  "scope": "Known diagnostic counter-origin instrumentation issue; physical native forces/pose/controls unchanged. Closed native output bytes are not rewritten.",
+  "raw_column": "yaw_unwrapped_rad",
+  "retained_canonical_counter_origin_rad": 1.3407990357558652,
+  "actual_cold_initial_wrapped_yaw_rad": -0.5541917868144925,
+  "actual_relative_yaw_equals_raw_plus_constant_rad": -1.8949908225703578,
+  "source_reason": "last_yaw initialized from canonical parent row while wrapped_last initialized from the actual separate cold-state pose; delta increments are native and unchanged",
+  "state_initialization_sha256": "64074b58f4539aef564e16cb076c2a66d419a3bc5a2aeb3407a556e3269bcffb",
+  "source_sha256": "d5d6760f11673b68c8405db2dcb744d95ca07d739218f1ba4d21e8da1c874121",
+  "correction_state_scope": "Exact declared cold qpos replayed with mj_forward only to recover initial rotation; no replayed force is claimed"
+}

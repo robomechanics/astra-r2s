@@ -1,0 +1,17 @@
+{
+  "scope": "Separate cold diagnostic state/model parents explicitly verified. Quaternion composition from declared native free-joint qpos and exact local female frame; no native replay, integration or force reconstruction.",
+  "auditor_source_sha256": "9a2cc4737d7f3960f4211ff93989ec2c502c473035b16a9943aa1017e6f4f3f7",
+  "state_parent_trace_sha256": "0d87e71cc5f85a1210d5b6e3fc43484b6f48d0ecc08ae1e3f941d74acbc5ac3c",
+  "canonical_model_reference_parent_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+  "exact_qpos_qvel_and_reconstructed_ctrl_verified": true,
+  "original_warmstart_solver_state_missing": true,
+  "actual_initial_relative_wrapped_yaw_rad": -0.5541917868144928,
+  "retained_canonical_counter_origin_rad": 1.3407990357558652,
+  "actual_relative_yaw_equals_raw_plus_constant_rad": -1.894990822570358,
+  "original_raw_counter_is_unchanged": true,
+  "yaw_origin_note": {
+    "sha256": "2730f5c4d00bfc96220bf65258c28a2941f3ed40a95dae404dbc8649c9c3de29",
+    "independently_verified": true
+  },
+  "full_trajectory_qualified": false
+}

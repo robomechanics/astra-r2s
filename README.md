@@ -65,6 +65,19 @@ The [table close-up](media/m8_table_supported/face120_pickup_entry_v1/render/tab
 shows both actual grips. Its [exact sources, forces and four audits](media/m8_table_supported/face120_pickup_entry_v1)
 are bound to `b2b13ff` and its 281-test proof. This is a partial cone-entry
 pilot with zero formed capture; the original overall result stays false.
+The [three closed cold search trials](media/m8_table_supported/diagnostics/face120_closed_search_trials/README.md)
+retain separate native videos and exact repeat instructions:
+[reverse seat](media/m8_table_supported/diagnostics/face120_closed_search_trials/face120_seat_search_v1/README.md)
+fails its loaded-stop criterion;
+[forward v1](media/m8_table_supported/diagnostics/face120_closed_search_trials/face120_closed_forward_v1/README.md)
+aborts table support; and
+[forward hold v2](media/m8_table_supported/diagnostics/face120_closed_search_trials/face120_closed_forward_hold_v2/README.md)
+aborts left-pad load after a 100 µm downward robot target. Each has zero formed
+capture and no opening/reset. They cold-start archived states and cannot be
+combined into a continuous trajectory. Further feedback diagnostics remain
+output-only experiments using privileged perfect simulator poses at 20 kHz
+through finite arm motors, with no trained/perception-policy result. The
+canonical source stays pinned to `b2b13ff`.
 The [actual bolt-over-bore screenshot](media/m8_table_supported/progress_bolt_over_bore/demo.png)
 shows the fresh corrected run after physical bolt pickup, lift and transport;
 that recorded frame precedes thread contact. The

@@ -1,0 +1,13 @@
+{
+  "scope": "Executed native net-feed schedule derived from original ledger range/first sample and frozen source. Original declaration fields remain untouched.",
+  "first_original_native_net_feed_N": 0.05,
+  "original_allstep_net_feed_range_N": [
+    0.05,
+    0.26241400403581094
+  ],
+  "constant_bolt_weight_feed_from_first_cold_step": false,
+  "executed_feed_schedule": "0.05N during0.15s centering, then0.5s ramp to bolt-weight feed followed by0.5s hold.",
+  "legacy_forward_start_ramp_hold_fields_not_executed": false,
+  "original_ledger_sha256": "3576500fc126be22a4e8b0937b5ab489105b3062aee6f8e206053cec9775d6ae",
+  "frozen_harness_sha256": "c2d8f010c96909a605d13b692f36c431462cbc01f7deb04e209554f719ee2202"
+}

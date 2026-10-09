@@ -1,0 +1,598 @@
+{
+  "physical_closed_turn": {
+    "scope": "Measured native reverse direction search and bounded forward turn; never full capture, qualified lead or unsupported reset proof",
+    "events": [
+      {
+        "event": "Actual continuously settled-load seat reference",
+        "time_s": 7.548299999989077,
+        "reference_base_z_m": -0.022599962654076794,
+        "continuous_aligned_stopped_streak_s": 0.5000499999999531,
+        "weight_window": {
+          "observer": "diagnostic-native-bolt-weight-transfer-v1",
+          "ready_for_diagnostic_release_attempt": true,
+          "bolt_weight_N": 0.26241400403581094,
+          "required_window_s": 0.1,
+          "observed_window_s": 0.10004999999999714,
+          "original_native_samples": 2001,
+          "mean_thread_weight_fraction": 1.0000931044474817,
+          "mean_positive_hand_upward_weight_fraction": 0.011088891388973114,
+          "signed_thread_gravity_opposing_impulse_Ns": 0.0262569655164634,
+          "positive_hand_upward_impulse_Ns": 0.0002911335329893426,
+          "loaded_actual_interior_flank_duration_s": 0.0,
+          "loaded_thread_gravity_support_duty_fraction": 1.0,
+          "entry_only_native_contact_window": true,
+          "loaded_actual_interior_flank_contact_observed": false,
+          "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+        }
+      },
+      {
+        "event": "Measured axial drop requests actual stop",
+        "time_s": 9.199049999985231,
+        "actual_stop_tool_clock_rad": -1.8950109110778501,
+        "observation": {
+          "observer": "native-measured-seat-direction-event-v1",
+          "stop_requested_from_measured_drop": true,
+          "first_actual_drop_time_s": 9.199049999985231,
+          "actual_axial_drop_m": 5.00699673956044e-05,
+          "minimum_actual_drop_m": 5e-05,
+          "stable_stop_duration_s": 0.0,
+          "required_stable_stop_duration_s": 0.05,
+          "maximum_stopped_angular_speed_rad_per_s": 0.01,
+          "confirmed_search_direction_event": false,
+          "is_engagement_or_release_proof": false,
+          "scope": "Real native axial drop followed by continuously aligned, slow, contact-loaded physical stop. A direction-search event only; cone or arm motion may cause it."
+        }
+      }
+    ],
+    "termination": "Measured drop did not retain continuously stable loaded stop",
+    "final_direction_event": {
+      "observer": "native-measured-seat-direction-event-v1",
+      "stop_requested_from_measured_drop": true,
+      "first_actual_drop_time_s": 9.199049999985231,
+      "actual_axial_drop_m": 8.817089458756575e-05,
+      "minimum_actual_drop_m": 5e-05,
+      "stable_stop_duration_s": 0.009749999999999969,
+      "required_stable_stop_duration_s": 0.05,
+      "maximum_stopped_angular_speed_rad_per_s": 0.01,
+      "confirmed_search_direction_event": false,
+      "is_engagement_or_release_proof": false,
+      "scope": "Real native axial drop followed by continuously aligned, slow, contact-loaded physical stop. A direction-search event only; cone or arm motion may cause it."
+    }
+  },
+  "scope": "Fresh cold checkpoint diagnostic only; not a continuous full trajectory, not a warmstarted original native solve, not a splice or qualification result",
+  "all_original_guards_held": true,
+  "aborted": null,
+  "actual_duration_s": 3.5507500000000003,
+  "wall_seconds": 485.42437419600174,
+  "ever_weight_transfer_ready": true,
+  "final_weight_window": {
+    "observer": "diagnostic-native-bolt-weight-transfer-v1",
+    "ready_for_diagnostic_release_attempt": false,
+    "bolt_weight_N": 0.26241400403581094,
+    "required_window_s": 0.1,
+    "observed_window_s": 0.009749999999999969,
+    "original_native_samples": 195,
+    "mean_thread_weight_fraction": 1.1214061067948606,
+    "mean_positive_hand_upward_weight_fraction": 0.006269267791120031,
+    "signed_thread_gravity_opposing_impulse_Ns": 0.002869158499683924,
+    "positive_hand_upward_impulse_Ns": 1.6040150718545323e-05,
+    "loaded_actual_interior_flank_duration_s": 0.0,
+    "loaded_thread_gravity_support_duty_fraction": 1.0,
+    "entry_only_native_contact_window": true,
+    "loaded_actual_interior_flank_contact_observed": false,
+    "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+  },
+  "final_table_window": {
+    "observer": "native-supported-block-load-window-v1",
+    "ready": true,
+    "required_window_s": 0.1,
+    "observed_window_s": 0.10004999999999714,
+    "block_weight_N": 0.9987972925280899,
+    "minimum_mean_table_weight_fraction": 0.9,
+    "maximum_mean_positive_hand_upward_weight_fraction": 0.1,
+    "minimum_loaded_table_duty": 0.99,
+    "mean_table_upward_force_N": 1.2464532512973678,
+    "mean_positive_hand_upward_force_N": 0.007334073172916104,
+    "loaded_table_substep_duty": 1.0,
+    "final_table_upward_force_N": 1.2453323171434614,
+    "scope": "No-bolt settled stabilization: original native table force bears block weight; contact candidates alone do not establish support"
+  },
+  "final_sample": {
+    "thread_wrench_on_bolt_world_N_Nm": [
+      0.1124302952492127,
+      -0.09251927969488165,
+      0.2536280308804185,
+      -0.0006494475281027637,
+      -0.0010416310385622362,
+      -9.207726756809158e-05
+    ],
+    "thread_gravity_opposing_force_N": 0.2536280308804185,
+    "thread_hole_axial_reaction_force_N": 0.25362707345167473,
+    "thread_summed_normal_force_N": 0.28921538991499157,
+    "native_thread_contact_count": 1,
+    "actual_interior_flank_contact_count": 0,
+    "loaded_actual_interior_flank_contact_count": 0,
+    "interior_flank_summed_normal_force_N": 0.0,
+    "interior_flank_gravity_opposing_force_N": 0.0,
+    "noninterior_entry_contact_count": 1,
+    "native_contact_records": [
+      {
+        "geom1": "female_thread",
+        "geom2": "bolt_thread",
+        "frame": [
+          [
+            0.4183029846905765,
+            -0.4412699560271092,
+            0.7939165188524473
+          ],
+          [
+            0.20569400940112734,
+            0.8973744067599839,
+            0.3903961431528951
+          ],
+          [
+            -0.8847104540443975,
+            0.0,
+            0.4661409792161119
+          ]
+        ],
+        "local_force_N_Nm": [
+          0.28921538991499157,
+          0.03911720952908644,
+          0.018758161112975933,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "contact_position_world_m": [
+          0.3474384249858362,
+          -0.007125928988806098,
+          0.015447731131077667
+        ],
+        "bolt_origin_world_m": [
+          0.3500091990357593,
+          -0.010060399899817758,
+          0.03051174385939576
+        ],
+        "is_actual_interior_flank_contact": false,
+        "wrench_on_bolt_world_N_Nm": [
+          0.1124302952492127,
+          -0.09251927969488165,
+          0.2536280308804185,
+          -0.0006494475281027637,
+          -0.0010416310385622362,
+          -9.207726756809158e-05
+        ]
+      }
+    ],
+    "hand_gravity_opposing_force_N": 0.008602972509454132,
+    "hand_hole_axial_reaction_force_N": 0.008603931888865483,
+    "right_pad_gravity_opposing_force_N": 0.008602972509454132,
+    "right_pad_wrench_on_bolt_world_N_Nm": [
+      -0.11262319394439047,
+      0.09276939174109314,
+      0.008602972509454132,
+      0.0006514543268398993,
+      0.001041279789834938,
+      9.207269927597166e-05
+    ],
+    "hand_wrench_on_bolt_world_N_Nm": [
+      -0.11262319394439047,
+      0.09276939174109314,
+      0.008602972509454132,
+      0.0006514543268398993,
+      0.001041279789834938,
+      9.207269927597166e-05
+    ],
+    "right_pad_normal_force_N": [
+      5.9037981184941,
+      6.013529585793087
+    ],
+    "bolt_weight_N": 0.26241400403581094,
+    "relative_bolt_axial_velocity_m_per_s": 1.9948074465868953e-05,
+    "relative_bolt_angular_speed_rad_per_s": 0.0030084470514706078,
+    "relative_hand_angular_speed_rad_per_s": 0.0021383421186117312,
+    "radial_offset_m": 6.376342701765783e-05,
+    "bolt_tilt_rad": 0.003980349890299431,
+    "bolt_world_support_contact_count": 0,
+    "nonthread_block_bolt_contact_count": 0,
+    "external_drive_zero": true,
+    "source_sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+    "scope": "Original pre-integration native contact solve and matching retained derived kinematics; never reconstructed from post-step saved qpos",
+    "settled_reference_streak_s": 0.5000499999999531,
+    "phase_index": 3,
+    "seat_direction_event": {
+      "observer": "native-measured-seat-direction-event-v1",
+      "stop_requested_from_measured_drop": true,
+      "first_actual_drop_time_s": 9.199049999985231,
+      "actual_axial_drop_m": 8.817089458756575e-05,
+      "minimum_actual_drop_m": 5e-05,
+      "stable_stop_duration_s": 0.009749999999999969,
+      "required_stable_stop_duration_s": 0.05,
+      "maximum_stopped_angular_speed_rad_per_s": 0.01,
+      "confirmed_search_direction_event": false,
+      "is_engagement_or_release_proof": false,
+      "scope": "Real native axial drop followed by continuously aligned, slow, contact-loaded physical stop. A direction-search event only; cone or arm motion may cause it."
+    },
+    "partial_profile_support_window": {
+      "observer": "diagnostic-native-bolt-weight-transfer-v1",
+      "ready_for_diagnostic_release_attempt": false,
+      "bolt_weight_N": 0.26241400403581094,
+      "required_window_s": 0.1,
+      "observed_window_s": 0.0,
+      "original_native_samples": 0,
+      "mean_thread_weight_fraction": null,
+      "mean_positive_hand_upward_weight_fraction": null,
+      "signed_thread_gravity_opposing_impulse_Ns": 0.0,
+      "positive_hand_upward_impulse_Ns": 0.0,
+      "loaded_actual_interior_flank_duration_s": 0.0,
+      "loaded_thread_gravity_support_duty_fraction": null,
+      "entry_only_native_contact_window": false,
+      "loaded_actual_interior_flank_contact_observed": false,
+      "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+    },
+    "physical_phase": "stop_reverse_seat_1",
+    "desired_turn_theta_rad": -1.8950109110778501,
+    "desired_turn_angular_speed_rad_s": 0.0,
+    "time_s": 9.949049999983483,
+    "elapsed_s": 3.5507500000000003,
+    "net_feed_N": 0.26241400403581094,
+    "axial_motor_feed_N": -0.0038247572149630146,
+    "relative_hand_axial_velocity_m_per_s": 1.912378610379356e-05,
+    "base_z_m": -0.022511791759489228,
+    "yaw_unwrapped_rad": -0.554191771933686,
+    "thread_overlap_m": 0.0014880814951961155,
+    "formed_flank_overlap_m": 0.0,
+    "native_thread_depth_m": 1.9433515682078685e-08,
+    "right_grip_slip_m": 0.00011455689316499695,
+    "right_grip_rotation_slip_rad": 0.0038897324624809887,
+    "left_grip_slip_m": 2.7958591761274864e-06,
+    "left_grip_rotation_slip_rad": 6.19512217119914e-05,
+    "table_upward_force_N": 1.2453323171434614,
+    "left_hand_upward_force_N": 0.007102024529975997,
+    "left_pad_normal_force_N": [
+      16.00280157239505,
+      15.990850849816383
+    ],
+    "block_lift_m": -3.226557575182476e-07,
+    "minimum_joint_margin_rad": 0.2487483490253808,
+    "block_translation_m": 1.714391620271149e-06,
+    "block_rotation_rad": 1.9262623366742644e-05,
+    "table_loaded_ready": true,
+    "left_pad_0_N": 16.00280157239505,
+    "left_pad_1_N": 15.990850849816383,
+    "right_pad_0_N": 5.9037981184941,
+    "right_pad_1_N": 6.013529585793087,
+    "checks": {
+      "radial": true,
+      "tilt": true,
+      "thread_depth": true,
+      "left_slip": true,
+      "left_rotation": true,
+      "right_slip": true,
+      "right_rotation": true,
+      "no_bolt_world_support": true,
+      "no_head_seating": true,
+      "no_external_drive": true,
+      "no_unexpected_native_contacts": true,
+      "joint_limits": true,
+      "no_lift": true,
+      "block_translation": true,
+      "block_rotation": true,
+      "table_original_load": true,
+      "no_unexpected_block_world_support": true,
+      "male_tip_table_clearance": true,
+      "no_warnings": true,
+      "finite_state": true,
+      "bilateral_left_pad_load": true,
+      "bilateral_right_pad_load": true,
+      "active_table_rolling_share": true,
+      "finite_motor_caps": true,
+      "finite_wrench_caps": true
+    },
+    "weight_window": {
+      "observer": "diagnostic-native-bolt-weight-transfer-v1",
+      "ready_for_diagnostic_release_attempt": false,
+      "bolt_weight_N": 0.26241400403581094,
+      "required_window_s": 0.1,
+      "observed_window_s": 0.009749999999999969,
+      "original_native_samples": 195,
+      "mean_thread_weight_fraction": 1.1214061067948606,
+      "mean_positive_hand_upward_weight_fraction": 0.006269267791120031,
+      "signed_thread_gravity_opposing_impulse_Ns": 0.002869158499683924,
+      "positive_hand_upward_impulse_Ns": 1.6040150718545323e-05,
+      "loaded_actual_interior_flank_duration_s": 0.0,
+      "loaded_thread_gravity_support_duty_fraction": 1.0,
+      "entry_only_native_contact_window": true,
+      "loaded_actual_interior_flank_contact_observed": false,
+      "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+    },
+    "table_window": {
+      "observer": "native-supported-block-load-window-v1",
+      "ready": true,
+      "required_window_s": 0.1,
+      "observed_window_s": 0.10004999999999714,
+      "block_weight_N": 0.9987972925280899,
+      "minimum_mean_table_weight_fraction": 0.9,
+      "maximum_mean_positive_hand_upward_weight_fraction": 0.1,
+      "minimum_loaded_table_duty": 0.99,
+      "mean_table_upward_force_N": 1.2464532512973678,
+      "mean_positive_hand_upward_force_N": 0.007334073172916104,
+      "loaded_table_substep_duty": 1.0,
+      "final_table_upward_force_N": 1.2453323171434614,
+      "scope": "No-bolt settled stabilization: original native table force bears block weight; contact candidates alone do not establish support"
+    },
+    "all_checks_held": true,
+    "right_motor_torques_Nm": [
+      0.06673533851799106,
+      -11.611438611759828,
+      5.223350642694525,
+      0.2521381012911421,
+      -0.0248453066974315,
+      0.004735611156992371
+    ],
+    "left_motor_torques_Nm": [
+      -0.003638056996863216,
+      -7.675987534258305,
+      4.774199072819929,
+      1.0481592169101481,
+      -0.4448721022420312,
+      -0.0026473595838543075
+    ],
+    "right_motor_wrench_N_Nm": [
+      -0.0905272978468843,
+      0.11695737121535597,
+      0.0038238403844984325,
+      -0.004477838479754524,
+      0.007194804973655204,
+      -0.0009336120823197314
+    ]
+  },
+  "partial_formed_loaded_release_allowed": false,
+  "partial_profile_support_window": {
+    "observer": "diagnostic-native-bolt-weight-transfer-v1",
+    "ready_for_diagnostic_release_attempt": false,
+    "bolt_weight_N": 0.26241400403581094,
+    "required_window_s": 0.1,
+    "observed_window_s": 0.0,
+    "original_native_samples": 0,
+    "mean_thread_weight_fraction": null,
+    "mean_positive_hand_upward_weight_fraction": null,
+    "signed_thread_gravity_opposing_impulse_Ns": 0.0,
+    "positive_hand_upward_impulse_Ns": 0.0,
+    "loaded_actual_interior_flank_duration_s": 0.0,
+    "loaded_thread_gravity_support_duty_fraction": null,
+    "entry_only_native_contact_window": false,
+    "loaded_actual_interior_flank_contact_observed": false,
+    "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+  },
+  "phase_names": [
+    "center_measured_grasp",
+    "transfer_bolt_weight",
+    "reverse_seat_1",
+    "stop_reverse_seat_1",
+    "start_thread_1",
+    "stop_start_1"
+  ],
+  "ranges": {
+    "time_s": [
+      6.3983499999917575,
+      9.949049999983483
+    ],
+    "elapsed_s": [
+      5e-05,
+      3.5507500000000003
+    ],
+    "net_feed_N": [
+      0.05,
+      0.26241400403581094
+    ],
+    "axial_motor_feed_N": [
+      -0.5937545322064579,
+      0.5927725740996205
+    ],
+    "thread_gravity_opposing_force_N": [
+      -0.703566502501991,
+      8.335608095886515
+    ],
+    "hand_gravity_opposing_force_N": [
+      -7.825413945650534,
+      0.9458211574630901
+    ],
+    "relative_bolt_axial_velocity_m_per_s": [
+      -0.0029375369284044025,
+      0.0029870820751958385
+    ],
+    "radial_offset_m": [
+      1.6255724160081976e-08,
+      0.00013505884319317595
+    ],
+    "bolt_tilt_rad": [
+      3.716497774145034e-05,
+      0.021274000593705805
+    ],
+    "thread_overlap_m": [
+      0.0005957099279076325,
+      0.0014880814951961155
+    ],
+    "formed_flank_overlap_m": [
+      0.0,
+      0.0
+    ],
+    "interior_flank_gravity_opposing_force_N": [
+      0.0,
+      0.0
+    ],
+    "interior_flank_summed_normal_force_N": [
+      0.0,
+      0.0
+    ],
+    "loaded_actual_interior_flank_contact_count": [
+      0.0,
+      0.0
+    ],
+    "native_thread_depth_m": [
+      0.0,
+      4.945809048288958e-06
+    ],
+    "right_grip_slip_m": [
+      0.00011240254044762884,
+      0.00013409777293000268
+    ],
+    "table_upward_force_N": [
+      0.37252655278536695,
+      9.549053681804834
+    ],
+    "left_hand_upward_force_N": [
+      -0.2166318617117926,
+      0.05617973736720312
+    ],
+    "external_drive_zero": [
+      1.0,
+      1.0
+    ],
+    "right_pad_gravity_opposing_force_N": [
+      -7.825413945650534,
+      0.9458211574630901
+    ],
+    "native_thread_contact_count": [
+      0.0,
+      11.0
+    ],
+    "bolt_world_support_contact_count": [
+      0.0,
+      0.0
+    ],
+    "nonthread_block_bolt_contact_count": [
+      0.0,
+      0.0
+    ],
+    "all_checks_held": [
+      1.0,
+      1.0
+    ],
+    "base_z_m": [
+      -0.02340128589697602,
+      -0.022511791759489228
+    ],
+    "yaw_unwrapped_rad": [
+      -0.5546764304280047,
+      1.3408042813959706
+    ],
+    "desired_turn_theta_rad": [
+      -1.8950109110778501,
+      0.0
+    ],
+    "desired_turn_angular_speed_rad_s": [
+      -1.9999999968482611,
+      0.0
+    ],
+    "relative_bolt_angular_speed_rad_per_s": [
+      7.584404470335539e-07,
+      2.002964313131944
+    ],
+    "relative_hand_angular_speed_rad_per_s": [
+      1.3915458370205493e-06,
+      2.0029627708210245
+    ],
+    "phase_index": [
+      0.0,
+      3.0
+    ],
+    "minimum_joint_margin_rad": [
+      0.10594382589355433,
+      0.26994330290033863
+    ],
+    "block_translation_m": [
+      3.0369153900926465e-07,
+      1.714391620271149e-06
+    ],
+    "block_rotation_rad": [
+      5.2834337918313e-06,
+      1.9262623366742644e-05
+    ],
+    "block_lift_m": [
+      -3.285293444059423e-07,
+      -1.7901872492905035e-07
+    ],
+    "left_pad_0_N": [
+      15.93478442718365,
+      16.127012436629798
+    ],
+    "left_pad_1_N": [
+      15.869182725502585,
+      16.05737900161778
+    ],
+    "right_pad_0_N": [
+      5.043672445590437,
+      7.271090918405309
+    ],
+    "right_pad_1_N": [
+      4.621486763980418,
+      6.874115065289251
+    ],
+    "left_grip_slip_m": [
+      2.161719286858436e-06,
+      2.7958591761274864e-06
+    ],
+    "right_grip_rotation_slip_rad": [
+      2.948410352819052e-05,
+      0.0038897324624809887
+    ],
+    "left_grip_rotation_slip_rad": [
+      5.046742475703501e-05,
+      6.19512217119914e-05
+    ],
+    "table_loaded_ready": [
+      0.0,
+      1.0
+    ]
+  },
+  "final100ms": {
+    "time_s": 9.8990749999836,
+    "elapsed_s": 3.5007749999999995,
+    "net_feed_N": 0.26241400403581094,
+    "axial_motor_feed_N": -0.01017072442995166,
+    "thread_gravity_opposing_force_N": 0.2549977720977011,
+    "hand_gravity_opposing_force_N": 0.007418193521735013,
+    "relative_bolt_axial_velocity_m_per_s": 5.1820098610627336e-05,
+    "radial_offset_m": 6.19442491956452e-05,
+    "bolt_tilt_rad": 0.0037824423460547374,
+    "thread_overlap_m": 0.0014860673131124214,
+    "formed_flank_overlap_m": 0.0,
+    "interior_flank_gravity_opposing_force_N": 0.0,
+    "interior_flank_summed_normal_force_N": 0.0,
+    "loaded_actual_interior_flank_contact_count": 0.0,
+    "native_thread_depth_m": 1.2363311090708463e-07,
+    "right_grip_slip_m": 0.00011489286921203682,
+    "table_upward_force_N": 1.2464610012197435,
+    "left_hand_upward_force_N": 0.00733398828104022,
+    "external_drive_zero": 1.0,
+    "right_pad_gravity_opposing_force_N": 0.007418193521735013,
+    "native_thread_contact_count": 0.654,
+    "bolt_world_support_contact_count": 0.0,
+    "nonthread_block_bolt_contact_count": 0.0,
+    "all_checks_held": 1.0,
+    "base_z_m": -0.022513818104033557,
+    "yaw_unwrapped_rad": -0.554171669134848,
+    "desired_turn_theta_rad": -1.8950109110778504,
+    "desired_turn_angular_speed_rad_s": 0.0,
+    "relative_bolt_angular_speed_rad_per_s": 0.004809256362881456,
+    "relative_hand_angular_speed_rad_per_s": 0.0027725953541391716,
+    "phase_index": 3.0,
+    "minimum_joint_margin_rad": 0.24845471129838517,
+    "block_translation_m": 1.6823802039459186e-06,
+    "block_rotation_rad": 1.8916734038748136e-05,
+    "block_lift_m": -3.221138738540635e-07,
+    "left_pad_0_N": 16.002928330172722,
+    "left_pad_1_N": 15.990726389061146,
+    "right_pad_0_N": 5.8990005539771975,
+    "right_pad_1_N": 6.018331259028031,
+    "left_grip_slip_m": 2.7888242095660255e-06,
+    "right_grip_rotation_slip_rad": 0.0036072172580775066,
+    "left_grip_rotation_slip_rad": 6.19012125927025e-05,
+    "table_loaded_ready": 1.0
+  },
+  "ledger_sha256": "3576500fc126be22a4e8b0937b5ab489105b3062aee6f8e206053cec9775d6ae",
+  "trace_sha256": "0d87e71cc5f85a1210d5b6e3fc43484b6f48d0ecc08ae1e3f941d74acbc5ac3c"
+}

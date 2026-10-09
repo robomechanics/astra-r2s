@@ -12,13 +12,46 @@ the [first-trajectory handoff](m8_agent_handoff.md) to reproduce that result.
 Its successful threading measurements and historical software proofs do not
 establish completion of this new table-supported trajectory.
 
+## Start here
+
+The latest reproducible continuous result is the
+[6.3983 s pickup-to-entry prefix](../media/m8_table_supported/face120_pickup_entry_v1/README.md),
+using producer `b2b13ff39cd47c48afd19b38f83e9a405c9d6e32` and its separate
+[281-test source proof](../media/m8_table_supported/software_proof_281).
+Use the [isolated prefix commands](#repeat-current-pickup-to-entry-prefix)
+below. It ends at cone entry, with zero formed capture and original overall
+validation false. The older `full_v1`/`full_v2` commands reproduce failed
+attempts; no complete second trajectory is qualified.
+
+The subsequent [three closed cold search trials](../media/m8_table_supported/diagnostics/face120_closed_search_trials/README.md)
+preserve exact local inputs, native force records, frozen harnesses, media and
+independent audits:
+
+| Trial | Native duration | Closed result |
+| --- | ---: | --- |
+| [Reverse seat v1](../media/m8_table_supported/diagnostics/face120_closed_search_trials/face120_seat_search_v1/README.md) | 3.55075 s | Measured drop fails the continuously stable loaded-stop criterion. |
+| [Closed forward v1](../media/m8_table_supported/diagnostics/face120_closed_search_trials/face120_closed_forward_v1/README.md) | 1.26175 s | Table-load guards abort; original yaw-origin offset and separate correction are retained. |
+| [Closed forward hold v2](../media/m8_table_supported/diagnostics/face120_closed_search_trials/face120_closed_forward_hold_v2/README.md) | 2.53060 s | A 100 µm downward left-arm target increases native compression; left-pad load aborts. |
+
+All three have zero formed overlap and zero loaded interior-flank steps;
+none performs opening/reset. The prefix supplies the canonical scene and
+original grasp references. Both forward branches cold-start from the failed
+reverse-seat endpoint at 9.94905 s, with no original solver warm starts.
+They cannot be spliced into a continuous result. The
+[self-contained repeat recipe](../media/m8_table_supported/diagnostics/face120_closed_search_trials/README.md#repeat-the-exact-cold-inputs)
+restores both complete newer packages into an isolated pinned checkout and
+installs exact harnesses at their required `outputs/` depth. Preserve its
+raw reports and separate yaw correction. Table force above block weight
+represents additional downward clamp compression. These output-only
+harnesses/auditor checks remain separate from the 281-test producer proof.
+
 [![Actual native approach and table-supported stabilization](../media/m8_table_supported/progress_stabilized/demo.gif)](../media/m8_table_supported/progress_stabilized/demo.mp4)
 
 [Normal 1× pilot video](../media/m8_table_supported/progress_stabilized/demo.mp4) ·
 [Actual final screenshot](../media/m8_table_supported/progress_stabilized/demo.png) ·
 [Closed progress evidence](../media/m8_table_supported/progress_stabilized)
 
-## Current evidence scope
+## Earlier stabilization and full attempts
 
 The actual four-phase native stabilization pilot is closed. It simulated
 **1.65 s** in **100.24 s** CPU wall time, with `aborted=null`, `partial=true`
@@ -168,7 +201,9 @@ has its own [281-test proof](../media/m8_table_supported/software_proof_281),
 including measured load and seat-direction observations. It does not extend
 the older trials' physics results.
 
-The current workspace candidate selects another actual opposed flat pair
+## Repeat current pickup-to-entry prefix
+
+The frozen `b2b13ff` producer selects another actual opposed flat pair
 120 degrees around the regular hex head. The independently spawned bolt
 keeps its original world yaw; this is a robot grasp choice, not groove
 registration. The original 35 mm transfer height and unconditional 10 mm
@@ -202,14 +237,16 @@ At this producer expect 281 tests. Run its launcher from this isolated
 checkout so module imports use the pinned source. The source proof and
 prefix result do not establish a completed thread-start/turn/reset sequence.
 This ends after `feed_to_entry`: `partial=true`, `passed=false` is expected.
-The reverse seat search, measured-grasp centering and dynamic opposite-flat
-reindexing are still separate experimental work. Running the current longer
-schedule does not reproduce a qualified complete second trajectory. Its
+The closed cold search branches above remain separate experimental work.
+Running the pinned producer's longer schedule does not reproduce a qualified
+complete second trajectory. Its
 eventual full producer will require a fresh unspliced rollout and its own
 source proof, raw forces, lead/reset audits and acceptance result.
 
-Further bounded native checkpoint diagnostics remain pending. A new
-continuous full attempt will need its own producer, source proof, trajectory
+Further output-only feedback diagnostics are in progress. Their measured
+head/tool pose feedback uses privileged perfect simulation state at 20 kHz,
+through finite arm motors; no trained or perception-policy result is claimed.
+A new continuous full attempt will need its own producer, source proof, trajectory
 and acceptance result. Post-closure audit
 corrections cover unloaded window endpoints and qualified closed hold phases;
 they do not alter the original failed trajectory.

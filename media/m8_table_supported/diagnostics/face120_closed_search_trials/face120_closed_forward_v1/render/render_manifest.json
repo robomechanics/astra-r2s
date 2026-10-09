@@ -1,0 +1,732 @@
+{
+  "scope": "Separate closed cold local experiment replay only. No warmstarted continuation, splice, complete trajectory, formed capture, opening/reset or qualified thread lead. Original outcome and failed checks stay authoritative.",
+  "trial": "face120_closed_forward_v1",
+  "parent_canonical_trace_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+  "state_parent_trace_sha256": "0d87e71cc5f85a1210d5b6e3fc43484b6f48d0ecc08ae1e3f941d74acbc5ac3c",
+  "trace_sha256": "8e21e07d78ecf36f78bf091902e1a764fd3e0cba4de345e564323b542cd1f3fb",
+  "declaration_sha256": "52c9b93c8a007bed64f220b68c197d235e991f5ab6b9a8d1dc553ef15394e81c",
+  "original_report_sha256": "3fe4cb5f56b3fc87e75f2a9982aca33a05b91474aa0aa6475f857ffc63dc83e4",
+  "all_original_guards_held": false,
+  "original_abort": {
+    "elapsed_s": 1.2617500000000001,
+    "failed_checks": [
+      "table_original_load",
+      "active_table_rolling_share"
+    ]
+  },
+  "original_termination": null,
+  "exact_saved_state_replay": true,
+  "physics_integration": false,
+  "state_interpolation": false,
+  "physical_bodies_hidden_or_geometry_changed": false,
+  "original_force_scope": "Original recorded native solve samples only; solve geometry/forces time_s-dt versus postintegration saved qpos/qvel. No replay force values reported.",
+  "native_timestep_s": 5e-05,
+  "native_duration_s": 1.2617500000000001,
+  "recorded_saved_state_rows": 254,
+  "first_state_time_s": 9.949099999983483,
+  "last_state_time_s": 11.210799999980543,
+  "fps": 12,
+  "playback_speed": 1,
+  "video_frames": 16,
+  "video_exact_saved_state_indices": [
+    0,
+    17,
+    34,
+    50,
+    67,
+    84,
+    100,
+    117,
+    134,
+    150,
+    167,
+    184,
+    200,
+    217,
+    234,
+    250
+  ],
+  "video_exact_saved_state_times_s": [
+    9.949099999983483,
+    10.034099999983285,
+    10.119099999983087,
+    10.1990999999829,
+    10.284099999982702,
+    10.369099999982504,
+    10.449099999982318,
+    10.53409999998212,
+    10.619099999981922,
+    10.699099999981735,
+    10.784099999981537,
+    10.869099999981339,
+    10.949099999981152,
+    11.034099999980954,
+    11.119099999980756,
+    11.19909999998057
+  ],
+  "gif_source_video_sha256": "1d4eb72108cd2b4d7162264e3a71be8f75deabadbef3fb52aaf19dd259554a93",
+  "gif_stored_frames": 16,
+  "gif_centisecond_frame_durations_ms": [
+    80,
+    90,
+    80,
+    80,
+    90,
+    80,
+    80,
+    90,
+    80,
+    80,
+    90,
+    80,
+    80,
+    90,
+    80,
+    80
+  ],
+  "gif_duration_ms": 1330,
+  "fixed_cameras": [
+    {
+      "lookat_m": [
+        0.285,
+        -0.01,
+        0.02
+      ],
+      "distance_m": 0.22,
+      "azimuth_deg": 70.0,
+      "elevation_deg": -45.0,
+      "label": "Table-supported block / left clamp"
+    },
+    {
+      "lookat_m": [
+        0.35,
+        -0.01,
+        0.031
+      ],
+      "distance_m": 0.17,
+      "azimuth_deg": -30.0,
+      "elevation_deg": -35.0,
+      "label": "Actual right jaws / head and thread shaft"
+    }
+  ],
+  "camera_scope": "The same two fixed real viewpoints as the approved published prefix tabletop detail. Cameras do not track or manipulate state; physical occlusion remains.",
+  "screenshot_states": {
+    "entry_detail": {
+      "sample_index": 0,
+      "state_time_s": 9.949099999983483,
+      "elapsed_native_time_s": 5e-05,
+      "phase": "start_thread_1",
+      "qpos_sha256": "65dbc6f0121e85ec12001d6788d4a6a1eef89c68f1278b2f3b69d5a0552ccabe",
+      "qvel_sha256": "6da2ba9b742f9afc3b9acdec18f8d242638da23757d12c13df68c9acc4e33d49",
+      "original_sample": {
+        "thread_wrench_on_bolt_world_N_Nm": [
+          0.21294491640351734,
+          -0.3737065230323368,
+          0.6183754465458343,
+          -0.003814918922628103,
+          -0.0016181097587290084,
+          0.00033583063558868863
+        ],
+        "thread_gravity_opposing_force_N": 0.6183754465458343,
+        "thread_hole_axial_reaction_force_N": 0.6183729519210167,
+        "thread_summed_normal_force_N": 0.7449194148633604,
+        "native_thread_contact_count": 1,
+        "actual_interior_flank_contact_count": 0,
+        "loaded_actual_interior_flank_contact_count": 0,
+        "interior_flank_summed_normal_force_N": 0.0,
+        "interior_flank_gravity_opposing_force_N": 0.0,
+        "noninterior_entry_contact_count": 1,
+        "native_contact_records": [
+          {
+            "geom1": "female_thread",
+            "geom2": "bolt_thread",
+            "frame": [
+              [
+                0.41830312480721843,
+                -0.44126974675304026,
+                0.7939165613444679
+              ],
+              [
+                0.2056939571619153,
+                0.8973745096672334,
+                0.39039593413170226
+              ],
+              [
+                -0.8847103999409007,
+                -2.7755575615628914e-17,
+                0.46614108190161824
+              ]
+            ],
+            "local_force_N_Nm": [
+              0.7449194148633604,
+              -0.05014196525466762,
+              0.09985561751753408,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.34743845245561233,
+              -0.007125960785446594,
+              0.0154477727080931
+            ],
+            "bolt_origin_world_m": [
+              0.3500091982876907,
+              -0.010060399707355871,
+              0.030511742840715346
+            ],
+            "is_actual_interior_flank_contact": false,
+            "wrench_on_bolt_world_N_Nm": [
+              0.21294491640351734,
+              -0.3737065230323368,
+              0.6183754465458343,
+              -0.003814918922628103,
+              -0.0016181097587290084,
+              0.00033583063558868863
+            ]
+          }
+        ],
+        "hand_gravity_opposing_force_N": -0.3560806368375069,
+        "hand_hole_axial_reaction_force_N": -0.3560780474082073,
+        "right_pad_gravity_opposing_force_N": -0.3560806368375069,
+        "right_pad_wrench_on_bolt_world_N_Nm": [
+          -0.21493955406369136,
+          0.3980163196556173,
+          -0.3560806368375069,
+          0.0037238545857263016,
+          0.001612020212136838,
+          -0.00033414641989809764
+        ],
+        "hand_wrench_on_bolt_world_N_Nm": [
+          -0.21493955406369136,
+          0.3980163196556173,
+          -0.3560806368375069,
+          0.0037238545857263016,
+          0.001612020212136838,
+          -0.00033414641989809764
+        ],
+        "right_pad_normal_force_N": [
+          5.857454919867518,
+          6.060112237011083
+        ],
+        "bolt_weight_N": 0.26241400403581094,
+        "relative_bolt_axial_velocity_m_per_s": 2.0295063455191898e-05,
+        "relative_bolt_angular_speed_rad_per_s": 0.0029961207575372943,
+        "relative_hand_angular_speed_rad_per_s": 0.0021380607003861946,
+        "radial_offset_m": 6.376314834515247e-05,
+        "bolt_tilt_rad": 0.003980481636423811,
+        "bolt_world_support_contact_count": 0,
+        "nonthread_block_bolt_contact_count": 0,
+        "external_drive_zero": true,
+        "source_sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+        "scope": "Original pre-integration native contact solve and matching retained derived kinematics; never reconstructed from post-step saved qpos",
+        "settled_reference_streak_s": 0.0,
+        "phase_index": 4,
+        "seat_direction_event": null,
+        "partial_profile_support_window": {
+          "observer": "diagnostic-native-bolt-weight-transfer-v1",
+          "ready_for_diagnostic_release_attempt": false,
+          "bolt_weight_N": 0.26241400403581094,
+          "required_window_s": 0.1,
+          "observed_window_s": 0.0,
+          "original_native_samples": 0,
+          "mean_thread_weight_fraction": null,
+          "mean_positive_hand_upward_weight_fraction": null,
+          "signed_thread_gravity_opposing_impulse_Ns": 0.0,
+          "positive_hand_upward_impulse_Ns": 0.0,
+          "loaded_actual_interior_flank_duration_s": 0.0,
+          "loaded_thread_gravity_support_duty_fraction": null,
+          "entry_only_native_contact_window": false,
+          "loaded_actual_interior_flank_contact_observed": false,
+          "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+        },
+        "physical_phase": "start_thread_1",
+        "desired_turn_theta_rad": -1.894985365247106,
+        "desired_turn_angular_speed_rad_s": 1.3575527100847924e-09,
+        "time_s": 9.949099999983483,
+        "elapsed_s": 5e-05,
+        "net_feed_N": 0.26241400403581094,
+        "axial_motor_feed_N": -0.0039385780202423545,
+        "relative_hand_axial_velocity_m_per_s": 1.96928901301811e-05,
+        "base_z_m": -0.022511790744736054,
+        "yaw_unwrapped_rad": 1.3407990357558652,
+        "thread_overlap_m": 0.0014880825015588413,
+        "formed_flank_overlap_m": 0.0,
+        "native_thread_depth_m": 2.068537761605209e-08,
+        "right_grip_slip_m": 0.00011455662694740087,
+        "right_grip_rotation_slip_rad": 0.003889937297884295,
+        "left_grip_slip_m": 2.7958644516063724e-06,
+        "left_grip_rotation_slip_rad": 6.195132857046325e-05,
+        "table_upward_force_N": 1.6090165109905474,
+        "left_hand_upward_force_N": 0.00792422915563229,
+        "left_pad_normal_force_N": [
+          16.014162954909168,
+          15.979679651483877
+        ],
+        "block_lift_m": -3.2265396558185666e-07,
+        "minimum_joint_margin_rad": 0.24874859749647404,
+        "block_translation_m": 1.7144137218135213e-06,
+        "block_rotation_rad": 1.926271659846008e-05,
+        "table_loaded_ready": false,
+        "left_pad_0_N": 16.014162954909168,
+        "left_pad_1_N": 15.979679651483877,
+        "right_pad_0_N": 5.857454919867518,
+        "right_pad_1_N": 6.060112237011083,
+        "checks": {
+          "radial": true,
+          "tilt": true,
+          "thread_depth": true,
+          "left_slip": true,
+          "left_rotation": true,
+          "right_slip": true,
+          "right_rotation": true,
+          "no_bolt_world_support": true,
+          "no_head_seating": true,
+          "no_external_drive": true,
+          "no_unexpected_native_contacts": true,
+          "joint_limits": true,
+          "no_lift": true,
+          "block_translation": true,
+          "block_rotation": true,
+          "table_original_load": true,
+          "no_unexpected_block_world_support": true,
+          "male_tip_table_clearance": true,
+          "no_warnings": true,
+          "finite_state": true,
+          "bilateral_left_pad_load": true,
+          "bilateral_right_pad_load": true,
+          "active_table_rolling_share": true,
+          "finite_motor_caps": true,
+          "finite_wrench_caps": true
+        },
+        "weight_window": {
+          "observer": "diagnostic-native-bolt-weight-transfer-v1",
+          "ready_for_diagnostic_release_attempt": false,
+          "bolt_weight_N": 0.26241400403581094,
+          "required_window_s": 0.1,
+          "observed_window_s": 5e-05,
+          "original_native_samples": 1,
+          "mean_thread_weight_fraction": 2.3564879809594546,
+          "mean_positive_hand_upward_weight_fraction": 0.0,
+          "signed_thread_gravity_opposing_impulse_Ns": 3.091877232729172e-05,
+          "positive_hand_upward_impulse_Ns": 0.0,
+          "loaded_actual_interior_flank_duration_s": 0.0,
+          "loaded_thread_gravity_support_duty_fraction": 1.0,
+          "entry_only_native_contact_window": true,
+          "loaded_actual_interior_flank_contact_observed": false,
+          "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+        },
+        "table_window": {
+          "observer": "native-supported-block-load-window-v1",
+          "ready": false,
+          "required_window_s": 0.1,
+          "observed_window_s": 5e-05,
+          "block_weight_N": 0.9987972925280899,
+          "minimum_mean_table_weight_fraction": 0.9,
+          "maximum_mean_positive_hand_upward_weight_fraction": 0.1,
+          "minimum_loaded_table_duty": 0.99,
+          "mean_table_upward_force_N": 1.6090165109905474,
+          "mean_positive_hand_upward_force_N": 0.00792422915563229,
+          "loaded_table_substep_duty": 1.0,
+          "final_table_upward_force_N": 1.6090165109905474,
+          "scope": "No-bolt settled stabilization: original native table force bears block weight; contact candidates alone do not establish support"
+        },
+        "all_checks_held": true,
+        "right_motor_torques_Nm": [
+          0.37201052346204083,
+          -11.661049572144458,
+          5.35162169545282,
+          0.3792657029976083,
+          -0.13640774044534304,
+          0.008071723237687178
+        ],
+        "left_motor_torques_Nm": [
+          -0.0036386309917643546,
+          -7.675989088052681,
+          4.774202490079708,
+          1.0481620215732181,
+          -0.44487086740882953,
+          -0.0026497456193876976
+        ],
+        "right_motor_wrench_N_Nm": [
+          -0.16794422458731287,
+          0.9268460099681404,
+          0.003934440385635021,
+          -0.004492727634720951,
+          0.007188389836923598,
+          -0.0019555148967715036
+        ]
+      }
+    },
+    "endpoint_detail": {
+      "sample_index": 253,
+      "state_time_s": 11.210799999980543,
+      "elapsed_native_time_s": 1.2617500000000001,
+      "phase": "start_thread_1",
+      "qpos_sha256": "a87b7c316bfee91ccc7074627dc96c4f58a27a3fcc252a72a5a071e474adb268",
+      "qvel_sha256": "039799ca50056681380fec0b0becaf1b83ce1dff4bf7e15c966192e7d00279ed",
+      "original_sample": {
+        "thread_wrench_on_bolt_world_N_Nm": [
+          1.6212097218818862,
+          -0.2134816030077027,
+          -1.614681630691099,
+          0.022895559104226696,
+          -0.019144398294376943,
+          0.002714042428296235
+        ],
+        "thread_gravity_opposing_force_N": -1.614681630691099,
+        "thread_hole_axial_reaction_force_N": -1.6146914313962366,
+        "thread_summed_normal_force_N": 8.740893036283861,
+        "native_thread_contact_count": 2,
+        "actual_interior_flank_contact_count": 0,
+        "loaded_actual_interior_flank_contact_count": 0,
+        "interior_flank_summed_normal_force_N": 0.0,
+        "interior_flank_gravity_opposing_force_N": 0.0,
+        "noninterior_entry_contact_count": 2,
+        "native_contact_records": [
+          {
+            "geom1": "female_thread",
+            "geom2": "bolt_thread",
+            "frame": [
+              [
+                0.11828695092806848,
+                0.4819257479580521,
+                -0.8681910911171645
+              ],
+              [
+                -0.06505905353920599,
+                0.8762120596380036,
+                0.4775141318301593
+              ],
+              [
+                0.9908458592499259,
+                0.0,
+                0.13499808593930715
+              ]
+            ],
+            "local_force_N_Nm": [
+              4.971049703178356,
+              -0.7339583449508159,
+              -0.1315681906279998,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.34946914873316376,
+              -0.013671510593055615,
+              0.015115972001805532
+            ],
+            "bolt_origin_world_m": [
+              0.3499930128701007,
+              -0.010071576464643623,
+              0.030411952305064337
+            ],
+            "is_actual_interior_flank_contact": false,
+            "wrench_on_bolt_world_N_Nm": [
+              0.5053971506677913,
+              1.7525736932230274,
+              -4.684058001594042,
+              0.043669632950948625,
+              -0.010184354864305321,
+              0.0009012859458724811
+            ]
+          },
+          {
+            "geom1": "female_thread",
+            "geom2": "bolt_thread",
+            "frame": [
+              [
+                0.41916034292151505,
+                -0.438042677430839,
+                0.7952504131851426
+              ],
+              [
+                0.2042485852316508,
+                0.8989541772244133,
+                0.3875098743021231
+              ],
+              [
+                -0.8846395437424144,
+                0.0,
+                0.4662755383324467
+              ]
+            ],
+            "local_force_N_Nm": [
+              3.7698433331055057,
+              -0.3500768304721211,
+              0.44408319578677413,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.34744681939152905,
+              -0.0072098048967935355,
+              0.015377823848621356
+            ],
+            "bolt_origin_world_m": [
+              0.3499930128701007,
+              -0.010071576464643623,
+              0.030411952305064337
+            ],
+            "is_actual_interior_flank_contact": false,
+            "wrench_on_bolt_world_N_Nm": [
+              1.1158125712140947,
+              -1.96605529623073,
+              3.0693763709029427,
+              -0.02077407384672193,
+              -0.008960043430071622,
+              0.0018127564824237542
+            ]
+          }
+        ],
+        "hand_gravity_opposing_force_N": 1.8331079224886908,
+        "hand_hole_axial_reaction_force_N": 1.8331171786087284,
+        "right_pad_gravity_opposing_force_N": 1.8331079224886908,
+        "right_pad_wrench_on_bolt_world_N_Nm": [
+          -1.5180295810562805,
+          0.2449052957241713,
+          1.8331079224886908,
+          -0.022600962342408448,
+          0.01918890534188434,
+          -0.0026925110050688705
+        ],
+        "hand_wrench_on_bolt_world_N_Nm": [
+          -1.5180295810562805,
+          0.2449052957241713,
+          1.8331079224886908,
+          -0.022600962342408448,
+          0.01918890534188434,
+          -0.0026925110050688705
+        ],
+        "right_pad_normal_force_N": [
+          5.197696692990782,
+          6.731241614714827
+        ],
+        "bolt_weight_N": 0.26241400403581094,
+        "relative_bolt_axial_velocity_m_per_s": -0.0001751920621649386,
+        "relative_bolt_angular_speed_rad_per_s": 0.5084077031476147,
+        "relative_hand_angular_speed_rad_per_s": 0.5086777614830673,
+        "radial_offset_m": 7.597971713974676e-05,
+        "bolt_tilt_rad": 0.012757628790592312,
+        "bolt_world_support_contact_count": 0,
+        "nonthread_block_bolt_contact_count": 0,
+        "external_drive_zero": true,
+        "source_sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+        "scope": "Original pre-integration native contact solve and matching retained derived kinematics; never reconstructed from post-step saved qpos",
+        "settled_reference_streak_s": 0.0,
+        "phase_index": 4,
+        "seat_direction_event": null,
+        "partial_profile_support_window": {
+          "observer": "diagnostic-native-bolt-weight-transfer-v1",
+          "ready_for_diagnostic_release_attempt": false,
+          "bolt_weight_N": 0.26241400403581094,
+          "required_window_s": 0.1,
+          "observed_window_s": 0.0,
+          "original_native_samples": 0,
+          "mean_thread_weight_fraction": null,
+          "mean_positive_hand_upward_weight_fraction": null,
+          "signed_thread_gravity_opposing_impulse_Ns": 0.0,
+          "positive_hand_upward_impulse_Ns": 0.0,
+          "loaded_actual_interior_flank_duration_s": 0.0,
+          "loaded_thread_gravity_support_duty_fraction": null,
+          "entry_only_native_contact_window": false,
+          "loaded_actual_interior_flank_contact_observed": false,
+          "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+        },
+        "physical_phase": "start_thread_1",
+        "desired_turn_theta_rad": -1.646375116781648,
+        "desired_turn_angular_speed_rad_s": 0.5093156525248337,
+        "time_s": 11.210799999980543,
+        "elapsed_s": 1.2617500000000001,
+        "net_feed_N": 0.26241400403581094,
+        "axial_motor_feed_N": 0.028260707452690294,
+        "relative_hand_axial_velocity_m_per_s": -0.0001413035372392747,
+        "base_z_m": -0.02241198155220437,
+        "yaw_unwrapped_rad": 1.5892178172314766,
+        "thread_overlap_m": 0.0015867164087165798,
+        "formed_flank_overlap_m": 0.0,
+        "native_thread_depth_m": 1.6886818736132932e-06,
+        "right_grip_slip_m": 0.00010501266301737984,
+        "right_grip_rotation_slip_rad": 0.013248034846178538,
+        "left_grip_slip_m": 2.9492719038123416e-06,
+        "left_grip_rotation_slip_rad": 6.334406394011679e-05,
+        "table_upward_force_N": 0.039964610814125744,
+        "left_hand_upward_force_N": -0.5950397169538744,
+        "left_pad_normal_force_N": [
+          16.092745090644822,
+          15.905249529308348
+        ],
+        "block_lift_m": -3.100303662198489e-07,
+        "minimum_joint_margin_rad": 0.2093685527090554,
+        "block_translation_m": 3.0933888421255623e-06,
+        "block_rotation_rad": 2.9509345635731846e-05,
+        "table_loaded_ready": false,
+        "left_pad_0_N": 16.092745090644822,
+        "left_pad_1_N": 15.905249529308348,
+        "right_pad_0_N": 5.197696692990782,
+        "right_pad_1_N": 6.731241614714827,
+        "checks": {
+          "radial": true,
+          "tilt": true,
+          "thread_depth": true,
+          "left_slip": true,
+          "left_rotation": true,
+          "right_slip": true,
+          "right_rotation": true,
+          "no_bolt_world_support": true,
+          "no_head_seating": true,
+          "no_external_drive": true,
+          "no_unexpected_native_contacts": true,
+          "joint_limits": true,
+          "no_lift": true,
+          "block_translation": true,
+          "block_rotation": true,
+          "table_original_load": false,
+          "no_unexpected_block_world_support": true,
+          "male_tip_table_clearance": true,
+          "no_warnings": true,
+          "finite_state": true,
+          "bilateral_left_pad_load": true,
+          "bilateral_right_pad_load": true,
+          "active_table_rolling_share": false,
+          "finite_motor_caps": true,
+          "finite_wrench_caps": true
+        },
+        "weight_window": {
+          "observer": "diagnostic-native-bolt-weight-transfer-v1",
+          "ready_for_diagnostic_release_attempt": false,
+          "bolt_weight_N": 0.26241400403581094,
+          "required_window_s": 0.1,
+          "observed_window_s": 0.0,
+          "original_native_samples": 0,
+          "mean_thread_weight_fraction": null,
+          "mean_positive_hand_upward_weight_fraction": null,
+          "signed_thread_gravity_opposing_impulse_Ns": 0.0,
+          "positive_hand_upward_impulse_Ns": 0.0,
+          "loaded_actual_interior_flank_duration_s": 0.0,
+          "loaded_thread_gravity_support_duty_fraction": null,
+          "entry_only_native_contact_window": false,
+          "loaded_actual_interior_flank_contact_observed": false,
+          "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+        },
+        "table_window": {
+          "observer": "native-supported-block-load-window-v1",
+          "ready": false,
+          "required_window_s": 0.1,
+          "observed_window_s": 0.10004999999999714,
+          "block_weight_N": 0.9987972925280899,
+          "minimum_mean_table_weight_fraction": 0.9,
+          "maximum_mean_positive_hand_upward_weight_fraction": 0.1,
+          "minimum_loaded_table_duty": 0.99,
+          "mean_table_upward_force_N": 1.2733405947369874,
+          "mean_positive_hand_upward_force_N": 0.00775764500244242,
+          "loaded_table_substep_duty": 0.9995002498750625,
+          "final_table_upward_force_N": 0.039964610814125744,
+          "scope": "No-bolt settled stabilization: original native table force bears block weight; contact candidates alone do not establish support"
+        },
+        "all_checks_held": false,
+        "right_motor_torques_Nm": [
+          0.15415293539043518,
+          -11.706617839735403,
+          5.269910579353043,
+          0.20159432158303547,
+          -0.09655785328962219,
+          0.06598888286087988
+        ],
+        "left_motor_torques_Nm": [
+          0.007667754691923806,
+          -7.674462557275294,
+          4.776963616162289,
+          1.0491525538153659,
+          -0.4480557679266229,
+          -0.0008629706644287206
+        ],
+        "right_motor_wrench_N_Nm": [
+          -0.3324738578743219,
+          0.26045281167312073,
+          -0.02826309608613632,
+          -0.003721748744125994,
+          0.041952006240716225,
+          -0.011517102182219591
+        ]
+      }
+    }
+  },
+  "model_identity": {
+    "model_fingerprint": "dd44ffab2beade32ed4682adb551fdf077dd97d4140bb2794cc995effe35a9ca",
+    "model_xml_sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "mesh_sha256": {
+      "model2.stl": "5ac61c0313ed00c38655e41681af1b8b307cf8d5ef57209a75f215cea02df754",
+      "model2__2.stl": "30dab41f14bae95d737abca3c934eb5d570ab107dff0b40952fbdfb9d07eab79",
+      "model2__3.stl": "9fd96f5ad387fe7dd96eaa65e386637800e2f5637b6167fbad4ecb37d8598f47",
+      "model2__4.stl": "33c0e7ef538e2c4473efa9c4ef2a8441b6094b65090b4dec71abe82001d974df",
+      "model2__5.stl": "09f08e7dead2d6363618471adadb1b94af39e8056676670f3fd21ec06c197b20",
+      "model2__6.stl": "888b5919d10dbfb59b964c3cafc2ddbdac3b5426e20dd13bcaf4baedd5ee15c9",
+      "model2__7.stl": "2d64b18f1e70b0460eb53335d340b7c879976a3093ec67b07bcb7245e371a91d",
+      "model2__8.stl": "db3708da6b14daf3fc9a1909a8325b68f65ff69146cdd20b69a9ddc4ce51f50d",
+      "model2__9.stl": "74969d09b8b7f75cc984c5c7e5526d2941c6724f48b3efa1fa8730cc7820f4f5",
+      "model2__10.stl": "b879cc07f547b7a2ac52e428dd206e80a0d4b0e805cb56b9a8230df04a690923",
+      "model2__11.stl": "af220d2a51e8444392aef36e2fe4a6f69aed22bc292a7f38e54da3b4f5253434",
+      "model2__12.stl": "e79614869bd2283f70fafa150ce748d5b6c03377a651448c6fe9893a22f6d1de",
+      "model2__13.stl": "32b62f14f00ea82bfc79b935f7dac32c7cb276a3abc0aae8362cbba3fb1326de",
+      "model2__14.stl": "72d2178789dd5e0358c2caf9dad90b8881e505f4c52a8d6d18c71b5e93e8c84b",
+      "model2__15.stl": "ca8788184d54f30c18482cb9b48dffb010a93dbc029054b6cc515083a740d324",
+      "model2__16.stl": "18bb99691eed524393e8f3a0ff29e79d97ab75689bc92144bbdfafa2cc79d37b",
+      "model2__17.stl": "6513dbd192d2bf3a4f7016231f1ba5eca93916c9ebfdc334e9b435ca1d302ff6",
+      "d405.stl": "6617f3fb22b604a66c27e16d2397f305fcdca8a781248abdbabbf69c9fe6a3c5"
+    },
+    "scene_source_sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+    "scene_source_matches_recorded": true,
+    "method": "Exact hash-verified archived XML; current scene generator is not used"
+  },
+  "runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "original_runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "source_sha256": "840e66b8bb474112f4036441bf72f9a72f5b6f1406422da6d9afba66f36bd02f",
+  "source_dependencies_sha256": {
+    "render_face120_cold_trials.py": "840e66b8bb474112f4036441bf72f9a72f5b6f1406422da6d9afba66f36bd02f",
+    "audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+    "runtime.py": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+  },
+  "media": {
+    "demo.mp4": {
+      "sha256": "1d4eb72108cd2b4d7162264e3a71be8f75deabadbef3fb52aaf19dd259554a93",
+      "bytes": 239230
+    },
+    "demo.gif": {
+      "sha256": "e88f83da72e52d92f2ed1ec4bbed08f4fea6bb0cb471771cb8e8a26f9ad82c36",
+      "bytes": 1275055
+    },
+    "entry_detail.png": {
+      "sha256": "0de94d07c1960e09bc611a32ead38e5fae7fd3f0bf9024490da2d40359ca9d9a",
+      "bytes": 138038
+    },
+    "endpoint_detail.png": {
+      "sha256": "5d08d15b285acf5cf1b1d1b1915fe8d6a11071bdde86dccb083c3e09d68dadff",
+      "bytes": 135857
+    }
+  }
+}

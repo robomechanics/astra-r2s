@@ -1,0 +1,86 @@
+{
+  "scope": "Original contact-local table/left forces, frame/action-reaction signs and full moments re-transformed. No force solving or native replay. All-step scalar history remains separate from sparse original local-force archives.",
+  "auditor_source_sha256": "3e46b3f00bbe67845e8f42b0f337b9a3f654e4fe6c69613ed6f7a988cbbd77e0",
+  "original_ledger_sha256": "70fd4b265a101f5850c0df02b57436946afa0e46b4b78d127ecab9eb26f990e7",
+  "original_trace_sha256": "a3ae1e7e9c166e95bfdcdf93978737b0f2e28df0828753c9a67b4b85bfa5d9b9",
+  "original_sample_rows": 508,
+  "original_contact_solves_retransformed": {
+    "table": 14566,
+    "left": 4048
+  },
+  "maximum_original_wrench_scalar_error_N_Nm": 0.0,
+  "native_sampled_left_wrench_range_N_Nm": [
+    [
+      -0.6183352582865429,
+      -0.5076914272739783,
+      -8.430837227580543,
+      -0.015157557342027783,
+      -0.3864976802273388,
+      -0.4884511328433905
+    ],
+    [
+      1.6595859293285096,
+      10.652025584225541,
+      0.00783219883688148,
+      0.05577714549098226,
+      0.03318731712945591,
+      0.01592128617057531
+    ]
+  ],
+  "native_sampled_table_wrench_range_N_Nm": [
+    [
+      -0.4230976997191515,
+      -8.186266400426232,
+      0.9981381084371465,
+      -0.0028144440433739474,
+      -0.026656618630343923,
+      -0.07344315277843928
+    ],
+    [
+      1.9012866568443287,
+      0.30194458955748466,
+      14.903349388399795,
+      0.01576832069183678,
+      0.2809483654347605,
+      0.42254126420323745
+    ]
+  ],
+  "observed_finite_motor_commands": {
+    "maximum_cartesian_force_norm_N": 2.3867072462432253,
+    "maximum_cartesian_torque_norm_Nm": 0.06570745130036675,
+    "maximum_native_motor_command_fraction_of_caps": 0.42635972036166364,
+    "scope": "Bounds apply to commanded motor wrench; actual solved contact reactions include inertia/contact coupling and need not equal the commanded preload."
+  },
+  "original_final100ms": {
+    "mean_signed_left_upward_N": -1.9503455690060136,
+    "mean_positive_left_upward_N": 0.0,
+    "mean_table_upward_compressive_load_N": 3.2270534224333156,
+    "mean_table_load_in_units_of_block_weight": 3.230939297267427,
+    "scope": "More than1 unit of block weight denotes extra compressive clamp/contact load, not a fractional gravity share."
+  },
+  "strict_all_step_pad_history": {
+    "left_minimum_N": [
+      0.0,
+      10.652000838188826
+    ],
+    "left_unloaded_native_ticks": [
+      1,
+      0
+    ],
+    "right_minimum_N": [
+      5.1909848768100115,
+      5.958700455172107
+    ]
+  },
+  "original_final_native_loads": {
+    "left_upward_N": -8.430837227580543,
+    "table_upward_N": 14.903349388399795
+  },
+  "original_guard_failure": {
+    "elapsed_s": 2.5306,
+    "failed_checks": [
+      "bilateral_left_pad_load"
+    ]
+  },
+  "full_trajectory_qualified": false
+}

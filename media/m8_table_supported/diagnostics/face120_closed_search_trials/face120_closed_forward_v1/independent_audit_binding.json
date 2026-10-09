@@ -1,0 +1,41 @@
+{
+  "scope": "Closed cold-state-to-cold-state forward diagnostic; canonical model/grasp-reference parent stays distinct from actual state parent. Original abort and original arrays remain unchanged. No warmstarted continuous path, no opening/capture/formed thread proof.",
+  "producer_commit_at_review": "b2b13ff39cd47c48afd19b38f83e9a405c9d6e32",
+  "original_files": {
+    "declaration.json": "52c9b93c8a007bed64f220b68c197d235e991f5ab6b9a8d1dc553ef15394e81c",
+    "report.json": "3fe4cb5f56b3fc87e75f2a9982aca33a05b91474aa0aa6475f857ffc63dc83e4",
+    "diagnostic_source.py": "d5d6760f11673b68c8405db2dcb744d95ca07d739218f1ba4d21e8da1c874121",
+    "observer_source.py": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+    "original_native_force_ledger.npz": "8718f6def3d1637f1abd2ec98d5708a8626cf76a8c957911f250d2818acdf183",
+    "checkpoint_trace.npz": "8e21e07d78ecf36f78bf091902e1a764fd3e0cba4de345e564323b542cd1f3fb",
+    "declared_cold_initialization.npz": "64074b58f4539aef564e16cb076c2a66d419a3bc5a2aeb3407a556e3269bcffb",
+    "scene.xml": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "supported_scene.zip": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+    "original_yaw_origin_note.json": "2730f5c4d00bfc96220bf65258c28a2941f3ed40a95dae404dbc8649c9c3de29"
+  },
+  "closed_independent_reports": {
+    "independent_native_force_audit_corrected_yaw_scope.json": "b1989abc06cac825116f9389f63ad9b9373ec589adbdc7272d33b7a852070f1f",
+    "independent_phase_depth_audit_corrected_yaw.json": "9ea40b80f1aac29012ec835c3d6573455412d0c8d7a9f0e4e0e8aa50d217f56a",
+    "independent_cold_chain_audit.json": "9b55341301a486e8307a4c6d1f847e09830f310c764ad879472ba53cdc740e2d",
+    "independent_failure_diagnosis.json": "b1991320e917a0f4134b81578a0e404062701fb2b8f9f9a8a90190a51f9cc0e7"
+  },
+  "source_snapshots": {
+    "independent_cold_chain_audit.py": "9a2cc4737d7f3960f4211ff93989ec2c502c473035b16a9943aa1017e6f4f3f7",
+    "test_independent_cold_chain_audit.py": "f246f24816b9bbcf98e31bbcb88b37aba136b9c3dfecdeecdf4c4ac91ca0ad35",
+    "independent_archived_native_force_audit_v2.py": "9c05d684c0fcbf29ccab75722d357b24e0c2c68d7f96972e1965c83cc1983890",
+    "independent_archived_phase_depth_audit_v2.py": "2097cde782935104b03bdec6280916720eac2186591bbefe142a09b11e5bb892",
+    "cold_chain_auditors_software_proof.json": "5f5ce483727187255cdf554e4ddf4e2f49dd95d176becd2d1b497fdb098910fd",
+    "archived_diagnostic_auditors_software_proof.json": "26af0b7de186adca77b16f6bee575544eff87362c4a78292a28df86d85e52671",
+    "test_independent_archived_native_force_audit.py": "5888ad13e47113536fd15b8f2cc06e10c1035b005072f316046d4e135e23c27d",
+    "independent_archived_native_force_audit.py": "36f40e7b4ea11fe86f252281a2b77ebd13cabe5c786ca3eaa79f7f9a02072487",
+    "independent_phase_depth_software_proof.json": "ee12a2bfd7e9dcb65324720af72f2fd4e4cee106647e31e593883d3f211d9340"
+  },
+  "superseded_initial_counter_label_report": {
+    "path": "independent_native_force_audit.json",
+    "sha256": "35fe5739f19416937c81c9540ac7a8b723d613611a9ceea6db2d4243957bad6b",
+    "scope": "Initial generic arithmetic report labeled raw instrumented yaw-counter ranges as actual yaw. Preserved for provenance; use corrected_yaw_scope report. Force/guard calculations were unchanged; source snapshot in audit_draft_sources."
+  },
+  "tests_scope": "6 additional cold-chain arithmetic regressions, plus frozen10 force/frame checks; neither modifies281 canonical test count nor proves native success.",
+  "canonical281_software_proof_sha256": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+  "frozen": true
+}

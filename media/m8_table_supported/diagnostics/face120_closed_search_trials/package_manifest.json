@@ -1,0 +1,812 @@
+{
+  "scope": "Three separate closed cold local trials, not a warmstarted chain or completed assembly. All original bytes/logs/failed guards and forward-v1 counter error remain unchanged; independent corrections retain their source identities. Every clip replays exact saved state rows only.",
+  "canonical_producer_commit": "b2b13ff39cd47c48afd19b38f83e9a405c9d6e32",
+  "canonical_source_tests_passed": 281,
+  "canonical_source_proof_sha256": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+  "proof_counts_not_combined": true,
+  "output_only_arithmetic_audit_proofs_remain_separate": true,
+  "parent_package": "media/m8_table_supported/face120_pickup_entry_v1",
+  "parent_trace_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+  "trials": {
+    "face120_seat_search_v1": {
+      "scope": "Fresh cold checkpoint diagnostic only; not a continuous full trajectory, not a warmstarted original native solve, not a splice or qualification result",
+      "closed": true,
+      "continuous_full_trajectory": false,
+      "canonical_model_reference_trace_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+      "actual_state_parent_trace_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+      "initial_saved_state_time_s": 6.398299999991758,
+      "initial_saved_state_index": 1291,
+      "initial_qpos_qvel_sha256": "a4b42595266bc7bf07c7107d2d36715ffb09c192db73bc5ff691e09e61609e0c",
+      "cold_init_note": "Exact post-integration archived qpos/qvel/ctrl once into new MjData; qacc_warmstart and solver state default zero; one mj_forward initializes a new solve",
+      "warmstarts_or_original_solver_state_restored": false,
+      "native_duration_s": 3.5507500000000003,
+      "native_wall_seconds": 485.42437419600174,
+      "all_original_guards_held": true,
+      "original_abort": null,
+      "original_termination": "Measured drop did not retain continuously stable loaded stop",
+      "original_final_phase": "stop_reverse_seat_1",
+      "trace_sha256": "0d87e71cc5f85a1210d5b6e3fc43484b6f48d0ecc08ae1e3f941d74acbc5ac3c",
+      "original_force_ledger_sha256": "3576500fc126be22a4e8b0937b5ab489105b3062aee6f8e206053cec9775d6ae",
+      "harness_source_sha256": "c2d8f010c96909a605d13b692f36c431462cbc01f7deb04e209554f719ee2202",
+      "helper_source_sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "canonical281_proof_covers_output_only_harness": false,
+      "original_grip_references_preserved": true,
+      "formed_capture_qualified": false,
+      "actual_positive_formed_overlap_steps": 0,
+      "actual_loaded_interior_contact_steps": 0,
+      "opening_or_passive_reset_executed": false,
+      "nominal_overlap_range_m": [
+        0.0005987141030239819,
+        0.0014882082405107723
+      ],
+      "common_unchamfered_axial_span_overlap_threshold_m": 0.001992582346706593,
+      "native_actual_yaw_range_rad_from_independent_audit": [
+        -0.5546764304280047,
+        1.3408042813959706
+      ],
+      "nominal_profile_scope": "Coaxial/centroid profile context only; not a full tilted bore-fit proof, actual loaded interior engagement, prescribed helix or causal isolation.",
+      "original_argv": [
+        "outputs/m8_table_supported/diagnostics/seat_search_probe.py",
+        "--parent",
+        "outputs/m8_table_supported/face120_prefix_v1/insertion_trace.npz",
+        "--output",
+        "outputs/m8_table_supported/diagnostics/face120_seat_search_v1"
+      ],
+      "renderer_sha256": "840e66b8bb474112f4036441bf72f9a72f5b6f1406422da6d9afba66f36bd02f",
+      "video_frames": 43,
+      "video_fps": 12,
+      "playback_speed": 1,
+      "original_yaw_counter_issue": "No correction applied to original counter; independently verified origin.",
+      "left_downward_position_offset_m": 0,
+      "executed_net_feed_schedule": {
+        "scope": "Executed native net-feed schedule derived from original ledger range/first sample and frozen source. Original declaration fields remain untouched.",
+        "first_original_native_net_feed_N": 0.05,
+        "original_allstep_net_feed_range_N": [
+          0.05,
+          0.26241400403581094
+        ],
+        "constant_bolt_weight_feed_from_first_cold_step": false,
+        "executed_feed_schedule": "0.05N during0.15s centering, then0.5s ramp to bolt-weight feed followed by0.5s hold.",
+        "legacy_forward_start_ramp_hold_fields_not_executed": false,
+        "original_ledger_sha256": "3576500fc126be22a4e8b0937b5ab489105b3062aee6f8e206053cec9775d6ae",
+        "frozen_harness_sha256": "c2d8f010c96909a605d13b692f36c431462cbc01f7deb04e209554f719ee2202"
+      },
+      "render_manifest_sha256": "518ae4204a24be10e62c9fb2aeda6790320ff1c7c6effc114c57927b2092f17f",
+      "independent_audit_binding_sha256": "e618beeec1842c2775326923340ca14ec97a7286ca4f692800731dec84a685c1"
+    },
+    "face120_closed_forward_v1": {
+      "scope": "Fresh cold forward checkpoint diagnostic from closed failed direction-event trial; no direction confirmation or capture inferred;  not a continuous full trajectory, not a warmstarted original native solve, not a splice or qualification result",
+      "closed": true,
+      "continuous_full_trajectory": false,
+      "canonical_model_reference_trace_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+      "actual_state_parent_trace_sha256": "0d87e71cc5f85a1210d5b6e3fc43484b6f48d0ecc08ae1e3f941d74acbc5ac3c",
+      "initial_saved_state_time_s": 9.949049999983483,
+      "initial_saved_state_index": 711,
+      "initial_qpos_qvel_sha256": "843b0e42486dac7b0a177940f7ec9d2a4e1c0735de2e7cd662ebe689cca36958",
+      "cold_init_note": "Exact post-integration archived qpos/qvel once into new MjData; initial arm ctrl reconstructed from archived last native motor commands, fixed closed finger ctrl from canonical parent; all ctrl overwritten by bounded controllers before first integration; qacc_warmstart and solver state default zero; one mj_forward initializes a new solve",
+      "warmstarts_or_original_solver_state_restored": false,
+      "native_duration_s": 1.2617500000000001,
+      "native_wall_seconds": 188.79772073800268,
+      "all_original_guards_held": false,
+      "original_abort": {
+        "elapsed_s": 1.2617500000000001,
+        "failed_checks": [
+          "table_original_load",
+          "active_table_rolling_share"
+        ]
+      },
+      "original_termination": null,
+      "original_final_phase": "start_thread_1",
+      "trace_sha256": "8e21e07d78ecf36f78bf091902e1a764fd3e0cba4de345e564323b542cd1f3fb",
+      "original_force_ledger_sha256": "8718f6def3d1637f1abd2ec98d5708a8626cf76a8c957911f250d2818acdf183",
+      "harness_source_sha256": "d5d6760f11673b68c8405db2dcb744d95ca07d739218f1ba4d21e8da1c874121",
+      "helper_source_sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "canonical281_proof_covers_output_only_harness": false,
+      "original_grip_references_preserved": true,
+      "formed_capture_qualified": false,
+      "actual_positive_formed_overlap_steps": 0,
+      "actual_loaded_interior_contact_steps": 0,
+      "opening_or_passive_reset_executed": false,
+      "nominal_overlap_range_m": [
+        0.0014744664097737156,
+        0.0015881392448985343
+      ],
+      "common_unchamfered_axial_span_overlap_threshold_m": 0.001992582346706593,
+      "native_actual_yaw_range_rad_from_independent_audit": [
+        -0.5541974623302262,
+        -0.3057730053388814
+      ],
+      "nominal_profile_scope": "Coaxial/centroid profile context only; not a full tilted bore-fit proof, actual loaded interior engagement, prescribed helix or causal isolation.",
+      "original_argv": [
+        "outputs/m8_table_supported/diagnostics/closed_forward_probe.py",
+        "--parent",
+        "outputs/m8_table_supported/face120_prefix_v1/insertion_trace.npz",
+        "--state-source",
+        "outputs/m8_table_supported/diagnostics/face120_seat_search_v1/checkpoint_trace.npz",
+        "--output",
+        "outputs/m8_table_supported/diagnostics/face120_closed_forward_v1"
+      ],
+      "renderer_sha256": "840e66b8bb474112f4036441bf72f9a72f5b6f1406422da6d9afba66f36bd02f",
+      "video_frames": 16,
+      "video_fps": 12,
+      "playback_speed": 1,
+      "original_yaw_counter_issue": "Original constant yaw-origin instrumentation offset retained unchanged; corrected independent reports and original_yaw_origin_note remain separate.",
+      "left_downward_position_offset_m": 0,
+      "executed_net_feed_schedule": {
+        "scope": "Executed native net-feed schedule derived from original ledger range/first sample and frozen source. Original declaration fields remain untouched.",
+        "first_original_native_net_feed_N": 0.26241400403581094,
+        "original_allstep_net_feed_range_N": [
+          0.26241400403581094,
+          0.26241400403581094
+        ],
+        "constant_bolt_weight_feed_from_first_cold_step": true,
+        "executed_feed_schedule": "Constant bolt-weight net feed from native step1; no forward ramp.",
+        "legacy_forward_start_ramp_hold_fields_not_executed": true,
+        "original_ledger_sha256": "8718f6def3d1637f1abd2ec98d5708a8626cf76a8c957911f250d2818acdf183",
+        "frozen_harness_sha256": "d5d6760f11673b68c8405db2dcb744d95ca07d739218f1ba4d21e8da1c874121"
+      },
+      "render_manifest_sha256": "6ca0b8c3bdf8defa971f3d8d749a8d1869b4d08b39a686715468291f16e4057f",
+      "independent_audit_binding_sha256": "a7dd6ed72dd1ebf2ae4bc290f801931c3fc031bfb68b30db8538767219625e41"
+    },
+    "face120_closed_forward_hold_v2": {
+      "scope": "Fresh cold forward checkpoint diagnostic from closed failed direction-event trial; no direction confirmation or capture inferred;  not a continuous full trajectory, not a warmstarted original native solve, not a splice or qualification result",
+      "closed": true,
+      "continuous_full_trajectory": false,
+      "canonical_model_reference_trace_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+      "actual_state_parent_trace_sha256": "0d87e71cc5f85a1210d5b6e3fc43484b6f48d0ecc08ae1e3f941d74acbc5ac3c",
+      "initial_saved_state_time_s": 9.949049999983483,
+      "initial_saved_state_index": 711,
+      "initial_qpos_qvel_sha256": "843b0e42486dac7b0a177940f7ec9d2a4e1c0735de2e7cd662ebe689cca36958",
+      "cold_init_note": "Exact post-integration archived qpos/qvel once into new MjData; initial arm ctrl reconstructed from archived last native motor commands, fixed closed finger ctrl from canonical parent; all ctrl overwritten by bounded controllers before first integration; qacc_warmstart and solver state default zero; one mj_forward initializes a new solve",
+      "warmstarts_or_original_solver_state_restored": false,
+      "native_duration_s": 2.5306,
+      "native_wall_seconds": 378.06707978500344,
+      "all_original_guards_held": false,
+      "original_abort": {
+        "elapsed_s": 2.5306,
+        "failed_checks": [
+          "bilateral_left_pad_load"
+        ]
+      },
+      "original_termination": null,
+      "original_final_phase": "start_thread_1",
+      "trace_sha256": "a3ae1e7e9c166e95bfdcdf93978737b0f2e28df0828753c9a67b4b85bfa5d9b9",
+      "original_force_ledger_sha256": "70fd4b265a101f5850c0df02b57436946afa0e46b4b78d127ecab9eb26f990e7",
+      "harness_source_sha256": "029ad06f4f55605b0e3c53c5e2c7116a0480db86f825ffff96f92d88f387de57",
+      "helper_source_sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "canonical281_proof_covers_output_only_harness": false,
+      "original_grip_references_preserved": true,
+      "formed_capture_qualified": false,
+      "actual_positive_formed_overlap_steps": 0,
+      "actual_loaded_interior_contact_steps": 0,
+      "opening_or_passive_reset_executed": false,
+      "nominal_overlap_range_m": [
+        0.00146758559451355,
+        0.0016131875011860149
+      ],
+      "common_unchamfered_axial_span_overlap_threshold_m": 0.001992582346706593,
+      "native_actual_yaw_range_rad_from_independent_audit": [
+        -0.5542249793680236,
+        -0.08067003210230217
+      ],
+      "nominal_profile_scope": "Coaxial/centroid profile context only; not a full tilted bore-fit proof, actual loaded interior engagement, prescribed helix or causal isolation.",
+      "original_argv": [
+        "outputs/m8_table_supported/diagnostics/closed_forward_hold_probe.py",
+        "--parent",
+        "outputs/m8_table_supported/face120_prefix_v1/insertion_trace.npz",
+        "--state-source",
+        "outputs/m8_table_supported/diagnostics/face120_seat_search_v1/checkpoint_trace.npz",
+        "--output",
+        "outputs/m8_table_supported/diagnostics/face120_closed_forward_hold_v2"
+      ],
+      "renderer_sha256": "840e66b8bb474112f4036441bf72f9a72f5b6f1406422da6d9afba66f36bd02f",
+      "video_frames": 31,
+      "video_fps": 12,
+      "playback_speed": 1,
+      "original_yaw_counter_issue": "No correction applied to original counter; independently verified origin.",
+      "left_downward_position_offset_m": 0.0001,
+      "executed_net_feed_schedule": {
+        "scope": "Executed native net-feed schedule derived from original ledger range/first sample and frozen source. Original declaration fields remain untouched.",
+        "first_original_native_net_feed_N": 0.26241400403581094,
+        "original_allstep_net_feed_range_N": [
+          0.26241400403581094,
+          0.26241400403581094
+        ],
+        "constant_bolt_weight_feed_from_first_cold_step": true,
+        "executed_feed_schedule": "Constant bolt-weight net feed from native step1; no forward ramp.",
+        "legacy_forward_start_ramp_hold_fields_not_executed": true,
+        "original_ledger_sha256": "70fd4b265a101f5850c0df02b57436946afa0e46b4b78d127ecab9eb26f990e7",
+        "frozen_harness_sha256": "029ad06f4f55605b0e3c53c5e2c7116a0480db86f825ffff96f92d88f387de57"
+      },
+      "render_manifest_sha256": "fee0269ce66a3d51504e87cafd994531793191b458181978471cc05adc4214dd",
+      "independent_audit_binding_sha256": "9979b3ca1a8720a7428e89cb64bc9f3bdb17e3ffa279114c53b37ba3c2459521"
+    }
+  },
+  "native_pipeline_complete": false,
+  "formed_capture_qualified": false,
+  "unspliced_full_trajectory_claim": false,
+  "live_v3_outputs_or_sources_touched": false,
+  "complete_original_force_and_state_archives_preserved": true,
+  "original_logs_preserved": true,
+  "all_artifacts_below45MB_no_chunks_needed": true,
+  "maximum_artifact_bytes": 12702456,
+  "independent_binding_hash_checks": 68,
+  "files": {
+    "canonical281_software_proof.json": {
+      "sha256": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+      "bytes": 7071
+    },
+    "canonical_prefix_published_producer_binding.json": {
+      "sha256": "217bb754ffeb4ed06970e6a1ffd436b62fa82212ad5ca0c79e6260ce654211d1",
+      "bytes": 7897
+    },
+    "canonical_prefix_reference_binding.json": {
+      "sha256": "1f019d4ec15835f71d30ca4bbfd0b866cf00c645e810b8537d1e57d8d260aa57",
+      "bytes": 54702
+    },
+    "canonical_prefix_validation_original.json": {
+      "sha256": "e2145096aa0a8878074a0a3a070cec043b1b9b6905965362161da645c27f2799",
+      "bytes": 778326
+    },
+    "face120_closed_forward_hold_v2/README.md": {
+      "sha256": "760a2bcc113ebe1f1d28090b22df80ad0d1209eb89d8821e4dd700c0add399cc",
+      "bytes": 1211
+    },
+    "face120_closed_forward_hold_v2/audit_sources/archived_diagnostic_auditors_software_proof.json": {
+      "sha256": "26af0b7de186adca77b16f6bee575544eff87362c4a78292a28df86d85e52671",
+      "bytes": 947
+    },
+    "face120_closed_forward_hold_v2/audit_sources/canonical281_software_proof.json": {
+      "sha256": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+      "bytes": 7071
+    },
+    "face120_closed_forward_hold_v2/audit_sources/cold_chain_auditors_software_proof.json": {
+      "sha256": "5f5ce483727187255cdf554e4ddf4e2f49dd95d176becd2d1b497fdb098910fd",
+      "bytes": 1049
+    },
+    "face120_closed_forward_hold_v2/audit_sources/independent_archived_native_force_audit.py": {
+      "sha256": "36f40e7b4ea11fe86f252281a2b77ebd13cabe5c786ca3eaa79f7f9a02072487",
+      "bytes": 13761
+    },
+    "face120_closed_forward_hold_v2/audit_sources/independent_archived_native_force_audit_v3.py": {
+      "sha256": "711647a84fe9518449c0f3eed82c0b2ec02652b28a0e972dc298d365d649a586",
+      "bytes": 14492
+    },
+    "face120_closed_forward_hold_v2/audit_sources/independent_archived_phase_depth_audit_v3.py": {
+      "sha256": "505b1ed6be80e7052cced5bdb1a721c334a93aed76ed40c5f4b1c41af5222c53",
+      "bytes": 6742
+    },
+    "face120_closed_forward_hold_v2/audit_sources/independent_cold_chain_audit.py": {
+      "sha256": "9a2cc4737d7f3960f4211ff93989ec2c502c473035b16a9943aa1017e6f4f3f7",
+      "bytes": 4534
+    },
+    "face120_closed_forward_hold_v2/audit_sources/independent_phase_depth_software_proof.json": {
+      "sha256": "ee12a2bfd7e9dcb65324720af72f2fd4e4cee106647e31e593883d3f211d9340",
+      "bytes": 685
+    },
+    "face120_closed_forward_hold_v2/audit_sources/independent_table_press_audit.py": {
+      "sha256": "3e46b3f00bbe67845e8f42b0f337b9a3f654e4fe6c69613ed6f7a988cbbd77e0",
+      "bytes": 6482
+    },
+    "face120_closed_forward_hold_v2/audit_sources/independent_yaw_counter_origin.py": {
+      "sha256": "7313b5acac8f57e81e45c0fbe1c72045c12b11c079c5a65f235b44287f38acc6",
+      "bytes": 2598
+    },
+    "face120_closed_forward_hold_v2/audit_sources/test_independent_archived_native_force_audit.py": {
+      "sha256": "5888ad13e47113536fd15b8f2cc06e10c1035b005072f316046d4e135e23c27d",
+      "bytes": 3990
+    },
+    "face120_closed_forward_hold_v2/audit_sources/test_independent_cold_chain_audit.py": {
+      "sha256": "f246f24816b9bbcf98e31bbcb88b37aba136b9c3dfecdeecdf4c4ac91ca0ad35",
+      "bytes": 4673
+    },
+    "face120_closed_forward_hold_v2/audit_sources/test_independent_table_press_audit.py": {
+      "sha256": "9e09d371138940e7c37ec5ed2b01330347d171ae9ec904edf474a58b2fa00a0d",
+      "bytes": 1306
+    },
+    "face120_closed_forward_hold_v2/audit_sources/test_independent_yaw_counter_origin.py": {
+      "sha256": "03e6a96ee49cbc801b44116c70374cf92a802cd78a79cfa0019c6660703eaba8",
+      "bytes": 1128
+    },
+    "face120_closed_forward_hold_v2/audit_sources/yaw_origin_and_press_auditors_software_proof.json": {
+      "sha256": "7f3ac92ee5a21308c7a844159b13b29fecc2d6ea3064fe16b606b5b4807321b4",
+      "bytes": 1496
+    },
+    "face120_closed_forward_hold_v2/checkpoint_trace.npz": {
+      "sha256": "a3ae1e7e9c166e95bfdcdf93978737b0f2e28df0828753c9a67b4b85bfa5d9b9",
+      "bytes": 5862509
+    },
+    "face120_closed_forward_hold_v2/declaration.json": {
+      "sha256": "8e9ee664ec716552267bc1956db9169e9566e7d21c7e30fa8abe39476a5c639d",
+      "bytes": 8849
+    },
+    "face120_closed_forward_hold_v2/declared_cold_initialization.npz": {
+      "sha256": "64074b58f4539aef564e16cb076c2a66d419a3bc5a2aeb3407a556e3269bcffb",
+      "bytes": 1362
+    },
+    "face120_closed_forward_hold_v2/diagnostic_source.py": {
+      "sha256": "029ad06f4f55605b0e3c53c5e2c7116a0480db86f825ffff96f92d88f387de57",
+      "bytes": 30872
+    },
+    "face120_closed_forward_hold_v2/executed_feed_schedule.json": {
+      "sha256": "c6344347dc3a6269ac20ab6601230d27e9262ed3cd4f009317575b8392fb2845",
+      "bytes": 726
+    },
+    "face120_closed_forward_hold_v2/independent_audit_binding.json": {
+      "sha256": "9979b3ca1a8720a7428e89cb64bc9f3bdb17e3ffa279114c53b37ba3c2459521",
+      "bytes": 4291
+    },
+    "face120_closed_forward_hold_v2/independent_native_force_audit.json": {
+      "sha256": "a3003fea504e38a7c0d199b91998c0363583e9acba733870d22b405336e98442",
+      "bytes": 9684
+    },
+    "face120_closed_forward_hold_v2/independent_phase_depth_audit.json": {
+      "sha256": "fc39e22e6b1e01fcf71e2e2a8e8fcc5e7bb1cea739ebbf037e474657c6daa735",
+      "bytes": 5175
+    },
+    "face120_closed_forward_hold_v2/independent_table_press_audit.json": {
+      "sha256": "82c9734381bcc56e3134d5e406979b4f3bed915a9f0a853e960bd31ebfbcbef2",
+      "bytes": 2799
+    },
+    "face120_closed_forward_hold_v2/observer_source.py": {
+      "sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "bytes": 17063
+    },
+    "face120_closed_forward_hold_v2/original_native_force_ledger.npz": {
+      "sha256": "70fd4b265a101f5850c0df02b57436946afa0e46b4b78d127ecab9eb26f990e7",
+      "bytes": 9716359
+    },
+    "face120_closed_forward_hold_v2/original_stdout_stderr.log": {
+      "sha256": "ca28ce08c1599ee49fd267f1e3d289efe8e22521be7de29f339c796cf67fa780",
+      "bytes": 6689
+    },
+    "face120_closed_forward_hold_v2/recorded_sources/yam_twin/kinematics.py": {
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+      "bytes": 2796
+    },
+    "face120_closed_forward_hold_v2/recorded_sources/yam_twin/m8_insertion_engagement.py": {
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "bytes": 4752
+    },
+    "face120_closed_forward_hold_v2/recorded_sources/yam_twin/m8_insertion_mechanics.py": {
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+      "bytes": 4321
+    },
+    "face120_closed_forward_hold_v2/recorded_sources/yam_twin/m8_insertion_scene.py": {
+      "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+      "bytes": 25139
+    },
+    "face120_closed_forward_hold_v2/recorded_sources/yam_twin/m8_insertion_simulation.py": {
+      "sha256": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294",
+      "bytes": 67946
+    },
+    "face120_closed_forward_hold_v2/recorded_sources/yam_twin/m8_scene.py": {
+      "sha256": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f",
+      "bytes": 20849
+    },
+    "face120_closed_forward_hold_v2/recorded_sources/yam_twin/m8_simulation.py": {
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+      "bytes": 30270
+    },
+    "face120_closed_forward_hold_v2/recorded_sources/yam_twin/m8_supported_scene.py": {
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+      "bytes": 7969
+    },
+    "face120_closed_forward_hold_v2/recorded_sources/yam_twin/m8_supported_simulation.py": {
+      "sha256": "0f652eb1cf245c21ba018a0d2156d8d7b6064e6cdf0611e051c4cdeb79f4cdfa",
+      "bytes": 81380
+    },
+    "face120_closed_forward_hold_v2/recorded_sources/yam_twin/m8_supported_start.py": {
+      "sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "bytes": 17063
+    },
+    "face120_closed_forward_hold_v2/render/audit_m8_insertion_trace.py": {
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+      "bytes": 30341
+    },
+    "face120_closed_forward_hold_v2/render/demo.gif": {
+      "sha256": "c29ed118136edc74d7a1ed1e27735063b76648265c6418b8c43de49981459902",
+      "bytes": 2456327
+    },
+    "face120_closed_forward_hold_v2/render/demo.mp4": {
+      "sha256": "c85a684d3cf33cad90360644d89806549b935c1549d3a53b9e8cb72bddd28074",
+      "bytes": 357704
+    },
+    "face120_closed_forward_hold_v2/render/endpoint_detail.png": {
+      "sha256": "d467bfc8749dbfdc6a3efb6c37145edc828f1780fa271e8571c8a1fcabe7e2a0",
+      "bytes": 133272
+    },
+    "face120_closed_forward_hold_v2/render/entry_detail.png": {
+      "sha256": "a240eac5c25e2abd209c14341d798042618a083e2e942a526908587d9a4adf2d",
+      "bytes": 138722
+    },
+    "face120_closed_forward_hold_v2/render/render_face120_cold_trials.py": {
+      "sha256": "840e66b8bb474112f4036441bf72f9a72f5b6f1406422da6d9afba66f36bd02f",
+      "bytes": 9473
+    },
+    "face120_closed_forward_hold_v2/render/render_manifest.json": {
+      "sha256": "fee0269ce66a3d51504e87cafd994531793191b458181978471cc05adc4214dd",
+      "bytes": 137702
+    },
+    "face120_closed_forward_hold_v2/render/runtime.py": {
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd",
+      "bytes": 2177
+    },
+    "face120_closed_forward_hold_v2/report.json": {
+      "sha256": "e38ef18e1f4a824efe601a051665f1bc4dde5ca06325ffcedfda8f2f0a1e6392",
+      "bytes": 43465
+    },
+    "face120_closed_forward_hold_v2/scene.xml": {
+      "sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+      "bytes": 43813
+    },
+    "face120_closed_forward_hold_v2/supported_scene.zip": {
+      "sha256": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+      "bytes": 5325454
+    },
+    "face120_closed_forward_v1/README.md": {
+      "sha256": "6ee01d1243689f8f57e3794da77ace3544372e2a73b4bdb6e21cb712815e4f3a",
+      "bytes": 1318
+    },
+    "face120_closed_forward_v1/audit_draft_sources/independent_archived_native_force_audit_v2_initial_raw_yaw_labels.py": {
+      "sha256": "1a0a3b71d8387adf6700059b9802d27d9547181440fad34cd8a6ad45cf1fc690",
+      "bytes": 14095
+    },
+    "face120_closed_forward_v1/audit_sources/archived_diagnostic_auditors_software_proof.json": {
+      "sha256": "26af0b7de186adca77b16f6bee575544eff87362c4a78292a28df86d85e52671",
+      "bytes": 947
+    },
+    "face120_closed_forward_v1/audit_sources/cold_chain_auditors_software_proof.json": {
+      "sha256": "5f5ce483727187255cdf554e4ddf4e2f49dd95d176becd2d1b497fdb098910fd",
+      "bytes": 1049
+    },
+    "face120_closed_forward_v1/audit_sources/independent_archived_native_force_audit.py": {
+      "sha256": "36f40e7b4ea11fe86f252281a2b77ebd13cabe5c786ca3eaa79f7f9a02072487",
+      "bytes": 13761
+    },
+    "face120_closed_forward_v1/audit_sources/independent_archived_native_force_audit_v2.py": {
+      "sha256": "9c05d684c0fcbf29ccab75722d357b24e0c2c68d7f96972e1965c83cc1983890",
+      "bytes": 14340
+    },
+    "face120_closed_forward_v1/audit_sources/independent_archived_phase_depth_audit_v2.py": {
+      "sha256": "2097cde782935104b03bdec6280916720eac2186591bbefe142a09b11e5bb892",
+      "bytes": 6590
+    },
+    "face120_closed_forward_v1/audit_sources/independent_cold_chain_audit.py": {
+      "sha256": "9a2cc4737d7f3960f4211ff93989ec2c502c473035b16a9943aa1017e6f4f3f7",
+      "bytes": 4534
+    },
+    "face120_closed_forward_v1/audit_sources/independent_phase_depth_software_proof.json": {
+      "sha256": "ee12a2bfd7e9dcb65324720af72f2fd4e4cee106647e31e593883d3f211d9340",
+      "bytes": 685
+    },
+    "face120_closed_forward_v1/audit_sources/test_independent_archived_native_force_audit.py": {
+      "sha256": "5888ad13e47113536fd15b8f2cc06e10c1035b005072f316046d4e135e23c27d",
+      "bytes": 3990
+    },
+    "face120_closed_forward_v1/audit_sources/test_independent_cold_chain_audit.py": {
+      "sha256": "f246f24816b9bbcf98e31bbcb88b37aba136b9c3dfecdeecdf4c4ac91ca0ad35",
+      "bytes": 4673
+    },
+    "face120_closed_forward_v1/checkpoint_trace.npz": {
+      "sha256": "8e21e07d78ecf36f78bf091902e1a764fd3e0cba4de345e564323b542cd1f3fb",
+      "bytes": 642390
+    },
+    "face120_closed_forward_v1/declaration.json": {
+      "sha256": "52c9b93c8a007bed64f220b68c197d235e991f5ab6b9a8d1dc553ef15394e81c",
+      "bytes": 7470
+    },
+    "face120_closed_forward_v1/declared_cold_initialization.npz": {
+      "sha256": "64074b58f4539aef564e16cb076c2a66d419a3bc5a2aeb3407a556e3269bcffb",
+      "bytes": 1362
+    },
+    "face120_closed_forward_v1/diagnostic_source.py": {
+      "sha256": "d5d6760f11673b68c8405db2dcb744d95ca07d739218f1ba4d21e8da1c874121",
+      "bytes": 28514
+    },
+    "face120_closed_forward_v1/executed_feed_schedule.json": {
+      "sha256": "9963e94b4b7ffac3aefe2723a16ad3518f4ab94ef1e064c8a4686176816cb426",
+      "bytes": 726
+    },
+    "face120_closed_forward_v1/independent_audit_binding.json": {
+      "sha256": "a7dd6ed72dd1ebf2ae4bc290f801931c3fc031bfb68b30db8538767219625e41",
+      "bytes": 3668
+    },
+    "face120_closed_forward_v1/independent_cold_chain_audit.json": {
+      "sha256": "9b55341301a486e8307a4c6d1f847e09830f310c764ad879472ba53cdc740e2d",
+      "bytes": 1076
+    },
+    "face120_closed_forward_v1/independent_failure_diagnosis.json": {
+      "sha256": "b1991320e917a0f4134b81578a0e404062701fb2b8f9f9a8a90190a51f9cc0e7",
+      "bytes": 976
+    },
+    "face120_closed_forward_v1/independent_native_force_audit.json": {
+      "sha256": "35fe5739f19416937c81c9540ac7a8b723d613611a9ceea6db2d4243957bad6b",
+      "bytes": 7298
+    },
+    "face120_closed_forward_v1/independent_native_force_audit_corrected_yaw_scope.json": {
+      "sha256": "b1989abc06cac825116f9389f63ad9b9373ec589adbdc7272d33b7a852070f1f",
+      "bytes": 7415
+    },
+    "face120_closed_forward_v1/independent_phase_depth_audit_corrected_yaw.json": {
+      "sha256": "9ea40b80f1aac29012ec835c3d6573455412d0c8d7a9f0e4e0e8aa50d217f56a",
+      "bytes": 5002
+    },
+    "face120_closed_forward_v1/observer_source.py": {
+      "sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "bytes": 17063
+    },
+    "face120_closed_forward_v1/original_native_force_ledger.npz": {
+      "sha256": "8718f6def3d1637f1abd2ec98d5708a8626cf76a8c957911f250d2818acdf183",
+      "bytes": 4917356
+    },
+    "face120_closed_forward_v1/original_stdout_stderr.log": {
+      "sha256": "139a52ba5d7ec6e342346b84fc8f4d7fa4b33370dada8a222cbad9429c2d9306",
+      "bytes": 4923
+    },
+    "face120_closed_forward_v1/original_yaw_origin_note.json": {
+      "sha256": "2730f5c4d00bfc96220bf65258c28a2941f3ed40a95dae404dbc8649c9c3de29",
+      "bytes": 919
+    },
+    "face120_closed_forward_v1/recorded_sources/yam_twin/kinematics.py": {
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+      "bytes": 2796
+    },
+    "face120_closed_forward_v1/recorded_sources/yam_twin/m8_insertion_engagement.py": {
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "bytes": 4752
+    },
+    "face120_closed_forward_v1/recorded_sources/yam_twin/m8_insertion_mechanics.py": {
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+      "bytes": 4321
+    },
+    "face120_closed_forward_v1/recorded_sources/yam_twin/m8_insertion_scene.py": {
+      "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+      "bytes": 25139
+    },
+    "face120_closed_forward_v1/recorded_sources/yam_twin/m8_insertion_simulation.py": {
+      "sha256": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294",
+      "bytes": 67946
+    },
+    "face120_closed_forward_v1/recorded_sources/yam_twin/m8_scene.py": {
+      "sha256": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f",
+      "bytes": 20849
+    },
+    "face120_closed_forward_v1/recorded_sources/yam_twin/m8_simulation.py": {
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+      "bytes": 30270
+    },
+    "face120_closed_forward_v1/recorded_sources/yam_twin/m8_supported_scene.py": {
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+      "bytes": 7969
+    },
+    "face120_closed_forward_v1/recorded_sources/yam_twin/m8_supported_simulation.py": {
+      "sha256": "0f652eb1cf245c21ba018a0d2156d8d7b6064e6cdf0611e051c4cdeb79f4cdfa",
+      "bytes": 81380
+    },
+    "face120_closed_forward_v1/recorded_sources/yam_twin/m8_supported_start.py": {
+      "sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "bytes": 17063
+    },
+    "face120_closed_forward_v1/render/audit_m8_insertion_trace.py": {
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+      "bytes": 30341
+    },
+    "face120_closed_forward_v1/render/demo.gif": {
+      "sha256": "e88f83da72e52d92f2ed1ec4bbed08f4fea6bb0cb471771cb8e8a26f9ad82c36",
+      "bytes": 1275055
+    },
+    "face120_closed_forward_v1/render/demo.mp4": {
+      "sha256": "1d4eb72108cd2b4d7162264e3a71be8f75deabadbef3fb52aaf19dd259554a93",
+      "bytes": 239230
+    },
+    "face120_closed_forward_v1/render/endpoint_detail.png": {
+      "sha256": "5d08d15b285acf5cf1b1d1b1915fe8d6a11071bdde86dccb083c3e09d68dadff",
+      "bytes": 135857
+    },
+    "face120_closed_forward_v1/render/entry_detail.png": {
+      "sha256": "0de94d07c1960e09bc611a32ead38e5fae7fd3f0bf9024490da2d40359ca9d9a",
+      "bytes": 138038
+    },
+    "face120_closed_forward_v1/render/render_face120_cold_trials.py": {
+      "sha256": "840e66b8bb474112f4036441bf72f9a72f5b6f1406422da6d9afba66f36bd02f",
+      "bytes": 9473
+    },
+    "face120_closed_forward_v1/render/render_manifest.json": {
+      "sha256": "6ca0b8c3bdf8defa971f3d8d749a8d1869b4d08b39a686715468291f16e4057f",
+      "bytes": 28904
+    },
+    "face120_closed_forward_v1/render/runtime.py": {
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd",
+      "bytes": 2177
+    },
+    "face120_closed_forward_v1/report.json": {
+      "sha256": "3fe4cb5f56b3fc87e75f2a9982aca33a05b91474aa0aa6475f857ffc63dc83e4",
+      "bytes": 19748
+    },
+    "face120_closed_forward_v1/scene.xml": {
+      "sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+      "bytes": 43813
+    },
+    "face120_closed_forward_v1/supported_scene.zip": {
+      "sha256": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+      "bytes": 5325454
+    },
+    "face120_seat_search_v1/README.md": {
+      "sha256": "70ad057a4c13320ea566be53523847273a7ae25aaf55a11423cd9502b87c659f",
+      "bytes": 1195
+    },
+    "face120_seat_search_v1/audit_sources/archived_diagnostic_auditors_software_proof.json": {
+      "sha256": "26af0b7de186adca77b16f6bee575544eff87362c4a78292a28df86d85e52671",
+      "bytes": 947
+    },
+    "face120_seat_search_v1/audit_sources/canonical281_software_proof.json": {
+      "sha256": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3",
+      "bytes": 7071
+    },
+    "face120_seat_search_v1/audit_sources/independent_archived_native_force_audit.py": {
+      "sha256": "36f40e7b4ea11fe86f252281a2b77ebd13cabe5c786ca3eaa79f7f9a02072487",
+      "bytes": 13761
+    },
+    "face120_seat_search_v1/audit_sources/independent_archived_phase_depth_audit.py": {
+      "sha256": "3e400c59085d62f4e2872830a30e6a2f7c4a6e3b36c174a4a61e642e28458148",
+      "bytes": 6008
+    },
+    "face120_seat_search_v1/audit_sources/independent_phase_depth_software_proof.json": {
+      "sha256": "ee12a2bfd7e9dcb65324720af72f2fd4e4cee106647e31e593883d3f211d9340",
+      "bytes": 685
+    },
+    "face120_seat_search_v1/audit_sources/independent_seat_direction_audit.py": {
+      "sha256": "2e16a94029851be8f9bcbc96704fee637484a1e072195dee6dade658e28b57d6",
+      "bytes": 5419
+    },
+    "face120_seat_search_v1/audit_sources/test_independent_archived_native_force_audit.py": {
+      "sha256": "5888ad13e47113536fd15b8f2cc06e10c1035b005072f316046d4e135e23c27d",
+      "bytes": 3990
+    },
+    "face120_seat_search_v1/audit_sources/test_independent_phase_depth_audit.py": {
+      "sha256": "201b8e9afba1b6246f872bbef3d558076890836f527cf00606ee449448c192ff",
+      "bytes": 1096
+    },
+    "face120_seat_search_v1/checkpoint_trace.npz": {
+      "sha256": "0d87e71cc5f85a1210d5b6e3fc43484b6f48d0ecc08ae1e3f941d74acbc5ac3c",
+      "bytes": 2313788
+    },
+    "face120_seat_search_v1/declaration.json": {
+      "sha256": "be81c03711ba809cf2bf3cb4255dfbe1ae4a39ad4342537b6e241ec4b7e24cef",
+      "bytes": 6564
+    },
+    "face120_seat_search_v1/declared_cold_initialization.npz": {
+      "sha256": "e23194676328ca5137bad7dc3a6de6329ad20e9ba9becf0bd0a7456bd447f143",
+      "bytes": 1364
+    },
+    "face120_seat_search_v1/diagnostic_source.py": {
+      "sha256": "c2d8f010c96909a605d13b692f36c431462cbc01f7deb04e209554f719ee2202",
+      "bytes": 26813
+    },
+    "face120_seat_search_v1/executed_feed_schedule.json": {
+      "sha256": "b32a2b6de9bbb0fc48595a14d24d61efbd2fdb919f277f1f24b14ee57cfa0d8e",
+      "bytes": 717
+    },
+    "face120_seat_search_v1/independent_audit_binding.json": {
+      "sha256": "e618beeec1842c2775326923340ca14ec97a7286ca4f692800731dec84a685c1",
+      "bytes": 3732
+    },
+    "face120_seat_search_v1/independent_native_force_audit.json": {
+      "sha256": "21dbded9badd9ff56ae051afc5253efa055088d8769659e4049cfa072ff81f13",
+      "bytes": 7747
+    },
+    "face120_seat_search_v1/independent_phase_depth_audit.json": {
+      "sha256": "f951a24a791f77844ea02fe7b604a780b5a17033dfe4608173668641bc293244",
+      "bytes": 3849
+    },
+    "face120_seat_search_v1/independent_seat_direction_audit.json": {
+      "sha256": "5d20b4ee46ff29492d599325bf9735383e41bb0f6dab0b3fd8e580dc035f7b8b",
+      "bytes": 2829
+    },
+    "face120_seat_search_v1/observer_source.py": {
+      "sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "bytes": 17063
+    },
+    "face120_seat_search_v1/original_native_force_ledger.npz": {
+      "sha256": "3576500fc126be22a4e8b0937b5ab489105b3062aee6f8e206053cec9775d6ae",
+      "bytes": 12702456
+    },
+    "face120_seat_search_v1/original_stdout_stderr.log": {
+      "sha256": "5dfca38451784a886ab064df3b6e4f009cf291afd2a05d3db79f92077022d03f",
+      "bytes": 8044
+    },
+    "face120_seat_search_v1/recorded_sources/yam_twin/kinematics.py": {
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+      "bytes": 2796
+    },
+    "face120_seat_search_v1/recorded_sources/yam_twin/m8_insertion_engagement.py": {
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "bytes": 4752
+    },
+    "face120_seat_search_v1/recorded_sources/yam_twin/m8_insertion_mechanics.py": {
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+      "bytes": 4321
+    },
+    "face120_seat_search_v1/recorded_sources/yam_twin/m8_insertion_scene.py": {
+      "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+      "bytes": 25139
+    },
+    "face120_seat_search_v1/recorded_sources/yam_twin/m8_insertion_simulation.py": {
+      "sha256": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294",
+      "bytes": 67946
+    },
+    "face120_seat_search_v1/recorded_sources/yam_twin/m8_scene.py": {
+      "sha256": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f",
+      "bytes": 20849
+    },
+    "face120_seat_search_v1/recorded_sources/yam_twin/m8_simulation.py": {
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+      "bytes": 30270
+    },
+    "face120_seat_search_v1/recorded_sources/yam_twin/m8_supported_scene.py": {
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+      "bytes": 7969
+    },
+    "face120_seat_search_v1/recorded_sources/yam_twin/m8_supported_simulation.py": {
+      "sha256": "0f652eb1cf245c21ba018a0d2156d8d7b6064e6cdf0611e051c4cdeb79f4cdfa",
+      "bytes": 81380
+    },
+    "face120_seat_search_v1/recorded_sources/yam_twin/m8_supported_start.py": {
+      "sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7",
+      "bytes": 17063
+    },
+    "face120_seat_search_v1/render/audit_m8_insertion_trace.py": {
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+      "bytes": 30341
+    },
+    "face120_seat_search_v1/render/demo.gif": {
+      "sha256": "2f13ec2d9e3addddd98126ab617a2c703c0e2b16f73652e5c59b069138eb1718",
+      "bytes": 3410893
+    },
+    "face120_seat_search_v1/render/demo.mp4": {
+      "sha256": "6b03395beeddf8fd1a074108db6b27424fc8ff0123a9379d740cb8ecf02e1a10",
+      "bytes": 501154
+    },
+    "face120_seat_search_v1/render/endpoint_detail.png": {
+      "sha256": "3c41f82f5a2be17078f6b8229cc9fbdf8b21081bf1380cc70fb26c9ffab33281",
+      "bytes": 138433
+    },
+    "face120_seat_search_v1/render/entry_detail.png": {
+      "sha256": "76493c35089c0ad8dfc5abbdeecd4cdc3ba6525bf47aefdc4df269420716f581",
+      "bytes": 142484
+    },
+    "face120_seat_search_v1/render/render_face120_cold_trials.py": {
+      "sha256": "840e66b8bb474112f4036441bf72f9a72f5b6f1406422da6d9afba66f36bd02f",
+      "bytes": 9473
+    },
+    "face120_seat_search_v1/render/render_manifest.json": {
+      "sha256": "518ae4204a24be10e62c9fb2aeda6790320ff1c7c6effc114c57927b2092f17f",
+      "bytes": 29361
+    },
+    "face120_seat_search_v1/render/runtime.py": {
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd",
+      "bytes": 2177
+    },
+    "face120_seat_search_v1/report.json": {
+      "sha256": "38aec316ce9db72645c675b3233d5b0a1852b05ff63365fa2ae6668a86c6ad4c",
+      "bytes": 21655
+    },
+    "face120_seat_search_v1/scene.xml": {
+      "sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+      "bytes": 43813
+    },
+    "face120_seat_search_v1/supported_scene.zip": {
+      "sha256": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+      "bytes": 5325454
+    },
+    "package_source.py": {
+      "sha256": "24d3eed6017adfa35ba18020ccdea3a43a329619a90d00654d0b1f758deffe1c",
+      "bytes": 14479
+    },
+    "publication_readme_source.md": {
+      "sha256": "bb32d7dc4a2feb8c4834b89cd3d497869d227f2f06a657671c38ca3841c6e4c1",
+      "bytes": 10487
+    }
+  }
+}
