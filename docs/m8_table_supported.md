@@ -33,8 +33,17 @@ and [dense boundary chart](../media/m8_table_supported/diagnostics/crest_seat_se
 The 17 reader/mass regressions, 50 C2-helper tests, historical 69 contracts
 and 402-test canonical proof retain separate scopes. The 19-state held-finger
 mass diagnostic solves no dynamics/contacts and executes no feedforward.
-V5 is a separate prototype with 67 standalone tests, native execution pending
-and no physical result.
+The separate [V5 stopped-direction snapshot](../media/m8_table_supported/diagnostics/crest_seat_search_v5_stopped_progress/README.md)
+records **1.90625 s**, a completed 150 ms C2 brake and fresh 100 ms quiet/load
+gate, with radial error **15.317 µm** and tilt **1.027 mrad**:
+[normal 1× clip](../media/m8_table_supported/diagnostics/crest_seat_search_v5_stopped_progress/render/demo.gif)
+and [actual endpoint](../media/m8_table_supported/diagnostics/crest_seat_search_v5_stopped_progress/render/endpoint_detail.png).
+Formed overlap/interior contacts are zero at this stopped prefix. The trial
+subsequently closed at 7.3566 s without an abort, after 0.553 mm forward
+advance; final formed overlap is only 0.0216 mm with zero interior contacts.
+The copied prefix contains sparse records; complete dense ledgers and the
+independent audit are being prepared for publication. Its 67+6 synthetic
+proofs remain separate from historical 69/50 and canonical 402.
 These crest trials are distinct from the older opening/reset V4 diagnostic below.
 Use the [cold-search handoff](m8_supported_agent_handoff.md#separate-cold-crest-search-diagnostics)
 for exact frozen sources, restoration/replay differences and proof scopes.

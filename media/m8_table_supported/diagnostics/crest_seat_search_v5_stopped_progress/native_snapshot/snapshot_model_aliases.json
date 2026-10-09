@@ -1,0 +1,11 @@
+{
+  "scope": "Byte-exact archive-model-loader filename alias only; no native state/model/source changes. Every original copied file and original progress_manifest/snapshot_binding remain unchanged.",
+  "aliases": {
+    "scene_source.py": {
+      "copied_from": "recorded_sources/yam_twin/m8_supported_scene.py",
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4"
+    }
+  },
+  "original_snapshot_binding_sha256": "0677f7f870f0ad8667116f2274d169b93d6b0f74b7c82b42fb5b0a00c00a20c0",
+  "original_progress_manifest_sha256": "0c2a0785efc665556af80acd27ce1d13307a0c8476b848d41dcea1ae7de09aaf"
+}

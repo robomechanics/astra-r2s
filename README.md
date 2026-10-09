@@ -90,8 +90,17 @@ retain the failure and exact repeat/replay instructions. Its 50 pure braking
 tests and separate 17 reader/mass regressions do not extend the historical
 69 observer contracts or 402-test canonical proof. The 19-state held-finger
 mass estimate is a no-solve approximation; no feedforward ran in V4.
-V5 is a separate prototype with 67 standalone tests; native execution is
-pending, with no physical result.
+The separate V5 cold trial now has an actual
+[1.90625 s stopped-direction progress clip](media/m8_table_supported/diagnostics/crest_seat_search_v5_stopped_progress/render/demo.gif),
+[endpoint screenshot](media/m8_table_supported/diagnostics/crest_seat_search_v5_stopped_progress/render/endpoint_detail.png)
+and [immutable recording/replay instructions](media/m8_table_supported/diagnostics/crest_seat_search_v5_stopped_progress/README.md).
+It completes the 150 ms brake and a fresh 100 ms quiet/load gate, with
+15.317 µm radial error; formed overlap/interior contacts remain zero.
+The trial subsequently closed at 7.3566 s without an abort, after 0.553 mm
+forward advance; formed overlap is only 0.0216 mm with zero interior contacts.
+This progress package contains sparse records; complete dense ledgers and
+the independent audit are being prepared for publication. Its 67+6
+synthetic checks remain separate from 69/50/402 and do not qualify capture.
 The [complete closed failed attempt](media/m8_table_supported/full_canonical_v1_failed_evidence/README.md)
 has [normal 1× GIF](media/m8_table_supported/full_canonical_v1_failed_evidence/demo.gif),
 [MP4](media/m8_table_supported/full_canonical_v1_failed_evidence/demo.mp4),

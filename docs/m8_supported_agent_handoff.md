@@ -353,5 +353,30 @@ accelerations zero; it excludes bolt inertia, Jdot and calibration-derivative
 reestimation. It is a prospective capacity estimate, not executed feedforward
 or proof of the sole cause of drift. Combined 8 N / 2 N·m and native motor caps
 remain required. No V4 readiness, forward scan, capture or full completion is
-claimed. V5 is a separate output-only prototype with 67 standalone tests and
-native execution pending; it supplies no physical result or capture claim.
+claimed.
+
+The separate [V5 stopped-direction progress record](../media/m8_table_supported/diagnostics/crest_seat_search_v5_stopped_progress/README.md)
+ends at **1.90625 s**, after the actual 150 ms brake and a fresh 100 ms quiet/
+load gate. Its [normal 1× clip](../media/m8_table_supported/diagnostics/crest_seat_search_v5_stopped_progress/render/demo.gif)
+and [actual endpoint](../media/m8_table_supported/diagnostics/crest_seat_search_v5_stopped_progress/render/endpoint_detail.png)
+record 15.317 µm radial error, 1.027 mrad tilt and the original controller's
+stopped-direction event. The sampled window reports 103.646% mean thread
+reaction of bolt weight, 0.4851% positive hand support and 100% loaded duty;
+formed overlap/interior contacts remain zero. This is shallow-entry progress,
+not engagement, capture/reset or a fresh complete trajectory.
+
+The trial subsequently closed at **7.3566 s**, after **147,132 native ticks**,
+without an abort. Its forward turn advanced **0.553 mm** over **2.84294 rad**;
+final formed overlap is only **0.0216 mm** with **zero interior contacts**.
+Full capture, passive opening/reset and a fresh complete trajectory remain
+unqualified. The immutable prefix preserves sparse original force and
+executed inertia-command records; every-step dense ledgers were pending at
+capture. Complete ledgers and the independent audit are being prepared for
+publication.
+Its 18 experimental-source identities and 67+6 synthetic proofs stay separate
+from the unchanged canonical 65-file/402 proof and historical 69/50 tests.
+Use the [recording replay recipe](../media/m8_table_supported/diagnostics/crest_seat_search_v5_stopped_progress/README.md#verify-and-replay-this-recording):
+copy the COMPLETE progress package into an isolated 6e7 checkout and invoke
+its archived renderer with `--repository-root "$PWD" --mode progress`.
+That refreshes recorded geometry only, with no integration, force solve or
+controller execution. It supplies no qualified native-repeat result.

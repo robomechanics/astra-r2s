@@ -1,0 +1,15 @@
+{
+  "scope": "Read-only original saved states/sampled metadata/media encoding identities. No native integration, physics audit, dense-force/FF-ledger inference or closed-rollout qualification.",
+  "passed": true,
+  "trajectory_sha256": "4104572d66c7aa7b04e029f91948a3998f241fff340aae3a23d3412bef1fe1fa",
+  "render_manifest_sha256": "4864e655bb0d0457b7d4770d87c83aea058b21674a3e6be3db2030c8449ce353",
+  "actual_saved_state_stills": 4,
+  "all_original_sample_qpos_qvel_hashes_exact": true,
+  "all23_frame_indices_times_exact": true,
+  "mp4_frames": 23,
+  "mp4_fps": 12.0,
+  "mp4_encoded_duration_s": 1.9166666666666667,
+  "gif_duration_ms": 1920,
+  "original_snapshot_bytes_unchanged": true,
+  "source_sha256": "bdf8576360109a2f86cf3b57ebe35966934809098e6ea4471fd331baa7a1b632"
+}
