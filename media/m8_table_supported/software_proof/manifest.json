@@ -1,0 +1,17 @@
+{
+  "scope": "210 tests after additive table-supported controller, scene and auditor, at unchanged source hashes. Earlier first-demo181 and native176 proofs remain unchanged. No full supported trajectory qualification yet.",
+  "files": {
+    "verify_sources.py": {
+      "bytes": 1491,
+      "sha256": "154c1f2b4256ec814c89cb90cbeba1a1c4f9969524375acc2bf67280405e59d6"
+    },
+    "software_tests.log": {
+      "bytes": 1020,
+      "sha256": "60cac018364a87a13560ae8ffe7da0851c550017b79b87ce5ac13d01dde5b3de"
+    },
+    "software_tests.json": {
+      "bytes": 6713,
+      "sha256": "31a9d9adb1732eccff9fbedd359f7bb72f2cf08775eca7b7119faaa7fb52d454"
+    }
+  }
+}

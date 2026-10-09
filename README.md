@@ -30,8 +30,12 @@ with peak axial drift **0.178 / 0.424 µm**. Independent saved-pose audits
 check all four resets. The head remains unseated; full tightening/preload,
 hardware calibration and broad policy-training fidelity remain unqualified.
 
-**181 current software tests pass.** The completed native trial retains its
-separate historical 176-test source proof. Policy success does not enforce
+**210 current software tests pass** after the additive table-supported scene,
+controller and auditor. The first-demo publication retains its separate
+[181-test proof](media/m8_table_pickup/software_tests.json), and the completed
+native trial retains its historical
+[176-test source proof](media/m8_table_pickup/full/software_tests.json).
+Policy success does not enforce
 the demo's open-release/reset sequence or strict zero-gap left-pad criterion;
 a success flag does not certify those checks.
 
@@ -47,6 +51,17 @@ its peak reported depth changes **45.02%** with contact-search refinement.
 Older load/search failures also remain. See
 [the numerical comparison](media/m8_insertion/refinement/README.md) and
 [mechanics status](docs/m8_status.md) before using this for training.
+
+## Separate table-supported approach in progress
+
+The left arm can stabilize a block that stays on the solid table.
+The [actual 1.65 s stabilization clip](media/m8_table_supported/progress_stabilized/demo.gif)
+records 99.072% mean block weight on the table, with 0.928% mean positive
+upward left-hand load. It has not attempted bolt pickup or threading;
+only one active tick follows stabilization acquisition. See the
+[separate guide and run/replay instructions](docs/m8_table_supported.md),
+[independent pilot audit](media/m8_table_supported/progress_stabilized_audit)
+and [current 210-test source proof](media/m8_table_supported/software_proof).
 
 ## Earlier left-touching block rollout
 
@@ -145,7 +160,7 @@ scripts/run_m8.sh -m thread_lab.load_benchmark --help
 ```
 
 `thread_lab.validate` retains strict physics gates and can exit with failure.
-The current source passes **181 software tests**. Software tests, numerical geometry checks,
+The current source passes **210 software tests**. Software tests, numerical geometry checks,
 and physics acceptance answer different questions.
 [Setup and engine provenance](docs/m8_setup.md) explain the separate runtimes.
 

@@ -1,0 +1,40 @@
+{
+  "status": "independent_partial_stabilization_audit",
+  "parent_progress_package": "media/m8_table_supported/progress_stabilized",
+  "parent_original_files_unchanged": true,
+  "parent_file_sha256": {
+    "trace.npz": "b8dfa45c6c9e4dc51916c0788aa34c9b392b0b00aa45e641756c95e0860234aa",
+    "validation_original.json.txt": "da2a08b7261808cf98778bce35b72fc38379599f86f88da15380259c60f4a94b",
+    "validation.json": "72f5da8b2f02f1da2a9ef38ea02256b9dbbb18053d4c655a8293edb6fa75efe9",
+    "validation_serialization.json": "a05488a5f0b15c6dd4c6f2612a5772b59746710868a4e21cb21c167fc8df8a2d",
+    "scene.xml": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "scene_source.py": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+    "controller_source.py": "189009b40d959325873bc6d215f9031ce9546cf56e01fcfd6b11ada32ef99e6d",
+    "table_support_force_history.npz": "2a7a3d2203ed0c99a149dce3929281bdf5df238a57948d58226c4d68bde99573",
+    "left_pad_force_history.npz": "058399b825d973c0237bd1deec8fdc0f877abb8cd14a4befe29a074b04f0502b",
+    "progress_identity.json": "f89a15b5d47bbebb28b695ef689e09a191f274cb3a844176988e1014d681d25d",
+    "SHA256SUMS": "c48957b9795e5463827819153a87bb693783f154036459768c6e3579f999c9d9"
+  },
+  "auditor_source_sha256": "f24aaa56d8ac9fd16777b2873244532789af0455c05afb4114697343311ba487",
+  "independent_audit_sha256": "fdc46d706a814079615f721471a83fd9fbb917887c7d0a5f8e2d7d4c96f1bd8b",
+  "audit_source_dependencies_sha256": {
+    "audit_sources/audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+    "audit_sources/runtime.py": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+  },
+  "model_fingerprint": "dd44ffab2beade32ed4682adb551fdf077dd97d4140bb2794cc995effe35a9ca",
+  "model_xml_sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+  "controller_sha256": "14e2d7921e930a0088dfc8e974e8b18a27ec9b8f778f3c7bd07d2a672a156a2c",
+  "controller_module_sha256": "189009b40d959325873bc6d215f9031ce9546cf56e01fcfd6b11ada32ef99e6d",
+  "scene_source_sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+  "original_validation_partial": true,
+  "original_validation_passed": false,
+  "independent_overall_passed": false,
+  "end_time_s": 1.6500000000012698,
+  "last_phase": "settle_left_block",
+  "post_acquisition_active_substeps": 1,
+  "scope": "Independent audit of the original four-phase, 1.65 s native left-stabilization pilot. Pre-bolt native table weight sharing, frame/source identities, finite actuation, passive workpieces, table masks and saved geometry are validated. Whole-task and bilateral preload checks cover only the selected pilot, including one active post-acquisition substep. No right pickup, M8 engagement, qualified turn or unsupported reset was attempted; overall audit remains false.",
+  "source_history_note": "The exact earlier controller/source bytes in the parent pilot archive are authoritative. The current supported controller has subsequently changed; this audit does not relabel the pilot as a newer run.",
+  "published_package_relocation_verified": true,
+  "relocated_package_audit_sha256": "866e3de62493b5b47958418db021b69809e410170b7fceb8a4952db13fe1163b",
+  "relocation_check_results_match_original": true
+}

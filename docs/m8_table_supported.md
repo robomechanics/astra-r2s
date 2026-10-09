@@ -1,0 +1,266 @@
+# M8 assembly with a table-supported block
+
+This separate second trajectory leaves the female-threaded block on a solid
+table. The left YAM approaches and clamps its sides to stabilize it; the
+right YAM picks up the separate M8 × 1.25 bolt and attempts the same physical
+thread-start, turn, open-reset and regrasp sequence. Table contact must carry
+the block's weight throughout the task. The block remains a free body.
+
+The [completed first trajectory](yam_m8_insertion.md) picks up and carries the
+block. Its controller, default environment and evidence remain intact. Use
+the [first-trajectory handoff](m8_agent_handoff.md) to reproduce that result.
+Its successful threading measurements and historical software proofs do not
+establish completion of this new table-supported trajectory.
+
+[![Actual native approach and table-supported stabilization](../media/m8_table_supported/progress_stabilized/demo.gif)](../media/m8_table_supported/progress_stabilized/demo.mp4)
+
+[Normal 1× pilot video](../media/m8_table_supported/progress_stabilized/demo.mp4) ·
+[Actual final screenshot](../media/m8_table_supported/progress_stabilized/demo.png) ·
+[Closed progress evidence](../media/m8_table_supported/progress_stabilized)
+
+## Current evidence scope
+
+The actual four-phase native stabilization pilot is closed. It simulated
+**1.65 s** in **100.24 s** CPU wall time, with `aborted=null`, `partial=true`
+and original overall `passed=false`. The later bolt/thread phases were
+intentionally omitted. Its actual final settled load window reports:
+
+| Quantity | Measurement |
+| --- | ---: |
+| Block weight | 0.998797 N |
+| Mean table upward force over the final 100.05 ms | 0.989528 N (99.072% of block weight) |
+| Mean positive upward left-hand force over that window | 0.009269 N (0.928% of block weight) |
+| Loaded table duty over that window | 100% |
+| Bilateral pad normals at actual acquisition | 15.999 / 15.990 N |
+
+The block moves less than 0.8 µm from its initial position, with no upward
+lift and no unexpected native contacts. The left reference is acquired at
+the very end of `settle_left_block`; only **one 50 µs post-acquisition active
+tick** exists in this pilot. Its passing active-load/pad checks therefore
+establish no sustained whole-task result. The closed original trace and
+validation are under `outputs/m8_table_supported/stabilization_v1/`.
+It proves actual approach/closure and measured tabletop weight bearing
+before bolt pickup, not thread capture, lead, reset or completed assembly.
+
+The pilot preserves all 33,000 original native support-force steps. Its
+closed trace SHA-256 is
+`b8dfa45c6c9e4dc51916c0788aa34c9b392b0b00aa45e641756c95e0860234aa`;
+its original validation SHA-256 is
+`da2a08b7261808cf98778bce35b72fc38379599f86f88da15380259c60f4a94b`.
+Those identify the acquisition pilot, not a future complete trajectory.
+
+The earlier isolated contact diagnostic simulated 0.65 s and ended with
+1.088523 N upward table force, −0.089738 N left-pad vertical force and
+16.045 / 15.951 N pad normals. Its slightly downward clamp load explains the
+table force above block weight. No unintended contacts appeared in its
+5 ms samples. That narrower local diagnostic is under
+`outputs/m8_supported/scene_geometry_probe/native_support_diagnostic_v2/`,
+with explicit scope, exact source/runtime snapshots and checksums. Its NPZ
+contains only the final qpos/qvel, not an end-to-end trajectory or an
+every-substep force archive. It does not replace the actual stabilization
+pilot or qualify unsampled clearance.
+
+The [published progress package](../media/m8_table_supported/progress_stabilized)
+replays the actual final state at 1.65 s and the short pilot at normal 1×
+speed. It preserves the original trace, exact pilot sources, native force
+ledger, render/state identities and checksums. Its
+[serialization record](../media/m8_table_supported/progress_stabilized/validation_serialization.json)
+maps only two unobserved right-transport minima from `Infinity` to `null`
+for strict JSON; the byte-exact original report remains
+`validation_original.json.txt`. No force measurement or failed outcome changes.
+
+The [separate independent pilot audit](../media/m8_table_supported/progress_stabilized_audit)
+validates original load/frame/source identities, passive workpieces, finite
+actuation, enabled table masks and saved geometry for the selected four
+phases. Its repeat against the published progress package reproduces the
+same check outcomes. Original and independent overall results remain false
+because the complete sequence was not executed. Its one active tick does
+not establish sustained support.
+
+The pilot's recorded source archive remains authoritative: the supported
+controller changed afterward. The current additive scene/controller/auditor
+source is frozen and passes **210 software tests** in **80.07 s** wrapper
+time, with unchanged source hashes. The
+[software result](../media/m8_table_supported/software_proof/software_tests.json),
+[log](../media/m8_table_supported/software_proof/software_tests.log) and
+[manifest/verifier](../media/m8_table_supported/software_proof/manifest.json)
+bind that proof. The first publication's 181-test proof and the completed
+first native trial's 176-test proof remain separate and unchanged.
+
+No complete table-supported bolt/thread rollout has been qualified yet.
+Software tests and a stabilization clip cannot stand in for successful
+threading or hardware fidelity.
+
+## Scene and physical support
+
+The same 20 × 120 × 16 mm female block lies flat on the real tabletop, rotated
+90° in the table plane. Its center is approximately (0.300, −0.010, 0.008) m;
+the bore center is (0.350, −0.010, 0.008) m. The declared 10 nm initial resting
+overlap creates a native candidate, and gravity establishes support. No
+support is hidden inside the bore and no weld connects the block to the table.
+
+The left clamp is at the opposite end, approximately
+(0.255, −0.010, 0.014) m. The native hand approaches from the side at 30°;
+its jaw normal is horizontal along world Y. The 18.4 mm commanded closed
+aperture clamps the 20 mm width and keeps the native finger backing above
+the tabletop. No block lift or roll is commanded. Inherited carried-block
+lift settings are unused in this controller and are identified as such in
+the recorded metadata.
+
+The separate male bolt retains the 16 mm shaft, AF20 × 8 mm head, M8 × 1.25
+collision profile and original free-body mass/inertia. Its head starts at
+(0.360, −0.220, 0.040) m on the physical three-pin rest. The right hand must
+pick it up before threading. Rest support is permitted before pickup; after
+pickup, male/world contact is forbidden.
+
+The table remains solid beneath the bore. The measured male tip must retain
+at least **1 mm tabletop clearance**. This is bounded running-thread
+insertion; full through-travel, head seating and tightening preload are not
+claimed. Table collisions cannot be disabled to create extra insertion room.
+
+The finite native robot motors and pad contacts drive both arms. There are
+no workpiece actuators, grasp welds, object pose updates during integration,
+external object forces or commanded axial helix. The same numerical pad
+compliance and idealized thread surfaces retain their calibration limits.
+
+## Load observations and independent checks
+
+Contact candidates alone do not show that the table bears weight. The new
+controller records resolved **world-frame forces and wrenches on the block**
+from actual native table contacts, including friction. It separately records
+normal-only contributions, left-pad forces and original contact frames.
+Positive Z means upward force on the block; a downward left force remains
+negative in the raw archive.
+
+Before bolt pickup, a settled 100 ms native load window requires:
+
+- Mean upward table force at least 90% of block weight.
+- Mean positive upward left-hand force no more than 10% of block weight.
+- At least 99% loaded table duty, where a loaded substep exceeds 10% of block
+  weight, with loaded contact at transition.
+- Actual bilateral loaded left pads and valid declared support geometry.
+
+The same rolling load-share thresholds are evaluated at **every active
+trailing 100 ms window**, including bolt pickup, entry, turning and open
+resets. The initial settled window alone does not establish support over
+the later task. Positive upward hand load is averaged separately from
+downward hand load, so downward pressure cannot cancel an interval in which
+the hand carries the block.
+
+Separate strict checks preserve every-substep table-load gaps and bilateral
+pad-load gaps. A rolling average can pass while a strict gap check fails;
+retain both actual outcomes. The block also has position/rotation/lift
+guards: upward lift at most 0.5 mm, translation at most 1 mm and rotation at
+most 2°. Unexpected native penetration, joint bounds, finite actuation and
+zero object drive are checked independently.
+
+The right hand retains measured settled-entry readiness, formed-flank
+capture, metric lead, torque transfer and unsupported unseated bolt-reset
+checks. Its grasp reference is acquired after actual loaded pickup and
+again after each real loaded regrasp. A reference ends on intentional
+opening; no reference is reset to hide slip during a closed stroke.
+
+The additive `scripts/audit_m8_supported_trace.py` checks the new original
+all-step load/contact archive, source/model/runtime identities, saved-pose
+geometry and actual bolt lead/reset measurements. It does not reinterpret
+the first carried-block report. Original solved force/derived geometry inputs
+belong to recorded time minus one timestep; saved qpos/qvel are
+post-integration. Replayed geometry does not reconstruct original forces.
+
+## Run the separate controller
+
+Use the same verified native GCC MuJoCo CPU runtime and launcher described
+in [setup](m8_setup.md). No CUDA, Newton or MJLab runtime is used. Source entry
+points are `yam_twin/m8_supported_scene.py`,
+`yam_twin/m8_supported_simulation.py` and `yam_twin/m8_supported_demo.py`.
+Explicit output paths below keep this work separate from the first task;
+the current CLI's implicit output is `outputs/m8_supported/demo`.
+
+```bash
+cd /workspace/astra-r2s
+scripts/run_m8.sh -m yam_twin.m8_supported_demo --help
+scripts/run_m8.sh scripts/audit_m8_supported_trace.py --help
+scripts/run_m8.sh -m yam_twin.m8_supported_demo \
+  --output outputs/m8_table_supported/agent_scene --export-only
+```
+
+The export compiles the scene and writes `scene.xml` and
+`supported_scene.zip`; it integrates no physics and establishes no motion
+result. This CLI has no `--preview` flag. Use an actual recorded pilot for
+progress pictures.
+
+To reproduce the four-phase stabilization pilot in a **new** output directory:
+
+```bash
+scripts/run_m8.sh -m yam_twin.m8_supported_demo \
+  --output outputs/m8_table_supported/agent_stabilization \
+  --maximum-phases 4 --dt .00005 --fps 12 --slow-motion 1 --video
+```
+
+The four phases are `settle_table`, `reach_left_block`, `close_left_block` and
+`settle_left_block`. This is intentionally a partial task and contains no
+bolt pickup or thread turn. Read its original validation; the CLI can exit
+1 for absent full-task checks even when stabilization itself succeeds.
+
+With the current verified sources frozen, a fresh full attempt uses:
+
+```bash
+scripts/run_m8.sh -m yam_twin.m8_supported_demo \
+  --output outputs/m8_table_supported/agent_full --dt .00005 \
+  --starting-angular-speed 1 --angular-speed 2 \
+  --maximum-starting-strokes 5 --qualifying-strokes 2 \
+  --maximum-entry-dwell 3 --axial-damping 50 \
+  --fps 12 --slow-motion 1 --video
+```
+
+The default stroke is 180°. Entry/start profiles use 1 rad/s peak, qualifying
+profiles 2 rad/s, velocity-only axial damping 50 N·s/m, net axial feed 0.05 N
+and at most 3 s starting-support acquisition dwells. Actual axial advance
+must emerge from contact, not a yaw-to-Z position target.
+
+Native M8 collision solving is expensive on CPU. The completed first
+trajectory took 51.4 minutes for 43.636 simulated seconds; that is a context
+for runtime, not an ETA or validated timing for this new scene. Do not start
+another full run merely to replay a saved video.
+
+## Replay and audit a closed supported trial
+
+A new run archives `scene.xml`, `supported_scene.zip`,
+`controller_source.py`, `renderer_source.py`, `scene_source.py`,
+`engagement_observer_source.py`, imported `recorded_sources/yam_twin/*.py`,
+`insertion_trace.npz`, `insertion_validation.json`,
+`left_pad_force_history.npz` and `table_support_force_history.npz`.
+Phase-end partial traces are progress evidence. Require the final closed
+trace and original report before final auditing.
+
+```bash
+scripts/run_m8.sh -m yam_twin.m8_supported_demo \
+  --replay outputs/m8_table_supported/agent_full/insertion_trace.npz \
+  --output outputs/m8_table_supported/agent_full_replay \
+  --fps 12 --slow-motion 1
+mkdir -p outputs/m8_table_supported/agent_full_audits
+scripts/run_m8.sh scripts/audit_m8_supported_trace.py \
+  outputs/m8_table_supported/agent_full/insertion_trace.npz \
+  --output outputs/m8_table_supported/agent_full_audits/supported.json
+```
+
+Replay itself writes `supported_demo.mp4` and `supported_demo.png`; it needs
+no `--video` flag. Add `--stills-only` for a single recorded-state image and
+`--still-time SECONDS` to select a saved timestamp. It selects actual saved
+qpos/qvel using the exact archived XML, with no interpolation or integration.
+Replay success does not alter an original failed physics report.
+
+Always give the auditor an explicit new output path: its default writes next
+to the trace. Preserve the original all-step forces, contacts, validation
+and source snapshots. A future `media/m8_table_supported/full/` must refer
+to an actually complete, unaborted supported sequence and contain its own
+immutable manifests/checksums. An overall failed or partial attempt remains
+honestly labeled evidence; an evidence-only package is not acceptance.
+Do not reuse or overwrite `media/m8_table_pickup/full/`, or assume its generic
+packager establishes these new support-specific gates.
+
+No separate table-supported policy environment or trained policy is claimed.
+The carried-block 14-action policy interface and its pickup-based reward
+requirements have a different task scope. Material calibration, broader
+numerical convergence, full seating and policy-training robustness remain
+unqualified for this second approach as well.
