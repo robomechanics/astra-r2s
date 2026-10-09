@@ -1,0 +1,23 @@
+{
+  "kind": "Actual standalone qualified-half-turn plot execution",
+  "command": [
+    "python",
+    "outputs/m8_table_supported/full_reset_speed2_v3_closed_side_artifacts/scientific_plot/plot_qualified_half_turns.py"
+  ],
+  "cwd": "/workspace/astra-r2s",
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "MPLCONFIGDIR": "/tmp/astra-m8-qualified-plot-cache"
+  },
+  "started_utc": "2026-10-09T17:54:59.846960+00:00",
+  "finished_utc": "2026-10-09T17:55:02.696134+00:00",
+  "wall_seconds": 2.8492355740017956,
+  "exit_code": 0,
+  "plot_source_sha256_before_after": "b3df18670938dccf7e3b7162cf9139e3d1f59353e51948ae6a9c8b59773c27b4",
+  "execution_source_sha256": "427453008125af2b74c444c222143c94894da86ff77524f80947509ce07503b8",
+  "source_unchanged": true,
+  "stdout_stderr_sha256": "9517b3ffa960348a9e61843ef5dcc9db5c4af5f042f0fcad55d9ea0b35ac4577",
+  "plot_manifest_sha256": "b03a0c6138b9da3c013311bd319f62e01074993f2bc59bc32e7544b7a94bcc00",
+  "figure_sha256": "240459d7bc486678534a91b41d3f6ba110fe615727a9093e780021b1b162c35f",
+  "scope": "Standalone scientific visualization of original closed raw geometry, outside immutable native/audit trees. No new audit, fit, test, model, dynamics integration or force reconstruction. Original native and official acceptance remain separate."
+}

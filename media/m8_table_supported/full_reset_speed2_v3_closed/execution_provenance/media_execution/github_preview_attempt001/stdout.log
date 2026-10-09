@@ -1,0 +1,13 @@
+{
+  "output": "/workspace/astra-r2s/outputs/m8_table_supported/full_reset_speed2_v3_closed_side_artifacts/github_preview",
+  "frames": 648,
+  "duration_ms": 54000,
+  "size_px": [
+    640,
+    356
+  ],
+  "preview_bytes": 43598637,
+  "preview_sha256": "c78d4416d7fe2b09099ca7cb660154afa6f07e43d961ab59e5c066476f48e282",
+  "manifest_sha256": "0c2845bdbdd3f31c6f11959621ebccc4cd11add67bb91559d35097b5ca34bf1b",
+  "display_only": true
+}

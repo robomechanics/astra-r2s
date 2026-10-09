@@ -1,0 +1,12 @@
+{
+  "original_artifacts_sha256": {
+    "plot_execution.json": "1eb1638a008c7b1a8d6ec96754d64c4b39fc04457def6d4d72f0988b0a2f5595",
+    "plot_stdout_stderr.log": "9517b3ffa960348a9e61843ef5dcc9db5c4af5f042f0fcad55d9ea0b35ac4577",
+    "original_qualified_half_turn_plot_data.npz": "f2f0a6f1d1d2e437da367659b742a44b78d353a91c052b5f41f0cf36e5a7765c",
+    "plot_execution_source.py": "427453008125af2b74c444c222143c94894da86ff77524f80947509ce07503b8",
+    "plot_qualified_half_turns.py": "b3df18670938dccf7e3b7162cf9139e3d1f59353e51948ae6a9c8b59773c27b4",
+    "plot_manifest.json": "b03a0c6138b9da3c013311bd319f62e01074993f2bc59bc32e7544b7a94bcc00",
+    "qualified_half_turns.png": "240459d7bc486678534a91b41d3f6ba110fe615727a9093e780021b1b162c35f"
+  },
+  "scope": "First actual plot execution preserved byte-exact. Only final figure label/footer spacing changes; native inputs and accepted annotations remain unchanged."
+}

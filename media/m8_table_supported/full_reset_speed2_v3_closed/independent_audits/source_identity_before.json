@@ -1,0 +1,32 @@
+{
+  "kind": "Read-only closed supported-run producer/software/auditor identity",
+  "verifier_source_sha256": "7ceed9d55285b4be3c804db9f5443efdb2d2786adcdd100b9faf114050400f3a",
+  "producer_commit": "9ae1a9fe76968a4013ea6c39e67718026622b9c0",
+  "software_tests_passed": 672,
+  "source_files_unchanged": 74,
+  "before_identity_sha256": "1aceb2b906b6201ba715bde99dfe1394bb0880907b0f9914529a9c50adff1ec9",
+  "after_identity_sha256": "f91f91beaaf7a8ee493fc124b068d469c72fee06be38f9920dce955e53aa2792",
+  "software_proof_sha256": "9f3617e33a047e1c5755e6fa62a76d490cc16bb73980ded33c2f57caac34d1a7",
+  "launch_manifest_sha256": "bc8c007e0ee0a0041255b575ee23ee177e26965ce93c914130e56eecf2a99d96",
+  "software_child_log_sha256": "1ecbbb59c74a46232d60b7245b1d4a7fe085e452c3b5d8504c7896bfd5e8dbf6",
+  "native_child_log_sha256": "dbb0436a49f8c70427aeabfb7f8d8c3b581d47374a02990591a9237b4339881c",
+  "closure_native_exit_code": 0,
+  "original_started_utc": "2026-10-09T14:32:53.840320+00:00",
+  "original_finished_utc": "2026-10-09T17:20:08.773769+00:00",
+  "complete_current_and_archived_tested_sources_match_original": true,
+  "frozen_audit_sources": {
+    "scripts/audit_m8_supported_trace.py": "4a8b018a1326bce540a0351d5d715ab58ffb505d2ae44be6d34aa8d8cd68fe3f",
+    "scripts/audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+    "scripts/audit_m8_free_joint_properties.py": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+    "scripts/audit_m8_left_pad_force_history.py": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc",
+    "thread_lab/runtime.py": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+  },
+  "runtime_file_sha256": {
+    "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433"
+  },
+  "runtime_file_paths_checked": {
+    "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0"
+  },
+  "original_repository_head_after": "13ee9b8e29d7dcd3716fbf6a9c747f83de5dace3",
+  "scope": "Identity only. Repository HEAD may advance while exact tested current/archive bytes stay fixed. Original nonzero native exit/failure is retained. No trace/force-state decoding, model import, native compile, contact/force solve, dynamics integration, report alteration or physics-success inference. Runtime files are checked on disk against the original mapped-library descriptor; this verifier does not map a library."
+}

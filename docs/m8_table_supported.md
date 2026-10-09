@@ -2,7 +2,7 @@
 
 This separate second trajectory leaves the female-threaded block on a solid
 table. The left YAM approaches and clamps its sides to stabilize it; the
-right YAM picks up the separate M8 × 1.25 bolt and attempts the same physical
+right YAM picks up the separate M8 × 1.25 bolt and performs the physical
 thread-start, turn, open-reset and regrasp sequence. Table contact must carry
 the block's weight throughout the task. The block remains a free body.
 
@@ -18,14 +18,28 @@ The current producer **`9ae1a9fe76968a4013ea6c39e67718026622b9c0`** passes
 [672 whole-suite tests on 74 unchanged files](../media/m8_table_supported/software_proof_reset_speed2_v3/README.md).
 Its new fresh **`full_reset_speed2_v3`** attempt starts at **14:32:53 UTC on
 2026-10-09**, from independent table/rest spawns, without cold checkpoints or
-stitching. Native integration is in progress; full-pitch capture and whole-task
-qualification remain pending. Only the CLI reset-speed selection changes: default 4 rad/s
+stitching. It closes successfully: **49 phases / 53.92105 native seconds**,
+**27/27 original checks**, **19/19 independent supported checks**, native
+exit 0 / `partial=false` / `aborted=null`, with all source/runtime bytes unchanged.
+Only the CLI reset-speed selection changes: default 4 rad/s
 remains, and this command explicitly selects 2 rad/s. Its intended 2.94524 s
 free-hand reset halves scheduled velocity and quarters acceleration; those
 command facts do not establish native tracking or clearance. Thread/model/
 controller physics, caps and guards are unchanged. Use the
 [current exact source-bound launch recipe](#run-current-canonical-candidate)
 and [agent setup/provenance handoff](m8_supported_agent_handoff.md#current-producer-fresh-run).
+
+Start with the [complete closed demo, original ledgers and exact replay/fresh-run recipe](../media/m8_table_supported/full_reset_speed2_v3_closed/README.md):
+[normal 1× display GIF](../media/m8_table_supported/full_reset_speed2_v3_closed/execution_provenance/media_execution/github_preview/preview.gif),
+[MP4](../media/m8_table_supported/full_reset_speed2_v3_closed/render/demo.mp4),
+[actual endpoint](../media/m8_table_supported/full_reset_speed2_v3_closed/render/endpoint_detail.png)
+and [independent lead/transient chart](../media/m8_table_supported/full_reset_speed2_v3_closed/execution_provenance/media_execution/scientific_plot/qualified_half_turns.png).
+The recording has **648 exact original-state frames / 54 s / 70 stills**.
+Two qualifying **π half-turns**, together about one revolution, advance
+1.250021 mm; all-step lead fits differ by +0.3823% / +0.4214%, with roughly
+97 µm within-stroke transients. Two captured resets are entirely hand-free;
+two earlier search resets precede formed capture. No seating/preload,
+material calibration or learned/supported Gym policy result is supplied.
 
 The [first open-reset/quiet-regrasp progress package](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/README.md)
 preserves this complete fresh prefix through **24.41380000024869 s**, with
@@ -42,8 +56,8 @@ actual **100 ms continuous quiet bilateral acquisition**. Endpoint formed
 overlap is **20.212215 µm**, with zero loaded interior contacts; partial
 helical starting support does not qualify full-pitch capture or a captured
 passive reset. The 293-state / 12 fps clip encodes 24.416667 s (GIF 24,420 ms).
-Dense final force/FF ledgers and independent full audit remain pending;
-the full native attempt continues beyond this immutable snapshot. Use the
+Dense final force/FF ledgers and independent full audit were pending at
+capture; they are now preserved in the closed full packet above. Use the
 [complete isolated copy/reassembly and nonintegrating replay recipe](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/README.md#verify-and-replay-the-original-recording)
 to recreate the recorded geometry, or the current source-bound fresh command
 above to run a separate native trajectory.
@@ -56,8 +70,8 @@ and [thread/jaw detail](../media/m8_table_supported/full_reset_speed2_v3_progres
 Original formed overlap is **1.271646 mm**. The completed 2.94525 s
 minus-pi reset has zero whole-right/bolt contacts and **27.909 nm** peak
 axial drift; the original final OPEN window retains loaded interior contact.
-These recorded captured-open values await the independent whole-run audit;
-the full native attempt is LIVE. Use the packet's exact complete-snapshot
+These recorded captured-open values retain their historical selected-row
+scope; the independent whole-run audit is now closed. Use the exact snapshot
 restore and geometry-only replay recipe, preserving the earlier selected
 row separately from the true prefix endpoint and final task acceptance.
 
@@ -610,8 +624,9 @@ and native motor caps remain. No pitch-clock or object driver is introduced.
 The explicit 10 s entry bound changes the timeout only. The CLI retains
 4 rad/s by default; `--reset-speed 2` explicitly selects a 2.945243112740431 s
 free-hand reset schedule. Halved scheduled velocity and quarter acceleration
-are command-profile changes only; native tracking and clearance are pending.
-This is a new continuous experiment with no completed physical outcome yet.
+are command-profile changes; actual tracking and clearance are checked by the
+completed 27/27 native and 19/19 independent result above. A new run must retain
+its own before/after identities, closure and acceptance; CPU execution can take hours.
 
 Use the [current agent handoff](m8_supported_agent_handoff.md#current-producer-fresh-run)
 for source/runtime closure, required raw ledgers, nonintegrating replay/audits

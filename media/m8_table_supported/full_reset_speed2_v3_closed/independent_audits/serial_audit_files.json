@@ -1,0 +1,23 @@
+{
+  "files_sha256": {
+    "auditor_bindings_verification.json": "a6f326747f29bb80f185cb028142d6661646587c127af0b984e74e8c210e5ab9",
+    "free_joint_execution.json": "8b77dd921b5e583cddccaf2c1381a896f102ffdd91777ad532f5c14065c6477b",
+    "free_joint_stdout_stderr.log": "ea8459a4e502bfb740650af629d9e79338de1471efb6408e14cb4ac031993206",
+    "identity_verifier_source.py": "7ceed9d55285b4be3c804db9f5443efdb2d2786adcdd100b9faf114050400f3a",
+    "independent_free_joint_properties.json": "a68b253a92bea9b5fa282188fdc912afce69b381abfd863103bd91ad91edc366",
+    "independent_left_pad_force_history_audit.json": "ea286ebf55f3d365abc3a86652172e6198dad356fb47e40ca45f7b86e45605ff",
+    "independent_supported_audit.json": "0e8ce02c8d0e0434239658eca2af5d0c08dcb830841b8c0f06511147fa23dad2",
+    "left_pad_execution.json": "1a20c15701f61e25057c07a1d5d763033b9cc2565d31e2766e44c21a66dc33a5",
+    "left_pad_stdout_stderr.log": "f7d495000993d32924f4ee50f9d9ba82b6b631d7f8ad7c147e04508745d9c2fa",
+    "run_m8_launcher_source.sh": "00f658ddaaf0020a547df9e30566016e1e135ee24bae2c6aead9279aa8cf8fa7",
+    "serial_audit_declaration.json": "8aa979aab1778868e533016c5e68c7f053126932d6df50e9bf1c14c54e0facbe",
+    "serial_audit_launcher_source.py": "e532c407cd35b51ad3a55bcbbdf98fc30676e8e994f427895c6a813875081e2c",
+    "serial_audit_result.json": "92c636a188d2f86a8c17c312f03e379d8c402ae2b8d19f686d8c2ba6293e8666",
+    "source_identity_after.json": "9084f97cbd1eeeb5b46b9b0e07b73090d08f733c26f545512ed15813543de607",
+    "source_identity_before.json": "9084f97cbd1eeeb5b46b9b0e07b73090d08f733c26f545512ed15813543de607",
+    "supported_execution.json": "e8dcfcd15a9ba8013d1309935a15950260a62f2d2d60b0d317435dcca1b4d5b3",
+    "supported_stdout_stderr.log": "d538d713cc1862c0220550e2de311e04941ffb6cc386a48408f00ea06194b3df"
+  },
+  "inspection_exceptions": [],
+  "scope": "Derivative files produced by this serial wrapper; original run remains separate and unchanged."
+}

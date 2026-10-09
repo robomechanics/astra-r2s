@@ -33,12 +33,26 @@ hardware calibration and broad policy-training fidelity remain unqualified.
 **672 software tests pass** for the current reset-speed2 producer, with
 [all 74 exact source files, original log and before/after proof](media/m8_table_supported/software_proof_reset_speed2_v3).
 Producer `9ae1a9f` starts **`full_reset_speed2_v3`** at **14:32:53 UTC on
-2026-10-09**, from independent table/rest spawns. Native integration is in
-progress; full formed-pitch capture and whole-task qualification remain pending.
+2026-10-09**, from independent table/rest spawns. It closes successfully with
+**49 phases / 53.92105 native seconds**, **27/27 original checks** and
+**19/19 independent supported checks**, with source/runtime bytes unchanged.
 The selected `--reset-speed 2` doubles the intended free-hand reset duration;
 geometry, physics, caps and guards are unchanged.
 The [current exact checkout/fresh-run recipe](docs/m8_supported_agent_handoff.md#current-producer-fresh-run)
 binds this new source/proof/launcher separately from every historical trial.
+
+The [complete table-supported demo and replay package](media/m8_table_supported/full_reset_speed2_v3_closed/README.md)
+has a [normal 1× display GIF](media/m8_table_supported/full_reset_speed2_v3_closed/execution_provenance/media_execution/github_preview/preview.gif),
+[MP4](media/m8_table_supported/full_reset_speed2_v3_closed/render/demo.mp4),
+[actual endpoint](media/m8_table_supported/full_reset_speed2_v3_closed/render/endpoint_detail.png)
+and [lead/transient chart](media/m8_table_supported/full_reset_speed2_v3_closed/execution_provenance/media_execution/scientific_plot/qualified_half_turns.png).
+Its 648 original-state frames encode 54 s, with 70 exact-state stills.
+Two qualifying **half-turns** advance 1.250021 mm together; two captured open
+resets have zero hand/bolt contacts. All-step fitted lead errors are
+0.3823% / 0.4214%, with roughly 97 µm within-stroke transients. No head seating,
+tightening/preload, hardware calibration, learned policy or supported Gym
+wrapper is claimed. Exact checkout, fresh rollout and nonintegrating replay
+instructions preserve these scopes.
 
 The [new 24.4138 s progress recording](media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/README.md)
 preserves this fresh run from spawn through its first quiet regrasp:
@@ -50,8 +64,8 @@ The complete 2.94525 s minus-pi reset has zero whole-right/bolt contacts,
 with peak bolt drift 0.495080 µm / 1.522229 mrad; the following regrasp
 passes its actual 100 ms quiet bilateral window. Endpoint formed overlap is
 only 20.212 µm, with zero loaded interior contacts. This records the observed
-reset/regrasp motion, while full-pitch capture and qualified assembly remain
-unproven. The package includes exact isolated geometry-replay instructions.
+reset/regrasp motion at that early prefix; the completed run establishes
+capture later. The package includes exact isolated geometry-replay instructions.
 
 The later [captured-open still packet](media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/README.md)
 shows the [whole-arm state](media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/render/captured_open.png)
@@ -59,8 +73,8 @@ and [thread/jaw detail](media/m8_table_supported/full_reset_speed2_v3_progress/c
 at **43.5353 s**. Original formed overlap is **1.271646 mm**; the entire
 2.94525 s minus-pi reset has zero whole-right/bolt contacts and only
 **27.909 nm** peak axial drift. Its complete 8,847-state prefix continues to
-44.0053 s; the selected image is an earlier actual row. Full native acceptance
-and independent whole-run audit remain pending. The package gives exact
+44.0053 s; the selected image is an earlier actual row. Final acceptance and
+audit are now closed in the separate full packet above. The package gives exact
 snapshot restoration and geometry-only two-image replay instructions.
 
 The earlier `da69a9c` producer retains its [separate 672-test proof](media/m8_table_supported/software_proof_c2_inertia_v2).
@@ -107,8 +121,8 @@ checkout, lossless original-layout restoration, replay and serial audit commands
 The older alternate-grip `b2b13ff` source retains its separate
 [281-test proof](media/m8_table_supported/software_proof_281).
 The pinned supported producer `66276d0` retains its separate 213-test proof.
-Reverse seating and the later full table-supported turn/reset sequence remain
-under development; software tests do not qualify those motions.
+The completed table-supported sequence has its own native and independent
+checks above; historical software tests retain their separate scopes.
 The first-demo publication retains its separate
 [181-test proof](media/m8_table_pickup/software_tests.json), and the completed
 native trial retains its historical
@@ -130,7 +144,7 @@ Older load/search failures also remain. See
 [the numerical comparison](media/m8_insertion/refinement/README.md) and
 [mechanics status](docs/m8_status.md) before using this for training.
 
-## Separate table-supported approach in progress
+## Historical table-supported diagnostics
 
 The left arm can stabilize a block that stays on the solid table.
 The separate [crest-search V3 cold trial](media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/README.md)
@@ -247,7 +261,7 @@ starts a new solve from an archived checkpoint. Its final 100 ms has 99.97%
 mean thread support of bolt weight but 67.08% mean positive right-hand
 support and zero loaded interior-flank contacts. Release readiness stays
 false. Its 15 observer tests are separate from the 213-test producer proof;
-further checkpoint diagnostics remain pending.
+that cold branch does not establish captured release or whole-task success.
 The [closed gravity-first starting-turn comparison](media/m8_table_supported/diagnostics/entry_gravity_start_B200)
 reduces measured withdrawal from 1.332 mm in parent samples to 1.346 µm in
 the cold branch's native rows, but formed overlap stays zero and final mean

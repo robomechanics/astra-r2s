@@ -1,11 +1,11 @@
-# Agent handoff: table-supported M8 attempt
+# Agent handoff: table-supported M8 assembly
 
-The [closed failed native package](../media/m8_table_supported/full_canonical_v1_failed_evidence/README.md)
+The [completed table-supported native package](../media/m8_table_supported/full_reset_speed2_v3_closed/README.md)
 preserves the complete original run, sources, raw force histories and audits.
-[Normal 1× GIF](../media/m8_table_supported/full_canonical_v1_failed_evidence/demo.gif) ·
-[MP4](../media/m8_table_supported/full_canonical_v1_failed_evidence/demo.mp4) ·
-[Actual endpoint](../media/m8_table_supported/full_canonical_v1_failed_evidence/endpoint_detail.png) ·
-[Measured direction-gate chart](../media/m8_table_supported/full_canonical_v1_failed_evidence/scientific_plot/native_direction_gate.png).
+[Normal 1× display GIF](../media/m8_table_supported/full_reset_speed2_v3_closed/execution_provenance/media_execution/github_preview/preview.gif) ·
+[MP4](../media/m8_table_supported/full_reset_speed2_v3_closed/render/demo.mp4) ·
+[Actual endpoint](../media/m8_table_supported/full_reset_speed2_v3_closed/render/endpoint_detail.png) ·
+[Independent lead/transient chart](../media/m8_table_supported/full_reset_speed2_v3_closed/execution_provenance/media_execution/scientific_plot/qualified_half_turns.png).
 
 The completed carried-block demo remains separate; use its unchanged
 [first handoff](m8_agent_handoff.md). This handoff concerns the free female-threaded block
@@ -24,9 +24,14 @@ Default 4 rad/s remains; the new native command explicitly selects 2 rad/s.
 
 The fresh **`full_reset_speed2_v3`** attempt starts at **2026-10-09
 14:32:53.840320 UTC**, from independent table/rest spawns, with no cold state
-or stitched trajectory. Native integration is in progress; no captured-thread,
-qualified captured reset, full-task outcome or closed audit is claimed. BEFORE identity is
+or stitched trajectory. It closes with **49 phases / 53.92105 native seconds**,
+**27/27 original checks**, **19/19 independent supported checks**, native exit 0,
+`partial=false`, `aborted=null`, and unchanged source/runtime bytes. The native
+function takes 9909.855943 s; the launcher records 10034.933459 s (2 h 47 min).
+The recording selects 648 original-state frames / 54 s and 70 exact-state stills.
+BEFORE identity is
 `1aceb2b906b6201ba715bde99dfe1394bb0880907b0f9914529a9c50adff1ec9`.
+AFTER is `f91f91beaaf7a8ee493fc124b068d469c72fee06be38f9920dce955e53aa2792`.
 The historical da69 failed run and its 13.1946 s progress clips below remain
 separate. They do not show the current 9ae trajectory.
 
@@ -44,7 +49,8 @@ contact-free; a 0.25 s regrip transition precedes actual 100 ms quiet
 bilateral acquisition. The endpoint has only 20.212215 µm formed overlap
 and zero loaded interior contacts. Opening/reset/regrasp motion is observed;
 full-pitch capture, qualified captured reset and whole assembly remain
-unqualified. FF is disabled throughout these open/reset/regrasp phases.
+unqualified at that historical prefix. The closed run establishes formed
+capture later. FF is disabled throughout these open/reset/regrasp phases.
 
 Use an absent complete clone destination and detach to the exact new pin.
 The commands below use the recorded runtime; for a different-host build,
@@ -139,7 +145,7 @@ older failed run only. Recorded-state geometry replay refreshes saved poses,
 not native forces or controller execution; keep a complete matching pinned
 checkout/runtime and write derivatives to new paths. A successful shell
 preparation or audit execution does not certify physical acceptance. This
-new live attempt has no closed outcome. Default reset speed remains 4 rad/s;
+recorded attempt now passes both native and independent checks. Default reset speed remains 4 rad/s;
 the explicit 2 rad/s selection doubles the intended reset schedule to
 2.945243112740431 s, halves scheduled velocity and quarters acceleration.
 These are command-profile facts, not measured tracking/clearance results.
@@ -149,11 +155,25 @@ its own original BEFORE/AFTER and the new proof. For this recorded launch the
 anchors are producer `9ae1a9fe76968a4013ea6c39e67718026622b9c0`, BEFORE
 `1aceb2b906b6201ba715bde99dfe1394bb0880907b0f9914529a9c50adff1ec9`
 and proof `9f3617e33a047e1c5755e6fa62a76d490cc16bb73980ded33c2f57caac34d1a7`;
-AFTER does not exist until native closure. A new agent's separately launched
+AFTER is `f91f91beaaf7a8ee493fc124b068d469c72fee06be38f9920dce955e53aa2792`.
+A new agent's separately launched
 trial uses its own BEFORE/AFTER identities. The old fixed da69 closed-media
 gate and historical source maps must not be substituted for these anchors.
 Require the complete matching helper/source/runtime archive before original-
 layout replay/audit; partial milestone bytes do not establish full coverage.
+
+The [closed packet's exact original-layout restore and source-bound replay](../media/m8_table_supported/full_reset_speed2_v3_closed/README.md#verify-and-restore-without-integration)
+preserve all 39 original files, 27 audit-tree files and the complete 80-file
+software proof. Copy the COMPLETE newer packet into an unused pinned 9ae
+clone before reassembly; the producer predates this evidence. The standalone
+recipe places the generic identity helper at its original root depth and keeps
+the renderer/gate adjacent. The original 84 MB GIF is chunked losslessly;
+the linked 640 × 356 display preview retains all 648 frames/durations/loop.
+Actual file counts and identities are in the final manifest/ledger.
+Two qualifying **half-turns** advance 1.250021 mm together; all-step lead errors
+are +0.3823% / +0.4214%, with roughly 97 µm within-stroke transients, so tiny
+endpoint residuals are not force/material accuracy. No seating/preload,
+hardware calibration, learned policy or supported Gym wrapper is supplied.
 
 ### Replay this historical progress recording
 
@@ -182,7 +202,8 @@ actual row **8,749 / 43.5353 s** for its
 and [thread/jaw detail](../media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/render/captured_open_detail.png).
 Original formed overlap is **1.271646 mm**; the complete 2.94525 s minus-pi
 reset records zero whole-right/bolt contacts and **27.909 nm** peak axial
-drift. The full native attempt and independent final audit remain pending.
+drift. The full native attempt and independent final audit are now closed;
+this packet retains its historical earlier-row scope.
 Follow its [34-file original-snapshot restore](../media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/README.md#verify-and-restore-the-complete-original-prefix)
 and [explicit two-image geometry replay](../media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/README.md#geometry-only-two-image-replay):
 copy the complete newer packet into an unused pinned 9ae clone, restore all

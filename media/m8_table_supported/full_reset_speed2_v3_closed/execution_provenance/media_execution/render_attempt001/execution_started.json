@@ -1,0 +1,30 @@
+{
+  "schema": "reset-speed2-v3-media-stage-execution-v1",
+  "stage": "closed-full-native-geometry-render",
+  "command": [
+    "/workspace/astra-r2s/scripts/run_m8.sh",
+    "/workspace/astra-r2s/outputs/m8_table_supported/render_full_reset_speed2_v3_closed.py",
+    "--repository-root",
+    "/workspace/astra-r2s",
+    "--proof-archive",
+    "/workspace/astra-r2s/media/m8_table_supported/software_proof_reset_speed2_v3",
+    "--identity",
+    "/workspace/astra-r2s/outputs/m8_table_supported/full_reset_speed2_v3_audits/source_identity_before.json",
+    "--identity-sha256",
+    "9084f97cbd1eeeb5b46b9b0e07b73090d08f733c26f545512ed15813543de607",
+    "--audit-binding",
+    "/workspace/astra-r2s/outputs/m8_table_supported/full_reset_speed2_v3_audits/independent_audit_binding.json",
+    "--audit-binding-sha256",
+    "6358e32d170bb9ed7710f76f1b40f51cfdb2143bdc8d5bc47f9f4b60291a51bf",
+    "--plugin-library",
+    "/workspace/astra-r2s/thread_lab/plugins/libm8_sdf.so",
+    "--plugin-sha256",
+    "53571638b1f6146e1dfd297e8dd5f750bb19c1efc70743180f40b94649489e18",
+    "/workspace/astra-r2s/outputs/m8_table_supported/full_reset_speed2_v3",
+    "/workspace/astra-r2s/outputs/m8_table_supported/full_reset_speed2_v3_closed_render"
+  ],
+  "cwd": "/workspace/astra-r2s",
+  "started_utc": "2026-10-09T17:42:44.301962+00:00",
+  "recorder_source_sha256": "34277d23eee1fb884965ef816356c6d99942e4f5caedbe86a68d6055c34ae6c3",
+  "scope": "Recorded execution of additive read-only snapshot/geometry/media/publication stage. Not a native rollout or native qualification."
+}
