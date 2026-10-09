@@ -176,14 +176,31 @@ whole-shaft rest-clearance guard remain unchanged. A fresh pickup-to-entry
 prefix has executed 6.3983 s without an abort, with actual table/left-pad
 support and rest clearance checked independently. Its entry remains cone-only,
 with about 100.65 micrometres radial offset and zero formed overlap.
+Its [published native prefix](../media/m8_table_supported/face120_pickup_entry_v1)
+includes normal 1× video, a clear tabletop still, exact raw state/force records,
+four independent audits and a separate source-matching publication binding.
+The original audit's creation-time uncommitted provenance is preserved.
+Actual native minimum joint margin is 0.017349 rad; the static planning
+study's 0.101560 rad margin is a separate geometric result.
 
-To repeat that narrow prefix from a checkout whose source hashes match the
-281-test proof, use a fresh output directory:
+To repeat that narrow prefix, use an unused isolated checkout pinned to
+producer `b2b13ff39cd47c48afd19b38f83e9a405c9d6e32`, whose source hashes match
+the 281-test proof. This source selects the 120° opposed-flat grasp by
+default; the historical `66276d0` producer uses a different grasp. Reuse the
+verified native runtime, or run `scripts/setup.sh` from the pinned checkout
+first if it is absent. Then use a fresh output directory:
 
 ```sh
+git clone https://github.com/robomechanics/astra-r2s.git /workspace/astra-r2s-supported-b2b13ff
+git -C /workspace/astra-r2s-supported-b2b13ff switch --detach b2b13ff39cd47c48afd19b38f83e9a405c9d6e32
+cd /workspace/astra-r2s-supported-b2b13ff
+scripts/run_m8.sh -m pytest -q
 scripts/run_m8.sh -m yam_twin.m8_supported_demo --output outputs/m8_table_supported/face120_repeat --maximum-phases 12 --dt .00005 --starting-angular-speed 1 --angular-speed 2 --maximum-entry-dwell 3 --axial-damping 50
 ```
 
+At this producer expect 281 tests. Run its launcher from this isolated
+checkout so module imports use the pinned source. The source proof and
+prefix result do not establish a completed thread-start/turn/reset sequence.
 This ends after `feed_to_entry`: `partial=true`, `passed=false` is expected.
 The reverse seat search, measured-grasp centering and dynamic opposite-flat
 reindexing are still separate experimental work. Running the current longer

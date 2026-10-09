@@ -1,0 +1,6 @@
+{
+  "scope": "Strict JSON derivative only. Original report bytes and original NPZ metadata remain untouched.",
+  "original_sha256": "e2145096aa0a8878074a0a3a070cec043b1b9b6905965362161da645c27f2799",
+  "strict_derivative_sha256": "5ce606e2988991bd77cbd76f9f726ba47839a63777b2eef92ef111a4bbbcb29d",
+  "nonfinite_original_values_exported_as_null": []
+}

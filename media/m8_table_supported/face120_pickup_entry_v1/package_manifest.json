@@ -1,0 +1,591 @@
+{
+  "status": "closed_partial_native_pickup_transport_cone_entry_pilot",
+  "producer_commit": "b2b13ff39cd47c48afd19b38f83e9a405c9d6e32",
+  "producer_binding_sha256": "217bb754ffeb4ed06970e6a1ffd436b62fa82212ad5ca0c79e6260ce654211d1",
+  "original_report_partial": true,
+  "original_report_passed": false,
+  "original_abort": null,
+  "independent_full_acceptance_passed": false,
+  "thread_capture_qualified": false,
+  "starting_thread_stroke_executed": false,
+  "opening_release_or_passive_reset_executed": false,
+  "trajectory_sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0",
+  "first_physics_time_s": 5e-05,
+  "last_physics_time_s": 6.398299999991758,
+  "native_phase_names": [
+    "settle_table",
+    "reach_left_block",
+    "close_left_block",
+    "settle_left_block",
+    "secure_left",
+    "reach_bolt",
+    "close_bolt",
+    "settle_bolt",
+    "lift_bolt",
+    "transport_bolt",
+    "align_over_hole",
+    "feed_to_entry"
+  ],
+  "exact_saved_state_replay": true,
+  "state_interpolation": false,
+  "physics_integration_during_render": false,
+  "forces_from_original_solved_samples_only": true,
+  "state_force_timing_scope": "qpos/qvel are postintegration; original force samples refer to the immediately preceding native solve (time minus dt). mj_forward forces are not reported.",
+  "normal_playback_speed": 1,
+  "mp4_fps": 12,
+  "video_frames": 77,
+  "gif_centisecond_duration_ms": 6420,
+  "supplementary_table_view_scope": "Supplementary two-camera detail of the same actual saved pre-entry native state. Only viewing cameras and panel layout change. No physical bodies are hidden by render settings or removed; no integration, state interpolation, free-object posing or force reconstruction.",
+  "supplementary_table_view_state_time_s": 4.819999999995436,
+  "supplementary_table_view_state_index": 974,
+  "model_fingerprint": "dd44ffab2beade32ed4682adb551fdf077dd97d4140bb2794cc995effe35a9ca",
+  "model_xml_sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+  "controller_module_sha256": "0f652eb1cf245c21ba018a0d2156d8d7b6064e6cdf0611e051c4cdeb79f4cdfa",
+  "scene_source_sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+  "runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "actual_native_minimum_joint_margin_rad": 0.017349250044552234,
+  "independent_saved_pose_minimum_right_joint_margin_rad": 0.017349279951500485,
+  "kinematic_only_planner_parent_route_minimum_joint_margin_rad": 0.10155999799865878,
+  "planner_scope": "The separate sampled fixed-pose planner is not integrated physics, does not measure grip or forces, and does not certify a continuous path. Its 0.10156-rad planned route margin is not the actual native 0.017349-rad margin.",
+  "software_tests_passed": 281,
+  "software_proof_source_count": 63,
+  "software_proof_is_separate_from_native_physics_acceptance": true,
+  "independent_focused_auditor_tests_not_added_to_281": {
+    "passed": 15,
+    "failed": 0,
+    "elapsed_s": 0.92,
+    "source_sha256": "43e947d12ee95ee565ed6ec1a1ef3ee1e6352e43d3f3be38e5911fae36d472fb",
+    "test_sha256": "7fc2d294e53f8d68fb0cf17790bea48db5d2484e8c06edfeb39a789230bd73fd",
+    "command": "scripts/run_m8.sh -m pytest -q tests/test_m8_supported_audit.py",
+    "scope": "Auditor regression checks, not the native producer software proof."
+  },
+  "serialization_nonfinite_to_null_paths": [],
+  "scope": "Exact closed 6.3983-second alternate +120-degree-face native pickup/transport/entry pilot. Original report partial=true, passed=false and aborted=null remain authoritative. Cone entry is observed; zero formed overlap and no starting thread stroke, capture, opening/release, reset or completed threading are claimed. No interpolation, integration or manual free-body posing occurs during rendering.",
+  "all_original_raw_bytes_preserved": true,
+  "all_artifacts_below_45MB_no_chunks_required": true,
+  "files": {
+    "controller_source.py": {
+      "bytes": 81380,
+      "sha256": "0f652eb1cf245c21ba018a0d2156d8d7b6064e6cdf0611e051c4cdeb79f4cdfa"
+    },
+    "engagement_observer_source.py": {
+      "bytes": 4752,
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866"
+    },
+    "frozen_software_sources/scripts/audit_m8_free_joint_properties.py": {
+      "bytes": 6934,
+      "sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11"
+    },
+    "frozen_software_sources/scripts/audit_m8_insertion_capture.py": {
+      "bytes": 7389,
+      "sha256": "15ba607ac3277b4f8ef3f02aaf8df677e285e20511f0a7b9f8d07a202bad1233"
+    },
+    "frozen_software_sources/scripts/audit_m8_insertion_reset_contacts.py": {
+      "bytes": 7681,
+      "sha256": "b8b14448a2fba7074ebed84669a7a6015b1f831e45e7a647ff7acc9cdb10ab0a"
+    },
+    "frozen_software_sources/scripts/audit_m8_insertion_trace.py": {
+      "bytes": 30341,
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f"
+    },
+    "frozen_software_sources/scripts/audit_m8_left_pad_force_history.py": {
+      "bytes": 10265,
+      "sha256": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc"
+    },
+    "frozen_software_sources/scripts/audit_m8_supported_trace.py": {
+      "bytes": 51366,
+      "sha256": "43e947d12ee95ee565ed6ec1a1ef3ee1e6352e43d3f3be38e5911fae36d472fb"
+    },
+    "frozen_software_sources/scripts/audit_yam_m8_geometry.py": {
+      "bytes": 10939,
+      "sha256": "1dac9d46cc585cd01ca5ea759c6bf86ce14edbb1bacaf3b04a39848c1b145fee"
+    },
+    "frozen_software_sources/scripts/audit_yam_m8_trace.py": {
+      "bytes": 17345,
+      "sha256": "8d41f8ea4eea3a905f536a257a707bf953dae7e54f7fc1d7e6d2d151d2a1cfc2"
+    },
+    "frozen_software_sources/scripts/check_m8_distance.py": {
+      "bytes": 2644,
+      "sha256": "6cb40d77aa8dec608ed7a4a9af13c64e463940aa027368e20f118d5fb3a461c9"
+    },
+    "frozen_software_sources/scripts/check_m8_optimization.py": {
+      "bytes": 16201,
+      "sha256": "dc8e68893522fc55dd2da71f3fa7b21be2e4717ab67b305ffb6512e6ee0f677a"
+    },
+    "frozen_software_sources/scripts/compare_m8_thread_start.py": {
+      "bytes": 15848,
+      "sha256": "a202391a03ea0ff9697f1219be0260881396dd7b0c2bf704d0032d7a2c25a67f"
+    },
+    "frozen_software_sources/scripts/compare_yam_m8_hold.py": {
+      "bytes": 4819,
+      "sha256": "85395970bed69b1f1288e03082ca1f2aa677a73384522bf326aac80491c1a7ff"
+    },
+    "frozen_software_sources/scripts/package_m8_insertion_demo.py": {
+      "bytes": 24780,
+      "sha256": "96ba1018173e05f18e98d50a24018b1cec55a215c63aae2c648fdb7932324e39"
+    },
+    "frozen_software_sources/scripts/plot_m8_insertion_trace.py": {
+      "bytes": 24634,
+      "sha256": "4125f08051d2ac8461545bb71d7b6ceda6f26a80ae121ce18ef250534be69dac"
+    },
+    "frozen_software_sources/scripts/probe_m8_thread_start.py": {
+      "bytes": 14088,
+      "sha256": "547430f31396c6bb1bfed0d83a688bd06b6ceba2ab0c3975ece602ec9dddedfb"
+    },
+    "frozen_software_sources/scripts/verify_m8_bindings.py": {
+      "bytes": 4300,
+      "sha256": "fa3c0d3ea85d1dd33a534d1ca36bb2f166d78a958fad4a2e15a7f71ffe7d6af5"
+    },
+    "frozen_software_sources/tests/test_m8_env.py": {
+      "bytes": 2999,
+      "sha256": "f1aa01a7e8f49481f152be4fa4e7d81d0512c9529234e7ab0c7f334c1ffb9ad0"
+    },
+    "frozen_software_sources/tests/test_m8_insertion_env.py": {
+      "bytes": 18203,
+      "sha256": "cd74ac30cc21ead94d62bbb629cc2f6ffbb5f5cf531910d8af67fe4ec82b3cac"
+    },
+    "frozen_software_sources/tests/test_m8_insertion_mechanics.py": {
+      "bytes": 3347,
+      "sha256": "38c3500352177b5ab5ff2799d645ec2f402c1c8cb7dfe05927b672f2ba5d260a"
+    },
+    "frozen_software_sources/tests/test_m8_physics.py": {
+      "bytes": 1884,
+      "sha256": "1ef772e1e4af6cd864577176ab8c1c088c30c4856944ce5948ba1894c897f7e0"
+    },
+    "frozen_software_sources/tests/test_m8_sdf.py": {
+      "bytes": 3492,
+      "sha256": "b21ab6a5fd8b2af14c50a6cdea5358a77fcec3ee8883dc475e4e3d4bc6a1dd37"
+    },
+    "frozen_software_sources/tests/test_m8_supported_audit.py": {
+      "bytes": 12408,
+      "sha256": "7fc2d294e53f8d68fb0cf17790bea48db5d2484e8c06edfeb39a789230bd73fd"
+    },
+    "frozen_software_sources/tests/test_m8_supported_grasp.py": {
+      "bytes": 6541,
+      "sha256": "18301b45f5f8ee709e9b7080fa45b14217673d2599b73ec42dfa12b2dd9e7892"
+    },
+    "frozen_software_sources/tests/test_m8_supported_start.py": {
+      "bytes": 13358,
+      "sha256": "8b6fdf260cc33767aa2f7b742fb299bf4415f025015d2b0b88af849557073892"
+    },
+    "frozen_software_sources/tests/test_m8_theory.py": {
+      "bytes": 3858,
+      "sha256": "a82b341fca21da556e6aa311d2663d229428183ad1687660a5bf9cecb060863b"
+    },
+    "frozen_software_sources/tests/test_twin.py": {
+      "bytes": 10759,
+      "sha256": "2dbf4a42b45b1ec9f804191f10c4bce617d968a4cb875de54656331ec0206458"
+    },
+    "frozen_software_sources/tests/test_yam_m8_control.py": {
+      "bytes": 6353,
+      "sha256": "40956a87183b2100976b9cba5aafc9fbc93524b8191b36e983b11cca39d75be0"
+    },
+    "frozen_software_sources/tests/test_yam_m8_env.py": {
+      "bytes": 10164,
+      "sha256": "47ebd3f925ed0d7330a2f559499dc33d3aaec4e715120f28328120c4eb5a194e"
+    },
+    "frozen_software_sources/tests/test_yam_m8_insertion_controller.py": {
+      "bytes": 18035,
+      "sha256": "1d888f545dece29d595948b5eca8289b21969464973f6f6d9b416006b8f30fe9"
+    },
+    "frozen_software_sources/tests/test_yam_m8_insertion_engagement.py": {
+      "bytes": 2406,
+      "sha256": "f6f571c0bba710a94b6ca072a42615b16dc0261c68aa3cfcd8545de47f71be4a"
+    },
+    "frozen_software_sources/tests/test_yam_m8_insertion_scene.py": {
+      "bytes": 28494,
+      "sha256": "5b6109bd3e4a9a9b25a292c8ac683bdf5188232372ab235c0bd9cba91408d488"
+    },
+    "frozen_software_sources/tests/test_yam_m8_provenance.py": {
+      "bytes": 1457,
+      "sha256": "fd447004b701fe29cd20545cebdc3a3b3961d175d9286d9387e2f423d45adcd6"
+    },
+    "frozen_software_sources/tests/test_yam_m8_scene.py": {
+      "bytes": 11012,
+      "sha256": "806b8daf2e83b21657dc55529083d9182620dc2ebce7b07386ec8ec88c48cf68"
+    },
+    "frozen_software_sources/tests/test_yam_m8_supported_controller.py": {
+      "bytes": 11226,
+      "sha256": "51db0238d81157a7f0890d8cd8a8c7d3140f4bc4210e79f6d259589e46d8c929"
+    },
+    "frozen_software_sources/tests/test_yam_m8_supported_scene.py": {
+      "bytes": 10531,
+      "sha256": "ed4aee425488736d4bb0c79c227cb3b776b0954c90e699e214d861c2d61ebd59"
+    },
+    "frozen_software_sources/thread_lab/__init__.py": {
+      "bytes": 207,
+      "sha256": "d694de2a94fc8dfb2d0937bfd082272270bf94df494feb106b0e96287ffa1fbd"
+    },
+    "frozen_software_sources/thread_lab/benchmark.py": {
+      "bytes": 5182,
+      "sha256": "0456dccc55070fb7e85cc24fb29e213aa79085fd370312d3391364a4f1b069e4"
+    },
+    "frozen_software_sources/thread_lab/build_plugin.py": {
+      "bytes": 899,
+      "sha256": "0ddb419b5dd1d7578c659ace20869699a434a99c578815d5928dc9cd6556b5d0"
+    },
+    "frozen_software_sources/thread_lab/demo.py": {
+      "bytes": 1744,
+      "sha256": "bfd0d601cbb2c7c7fec7522278e23fd0c78dbd80ba9ee927c06bca5c912be5b3"
+    },
+    "frozen_software_sources/thread_lab/env.py": {
+      "bytes": 30087,
+      "sha256": "7850807cadadfbac6511a7a01331a80cb87040d075c15594d06347a9bec75976"
+    },
+    "frozen_software_sources/thread_lab/gripper.py": {
+      "bytes": 35781,
+      "sha256": "dc55f61c7544ea23c9651854bd4151251f335292a87e08fa2cc5b87c7ba00a57"
+    },
+    "frozen_software_sources/thread_lab/load_benchmark.py": {
+      "bytes": 22702,
+      "sha256": "5270e6a9d37720dee81b57981b3b0ec3465224f491f29dd133612e81e1a24f1a"
+    },
+    "frozen_software_sources/thread_lab/model.py": {
+      "bytes": 7229,
+      "sha256": "12d79f294f00ae1a6ae7551877f4dafd705ef54ba4f2ae6af7ab9e21c646b3de"
+    },
+    "frozen_software_sources/thread_lab/plugins/m8_sdf.cc": {
+      "bytes": 8429,
+      "sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+    },
+    "frozen_software_sources/thread_lab/render.py": {
+      "bytes": 9164,
+      "sha256": "1b3049306df5808ae5f6c2034071e07b1d5133012826eb810701cd441d520224"
+    },
+    "frozen_software_sources/thread_lab/runtime.py": {
+      "bytes": 2177,
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+    },
+    "frozen_software_sources/thread_lab/theory.py": {
+      "bytes": 5383,
+      "sha256": "0480828df22825d3c3ce38187c50fb291670b4beaab9de44bb1e10d4e022453d"
+    },
+    "frozen_software_sources/thread_lab/validate.py": {
+      "bytes": 5147,
+      "sha256": "59fb22e6b2ec713eea06c53151dea87358df06f29426f4fc61b91547e7bbe4e1"
+    },
+    "frozen_software_sources/yam_twin/kinematics.py": {
+      "bytes": 2796,
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683"
+    },
+    "frozen_software_sources/yam_twin/m8_demo.py": {
+      "bytes": 13137,
+      "sha256": "f5989b9ee052a2bb6d68bdec090d90aec4faeed667fd8218bf3fa4dccb3d485d"
+    },
+    "frozen_software_sources/yam_twin/m8_env.py": {
+      "bytes": 25978,
+      "sha256": "88eab5fc877341db0bed0f5b81e0c45c25995493b7c368dd3e182dd9d43f510a"
+    },
+    "frozen_software_sources/yam_twin/m8_insertion_demo.py": {
+      "bytes": 13740,
+      "sha256": "3531a3659ded5b4a7fe66868989c1bac6437a008282ec1229bf2f8a5ccb97a91"
+    },
+    "frozen_software_sources/yam_twin/m8_insertion_engagement.py": {
+      "bytes": 4752,
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866"
+    },
+    "frozen_software_sources/yam_twin/m8_insertion_env.py": {
+      "bytes": 38894,
+      "sha256": "fc0d054321a4e76374306bf9f7adeb8fa8366e37f198aac998532dca1b6bea25"
+    },
+    "frozen_software_sources/yam_twin/m8_insertion_mechanics.py": {
+      "bytes": 4321,
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20"
+    },
+    "frozen_software_sources/yam_twin/m8_insertion_scene.py": {
+      "bytes": 25139,
+      "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d"
+    },
+    "frozen_software_sources/yam_twin/m8_insertion_simulation.py": {
+      "bytes": 67946,
+      "sha256": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294"
+    },
+    "frozen_software_sources/yam_twin/m8_scene.py": {
+      "bytes": 20849,
+      "sha256": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f"
+    },
+    "frozen_software_sources/yam_twin/m8_simulation.py": {
+      "bytes": 30270,
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449"
+    },
+    "frozen_software_sources/yam_twin/m8_supported_demo.py": {
+      "bytes": 7792,
+      "sha256": "3069a07152f71b83d337e9805565dbfb5611738b0e600fd88202cd77ac75ee8e"
+    },
+    "frozen_software_sources/yam_twin/m8_supported_scene.py": {
+      "bytes": 7969,
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4"
+    },
+    "frozen_software_sources/yam_twin/m8_supported_simulation.py": {
+      "bytes": 81380,
+      "sha256": "0f652eb1cf245c21ba018a0d2156d8d7b6064e6cdf0611e051c4cdeb79f4cdfa"
+    },
+    "frozen_software_sources/yam_twin/m8_supported_start.py": {
+      "bytes": 17063,
+      "sha256": "ce9c3c2272b475167108ff2d25e568125d6378e64af7a0eadc1fe2219be656f7"
+    },
+    "independent_audits/audit_binding.json": {
+      "bytes": 2401,
+      "sha256": "ae2bec3974be5b4a98e1cfbcb7250daa6a1fc12dba2ae15aabc707c4a981338e"
+    },
+    "independent_audits/audit_sources/audit_m8_free_joint_properties.py": {
+      "bytes": 6934,
+      "sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11"
+    },
+    "independent_audits/audit_sources/audit_m8_left_pad_force_history.py": {
+      "bytes": 10265,
+      "sha256": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc"
+    },
+    "independent_audits/audit_sources/audit_m8_supported_trace.py": {
+      "bytes": 51366,
+      "sha256": "43e947d12ee95ee565ed6ec1a1ef3ee1e6352e43d3f3be38e5911fae36d472fb"
+    },
+    "independent_audits/audit_sources/independent_rest_clearance_audit.py": {
+      "bytes": 10444,
+      "sha256": "86c2b621de9612aedc64a4f2d6bcff5a5a8bab12ae0f16e93bdfe0ccaa7f6831"
+    },
+    "independent_audits/audit_sources/test_m8_supported_audit.py": {
+      "bytes": 12408,
+      "sha256": "7fc2d294e53f8d68fb0cf17790bea48db5d2484e8c06edfeb39a789230bd73fd"
+    },
+    "independent_audits/independent_free_joint_properties.json": {
+      "bytes": 10133,
+      "sha256": "98f932721de06685b1985368c294e26cb3b7e9b900393b224a3dc6bc0bb9df0f"
+    },
+    "independent_audits/independent_left_pad_force_history_audit.json": {
+      "bytes": 11446,
+      "sha256": "690dd2d14446e6ad4d1e9841ddb97dc15153e16c0191a152fc7c989aa18f3608"
+    },
+    "independent_audits/independent_rest_clearance_audit.json": {
+      "bytes": 4207,
+      "sha256": "066bda7df019720696ab16e98f72d2c6d85fb73e7b1e80714674f978f87a8264"
+    },
+    "independent_audits/independent_supported_audit.json": {
+      "bytes": 1431396,
+      "sha256": "c2df886543f22b576edf53b6822a75643bb13d3fe875f8035e4023fd772d7ef5"
+    },
+    "insertion_trace.npz": {
+      "bytes": 17255230,
+      "sha256": "069e6f53f97507c1311d69a41ea5cea9a85ee3eba4879b55655c29ea91fbc5c0"
+    },
+    "insertion_trace_partial.npz": {
+      "bytes": 17135059,
+      "sha256": "e42d5bcc7eb6b705b0bb2a7fce80dfe2b6f5e3b95412719486902aafca6f83cd"
+    },
+    "kinematic_rationale/kinematic_face120_open_reset_v1/diagnostic_source.py": {
+      "bytes": 8238,
+      "sha256": "0ca791ef1970a56f6adde55e04f2497f3054094a0ddd0e058b835b56ce69b2d6"
+    },
+    "kinematic_rationale/kinematic_face120_open_reset_v1/solved_right_arm_coordinates.npz": {
+      "bytes": 21341,
+      "sha256": "893feebcb6a2e9c87a7dae49f3a33a81361621611eaacbd227a8904cca70dd10"
+    },
+    "kinematic_rationale/kinematic_face120_open_reset_v1/study.json": {
+      "bytes": 352070,
+      "sha256": "9172276d1716d3bcee3f90cbd5454b09e4d754d06894fac09bb9b5c4d21170c0"
+    },
+    "kinematic_rationale/kinematic_face120_open_reset_v1/summary.json": {
+      "bytes": 1132,
+      "sha256": "8a94a2d8cf83ad6ff57bacdf31a3dc1b0a7f34536a82c36c5b49c509d4e53d6c"
+    },
+    "kinematic_rationale/kinematic_face120_route_v2/diagnostic_source.py": {
+      "bytes": 10775,
+      "sha256": "abd68d86efe7615ed149a7113b19f5de3a1b54683262d01504d74ad8dce7bad2"
+    },
+    "kinematic_rationale/kinematic_face120_route_v2/solved_right_arm_coordinates.npz": {
+      "bytes": 47186,
+      "sha256": "b4afe50112158a43cd237a9b89c39ed73b0ee9acf0910c549b39cd7b7b2c816c"
+    },
+    "kinematic_rationale/kinematic_face120_route_v2/study.json": {
+      "bytes": 1799905,
+      "sha256": "8707693224045f482c7466db4ea03b9445bcf17531234c55274977c1ba57fb90"
+    },
+    "kinematic_rationale/kinematic_face120_route_v2/summary.json": {
+      "bytes": 5987,
+      "sha256": "d611fd2e06043756405e18e42d6c988e3fdaff715ead8e4dbd481da0c92e394a"
+    },
+    "left_pad_force_history.npz": {
+      "bytes": 1311242,
+      "sha256": "0e5fa4d9e99b4870ddd3eac71baeeb982d41409bf731e1a55db6cdeddecc38ef"
+    },
+    "package_source.py": {
+      "bytes": 19512,
+      "sha256": "fb2ee27176fea293cdd6313e5e66c3c0845f275876d7ac256bcae3162631252a"
+    },
+    "published_producer_binding.json": {
+      "bytes": 7897,
+      "sha256": "217bb754ffeb4ed06970e6a1ffd436b62fa82212ad5ca0c79e6260ce654211d1"
+    },
+    "recorded_sources/yam_twin/kinematics.py": {
+      "bytes": 2796,
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683"
+    },
+    "recorded_sources/yam_twin/m8_insertion_engagement.py": {
+      "bytes": 4752,
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866"
+    },
+    "recorded_sources/yam_twin/m8_insertion_mechanics.py": {
+      "bytes": 4321,
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20"
+    },
+    "recorded_sources/yam_twin/m8_insertion_scene.py": {
+      "bytes": 25139,
+      "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d"
+    },
+    "recorded_sources/yam_twin/m8_insertion_simulation.py": {
+      "bytes": 67946,
+      "sha256": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294"
+    },
+    "recorded_sources/yam_twin/m8_scene.py": {
+      "bytes": 20849,
+      "sha256": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f"
+    },
+    "recorded_sources/yam_twin/m8_simulation.py": {
+      "bytes": 30270,
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449"
+    },
+    "recorded_sources/yam_twin/m8_supported_scene.py": {
+      "bytes": 7969,
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4"
+    },
+    "render/demo.gif": {
+      "bytes": 8379731,
+      "sha256": "6775a65dc91217484e34ec0d78714a267ec4d65ffa3a4e4cbed45b77a8882870"
+    },
+    "render/demo.mp4": {
+      "bytes": 913982,
+      "sha256": "108699c6a11f8b9fcd8366656a41801848521cb8b6adec2b667f5b304ef1c222"
+    },
+    "render/demo.png": {
+      "bytes": 254890,
+      "sha256": "cf8b5db3e90d98a9a0220b8ef4d10d54a6c8ea6531fc2ce9a6375e56f8804854"
+    },
+    "render/gif_manifest.json": {
+      "bytes": 1457,
+      "sha256": "15d1c514763e6d08fb58db993b0b3e3c1ce7ef6170fcc469f5ded54042c7c69d"
+    },
+    "render/gif_source.py": {
+      "bytes": 2229,
+      "sha256": "7ba1faabc1c63a58abc90a90bc5811c9c59cdc4ea27dc76ca93c89b96e3ed6ce"
+    },
+    "render/lift_bolt.png": {
+      "bytes": 250665,
+      "sha256": "0000ef82f88f0d57adb99f2532d254f286a4bee34a8902029167ef51b33c941e"
+    },
+    "render/lift_bolt_manifest.json": {
+      "bytes": 76620,
+      "sha256": "56b2299f7ec9825bbce03d1814f6d93adf6a52a44c88c9728365a9aa884e885e"
+    },
+    "render/render_manifest.json": {
+      "bytes": 82645,
+      "sha256": "d343d87ebf04f7d9cd2ef2ccc7d8b89d90ca33f4c3e602213bec2d16fa2339b0"
+    },
+    "render/renderer_source.py": {
+      "bytes": 10635,
+      "sha256": "954d12bea7d50b96d20156ad9d0077c0bad6d52a2b058bc9808cc2415cd47efc"
+    },
+    "render/renderer_sources/audit_m8_insertion_trace.py": {
+      "bytes": 30341,
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f"
+    },
+    "render/renderer_sources/m8_demo.py": {
+      "bytes": 13137,
+      "sha256": "f5989b9ee052a2bb6d68bdec090d90aec4faeed667fd8218bf3fa4dccb3d485d"
+    },
+    "render/renderer_sources/m8_insertion_demo.py": {
+      "bytes": 13740,
+      "sha256": "3531a3659ded5b4a7fe66868989c1bac6437a008282ec1229bf2f8a5ccb97a91"
+    },
+    "render/renderer_sources/render_face120_prefix.py": {
+      "bytes": 10635,
+      "sha256": "954d12bea7d50b96d20156ad9d0077c0bad6d52a2b058bc9808cc2415cd47efc"
+    },
+    "render/renderer_sources/runtime.py": {
+      "bytes": 2177,
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+    },
+    "render/table_context/audit_m8_insertion_trace.py": {
+      "bytes": 30341,
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f"
+    },
+    "render/table_context/render_face120_table_detail.py": {
+      "bytes": 5390,
+      "sha256": "86b3c7cc6929625aa41c2557aa856de947c92e6d410ebc4aac9c5b0c41f573ff"
+    },
+    "render/table_context/runtime.py": {
+      "bytes": 2177,
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+    },
+    "render/table_context/table_view.png": {
+      "bytes": 136217,
+      "sha256": "8466e6c8b9387b7f202f7557f197ff1e02b2957734b9db283255046f15ea4298"
+    },
+    "render/table_context/table_view_manifest.json": {
+      "bytes": 76043,
+      "sha256": "8da17ce851548d934a838e2288019e462a141587fd00fac1e206125d1b9fa391"
+    },
+    "renderer_source.py": {
+      "bytes": 7792,
+      "sha256": "3069a07152f71b83d337e9805565dbfb5611738b0e600fd88202cd77ac75ee8e"
+    },
+    "scene.xml": {
+      "bytes": 43813,
+      "sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10"
+    },
+    "scene_source.py": {
+      "bytes": 7969,
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4"
+    },
+    "software_proof/README.md": {
+      "bytes": 994,
+      "sha256": "e7fc13f9ccbd62c5d42d422e63642249213e827b54217028cf36df8c9dc4d490"
+    },
+    "software_proof/SHA256SUMS": {
+      "bytes": 332,
+      "sha256": "721d10943cc7a0f182cf3b10136bd4b4636af214dd2837cc9d2bfd70261fc7b8"
+    },
+    "software_proof/pytest_all.log": {
+      "bytes": 1100,
+      "sha256": "7a55afb67183c61dc8b124c34c6722cbf2b538d834716056e9f5dd77800cf2b2"
+    },
+    "software_proof/software_proof.json": {
+      "bytes": 7071,
+      "sha256": "0d82e5faab19d5b8e262b514c26467668b1b7b7d499327ae163297d2ca942ab3"
+    },
+    "software_proof/verification_source.py": {
+      "bytes": 1895,
+      "sha256": "38884b1f737814bc5ea5965bd2c93806e107fd2dfc371f6ededff755617a3260"
+    },
+    "supported_scene.zip": {
+      "bytes": 5325454,
+      "sha256": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93"
+    },
+    "table_support_force_history.npz": {
+      "bytes": 19028335,
+      "sha256": "9d569ca532961d33ec4cfd1850611bc77a28fc73a14d1d26a95a34ad8ef4af77"
+    },
+    "validation.json": {
+      "bytes": 778327,
+      "sha256": "5ce606e2988991bd77cbd76f9f726ba47839a63777b2eef92ef111a4bbbcb29d"
+    },
+    "validation_original.json.txt": {
+      "bytes": 778326,
+      "sha256": "e2145096aa0a8878074a0a3a070cec043b1b9b6905965362161da645c27f2799"
+    },
+    "validation_serialization.json": {
+      "bytes": 351,
+      "sha256": "09cb3224668beb7999804218e24d0c69b64fc03b0c70b2970022c93f2a6283c0"
+    }
+  }
+}

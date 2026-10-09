@@ -59,6 +59,12 @@ Older load/search failures also remain. See
 ## Separate table-supported approach in progress
 
 The left arm can stabilize a block that stays on the solid table.
+The [new 120° grip pickup-to-entry clip](media/m8_table_supported/face120_pickup_entry_v1/render/demo.gif)
+records physical block stabilization, bolt pickup and transfer through 6.3983 s.
+The [table close-up](media/m8_table_supported/face120_pickup_entry_v1/render/table_context/table_view.png)
+shows both actual grips. Its [exact sources, forces and four audits](media/m8_table_supported/face120_pickup_entry_v1)
+are bound to `b2b13ff` and its 281-test proof. This is a partial cone-entry
+pilot with zero formed capture; the original overall result stays false.
 The [actual bolt-over-bore screenshot](media/m8_table_supported/progress_bolt_over_bore/demo.png)
 shows the fresh corrected run after physical bolt pickup, lift and transport;
 that recorded frame precedes thread contact. The
