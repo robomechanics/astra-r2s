@@ -6,35 +6,63 @@ solid head. The right arm reaches for it, closes its real fingers, lifts it
 off a physical three-pin rest, transports it over the hole, and searches for
 the thread with finite motor torques and an axially floating hand.
 
-[![Actual pickup and transport, recorded physics](../media/m8_insertion/pickup/demo.gif)](../media/m8_insertion/pickup/demo.mp4)
+[![Complete recorded pickup, capture and threading](../media/m8_insertion/full/demo.gif)](../media/m8_insertion/full/demo.mp4)
 
-## Current recorded results
+## Completed nominal rollout
 
-The 2.72 s pickup/transport trajectory passes its pickup checks. Both right
-pads carry at least 5.94 N, and the bolt has zero world-support contacts
-during transport. Its measured movement within the right grasp stays below
-41.75 µm. The left arm lifts the free block 3.849 mm. Independent replay
-checks native joint margins, finite motor commands, actual object poses and
-support disappearance. The [raw trajectory](../media/m8_insertion/pickup/trace.npz),
-[rollout checks](../media/m8_insertion/pickup/validation.json),
-[preserved executed controller](../media/m8_insertion/pickup/controller_source.py),
-and [independent audit](../media/m8_insertion/pickup/independent_audit.json)
-are published. The full-demo result remains false because pickup alone
-contains no qualified threading strokes.
+The fresh, unspliced **27.35665 s** trajectory passes all **18 nominal gates**.
+It starts with the bolt on its rest, performs physical pickup and transport,
+searches through three starting strokes, captures complete flanks, opens the
+right fingers to reset, regrips and performs two qualified half-turns. Those
+two strokes give **1.000085 measured revolutions and 1.245793 mm axial travel**.
+The final total axial thread overlap is **4.62465 mm**; the head is unseated.
 
-The first actual robot search stroke also completes without a guard abort.
-It reaches approximately 2.125 mm total insertion. Only about 0.116 mm of
-fully formed flank overlaps, so it is correctly not marked engaged. The
-full multi-stroke starting/reset/lead-qualification run is in progress.
-Watch the [recorded first entry stroke](../media/m8_insertion/first_start/demo.mp4)
-and its [independent entry-only audit](../media/m8_insertion/first_start/independent_audit.json).
+| Qualified stroke | Measured rotation | Axial advance | Signed pitch residual |
+| --- | ---: | ---: | ---: |
+| `turn_1` | 180.0154° | 624.350 µm | −0.703 µm |
+| `turn_2` | 180.0153° | 621.443 µm | −3.610 µm |
+
+Both strokes pass the declared 2% lead limit. Residuals compare actual axial
+motion with M8 × 1.25 pitch times actual rotation; no helix is commanded.
+
+| Captured open reset | All-substep peak axial drift | Peak yaw drift | Hand / world / head-seating contacts |
+| --- | ---: | ---: | --- |
+| `reset_open_1` | 0.253 µm | 0.669 mrad | 0 / 0 / 0 |
+| `reset_open_2` | 0.083 µm | 0.168 mrad | 0 / 0 / 0 |
+
+Earlier resets during thread search are reported separately and do not count
+as complete-flank self-locking evidence. The left arm physically lifts the
+free block **3.846 mm**. Peak measured grasp translation is **131.08 µm**
+at the block and **367.40 µm** at the bolt. Loaded sampled left pad forces
+remain at least **15.57 / 14.81 N**. Right pad minima during the declared
+transport/alignment/feed/closed-turn samples are **5.70 / 5.50 N**.
+Minimum actual native arm-joint margin is **0.03467 rad**. No solver/state
+abort, direct object drive or post-pickup world support occurs.
+
+Published evidence:
+
+- [Complete MP4](../media/m8_insertion/full/demo.mp4), [GIF](../media/m8_insertion/full/demo.gif) and [open-reset still](../media/m8_insertion/full/demo.png).
+- [Actual trajectory](../media/m8_insertion/full/trace.npz), [all 18 gates and phase metrics](../media/m8_insertion/full/validation.json), [source/runtime manifest](../media/m8_insertion/full/manifest.json) and executed source archives.
+- [Independent geometry/capture audit](../media/m8_insertion/full/independent_capture_audit.json), [all-candidate reset-contact audit](../media/m8_insertion/full_reset_contact_audit.json) and [free-joint property audit](../media/m8_insertion/full_free_joint_properties.json).
+- [Measured motion/contact chart](../media/m8_insertion/full/trajectory.png) and [126-test software proof](../media/m8_insertion/software_tests.json).
+
+The contact audit recomputes collision candidates at saved poses without
+integrating physics. The rollout report supplies all-substep contact and
+drift maxima; sampled replay cannot independently reconstruct forces between
+samples. The free-joint audit separately checks zero joint damping, friction
+loss, armature, springs, gravity compensation and fluid forces on both objects.
+
+The [pickup-only trajectory](../media/m8_insertion/pickup) and
+[first entry stroke](../media/m8_insertion/first_start) remain archived scoped
+diagnostics. Their full-demo status remains incomplete; neither substitutes
+for this completed rollout.
 
 An environment restart interrupted the earlier full trials. Their original
 partial traces, executed sources, interruption records and audits are preserved
 under [interrupted trials](../media/m8_insertion/interrupted). The legacy
 continuous-force trial reached capture and an unsupported reset, then stopped
 before its first qualification turn. It has no final acceptance result.
-The current full run starts again from the separate bolt's original pickup
+The completed fresh run starts again from the separate bolt's original pickup
 state; no trajectory is spliced from those checkpoints.
 
 The separate fixed-female/free-bolt contact experiment starts from 0.5 mm
@@ -81,19 +109,23 @@ measured pitch agreement within 2%. Search resets and qualified unseated
 thread resets have separate reports; head/block seating cannot supply a
 thread self-locking claim.
 
-The current demo uses a versioned capture observer: 0.2 s of valid complete-ring
+The demo and policy environment use the same versioned capture observer:
+0.2 s of valid complete-ring
 geometry, at least 0.001 N·s of measured interior-contact normal impulse,
 at least 0.5 ms of loaded contact, and at most 150 µm helix-phase variation.
 Normal impulse establishes loaded contact; it does not establish axial force
 balance. Actual lead and unsupported open resets independently qualify
 engagement. Every saved sample records the window metrics.
 
+The candidate capture tag occurs at **16.063 s**. Qualification follows from
+the measured lead and unsupported resets above, rather than the tag alone.
+
 The earlier observer required 0.2 s of uninterrupted positive contact force.
 Zero-margin unilateral contacts have real force gaps even during correct
 pitch-following motion. That criterion remains a separate diagnostic, and
-the original trial retains its executed source and outcome. The new trial
-starts again from the unengaged pickup. Contact geometry, force laws, motor
-bounds, lead limits and reset limits are unchanged.
+the original trial retains its executed source and outcome. The fresh full
+run also passes this legacy diagnostic at **22.44105 s**. Contact geometry,
+force laws, motor bounds, lead limits and reset limits are unchanged.
 
 ## Run and replay
 
@@ -106,10 +138,16 @@ scripts/run_m8.sh -m yam_twin.m8_insertion_demo \
   --output outputs/m8_insertion/demo --dt .00005 \
   --stroke-degrees 180 --angular-speed 2 --maximum-starting-strokes 5 --video
 scripts/run_m8.sh -m yam_twin.m8_insertion_demo \
-  --replay media/m8_insertion/pickup/trace.npz \
-  --output outputs/m8_insertion/pickup_replay --slow-motion 3
+  --replay media/m8_insertion/full/trace.npz \
+  --output outputs/m8_insertion/full_replay --slow-motion 1.5
 scripts/run_m8.sh scripts/audit_m8_insertion_trace.py \
-  media/m8_insertion/pickup/trace.npz
+  media/m8_insertion/full/trace.npz
+scripts/run_m8.sh scripts/audit_m8_insertion_capture.py \
+  media/m8_insertion/full/trace.npz
+scripts/run_m8.sh scripts/audit_m8_insertion_reset_contacts.py \
+  media/m8_insertion/full/trace.npz
+scripts/run_m8.sh scripts/audit_m8_free_joint_properties.py \
+  media/m8_insertion/full/trace.npz
 scripts/run_m8.sh scripts/probe_m8_thread_start.py \
   --duration 5.5 --output outputs/m8_insertion/geometry_start
 ```

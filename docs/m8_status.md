@@ -6,6 +6,12 @@ male/female fit, a rounded bolt root, and entry chamfers. The nut is a free
 rigid body; the hand transmits forces through finite frictional pad contacts.
 The collision plugin contains no force law or rotation-to-translation rule.
 
+The separate [YAM pickup and female-block task](yam_m8_insertion.md) now
+passes all 18 nominal rollout gates, including actual thread capture and one
+qualified revolution. Its raw evidence is published alongside this older
+fixed-bolt experiment. Those nominal results do not erase the load/search
+failures or calibration limits documented here.
+
 ![Recorded contact-driven turn](../media/m8_contact.png)
 
 [Two-turn video](../media/m8_contact.mp4) ·

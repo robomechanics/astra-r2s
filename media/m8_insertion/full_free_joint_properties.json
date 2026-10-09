@@ -1,0 +1,208 @@
+{
+  "kind": "Compiled free-workpiece passive-properties audit",
+  "method": "Compile exact recorded scene only; zero integration, commands or force solve",
+  "scope": "Zero free-joint passive terms excludes inherited joint drag/stiction or extra rotational inertia as the source of open-reset stability. Physical thread/finger contact friction remains enabled; this does not qualify contact-law accuracy.",
+  "model_fingerprint": "570387eef1dabf8b6c76c043c6f628f14fbd15cd928bcc123454e49600d69e75",
+  "scene_config": {
+    "base": {
+      "thread": {
+        "timestep": 5e-05,
+        "friction": 0.15,
+        "contact_time_constant": 0.0005,
+        "contact_margin": 0.0,
+        "contact_impratio": 1.0,
+        "sdf_initpoints": 40,
+        "sdf_iterations": 30,
+        "bolt_length": 0.016,
+        "pitch": 0.00125,
+        "male_pitch_diameter": 0.0071,
+        "female_pitch_diameter": 0.007268,
+        "nut_height": 0.016,
+        "nut_across_flats": 0.016,
+        "nut_mass": 0.018984665656908355,
+        "nut_transverse_inertia": 6.946182225160569e-07,
+        "nut_axial_inertia": 1.1886877420788483e-06,
+        "initial_z": 0.00875,
+        "gravity": -9.81,
+        "with_gripper": false,
+        "with_bolt": true,
+        "guided": false
+      },
+      "bolt_position": [
+        0.3,
+        -0.06,
+        0.11125
+      ],
+      "bolt_quaternion": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pad_friction": 0.8,
+      "jaw_stiffness": 20000.0,
+      "jaw_damping": 8.0,
+      "maximum_jaw_force": 20.0,
+      "open_aperture": 0.024,
+      "closed_aperture": 0.0194,
+      "left_closed_aperture": 0.0144,
+      "left_grasp_roll_rad": -1.5707963267948966,
+      "left_block_contact_impedance": [
+        0.9999,
+        0.9999,
+        0.0001
+      ],
+      "left_block_contact_time_constant": 0.0008,
+      "pad_inner_offset": 0.0005,
+      "block_size": [
+        0.02,
+        0.12,
+        0.016
+      ],
+      "block_density": 2700.0,
+      "bolt_offset": [
+        0.0,
+        -0.05,
+        0.008
+      ],
+      "left_grasp_offset": [
+        0.0,
+        -0.0094,
+        0.0
+      ]
+    },
+    "block_position": [
+      0.3,
+      -0.01,
+      0.10325
+    ],
+    "hole_offset": [
+      0.0,
+      -0.05,
+      0.0
+    ],
+    "bolt_head_position": [
+      0.36,
+      -0.15,
+      0.12
+    ],
+    "bolt_yaw_rad": 0.23,
+    "head_across_flats": 0.02,
+    "head_height": 0.008,
+    "steel_density": 7850.0,
+    "rest_radius": 0.007,
+    "rest_pin_radius": 0.001,
+    "rest_base_height": 0.01
+  },
+  "audit_runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "core_and_plugin_match_recorded": true,
+  "gravity_m_s2": [
+    0.0,
+    0.0,
+    -9.81
+  ],
+  "fluid_density": 0.0,
+  "fluid_viscosity": 0.0,
+  "workpieces": [
+    {
+      "body": "fixture_block",
+      "joint": "fixture_block_free",
+      "joint_type": 0,
+      "is_free_joint": true,
+      "dof_damping": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dof_frictionloss": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dof_armature": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "joint_stiffness": 0.0,
+      "body_gravity_compensation_fraction": 0.0,
+      "joint_actuator_ids": [],
+      "body_mass_kg": 0.1018141990344638,
+      "principal_inertia_kg_m2": [
+        0.00012310891134602138,
+        0.0001218299875488179,
+        5.619972446250878e-06
+      ],
+      "all_tested_passive_artificial_terms_zero": true
+    },
+    {
+      "body": "male_bolt",
+      "joint": "male_bolt_free",
+      "joint_type": 0,
+      "is_free_joint": true,
+      "dof_damping": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dof_frictionloss": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dof_armature": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "joint_stiffness": 0.0,
+      "body_gravity_compensation_fraction": 0.0,
+      "joint_actuator_ids": [],
+      "body_mass_kg": 0.0267496436326005,
+      "principal_inertia_kg_m2": [
+        1.421658947768128e-06,
+        1.4216454206971084e-06,
+        1.240966802194769e-06
+      ],
+      "all_tested_passive_artificial_terms_zero": true
+    }
+  ],
+  "equality_count": 2,
+  "equality_types": [
+    2,
+    2
+  ],
+  "reproduce_command": "scripts/run_m8.sh scripts/audit_m8_free_joint_properties.py outputs/m8_insertion/full_window_v1_restart/insertion_trace.npz",
+  "auditor_sha256": "4ccb2c6d65e57bf8441b435a5465a0f53ab03e65c83fcb351cfbc1fb31714564",
+  "trajectory": "outputs/m8_insertion/full_window_v1_restart/insertion_trace.npz",
+  "trajectory_sha256": "7c526877637107afec716be653b716167bdfa37fb1aeee86e354b736e9411891"
+}

@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "status": "recorded_validation_pass",
+  "evidence_only": false,
+  "legacy_inline_observer": false,
+  "recorded_validation_passed": true,
+  "partial_task_scope": false,
+  "physics_claim_scope": "Packaging preserves recorded outcomes; it does not add physics qualification",
+  "packager_source_sha256": "c494d509cec25313e978af8b4d575a4ca37ef0858781cc404103326cb1087087",
+  "source_run_directory": "/workspace/astra-r2s/outputs/m8_insertion/full_window_v1_restart",
+  "trajectory_sha256": "7c526877637107afec716be653b716167bdfa37fb1aeee86e354b736e9411891",
+  "sample_count": 5520,
+  "final_recorded_time_s": 27.35665000034638,
+  "identity_checks": {
+    "trace_report_identity": true,
+    "finite_aligned_states": true,
+    "model_xml_sha256": "ff7fbd30cc1d6eaf892c2dd394900df5e3eab3520f258db11f6dc612c20f2c4e",
+    "model_fingerprint": "570387eef1dabf8b6c76c043c6f628f14fbd15cd928bcc123454e49600d69e75",
+    "mesh_sha256": {
+      "model2.stl": "5ac61c0313ed00c38655e41681af1b8b307cf8d5ef57209a75f215cea02df754",
+      "model2__2.stl": "30dab41f14bae95d737abca3c934eb5d570ab107dff0b40952fbdfb9d07eab79",
+      "model2__3.stl": "9fd96f5ad387fe7dd96eaa65e386637800e2f5637b6167fbad4ecb37d8598f47",
+      "model2__4.stl": "33c0e7ef538e2c4473efa9c4ef2a8441b6094b65090b4dec71abe82001d974df",
+      "model2__5.stl": "09f08e7dead2d6363618471adadb1b94af39e8056676670f3fd21ec06c197b20",
+      "model2__6.stl": "888b5919d10dbfb59b964c3cafc2ddbdac3b5426e20dd13bcaf4baedd5ee15c9",
+      "model2__7.stl": "2d64b18f1e70b0460eb53335d340b7c879976a3093ec67b07bcb7245e371a91d",
+      "model2__8.stl": "db3708da6b14daf3fc9a1909a8325b68f65ff69146cdd20b69a9ddc4ce51f50d",
+      "model2__9.stl": "74969d09b8b7f75cc984c5c7e5526d2941c6724f48b3efa1fa8730cc7820f4f5",
+      "model2__10.stl": "b879cc07f547b7a2ac52e428dd206e80a0d4b0e805cb56b9a8230df04a690923",
+      "model2__11.stl": "af220d2a51e8444392aef36e2fe4a6f69aed22bc292a7f38e54da3b4f5253434",
+      "model2__12.stl": "e79614869bd2283f70fafa150ce748d5b6c03377a651448c6fe9893a22f6d1de",
+      "model2__13.stl": "32b62f14f00ea82bfc79b935f7dac32c7cb276a3abc0aae8362cbba3fb1326de",
+      "model2__14.stl": "72d2178789dd5e0358c2caf9dad90b8881e505f4c52a8d6d18c71b5e93e8c84b",
+      "model2__15.stl": "ca8788184d54f30c18482cb9b48dffb010a93dbc029054b6cc515083a740d324",
+      "model2__16.stl": "18bb99691eed524393e8f3a0ff29e79d97ab75689bc92144bbdfafa2cc79d37b",
+      "model2__17.stl": "6513dbd192d2bf3a4f7016231f1ba5eca93916c9ebfdc334e9b435ca1d302ff6",
+      "d405.stl": "6617f3fb22b604a66c27e16d2397f305fcdca8a781248abdbabbf69c9fe6a3c5"
+    },
+    "controller_sha256": "e59e760ecd1d1c2a9849aa956ba316909b5f31cf3fe47309fbd135b653de1fc6",
+    "hashed_controller_objects": [
+      "InsertionControlConfig",
+      "insertion_phases",
+      "initialize_insertion_pose",
+      "_body_contact",
+      "formed_flank_overlap",
+      "run_insertion_demo",
+      "fully_formed_flank_interval",
+      "contact_is_on_full_flanks",
+      "thread_end_bounds",
+      "LoadedFlankWindow",
+      "YamCartesianController",
+      "YamM8ControlConfig",
+      "smooth_profile"
+    ],
+    "observer_sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "observer_identity_kind": "separate_hash_verified_module",
+    "legacy_inline_observer_verified": false,
+    "warnings": []
+  },
+  "recorded_runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "independent_audit_file": "independent_capture_audit.json",
+  "audit_source_sha256": {
+    "audit_m8_insertion_trace.py": "5d47a251a23f45d0797540857ddef55badff45a5929cc13d9ac16c01ef8e675c",
+    "audit_m8_insertion_capture.py": "3cd2b533787f62a6cb0bad6e1805053a300b25ca0eb1c0afd90ae21c4a5c175f"
+  },
+  "audit_source_archives_verified": true,
+  "media_trajectory_link_verified": true,
+  "asset_scope": "scene.xml requires repository mesh assets and the verified thread plugin",
+  "files": {
+    "trace.npz": {
+      "sha256": "7c526877637107afec716be653b716167bdfa37fb1aeee86e354b736e9411891",
+      "bytes": 9309189
+    },
+    "validation.json": {
+      "sha256": "d5b0c7fb021ea3ad6ab78da2e38044e21553d5a4810457e829da63aea1430472",
+      "bytes": 41506
+    },
+    "scene.xml": {
+      "sha256": "ff7fbd30cc1d6eaf892c2dd394900df5e3eab3520f258db11f6dc612c20f2c4e",
+      "bytes": 43303
+    },
+    "controller_source.py": {
+      "sha256": "5f721923e499d7ce5f52ad3a91c0a074f256767a6c799ff4c2914ac7c107f46f",
+      "bytes": 34388
+    },
+    "recorded_sources/yam_twin/m8_insertion_mechanics.py": {
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+      "bytes": 4321
+    },
+    "recorded_sources/yam_twin/m8_insertion_engagement.py": {
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "bytes": 4752
+    },
+    "recorded_sources/yam_twin/m8_simulation.py": {
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+      "bytes": 30270
+    },
+    "engagement_observer_source.py": {
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "bytes": 4752
+    },
+    "audit_sources/audit_m8_insertion_trace.py": {
+      "sha256": "5d47a251a23f45d0797540857ddef55badff45a5929cc13d9ac16c01ef8e675c",
+      "bytes": 20087
+    },
+    "audit_sources/audit_m8_insertion_capture.py": {
+      "sha256": "3cd2b533787f62a6cb0bad6e1805053a300b25ca0eb1c0afd90ae21c4a5c175f",
+      "bytes": 6846
+    },
+    "independent_capture_audit.json": {
+      "sha256": "d605c1bd7f6ac4a4f95d0d473ef85851e3ef74763b449f27f4098477f7f3ff57",
+      "bytes": 77960
+    },
+    "demo.mp4": {
+      "sha256": "7af95cfeffba8fc7e2b7f576f6b64478debacbc1bc64998d83c0df2a9652850d",
+      "bytes": 8165547
+    },
+    "demo.png": {
+      "sha256": "c22bde3aac60ba21c307de9385a47f2b90cba896e3a01b3170b2f441b74bde01",
+      "bytes": 267072
+    },
+    "demo.gif": {
+      "sha256": "2831b569144eb4a9207b2f8f309e05d94c57e329e500bcb1a79c4d2200345ced",
+      "bytes": 14316045
+    },
+    "render_manifest.json": {
+      "sha256": "810421ae2af34fe3b73770f3aca9a6bf8859eb9d6db0476a44c24efd85853769",
+      "bytes": 397
+    },
+    "trajectory.png": {
+      "sha256": "bc3995421f31577b68b3079a69a0dac1db145c42b38d1c37da107aefb184802c",
+      "bytes": 402964
+    },
+    "trajectory.pdf": {
+      "sha256": "574672ce10532228fbaa088aa8695c0b072a5b4a44a4986e4beb754d6a56a96e",
+      "bytes": 106255
+    },
+    "trajectory_plot.json": {
+      "sha256": "c7a949f5bd8a089b39b029d342a91b5b82d805e407c726ac0b1ae1c11df7333c",
+      "bytes": 3741
+    }
+  }
+}

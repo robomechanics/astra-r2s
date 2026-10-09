@@ -64,6 +64,14 @@ a passing import or image is insufficient evidence for policy training.
 
 ## Verified in this cloud workspace
 
+On 2026-10-09, the expanded suite passes **126 tests** in 52.78 s wall time using the
+same verified native runtime. The [published software proof](../media/m8_insertion/software_tests.json)
+records unchanged source hashes across the run. The separate
+[complete YAM pickup/capture/turn rollout](yam_m8_insertion.md) passes all
+18 nominal physics gates; those checks have a narrower scope than general
+policy-training fidelity. The installation checks below retain their original
+date and suite size.
+
 On 2026-10-08, the complete setup script and its repeat succeeded, preserving
 the separate stock and MJLab runtimes. The repeat took 15.741 s. The matched
 core SHA-256 was

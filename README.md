@@ -1,13 +1,25 @@
 # Bimanual YAM M8 contact tasks
 
-The next task puts the **female M8 × 1.25 thread in the left-held block**.
-The right arm picks up a separate headed bolt and starts the thread. The
-scene has a real open bore, a free 16 mm shaft with a 20 mm graspable head,
-and a physical pickup rest. The actual pickup/transport and first entry stroke
-pass their scoped checks; the full capture/reset/turn sequence is in progress.
+The **female M8 × 1.25 thread is in the left-held block**. The right arm
+picks up a separate headed bolt, starts the thread, releases and regrasps,
+then performs two qualified 180° strokes. The complete recorded rollout
+passes all **18 nominal checks**: one verified revolution advances the bolt
+**1.24579 mm**, with **0.70 and 3.61 µm** lead residuals. Native MuJoCo CPU
+contact drives the threads; the free objects have no grasp welds, imposed
+helix, object motors or direct external drive.
 See [task controls, policy interface and measured results](docs/yam_m8_insertion.md).
 
-[![Recorded physical bolt pickup and transport](media/m8_insertion/pickup/demo.gif)](media/m8_insertion/pickup/demo.mp4)
+[![Complete recorded pickup, capture and threading](media/m8_insertion/full/demo.gif)](media/m8_insertion/full/demo.mp4)
+
+[Watch/download the MP4](media/m8_insertion/full/demo.mp4) ·
+[Raw trajectory and checks](media/m8_insertion/full) ·
+[Measured motion and contact loads](media/m8_insertion/full/trajectory.png)
+
+The short shaft is 16 mm long and its solid graspable head is AF20 × 8 mm.
+Both captured open resets have zero hand/bolt, world-support and head-seating
+contacts; peak axial drift is **0.253 and 0.083 µm**. This establishes the
+nominal pickup-to-running sequence. Full seating, preload, hardware calibration
+and policy training remain unqualified.
 
 The separate disengaged contact benchmark measures **1.250052 mm/revolution**
 after capture. Without a rotation command, the bolt stops at the thread
@@ -73,8 +85,9 @@ Read the failed checks before using this for policy training.
 The nut starts engaged on a fixed bolt. A proxy parallel hand replaces the
 YAM arms for this mechanics experiment. M8 dimensions, steel density, and
 μ=0.15 are declared assumptions; the videos do not provide measurements of
-tolerances, forces, or friction. Thread starting, calibrated hardware contact,
-seating/preload, and a trained bimanual policy remain unfinished.
+tolerances, forces, or friction. This older trace contains no pickup or thread
+starting. Calibrated hardware contact, seating/preload and a trained bimanual
+policy remain unfinished.
 
 ## Run
 
@@ -105,7 +118,7 @@ scripts/run_m8.sh -m thread_lab.load_benchmark --help
 ```
 
 `thread_lab.validate` retains strict physics gates and can exit with failure.
-The final **97 software tests pass**. Software tests, numerical geometry checks,
+The current **126 software tests pass**. Software tests, numerical geometry checks,
 and physics acceptance answer different questions.
 [Setup and engine provenance](docs/m8_setup.md) explain the separate runtimes.
 

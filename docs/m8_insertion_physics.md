@@ -125,18 +125,25 @@ retain the failed depth diagnostic, hashes and reproducible comparison.
 
 ## Qualification before policy-training claims
 
-The nominal robot trace must show initially separated male/female bodies,
+The [completed nominal YAM rollout](yam_m8_insertion.md) now demonstrates
+physical pickup, contact-driven capture, unsupported open resets and two
+qualified half-turns. All 18 nominal gates pass; source/runtime identities and
+saved-pose contacts have independent audits. The measured travel is 1.245793 mm
+over 1.000085 revolutions. This is evidence for the declared rigid-contact
+condition, alongside the retained numerical and load failures below.
+
+Acceptance of a nominal robot trace requires initially separated male/female bodies,
 finite finger-contact pickup from the bolt rest, no rest contacts after
 lift, approach and contact-driven capture, and subsequent independent
 clockwise strokes whose measured lead agrees with 1.25 mm/revolution.
 Only actual bounded robot motors may act in that trace. No weld, free-body
 actuator, external object wrench, or object state rewrite may assist it.
 
-Essential further checks include arbitrary initial phase, modest radial and
+Broader qualification still requires arbitrary initial phase, modest radial and
 tilt errors, zero-rotation axial-feed obstruction after the end lead-in,
 open-grip support during resets, axial-load/friction response, and timestep
 and SDF-search refinement. Full head seating requires separate bearing-face
 torque and contact/preload checks. Rigid contacts do not establish plastic
 cross-thread damage, stripping, wear, or realistic bolt/joint elasticity.
-Successful starting and running lead would remain a nominal mechanics proof
+Successful starting and running lead remain a nominal mechanics proof
 of concept rather than a trained or hardware-calibrated policy.

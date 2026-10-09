@@ -1,0 +1,158 @@
+{
+  "scope": "Supplemental read-only audits of the single completed continuous canonical pickup-to-thread-start rollout. Original full audits remain untouched; no trajectory splicing.",
+  "canonical_trace_original_path": "outputs/m8_insertion/full_window_v1_restart/insertion_trace.npz",
+  "canonical_trace_published_path": "media/m8_insertion/full/trace.npz",
+  "canonical_final_trace_sha256": "7c526877637107afec716be653b716167bdfa37fb1aeee86e354b736e9411891",
+  "model_fingerprint": "570387eef1dabf8b6c76c043c6f628f14fbd15cd928bcc123454e49600d69e75",
+  "scene_config": {
+    "base": {
+      "thread": {
+        "timestep": 5e-05,
+        "friction": 0.15,
+        "contact_time_constant": 0.0005,
+        "contact_margin": 0.0,
+        "contact_impratio": 1.0,
+        "sdf_initpoints": 40,
+        "sdf_iterations": 30,
+        "bolt_length": 0.016,
+        "pitch": 0.00125,
+        "male_pitch_diameter": 0.0071,
+        "female_pitch_diameter": 0.007268,
+        "nut_height": 0.016,
+        "nut_across_flats": 0.016,
+        "nut_mass": 0.018984665656908355,
+        "nut_transverse_inertia": 6.946182225160569e-07,
+        "nut_axial_inertia": 1.1886877420788483e-06,
+        "initial_z": 0.00875,
+        "gravity": -9.81,
+        "with_gripper": false,
+        "with_bolt": true,
+        "guided": false
+      },
+      "bolt_position": [
+        0.3,
+        -0.06,
+        0.11125
+      ],
+      "bolt_quaternion": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pad_friction": 0.8,
+      "jaw_stiffness": 20000.0,
+      "jaw_damping": 8.0,
+      "maximum_jaw_force": 20.0,
+      "open_aperture": 0.024,
+      "closed_aperture": 0.0194,
+      "left_closed_aperture": 0.0144,
+      "left_grasp_roll_rad": -1.5707963267948966,
+      "left_block_contact_impedance": [
+        0.9999,
+        0.9999,
+        0.0001
+      ],
+      "left_block_contact_time_constant": 0.0008,
+      "pad_inner_offset": 0.0005,
+      "block_size": [
+        0.02,
+        0.12,
+        0.016
+      ],
+      "block_density": 2700.0,
+      "bolt_offset": [
+        0.0,
+        -0.05,
+        0.008
+      ],
+      "left_grasp_offset": [
+        0.0,
+        -0.0094,
+        0.0
+      ]
+    },
+    "block_position": [
+      0.3,
+      -0.01,
+      0.10325
+    ],
+    "hole_offset": [
+      0.0,
+      -0.05,
+      0.0
+    ],
+    "bolt_head_position": [
+      0.36,
+      -0.15,
+      0.12
+    ],
+    "bolt_yaw_rad": 0.23,
+    "head_across_flats": 0.02,
+    "head_height": 0.008,
+    "steel_density": 7850.0,
+    "rest_radius": 0.007,
+    "rest_pin_radius": 0.001,
+    "rest_base_height": 0.01
+  },
+  "recorded_runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "controller_sha256": "e59e760ecd1d1c2a9849aa956ba316909b5f31cf3fe47309fbd135b653de1fc6",
+  "observer_source_sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+  "canonical_original_result": {
+    "passed": true,
+    "partial": false,
+    "aborted": null,
+    "acceptance_gate_count": 18
+  },
+  "reports": [
+    {
+      "original_report": "outputs/m8_insertion/full_window_v1_restart/independent_reset_contact_audit.json",
+      "published_report": "media/m8_insertion/full_reset_contact_audit.json",
+      "sha256": "4d6e2eb287c0bdf24d434b382f0145ec4c0147c86d229131ebdc1dbc85993480",
+      "byte_identical_to_original": true,
+      "rows_retained": true
+    },
+    {
+      "original_report": "outputs/m8_insertion/full_window_v1_restart/independent_free_joint_properties.json",
+      "published_report": "media/m8_insertion/full_free_joint_properties.json",
+      "sha256": "5286066b9ee92a7f5d900ca1019f30f9e43f56a01bcaaf612cd0ff266929478b",
+      "byte_identical_to_original": true,
+      "rows_retained": true
+    }
+  ],
+  "archived_auditor_sources": [
+    {
+      "path": "media/m8_insertion/full_supplemental_sources/audit_m8_insertion_reset_contacts.py",
+      "sha256": "df780df5eb07313a999d8a21339f3ee4a13463410b354916b367cd3b81cf9c06",
+      "byte_identical_to_executed_auditor_archive": true
+    },
+    {
+      "path": "media/m8_insertion/full_supplemental_sources/audit_m8_free_joint_properties.py",
+      "sha256": "4ccb2c6d65e57bf8441b435a5465a0f53ab03e65c83fcb351cfbc1fb31714564",
+      "byte_identical_to_executed_auditor_archive": true
+    },
+    {
+      "path": "media/m8_insertion/full_supplemental_sources/audit_m8_insertion_trace.py",
+      "sha256": "5d47a251a23f45d0797540857ddef55badff45a5929cc13d9ac16c01ef8e675c",
+      "byte_identical_to_executed_auditor_archive": true
+    }
+  ],
+  "source_import_dependency_note": "The archived reset and free-joint auditors import recorded_configuration from the archived primary trace auditor; remaining model/runtime packages come from this repository and the matched M8 environment.",
+  "reproduce_commands": [
+    "bash scripts/run_m8.sh media/m8_insertion/full_supplemental_sources/audit_m8_insertion_reset_contacts.py media/m8_insertion/full/trace.npz --output /tmp/full_reset_contact_audit.json",
+    "bash scripts/run_m8.sh media/m8_insertion/full_supplemental_sources/audit_m8_free_joint_properties.py media/m8_insertion/full/trace.npz --output /tmp/full_free_joint_properties.json"
+  ],
+  "sample_and_force_scope": "Reset collision queries count every saved-pose workpiece candidate, including nonpenetrating ones. They cannot reconstruct between-sample contacts or forces. Original rollout all-substep force/support/drift instrumentation remains the acceptance evidence; normal impulse does not establish axial load balance.",
+  "free_joint_scope": "Zero passive free-joint terms excludes artificial joint drag/stiction/springs/armature/gravity compensation; physical contact friction remains enabled and contact-law accuracy needs separate qualification."
+}
