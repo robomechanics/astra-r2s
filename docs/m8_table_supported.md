@@ -23,6 +23,9 @@ qualified lead/reset and full assembly remain unqualified. Use the
 [current exact source-bound launch recipe](#run-current-canonical-candidate)
 and [agent setup/provenance handoff](m8_supported_agent_handoff.md#current-producer-fresh-run).
 The closed V5 branch below is separate evidence, using the old 6e7/402 source.
+The new [pickup progress recording](../media/m8_table_supported/full_c2_inertia_v2_progress/pickup_progress/README.md)
+preserves the original prefix through **3.47 s**, showing left stabilization
+and right side-bolt grasp/lift. It qualifies no thread entry, capture or reset.
 
 The earlier [crest-search V3 cold diagnostic](../media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/README.md)
 fails at **1.6254 s**, radial error **150.848 µm** above the unchanged

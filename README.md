@@ -37,6 +37,9 @@ Producer `da69a9c` starts a new fresh, unspliced table/rest-spawn attempt,
 in progress; capture, lead/reset and complete assembly remain unqualified.
 The [current exact checkout/fresh-run recipe](docs/m8_supported_agent_handoff.md#current-producer-fresh-run)
 binds the new producer, source/runtime checks and finite C2/inertia controller.
+The [3.47 s pickup progress clip](media/m8_table_supported/full_c2_inertia_v2_progress/pickup_progress/README.md)
+shows actual table stabilization, side-bolt grasp and lift; it contains no
+thread-entry or capture result.
 
 The historical `6e7d0d2` producer retains its separate
 [402-test / 65-source proof](media/m8_table_supported/software_proof_feedback_v1).

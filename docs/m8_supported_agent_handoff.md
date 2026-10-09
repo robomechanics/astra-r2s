@@ -28,6 +28,15 @@ identity is `f98c6ba218d1c5d8503ac3d362a4a501de4fd99a8f1d87e4ee2e11a704f4c9c3`.
 The older failed full run and all cold branches below retain their original
 producer/evidence identities; no cold state is stitched into this attempt.
 
+The immutable [pickup progress package](../media/m8_table_supported/full_c2_inertia_v2_progress/pickup_progress/README.md)
+contains the complete original **3.47 s / 703-state** prefix and matching
+74-source/672-test software packet, with [normal playback](../media/m8_table_supported/full_c2_inertia_v2_progress/pickup_progress/render/demo.gif),
+[table stabilization](../media/m8_table_supported/full_c2_inertia_v2_progress/pickup_progress/render/left_stabilized_detail.png)
+and [lifted bolt](../media/m8_table_supported/full_c2_inertia_v2_progress/pickup_progress/render/endpoint_detail.png).
+Its copied state replay recipe refreshes geometry only. Feedforward is disabled
+in all pickup samples; dense ledgers/final audit were pending at capture.
+The side-pickup bore-distance guard is inactive; no thread entry is claimed.
+
 Use an absent complete clone destination and detach to the exact new pin.
 The commands below use the recorded runtime; for a different-host build,
 follow [the local-proof case](#different-host-local-proof) before launching:
