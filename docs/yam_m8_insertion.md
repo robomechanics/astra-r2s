@@ -11,9 +11,10 @@ a 16 mm shaft and an AF20 × 8 mm solid head.
 The frozen measured-entry controller and CLI pass [176 software tests](../media/m8_table_pickup/software_tests.json)
 in 75.52 s with unchanged recorded source hashes; the
 [manifest](../media/m8_table_pickup/software_manifest.json) binds the proof and executed verification script.
-Its fresh full physics run starts again with both workpieces separately
-supported, without reusing a checkpoint. **No completed current full tabletop
-threading task is demonstrated; the fresh result remains pending.**
+Its fresh full physics runs start again with both workpieces separately
+supported, without reusing a checkpoint, at 0.5 and 1 rad/s starting speed.
+**No completed current full tabletop threading task is demonstrated;
+the fresh results remain pending.**
 The earlier damped full attempt and its separate 167-test source proof remain
 preserved below. The
 published earlier nominal rollout farther below starts with the left pads
@@ -29,17 +30,25 @@ five starting strokes, and two qualification strokes. Entry/support dwells
 are bounded to 3 s and axial velocity damping defaults to 50 N·s/m. Recorded preview
 configurations retain their own original parameters.
 
-[![Both physical pickups and first start/recovery; no formed-thread capture](../media/m8_table_pickup/progress_first_start/demo.gif)](../media/m8_table_pickup/progress_first_start/demo.mp4)
+[![Faster physical pickup and starting attempt at normal playback; capture pending](../media/m8_table_pickup/progress_faster_start/demo.gif)](../media/m8_table_pickup/progress_faster_start/demo.mp4)
 
-[Pickup/start MP4](../media/m8_table_pickup/progress_first_start/demo.mp4) ·
-[GIF](../media/m8_table_pickup/progress_first_start/demo.gif) ·
-[Screenshot](../media/m8_table_pickup/progress_first_start/demo.png) ·
-[Exact progress sources and scope](../media/m8_table_pickup/progress_first_start)
+[Faster pickup/start MP4](../media/m8_table_pickup/progress_faster_start/demo.mp4) ·
+[GIF](../media/m8_table_pickup/progress_faster_start/demo.gif) ·
+[Screenshot](../media/m8_table_pickup/progress_faster_start/demo.png) ·
+[Exact progress sources and scope](../media/m8_table_pickup/progress_faster_start)
 
-This actual recorded progress prefix ends at **14.18785 s**, before the
-second starting stroke. It shows block pickup and reorientation, separate
-bolt pickup, the first cone-start attempt, and opening/reset/regrasp. That
-sequence supplies no formed-thread capture, support or qualified lead proof.
+This actual recorded progress prefix uses a **1 rad/s starting command** and
+**normal 1× playback**. It ends at **19.0268 s**, after the first regrasp and
+before the second starting stroke. It shows both physical pickups, settled
+entry, the first starting stroke and opening/reset/regrasp. Capture remains
+false throughout; the final potential formed-flank overlap is about 0.125 mm,
+below the required 1.25 mm pitch. It supplies no formed-thread capture,
+support or qualified lead proof. The [actual settled-entry screenshot](../media/m8_table_pickup/progress_settled_entry.png)
+and its [recorded metadata](../media/m8_table_pickup/progress_settled_entry.json)
+come from the separate 0.5 rad/s run and show starting contact, not capture.
+
+The [earlier 14.18785 s start/recovery clip](../media/m8_table_pickup/progress_first_start)
+remains an archived prefix of the damped failed attempt described below.
 
 The [closed damped full attempt](../media/m8_table_pickup/failures/damped_second_release_abort)
 later aborts at **17.32385 s** during `release_search_3`: native depth reaches
@@ -320,6 +329,9 @@ scripts/run_m8.sh -m yam_twin.m8_insertion_demo \
   --stroke-degrees 180 --angular-speed 2 --starting-angular-speed .5 \
   --maximum-starting-strokes 5 --maximum-entry-dwell 3 \
   --axial-damping 50 --video
+scripts/run_m8.sh -m yam_twin.m8_insertion_demo \
+  --output outputs/m8_table_pickup/faster_demo --starting-angular-speed 1 \
+  --slow-motion 1 --video
 scripts/run_m8.sh -m yam_twin.m8_insertion_demo --preheld-block \
   --output outputs/m8_insertion/preheld_demo --dt .00005 \
   --stroke-degrees 180 --angular-speed 2 --maximum-starting-strokes 5 --video

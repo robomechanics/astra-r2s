@@ -12,11 +12,16 @@ qualified revolution. Its raw evidence is published alongside this older
 fixed-bolt experiment. Those nominal results do not erase the load/search
 failures or calibration limits documented here. That earlier rollout starts
 with the left pads touching the block. The current extension physically picks
-up both workpieces, as shown in the [native progress clip](../media/m8_table_pickup/progress_first_start/demo.mp4),
+up both workpieces, as shown in the [faster native progress clip](../media/m8_table_pickup/progress_faster_start/demo.mp4)
+at a 1 rad/s starting command and normal 1× playback,
 but has no completed tabletop threading rollout.
 The [176-test software proof](../media/m8_table_pickup/software_tests.json)
 checks the frozen measured-entry controller and CLI; it does not override
-failed physics gates. Its fresh continuous full rollout remains pending.
+failed physics gates. Fresh continuous full runs at 0.5 and 1 rad/s starting
+speed remain pending. The conservative CLI default stays 0.5 rad/s;
+`--starting-angular-speed 1 --slow-motion 1` selects the faster demonstrated
+command and normal playback. The [settled-entry screenshot](../media/m8_table_pickup/progress_settled_entry.png)
+is actual native entry from the conservative run, rather than formed capture.
 The [earlier full attempt](../media/m8_table_pickup/failures/full_v10_depth_abort)
 physically picked up both workpieces but aborted at the unchanged depth guard
 before capture. Recorded preload gaps and camera/jaw collisions remain failures.

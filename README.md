@@ -7,19 +7,26 @@ and rotate it into the assembly pose before the right arm picks up the bolt.
 The recorded clip now shows both physical pickups and a first starting/opening/
 reset/regrasp sequence. **The complete tabletop threading task remains
 unfinished.** The damped full attempt stopped before formed-flank capture.
-The measured-entry controller now passes **176 software tests**; its fresh
-continuous physics rollout is running, with full results pending. See
+The measured-entry controller now passes **176 software tests**; fresh
+continuous runs at 0.5 and 1 rad/s starting speed are running, with full results
+pending. See
 [task modes, controls and evidence](docs/yam_m8_insertion.md).
 
-[![Both physical pickups and first start/recovery; no formed-thread capture](media/m8_table_pickup/progress_first_start/demo.gif)](media/m8_table_pickup/progress_first_start/demo.mp4)
+[![Faster physical pickup and starting attempt at normal playback; capture pending](media/m8_table_pickup/progress_faster_start/demo.gif)](media/m8_table_pickup/progress_faster_start/demo.mp4)
 
-[Pickup/start MP4](media/m8_table_pickup/progress_first_start/demo.mp4) ·
-[GIF](media/m8_table_pickup/progress_first_start/demo.gif) ·
-[Screenshot](media/m8_table_pickup/progress_first_start/demo.png) ·
-[Exact progress sources and scope](media/m8_table_pickup/progress_first_start)
+[Faster pickup/start MP4](media/m8_table_pickup/progress_faster_start/demo.mp4) ·
+[GIF](media/m8_table_pickup/progress_faster_start/demo.gif) ·
+[Screenshot](media/m8_table_pickup/progress_faster_start/demo.png) ·
+[Exact progress sources and scope](media/m8_table_pickup/progress_faster_start)
 
-This actual recorded prefix ends at 14.18785 s before the second starting
-stroke. Cone contact and this reset do not establish thread capture or lead.
+This actual recorded prefix uses a **1 rad/s starting command and normal 1×
+playback**. It ends at 19.0268 s after the first regrasp, before the second
+starting stroke. Capture remains false; its partial formed-flank geometry is
+below one pitch. Cone contact and this recovery do not qualify thread lead.
+The [actual settled-entry screenshot](media/m8_table_pickup/progress_settled_entry.png)
+comes from the separate conservative run and also shows entry, not capture.
+The [earlier start/recovery clip](media/m8_table_pickup/progress_first_start)
+remains archived with the damped failed attempt.
 
 The [preserved damped failure](media/m8_table_pickup/failures/damped_second_release_abort)
 stops at 17.32385 s when the second search opening reaches **10.129 µm**
