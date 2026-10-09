@@ -34,12 +34,24 @@ hardware calibration and broad policy-training fidelity remain unqualified.
 [all 74 exact source files, original log and before/after proof](media/m8_table_supported/software_proof_reset_speed2_v3).
 Producer `9ae1a9f` starts **`full_reset_speed2_v3`** at **14:32:53 UTC on
 2026-10-09**, from independent table/rest spawns. Native integration is in
-progress, with no completed capture/reset/full result. The selected
-`--reset-speed 2` doubles the intended free-hand reset duration to 2.94524 s;
-half scheduled velocity and quarter acceleration are command facts, not
-measured tracking or clearance. Geometry, physics, caps and guards are unchanged.
+progress; full formed-pitch capture and whole-task qualification remain pending.
+The selected `--reset-speed 2` doubles the intended free-hand reset duration;
+geometry, physics, caps and guards are unchanged.
 The [current exact checkout/fresh-run recipe](docs/m8_supported_agent_handoff.md#current-producer-fresh-run)
 binds this new source/proof/launcher separately from every historical trial.
+
+The [new 24.4138 s progress recording](media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/README.md)
+preserves this fresh run from spawn through its first quiet regrasp:
+[normal 1× GIF](media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render/demo.gif),
+[MP4](media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render/demo.mp4),
+[actual open reset](media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render/open_reset_detail.png)
+and [quiet regrasp](media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render/quiet_regrasp_detail.png).
+The complete 2.94525 s minus-pi reset has zero whole-right/bolt contacts,
+with peak bolt drift 0.495080 µm / 1.522229 mrad; the following regrasp
+passes its actual 100 ms quiet bilateral window. Endpoint formed overlap is
+only 20.212 µm, with zero loaded interior contacts. This records the observed
+reset/regrasp motion, while full-pitch capture and qualified assembly remain
+unproven. The package includes exact isolated geometry-replay instructions.
 
 The earlier `da69a9c` producer retains its [separate 672-test proof](media/m8_table_supported/software_proof_c2_inertia_v2).
 Its fresh `full_c2_inertia_v2` attempt closes failed at **22.08285 s / 441,657

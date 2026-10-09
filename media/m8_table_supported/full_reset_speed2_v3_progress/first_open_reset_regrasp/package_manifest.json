@@ -1,0 +1,3875 @@
+{
+  "status": "historical_partial_fresh_native_phase_prefix",
+  "full_native_run_closed": false,
+  "final_dense_force_and_inertia_ledgers_present": false,
+  "independent_full_audit_present": false,
+  "producer_commit": "9ae1a9fe76968a4013ea6c39e67718026622b9c0",
+  "original_source74": {
+    "scripts/audit_m8_free_joint_properties.py": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+    "scripts/audit_m8_insertion_capture.py": "15ba607ac3277b4f8ef3f02aaf8df677e285e20511f0a7b9f8d07a202bad1233",
+    "scripts/audit_m8_insertion_reset_contacts.py": "b8b14448a2fba7074ebed84669a7a6015b1f831e45e7a647ff7acc9cdb10ab0a",
+    "scripts/audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+    "scripts/audit_m8_left_pad_force_history.py": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc",
+    "scripts/audit_m8_supported_trace.py": "4a8b018a1326bce540a0351d5d715ab58ffb505d2ae44be6d34aa8d8cd68fe3f",
+    "scripts/audit_yam_m8_geometry.py": "1dac9d46cc585cd01ca5ea759c6bf86ce14edbb1bacaf3b04a39848c1b145fee",
+    "scripts/audit_yam_m8_trace.py": "8d41f8ea4eea3a905f536a257a707bf953dae7e54f7fc1d7e6d2d151d2a1cfc2",
+    "scripts/check_m8_distance.py": "6cb40d77aa8dec608ed7a4a9af13c64e463940aa027368e20f118d5fb3a461c9",
+    "scripts/check_m8_optimization.py": "dc8e68893522fc55dd2da71f3fa7b21be2e4717ab67b305ffb6512e6ee0f677a",
+    "scripts/compare_m8_thread_start.py": "a202391a03ea0ff9697f1219be0260881396dd7b0c2bf704d0032d7a2c25a67f",
+    "scripts/compare_yam_m8_hold.py": "85395970bed69b1f1288e03082ca1f2aa677a73384522bf326aac80491c1a7ff",
+    "scripts/package_m8_insertion_demo.py": "96ba1018173e05f18e98d50a24018b1cec55a215c63aae2c648fdb7932324e39",
+    "scripts/plot_m8_insertion_trace.py": "4125f08051d2ac8461545bb71d7b6ceda6f26a80ae121ce18ef250534be69dac",
+    "scripts/probe_m8_thread_start.py": "547430f31396c6bb1bfed0d83a688bd06b6ceba2ab0c3975ece602ec9dddedfb",
+    "scripts/verify_m8_bindings.py": "fa3c0d3ea85d1dd33a534d1ca36bb2f166d78a958fad4a2e15a7f71ffe7d6af5",
+    "tests/test_m8_env.py": "f1aa01a7e8f49481f152be4fa4e7d81d0512c9529234e7ab0c7f334c1ffb9ad0",
+    "tests/test_m8_insertion_env.py": "cd74ac30cc21ead94d62bbb629cc2f6ffbb5f5cf531910d8af67fe4ec82b3cac",
+    "tests/test_m8_insertion_mechanics.py": "38c3500352177b5ab5ff2799d645ec2f402c1c8cb7dfe05927b672f2ba5d260a",
+    "tests/test_m8_physics.py": "1ef772e1e4af6cd864577176ab8c1c088c30c4856944ce5948ba1894c897f7e0",
+    "tests/test_m8_robot_braking.py": "bfafc159a4dd4a1b41eb08e0e2b4bcec39141d1728a4b4f583259a1588bac20e",
+    "tests/test_m8_robot_inertia.py": "a8d18511a5451675dda42c23960cacbb4c4876b0b1716e4fd9ffbbe70b07fa23",
+    "tests/test_m8_sdf.py": "b21ab6a5fd8b2af14c50a6cdea5358a77fcec3ee8883dc475e4e3d4bc6a1dd37",
+    "tests/test_m8_supported_audit.py": "c3b8290a2f89aaff2ffdfa0719039d07287dde8fdb62a660f8438b39dd2dd6e8",
+    "tests/test_m8_supported_crest.py": "04ed9598ba0ef413fcfa25a655ded675233709a443b051ea8cd56c9ab15c1bb7",
+    "tests/test_m8_supported_feedback.py": "c53717a80eb50a769e4e0a834e38113e972bcd2ce03e05940dfd138a7f620c74",
+    "tests/test_m8_supported_grasp.py": "18301b45f5f8ee709e9b7080fa45b14217673d2599b73ec42dfa12b2dd9e7892",
+    "tests/test_m8_supported_phase_gate.py": "d9c4a4be0dfc9ca748d48b60e6c7b87bf30249cda668280e1aa22ed2d4d74a7b",
+    "tests/test_m8_supported_port_audit.py": "5ef571631ffeacfa39babb77f1076b03640317cb708afa5de84437df1eb7e710",
+    "tests/test_m8_supported_recording.py": "69a278ee69a9ffb1983e80ed1b8efff3024e8e47e032452f4a721825d44b80be",
+    "tests/test_m8_supported_start.py": "8b6fdf260cc33767aa2f7b742fb299bf4415f025015d2b0b88af849557073892",
+    "tests/test_m8_theory.py": "a82b341fca21da556e6aa311d2663d229428183ad1687660a5bf9cecb060863b",
+    "tests/test_twin.py": "2dbf4a42b45b1ec9f804191f10c4bce617d968a4cb875de54656331ec0206458",
+    "tests/test_yam_m8_control.py": "40956a87183b2100976b9cba5aafc9fbc93524b8191b36e983b11cca39d75be0",
+    "tests/test_yam_m8_env.py": "47ebd3f925ed0d7330a2f559499dc33d3aaec4e715120f28328120c4eb5a194e",
+    "tests/test_yam_m8_insertion_controller.py": "1d888f545dece29d595948b5eca8289b21969464973f6f6d9b416006b8f30fe9",
+    "tests/test_yam_m8_insertion_engagement.py": "f6f571c0bba710a94b6ca072a42615b16dc0261c68aa3cfcd8545de47f71be4a",
+    "tests/test_yam_m8_insertion_scene.py": "5b6109bd3e4a9a9b25a292c8ac683bdf5188232372ab235c0bd9cba91408d488",
+    "tests/test_yam_m8_provenance.py": "fd447004b701fe29cd20545cebdc3a3b3961d175d9286d9387e2f423d45adcd6",
+    "tests/test_yam_m8_scene.py": "806b8daf2e83b21657dc55529083d9182620dc2ebce7b07386ec8ec88c48cf68",
+    "tests/test_yam_m8_supported_controller.py": "51db0238d81157a7f0890d8cd8a8c7d3140f4bc4210e79f6d259589e46d8c929",
+    "tests/test_yam_m8_supported_scene.py": "ed4aee425488736d4bb0c79c227cb3b776b0954c90e699e214d861c2d61ebd59",
+    "thread_lab/__init__.py": "d694de2a94fc8dfb2d0937bfd082272270bf94df494feb106b0e96287ffa1fbd",
+    "thread_lab/benchmark.py": "0456dccc55070fb7e85cc24fb29e213aa79085fd370312d3391364a4f1b069e4",
+    "thread_lab/build_plugin.py": "0ddb419b5dd1d7578c659ace20869699a434a99c578815d5928dc9cd6556b5d0",
+    "thread_lab/demo.py": "bfd0d601cbb2c7c7fec7522278e23fd0c78dbd80ba9ee927c06bca5c912be5b3",
+    "thread_lab/env.py": "7850807cadadfbac6511a7a01331a80cb87040d075c15594d06347a9bec75976",
+    "thread_lab/gripper.py": "dc55f61c7544ea23c9651854bd4151251f335292a87e08fa2cc5b87c7ba00a57",
+    "thread_lab/load_benchmark.py": "5270e6a9d37720dee81b57981b3b0ec3465224f491f29dd133612e81e1a24f1a",
+    "thread_lab/model.py": "12d79f294f00ae1a6ae7551877f4dafd705ef54ba4f2ae6af7ab9e21c646b3de",
+    "thread_lab/plugins/m8_sdf.cc": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a",
+    "thread_lab/render.py": "1b3049306df5808ae5f6c2034071e07b1d5133012826eb810701cd441d520224",
+    "thread_lab/runtime.py": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd",
+    "thread_lab/theory.py": "0480828df22825d3c3ce38187c50fb291670b4beaab9de44bb1e10d4e022453d",
+    "thread_lab/validate.py": "59fb22e6b2ec713eea06c53151dea87358df06f29426f4fc61b91547e7bbe4e1",
+    "yam_twin/kinematics.py": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+    "yam_twin/m8_demo.py": "f5989b9ee052a2bb6d68bdec090d90aec4faeed667fd8218bf3fa4dccb3d485d",
+    "yam_twin/m8_env.py": "88eab5fc877341db0bed0f5b81e0c45c25995493b7c368dd3e182dd9d43f510a",
+    "yam_twin/m8_insertion_demo.py": "3531a3659ded5b4a7fe66868989c1bac6437a008282ec1229bf2f8a5ccb97a91",
+    "yam_twin/m8_insertion_engagement.py": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "yam_twin/m8_insertion_env.py": "fc0d054321a4e76374306bf9f7adeb8fa8366e37f198aac998532dca1b6bea25",
+    "yam_twin/m8_insertion_mechanics.py": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+    "yam_twin/m8_insertion_scene.py": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+    "yam_twin/m8_insertion_simulation.py": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294",
+    "yam_twin/m8_robot_braking.py": "4bc45250cbf1aba271dad51df2781971e323735d631349afcc20ab311afa21c1",
+    "yam_twin/m8_robot_inertia.py": "1f287d571ac8425bd71be9e29ad5679056a7dbd09c7f8c7d758cd813c8f3fa4a",
+    "yam_twin/m8_scene.py": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f",
+    "yam_twin/m8_simulation.py": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+    "yam_twin/m8_supported_crest.py": "0f9bd4e13d85e4cb0e2319894c30163f869636f5dd9e634c149b0d7e5715f502",
+    "yam_twin/m8_supported_demo.py": "42409bb28b5154b853c229360e80cc66c12254eee5233cca46a9a264a7a77b4d",
+    "yam_twin/m8_supported_recording.py": "6e73eddfaa5e8113d34b5e2c4bf280f15a9d27bfba031960fa956ace5481f0bc",
+    "yam_twin/m8_supported_scene.py": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+    "yam_twin/m8_supported_simulation.py": "6ac35d9c7094fed98a3084fe60ba12a0ce5bae96124d3bc91bd7f3074f3e5056",
+    "yam_twin/m8_supported_start.py": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51"
+  },
+  "whole672_software_proof_is_separate_from_native_qualification": true,
+  "software_packet_sha256_ledger": "6966dcc20d16fdc1b35bb5f3946a330a824c53353d967a081e94fa3a987514bc",
+  "software_proof_sha256": "9f3617e33a047e1c5755e6fa62a76d490cc16bb73980ded33c2f57caac34d1a7",
+  "original_snapshot_binding_sha256": "72b7ca8b3f445d11c5fb0057e7cc71c482772d72aaac6f6c2821b060c8673ec4",
+  "original_trajectory_sha256": "32f3453722254cb58f1cf68db0b82f1cdfd7d1cca3c4a12fc20db8638ef68398",
+  "original_launch_identity_sha256": "1aceb2b906b6201ba715bde99dfe1394bb0880907b0f9914529a9c50adff1ec9",
+  "original_endpoint": {
+    "sample_index": 4908,
+    "time_s": 24.41380000024869,
+    "phase": "settle_regrip_search_2",
+    "qpos_sha256": "46043f1de01c748dab0d9d59525dee61018204b5adbf5708d22045817399aa5c",
+    "qvel_sha256": "8e0eba5925c8485a5139ac9faa8fffcfd8b4112397d193bff221ddf509f8d364",
+    "original_sample": {
+      "time": 24.41380000024869,
+      "phase": "settle_regrip_search_2",
+      "bolt_base_insertion_m": -0.021985652955931814,
+      "bolt_yaw_unwrapped_rad": 2.3408040469680036,
+      "clockwise_turns": 0.15915617179572103,
+      "thread_overlap_m": 0.002014345813812917,
+      "thread_contacts": 2,
+      "loaded_formed_thread_contacts": 0,
+      "loaded_formed_thread_normal_force_N": 0.0,
+      "native_thread_pair_normal_force_N": 0.2753584908308272,
+      "entry_support": {
+        "observer": "native-settled-entry-support-v1",
+        "ready": true,
+        "aligned": true,
+        "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+        "required_window_s": 0.05,
+        "observed_window_s": 0.05000000000000092,
+        "minimum_loaded_normal_force_N": 0.005000000000000001,
+        "minimum_normal_impulse_Ns": 0.00025000000000000006,
+        "normal_impulse_Ns": 0.013863813140090326,
+        "minimum_loaded_duration_s": 0.005000000000000001,
+        "loaded_duration_s": 0.05000000000000092,
+        "loaded_substep_duty": 1.0,
+        "relative_bolt_axial_velocity_limit_m_per_s": 0.0002,
+        "relative_bolt_axial_velocity_range_m_per_s": [
+          -1.3346080281401552e-06,
+          1.2433738485441185e-06
+        ],
+        "final_native_normal_force_N": 0.2753584908308272,
+        "final_relative_bolt_axial_velocity_m_per_s": 1.5212906040825445e-07
+      },
+      "engagement_window": {
+        "version": "loaded_full_flank_window_v1",
+        "ready": false,
+        "continuous_geometry_elapsed_s": 0.0,
+        "window_duration_s": 0.2,
+        "normal_impulse_Ns": 0.0,
+        "loaded_substeps": 0,
+        "loaded_contact_count": 0,
+        "loaded_duration_s": 0.0,
+        "sample_count": 0,
+        "loaded_substep_duty": 0.0,
+        "helix_phase_range_m": 0.0
+      },
+      "legacy_consecutive_loaded_contact_streak_s": 0.0,
+      "head_block_seating_contacts": 0,
+      "formed_flank_overlap_m": 2.0212215194770344e-05,
+      "thread_engaged": false,
+      "radial_offset_m": 3.4545464502418646e-06,
+      "bolt_tilt_rad": 0.0003921503672207776,
+      "reported_sdf_depth_m": 1.66177860991538e-08,
+      "bolt_world_position": [
+        0.35000003825104664,
+        -0.010000550210565238,
+        0.029985736824208867
+      ],
+      "hole_world_position": [
+        0.3499999619354174,
+        -0.009997164470643943,
+        0.008000083857705818
+      ],
+      "bolt_tip_world_position": [
+        0.3499980269151143,
+        -0.009994784722441342,
+        0.013985737989406569
+      ],
+      "block_lift_m": -1.4168657389117267e-06,
+      "left_grasp_acquired": true,
+      "left_stabilization_verified": true,
+      "block_grip_slip_m": 7.744292728447993e-07,
+      "block_grip_rotation_slip_rad": 3.792036032131487e-05,
+      "bolt_grip_slip_m": 0.0,
+      "bolt_world_support_contacts": 0,
+      "bolt_grip_rotation_slip_rad": 0.0,
+      "block_world_support_contacts": 29,
+      "external_drive_zero": true,
+      "table_support": {
+        "contact_candidates": 29,
+        "loaded_contacts": 28,
+        "unexpected_world_contact_candidates": 0,
+        "table_upward_normal_force_N": 3.2409529153183647,
+        "table_upward_force_N": 3.2409530484009204,
+        "table_wrench_on_block_world": [
+          0.008011470147153546,
+          0.01583104602675282,
+          3.2409530484009204,
+          -0.00011180465226322939,
+          0.08001078268805026,
+          0.0006592148806399932
+        ],
+        "contacts": [
+          {
+            "table_geom": "table",
+            "block_geom": "fixture_block_geom",
+            "signed_distance_m": -3.23449880084665e-06,
+            "normal_force_N": 1.0531520458080152,
+            "geom1": "table",
+            "geom2": "fixture_block_geom",
+            "frame": [
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              1.0531520458080152,
+              0.00013429909401841458,
+              -0.00017476148782995235,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.24000002149707472,
+              8.352715796786091e-07,
+              -1.617249400422821e-06
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00017476148782995235,
+              0.00013429909401841458,
+              1.0531520458080152
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "fixture_block_geom",
+            "signed_distance_m": -3.2449616388382334e-06,
+            "normal_force_N": 1.056602507757424,
+            "geom1": "table",
+            "geom2": "fixture_block_geom",
+            "frame": [
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              1.056602507757424,
+              0.00013430012705171728,
+              -0.00022929985020395702,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.2400003859420555,
+              -0.019999164725097104,
+              -1.6224808194187368e-06
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00022929985020395702,
+              0.00013430012705171728,
+              1.056602507757424
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "fixture_block_geom",
+            "signed_distance_m": -2.2351474938158357e-07,
+            "normal_force_N": 0.07279121587485878,
+            "geom1": "table",
+            "geom2": "fixture_block_geom",
+            "frame": [
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.07279121587485878,
+              0.0004069712190777612,
+              -0.0002292840840534836,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3400003858798074,
+              -0.019997342501774772,
+              -1.1175737469129587e-07
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.0002292840840534836,
+              0.0004069712190777612,
+              0.07279121587485878
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "fixture_block_geom",
+            "signed_distance_m": -2.130519113900003e-07,
+            "normal_force_N": 0.06934138071819662,
+            "geom1": "table",
+            "geom2": "fixture_block_geom",
+            "frame": [
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.06934138071819662,
+              0.0004069702264457902,
+              -0.00017474896538528564,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.34000002143482666,
+              2.6574949020127804e-06,
+              -1.0652595569538015e-07
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00017474896538528564,
+              0.0004069702264457902,
+              0.06934138071819662
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "block_hole_x_plus",
+            "signed_distance_m": -2.1305191139268423e-07,
+            "normal_force_N": 0.06934138071907031,
+            "geom1": "table",
+            "geom2": "block_hole_x_plus",
+            "frame": [
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.06934138071907031,
+              0.0004069702264457902,
+              -0.00017474896538528564,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.34000002143482666,
+              2.657494902014411e-06,
+              -1.0652595569538015e-07
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00017474896538528564,
+              0.0004069702264457902,
+              0.06934138071907031
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "block_hole_x_plus",
+            "signed_distance_m": -2.140981951918426e-07,
+            "normal_force_N": 0.06968636422243693,
+            "geom1": "table",
+            "geom2": "block_hole_x_plus",
+            "frame": [
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.06968636422243693,
+              0.00040697032568666106,
+              -0.00018020247711739886,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.34000005787932475,
+              -0.001997342504765664,
+              -1.0704909759670644e-07
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00018020247711739886,
+              0.00040697032568666106,
+              0.06968636422243693
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "block_hole_x_minus",
+            "signed_distance_m": -2.2246846558186309e-07,
+            "normal_force_N": 0.07244623234655105,
+            "geom1": "table",
+            "geom2": "block_hole_x_minus",
+            "frame": [
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.07244623234655105,
+              0.00040697111979223777,
+              -0.00022383057204956405,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3400003494353094,
+              -0.01799734250210709,
+              -1.1123423278996958e-07
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00022383057204956405,
+              0.00040697111979223777,
+              0.07244623234655105
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "block_hole_x_minus",
+            "signed_distance_m": -2.2351474938102146e-07,
+            "normal_force_N": 0.07279121587467578,
+            "geom1": "table",
+            "geom2": "block_hole_x_minus",
+            "frame": [
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.07279121587467578,
+              0.0004069712190777613,
+              -0.00022928408405348358,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.34000038587980747,
+              -0.01999734250177477,
+              -1.1175737469129587e-07
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00022928408405348358,
+              0.0004069712190777613,
+              0.07279121587467578
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "block_hole_top_left",
+            "signed_distance_m": -1.9562795720677595e-07,
+            "normal_force_N": 0.06368995159254785,
+            "geom1": "table",
+            "geom2": "block_hole_top_left",
+            "frame": [
+              [
+                -3.021435154948484e-05,
+                -5.236945705871216e-07,
+                0.9999999995434093
+              ],
+              [
+                -1.5823091860277968e-11,
+                0.999999999999863,
+                5.236945703480795e-07
+              ],
+              [
+                -0.9999999995435466,
+                0.0,
+                -3.0214351549488988e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.06368995159254785,
+              0.00040904959439148013,
+              -0.00020201670514311486,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.34076259841880796,
+              -0.009997328815484147,
+              -9.781397864804896e-08
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.0002000923544568443,
+              0.0004090162403095741,
+              0.06368995788148842
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "block_hole_top_left",
+            "signed_distance_m": -2.186633351122791e-07,
+            "normal_force_N": 0.0711899954632762,
+            "geom1": "table",
+            "geom2": "block_hole_top_left",
+            "frame": [
+              [
+                -3.021435067153886e-05,
+                -5.236934945558258e-07,
+                0.9999999995434096
+              ],
+              [
+                -1.582305888891552e-11,
+                0.999999999999863,
+                5.236934943167843e-07
+              ],
+              [
+                -0.9999999995435468,
+                0.0,
+                -3.0214350671543008e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.0711899954632762,
+              0.0004069707247016082,
+              -0.00020201677334306988,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3400002028261446,
+              -0.009997342671626273,
+              -1.093316676060594e-07
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00019986581375718647,
+              0.00040693344296405086,
+              0.07119000174770508
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "block_hole_top_left",
+            "signed_distance_m": -2.228484692178706e-07,
+            "normal_force_N": 0.07256992853803151,
+            "geom1": "table",
+            "geom2": "block_hole_top_left",
+            "frame": [
+              [
+                -3.0214365448535334e-05,
+                -5.236978157373715e-07,
+                0.9999999995434091
+              ],
+              [
+                -1.5823197189290833e-11,
+                0.999999999999863,
+                5.236978154983278e-07
+              ],
+              [
+                -0.9999999995435463,
+                3.2311742677852644e-27,
+                -3.021436544853948e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.07256992853803151,
+              0.0004069711310957069,
+              -0.00022383135165119906,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3400003486440103,
+              -0.017997342892818412,
+              -1.1142423465981062e-07
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00022163869720116867,
+              0.00040693312638258756,
+              0.0725699354809489
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "block_hole_top_left",
+            "signed_distance_m": -6.025836017317654e-08,
+            "normal_force_N": 0.01963255052151911,
+            "geom1": "table",
+            "geom2": "block_hole_top_left",
+            "frame": [
+              [
+                -3.0214143445829355e-05,
+                -5.237130480198179e-07,
+                0.9999999995434157
+              ],
+              [
+                -1.5823541157325467e-11,
+                0.999999999999863,
+                5.237130477807706e-07
+              ],
+              [
+                -0.9999999995435529,
+                -3.2311742677852644e-27,
+                -3.02141434458335e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.01963255052151911,
+              0.000421644417489852,
+              -0.0002238308874841872,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.34538154893888906,
+              -0.017997244656421323,
+              -3.0129180100344985e-08
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00022323770667768365,
+              0.0004216341356669202,
+              0.01963255749623442
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "block_hole_top_right",
+            "signed_distance_m": -2.1866333493707202e-07,
+            "normal_force_N": 0.0711899954055036,
+            "geom1": "table",
+            "geom2": "block_hole_top_right",
+            "frame": [
+              [
+                -3.0214350695748536e-05,
+                -5.236934949754427e-07,
+                0.9999999995434096
+              ],
+              [
+                -1.582305891427242e-11,
+                0.999999999999863,
+                5.236934947364011e-07
+              ],
+              [
+                -0.9999999995435468,
+                -3.2311742677852644e-27,
+                -3.0214350695752683e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.0711899954055036,
+              0.00040697072470159126,
+              -0.00020201677242621577,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3400002028261385,
+              -0.009997342335390772,
+              -1.0933166751845587e-07
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00019986581284035443,
+              0.0004069334429640343,
+              0.07119000168993246
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "block_hole_top_right",
+            "signed_distance_m": -1.9562795699513968e-07,
+            "normal_force_N": 0.06368995152275674,
+            "geom1": "table",
+            "geom2": "block_hole_top_right",
+            "frame": [
+              [
+                -3.0214351582171643e-05,
+                -5.236945711536703e-07,
+                0.9999999995434093
+              ],
+              [
+                -1.5823091894513768e-11,
+                0.999999999999863,
+                5.236945709146281e-07
+              ],
+              [
+                -0.9999999995435466,
+                3.2311742677852644e-27,
+                -3.021435158217579e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.06368995152275674,
+              0.00040904959439145964,
+              -0.00020201670402767075,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3407625984188005,
+              -0.009997328406420232,
+              -9.781397854223083e-08
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00020009235334142708,
+              0.0004090162403095541,
+              0.06368995781169727
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "block_hole_top_right",
+            "signed_distance_m": -5.1888089559401496e-08,
+            "normal_force_N": 0.016872685777444007,
+            "geom1": "table",
+            "geom2": "block_hole_top_right",
+            "frame": [
+              [
+                -3.0213984488259988e-05,
+                -5.236958253845653e-07,
+                0.9999999995434206
+              ],
+              [
+                -1.582293754473794e-11,
+                0.999999999999863,
+                5.236958251455285e-07
+              ],
+              [
+                -0.9999999995435578,
+                0.0,
+                -3.0213984488264135e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.016872685777444007,
+              0.00042164361108952005,
+              -0.000180201745333648,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3453812573830232,
+              -0.0019972442355354995,
+              -2.5944044791546566e-08
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.0001796919541783697,
+              0.0004216347749343576,
+              0.016872691435166023
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "block_hole_top_right",
+            "signed_distance_m": -2.1447819841848015e-07,
+            "normal_force_N": 0.06981006158919287,
+            "geom1": "table",
+            "geom2": "block_hole_top_right",
+            "frame": [
+              [
+                -3.0214335682462766e-05,
+                -5.236930551101015e-07,
+                0.9999999995434099
+              ],
+              [
+                -1.582303776167325e-11,
+                0.999999999999863,
+                5.236930548710604e-07
+              ],
+              [
+                -0.9999999995435471,
+                3.2311742677852644e-27,
+                -3.0214335682466913e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.06981006158919287,
+              0.00040697031860476317,
+              -0.00018020219460259396,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.34000005708813796,
+              -0.001997342114197178,
+              -1.072390992582045e-07
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00017809292987903136,
+              0.00040693375956027633,
+              0.06981006721513541
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "female_thread",
+            "signed_distance_m": -4.631553273576475e-08,
+            "normal_force_N": 0.029548796891466403,
+            "geom1": "table",
+            "geom2": "female_thread",
+            "frame": [
+              [
+                -1.374921297968543e-05,
+                -1.5908202186188875e-06,
+                0.9999999999042142
+              ],
+              [
+                -2.18725259982085e-11,
+                0.9999999999987347,
+                1.5908202184685225e-06
+              ],
+              [
+                -0.9999999999054796,
+                -3.2311742677852644e-27,
+                -1.3749212979702828e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.029548796891466403,
+              0.0007569738409163493,
+              -0.00039299914644659085,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3442103777461981,
+              -0.015644691885190524,
+              -6.947329911323764e-08
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00039259287369113326,
+              0.0007569268340918607,
+              0.0295488034962743
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "female_thread",
+            "signed_distance_m": -2.5140651059227248e-08,
+            "normal_force_N": 0.01603452181885205,
+            "geom1": "table",
+            "geom2": "female_thread",
+            "frame": [
+              [
+                -1.2159042726108076e-05,
+                -3.12579258926279e-06,
+                0.9999999999211937
+              ],
+              [
+                -3.8006645645983935e-11,
+                0.9999999999951148,
+                3.125792589031729e-06
+              ],
+              [
+                -0.9999999999260791,
+                0.0,
+                -1.2159042726167478e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.01603452181885205,
+              0.0007512913005306426,
+              -0.00036925668560949506,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3430714681559651,
+              -0.010886072570411113,
+              -1.1338182969571232e-07
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.0003690617211177571,
+              0.0007512411799374988,
+              0.016034528655777026
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "female_thread",
+            "signed_distance_m": -4.092743800485447e-08,
+            "normal_force_N": 0.026070960622805537,
+            "geom1": "table",
+            "geom2": "female_thread",
+            "frame": [
+              [
+                -1.3907721928725165e-05,
+                -1.4103578869967727e-06,
+                0.999999999902293
+              ],
+              [
+                -1.961486531235501e-11,
+                0.9999999999990055,
+                1.4103578868603737e-06
+              ],
+              [
+                -0.9999999999032876,
+                3.2311742677852644e-27,
+                -1.3907721928738997e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.026070960622805537,
+              0.000756022634238301,
+              -0.00033971649930948525,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3440197346105669,
+              -0.004965384578186317,
+              -6.139115701546491e-08
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00033935391159104443,
+              0.0007559858648526131,
+              0.026070966411203315
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "female_thread",
+            "signed_distance_m": -3.4941636667397456e-09,
+            "normal_force_N": 0.002233609016641614,
+            "geom1": "table",
+            "geom2": "female_thread",
+            "frame": [
+              [
+                -1.5004371788921263e-05,
+                -3.61433483453498e-07,
+                0.9999999998873691
+              ],
+              [
+                -5.423082362701561e-12,
+                0.9999999999999348,
+                3.614334834128131e-07
+              ],
+              [
+                -0.9999999998874346,
+                0.0,
+                -1.5004371788922246e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.002233609016641614,
+              0.000765547818077485,
+              -0.0003769816859803599,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.34592881362536654,
+              -0.012434329491824752,
+              -5.241245512055769e-09
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.0003769481720336564,
+              0.0007655470107763476,
+              0.002233614949458029
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "female_thread",
+            "signed_distance_m": -4.2383348175085523e-08,
+            "normal_force_N": 0.027042061286342515,
+            "geom1": "table",
+            "geom2": "female_thread",
+            "frame": [
+              [
+                -1.3864463305267941e-05,
+                -1.477944874829477e-06,
+                0.9999999999027962
+              ],
+              [
+                -2.0490912484304486e-11,
+                0.9999999999989079,
+                1.4779448746874293e-06
+              ],
+              [
+                -0.9999999999038884,
+                0.0,
+                -1.3864463305283085e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.027042061286342515,
+              0.0007570528875990781,
+              -0.0003929104741537978,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3442262171190639,
+              -0.015626915769215256,
+              -6.357502226898577e-08
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.0003925355504341186,
+              0.0007570129209223684,
+              0.02704206785008921
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "female_thread",
+            "signed_distance_m": -3.248151324297677e-08,
+            "normal_force_N": 0.020709199068628843,
+            "geom1": "table",
+            "geom2": "female_thread",
+            "frame": [
+              [
+                -1.1266565897074665e-05,
+                -3.987376659175532e-06,
+                0.9999999999285828
+              ],
+              [
+                -4.4924041887415683e-11,
+                0.9999999999920505,
+                3.987376658922463e-06
+              ],
+              [
+                -0.9999999999365324,
+                6.462348535570529e-27,
+                -1.126656589716423e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.020709199068628843,
+              0.0007447912670350967,
+              -0.0003586594494249972,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3417686991260639,
+              -0.008762104963072243,
+              -1.4796155467048413e-07
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.0003584261278127926,
+              0.0007447086916521795,
+              0.020709206077773483
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "female_thread",
+            "signed_distance_m": -4.4990348617041644e-08,
+            "normal_force_N": 0.028666833717278625,
+            "geom1": "table",
+            "geom2": "female_thread",
+            "frame": [
+              [
+                -1.3789766286251078e-05,
+                -1.5274504459871984e-06,
+                0.9999999999037548
+              ],
+              [
+                -2.1063184664018014e-11,
+                0.9999999999988335,
+                1.5274504458419706e-06
+              ],
+              [
+                -0.9999999999049214,
+                0.0,
+                -1.3789766286267166e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.028666833717278625,
+              0.0007541721331173597,
+              -0.0003456031441112451,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.34364884262349804,
+              -0.006145229370696276,
+              -6.748552293697495e-08
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.0003452078351253723,
+              0.0007541283459485335,
+              0.028666839632266725
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "female_thread",
+            "signed_distance_m": -2.491490566115806e-08,
+            "normal_force_N": 0.015877806787297836,
+            "geom1": "table",
+            "geom2": "female_thread",
+            "frame": [
+              [
+                -1.3863928680539563e-05,
+                -1.4599605933726444e-06,
+                0.99999999990283
+              ],
+              [
+                -2.0240789542938134e-11,
+                0.9999999999989343,
+                1.459960593232336e-06
+              ],
+              [
+                -0.9999999999038958,
+                3.2311742677852644e-27,
+                -1.3863928680554338e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.015877806787297836,
+              0.0007608348901856488,
+              -0.000360530720987292,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3449842449656451,
+              -0.00913712857795836,
+              -5.4785276386308215e-08
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00036031059215634113,
+              0.0007608117092126193,
+              0.01587781289491615
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "female_thread",
+            "signed_distance_m": -2.1157517982386964e-08,
+            "normal_force_N": 0.013505681718787788,
+            "geom1": "table",
+            "geom2": "female_thread",
+            "frame": [
+              [
+                -1.1691329413329956e-05,
+                -3.598520724231966e-06,
+                0.9999999999251818
+              ],
+              [
+                -4.207149118796301e-11,
+                0.9999999999935255,
+                3.5985207239860313e-06
+              ],
+              [
+                -0.9999999999316567,
+                0.0,
+                -1.1691329413405655e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.013505681718787788,
+              0.0007494862049915208,
+              -0.0003804553312281159,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3427096770374129,
+              -0.013130598376465524,
+              -1.2748016056150044e-07
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00038029743179665635,
+              0.0007494376045111083,
+              0.013505688862847564
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "female_thread",
+            "signed_distance_m": -1.6926485563883572e-08,
+            "normal_force_N": 0.010799653890735948,
+            "geom1": "table",
+            "geom2": "female_thread",
+            "frame": [
+              [
+                -1.461025206976248e-05,
+                -7.4430077758845e-07,
+                0.9999999998929933
+              ],
+              [
+                -1.0874421976290489e-11,
+                0.9999999999997231,
+                7.44300777509011e-07
+              ],
+              [
+                -0.9999999998932704,
+                -1.6155871338926322e-27,
+                -1.461025206976653e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.010799653890735948,
+              0.0007599336921149845,
+              -0.0003771414525946916,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.34480359160037266,
+              -0.012466353636709495,
+              -2.5389728357046583e-08
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00037698366688056575,
+              0.0007599256539239855,
+              0.010799659965331236
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "female_thread",
+            "signed_distance_m": -6.276476080362137e-08,
+            "normal_force_N": 0.04000056899409237,
+            "geom1": "table",
+            "geom2": "female_thread",
+            "frame": [
+              [
+                -1.3212105206803022e-05,
+                -2.0863782314603344e-06,
+                0.9999999999105438
+              ],
+              [
+                -2.756544869529756e-11,
+                0.9999999999978235,
+                2.086378231278236e-06
+              ],
+              [
+                -0.9999999999127203,
+                0.0,
+                -1.3212105206831778e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.04000056899409237,
+              0.0007506354491667429,
+              -0.00034698942373163796,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.342940008178562,
+              -0.006423087071444775,
+              -9.620453503778345e-08
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.0003464609319547793,
+              0.0007505519928487139,
+              0.0400005751410843
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "female_thread",
+            "signed_distance_m": -1.6184893980586423e-08,
+            "normal_force_N": 0.010309808255051388,
+            "geom1": "table",
+            "geom2": "female_thread",
+            "frame": [
+              [
+                -1.421787774564153e-05,
+                -1.1171224601125737e-06,
+                0.999999999898302
+              ],
+              [
+                -1.5883110564800793e-11,
+                0.9999999999993762,
+                1.1171224599996618e-06
+              ],
+              [
+                -0.9999999998989262,
+                0.0,
+                -1.4217877745650403e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.010309808255051388,
+              0.0007642546495592988,
+              -0.00035940111528098395,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.34566965332442656,
+              -0.008910721237577664,
+              -3.832247140026916e-08
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.00035925453163916784,
+              0.0007642431322404609,
+              0.010309814217690054
+            ]
+          },
+          {
+            "table_geom": "table",
+            "block_geom": "female_thread",
+            "signed_distance_m": -2.405147134583986e-08,
+            "normal_force_N": 0.015355949747424194,
+            "geom1": "table",
+            "geom2": "female_thread",
+            "frame": [
+              [
+                -1.4400682413359308e-05,
+                -9.527129105356872e-07,
+                0.9999999998958564
+              ],
+              [
+                -1.3719716055737858e-11,
+                0.9999999999995463,
+                9.527129104369007e-07
+              ],
+              [
+                -0.9999999998963103,
+                0.0,
+                -1.4400682413365846e-05
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              0.015355949747424194,
+              0.0007610809949589644,
+              -0.0003955198287166052,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3450335504480939,
+              -0.01614989017998932,
+              -3.6077207029603506e-08
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.0003952986925096839,
+              0.0007610663651470412,
+              0.015355956166672102
+            ]
+          }
+        ]
+      },
+      "known_block_weight_N": 0.9987972925280899,
+      "positive_left_hand_upward_force_N": 0.0,
+      "settled_table_load_window": {
+        "observer": "native-supported-block-load-window-v1",
+        "ready": true,
+        "required_window_s": 0.1,
+        "observed_window_s": 0.10004999999999714,
+        "block_weight_N": 0.9987972925280899,
+        "minimum_mean_table_weight_fraction": 0.9,
+        "maximum_mean_positive_hand_upward_weight_fraction": 0.1,
+        "minimum_loaded_table_duty": 0.99,
+        "mean_table_upward_force_N": 0.9895282468139129,
+        "mean_positive_hand_upward_force_N": 0.009269001465986838,
+        "loaded_table_substep_duty": 1.0,
+        "final_table_upward_force_N": 0.9896497437533301,
+        "scope": "No-bolt settled stabilization: original native table force bears block weight; contact candidates alone do not establish support"
+      },
+      "active_table_load_window": {
+        "observer": "native-supported-block-load-window-v1",
+        "ready": true,
+        "required_window_s": 0.1,
+        "observed_window_s": 0.10004999999999714,
+        "block_weight_N": 0.9987972925280899,
+        "minimum_mean_table_weight_fraction": 0.9,
+        "maximum_mean_positive_hand_upward_weight_fraction": 0.1,
+        "minimum_loaded_table_duty": 0.99,
+        "mean_table_upward_force_N": 3.2384634065508404,
+        "mean_positive_hand_upward_force_N": 5.052004557708725e-18,
+        "loaded_table_substep_duty": 1.0,
+        "final_table_upward_force_N": 3.2409530484009204,
+        "scope": "No-bolt settled stabilization: original native table force bears block weight; contact candidates alone do not establish support"
+      },
+      "block_translation_from_initial_m": 2.390049901252015e-06,
+      "block_rotation_from_initial_rad": 3.5287928251679355e-05,
+      "bolt_tip_table_clearance_m": 0.013985737989406569,
+      "bolt_tip_rest_top_clearance_m": -0.02201426201059343,
+      "unexpected_native_contacts": [],
+      "minimum_native_joint_margin_rad": 0.30723602789456317,
+      "contact": {
+        "contact_count": 8,
+        "pad_contact_count": 8,
+        "wrench_world": [
+          -0.011213755482287535,
+          -0.0005686742559620761,
+          0.019878354762394433,
+          3.534520883942318e-05,
+          -7.823381253089026e-05,
+          5.2504108424430984e-05
+        ],
+        "pad_wrench_world": [
+          -0.011213755482287535,
+          -0.0005686742559620761,
+          0.019878354762394433,
+          3.534520883942318e-05,
+          -7.823381253089026e-05,
+          5.2504108424430984e-05
+        ],
+        "pad_normal_force_N": [
+          15.884799195432475,
+          15.895740919428018
+        ],
+        "jaw_actuator_force": [
+          -15.886022540690078,
+          15.894517851852214
+        ],
+        "arm_motor_torques_Nm": [
+          0.0030496539439709425,
+          -11.335944690865228,
+          5.2479074550657465,
+          0.2676098661144974,
+          -0.007355556525470318,
+          0.0003706824119809394
+        ],
+        "hand_wrench_world": [
+          -0.011506410453700527,
+          -0.0011800349859893587,
+          0.020158324348402624,
+          0.00016132883114218207,
+          -0.00011078971864219873,
+          7.130799307547586e-05
+        ]
+      },
+      "left_contact": {
+        "contact_count": 8,
+        "pad_contact_count": 8,
+        "wrench_world": [
+          0.0032085942393344103,
+          -0.01526741736005377,
+          -1.9996180236116374,
+          6.307825896775462e-05,
+          -0.09089771878549995,
+          -0.000683456463483445
+        ],
+        "pad_wrench_world": [
+          0.0032085942393344103,
+          -0.01526741736005377,
+          -1.9996180236116374,
+          6.307825896775462e-05,
+          -0.09089771878549995,
+          -0.000683456463483445
+        ],
+        "pad_normal_force_N": [
+          16.004462229985272,
+          15.989193708075982
+        ],
+        "jaw_actuator_force": [
+          -16.00360907760259,
+          15.990046428471345
+        ],
+        "arm_motor_torques_Nm": [
+          -0.00431704951754249,
+          -6.940517515589632,
+          4.234695976856479,
+          0.8728583442465523,
+          -0.23965056731172305,
+          -0.00304943291047343
+        ],
+        "hand_wrench_world": [
+          0.003025744430755859,
+          -0.015268552564021601,
+          -1.9999710866342673,
+          -3.5883243726078485e-05,
+          -0.0010046733088958993,
+          -0.0013765461618330801
+        ],
+        "native_contact_records": [
+          {
+            "geom1": "fixture_block_geom",
+            "geom2": "left_m8_pad_left",
+            "frame": [
+              [
+                -1.8222249038135606e-05,
+                0.9999999998338379,
+                5.23141899579173e-07
+              ],
+              [
+                9.532821976416325e-12,
+                -5.231418994923184e-07,
+                0.9999999999998633
+              ],
+              [
+                0.9999999998339749,
+                1.8222249038138103e-05,
+                1.6155871338926322e-27
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              3.947559718420741,
+              0.2468626421632543,
+              -0.002832723772957603,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.2529797304883333,
+              9.848929568203463e-07,
+              0.015997157683472988
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.0029046571864159774,
+              -3.947559537002017,
+              -0.24686470729711035
+            ]
+          },
+          {
+            "geom1": "fixture_block_geom",
+            "geom2": "left_m8_pad_left",
+            "frame": [
+              [
+                -1.8222249038135606e-05,
+                0.9999999998338379,
+                5.23141899579173e-07
+              ],
+              [
+                9.532821976416325e-12,
+                -5.231418994923184e-07,
+                0.9999999999998633
+              ],
+              [
+                0.9999999998339749,
+                1.8222249038138103e-05,
+                1.6155871338926322e-27
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              3.936451378944756,
+              0.24425383134382767,
+              0.0016857383128335436,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.25036807677196865,
+              9.39880636699128e-07,
+              0.011473771660667419
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              -0.0016140073175284534,
+              -3.936451281229197,
+              -0.24425589066644626
+            ]
+          },
+          {
+            "geom1": "fixture_block_geom",
+            "geom2": "left_m8_pad_left",
+            "frame": [
+              [
+                -1.8222249038135606e-05,
+                0.9999999998338379,
+                5.23141899579173e-07
+              ],
+              [
+                9.532821976416325e-12,
+                -5.231418994923184e-07,
+                0.9999999999998633
+              ],
+              [
+                0.9999999998339749,
+                1.8222249038138103e-05,
+                1.6155871338926322e-27
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              4.051294421000463,
+              0.2490117520070456,
+              0.004432804295921599,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.25513118203067303,
+              1.0258215834921952e-06,
+              0.008723711972751293
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              -0.004358980601693148,
+              -4.051294370834474,
+              -0.2490138714088707
+            ]
+          },
+          {
+            "geom1": "fixture_block_geom",
+            "geom2": "left_m8_pad_left",
+            "frame": [
+              [
+                -1.8222249038135606e-05,
+                0.9999999998338379,
+                5.23141899579173e-07
+              ],
+              [
+                9.532821976416325e-12,
+                -5.231418994923184e-07,
+                0.9999999999998633
+              ],
+              [
+                0.9999999998339749,
+                1.8222249038138103e-05,
+                1.6155871338926322e-27
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              4.069156711619312,
+              0.2532067387669423,
+              -0.0028329155806750585,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.2593307401895095,
+              1.0982017214222761e-06,
+              0.015997349575856905
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.0029070647647652767,
+              -4.069156526858026,
+              -0.2532088675132795
+            ]
+          },
+          {
+            "geom1": "fixture_block_geom",
+            "geom2": "left_m8_pad_right",
+            "frame": [
+              [
+                1.8222249038135606e-05,
+                -0.9999999998338379,
+                -5.23141899579173e-07
+              ],
+              [
+                9.532821976416325e-12,
+                -5.231418994923184e-07,
+                0.9999999999998633
+              ],
+              [
+                -0.9999999998339749,
+                -1.8222249038138103e-05,
+                -1.6155871338926322e-27
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              3.946993636515003,
+              0.25225047717251137,
+              -0.0034151097067921274,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.25513153122598903,
+              -0.019998815563022368,
+              0.008723708442627475
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              -0.0034870328096263054,
+              3.9469937055909763,
+              -0.2522484123347283
+            ]
+          },
+          {
+            "geom1": "fixture_block_geom",
+            "geom2": "left_m8_pad_right",
+            "frame": [
+              [
+                1.8222249038135606e-05,
+                -0.9999999998338379,
+                -5.23141899579173e-07
+              ],
+              [
+                9.532821976416325e-12,
+                -5.231418994923184e-07,
+                0.9999999999998633
+              ],
+              [
+                -0.9999999998339749,
+                -1.8222249038138103e-05,
+                -1.6155871338926322e-27
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              4.062124864842793,
+              0.2474806170187134,
+              -0.0006611502568413571,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.25036842596728465,
+              -0.019998901503969158,
+              0.0114737681305436
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              -0.0007351713100019466,
+              4.062124981587657,
+              -0.24747849195096147
+            ]
+          },
+          {
+            "geom1": "fixture_block_geom",
+            "geom2": "left_m8_pad_right",
+            "frame": [
+              [
+                1.8222249038135606e-05,
+                -0.9999999998338379,
+                -5.23141899579173e-07
+              ],
+              [
+                9.532821976416325e-12,
+                -5.231418994923184e-07,
+                0.9999999999998633
+              ],
+              [
+                -0.9999999998339749,
+                -1.8222249038138103e-05,
+                -1.6155871338926322e-27
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              4.0509886672516995,
+              0.2500959703598427,
+              0.0038686434809190734,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.2529800756806411,
+              -0.01999885649171803,
+              0.01599714722013635
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.003794825353547336,
+              4.050988867909644,
+              -0.250093851117902
+            ]
+          },
+          {
+            "geom1": "fixture_block_geom",
+            "geom2": "left_m8_pad_right",
+            "frame": [
+              [
+                1.8222249038135606e-05,
+                -0.9999999998338379,
+                -5.23141899579173e-07
+              ],
+              [
+                9.532821976416325e-12,
+                -5.231418994923184e-07,
+                0.9999999999998633
+              ],
+              [
+                -0.9999999998339749,
+                -1.8222249038138103e-05,
+                -1.6155871338926322e-27
+              ]
+            ],
+            "local_contact_force_N_Nm": [
+              3.929086539466487,
+              0.25645598679216985,
+              0.003868835769957291,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.25933108538181737,
+              -0.01999874318295343,
+              0.01599733911252027
+            ],
+            "block_origin_world_m": [
+              0.29999996196654144,
+              -0.00999807558230511,
+              0.007998573134261088
+            ],
+            "signed_force_contribution_on_block_world_N": [
+              0.003797238973455673,
+              3.9290867434753824,
+              -0.25645393132233896
+            ]
+          }
+        ]
+      },
+      "axial_float": false,
+      "axial_feed_command_N": null,
+      "right_relative_axial_velocity_m_per_s": null,
+      "axial_velocity_damping_force_N": null,
+      "right_commanded_stroke_angular_speed_rad_s": 0.0,
+      "right_position_error_m": [
+        -6.619130742957502e-07,
+        -1.151803868653517e-07,
+        1.0696634844334363e-06
+      ],
+      "right_rotation_error_rad": [
+        4.608024389295825e-05,
+        -4.128899176479631e-05,
+        7.819059342119042e-06
+      ],
+      "native_feedback": {
+        "thread_wrench_on_bolt_world_N_Nm": [
+          0.01122060934975673,
+          0.0005639600377272819,
+          0.24254094010893523,
+          -3.5794551508774375e-05,
+          7.832547258019933e-05,
+          -5.250663336397725e-05
+        ],
+        "thread_gravity_opposing_force_N": 0.24254094010893523,
+        "thread_hole_axial_reaction_force_N": 0.24254060067820604,
+        "thread_summed_normal_force_N": 0.2753584908308272,
+        "native_thread_contact_count": 2,
+        "actual_interior_flank_contact_count": 0,
+        "loaded_actual_interior_flank_contact_count": 0,
+        "interior_flank_summed_normal_force_N": 0.0,
+        "interior_flank_gravity_opposing_force_N": 0.0,
+        "noninterior_entry_contact_count": 2,
+        "native_contact_records": [
+          {
+            "geom1": "female_thread",
+            "geom2": "bolt_thread",
+            "frame": [
+              [
+                -0.14293894241540708,
+                0.480761913667171,
+                0.8651222116604363
+              ],
+              [
+                0.07837088149639075,
+                0.8768511745827109,
+                -0.47433113177020036
+              ],
+              [
+                -0.9866237700738028,
+                0.0,
+                -0.16301391451454808
+              ]
+            ],
+            "local_force_N_Nm": [
+              0.13884326694579635,
+              -0.012601203548306157,
+              0.010086427579848305,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.3506879378372752,
+              -0.013517178118732277,
+              0.014573627442926854
+            ],
+            "bolt_origin_world_m": [
+              0.35000003825104664,
+              -0.010000550210565238,
+              0.029985736824208867
+            ],
+            "is_actual_interior_flank_contact": false,
+            "wrench_on_bolt_world_N_Nm": [
+              -0.030785186374134695,
+              0.055701174584174847,
+              0.12444930927178384,
+              0.0004208306812199222,
+              0.00038885603136682665,
+              -6.994323061250722e-05
+            ]
+          },
+          {
+            "geom1": "female_thread",
+            "geom2": "bolt_thread",
+            "frame": [
+              [
+                0.36178600936714195,
+                -0.34747707250084064,
+                0.8650841389786568
+              ],
+              [
+                0.13406621302363508,
+                0.9376884792329729,
+                0.32057224839223963
+              ],
+              [
+                -0.9225709370838102,
+                -2.7755575615628914e-17,
+                0.3858275081539682
+              ]
+            ],
+            "local_force_N_Nm": [
+              0.13651522388503087,
+              -0.0082130732856821,
+              0.006809673335794807,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contact_position_world_m": [
+              0.34746320605193437,
+              -0.007085779477806051,
+              0.015461331326684062
+            ],
+            "bolt_origin_world_m": [
+              0.35000003825104664,
+              -0.010000550210565238,
+              0.029985736824208867
+            ],
+            "is_actual_interior_flank_contact": false,
+            "wrench_on_bolt_world_N_Nm": [
+              0.042005795723891425,
+              -0.055137214546447565,
+              0.11809163083715138,
+              -0.00045662523272869656,
+              -0.0003105305587866273,
+              1.743659724852997e-05
+            ]
+          }
+        ],
+        "hand_gravity_opposing_force_N": 0.019878354762394433,
+        "hand_hole_axial_reaction_force_N": 0.01987869386868781,
+        "right_pad_gravity_opposing_force_N": 0.019878354762394433,
+        "right_pad_wrench_on_bolt_world_N_Nm": [
+          -0.011213755482287535,
+          -0.0005686742559620761,
+          0.019878354762394433,
+          3.534520883942318e-05,
+          -7.823381253089026e-05,
+          5.2504108424430984e-05
+        ],
+        "hand_wrench_on_bolt_world_N_Nm": [
+          -0.011213755482287535,
+          -0.0005686742559620761,
+          0.019878354762394433,
+          3.534520883942318e-05,
+          -7.823381253089026e-05,
+          5.2504108424430984e-05
+        ],
+        "right_pad_normal_force_N": [
+          15.884799195432475,
+          15.895740919428018
+        ],
+        "bolt_weight_N": 0.26241400403581094,
+        "relative_bolt_axial_velocity_m_per_s": 1.5212906040825464e-07,
+        "relative_bolt_angular_speed_rad_per_s": 0.00028768733487839987,
+        "relative_hand_angular_speed_rad_per_s": 0.00038219587937578036,
+        "radial_offset_m": 3.4545464502418646e-06,
+        "bolt_tilt_rad": 0.0003921503672207776,
+        "bolt_world_support_contact_count": 0,
+        "nonthread_block_bolt_contact_count": 0,
+        "external_drive_zero": true,
+        "source_sha256": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51",
+        "scope": "Original pre-integration native contact solve and matching retained derived kinematics; never reconstructed from post-step saved qpos"
+      },
+      "weight_window": {
+        "observer": "diagnostic-native-bolt-weight-transfer-v1",
+        "ready_for_diagnostic_release_attempt": true,
+        "bolt_weight_N": 0.26241400403581094,
+        "required_window_s": 0.1,
+        "observed_window_s": 0.09999999999999715,
+        "original_native_samples": 2000,
+        "mean_thread_weight_fraction": 0.9133972304484195,
+        "mean_positive_hand_upward_weight_fraction": 0.08660251360770536,
+        "signed_thread_gravity_opposing_impulse_Ns": 0.023968822451718323,
+        "positive_hand_upward_impulse_Ns": 0.002272571235536312,
+        "loaded_actual_interior_flank_duration_s": 0.0,
+        "loaded_thread_gravity_support_duty_fraction": 1.0,
+        "entry_only_native_contact_window": true,
+        "loaded_actual_interior_flank_contact_observed": false,
+        "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+      },
+      "open_weight_window": {
+        "observer": "diagnostic-native-bolt-weight-transfer-v1",
+        "ready_for_diagnostic_release_attempt": false,
+        "bolt_weight_N": 0.26241400403581094,
+        "required_window_s": 0.1,
+        "observed_window_s": 0.0,
+        "original_native_samples": 0,
+        "mean_thread_weight_fraction": null,
+        "mean_positive_hand_upward_weight_fraction": null,
+        "signed_thread_gravity_opposing_impulse_Ns": 0.0,
+        "positive_hand_upward_impulse_Ns": 0.0,
+        "loaded_actual_interior_flank_duration_s": 0.0,
+        "loaded_thread_gravity_support_duty_fraction": null,
+        "entry_only_native_contact_window": false,
+        "loaded_actual_interior_flank_contact_observed": false,
+        "scope": "Measured bolt-weight transfer while aligned and slow. May still be cone-only; never a full-flank capture, passive reset or successful thread proof."
+      },
+      "seat_direction_event": null,
+      "right_robot_bolt_contact_count": 8,
+      "fully_open_unassisted": false,
+      "right_grasp_guard_active": false,
+      "right_axial_float_active": false,
+      "right_applied_axial_feed_N": 0.0,
+      "right_commanded_aperture_m": 0.0184,
+      "desired_independent_clock_rad": -2.1415608244628426,
+      "robot_yaw_brake_active": false,
+      "desired_independent_angular_acceleration_rad_s2": 0.0,
+      "desired_independent_angular_jerk_rad_s3": -0.0,
+      "inertia_control": {
+        "enabled": false,
+        "retained_native_state_time_s": 24.413700000248685,
+        "retained_arm_velocity_rad_s": [
+          -4.871727705967508e-06,
+          -0.000560801553383525,
+          -0.0009750727407462417,
+          0.0007950797244267086,
+          -2.053103693771044e-05,
+          -4.290202339989214e-05
+        ],
+        "arm_jacobian_position": [
+          [
+            -0.2949906236182637,
+            -0.06953975299295362,
+            0.18884648938904358,
+            0.17813530349367251,
+            0.12373707103754392,
+            -0.04232021791065041
+          ],
+          [
+            0.35000242730440284,
+            -0.06872429332184418,
+            0.18663197625807335,
+            0.17604639535483246,
+            -0.12558252357216793,
+            -0.012041559491068277
+          ],
+          [
+            0.0,
+            -0.4363004455891071,
+            0.2324385291968503,
+            -0.019351494381637913,
+            0.0362077365358673,
+            1.0090216920866611e-06
+          ]
+        ],
+        "arm_jacobian_rotation": [
+          [
+            0.0,
+            -0.7029241508905139,
+            0.7029241508905137,
+            0.7029241508905137,
+            -0.7112457431555745,
+            -0.004195977030916667
+          ],
+          [
+            0.0,
+            0.7112648157295915,
+            -0.7112648157295913,
+            -0.7112648157295914,
+            -0.702905301971518,
+            0.01466303082227852
+          ],
+          [
+            1.0,
+            2.220446049250313e-16,
+            4.440892098500626e-16,
+            4.440892098500626e-16,
+            -0.00732320308355261,
+            -0.999883687887676
+          ]
+        ],
+        "arm_bias_torque_Nm": [
+          9.015746126106435e-10,
+          -11.327502171288494,
+          5.246007902168259,
+          0.27000158950042374,
+          -0.006770831616598754,
+          -5.346788136762273e-05
+        ],
+        "native_drag_torque_Nm": [
+          -2.9230366235805045e-06,
+          -0.000336480932030115,
+          -0.000585043644447745,
+          6.360637795413668e-05,
+          -1.642482955016835e-06,
+          -3.4321618719913714e-06
+        ],
+        "arm_jacobian_position_derivative": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "arm_jacobian_rotation_derivative": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "requested_site_acceleration_world_m_s2": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "requested_angular_acceleration_world_rad_s2": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "pd_wrench_world_N_Nm": [
+          -0.011506410453700527,
+          -0.0011800349859893587,
+          0.020158324348402624,
+          0.00016132883114218207,
+          -0.00011078971864219873,
+          7.130799307547586e-05
+        ],
+        "ff_wrench_world_N_Nm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "combined_uncapped_wrench_world_N_Nm": [
+          -0.011506410453700527,
+          -0.0011800349859893587,
+          0.020158324348402624,
+          0.00016132883114218207,
+          -0.00011078971864219873,
+          7.130799307547586e-05
+        ],
+        "capped_wrench_world_N_Nm": [
+          -0.011506410453700527,
+          -0.0011800349859893587,
+          0.020158324348402624,
+          0.00016132883114218207,
+          -0.00011078971864219873,
+          7.130799307547586e-05
+        ],
+        "motor_uncapped_torques_Nm": [
+          0.0030496539439709425,
+          -11.335944690865228,
+          5.2479074550657465,
+          0.2676098661144974,
+          -0.007355556525470318,
+          0.0003706824119809394
+        ],
+        "motor_torques_Nm": [
+          0.0030496539439709425,
+          -11.335944690865228,
+          5.2479074550657465,
+          0.2676098661144974,
+          -0.007355556525470318,
+          0.0003706824119809394
+        ],
+        "cartesian_force_clipped": false,
+        "cartesian_torque_clipped": false,
+        "motor_clipped": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "inertia_inputs_present": false,
+        "jacobian_derivatives_present": false,
+        "mass_aa": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "hybrid_jacobian5": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "projected_world_jdot_qdot5": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "desired_world_acceleration5": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mobility5": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "transverse_basis_world": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "mass_condition": 0.0,
+        "mobility_condition": 0.0,
+        "minimum_mobility_eigenvalue": 0.0,
+        "scheduled_angular_velocity_world_rad_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scheduled_lever_world_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "command_time_s": 24.413750000248687,
+        "time": 24.41380000024869,
+        "phase_index": 22,
+        "postintegration_arm_velocity_rad_s": [
+          -4.881976288523486e-06,
+          -0.0005608567422122311,
+          -0.0009751063070549547,
+          0.0007948894928194697,
+          -2.055222601831559e-05,
+          -4.287931912497291e-05
+        ]
+      },
+      "open_peak_axial_drift_m": 5.501388102013838e-07,
+      "open_peak_yaw_drift_rad": 0.0016979976018016707,
+      "actual_quiet_regrasp_streak_s": 0.09999999999999715,
+      "live_physical_phase_gate": "complete",
+      "right_command_wrench_N_Nm": [
+        -0.011506410453700527,
+        -0.0011800349859893587,
+        0.020158324348402624,
+        0.00016132883114218207,
+        -0.00011078971864219873,
+        7.130799307547586e-05
+      ],
+      "left_command_wrench_N_Nm": [
+        0.003025744430755859,
+        -0.015268552564021601,
+        -1.9999710866342673,
+        -3.5883243726078485e-05,
+        -0.0010046733088958993,
+        -0.0013765461618330801
+      ],
+      "left_downward_feed_N": -1.9999710866342673,
+      "net_axial_feed_N": 0.05,
+      "weight_observation_valid": true,
+      "open_observation_valid": false,
+      "all_hard_guards_held": true,
+      "command_calibration": null
+    }
+  },
+  "original_npz_array_catalog": {
+    "time": {
+      "shape": [
+        4909
+      ],
+      "dtype": "float64"
+    },
+    "qpos": {
+      "shape": [
+        4909,
+        30
+      ],
+      "dtype": "float64"
+    },
+    "qvel": {
+      "shape": [
+        4909,
+        28
+      ],
+      "dtype": "float64"
+    },
+    "controller": {
+      "shape": [
+        4909,
+        16
+      ],
+      "dtype": "float64"
+    },
+    "info_json": {
+      "shape": [],
+      "dtype": "<U239849727"
+    },
+    "metadata_json": {
+      "shape": [],
+      "dtype": "<U72370"
+    }
+  },
+  "original_runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "native_frame_timing_and_inertia_presence_review": {
+    "existing_replay_plugin_sha256": "53571638b1f6146e1dfd297e8dd5f750bb19c1efc70743180f40b94649489e18",
+    "plugin_built_during_replay": false,
+    "native_plugin_binary_equivalence_claimed": false,
+    "scope": "Read-only saved native states/original sampled metadata/media encoding identities only. No native integration, dense-force/inertia validation, closed-rollout or capture qualification.",
+    "passed": true,
+    "trajectory_sha256": "32f3453722254cb58f1cf68db0b82f1cdfd7d1cca3c4a12fc20db8638ef68398",
+    "render_manifest_sha256": "37cbb51c1b163b662b84f88a68adfd093014f831cf72a97cf70a58a3efaca2e6",
+    "original_saved_state_stills": 15,
+    "all_original_sample_qpos_qvel_hashes_exact": true,
+    "all_original_frame_indices_times_exact": true,
+    "mp4_frames": 293,
+    "mp4_fps": 12.0,
+    "mp4_encoded_duration_s": 24.416666666666668,
+    "gif_duration_ms": 24420,
+    "original_prefix_bytes_unchanged": true,
+    "source74_identity_unchanged": true,
+    "sampled_inertia_disabled_records": 3111,
+    "sampled_inertia_active_records": 1798,
+    "disabled_inverse_inputs_are_not_measured_mass_or_Jdot": true,
+    "verification_source_sha256": "c5d27067cb37345569330b22e1ca8a3ca3c6c123edefce8ec716e3793cec4d76"
+  },
+  "supplied_existing_replay_plugin": {
+    "path": "/workspace/astra-r2s/thread_lab/plugins/libm8_sdf.so",
+    "sha256": "53571638b1f6146e1dfd297e8dd5f750bb19c1efc70743180f40b94649489e18",
+    "scope": "Explicit supplied already-built REPLAY binary anchor only. Native runtime records plugin SOURCE SHA, not native plugin binary SHA; no original native-binary equivalence inferred.",
+    "plugin_built_during_replay": false
+  },
+  "native_plugin_binary_equivalence_inferred": false,
+  "additive_read_only_stage_execution_records": [
+    {
+      "path": "media_identity_review_attempt001/execution_finished.json",
+      "execution_record_sha256": "be7363859f33b56a64c503f4edfeacf690fb9be96a136d33c9fc95610174c008",
+      "original_record": {
+        "schema": "reset-speed2-v3-media-stage-execution-v1",
+        "stage": "media_identity_review",
+        "command": [
+          "scripts/run_m8.sh",
+          "outputs/m8_table_supported/verify_full_reset_speed2_v3_progress_media_v2.py",
+          "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/native_snapshot",
+          "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render"
+        ],
+        "cwd": "/workspace/astra-r2s",
+        "started_utc": "2026-10-09T15:46:23.855342+00:00",
+        "recorder_source_sha256": "34277d23eee1fb884965ef816356c6d99942e4f5caedbe86a68d6055c34ae6c3",
+        "scope": "Recorded execution of additive read-only snapshot/geometry/media/publication stage. Not a native rollout or native qualification.",
+        "finished_utc": "2026-10-09T15:46:45.590002+00:00",
+        "exit_code": 0,
+        "stage_command_succeeded": true,
+        "stdout_sha256": "5ab7bbca1e2fc72fe628f3b5ed78670828a1ec7932bb64c7c87ad9a59deb8baa",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "path": "render_attempt001/execution_finished.json",
+      "execution_record_sha256": "ee71d8c19c70405983e8691defad1caee4c14f37e17b5f423242756ab9d16d49",
+      "original_record": {
+        "schema": "reset-speed2-v3-media-stage-execution-v1",
+        "stage": "render",
+        "command": [
+          "scripts/run_m8.sh",
+          "outputs/m8_table_supported/render_full_reset_speed2_v3_regrasp_progress_v2.py",
+          "--repository-root",
+          "/workspace/astra-r2s",
+          "--plugin-library",
+          "/workspace/astra-r2s/thread_lab/plugins/libm8_sdf.so",
+          "--plugin-sha256",
+          "53571638b1f6146e1dfd297e8dd5f750bb19c1efc70743180f40b94649489e18",
+          "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/native_snapshot",
+          "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render"
+        ],
+        "cwd": "/workspace/astra-r2s",
+        "started_utc": "2026-10-09T15:40:33.452684+00:00",
+        "recorder_source_sha256": "34277d23eee1fb884965ef816356c6d99942e4f5caedbe86a68d6055c34ae6c3",
+        "scope": "Recorded execution of additive read-only snapshot/geometry/media/publication stage. Not a native rollout or native qualification.",
+        "finished_utc": "2026-10-09T15:46:15.352518+00:00",
+        "exit_code": 0,
+        "stage_command_succeeded": true,
+        "stdout_sha256": "3b56e0356f8fdb61716f1471e0ef799a7f42ccb71936fee40bcd6f47ee476559",
+        "stderr_sha256": "472a357df1b6f6094017774dfea473733f2e74119bbb1e8a205786cbef0a1773"
+      }
+    },
+    {
+      "path": "snapshot_attempt001/execution_finished.json",
+      "execution_record_sha256": "e15b399f11ff360c297040ecac79257f2451bb03df5470542afd027a9bfc155c",
+      "original_record": {
+        "schema": "reset-speed2-v3-media-stage-execution-v1",
+        "stage": "snapshot",
+        "command": [
+          "scripts/run_m8.sh",
+          "outputs/m8_table_supported/snapshot_full_reset_speed2_v3_progress.py",
+          "--label",
+          "first_open_reset_regrasp",
+          "--expected-last-phase",
+          "settle_regrip_search_2",
+          "outputs/m8_table_supported/full_reset_speed2_v3",
+          "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/native_snapshot"
+        ],
+        "cwd": "/workspace/astra-r2s",
+        "started_utc": "2026-10-09T15:33:37.928110+00:00",
+        "recorder_source_sha256": "34277d23eee1fb884965ef816356c6d99942e4f5caedbe86a68d6055c34ae6c3",
+        "scope": "Recorded execution of additive read-only snapshot/geometry/media/publication stage. Not a native rollout or native qualification.",
+        "finished_utc": "2026-10-09T15:34:11.035669+00:00",
+        "exit_code": 0,
+        "stage_command_succeeded": true,
+        "stdout_sha256": "93d26aeeb1eadca184ed8adfb36c3ffaa481e508d1fbef8e960f5d1ef7fe73e3",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "original_snapshot_file_to_artifact": {
+    "scene.xml": "native_snapshot/scene.xml",
+    "supported_scene.zip": "native_snapshot/supported_scene.zip",
+    "scene_source.py": "native_snapshot/scene_source.py",
+    "controller_source.py": "native_snapshot/controller_source.py",
+    "renderer_source.py": "native_snapshot/renderer_source.py",
+    "engagement_observer_source.py": "native_snapshot/engagement_observer_source.py",
+    "run_publication_identity.json": "native_snapshot/run_publication_identity.json",
+    "software_tests.json": "native_snapshot/software_tests.json",
+    "software_tests.log": "native_snapshot/software_tests.log",
+    "manifest.json": "native_snapshot/manifest.json",
+    "verify_sources.py": "native_snapshot/verify_sources.py",
+    "launch_source.py": "native_snapshot/launch_source.py",
+    "native_stdout_stderr.log": "native_snapshot/native_stdout_stderr.log",
+    "recorded_sources/yam_twin/kinematics.py": "native_snapshot/recorded_sources/yam_twin/kinematics.py",
+    "recorded_sources/yam_twin/m8_insertion_engagement.py": "native_snapshot/recorded_sources/yam_twin/m8_insertion_engagement.py",
+    "recorded_sources/yam_twin/m8_insertion_mechanics.py": "native_snapshot/recorded_sources/yam_twin/m8_insertion_mechanics.py",
+    "recorded_sources/yam_twin/m8_insertion_scene.py": "native_snapshot/recorded_sources/yam_twin/m8_insertion_scene.py",
+    "recorded_sources/yam_twin/m8_insertion_simulation.py": "native_snapshot/recorded_sources/yam_twin/m8_insertion_simulation.py",
+    "recorded_sources/yam_twin/m8_robot_braking.py": "native_snapshot/recorded_sources/yam_twin/m8_robot_braking.py",
+    "recorded_sources/yam_twin/m8_robot_inertia.py": "native_snapshot/recorded_sources/yam_twin/m8_robot_inertia.py",
+    "recorded_sources/yam_twin/m8_scene.py": "native_snapshot/recorded_sources/yam_twin/m8_scene.py",
+    "recorded_sources/yam_twin/m8_simulation.py": "native_snapshot/recorded_sources/yam_twin/m8_simulation.py",
+    "recorded_sources/yam_twin/m8_supported_crest.py": "native_snapshot/recorded_sources/yam_twin/m8_supported_crest.py",
+    "recorded_sources/yam_twin/m8_supported_recording.py": "native_snapshot/recorded_sources/yam_twin/m8_supported_recording.py",
+    "recorded_sources/yam_twin/m8_supported_scene.py": "native_snapshot/recorded_sources/yam_twin/m8_supported_scene.py",
+    "recorded_sources/yam_twin/m8_supported_start.py": "native_snapshot/recorded_sources/yam_twin/m8_supported_start.py",
+    "frozen_audit_sources/scripts/audit_m8_free_joint_properties.py": "native_snapshot/frozen_audit_sources/scripts/audit_m8_free_joint_properties.py",
+    "frozen_audit_sources/scripts/audit_m8_insertion_trace.py": "native_snapshot/frozen_audit_sources/scripts/audit_m8_insertion_trace.py",
+    "frozen_audit_sources/scripts/audit_m8_left_pad_force_history.py": "native_snapshot/frozen_audit_sources/scripts/audit_m8_left_pad_force_history.py",
+    "frozen_audit_sources/scripts/audit_m8_supported_trace.py": "native_snapshot/frozen_audit_sources/scripts/audit_m8_supported_trace.py",
+    "frozen_audit_sources/thread_lab/runtime.py": "native_snapshot/frozen_audit_sources/thread_lab/runtime.py",
+    "insertion_trace_partial.npz": "native_snapshot/insertion_trace_partial.npz"
+  },
+  "original_embedded_metadata_and_acceptance_fields_unmodified": true,
+  "original_fresh_table_rest_spawns_verified": true,
+  "no_cold_checkpoint_or_splice": true,
+  "all_original_snapshot_and_render_bytes_preserved": true,
+  "archives_are_lossless": true,
+  "dropping_or_quantization": false,
+  "maximum_stored_file_bytes": 45000000,
+  "scope": "One fresh native attempt, exact copied original closed-phase prefix and sparse sampled state/contact/inertia records only. Disabled inverse/Jdot placeholders explicitly distinguished from active inputs. Dense native force/FF ledgers and final independent audit pending at capture. No complete threading/reset/fresh full trajectory/policy qualification inferred. Geometry-only actual state replay.",
+  "artifacts": {
+    "native_snapshot/controller_source.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/controller_source.py",
+      "bytes": 123387,
+      "sha256": "6ac35d9c7094fed98a3084fe60ba12a0ce5bae96124d3bc91bd7f3074f3e5056"
+    },
+    "native_snapshot/engagement_observer_source.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/engagement_observer_source.py",
+      "bytes": 4752,
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866"
+    },
+    "native_snapshot/frozen_audit_sources/scripts/audit_m8_free_joint_properties.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/frozen_audit_sources/scripts/audit_m8_free_joint_properties.py",
+      "bytes": 6934,
+      "sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11"
+    },
+    "native_snapshot/frozen_audit_sources/scripts/audit_m8_insertion_trace.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/frozen_audit_sources/scripts/audit_m8_insertion_trace.py",
+      "bytes": 30341,
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f"
+    },
+    "native_snapshot/frozen_audit_sources/scripts/audit_m8_left_pad_force_history.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/frozen_audit_sources/scripts/audit_m8_left_pad_force_history.py",
+      "bytes": 10265,
+      "sha256": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc"
+    },
+    "native_snapshot/frozen_audit_sources/scripts/audit_m8_supported_trace.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/frozen_audit_sources/scripts/audit_m8_supported_trace.py",
+      "bytes": 104008,
+      "sha256": "4a8b018a1326bce540a0351d5d715ab58ffb505d2ae44be6d34aa8d8cd68fe3f"
+    },
+    "native_snapshot/frozen_audit_sources/thread_lab/runtime.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/frozen_audit_sources/thread_lab/runtime.py",
+      "bytes": 2177,
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+    },
+    "native_snapshot/insertion_trace_partial.npz": {
+      "storage": "lossless_binary_chunks",
+      "bytes": 83835321,
+      "sha256": "32f3453722254cb58f1cf68db0b82f1cdfd7d1cca3c4a12fc20db8638ef68398",
+      "chunk_bytes": 45000000,
+      "chunks": [
+        {
+          "path": "binary_chunks/native_snapshot/insertion_trace_partial.npz.part00000",
+          "index": 0,
+          "offset": 0,
+          "bytes": 45000000,
+          "sha256": "c9a9ada0b554efbbbb4ef068f4a69858e787e11fb8f82bb11e82001defea26e5"
+        },
+        {
+          "path": "binary_chunks/native_snapshot/insertion_trace_partial.npz.part00001",
+          "index": 1,
+          "offset": 45000000,
+          "bytes": 38835321,
+          "sha256": "8f9a8321a75584882ae689a747e8b61646b66bf51fc3399a1e9b142d768763d7"
+        }
+      ],
+      "reassembly": "Concatenate exact chunks in listed order; verify all chunk and whole-file SHA256 hashes"
+    },
+    "native_snapshot/launch_source.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/launch_source.py",
+      "bytes": 5976,
+      "sha256": "b8abfcc18412aa516ae655d07ab2be27a11ba065fba1b75d63dd9307b7b2ea37"
+    },
+    "native_snapshot/manifest.json": {
+      "storage": "single_file",
+      "path": "native_snapshot/manifest.json",
+      "bytes": 725,
+      "sha256": "bc8c007e0ee0a0041255b575ee23ee177e26965ce93c914130e56eecf2a99d96"
+    },
+    "native_snapshot/native_stdout_stderr.log": {
+      "storage": "single_file",
+      "path": "native_snapshot/native_stdout_stderr.log",
+      "bytes": 712048,
+      "sha256": "4026ef59e5509db340704e3b6e049f8a23441d5b4cfe4251831cfa767090722f"
+    },
+    "native_snapshot/recorded_sources/yam_twin/kinematics.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/recorded_sources/yam_twin/kinematics.py",
+      "bytes": 2796,
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683"
+    },
+    "native_snapshot/recorded_sources/yam_twin/m8_insertion_engagement.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/recorded_sources/yam_twin/m8_insertion_engagement.py",
+      "bytes": 4752,
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866"
+    },
+    "native_snapshot/recorded_sources/yam_twin/m8_insertion_mechanics.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/recorded_sources/yam_twin/m8_insertion_mechanics.py",
+      "bytes": 4321,
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20"
+    },
+    "native_snapshot/recorded_sources/yam_twin/m8_insertion_scene.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/recorded_sources/yam_twin/m8_insertion_scene.py",
+      "bytes": 25139,
+      "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d"
+    },
+    "native_snapshot/recorded_sources/yam_twin/m8_insertion_simulation.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/recorded_sources/yam_twin/m8_insertion_simulation.py",
+      "bytes": 67946,
+      "sha256": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294"
+    },
+    "native_snapshot/recorded_sources/yam_twin/m8_robot_braking.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/recorded_sources/yam_twin/m8_robot_braking.py",
+      "bytes": 6226,
+      "sha256": "4bc45250cbf1aba271dad51df2781971e323735d631349afcc20ab311afa21c1"
+    },
+    "native_snapshot/recorded_sources/yam_twin/m8_robot_inertia.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/recorded_sources/yam_twin/m8_robot_inertia.py",
+      "bytes": 14651,
+      "sha256": "1f287d571ac8425bd71be9e29ad5679056a7dbd09c7f8c7d758cd813c8f3fa4a"
+    },
+    "native_snapshot/recorded_sources/yam_twin/m8_scene.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/recorded_sources/yam_twin/m8_scene.py",
+      "bytes": 20849,
+      "sha256": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f"
+    },
+    "native_snapshot/recorded_sources/yam_twin/m8_simulation.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/recorded_sources/yam_twin/m8_simulation.py",
+      "bytes": 30270,
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449"
+    },
+    "native_snapshot/recorded_sources/yam_twin/m8_supported_crest.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/recorded_sources/yam_twin/m8_supported_crest.py",
+      "bytes": 5414,
+      "sha256": "0f9bd4e13d85e4cb0e2319894c30163f869636f5dd9e634c149b0d7e5715f502"
+    },
+    "native_snapshot/recorded_sources/yam_twin/m8_supported_recording.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/recorded_sources/yam_twin/m8_supported_recording.py",
+      "bytes": 17941,
+      "sha256": "6e73eddfaa5e8113d34b5e2c4bf280f15a9d27bfba031960fa956ace5481f0bc"
+    },
+    "native_snapshot/recorded_sources/yam_twin/m8_supported_scene.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/recorded_sources/yam_twin/m8_supported_scene.py",
+      "bytes": 7969,
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4"
+    },
+    "native_snapshot/recorded_sources/yam_twin/m8_supported_start.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/recorded_sources/yam_twin/m8_supported_start.py",
+      "bytes": 26529,
+      "sha256": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51"
+    },
+    "native_snapshot/renderer_source.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/renderer_source.py",
+      "bytes": 7902,
+      "sha256": "42409bb28b5154b853c229360e80cc66c12254eee5233cca46a9a264a7a77b4d"
+    },
+    "native_snapshot/run_publication_identity.json": {
+      "storage": "single_file",
+      "path": "native_snapshot/run_publication_identity.json",
+      "bytes": 9971,
+      "sha256": "1aceb2b906b6201ba715bde99dfe1394bb0880907b0f9914529a9c50adff1ec9"
+    },
+    "native_snapshot/scene.xml": {
+      "storage": "single_file",
+      "path": "native_snapshot/scene.xml",
+      "bytes": 43813,
+      "sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10"
+    },
+    "native_snapshot/scene_source.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/scene_source.py",
+      "bytes": 7969,
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4"
+    },
+    "native_snapshot/snapshot_binding.json": {
+      "storage": "single_file",
+      "path": "native_snapshot/snapshot_binding.json",
+      "bytes": 1345626,
+      "sha256": "72b7ca8b3f445d11c5fb0057e7cc71c482772d72aaac6f6c2821b060c8673ec4"
+    },
+    "native_snapshot/snapshot_helper_source.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/snapshot_helper_source.py",
+      "bytes": 8961,
+      "sha256": "91db4f94c295585b8f0756c816dfe1179f65ee6529d0a260a24d55f5b9135f56"
+    },
+    "native_snapshot/software_tests.json": {
+      "storage": "single_file",
+      "path": "native_snapshot/software_tests.json",
+      "bytes": 9168,
+      "sha256": "9f3617e33a047e1c5755e6fa62a76d490cc16bb73980ded33c2f57caac34d1a7"
+    },
+    "native_snapshot/software_tests.log": {
+      "storage": "single_file",
+      "path": "native_snapshot/software_tests.log",
+      "bytes": 1581,
+      "sha256": "1ecbbb59c74a46232d60b7245b1d4a7fe085e452c3b5d8504c7896bfd5e8dbf6"
+    },
+    "native_snapshot/supported_scene.zip": {
+      "storage": "single_file",
+      "path": "native_snapshot/supported_scene.zip",
+      "bytes": 5325454,
+      "sha256": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93"
+    },
+    "native_snapshot/verify_sources.py": {
+      "storage": "single_file",
+      "path": "native_snapshot/verify_sources.py",
+      "bytes": 2759,
+      "sha256": "d7d8928e81660ea3d85d1a1d4092fc71ad5cb705df95ed11fd1fab2c5af740f8"
+    },
+    "render/bolt_aligned.png": {
+      "storage": "single_file",
+      "path": "render/bolt_aligned.png",
+      "bytes": 258645,
+      "sha256": "1d4886bf1722cabdbecabcfb878cdd9897bd01458412b5a6ae2d4c30dd13ecf4"
+    },
+    "render/bolt_grasped.png": {
+      "storage": "single_file",
+      "path": "render/bolt_grasped.png",
+      "bytes": 256048,
+      "sha256": "939ab0a7616cb2ea4d44ea9b30e11bd772a31c6c04bd3cffd0013696828ac9c1"
+    },
+    "render/bolt_lifted.png": {
+      "storage": "single_file",
+      "path": "render/bolt_lifted.png",
+      "bytes": 256360,
+      "sha256": "afecf2a68e32e289b6d0d838bd4cb9dd931989e27aedb8cd4716cf1dd2fd868a"
+    },
+    "render/demo.gif": {
+      "storage": "single_file",
+      "path": "render/demo.gif",
+      "bytes": 36977210,
+      "sha256": "ce54b147f3ebed61d87abcb6a93ba45654f7251fea820c403e8a3ffec9ebebd8"
+    },
+    "render/demo.mp4": {
+      "storage": "single_file",
+      "path": "render/demo.mp4",
+      "bytes": 3327597,
+      "sha256": "9e49e84e41ca39fcb7ca66f24385b558602ce81f5ae6cd1cb3381455c53c40f0"
+    },
+    "render/demo.png": {
+      "storage": "single_file",
+      "path": "render/demo.png",
+      "bytes": 263859,
+      "sha256": "395e16dc0f3c577c34aca19f3a1d104d1277d46f4068d9a03c80abbbb0c11f99"
+    },
+    "render/direction_stopped.png": {
+      "storage": "single_file",
+      "path": "render/direction_stopped.png",
+      "bytes": 262004,
+      "sha256": "05069d2b565900149073df4f8c2dd46fba999a8ff30078502643e02e3081121b"
+    },
+    "render/endpoint_detail.png": {
+      "storage": "single_file",
+      "path": "render/endpoint_detail.png",
+      "bytes": 171636,
+      "sha256": "cf31995e066153ed4af6695666f66b83a7c010663a7ae99cd94b32dd49b383c7"
+    },
+    "render/first_forward_stopped.png": {
+      "storage": "single_file",
+      "path": "render/first_forward_stopped.png",
+      "bytes": 256812,
+      "sha256": "2589cdb8b71f27dca665e18193051245385e90a64cc3d7b1c24a7027425ea375"
+    },
+    "render/fully_open.png": {
+      "storage": "single_file",
+      "path": "render/fully_open.png",
+      "bytes": 260537,
+      "sha256": "70bd11d7ac25d3d1fb5d516b61be14ac41beaa8316b72b8d78885b8e8236644c"
+    },
+    "render/fully_open_detail.png": {
+      "storage": "single_file",
+      "path": "render/fully_open_detail.png",
+      "bytes": 149279,
+      "sha256": "cff03b05c8958bf7d4be42ec780aa416ef5d026d447dfeb61922592c971a306e"
+    },
+    "render/left_stabilized.png": {
+      "storage": "single_file",
+      "path": "render/left_stabilized.png",
+      "bytes": 254698,
+      "sha256": "093ac19277fb5d839cfdf0b3b4fa6e3fc9d3888203841a47e33c2ece85e5f7e7"
+    },
+    "render/left_stabilized_detail.png": {
+      "storage": "single_file",
+      "path": "render/left_stabilized_detail.png",
+      "bytes": 159113,
+      "sha256": "cdcabe2d96a276d67aacea28216d19c5e8ab4857d0a71dbd270b740c3beb8b96"
+    },
+    "render/media_identity_review.json": {
+      "storage": "single_file",
+      "path": "render/media_identity_review.json",
+      "bytes": 1191,
+      "sha256": "5ab7bbca1e2fc72fe628f3b5ed78670828a1ec7932bb64c7c87ad9a59deb8baa"
+    },
+    "render/open_reset.png": {
+      "storage": "single_file",
+      "path": "render/open_reset.png",
+      "bytes": 265201,
+      "sha256": "a1fc4dec208b50c50c9d5fb48647f523aac2f52875694d9ab4b80939b8732da0"
+    },
+    "render/open_reset_detail.png": {
+      "storage": "single_file",
+      "path": "render/open_reset_detail.png",
+      "bytes": 170799,
+      "sha256": "7317c4a0501b5c620582c9f780b59172125b9869abaaf15c20762faa6783a1d2"
+    },
+    "render/quiet_regrasp.png": {
+      "storage": "single_file",
+      "path": "render/quiet_regrasp.png",
+      "bytes": 263859,
+      "sha256": "395e16dc0f3c577c34aca19f3a1d104d1277d46f4068d9a03c80abbbb0c11f99"
+    },
+    "render/quiet_regrasp_detail.png": {
+      "storage": "single_file",
+      "path": "render/quiet_regrasp_detail.png",
+      "bytes": 171636,
+      "sha256": "cf31995e066153ed4af6695666f66b83a7c010663a7ae99cd94b32dd49b383c7"
+    },
+    "render/render_manifest.json": {
+      "storage": "single_file",
+      "path": "render/render_manifest.json",
+      "bytes": 2791934,
+      "sha256": "37cbb51c1b163b662b84f88a68adfd093014f831cf72a97cf70a58a3efaca2e6"
+    },
+    "render/renderer_sources/render_full_reset_speed2_v3_regrasp_compiler_origin.py": {
+      "storage": "single_file",
+      "path": "render/renderer_sources/render_full_reset_speed2_v3_regrasp_compiler_origin.py",
+      "bytes": 26380,
+      "sha256": "ab16fd64ba4b14a13abfed9b412fea8c44e66e790773fecd066b6590095888b8"
+    },
+    "render/renderer_sources/render_full_reset_speed2_v3_regrasp_progress.py": {
+      "storage": "single_file",
+      "path": "render/renderer_sources/render_full_reset_speed2_v3_regrasp_progress.py",
+      "bytes": 20190,
+      "sha256": "18c83b4d1747ec15988783dddf268b7e637e2cb8057bfa405931f552feacfa3a"
+    },
+    "render/renderer_sources/render_full_reset_speed2_v3_regrasp_progress_v2.py": {
+      "storage": "single_file",
+      "path": "render/renderer_sources/render_full_reset_speed2_v3_regrasp_progress_v2.py",
+      "bytes": 20190,
+      "sha256": "18c83b4d1747ec15988783dddf268b7e637e2cb8057bfa405931f552feacfa3a"
+    },
+    "render/renderer_sources/scripts/audit_m8_insertion_trace.py": {
+      "storage": "single_file",
+      "path": "render/renderer_sources/scripts/audit_m8_insertion_trace.py",
+      "bytes": 30341,
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f"
+    },
+    "render/renderer_sources/thread_lab/runtime.py": {
+      "storage": "single_file",
+      "path": "render/renderer_sources/thread_lab/runtime.py",
+      "bytes": 2177,
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+    },
+    "render/renderer_sources/verify_full_reset_speed2_v3_progress_media_v2.py": {
+      "storage": "single_file",
+      "path": "render/renderer_sources/verify_full_reset_speed2_v3_progress_media_v2.py",
+      "bytes": 4950,
+      "sha256": "c5d27067cb37345569330b22e1ca8a3ca3c6c123edefce8ec716e3793cec4d76"
+    },
+    "render/renderer_sources/yam_twin/m8_demo.py": {
+      "storage": "single_file",
+      "path": "render/renderer_sources/yam_twin/m8_demo.py",
+      "bytes": 13137,
+      "sha256": "f5989b9ee052a2bb6d68bdec090d90aec4faeed667fd8218bf3fa4dccb3d485d"
+    },
+    "render/renderer_sources/yam_twin/m8_insertion_demo.py": {
+      "storage": "single_file",
+      "path": "render/renderer_sources/yam_twin/m8_insertion_demo.py",
+      "bytes": 13740,
+      "sha256": "3531a3659ded5b4a7fe66868989c1bac6437a008282ec1229bf2f8a5ccb97a91"
+    },
+    "render/renderer_sources/yam_twin/m8_supported_demo.py": {
+      "storage": "single_file",
+      "path": "render/renderer_sources/yam_twin/m8_supported_demo.py",
+      "bytes": 7902,
+      "sha256": "42409bb28b5154b853c229360e80cc66c12254eee5233cca46a9a264a7a77b4d"
+    },
+    "software_proof/README.md": {
+      "storage": "single_file",
+      "path": "software_proof/README.md",
+      "bytes": 7422,
+      "sha256": "34dcf5694d72fedc444827c1a6db781dc27d77bbd5dd8ac42b4991c3648e867a"
+    },
+    "software_proof/SHA256SUMS": {
+      "storage": "single_file",
+      "path": "software_proof/SHA256SUMS",
+      "bytes": 8536,
+      "sha256": "6966dcc20d16fdc1b35bb5f3946a330a824c53353d967a081e94fa3a987514bc"
+    },
+    "software_proof/launch_supported_reset_speed2_v3.py": {
+      "storage": "single_file",
+      "path": "software_proof/launch_supported_reset_speed2_v3.py",
+      "bytes": 5976,
+      "sha256": "b8abfcc18412aa516ae655d07ab2be27a11ba065fba1b75d63dd9307b7b2ea37"
+    },
+    "software_proof/pytest_all.log": {
+      "storage": "single_file",
+      "path": "software_proof/pytest_all.log",
+      "bytes": 1581,
+      "sha256": "1ecbbb59c74a46232d60b7245b1d4a7fe085e452c3b5d8504c7896bfd5e8dbf6"
+    },
+    "software_proof/software_proof.json": {
+      "storage": "single_file",
+      "path": "software_proof/software_proof.json",
+      "bytes": 9168,
+      "sha256": "9f3617e33a047e1c5755e6fa62a76d490cc16bb73980ded33c2f57caac34d1a7"
+    },
+    "software_proof/source_files/scripts/audit_m8_free_joint_properties.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/audit_m8_free_joint_properties.py",
+      "bytes": 6934,
+      "sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11"
+    },
+    "software_proof/source_files/scripts/audit_m8_insertion_capture.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/audit_m8_insertion_capture.py",
+      "bytes": 7389,
+      "sha256": "15ba607ac3277b4f8ef3f02aaf8df677e285e20511f0a7b9f8d07a202bad1233"
+    },
+    "software_proof/source_files/scripts/audit_m8_insertion_reset_contacts.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/audit_m8_insertion_reset_contacts.py",
+      "bytes": 7681,
+      "sha256": "b8b14448a2fba7074ebed84669a7a6015b1f831e45e7a647ff7acc9cdb10ab0a"
+    },
+    "software_proof/source_files/scripts/audit_m8_insertion_trace.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/audit_m8_insertion_trace.py",
+      "bytes": 30341,
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f"
+    },
+    "software_proof/source_files/scripts/audit_m8_left_pad_force_history.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/audit_m8_left_pad_force_history.py",
+      "bytes": 10265,
+      "sha256": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc"
+    },
+    "software_proof/source_files/scripts/audit_m8_supported_trace.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/audit_m8_supported_trace.py",
+      "bytes": 104008,
+      "sha256": "4a8b018a1326bce540a0351d5d715ab58ffb505d2ae44be6d34aa8d8cd68fe3f"
+    },
+    "software_proof/source_files/scripts/audit_yam_m8_geometry.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/audit_yam_m8_geometry.py",
+      "bytes": 10939,
+      "sha256": "1dac9d46cc585cd01ca5ea759c6bf86ce14edbb1bacaf3b04a39848c1b145fee"
+    },
+    "software_proof/source_files/scripts/audit_yam_m8_trace.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/audit_yam_m8_trace.py",
+      "bytes": 17345,
+      "sha256": "8d41f8ea4eea3a905f536a257a707bf953dae7e54f7fc1d7e6d2d151d2a1cfc2"
+    },
+    "software_proof/source_files/scripts/check_m8_distance.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/check_m8_distance.py",
+      "bytes": 2644,
+      "sha256": "6cb40d77aa8dec608ed7a4a9af13c64e463940aa027368e20f118d5fb3a461c9"
+    },
+    "software_proof/source_files/scripts/check_m8_optimization.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/check_m8_optimization.py",
+      "bytes": 16201,
+      "sha256": "dc8e68893522fc55dd2da71f3fa7b21be2e4717ab67b305ffb6512e6ee0f677a"
+    },
+    "software_proof/source_files/scripts/compare_m8_thread_start.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/compare_m8_thread_start.py",
+      "bytes": 15848,
+      "sha256": "a202391a03ea0ff9697f1219be0260881396dd7b0c2bf704d0032d7a2c25a67f"
+    },
+    "software_proof/source_files/scripts/compare_yam_m8_hold.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/compare_yam_m8_hold.py",
+      "bytes": 4819,
+      "sha256": "85395970bed69b1f1288e03082ca1f2aa677a73384522bf326aac80491c1a7ff"
+    },
+    "software_proof/source_files/scripts/package_m8_insertion_demo.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/package_m8_insertion_demo.py",
+      "bytes": 24780,
+      "sha256": "96ba1018173e05f18e98d50a24018b1cec55a215c63aae2c648fdb7932324e39"
+    },
+    "software_proof/source_files/scripts/plot_m8_insertion_trace.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/plot_m8_insertion_trace.py",
+      "bytes": 24634,
+      "sha256": "4125f08051d2ac8461545bb71d7b6ceda6f26a80ae121ce18ef250534be69dac"
+    },
+    "software_proof/source_files/scripts/probe_m8_thread_start.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/probe_m8_thread_start.py",
+      "bytes": 14088,
+      "sha256": "547430f31396c6bb1bfed0d83a688bd06b6ceba2ab0c3975ece602ec9dddedfb"
+    },
+    "software_proof/source_files/scripts/verify_m8_bindings.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/scripts/verify_m8_bindings.py",
+      "bytes": 4300,
+      "sha256": "fa3c0d3ea85d1dd33a534d1ca36bb2f166d78a958fad4a2e15a7f71ffe7d6af5"
+    },
+    "software_proof/source_files/tests/test_m8_env.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_env.py",
+      "bytes": 2999,
+      "sha256": "f1aa01a7e8f49481f152be4fa4e7d81d0512c9529234e7ab0c7f334c1ffb9ad0"
+    },
+    "software_proof/source_files/tests/test_m8_insertion_env.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_insertion_env.py",
+      "bytes": 18203,
+      "sha256": "cd74ac30cc21ead94d62bbb629cc2f6ffbb5f5cf531910d8af67fe4ec82b3cac"
+    },
+    "software_proof/source_files/tests/test_m8_insertion_mechanics.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_insertion_mechanics.py",
+      "bytes": 3347,
+      "sha256": "38c3500352177b5ab5ff2799d645ec2f402c1c8cb7dfe05927b672f2ba5d260a"
+    },
+    "software_proof/source_files/tests/test_m8_physics.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_physics.py",
+      "bytes": 1884,
+      "sha256": "1ef772e1e4af6cd864577176ab8c1c088c30c4856944ce5948ba1894c897f7e0"
+    },
+    "software_proof/source_files/tests/test_m8_robot_braking.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_robot_braking.py",
+      "bytes": 10859,
+      "sha256": "bfafc159a4dd4a1b41eb08e0e2b4bcec39141d1728a4b4f583259a1588bac20e"
+    },
+    "software_proof/source_files/tests/test_m8_robot_inertia.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_robot_inertia.py",
+      "bytes": 22335,
+      "sha256": "a8d18511a5451675dda42c23960cacbb4c4876b0b1716e4fd9ffbbe70b07fa23"
+    },
+    "software_proof/source_files/tests/test_m8_sdf.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_sdf.py",
+      "bytes": 3492,
+      "sha256": "b21ab6a5fd8b2af14c50a6cdea5358a77fcec3ee8883dc475e4e3d4bc6a1dd37"
+    },
+    "software_proof/source_files/tests/test_m8_supported_audit.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_supported_audit.py",
+      "bytes": 21821,
+      "sha256": "c3b8290a2f89aaff2ffdfa0719039d07287dde8fdb62a660f8438b39dd2dd6e8"
+    },
+    "software_proof/source_files/tests/test_m8_supported_crest.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_supported_crest.py",
+      "bytes": 13036,
+      "sha256": "04ed9598ba0ef413fcfa25a655ded675233709a443b051ea8cd56c9ab15c1bb7"
+    },
+    "software_proof/source_files/tests/test_m8_supported_feedback.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_supported_feedback.py",
+      "bytes": 25977,
+      "sha256": "c53717a80eb50a769e4e0a834e38113e972bcd2ce03e05940dfd138a7f620c74"
+    },
+    "software_proof/source_files/tests/test_m8_supported_grasp.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_supported_grasp.py",
+      "bytes": 6541,
+      "sha256": "18301b45f5f8ee709e9b7080fa45b14217673d2599b73ec42dfa12b2dd9e7892"
+    },
+    "software_proof/source_files/tests/test_m8_supported_phase_gate.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_supported_phase_gate.py",
+      "bytes": 10989,
+      "sha256": "d9c4a4be0dfc9ca748d48b60e6c7b87bf30249cda668280e1aa22ed2d4d74a7b"
+    },
+    "software_proof/source_files/tests/test_m8_supported_port_audit.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_supported_port_audit.py",
+      "bytes": 38790,
+      "sha256": "5ef571631ffeacfa39babb77f1076b03640317cb708afa5de84437df1eb7e710"
+    },
+    "software_proof/source_files/tests/test_m8_supported_recording.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_supported_recording.py",
+      "bytes": 30611,
+      "sha256": "69a278ee69a9ffb1983e80ed1b8efff3024e8e47e032452f4a721825d44b80be"
+    },
+    "software_proof/source_files/tests/test_m8_supported_start.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_supported_start.py",
+      "bytes": 13358,
+      "sha256": "8b6fdf260cc33767aa2f7b742fb299bf4415f025015d2b0b88af849557073892"
+    },
+    "software_proof/source_files/tests/test_m8_theory.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_m8_theory.py",
+      "bytes": 3858,
+      "sha256": "a82b341fca21da556e6aa311d2663d229428183ad1687660a5bf9cecb060863b"
+    },
+    "software_proof/source_files/tests/test_twin.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_twin.py",
+      "bytes": 10759,
+      "sha256": "2dbf4a42b45b1ec9f804191f10c4bce617d968a4cb875de54656331ec0206458"
+    },
+    "software_proof/source_files/tests/test_yam_m8_control.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_yam_m8_control.py",
+      "bytes": 6353,
+      "sha256": "40956a87183b2100976b9cba5aafc9fbc93524b8191b36e983b11cca39d75be0"
+    },
+    "software_proof/source_files/tests/test_yam_m8_env.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_yam_m8_env.py",
+      "bytes": 10164,
+      "sha256": "47ebd3f925ed0d7330a2f559499dc33d3aaec4e715120f28328120c4eb5a194e"
+    },
+    "software_proof/source_files/tests/test_yam_m8_insertion_controller.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_yam_m8_insertion_controller.py",
+      "bytes": 18035,
+      "sha256": "1d888f545dece29d595948b5eca8289b21969464973f6f6d9b416006b8f30fe9"
+    },
+    "software_proof/source_files/tests/test_yam_m8_insertion_engagement.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_yam_m8_insertion_engagement.py",
+      "bytes": 2406,
+      "sha256": "f6f571c0bba710a94b6ca072a42615b16dc0261c68aa3cfcd8545de47f71be4a"
+    },
+    "software_proof/source_files/tests/test_yam_m8_insertion_scene.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_yam_m8_insertion_scene.py",
+      "bytes": 28494,
+      "sha256": "5b6109bd3e4a9a9b25a292c8ac683bdf5188232372ab235c0bd9cba91408d488"
+    },
+    "software_proof/source_files/tests/test_yam_m8_provenance.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_yam_m8_provenance.py",
+      "bytes": 1457,
+      "sha256": "fd447004b701fe29cd20545cebdc3a3b3961d175d9286d9387e2f423d45adcd6"
+    },
+    "software_proof/source_files/tests/test_yam_m8_scene.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_yam_m8_scene.py",
+      "bytes": 11012,
+      "sha256": "806b8daf2e83b21657dc55529083d9182620dc2ebce7b07386ec8ec88c48cf68"
+    },
+    "software_proof/source_files/tests/test_yam_m8_supported_controller.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_yam_m8_supported_controller.py",
+      "bytes": 11226,
+      "sha256": "51db0238d81157a7f0890d8cd8a8c7d3140f4bc4210e79f6d259589e46d8c929"
+    },
+    "software_proof/source_files/tests/test_yam_m8_supported_scene.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/tests/test_yam_m8_supported_scene.py",
+      "bytes": 10531,
+      "sha256": "ed4aee425488736d4bb0c79c227cb3b776b0954c90e699e214d861c2d61ebd59"
+    },
+    "software_proof/source_files/thread_lab/__init__.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/thread_lab/__init__.py",
+      "bytes": 207,
+      "sha256": "d694de2a94fc8dfb2d0937bfd082272270bf94df494feb106b0e96287ffa1fbd"
+    },
+    "software_proof/source_files/thread_lab/benchmark.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/thread_lab/benchmark.py",
+      "bytes": 5182,
+      "sha256": "0456dccc55070fb7e85cc24fb29e213aa79085fd370312d3391364a4f1b069e4"
+    },
+    "software_proof/source_files/thread_lab/build_plugin.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/thread_lab/build_plugin.py",
+      "bytes": 899,
+      "sha256": "0ddb419b5dd1d7578c659ace20869699a434a99c578815d5928dc9cd6556b5d0"
+    },
+    "software_proof/source_files/thread_lab/demo.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/thread_lab/demo.py",
+      "bytes": 1744,
+      "sha256": "bfd0d601cbb2c7c7fec7522278e23fd0c78dbd80ba9ee927c06bca5c912be5b3"
+    },
+    "software_proof/source_files/thread_lab/env.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/thread_lab/env.py",
+      "bytes": 30087,
+      "sha256": "7850807cadadfbac6511a7a01331a80cb87040d075c15594d06347a9bec75976"
+    },
+    "software_proof/source_files/thread_lab/gripper.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/thread_lab/gripper.py",
+      "bytes": 35781,
+      "sha256": "dc55f61c7544ea23c9651854bd4151251f335292a87e08fa2cc5b87c7ba00a57"
+    },
+    "software_proof/source_files/thread_lab/load_benchmark.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/thread_lab/load_benchmark.py",
+      "bytes": 22702,
+      "sha256": "5270e6a9d37720dee81b57981b3b0ec3465224f491f29dd133612e81e1a24f1a"
+    },
+    "software_proof/source_files/thread_lab/model.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/thread_lab/model.py",
+      "bytes": 7229,
+      "sha256": "12d79f294f00ae1a6ae7551877f4dafd705ef54ba4f2ae6af7ab9e21c646b3de"
+    },
+    "software_proof/source_files/thread_lab/plugins/m8_sdf.cc": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/thread_lab/plugins/m8_sdf.cc",
+      "bytes": 8429,
+      "sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+    },
+    "software_proof/source_files/thread_lab/render.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/thread_lab/render.py",
+      "bytes": 9164,
+      "sha256": "1b3049306df5808ae5f6c2034071e07b1d5133012826eb810701cd441d520224"
+    },
+    "software_proof/source_files/thread_lab/runtime.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/thread_lab/runtime.py",
+      "bytes": 2177,
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+    },
+    "software_proof/source_files/thread_lab/theory.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/thread_lab/theory.py",
+      "bytes": 5383,
+      "sha256": "0480828df22825d3c3ce38187c50fb291670b4beaab9de44bb1e10d4e022453d"
+    },
+    "software_proof/source_files/thread_lab/validate.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/thread_lab/validate.py",
+      "bytes": 5147,
+      "sha256": "59fb22e6b2ec713eea06c53151dea87358df06f29426f4fc61b91547e7bbe4e1"
+    },
+    "software_proof/source_files/yam_twin/kinematics.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/kinematics.py",
+      "bytes": 2796,
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683"
+    },
+    "software_proof/source_files/yam_twin/m8_demo.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_demo.py",
+      "bytes": 13137,
+      "sha256": "f5989b9ee052a2bb6d68bdec090d90aec4faeed667fd8218bf3fa4dccb3d485d"
+    },
+    "software_proof/source_files/yam_twin/m8_env.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_env.py",
+      "bytes": 25978,
+      "sha256": "88eab5fc877341db0bed0f5b81e0c45c25995493b7c368dd3e182dd9d43f510a"
+    },
+    "software_proof/source_files/yam_twin/m8_insertion_demo.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_insertion_demo.py",
+      "bytes": 13740,
+      "sha256": "3531a3659ded5b4a7fe66868989c1bac6437a008282ec1229bf2f8a5ccb97a91"
+    },
+    "software_proof/source_files/yam_twin/m8_insertion_engagement.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_insertion_engagement.py",
+      "bytes": 4752,
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866"
+    },
+    "software_proof/source_files/yam_twin/m8_insertion_env.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_insertion_env.py",
+      "bytes": 38894,
+      "sha256": "fc0d054321a4e76374306bf9f7adeb8fa8366e37f198aac998532dca1b6bea25"
+    },
+    "software_proof/source_files/yam_twin/m8_insertion_mechanics.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_insertion_mechanics.py",
+      "bytes": 4321,
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20"
+    },
+    "software_proof/source_files/yam_twin/m8_insertion_scene.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_insertion_scene.py",
+      "bytes": 25139,
+      "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d"
+    },
+    "software_proof/source_files/yam_twin/m8_insertion_simulation.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_insertion_simulation.py",
+      "bytes": 67946,
+      "sha256": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294"
+    },
+    "software_proof/source_files/yam_twin/m8_robot_braking.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_robot_braking.py",
+      "bytes": 6226,
+      "sha256": "4bc45250cbf1aba271dad51df2781971e323735d631349afcc20ab311afa21c1"
+    },
+    "software_proof/source_files/yam_twin/m8_robot_inertia.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_robot_inertia.py",
+      "bytes": 14651,
+      "sha256": "1f287d571ac8425bd71be9e29ad5679056a7dbd09c7f8c7d758cd813c8f3fa4a"
+    },
+    "software_proof/source_files/yam_twin/m8_scene.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_scene.py",
+      "bytes": 20849,
+      "sha256": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f"
+    },
+    "software_proof/source_files/yam_twin/m8_simulation.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_simulation.py",
+      "bytes": 30270,
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449"
+    },
+    "software_proof/source_files/yam_twin/m8_supported_crest.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_supported_crest.py",
+      "bytes": 5414,
+      "sha256": "0f9bd4e13d85e4cb0e2319894c30163f869636f5dd9e634c149b0d7e5715f502"
+    },
+    "software_proof/source_files/yam_twin/m8_supported_demo.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_supported_demo.py",
+      "bytes": 7902,
+      "sha256": "42409bb28b5154b853c229360e80cc66c12254eee5233cca46a9a264a7a77b4d"
+    },
+    "software_proof/source_files/yam_twin/m8_supported_recording.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_supported_recording.py",
+      "bytes": 17941,
+      "sha256": "6e73eddfaa5e8113d34b5e2c4bf280f15a9d27bfba031960fa956ace5481f0bc"
+    },
+    "software_proof/source_files/yam_twin/m8_supported_scene.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_supported_scene.py",
+      "bytes": 7969,
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4"
+    },
+    "software_proof/source_files/yam_twin/m8_supported_simulation.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_supported_simulation.py",
+      "bytes": 123387,
+      "sha256": "6ac35d9c7094fed98a3084fe60ba12a0ce5bae96124d3bc91bd7f3074f3e5056"
+    },
+    "software_proof/source_files/yam_twin/m8_supported_start.py": {
+      "storage": "single_file",
+      "path": "software_proof/source_files/yam_twin/m8_supported_start.py",
+      "bytes": 26529,
+      "sha256": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51"
+    },
+    "software_proof/verification_source.py": {
+      "storage": "single_file",
+      "path": "software_proof/verification_source.py",
+      "bytes": 2759,
+      "sha256": "d7d8928e81660ea3d85d1a1d4092fc71ad5cb705df95ed11fd1fab2c5af740f8"
+    },
+    "publication_dependencies/shared_lossless_writer.py": {
+      "storage": "single_file",
+      "path": "publication_dependencies/shared_lossless_writer.py",
+      "bytes": 45754,
+      "sha256": "8678d079a8e5bb756776cf6ea365559c5407e121f75bf816865b046bc28c41bf"
+    },
+    "stage_execution_provenance/media_identity_review_attempt001/execution_finished.json": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/media_identity_review_attempt001/execution_finished.json",
+      "bytes": 1030,
+      "sha256": "be7363859f33b56a64c503f4edfeacf690fb9be96a136d33c9fc95610174c008"
+    },
+    "stage_execution_provenance/media_identity_review_attempt001/execution_started.json": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/media_identity_review_attempt001/execution_started.json",
+      "bytes": 749,
+      "sha256": "0e1407fe04986d38b338048a12a77e816256e4d6678d66a6e513a7e9e850789e"
+    },
+    "stage_execution_provenance/media_identity_review_attempt001/stage_recorder_source.py": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/media_identity_review_attempt001/stage_recorder_source.py",
+      "bytes": 2348,
+      "sha256": "34277d23eee1fb884965ef816356c6d99942e4f5caedbe86a68d6055c34ae6c3"
+    },
+    "stage_execution_provenance/media_identity_review_attempt001/stderr.log": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/media_identity_review_attempt001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stage_execution_provenance/media_identity_review_attempt001/stdout.log": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/media_identity_review_attempt001/stdout.log",
+      "bytes": 1191,
+      "sha256": "5ab7bbca1e2fc72fe628f3b5ed78670828a1ec7932bb64c7c87ad9a59deb8baa"
+    },
+    "stage_execution_provenance/preparation/full_reset_speed2_v3_first_regrasp_execution_plan.json": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/preparation/full_reset_speed2_v3_first_regrasp_execution_plan.json",
+      "bytes": 4608,
+      "sha256": "b1df90700cb9b85c75f185b09e5bbddaac2686e6977a16e02cff7c00bad086f0"
+    },
+    "stage_execution_provenance/preparation/full_reset_speed2_v3_first_regrasp_execution_plan_v2.json": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/preparation/full_reset_speed2_v3_first_regrasp_execution_plan_v2.json",
+      "bytes": 5725,
+      "sha256": "85bcff3b789f8bf149067c0030071773724b3e4f2dd6edb657af1052b13a6933"
+    },
+    "stage_execution_provenance/preparation/full_reset_speed2_v3_regrasp_renderer_v2_source.diff": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/preparation/full_reset_speed2_v3_regrasp_renderer_v2_source.diff",
+      "bytes": 6458,
+      "sha256": "6862ef8663b56954ba1084a0f6c796353a2950449ddd647e7c899efc70044508"
+    },
+    "stage_execution_provenance/preparation/scope.json": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/preparation/scope.json",
+      "bytes": 606,
+      "sha256": "225fc2addebbc5d68bb1fe4d3f5d77e1df79342e069e2c86fdb75f12234f8ecc"
+    },
+    "stage_execution_provenance/render_attempt001/execution_finished.json": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/render_attempt001/execution_finished.json",
+      "bytes": 1249,
+      "sha256": "ee71d8c19c70405983e8691defad1caee4c14f37e17b5f423242756ab9d16d49"
+    },
+    "stage_execution_provenance/render_attempt001/execution_started.json": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/render_attempt001/execution_started.json",
+      "bytes": 968,
+      "sha256": "d78ed91e3f4c41a194543b4c64468282d2940fd2e606679e7164916866c83d53"
+    },
+    "stage_execution_provenance/render_attempt001/stage_recorder_source.py": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/render_attempt001/stage_recorder_source.py",
+      "bytes": 2348,
+      "sha256": "34277d23eee1fb884965ef816356c6d99942e4f5caedbe86a68d6055c34ae6c3"
+    },
+    "stage_execution_provenance/render_attempt001/stderr.log": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/render_attempt001/stderr.log",
+      "bytes": 104,
+      "sha256": "472a357df1b6f6094017774dfea473733f2e74119bbb1e8a205786cbef0a1773"
+    },
+    "stage_execution_provenance/render_attempt001/stdout.log": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/render_attempt001/stdout.log",
+      "bytes": 1862,
+      "sha256": "3b56e0356f8fdb61716f1471e0ef799a7f42ccb71936fee40bcd6f47ee476559"
+    },
+    "stage_execution_provenance/snapshot_attempt001/execution_finished.json": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/snapshot_attempt001/execution_finished.json",
+      "bytes": 1075,
+      "sha256": "e15b399f11ff360c297040ecac79257f2451bb03df5470542afd027a9bfc155c"
+    },
+    "stage_execution_provenance/snapshot_attempt001/execution_started.json": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/snapshot_attempt001/execution_started.json",
+      "bytes": 794,
+      "sha256": "1f1d059e41a72ab7a98d261302a2e9c19a3cf7849be6e904b4ce4fb569f64ac6"
+    },
+    "stage_execution_provenance/snapshot_attempt001/stage_recorder_source.py": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/snapshot_attempt001/stage_recorder_source.py",
+      "bytes": 2348,
+      "sha256": "34277d23eee1fb884965ef816356c6d99942e4f5caedbe86a68d6055c34ae6c3"
+    },
+    "stage_execution_provenance/snapshot_attempt001/stderr.log": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/snapshot_attempt001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stage_execution_provenance/snapshot_attempt001/stdout.log": {
+      "storage": "single_file",
+      "path": "stage_execution_provenance/snapshot_attempt001/stdout.log",
+      "bytes": 499,
+      "sha256": "93d26aeeb1eadca184ed8adfb36c3ffaa481e508d1fbef8e960f5d1ef7fe73e3"
+    }
+  }
+}

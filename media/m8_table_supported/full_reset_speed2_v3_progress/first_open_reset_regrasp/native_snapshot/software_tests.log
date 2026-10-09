@@ -1,0 +1,21 @@
+........................................................................ [ 10%]
+........................................................................ [ 21%]
+........................................................................ [ 32%]
+........................................................................ [ 42%]
+........................................................................ [ 53%]
+........................................................................ [ 64%]
+........................................................................ [ 75%]
+........................................................................ [ 85%]
+........................................................................ [ 96%]
+........................                                                 [100%]
+=============================== warnings summary ===============================
+tests/test_m8_env.py::test_gym_contract_seed_and_geometry_configuration
+  /workspace/.venvs/m8-contact/lib/python3.12/site-packages/gymnasium/utils/env_checker.py:372: UserWarning: [33mWARN: A Box observation space minimum value is -infinity. This is probably too low.[0m
+    logger.warn(
+
+tests/test_m8_env.py::test_gym_contract_seed_and_geometry_configuration
+  /workspace/.venvs/m8-contact/lib/python3.12/site-packages/gymnasium/utils/env_checker.py:376: UserWarning: [33mWARN: A Box observation space maximum value is infinity. This is probably too high.[0m
+    logger.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+672 passed, 2 warnings in 104.74s (0:01:44)

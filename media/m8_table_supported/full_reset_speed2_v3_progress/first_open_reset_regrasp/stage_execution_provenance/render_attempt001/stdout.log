@@ -1,0 +1,27 @@
+{
+  "mode": "progress",
+  "frames": 293,
+  "encoded_video_duration_s": 24.416666666666668,
+  "gif_duration_ms": 24420,
+  "native_last_time_s": 24.41380000024869,
+  "trajectory_sha256": "32f3453722254cb58f1cf68db0b82f1cdfd7d1cca3c4a12fc20db8638ef68398",
+  "media_sha256": {
+    "demo.mp4": "9e49e84e41ca39fcb7ca66f24385b558602ce81f5ae6cd1cb3381455c53c40f0",
+    "demo.gif": "ce54b147f3ebed61d87abcb6a93ba45654f7251fea820c403e8a3ffec9ebebd8",
+    "demo.png": "395e16dc0f3c577c34aca19f3a1d104d1277d46f4068d9a03c80abbbb0c11f99",
+    "left_stabilized.png": "093ac19277fb5d839cfdf0b3b4fa6e3fc9d3888203841a47e33c2ece85e5f7e7",
+    "bolt_grasped.png": "939ab0a7616cb2ea4d44ea9b30e11bd772a31c6c04bd3cffd0013696828ac9c1",
+    "bolt_lifted.png": "afecf2a68e32e289b6d0d838bd4cb9dd931989e27aedb8cd4716cf1dd2fd868a",
+    "bolt_aligned.png": "1d4886bf1722cabdbecabcfb878cdd9897bd01458412b5a6ae2d4c30dd13ecf4",
+    "direction_stopped.png": "05069d2b565900149073df4f8c2dd46fba999a8ff30078502643e02e3081121b",
+    "first_forward_stopped.png": "2589cdb8b71f27dca665e18193051245385e90a64cc3d7b1c24a7027425ea375",
+    "fully_open.png": "70bd11d7ac25d3d1fb5d516b61be14ac41beaa8316b72b8d78885b8e8236644c",
+    "open_reset.png": "a1fc4dec208b50c50c9d5fb48647f523aac2f52875694d9ab4b80939b8732da0",
+    "quiet_regrasp.png": "395e16dc0f3c577c34aca19f3a1d104d1277d46f4068d9a03c80abbbb0c11f99",
+    "endpoint_detail.png": "cf31995e066153ed4af6695666f66b83a7c010663a7ae99cd94b32dd49b383c7",
+    "left_stabilized_detail.png": "cdcabe2d96a276d67aacea28216d19c5e8ab4857d0a71dbd270b740c3beb8b96",
+    "fully_open_detail.png": "cff03b05c8958bf7d4be42ec780aa416ef5d026d447dfeb61922592c971a306e",
+    "open_reset_detail.png": "7317c4a0501b5c620582c9f780b59172125b9869abaaf15c20762faa6783a1d2",
+    "quiet_regrasp_detail.png": "cf31995e066153ed4af6695666f66b83a7c010663a7ae99cd94b32dd49b383c7"
+  }
+}

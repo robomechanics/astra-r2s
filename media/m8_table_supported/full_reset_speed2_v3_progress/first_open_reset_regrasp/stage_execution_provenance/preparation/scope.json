@@ -1,0 +1,5 @@
+{
+  "scope": "Original source-only preparation plans and reviewed diff. First plan/9395 renderer was never executed; root review identified potential plugin-build path. The actual successful render used versioned18c83 source with an existing-plugin-only compiler. Snapshot execution preceded v2 render plan and is separately recorded. Source plans are not completed stage or native success declarations.",
+  "actual_renderer_sha256": "18c83b4d1747ec15988783dddf268b7e637e2cb8057bfa405931f552feacfa3a",
+  "unexecuted_v1_renderer_sha256": "9395fe354506963a6c6bbbed5e33d1e3c237c865c8ef037ad6313b07c4a251cd"
+}

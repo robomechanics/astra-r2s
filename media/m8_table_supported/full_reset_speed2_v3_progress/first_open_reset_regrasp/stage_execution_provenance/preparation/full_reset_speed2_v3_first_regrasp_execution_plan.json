@@ -1,0 +1,89 @@
+{
+  "prospective_only": true,
+  "no_helpers_executed_at_plan_creation": true,
+  "only_after_actual_completed_phase": "settle_regrip_search_2",
+  "producer_commit": "9ae1a9fe76968a4013ea6c39e67718026622b9c0",
+  "original_before_sha256": "1aceb2b906b6201ba715bde99dfe1394bb0880907b0f9914529a9c50adff1ec9",
+  "software672_proof_sha256": "9f3617e33a047e1c5755e6fa62a76d490cc16bb73980ded33c2f57caac34d1a7",
+  "helper_sha256": {
+    "outputs/m8_table_supported/snapshot_full_reset_speed2_v3_progress.py": "91db4f94c295585b8f0756c816dfe1179f65ee6529d0a260a24d55f5b9135f56",
+    "outputs/m8_table_supported/render_full_reset_speed2_v3_regrasp_progress.py": "9395fe354506963a6c6bbbed5e33d1e3c237c865c8ef037ad6313b07c4a251cd",
+    "outputs/m8_table_supported/verify_full_reset_speed2_v3_progress_media.py": "a50e6ee4789fa28195452ba112676045add66f758267f0ec6411ead48188cb11",
+    "outputs/m8_table_supported/package_full_reset_speed2_v3_progress.py": "c8e9c201fb08e1f8141edda7eb157fa30c5c446b52740155a822cd1443da781a",
+    "outputs/m8_table_supported/record_full_reset_speed2_v3_progress_stage.py": "34277d23eee1fb884965ef816356c6d99942e4f5caedbe86a68d6055c34ae6c3"
+  },
+  "direct_stage_commands": {
+    "snapshot": [
+      "scripts/run_m8.sh",
+      "outputs/m8_table_supported/snapshot_full_reset_speed2_v3_progress.py",
+      "--label",
+      "first_open_reset_regrasp",
+      "--expected-last-phase",
+      "settle_regrip_search_2",
+      "outputs/m8_table_supported/full_reset_speed2_v3",
+      "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/native_snapshot"
+    ],
+    "render": [
+      "scripts/run_m8.sh",
+      "outputs/m8_table_supported/render_full_reset_speed2_v3_regrasp_progress.py",
+      "--repository-root",
+      "/workspace/astra-r2s",
+      "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/native_snapshot",
+      "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render"
+    ],
+    "media_identity_review": [
+      "scripts/run_m8.sh",
+      "outputs/m8_table_supported/verify_full_reset_speed2_v3_progress_media.py",
+      "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/native_snapshot",
+      "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render"
+    ]
+  },
+  "recorded_stage_commands": {
+    "snapshot": [
+      "scripts/run_m8.sh",
+      "outputs/m8_table_supported/record_full_reset_speed2_v3_progress_stage.py",
+      "--stage",
+      "snapshot",
+      "--record-dir",
+      "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/stage_execution_provenance/snapshot_attempt001",
+      "--",
+      "scripts/run_m8.sh",
+      "outputs/m8_table_supported/snapshot_full_reset_speed2_v3_progress.py",
+      "--label",
+      "first_open_reset_regrasp",
+      "--expected-last-phase",
+      "settle_regrip_search_2",
+      "outputs/m8_table_supported/full_reset_speed2_v3",
+      "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/native_snapshot"
+    ],
+    "render": [
+      "scripts/run_m8.sh",
+      "outputs/m8_table_supported/record_full_reset_speed2_v3_progress_stage.py",
+      "--stage",
+      "render",
+      "--record-dir",
+      "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/stage_execution_provenance/render_attempt001",
+      "--",
+      "scripts/run_m8.sh",
+      "outputs/m8_table_supported/render_full_reset_speed2_v3_regrasp_progress.py",
+      "--repository-root",
+      "/workspace/astra-r2s",
+      "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/native_snapshot",
+      "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render"
+    ],
+    "media_identity_review": [
+      "scripts/run_m8.sh",
+      "outputs/m8_table_supported/record_full_reset_speed2_v3_progress_stage.py",
+      "--stage",
+      "media_identity_review",
+      "--record-dir",
+      "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/stage_execution_provenance/media_identity_review_attempt001",
+      "--",
+      "scripts/run_m8.sh",
+      "outputs/m8_table_supported/verify_full_reset_speed2_v3_progress_media.py",
+      "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/native_snapshot",
+      "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render"
+    ]
+  },
+  "public_package": "media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp"
+}

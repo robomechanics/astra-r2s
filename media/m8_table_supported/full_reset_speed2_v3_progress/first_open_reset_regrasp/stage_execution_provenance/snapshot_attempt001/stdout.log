@@ -1,0 +1,10 @@
+{
+  "snapshot": "/workspace/astra-r2s/outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/native_snapshot",
+  "milestone": "first_open_reset_regrasp",
+  "endpoint_time_s": 24.41380000024869,
+  "endpoint_phase": "settle_regrip_search_2",
+  "original_trace_sha256": "32f3453722254cb58f1cf68db0b82f1cdfd7d1cca3c4a12fc20db8638ef68398",
+  "saved_states": 4909,
+  "files": 34,
+  "snapshot_binding_sha256": "72b7ca8b3f445d11c5fb0057e7cc71c482772d72aaac6f6c2821b060c8673ec4"
+}

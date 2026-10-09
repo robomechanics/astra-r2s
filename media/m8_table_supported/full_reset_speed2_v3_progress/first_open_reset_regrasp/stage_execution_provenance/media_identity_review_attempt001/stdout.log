@@ -1,0 +1,22 @@
+{
+  "existing_replay_plugin_sha256": "53571638b1f6146e1dfd297e8dd5f750bb19c1efc70743180f40b94649489e18",
+  "plugin_built_during_replay": false,
+  "native_plugin_binary_equivalence_claimed": false,
+  "scope": "Read-only saved native states/original sampled metadata/media encoding identities only. No native integration, dense-force/inertia validation, closed-rollout or capture qualification.",
+  "passed": true,
+  "trajectory_sha256": "32f3453722254cb58f1cf68db0b82f1cdfd7d1cca3c4a12fc20db8638ef68398",
+  "render_manifest_sha256": "37cbb51c1b163b662b84f88a68adfd093014f831cf72a97cf70a58a3efaca2e6",
+  "original_saved_state_stills": 15,
+  "all_original_sample_qpos_qvel_hashes_exact": true,
+  "all_original_frame_indices_times_exact": true,
+  "mp4_frames": 293,
+  "mp4_fps": 12.0,
+  "mp4_encoded_duration_s": 24.416666666666668,
+  "gif_duration_ms": 24420,
+  "original_prefix_bytes_unchanged": true,
+  "source74_identity_unchanged": true,
+  "sampled_inertia_disabled_records": 3111,
+  "sampled_inertia_active_records": 1798,
+  "disabled_inverse_inputs_are_not_measured_mass_or_Jdot": true,
+  "verification_source_sha256": "c5d27067cb37345569330b22e1ca8a3ca3c6c123edefce8ec716e3793cec4d76"
+}

@@ -18,14 +18,35 @@ The current producer **`9ae1a9fe76968a4013ea6c39e67718026622b9c0`** passes
 [672 whole-suite tests on 74 unchanged files](../media/m8_table_supported/software_proof_reset_speed2_v3/README.md).
 Its new fresh **`full_reset_speed2_v3`** attempt starts at **14:32:53 UTC on
 2026-10-09**, from independent table/rest spawns, without cold checkpoints or
-stitching. Native integration is in progress; capture/reset/full completion
-have no result yet. Only the CLI reset-speed selection changes: default 4 rad/s
+stitching. Native integration is in progress; full-pitch capture and whole-task
+qualification remain pending. Only the CLI reset-speed selection changes: default 4 rad/s
 remains, and this command explicitly selects 2 rad/s. Its intended 2.94524 s
 free-hand reset halves scheduled velocity and quarters acceleration; those
 command facts do not establish native tracking or clearance. Thread/model/
 controller physics, caps and guards are unchanged. Use the
 [current exact source-bound launch recipe](#run-current-canonical-candidate)
 and [agent setup/provenance handoff](m8_supported_agent_handoff.md#current-producer-fresh-run).
+
+The [first open-reset/quiet-regrasp progress package](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/README.md)
+preserves this complete fresh prefix through **24.41380000024869 s**, with
+**4,909 original states**, without a checkpoint or splice:
+[normal 1× GIF](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render/demo.gif),
+[MP4](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render/demo.mp4),
+[fully open jaws](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render/fully_open_detail.png),
+[actual reset](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render/open_reset_detail.png)
+and [quiet regrasp](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render/quiet_regrasp_detail.png).
+The actual minus-pi reset lasts **2.94525 s**, with zero whole-right/bolt
+contacts and peak axial/angular bolt drift **0.495080 µm / 1.522229 mrad**.
+A contact-free 0.12 s open hold precedes the 0.25 s regrip transition and
+actual **100 ms continuous quiet bilateral acquisition**. Endpoint formed
+overlap is **20.212215 µm**, with zero loaded interior contacts; partial
+helical starting support does not qualify full-pitch capture or a captured
+passive reset. The 293-state / 12 fps clip encodes 24.416667 s (GIF 24,420 ms).
+Dense final force/FF ledgers and independent full audit remain pending;
+the full native attempt continues beyond this immutable snapshot. Use the
+[complete isolated copy/reassembly and nonintegrating replay recipe](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/README.md#verify-and-replay-the-original-recording)
+to recreate the recorded geometry, or the current source-bound fresh command
+above to run a separate native trajectory.
 
 The historical `da69a9c` **`full_c2_inertia_v2`** attempt closes failed at
 **22.08285 s / 441,657 ticks**, after **59.72 min** wall time, with original

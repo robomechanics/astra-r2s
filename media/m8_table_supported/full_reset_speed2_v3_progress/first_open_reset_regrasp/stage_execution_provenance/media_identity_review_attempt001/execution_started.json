@@ -1,0 +1,14 @@
+{
+  "schema": "reset-speed2-v3-media-stage-execution-v1",
+  "stage": "media_identity_review",
+  "command": [
+    "scripts/run_m8.sh",
+    "outputs/m8_table_supported/verify_full_reset_speed2_v3_progress_media_v2.py",
+    "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/native_snapshot",
+    "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render"
+  ],
+  "cwd": "/workspace/astra-r2s",
+  "started_utc": "2026-10-09T15:46:23.855342+00:00",
+  "recorder_source_sha256": "34277d23eee1fb884965ef816356c6d99942e4f5caedbe86a68d6055c34ae6c3",
+  "scope": "Recorded execution of additive read-only snapshot/geometry/media/publication stage. Not a native rollout or native qualification."
+}

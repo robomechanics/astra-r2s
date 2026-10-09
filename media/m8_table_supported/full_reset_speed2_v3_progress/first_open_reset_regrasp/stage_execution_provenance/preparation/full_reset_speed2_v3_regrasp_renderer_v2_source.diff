@@ -1,0 +1,106 @@
+--- outputs/m8_table_supported/render_full_reset_speed2_v3_regrasp_progress.py
++++ outputs/m8_table_supported/render_full_reset_speed2_v3_regrasp_progress_v2.py
+@@ -25,7 +25,7 @@
+ import numpy as np
+ from PIL import Image, ImageDraw, ImageFont, ImageSequence
+ 
+-from scripts.audit_m8_insertion_trace import recorded_model
++import xml.etree.ElementTree as ET
+ from thread_lab.runtime import engine_info, require_micron_engine
+ from yam_twin.m8_supported_demo import SupportedRenderer
+ 
+@@ -36,6 +36,35 @@
+ 
+ def strict_json(path):
+     return json.loads(Path(path).read_text(), parse_constant=lambda token: (_ for _ in ()).throw(ValueError(token)))
++
++
++def compile_archived_model(trace, report):
++    """Compile only exact archived XML/assets, with an already-loaded plugin.
++
++    This local compiler contains no plugin build path or dynamics/collision call.
++    """
++    from scripts.audit_m8_insertion_trace import archived_model_fingerprint, archived_asset_path
++    directory = trace.parent
++    xml = (directory/'scene.xml').read_bytes()
++    assert hashlib.sha256(xml).hexdigest() == report['model_xml_sha256']
++    fingerprint, hashes = archived_model_fingerprint(xml, directory)
++    assert fingerprint == report['model_fingerprint']
++    scene_sha = report.get('scene_source_sha256')
++    if scene_sha is not None:
++        assert sha(directory/'scene_source.py') == scene_sha
++    tree, assets = ET.fromstring(xml), {}
++    for mesh in tree.findall('asset/mesh'):
++        name = mesh.get('file')
++        if name:
++            path = archived_asset_path(name, directory)
++            value = path.read_bytes()
++            assert hashlib.sha256(value).hexdigest() == hashes[path.name]
++            assets[path.name] = value
++            mesh.set('file', path.name)
++    model = mujoco.MjSpec.from_string(ET.tostring(tree, encoding='unicode'), assets=assets).compile()
++    return model, dict(model_fingerprint=fingerprint, model_xml_sha256=report['model_xml_sha256'],
++        mesh_sha256=hashes, scene_source_sha256=scene_sha,
++        method='Compile exact SHA-verified archived XML/assets with explicit already-built plugin. No current scene generation/plugin build/forward/collision/integration.')
+ 
+ 
+ def geometry_refresh(model, data):
+@@ -113,7 +142,12 @@
+     assert np.isfinite(times).all() and np.all(np.diff(times) > 0)
+     assert np.isfinite(qpos).all() and np.isfinite(qvel).all()
+     assert all(float(row['time']) == float(t) for row, t in zip(samples, times))
+-    model, model_identity = recorded_model(trace, report)
++    plugin=args.plugin_library.resolve()
++    assert plugin.is_file(), 'An existing supplied plugin binary is required; replay cannot build it'
++    assert args.plugin_sha256=='53571638b1f6146e1dfd297e8dd5f750bb19c1efc70743180f40b94649489e18'
++    assert sha(plugin)==args.plugin_sha256, 'Supplied replay plugin anchor mismatch'
++    mujoco.mj_loadPluginLibrary(str(plugin))
++    model, model_identity = compile_archived_model(trace, report)
+     data = mujoco.MjData(model)
+     renderer = SupportedRenderer(model)
+     output.mkdir(parents=True)
+@@ -227,6 +261,7 @@
+     for name, digest in sources.items():
+         assert sha(ROOT/name) == digest, name
+     assert engine_info() == runtime
++    assert sha(plugin)==args.plugin_sha256
+     all_stills = dict(stills, **detail_stills)
+     media_names = (['demo.mp4', 'demo.gif'] if indices else []) + list(all_stills)
+     manifest = {
+@@ -256,15 +291,26 @@
+         'source74_before_after_render':sources, 'source74_unchanged':True,
+         'original_run_files_sha256_before_after':{str(p.relative_to(run)):d for p, d in originals.items()},
+         'runtime_before':runtime, 'runtime_after':engine_info(), 'archived_model_identity':model_identity,
++        'original_runtime_plugin_source_sha256':report['runtime']['thread_plugin_source_sha256'],
++        'replay_plugin_library':dict(path=str(plugin),sha256=args.plugin_sha256,
++            scope='Explicit supplied already-built REPLAY binary anchor only. Native runtime records plugin SOURCE SHA, not native plugin binary SHA; no original native-binary equivalence inferred.',
++            plugin_built_during_replay=False),
++        'archived_compiler_source_origin':dict(path='outputs/m8_table_supported/render_full_reset_speed2_v3_closed.py',sha256='ab16fd64ba4b14a13abfed9b412fea8c44e66e790773fecd066b6590095888b8'),
+         'refresh':['mj_kinematics', 'mj_comPos', 'mj_camlight'],
+         'mj_forward_called':False, 'collision_discovery_called':False, 'force_solve_called':False,
+         'physics_integration':False, 'state_interpolation':False, 'body_hiding_or_geometry_change':False,
+         'canonical_camera_and_original_geomgroup_filter_unchanged':True, 'detail_cameras':cameras, 'actual_per_still_detail_cameras':actual_detail_cameras,
+-        'helper_sha256':sha(__file__), 'media_sha256':{name:sha(output/name) for name in media_names}}
++        'helper_sha256':sha(__file__),
++        'portable_renderer_alias':dict(basename='render_full_reset_speed2_v3_regrasp_progress.py',sha256=sha(__file__),byte_identical_to_actual_versioned_source=True),
++        'media_sha256':{name:sha(output/name) for name in media_names}}
+     (output/'render_manifest.json').write_text(json.dumps(manifest, indent=2, allow_nan=False)+'\n')
+     archive = output/'renderer_sources'
+     archive.mkdir()
+     shutil.copyfile(__file__, archive/Path(__file__).name)
++    shutil.copyfile(__file__, archive/'render_full_reset_speed2_v3_regrasp_progress.py')
++    compiler_origin=Path(__file__).with_name('render_full_reset_speed2_v3_regrasp_compiler_origin.py')
++    assert sha(compiler_origin)=='ab16fd64ba4b14a13abfed9b412fea8c44e66e790773fecd066b6590095888b8'
++    shutil.copyfile(compiler_origin, archive/compiler_origin.name)
+     for name in ('yam_twin/m8_supported_demo.py', 'yam_twin/m8_insertion_demo.py',
+             'yam_twin/m8_demo.py', 'scripts/audit_m8_insertion_trace.py', 'thread_lab/runtime.py'):
+         target = archive/name
+@@ -278,6 +324,8 @@
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument('--repository-root', type=Path, default=ROOT)
+     parser.add_argument('--stills-only', action='store_true')
++    parser.add_argument('--plugin-library',type=Path,required=True)
++    parser.add_argument('--plugin-sha256',required=True)
+     parser.add_argument('run', type=Path)
+     parser.add_argument('output', type=Path)
+     main(parser.parse_args())

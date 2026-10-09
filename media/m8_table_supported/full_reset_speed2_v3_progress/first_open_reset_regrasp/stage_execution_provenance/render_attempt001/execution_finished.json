@@ -1,0 +1,25 @@
+{
+  "schema": "reset-speed2-v3-media-stage-execution-v1",
+  "stage": "render",
+  "command": [
+    "scripts/run_m8.sh",
+    "outputs/m8_table_supported/render_full_reset_speed2_v3_regrasp_progress_v2.py",
+    "--repository-root",
+    "/workspace/astra-r2s",
+    "--plugin-library",
+    "/workspace/astra-r2s/thread_lab/plugins/libm8_sdf.so",
+    "--plugin-sha256",
+    "53571638b1f6146e1dfd297e8dd5f750bb19c1efc70743180f40b94649489e18",
+    "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/native_snapshot",
+    "outputs/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render"
+  ],
+  "cwd": "/workspace/astra-r2s",
+  "started_utc": "2026-10-09T15:40:33.452684+00:00",
+  "recorder_source_sha256": "34277d23eee1fb884965ef816356c6d99942e4f5caedbe86a68d6055c34ae6c3",
+  "scope": "Recorded execution of additive read-only snapshot/geometry/media/publication stage. Not a native rollout or native qualification.",
+  "finished_utc": "2026-10-09T15:46:15.352518+00:00",
+  "exit_code": 0,
+  "stage_command_succeeded": true,
+  "stdout_sha256": "3b56e0356f8fdb61716f1471e0ef799a7f42ccb71936fee40bcd6f47ee476559",
+  "stderr_sha256": "472a357df1b6f6094017774dfea473733f2e74119bbb1e8a205786cbef0a1773"
+}

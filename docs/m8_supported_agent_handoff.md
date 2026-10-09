@@ -25,10 +25,26 @@ Default 4 rad/s remains; the new native command explicitly selects 2 rad/s.
 The fresh **`full_reset_speed2_v3`** attempt starts at **2026-10-09
 14:32:53.840320 UTC**, from independent table/rest spawns, with no cold state
 or stitched trajectory. Native integration is in progress; no captured-thread,
-qualified reset, full-task outcome or closed audit is claimed. BEFORE identity is
+qualified captured reset, full-task outcome or closed audit is claimed. BEFORE identity is
 `1aceb2b906b6201ba715bde99dfe1394bb0880907b0f9914529a9c50adff1ec9`.
 The historical da69 failed run and its 13.1946 s progress clips below remain
 separate. They do not show the current 9ae trajectory.
+
+The [actual first open-reset/quiet-regrasp progress recording](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/README.md)
+preserves this complete fresh prefix through **24.41380000024869 s**, with
+4,909 original states and no cold start or splice:
+[normal 1× GIF](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render/demo.gif),
+[MP4](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render/demo.mp4),
+[fully open state](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render/fully_open_detail.png),
+[reset](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render/open_reset_detail.png)
+and [quiet bilateral regrasp](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/render/quiet_regrasp_detail.png).
+Its full 2.94525 s minus-pi reset has zero whole-right/bolt contacts and
+peak bolt drift 0.495080 µm / 1.522229 mrad. The 0.12 s open hold is also
+contact-free; a 0.25 s regrip transition precedes actual 100 ms quiet
+bilateral acquisition. The endpoint has only 20.212215 µm formed overlap
+and zero loaded interior contacts. Opening/reset/regrasp motion is observed;
+full-pitch capture, qualified captured reset and whole assembly remain
+unqualified. FF is disabled throughout these open/reset/regrasp phases.
 
 Use an absent complete clone destination and detach to the exact new pin.
 The commands below use the recorded runtime; for a different-host build,
@@ -138,6 +154,26 @@ trial uses its own BEFORE/AFTER identities. The old fixed da69 closed-media
 gate and historical source maps must not be substituted for these anchors.
 Require the complete matching helper/source/runtime archive before original-
 layout replay/audit; partial milestone bytes do not establish full coverage.
+
+### Replay this historical progress recording
+
+Follow the package's [complete isolated-copy/reassembly recipe](../media/m8_table_supported/full_reset_speed2_v3_progress/first_open_reset_regrasp/README.md#verify-and-replay-the-original-recording).
+The 9ae producer predates this media: copy the COMPLETE newer packet into an
+unused pinned clone's ignored inputs. Reassemble both lossless chunks of the
+original 83,835,321-byte NPZ with every model/source/runtime sidecar. The
+actual `render_full_reset_speed2_v3_regrasp_progress_v2.py` verifies all 74
+source files and uses an existing explicitly hash-bound plugin; it builds
+no plugin and calls only kinematics/comPos/camlight. This recreates saved
+geometry without integration, contact discovery or force replay.
+
+The packet has 162 logical artifacts / 168 stored files / 167 checksum rows;
+ledger SHA is `71e14192db4e0271b815d5f3d7d5284af4e832f9ef2151679170c21cc05cf6fa`.
+Its 293 original-state frames at 12 fps encode 24.416667 s MP4 / 24,420 ms GIF,
+with 15 actual-state stills. Native time is 24.4138 s. Dense every-step final
+contact/force/FF ledgers and independent full audit were pending at capture;
+sampled solves and producer phase maxima are not independent full coverage.
+Use the fresh command above only to create a separate native run with its own
+closure/acceptance, never to append this snapshot or reuse a ready window.
 
 ## Historical da69a9c C2/inertia failure
 
