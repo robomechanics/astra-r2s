@@ -53,6 +53,16 @@ only 20.212 µm, with zero loaded interior contacts. This records the observed
 reset/regrasp motion, while full-pitch capture and qualified assembly remain
 unproven. The package includes exact isolated geometry-replay instructions.
 
+The later [captured-open still packet](media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/README.md)
+shows the [whole-arm state](media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/render/captured_open.png)
+and [thread/jaw detail](media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/render/captured_open_detail.png)
+at **43.5353 s**. Original formed overlap is **1.271646 mm**; the entire
+2.94525 s minus-pi reset has zero whole-right/bolt contacts and only
+**27.909 nm** peak axial drift. Its complete 8,847-state prefix continues to
+44.0053 s; the selected image is an earlier actual row. Full native acceptance
+and independent whole-run audit remain pending. The package gives exact
+snapshot restoration and geometry-only two-image replay instructions.
+
 The earlier `da69a9c` producer retains its [separate 672-test proof](media/m8_table_supported/software_proof_c2_inertia_v2).
 Its fresh `full_c2_inertia_v2` attempt closes failed at **22.08285 s / 441,657
 ticks**, after **59.72 min** wall time. Original `passed=false`, `partial=false`,

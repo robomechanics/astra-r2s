@@ -1,0 +1,24 @@
+{
+  "schema": "reset-speed2-v3-media-stage-execution-v1",
+  "stage": "captured_open_selected_reset_still_v2",
+  "command": [
+    "scripts/run_m8.sh",
+    "outputs/m8_table_supported/render_full_reset_speed2_v3_captured_open_still_v2.py",
+    "--repository-root",
+    "/workspace/astra-r2s",
+    "--snapshot-binding-sha256",
+    "9c3deb00a19066c7c8e4d0be99d652257a4da0e98bac4fa451c4758edf9b32f7",
+    "--expected-phase",
+    "reset_open_1",
+    "--plugin-library",
+    "/workspace/astra-r2s/thread_lab/plugins/libm8_sdf.so",
+    "--plugin-sha256",
+    "53571638b1f6146e1dfd297e8dd5f750bb19c1efc70743180f40b94649489e18",
+    "outputs/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/native_snapshot",
+    "outputs/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/selected_reset_render_v2"
+  ],
+  "cwd": "/workspace/astra-r2s",
+  "started_utc": "2026-10-09T16:40:52.235920+00:00",
+  "recorder_source_sha256": "34277d23eee1fb884965ef816356c6d99942e4f5caedbe86a68d6055c34ae6c3",
+  "scope": "Recorded execution of additive read-only snapshot/geometry/media/publication stage. Not a native rollout or native qualification."
+}

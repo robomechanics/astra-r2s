@@ -175,6 +175,21 @@ sampled solves and producer phase maxima are not independent full coverage.
 Use the fresh command above only to create a separate native run with its own
 closure/acceptance, never to append this snapshot or reuse a ready window.
 
+The [later captured-open still packet](../media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/README.md)
+preserves a complete 8,847-state prefix through **44.0053 s**, while selecting
+actual row **8,749 / 43.5353 s** for its
+[whole-arm image](../media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/render/captured_open.png)
+and [thread/jaw detail](../media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/render/captured_open_detail.png).
+Original formed overlap is **1.271646 mm**; the complete 2.94525 s minus-pi
+reset records zero whole-right/bolt contacts and **27.909 nm** peak axial
+drift. The full native attempt and independent final audit remain pending.
+Follow its [34-file original-snapshot restore](../media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/README.md#verify-and-restore-the-complete-original-prefix)
+and [explicit two-image geometry replay](../media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/README.md#geometry-only-two-image-replay):
+copy the complete newer packet into an unused pinned 9ae clone, restore all
+model/source sidecars, and supply the archived 18c8/ab16 compiler paths plus
+the existing hash-bound plugin. It recreates saved poses without native force
+replay; selected-state flags do not establish final whole-task acceptance.
+
 ## Historical da69a9c C2/inertia failure
 
 Historical producer **`da69a9cd44a8312cc7b97365faf5e09c27a646e2`** passes

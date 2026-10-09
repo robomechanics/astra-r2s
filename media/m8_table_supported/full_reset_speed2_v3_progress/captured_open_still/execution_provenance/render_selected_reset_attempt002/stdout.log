@@ -1,0 +1,11 @@
+{
+  "output": "/workspace/astra-r2s/outputs/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/selected_reset_render_v3",
+  "phase": "reset_open_1",
+  "time_s": 43.53530000088345,
+  "selected_sample_index": 8749,
+  "true_prefix_endpoint_phase": "settle_regrip_1",
+  "true_prefix_endpoint_time_s": 44.005300000899055,
+  "saved_states_rendered": 1,
+  "media_files": 2,
+  "manifest_sha256": "ba2c3ec1ba29b333189aa1f85dfae1100ec7041fdec11db929a64bbf3cd608b8"
+}

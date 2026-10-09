@@ -1,0 +1,10 @@
+{
+  "snapshot": "/workspace/astra-r2s/outputs/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/native_snapshot",
+  "milestone": "captured_full_pitch_reset_and_quiet_regrasp",
+  "endpoint_time_s": 44.005300000899055,
+  "endpoint_phase": "settle_regrip_1",
+  "original_trace_sha256": "c0f1ed6f05001cb7724af308fddbeb9c48109a8b1970d2a41b8dc7553a645829",
+  "saved_states": 8847,
+  "files": 34,
+  "snapshot_binding_sha256": "9c3deb00a19066c7c8e4d0be99d652257a4da0e98bac4fa451c4758edf9b32f7"
+}

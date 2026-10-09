@@ -48,6 +48,19 @@ the full native attempt continues beyond this immutable snapshot. Use the
 to recreate the recorded geometry, or the current source-bound fresh command
 above to run a separate native trajectory.
 
+The [later captured-open snapshot](../media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/README.md)
+selects row **8,749 / 43.5353 s** from a complete **8,847-state** prefix
+ending at **44.0053 s**:
+[whole-arm state](../media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/render/captured_open.png)
+and [thread/jaw detail](../media/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/render/captured_open_detail.png).
+Original formed overlap is **1.271646 mm**. The completed 2.94525 s
+minus-pi reset has zero whole-right/bolt contacts and **27.909 nm** peak
+axial drift; the original final OPEN window retains loaded interior contact.
+These recorded captured-open values await the independent whole-run audit;
+the full native attempt is LIVE. Use the packet's exact complete-snapshot
+restore and geometry-only replay recipe, preserving the earlier selected
+row separately from the true prefix endpoint and final task acceptance.
+
 The historical `da69a9c` **`full_c2_inertia_v2`** attempt closes failed at
 **22.08285 s / 441,657 ticks**, after **59.72 min** wall time, with original
 `passed=false`, `partial=false`, **19/27 checks**. Its open search reset

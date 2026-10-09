@@ -1,0 +1,25 @@
+{
+  "schema": "reset-speed2-v3-media-stage-execution-v1",
+  "stage": "captured_open_still_snapshot",
+  "command": [
+    "/workspace/.venvs/m8-contact/bin/python",
+    "outputs/m8_table_supported/snapshot_full_reset_speed2_v3_progress.py",
+    "--repository-root",
+    "/workspace/astra-r2s",
+    "--label",
+    "captured_full_pitch_reset_and_quiet_regrasp",
+    "--expected-last-phase",
+    "settle_regrip_1",
+    "outputs/m8_table_supported/full_reset_speed2_v3",
+    "outputs/m8_table_supported/full_reset_speed2_v3_progress/captured_open_still/native_snapshot"
+  ],
+  "cwd": "/workspace/astra-r2s",
+  "started_utc": "2026-10-09T16:31:48.027610+00:00",
+  "recorder_source_sha256": "34277d23eee1fb884965ef816356c6d99942e4f5caedbe86a68d6055c34ae6c3",
+  "scope": "Recorded execution of additive read-only snapshot/geometry/media/publication stage. Not a native rollout or native qualification.",
+  "finished_utc": "2026-10-09T16:32:53.950288+00:00",
+  "exit_code": 0,
+  "stage_command_succeeded": true,
+  "stdout_sha256": "7ef48331cfee102f9dcc352470daff0dbc114cf967d9cbce8cb1a4bb3f746a81",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
