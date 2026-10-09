@@ -1,0 +1,15 @@
+{
+  "source": "outputs/m8_table_pickup/full_faster_entry/insertion_trace_partial.npz",
+  "snapshot": "outputs/m8_table_pickup/full_faster_entry/progress_first_faster_start.npz",
+  "snapshot_sha256": "b5f8e812b0fee489d4c8f4ad2865c06e38b30efa0b6fa5be6a11d31dace1eb02",
+  "snapshot_bytes": 6855696,
+  "two_consecutive_reads_identical": true,
+  "archive_crc_readability_verified": true,
+  "byte_exact_copy": true,
+  "snapshot_wall_time_UTC": "2026-10-09T04:23:24Z",
+  "samples": 3830,
+  "last_time_s": 19.02680000006986,
+  "last_phase": "settle_regrip_search_2",
+  "second_start_included": false,
+  "capture_included": false
+}

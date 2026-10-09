@@ -1,0 +1,86 @@
+{
+  "README.md": {
+    "bytes": 1786,
+    "sha256": "b27521e6ddc6d3a57637d6b44e37fe9e703e233dd09ded05a3c644fdd2b09576"
+  },
+  "container_check_source.py": {
+    "bytes": 8143,
+    "sha256": "4c14988ec3223cc1c740f2171cf8b8a46cc0ce8db7f9f1a8f3b7f09ef98976d9"
+  },
+  "controller_source.py": {
+    "bytes": 67946,
+    "sha256": "199ac49380e95b5849caf98e6bbfda1c0e85d1626fc97e468a421463a03394e8"
+  },
+  "demo.gif": {
+    "bytes": 3682759,
+    "sha256": "22bd4af49e69116d464e478ae32a0f9bcf4775fd402790ee13a939fb8a0c4c6d"
+  },
+  "demo.mp4": {
+    "bytes": 2988456,
+    "sha256": "5a2691d275847729df6e3dc293512d94e68009c3510a85c230ffbab483ecdbfe"
+  },
+  "demo.png": {
+    "bytes": 261349,
+    "sha256": "700e14155b6d68e8b831521e9af5fa83e45fb0e9eb330e658b7848ea2c967915"
+  },
+  "engagement_observer_source.py": {
+    "bytes": 4752,
+    "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866"
+  },
+  "insertion_trace.npz": {
+    "bytes": 6855696,
+    "sha256": "b5f8e812b0fee489d4c8f4ad2865c06e38b30efa0b6fa5be6a11d31dace1eb02"
+  },
+  "model_dependencies.json": {
+    "bytes": 5077,
+    "sha256": "ed8d1ebfb7e73f96f3b6c082037811a55c53a53fd828e9276bd66580f84f6e16"
+  },
+  "package_source.py": {
+    "bytes": 7213,
+    "sha256": "369f87db19bd667aeb3230a2678e7d348d6f77d87d16e36e9fffa8d0430c9877"
+  },
+  "progress_manifest.json": {
+    "bytes": 36309,
+    "sha256": "7898a2e06f7d4d9b7f75986755fcc65c2c2a9e3bc73d605df6645887e8182fbc"
+  },
+  "recorded_model_auditor_source.py": {
+    "bytes": 30341,
+    "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f"
+  },
+  "recorded_sources/yam_twin/m8_insertion_mechanics.py": {
+    "bytes": 4321,
+    "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20"
+  },
+  "recorded_sources/yam_twin/m8_simulation.py": {
+    "bytes": 30270,
+    "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449"
+  },
+  "render_manifest.json": {
+    "bytes": 7040,
+    "sha256": "d301e9a8e56d19e86ffc5f8c4ae98ea1c8d48062caa91af09bb9136392a17a3e"
+  },
+  "renderer_output.json": {
+    "bytes": 398,
+    "sha256": "985542e2faf256df199ae96234769495c307d51d3eba8a265559bd96d735ca45"
+  },
+  "renderer_source.py": {
+    "bytes": 13742,
+    "sha256": "fcf1cb1ce92bfcbe1a91777af1a92ee49fa2bd97a6c5f6225cfb40c03a06d6a9"
+  },
+  "scene.xml": {
+    "bytes": 43812,
+    "sha256": "19dd6fcd1081b03ad1c5c584be4a4635b03b32ab5ffa183bbc5b1c71ce2e847e"
+  },
+  "scene_source.py": {
+    "bytes": 25139,
+    "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d"
+  },
+  "snapshot_manifest.json": {
+    "bytes": 623,
+    "sha256": "42d4f9aa894f600954626895eb78346d3f9653c559d9352f5e07c987ca0100f3"
+  },
+  "snapshot_source.py": {
+    "bytes": 1936,
+    "sha256": "5d4cb5eb3c1baea5c99e07294e7106b5e5d6df70f5ca37afadff0b22e73913c5"
+  }
+}

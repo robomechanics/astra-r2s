@@ -1,0 +1,1029 @@
+{
+  "status": "incomplete_faster_start_progress",
+  "passed": false,
+  "full_acceptance_claim": false,
+  "capture_claim": false,
+  "qualified_lead_claim": false,
+  "formed_thread_support_claim": false,
+  "finished_rollout": false,
+  "scope": "Both genuine table pickups, settled native entry, first starting stroke at 1 rad/s and physical release/opening/reset/regrasp recovery. This prefix ends before the second starting stroke. Partial formed geometry is below the capture threshold; no formed capture, qualified pitch or full acceptance is claimed.",
+  "source_commit": "b47e33f1d072d0306538222993e9b8281680d4c9",
+  "render_time_prefix_sha256": "b5f8e812b0fee489d4c8f4ad2865c06e38b30efa0b6fa5be6a11d31dace1eb02",
+  "snapshot_last_time_s": 19.02680000006986,
+  "snapshot_last_phase": "settle_regrip_search_2",
+  "phase_sequence": [
+    "settle_table",
+    "reach_left_block",
+    "close_left_block",
+    "settle_left_block",
+    "lift_left_block",
+    "transport_left_block",
+    "hold_left_block",
+    "secure_left",
+    "reach_bolt",
+    "close_bolt",
+    "settle_bolt",
+    "lift_bolt",
+    "transport_bolt",
+    "align_over_hole",
+    "feed_to_entry",
+    "start_thread_1",
+    "stop_start_1",
+    "release_search_2",
+    "open_settle_search_2",
+    "reset_open_search_2",
+    "open_hold_search_2",
+    "regrip_search_2",
+    "settle_regrip_search_2"
+  ],
+  "starting_angular_speed_rad_s": 1.0,
+  "video_playback_slow_motion_factor": 1,
+  "first_still_requested_time_s": 17.1,
+  "first_still_recorded_time_s": 17.104200000006035,
+  "first_still_phase": "open_settle_search_2",
+  "first_still_sample": {
+    "time": 17.104200000006035,
+    "phase": "open_settle_search_2",
+    "bolt_base_insertion_m": -0.02187266127037577,
+    "bolt_yaw_unwrapped_rad": 2.9116871894621026,
+    "clockwise_turns": 0.46340940894024163,
+    "thread_overlap_m": 0.0021272969123378484,
+    "thread_contacts": 2,
+    "loaded_formed_thread_contacts": 0,
+    "loaded_formed_thread_normal_force_N": 0.0,
+    "native_thread_pair_normal_force_N": 0.31138260866219913,
+    "entry_support": {
+      "observer": "native-settled-entry-support-v1",
+      "ready": true,
+      "aligned": true,
+      "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+      "required_window_s": 0.05,
+      "observed_window_s": 0.05000000000000092,
+      "minimum_loaded_normal_force_N": 0.005000000000000001,
+      "minimum_normal_impulse_Ns": 0.00025000000000000006,
+      "normal_impulse_Ns": 0.01508963230654864,
+      "minimum_loaded_duration_s": 0.005000000000000001,
+      "loaded_duration_s": 0.05000000000000092,
+      "loaded_substep_duty": 1.0,
+      "relative_bolt_axial_velocity_limit_m_per_s": 0.0002,
+      "relative_bolt_axial_velocity_range_m_per_s": [
+        -1.4370846549938605e-05,
+        0.00011697191493699168
+      ],
+      "final_native_normal_force_N": 0.31138260866219913,
+      "final_relative_bolt_axial_velocity_m_per_s": -2.1244118663912123e-06
+    },
+    "engagement_window": {
+      "version": "loaded_full_flank_window_v1",
+      "ready": false,
+      "continuous_geometry_elapsed_s": 0.0,
+      "window_duration_s": 0.2,
+      "normal_impulse_Ns": 0.0,
+      "loaded_substeps": 0,
+      "loaded_contact_count": 0,
+      "loaded_duration_s": 0.0,
+      "sample_count": 0,
+      "loaded_substep_duty": 0.0,
+      "helix_phase_range_m": 0.0
+    },
+    "legacy_consecutive_loaded_contact_streak_s": 0.0,
+    "head_block_seating_contacts": 0,
+    "formed_flank_overlap_m": 0.0001256729174111803,
+    "thread_engaged": false,
+    "radial_offset_m": 2.0792274055607326e-05,
+    "bolt_tilt_rad": 0.002286298990660733,
+    "reported_sdf_depth_m": 2.489553110914189e-08,
+    "bolt_world_position": [
+      0.30016795000200985,
+      -0.06011377196458262,
+      0.1289549294163381
+    ],
+    "hole_world_position": [
+      0.30017320046115264,
+      -0.060134166255969186,
+      0.10708226840143607
+    ],
+    "bolt_tip_world_position": [
+      0.3001782539996858,
+      -0.060149072071113495,
+      0.11295497167482794
+    ],
+    "block_lift_m": 0.04708161574096696,
+    "left_grasp_acquired": true,
+    "left_pickup_verified": true,
+    "block_grip_slip_m": 0.00022671935583455332,
+    "block_grip_rotation_slip_rad": 0.0003751279470800208,
+    "bolt_grip_slip_m": 0.0,
+    "bolt_world_support_contacts": 0,
+    "block_world_support_contacts": 0,
+    "external_drive_zero": true,
+    "minimum_native_joint_margin_rad": 0.17683340567631745,
+    "contact": {
+      "contact_count": 0,
+      "pad_contact_count": 0,
+      "wrench_world": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pad_wrench_world": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pad_normal_force_N": [
+        0.0,
+        0.0
+      ],
+      "jaw_actuator_force": [
+        0.002161261335686504,
+        -0.002153827231836658
+      ],
+      "arm_motor_torques_Nm": [
+        0.00014326807315314966,
+        -8.142120153437162,
+        5.217602526403168,
+        0.25102045213995205,
+        -0.001752809894618245,
+        -3.0053045300755123e-05
+      ],
+      "hand_wrench_world": [
+        0.0013377240380635384,
+        0.0014577045647672017,
+        0.0005749210520710839,
+        -0.0003263130049836695,
+        0.0001692063767529463,
+        9.376371413337536e-05
+      ]
+    },
+    "left_contact": {
+      "contact_count": 8,
+      "pad_contact_count": 8,
+      "wrench_world": [
+        -0.0007289779580003444,
+        9.119359968071117e-06,
+        1.261193016027156,
+        -0.01219942243766358,
+        -3.059096629005886e-05,
+        -4.780112853836082e-05
+      ],
+      "pad_wrench_world": [
+        -0.0007289779580003444,
+        9.119359968071117e-06,
+        1.261193016027156,
+        -0.01219942243766358,
+        -3.059096629005886e-05,
+        -4.780112853836082e-05
+      ],
+      "pad_normal_force_N": [
+        16.627425908455418,
+        15.366232894206508
+      ],
+      "jaw_actuator_force": [
+        -18.10284232017861,
+        13.890812897191779
+      ],
+      "arm_motor_torques_Nm": [
+        -8.257556341425529e-05,
+        -9.332685196415747,
+        4.043449100955382,
+        1.5406558042783178,
+        4.8316701988734845e-06,
+        -0.05580069284317709
+      ],
+      "hand_wrench_world": [
+        0.0003060010182595394,
+        -0.0002980431369877267,
+        1.2594241413073073,
+        -0.0011492848618537828,
+        -0.00010711535848164596,
+        -9.245409103959546e-05
+      ]
+    },
+    "axial_float": false,
+    "axial_feed_command_N": null,
+    "right_relative_axial_velocity_m_per_s": null,
+    "axial_velocity_damping_force_N": null,
+    "right_commanded_stroke_angular_speed_rad_s": 0.0,
+    "right_position_error_m": [
+      2.0011806822761713e-08,
+      6.527546599077727e-08,
+      2.7245569106382206e-08
+    ],
+    "right_rotation_error_rad": [
+      -2.8317115629126206e-06,
+      4.876078611844678e-06,
+      1.5593996812198083e-06
+    ]
+  },
+  "last_native_sample": {
+    "time": 19.02680000006986,
+    "phase": "settle_regrip_search_2",
+    "bolt_base_insertion_m": -0.021872914763352555,
+    "bolt_yaw_unwrapped_rad": 2.9115690935634557,
+    "clockwise_turns": 0.4633906133942131,
+    "thread_overlap_m": 0.0021270434055343825,
+    "thread_contacts": 2,
+    "loaded_formed_thread_contacts": 1,
+    "loaded_formed_thread_normal_force_N": 0.00854379930563668,
+    "native_thread_pair_normal_force_N": 0.05202633309106427,
+    "entry_support": {
+      "observer": "native-settled-entry-support-v1",
+      "ready": true,
+      "aligned": true,
+      "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+      "required_window_s": 0.05,
+      "observed_window_s": 0.05000000000000092,
+      "minimum_loaded_normal_force_N": 0.005000000000000001,
+      "minimum_normal_impulse_Ns": 0.00025000000000000006,
+      "normal_impulse_Ns": 0.002679637771017073,
+      "minimum_loaded_duration_s": 0.005000000000000001,
+      "loaded_duration_s": 0.04205000000000069,
+      "loaded_substep_duty": 0.8409999999999984,
+      "relative_bolt_axial_velocity_limit_m_per_s": 0.0002,
+      "relative_bolt_axial_velocity_range_m_per_s": [
+        -7.420624880115389e-06,
+        2.0758542061288786e-05
+      ],
+      "final_native_normal_force_N": 0.05202633309106427,
+      "final_relative_bolt_axial_velocity_m_per_s": -3.3552449719808576e-06
+    },
+    "engagement_window": {
+      "version": "loaded_full_flank_window_v1",
+      "ready": false,
+      "continuous_geometry_elapsed_s": 0.0,
+      "window_duration_s": 0.2,
+      "normal_impulse_Ns": 0.0,
+      "loaded_substeps": 0,
+      "loaded_contact_count": 0,
+      "loaded_duration_s": 0.0,
+      "sample_count": 0,
+      "loaded_substep_duty": 0.0,
+      "helix_phase_range_m": 0.0
+    },
+    "legacy_consecutive_loaded_contact_streak_s": 0.0,
+    "head_block_seating_contacts": 0,
+    "formed_flank_overlap_m": 0.00012541791574568507,
+    "thread_engaged": false,
+    "radial_offset_m": 1.9439469870783772e-05,
+    "bolt_tilt_rad": 0.002286676936349536,
+    "reported_sdf_depth_m": 1.0168928946727655e-08,
+    "bolt_world_position": [
+      0.30017037695557997,
+      -0.060114762198549956,
+      0.12897207704149957
+    ],
+    "hole_world_position": [
+      0.30017376992033257,
+      -0.06013502087744296,
+      0.10709916328471819
+    ],
+    "bolt_tip_world_position": [
+      0.3001787975393396,
+      -0.06015118072108329,
+      0.11297212070452836
+    ],
+    "block_lift_m": 0.04709658369559433,
+    "left_grasp_acquired": true,
+    "left_pickup_verified": true,
+    "block_grip_slip_m": 0.0002245492092319826,
+    "block_grip_rotation_slip_rad": 0.00037574503818403767,
+    "bolt_grip_slip_m": 0.00024125234959892616,
+    "bolt_world_support_contacts": 0,
+    "block_world_support_contacts": 0,
+    "external_drive_zero": true,
+    "minimum_native_joint_margin_rad": 0.13784826626675595,
+    "contact": {
+      "contact_count": 8,
+      "pad_contact_count": 8,
+      "wrench_world": [
+        -0.007964803948675492,
+        -0.014731872378663191,
+        0.21410179825188386,
+        -0.00010492265848988883,
+        2.685969847267787e-05,
+        1.0545994666468807e-05
+      ],
+      "pad_wrench_world": [
+        -0.007964803948675492,
+        -0.014731872378663191,
+        0.21410179825188386,
+        -0.00010492265848988883,
+        2.685969847267787e-05,
+        1.0545994666468807e-05
+      ],
+      "pad_normal_force_N": [
+        5.953090575599357,
+        5.964212246245299
+      ],
+      "jaw_actuator_force": [
+        -5.955904893089809,
+        5.961411219726841
+      ],
+      "arm_motor_torques_Nm": [
+        -0.0020419846480450566,
+        -9.368831015954456,
+        5.2278130574766575,
+        0.24744980035861594,
+        0.011131854935897032,
+        0.0005562893654863905
+      ],
+      "hand_wrench_world": [
+        -0.015609821772510149,
+        -0.02060119196854984,
+        0.2111344779070519,
+        0.001312278998868795,
+        -0.0018405210538557878,
+        0.00034391086847720487
+      ]
+    },
+    "left_contact": {
+      "contact_count": 8,
+      "pad_contact_count": 8,
+      "wrench_world": [
+        0.007570362762430549,
+        0.014911000065861574,
+        1.0469952331484826,
+        -0.0017158174401619292,
+        0.00014662880191101957,
+        0.0003858877486994242
+      ],
+      "pad_wrench_world": [
+        0.007570362762430549,
+        0.014911000065861574,
+        1.0469952331484826,
+        -0.0017158174401619292,
+        0.00014662880191101957,
+        0.0003858877486994242
+      ],
+      "pad_normal_force_N": [
+        16.520324112520946,
+        15.473328079043565
+      ],
+      "jaw_actuator_force": [
+        -18.008239412142615,
+        13.985415853856267
+      ],
+      "arm_motor_torques_Nm": [
+        0.007125824726734394,
+        -9.246972139411273,
+        3.994066987205172,
+        1.5151493081139562,
+        -0.0009454390828853153,
+        -0.04664264673138955
+      ],
+      "hand_wrench_world": [
+        0.005999605402137969,
+        0.015639943842475655,
+        1.047428567654263,
+        0.008201376732795536,
+        -4.774368712851619e-05,
+        0.0004878582368213029
+      ]
+    },
+    "axial_float": true,
+    "axial_feed_command_N": -0.21113335030912161,
+    "right_relative_axial_velocity_m_per_s": -2.5613067460248423e-05,
+    "axial_velocity_damping_force_N": 0.0012806533730124212,
+    "right_commanded_stroke_angular_speed_rad_s": 0.0,
+    "right_position_error_m": [
+      -4.987623197783009e-07,
+      -1.4336274967371998e-06,
+      -2.7062593566662407e-06
+    ],
+    "right_rotation_error_rad": [
+      5.234162853403216e-05,
+      2.0030148562443265e-05,
+      -2.3581294419354568e-05
+    ]
+  },
+  "source_recorded_metadata": {
+    "description": "Actual YAM picks up both free workpieces from declared table/rest support, carries them, and starts the M8 thread",
+    "scene_config": {
+      "base": {
+        "thread": {
+          "timestep": 5e-05,
+          "friction": 0.15,
+          "contact_time_constant": 0.0005,
+          "contact_margin": 0.0,
+          "contact_impratio": 1.0,
+          "sdf_initpoints": 40,
+          "sdf_iterations": 30,
+          "bolt_length": 0.016,
+          "pitch": 0.00125,
+          "male_pitch_diameter": 0.0071,
+          "female_pitch_diameter": 0.007268,
+          "nut_height": 0.016,
+          "nut_across_flats": 0.016,
+          "nut_mass": 0.018984665656908355,
+          "nut_transverse_inertia": 6.946182225160569e-07,
+          "nut_axial_inertia": 1.1886877420788483e-06,
+          "initial_z": 0.00875,
+          "gravity": -9.81,
+          "with_gripper": false,
+          "with_bolt": true,
+          "guided": false
+        },
+        "bolt_position": [
+          0.3,
+          -0.06,
+          0.11125
+        ],
+        "bolt_quaternion": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "pad_friction": 0.8,
+        "jaw_stiffness": 20000.0,
+        "jaw_damping": 8.0,
+        "maximum_jaw_force": 20.0,
+        "open_aperture": 0.024,
+        "closed_aperture": 0.0194,
+        "left_closed_aperture": 0.0144,
+        "left_grasp_roll_rad": -1.5707963267948966,
+        "left_block_contact_impedance": [
+          0.9999,
+          0.9999,
+          0.0001
+        ],
+        "left_block_contact_time_constant": 0.0008,
+        "pad_inner_offset": 0.0005,
+        "block_size": [
+          0.02,
+          0.12,
+          0.016
+        ],
+        "block_density": 2700.0,
+        "bolt_offset": [
+          0.0,
+          -0.05,
+          0.008
+        ],
+        "left_grasp_offset": [
+          0.0,
+          -0.0094,
+          0.0
+        ]
+      },
+      "block_position": [
+        0.25,
+        0.15,
+        0.059999989999999996
+      ],
+      "hole_offset": [
+        0.0,
+        -0.05,
+        0.0
+      ],
+      "bolt_head_position": [
+        0.36,
+        -0.22,
+        0.04
+      ],
+      "bolt_yaw_rad": 0.23,
+      "head_across_flats": 0.02,
+      "head_height": 0.008,
+      "steel_density": 7850.0,
+      "rest_radius": 0.007,
+      "rest_pin_radius": 0.001,
+      "rest_base_height": 0.01,
+      "pickup_from_table": true,
+      "held_block_position": [
+        0.3,
+        -0.01,
+        0.10325
+      ],
+      "left_block_friction_time_constant": 0.0008,
+      "left_pad_collision_geometry": "box",
+      "left_block_direct_normal_solref": [
+        -31250.0,
+        -2500.0
+      ]
+    },
+    "control_config": {
+      "arm": {
+        "position_stiffness": 20000.0,
+        "position_damping": 650.0,
+        "rotation_stiffness": 40.0,
+        "rotation_damping": 6.0,
+        "left_rotation_stiffness": 80.0,
+        "left_rotation_damping": 10.0,
+        "maximum_cartesian_force": 8.0,
+        "maximum_cartesian_torque": 2.0,
+        "axial_feed_N": -0.05,
+        "open_aperture": 0.024,
+        "closed_aperture": 0.0194,
+        "left_closed_aperture": 0.0144,
+        "stroke_angle_rad": 3.141592653589793,
+        "angular_speed_rad_s": 2.0,
+        "reset_speed_rad_s": 4.0,
+        "strokes": 3,
+        "sample_period_s": 0.005
+      },
+      "pickup_hover_m": 0.02,
+      "left_pickup_hover_m": 0.075,
+      "left_lift_clearance_m": 0.06,
+      "transport_tip_clearance_m": 0.015,
+      "entry_tip_clearance_m": 0.00075,
+      "block_lift_m": 0.004,
+      "net_axial_feed_N": 0.05,
+      "axial_velocity_damping_Ns_per_m": 50.0,
+      "maximum_entry_dwell_s": 3.0,
+      "entry_support_window_s": 0.05,
+      "entry_support_velocity_limit_m_per_s": 0.0002,
+      "starting_angular_speed_rad_s": 1.0,
+      "maximum_starting_strokes": 5,
+      "qualifying_turns": 2,
+      "sample_period_s": 0.005,
+      "full_flank_contact_streak_s": 0.2
+    },
+    "runtime": {
+      "mujoco_version": "3.15.0",
+      "libraries": [
+        {
+          "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+          "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+          "sdf_minimum_search_step_m": 1e-07,
+          "sdf_initial_search_step_m": 0.002
+        }
+      ],
+      "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+    },
+    "starts_preengaged": false,
+    "starts_grasp_ready": false,
+    "block_starts_left_touching": false,
+    "block_starts_on_table": true,
+    "initial_left_block_hand_contacts": {
+      "contact_count": 0,
+      "normal_force_N": 0.0,
+      "world_support_contacts": 16
+    },
+    "initial_right_bolt_hand_contacts": {
+      "contact_count": 0,
+      "normal_force_N": 0.0,
+      "world_support_contacts": 0
+    },
+    "initial_block_world_support_contacts": 16,
+    "left_acquisition_reference_scope": "Frozen at end of settle_left_block after actual bilateral loaded pad contact",
+    "bolt_starts_on_declared_fixed_rest": true,
+    "model_fingerprint": "d8ef2669aff4b4e871d1e09bed2a00e7482649c554bcfce5b7fb234e220bf635",
+    "model_xml_sha256": "19dd6fcd1081b03ad1c5c584be4a4635b03b32ab5ffa183bbc5b1c71ce2e847e",
+    "controller_sha256": "dce8a1e1a8bc53d6caf4b717bf846a04fee1c5ebfafac9428b94f8e705385121",
+    "known_bolt_mass_kg": 0.0267496436326005,
+    "full_flank_overlap_threshold_m": 0.003242582346706593,
+    "male_tip_chamfer_m": 0.000956,
+    "female_full_profile_chamfer_bound_m": 0.0010365823467065928,
+    "minimum_engagement_contact_normal_force_N": 1e-05,
+    "engagement_observer": "loaded_full_flank_window_v1",
+    "engagement_observer_source_sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "engagement_observer_scope": "Candidate full-flank capture; actual coupled lead and unsupported reset checks establish completed engagement",
+    "engagement_window": {
+      "duration_s": 0.2,
+      "minimum_loaded_normal_impulse_Ns": 0.0010000000000000002,
+      "minimum_loaded_duration_s": 0.0005,
+      "maximum_helix_phase_range_m": 0.00015
+    },
+    "legacy_engagement_note": "Consecutive positive force for 0.2 s retained as a diagnostic; unilateral contact may have valid resolved gaps",
+    "axial_command_note": "Known bolt-weight compensation plus constant net axial feed, with declared dissipative relative hand/hole velocity damping through finite native arm motors; no axial position or pitch spring",
+    "axial_velocity_reference_note": "Actual hand SITE linear velocity minus hole rigid-frame velocity evaluated at the hand point; pre-command native kinematics retained from the preceding mj_step's pre-integration state (the initialized state on the first command), with requested feed subject to the existing Cartesian-force and native motor-torque caps",
+    "entry_support_note": "Optional bounded constant-force entry/starting-stop dwell requires settled actual bolt velocity and measured native SDF-pair load before rotation or searching release; cone support is separate from formed-flank capture, and acquisition timeout retains the closed grasp",
+    "entry_support_events": [
+      {
+        "phase": "feed_to_entry",
+        "time_s": 10.863699999981351,
+        "actual_dwell_s": 2.1437,
+        "maximum_dwell_s": 3.0,
+        "radial_offset_m": 1.160843185680903e-06,
+        "bolt_tilt_rad": 6.66805751948993e-05,
+        "formed_flank_capture_observed": false,
+        "observer": "native-settled-entry-support-v1",
+        "ready": true,
+        "aligned": true,
+        "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+        "required_window_s": 0.05,
+        "observed_window_s": 0.05000000000000092,
+        "minimum_loaded_normal_force_N": 0.005000000000000001,
+        "minimum_normal_impulse_Ns": 0.00025000000000000006,
+        "normal_impulse_Ns": 0.004361147587168791,
+        "minimum_loaded_duration_s": 0.005000000000000001,
+        "loaded_duration_s": 0.04410000000000075,
+        "loaded_substep_duty": 0.8819999999999988,
+        "relative_bolt_axial_velocity_limit_m_per_s": 0.0002,
+        "relative_bolt_axial_velocity_range_m_per_s": [
+          -6.354038339013631e-05,
+          0.00019193228103961846
+        ],
+        "final_native_normal_force_N": 0.02842715254945509,
+        "final_relative_bolt_axial_velocity_m_per_s": -5.22127099229706e-05
+      },
+      {
+        "phase": "stop_start_1",
+        "time_s": 16.8741999999984,
+        "actual_dwell_s": 0.12000000000000001,
+        "maximum_dwell_s": 3.0,
+        "radial_offset_m": 1.8740763235288216e-05,
+        "bolt_tilt_rad": 0.0021405335130844218,
+        "formed_flank_capture_observed": false,
+        "observer": "native-settled-entry-support-v1",
+        "ready": true,
+        "aligned": true,
+        "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+        "required_window_s": 0.05,
+        "observed_window_s": 0.05000000000000092,
+        "minimum_loaded_normal_force_N": 0.005000000000000001,
+        "minimum_normal_impulse_Ns": 0.00025000000000000006,
+        "normal_impulse_Ns": 0.0028433540529272127,
+        "minimum_loaded_duration_s": 0.005000000000000001,
+        "loaded_duration_s": 0.04970000000000091,
+        "loaded_substep_duty": 0.9939999999999999,
+        "relative_bolt_axial_velocity_limit_m_per_s": 0.0002,
+        "relative_bolt_axial_velocity_range_m_per_s": [
+          -9.738847867702455e-06,
+          2.4824481245168524e-05
+        ],
+        "final_native_normal_force_N": 0.0520371108430477,
+        "final_relative_bolt_axial_velocity_m_per_s": 2.0870606916694373e-05
+      },
+      {
+        "phase": "release_search_2",
+        "time_s": 16.8741999999984,
+        "event": "Measured native starting support permits searching release/reset",
+        "radial_offset_m": 1.8740763235288216e-05,
+        "bolt_tilt_rad": 0.0021405335130844218,
+        "observer": "native-settled-entry-support-v1",
+        "ready": true,
+        "aligned": true,
+        "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+        "required_window_s": 0.05,
+        "observed_window_s": 0.05000000000000092,
+        "minimum_loaded_normal_force_N": 0.005000000000000001,
+        "minimum_normal_impulse_Ns": 0.00025000000000000006,
+        "normal_impulse_Ns": 0.0028433540529272127,
+        "minimum_loaded_duration_s": 0.005000000000000001,
+        "loaded_duration_s": 0.04970000000000091,
+        "loaded_substep_duty": 0.9939999999999999,
+        "relative_bolt_axial_velocity_limit_m_per_s": 0.0002,
+        "relative_bolt_axial_velocity_range_m_per_s": [
+          -9.738847867702455e-06,
+          2.4824481245168524e-05
+        ],
+        "final_native_normal_force_N": 0.0520371108430477,
+        "final_relative_bolt_axial_velocity_m_per_s": 2.0870606916694373e-05
+      },
+      {
+        "phase": "reset_open_search_2",
+        "time_s": 17.104200000006035,
+        "event": "Measured native starting support permits searching release/reset",
+        "radial_offset_m": 2.0792274055607326e-05,
+        "bolt_tilt_rad": 0.002286298990660733,
+        "observer": "native-settled-entry-support-v1",
+        "ready": true,
+        "aligned": true,
+        "scope": "Settled aligned native thread-pair support on starting geometry; separate from formed-flank capture",
+        "required_window_s": 0.05,
+        "observed_window_s": 0.05000000000000092,
+        "minimum_loaded_normal_force_N": 0.005000000000000001,
+        "minimum_normal_impulse_Ns": 0.00025000000000000006,
+        "normal_impulse_Ns": 0.01508963230654864,
+        "minimum_loaded_duration_s": 0.005000000000000001,
+        "loaded_duration_s": 0.05000000000000092,
+        "loaded_substep_duty": 1.0,
+        "relative_bolt_axial_velocity_limit_m_per_s": 0.0002,
+        "relative_bolt_axial_velocity_range_m_per_s": [
+          -1.4370846549938605e-05,
+          0.00011697191493699168
+        ],
+        "final_native_normal_force_N": 0.31138260866219913,
+        "final_relative_bolt_axial_velocity_m_per_s": -2.1244118663912123e-06
+      }
+    ],
+    "native_force_recording_note": "mj_step contact forces and contact geometry are from the pre-integration state at recorded time minus timestep; saved qpos/qvel are the post-integration state",
+    "left_pad_history_scope": "Every physics substep after end-settle acquisition; force minima and gaps include physical lift and roll, separately from 5 ms saved-pose sampling",
+    "partial": true,
+    "initial_bolt_yaw_rad": 0.0,
+    "scene_source_sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+    "all_substep_left_pad_loads": {
+      "observer": "native-bilateral-pad-load-v1",
+      "minimum_loaded_force_N": 0.1,
+      "observed_physics_steps": 350537,
+      "observed_duration_s": 17.526850000020065,
+      "minimum_normal_force_N": [
+        0.0,
+        0.0
+      ],
+      "unloaded_physics_steps": [
+        9,
+        6
+      ],
+      "unloaded_duration_s": [
+        0.0004500000000000001,
+        0.00030000000000000003
+      ],
+      "maximum_consecutive_unloaded_duration_s": [
+        5e-05,
+        5e-05
+      ],
+      "continuously_bilateral_loaded": false
+    },
+    "left_acquisition": {
+      "time_s": 1.5000000000009532,
+      "phase": "settle_left_block",
+      "pad_normal_force_N": [
+        15.985915814634085,
+        15.984269015069643
+      ],
+      "block_world_support_contacts": 15,
+      "grasp_relative_block_position_m": [
+        4.451495882962478e-07,
+        1.7269148306778212e-07,
+        -0.00939975479976837
+      ],
+      "grasp_relative_block_rotation": [
+        [
+          -0.999999994530061,
+          0.00010459357492467871,
+          2.5136624678607e-07
+        ],
+        [
+          -2.503703285088713e-07,
+          9.521805101524762e-06,
+          -0.999999999954637
+        ],
+        [
+          -0.00010459357731339435,
+          -0.9999999944847605,
+          -9.521778862313348e-06
+        ]
+      ],
+      "pad_contact_compliance_observation": {
+        "normal_force_N": [
+          15.985915814634085,
+          15.984269015069643
+        ],
+        "loaded_force_weighted_indentation_m": [
+          7.990557299230578e-07,
+          7.043552281995031e-07
+        ],
+        "effective_pad_force_per_indentation_N_per_m": [
+          20006008.612407286,
+          22693476.778654963
+        ],
+        "contacts": [
+          {
+            "pad": "left_m8_pad_left",
+            "signed_distance_m": -7.678871289947424e-07,
+            "normal_force_N": 3.387854257187365,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          },
+          {
+            "pad": "left_m8_pad_left",
+            "signed_distance_m": -8.202569127372816e-07,
+            "normal_force_N": 4.561988886122833,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          },
+          {
+            "pad": "left_m8_pad_left",
+            "signed_distance_m": -8.22519208957357e-07,
+            "normal_force_N": 4.605103650129677,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          },
+          {
+            "pad": "left_m8_pad_left",
+            "signed_distance_m": -7.701494252148178e-07,
+            "normal_force_N": 3.4309690211942097,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          },
+          {
+            "pad": "left_m8_pad_right",
+            "signed_distance_m": -7.255463455150701e-07,
+            "normal_force_N": 4.562996272632994,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          },
+          {
+            "pad": "left_m8_pad_right",
+            "signed_distance_m": -6.731765617725309e-07,
+            "normal_force_N": 3.3859152790281715,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          },
+          {
+            "pad": "left_m8_pad_right",
+            "signed_distance_m": -6.754388579926063e-07,
+            "normal_force_N": 3.429138234901826,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          },
+          {
+            "pad": "left_m8_pad_right",
+            "signed_distance_m": -7.278086417351456e-07,
+            "normal_force_N": 4.60621922850665,
+            "normal_solref": [
+              -31250.0,
+              -2500.0
+            ],
+            "friction_solref": [
+              0.0008,
+              1.0
+            ],
+            "solimp": [
+              0.9999,
+              0.9999,
+              0.0001,
+              0.5,
+              2.0
+            ]
+          }
+        ],
+        "scope": "Native signed distances and solved forces at acquisition end-settle; effective force/indentation is a model observation, not material modulus or hardware calibration"
+      },
+      "block_free_velocity": [
+        6.871607790610586e-07,
+        -1.225118892846763e-07,
+        1.976131857051497e-09,
+        9.176128686904222e-07,
+        -2.6450837714428144e-07,
+        3.52915614691392e-06
+      ],
+      "jaw_velocity_m_s": [
+        7.455484889822253e-06,
+        -7.343601823559453e-06
+      ]
+    },
+    "left_pickup_verified": {
+      "time_s": 2.400000000001076,
+      "phase": "lift_left_block",
+      "physical_block_lift_m": 0.05996490005782493,
+      "block_world_support_contacts": 0,
+      "pad_normal_force_N": [
+        15.995991634439033,
+        15.996066662398635
+      ]
+    }
+  },
+  "metadata_partial_note": "The native metadata partial field records requested phase selection and cannot establish completion. This prefix remains incomplete.",
+  "model_identity": {
+    "model_fingerprint": "d8ef2669aff4b4e871d1e09bed2a00e7482649c554bcfce5b7fb234e220bf635",
+    "model_xml_sha256": "19dd6fcd1081b03ad1c5c584be4a4635b03b32ab5ffa183bbc5b1c71ce2e847e",
+    "mesh_sha256": {
+      "model2.stl": "5ac61c0313ed00c38655e41681af1b8b307cf8d5ef57209a75f215cea02df754",
+      "model2__2.stl": "30dab41f14bae95d737abca3c934eb5d570ab107dff0b40952fbdfb9d07eab79",
+      "model2__3.stl": "9fd96f5ad387fe7dd96eaa65e386637800e2f5637b6167fbad4ecb37d8598f47",
+      "model2__4.stl": "33c0e7ef538e2c4473efa9c4ef2a8441b6094b65090b4dec71abe82001d974df",
+      "model2__5.stl": "09f08e7dead2d6363618471adadb1b94af39e8056676670f3fd21ec06c197b20",
+      "model2__6.stl": "888b5919d10dbfb59b964c3cafc2ddbdac3b5426e20dd13bcaf4baedd5ee15c9",
+      "model2__7.stl": "2d64b18f1e70b0460eb53335d340b7c879976a3093ec67b07bcb7245e371a91d",
+      "model2__8.stl": "db3708da6b14daf3fc9a1909a8325b68f65ff69146cdd20b69a9ddc4ce51f50d",
+      "model2__9.stl": "74969d09b8b7f75cc984c5c7e5526d2941c6724f48b3efa1fa8730cc7820f4f5",
+      "model2__10.stl": "b879cc07f547b7a2ac52e428dd206e80a0d4b0e805cb56b9a8230df04a690923",
+      "model2__11.stl": "af220d2a51e8444392aef36e2fe4a6f69aed22bc292a7f38e54da3b4f5253434",
+      "model2__12.stl": "e79614869bd2283f70fafa150ce748d5b6c03377a651448c6fe9893a22f6d1de",
+      "model2__13.stl": "32b62f14f00ea82bfc79b935f7dac32c7cb276a3abc0aae8362cbba3fb1326de",
+      "model2__14.stl": "72d2178789dd5e0358c2caf9dad90b8881e505f4c52a8d6d18c71b5e93e8c84b",
+      "model2__15.stl": "ca8788184d54f30c18482cb9b48dffb010a93dbc029054b6cc515083a740d324",
+      "model2__16.stl": "18bb99691eed524393e8f3a0ff29e79d97ab75689bc92144bbdfafa2cc79d37b",
+      "model2__17.stl": "6513dbd192d2bf3a4f7016231f1ba5eca93916c9ebfdc334e9b435ca1d302ff6",
+      "d405.stl": "6617f3fb22b604a66c27e16d2397f305fcdca8a781248abdbabbf69c9fe6a3c5"
+    },
+    "scene_source_sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+    "scene_source_matches_recorded": true,
+    "method": "Exact hash-verified archived XML; current scene generator is not used"
+  },
+  "controller_identity": {
+    "source_path": "/workspace/astra-r2s/media/m8_table_pickup/progress_faster_start/controller_source.py",
+    "module_sha256": "199ac49380e95b5849caf98e6bbfda1c0e85d1626fc97e468a421463a03394e8",
+    "controller_sha256": "dce8a1e1a8bc53d6caf4b717bf846a04fee1c5ebfafac9428b94f8e705385121",
+    "hashed_function_names": [
+      "PadLoadHistory",
+      "_pad_normal_forces",
+      "_relative_axial_velocity",
+      "EntrySupportWindow",
+      "InsertionControlConfig",
+      "insertion_phases",
+      "initialize_insertion_pose",
+      "_body_contact",
+      "formed_flank_overlap",
+      "run_insertion_demo",
+      "fully_formed_flank_interval",
+      "contact_is_on_full_flanks",
+      "thread_end_bounds",
+      "LoadedFlankWindow",
+      "YamCartesianController",
+      "YamM8ControlConfig",
+      "smooth_profile"
+    ],
+    "helper_source_sha256": {
+      "recorded_sources/yam_twin/m8_insertion_mechanics.py": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+      "recorded_sources/yam_twin/m8_insertion_engagement.py": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+      "recorded_sources/yam_twin/m8_simulation.py": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449"
+    },
+    "support_helper_mentions_welded_body_groups": true,
+    "inspection_method": "Static exact function blocks and archived helper sources; controller code is not executed"
+  },
+  "replay_command": "scripts/run_m8.sh -m yam_twin.m8_insertion_demo --replay media/m8_table_pickup/progress_faster_start/insertion_trace.npz --output outputs/m8_table_pickup/replay_faster_progress --fps 12 --slow-motion 1 --still-time 17.1",
+  "render_method": "Native recorded qpos/qvel/time samples only; mj_forward computes display transforms. No dynamics integration, state interpolation or pose editing.",
+  "source_private_videos_included": false
+}
