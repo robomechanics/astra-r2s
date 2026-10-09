@@ -1,0 +1,376 @@
+{
+  "status": "unsuccessful_native_trial",
+  "original_report_passed": false,
+  "independent_audit_passed": false,
+  "original_report_partial": false,
+  "aborted": {
+    "phase": "release_search_2",
+    "time": 12.84274999997674,
+    "reported_sdf_depth_m": 1.0010108942968566e-06,
+    "radial_offset_m": 0.00015012955937634913,
+    "bolt_tilt_rad": 0.012632096615879083,
+    "block_grip_slip_m": 2.9723812973738337e-06,
+    "block_grip_rotation_slip_rad": 6.675505297417932e-05,
+    "bolt_grip_slip_m": 0.0,
+    "world_block_support_contacts": 53,
+    "minimum_native_joint_margin_rad": 0.14261019307387435,
+    "warnings": 0,
+    "external_drive_zero": true
+  },
+  "rendered_evidence_scope": "Fresh unspliced full_v2 native attempt: actual side-bolt pickup, full-shaft rest clearance, high transport, alignment, settled entry and first starting stroke. It aborted at 12.84275 s in release_search_2 when native radial offset 150.129559 \u00b5m exceeded the unchanged 150 \u00b5m guard. The actual first stroke rotates 3.141634 rad but advances only 8.945825 \u00b5m; formed overlap remains zero. No formed capture, qualified turns, unsupported formed-thread reset, complete assembly or full-task pass is claimed. The original failed report, source-bound 213-test proof and all raw force/state bytes remain authoritative. Normal 1\u00d7 exact saved-state replay; no integration, interpolation or free-body posing.",
+  "independent_primary_auditor_sha256": "53a2d18660986ce6cb77eee4c576db6c922722913abb0e07850c354a23927681",
+  "actual_unaborted_qualified_phase_sequence_completed": false,
+  "qualified_turn_phase_count": 0,
+  "first_physics_time_s": 5e-05,
+  "last_physics_time_s": 12.84274999997674,
+  "sample_count": 2586,
+  "trajectory_sha256": "02a03f0262edfd519a3080bc3d44588f2f2f12ac2da6d40ca44dc379e3acae4c",
+  "model_fingerprint": "dd44ffab2beade32ed4682adb551fdf077dd97d4140bb2794cc995effe35a9ca",
+  "model_xml_sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+  "scene_source_sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+  "controller_sha256": "becfdac6c07f06edc3bd42c88f6ecb0c30445836025f1139c07713dcf89c74ee",
+  "controller_module_sha256": "45d47a30c7f95ac7508cd88396ea765f818fd3715e3519870fe93aa8414f3a0b",
+  "runtime": {
+    "mujoco_version": "3.15.0",
+    "libraries": [
+      {
+        "path": "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/libmujoco.so.3.15.0",
+        "sha256": "58039d439c6504448aafd0a4d5b655c8a0d3bf1d77123ac7e0733cd078367433",
+        "sdf_minimum_search_step_m": 1e-07,
+        "sdf_initial_search_step_m": 0.002
+      }
+    ],
+    "thread_plugin_source_sha256": "1c8b5207c5f6c141cc034983ce76c6c1e9cca4114d16e17a4496b94cb637b42a"
+  },
+  "maximum_stored_file_bytes": 45000000,
+  "archives_are_lossless": true,
+  "dropping_or_quantization": false,
+  "artifacts": {
+    "trace.npz": {
+      "storage": "single_file",
+      "path": "trace.npz",
+      "bytes": 35935419,
+      "sha256": "02a03f0262edfd519a3080bc3d44588f2f2f12ac2da6d40ca44dc379e3acae4c"
+    },
+    "validation.json": {
+      "storage": "single_file",
+      "path": "validation.json",
+      "bytes": 987703,
+      "sha256": "b5cddde691fd2c74ed5cafb41c1d67316e55eac393b4e06e66135ad1142654a7"
+    },
+    "scene.xml": {
+      "storage": "single_file",
+      "path": "scene.xml",
+      "bytes": 43813,
+      "sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10"
+    },
+    "scene_source.py": {
+      "storage": "single_file",
+      "path": "scene_source.py",
+      "bytes": 7969,
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4"
+    },
+    "controller_source.py": {
+      "storage": "single_file",
+      "path": "controller_source.py",
+      "bytes": 80632,
+      "sha256": "45d47a30c7f95ac7508cd88396ea765f818fd3715e3519870fe93aa8414f3a0b"
+    },
+    "recorded_app_renderer_source.py": {
+      "storage": "single_file",
+      "path": "recorded_app_renderer_source.py",
+      "bytes": 7792,
+      "sha256": "3069a07152f71b83d337e9805565dbfb5611738b0e600fd88202cd77ac75ee8e"
+    },
+    "engagement_observer_source.py": {
+      "storage": "single_file",
+      "path": "engagement_observer_source.py",
+      "bytes": 4752,
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866"
+    },
+    "supported_scene.zip": {
+      "storage": "single_file",
+      "path": "supported_scene.zip",
+      "bytes": 5325454,
+      "sha256": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93"
+    },
+    "left_pad_force_history.npz": {
+      "storage": "single_file",
+      "path": "left_pad_force_history.npz",
+      "bytes": 3227901,
+      "sha256": "3e88e82312de2518ea7b4eb259c8fec470188aafb12f0502423dac078b627159"
+    },
+    "table_support_force_history.npz": {
+      "storage": "single_file",
+      "path": "table_support_force_history.npz",
+      "bytes": 42196497,
+      "sha256": "f95fb5aecbba50d80d8710bcd001c093c3acfe89b47748a638b199ceb445f26e"
+    },
+    "independent_supported_audit.json": {
+      "storage": "single_file",
+      "path": "independent_supported_audit.json",
+      "bytes": 2917440,
+      "sha256": "21142947af91e6237e01046d73663661c55f6d90f2267b00992fcb98ddfd34c7"
+    },
+    "software_tests.json": {
+      "storage": "single_file",
+      "path": "software_tests.json",
+      "bytes": 6713,
+      "sha256": "1b2aace7ea1abd7caf9d718594cc12e9fb71537ee2c5cf03bc5a68fd881a8998"
+    },
+    "software_tests.log": {
+      "storage": "single_file",
+      "path": "software_tests.log",
+      "bytes": 1020,
+      "sha256": "83f82089c16a7fc4fd6383b309378a1f206863981a648cff869e54198602cd47"
+    },
+    "software_manifest.json": {
+      "storage": "single_file",
+      "path": "software_manifest.json",
+      "bytes": 694,
+      "sha256": "915a93fab88fa0c91edc4d301acd26f870d78e7df9ff641164892b7311864d81"
+    },
+    "verify_software_sources.py": {
+      "storage": "single_file",
+      "path": "verify_software_sources.py",
+      "bytes": 1491,
+      "sha256": "154c1f2b4256ec814c89cb90cbeba1a1c4f9969524375acc2bf67280405e59d6"
+    },
+    "run_publication_identity.json": {
+      "storage": "single_file",
+      "path": "run_publication_identity.json",
+      "bytes": 897,
+      "sha256": "6ef9c5bdf8d81e8a040797d1f0bc230ce0e61577fa3c33d708d50473084013bc"
+    },
+    "recorded_sources/yam_twin/kinematics.py": {
+      "storage": "single_file",
+      "path": "recorded_sources/yam_twin/kinematics.py",
+      "bytes": 2796,
+      "sha256": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683"
+    },
+    "recorded_sources/yam_twin/m8_insertion_engagement.py": {
+      "storage": "single_file",
+      "path": "recorded_sources/yam_twin/m8_insertion_engagement.py",
+      "bytes": 4752,
+      "sha256": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866"
+    },
+    "recorded_sources/yam_twin/m8_insertion_mechanics.py": {
+      "storage": "single_file",
+      "path": "recorded_sources/yam_twin/m8_insertion_mechanics.py",
+      "bytes": 4321,
+      "sha256": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20"
+    },
+    "recorded_sources/yam_twin/m8_insertion_scene.py": {
+      "storage": "single_file",
+      "path": "recorded_sources/yam_twin/m8_insertion_scene.py",
+      "bytes": 25139,
+      "sha256": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d"
+    },
+    "recorded_sources/yam_twin/m8_insertion_simulation.py": {
+      "storage": "single_file",
+      "path": "recorded_sources/yam_twin/m8_insertion_simulation.py",
+      "bytes": 67946,
+      "sha256": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294"
+    },
+    "recorded_sources/yam_twin/m8_scene.py": {
+      "storage": "single_file",
+      "path": "recorded_sources/yam_twin/m8_scene.py",
+      "bytes": 20849,
+      "sha256": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f"
+    },
+    "recorded_sources/yam_twin/m8_simulation.py": {
+      "storage": "single_file",
+      "path": "recorded_sources/yam_twin/m8_simulation.py",
+      "bytes": 30270,
+      "sha256": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449"
+    },
+    "recorded_sources/yam_twin/m8_supported_scene.py": {
+      "storage": "single_file",
+      "path": "recorded_sources/yam_twin/m8_supported_scene.py",
+      "bytes": 7969,
+      "sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4"
+    },
+    "frozen_audit_sources/scripts/audit_m8_free_joint_properties.py": {
+      "storage": "single_file",
+      "path": "frozen_audit_sources/scripts/audit_m8_free_joint_properties.py",
+      "bytes": 6934,
+      "sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11"
+    },
+    "frozen_audit_sources/scripts/audit_m8_insertion_trace.py": {
+      "storage": "single_file",
+      "path": "frozen_audit_sources/scripts/audit_m8_insertion_trace.py",
+      "bytes": 30341,
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f"
+    },
+    "frozen_audit_sources/scripts/audit_m8_left_pad_force_history.py": {
+      "storage": "single_file",
+      "path": "frozen_audit_sources/scripts/audit_m8_left_pad_force_history.py",
+      "bytes": 10265,
+      "sha256": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc"
+    },
+    "frozen_audit_sources/scripts/audit_m8_supported_trace.py": {
+      "storage": "single_file",
+      "path": "frozen_audit_sources/scripts/audit_m8_supported_trace.py",
+      "bytes": 51285,
+      "sha256": "53a2d18660986ce6cb77eee4c576db6c922722913abb0e07850c354a23927681"
+    },
+    "frozen_audit_sources/thread_lab/runtime.py": {
+      "storage": "single_file",
+      "path": "frozen_audit_sources/thread_lab/runtime.py",
+      "bytes": 2177,
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+    },
+    "demo.gif": {
+      "storage": "single_file",
+      "path": "demo.gif",
+      "bytes": 2627733,
+      "sha256": "f8c9bc563d9c1725ef075dbf8c6c3fec0dce7281f43d34d24c3d8c7541973fa0"
+    },
+    "demo.mp4": {
+      "storage": "single_file",
+      "path": "demo.mp4",
+      "bytes": 2134137,
+      "sha256": "6c0a9cdee7f78f0355e5e551304282eb965a9edf8e380e1a47846c8219542fe6"
+    },
+    "demo.png": {
+      "storage": "single_file",
+      "path": "demo.png",
+      "bytes": 263273,
+      "sha256": "9c7af844b5aa164cfdcd0d3df14b530150e13850e9210c0e9fe8ccb7d4329a3f"
+    },
+    "progress_bolt_over_bore_trace_link.json": {
+      "storage": "single_file",
+      "path": "progress_bolt_over_bore_trace_link.json",
+      "bytes": 2400,
+      "sha256": "a4474cbe544b30fb6078bf7d80d270b54ba920b3e6640ca4557f7ecb13d733b7"
+    },
+    "render_manifest.json": {
+      "storage": "single_file",
+      "path": "render_manifest.json",
+      "bytes": 97089,
+      "sha256": "6454fcb206d413a890aa6d36d1b8f42aec00c89bcec5ffcc22894032aab89480"
+    },
+    "renderer_source.py": {
+      "storage": "single_file",
+      "path": "renderer_source.py",
+      "bytes": 10525,
+      "sha256": "87c368ae8c75645cc2d1dfadea3556b63e62e61d30eabab6bf545e0f263dd7a8"
+    },
+    "renderer_sources/audit_m8_insertion_trace.py": {
+      "storage": "single_file",
+      "path": "renderer_sources/audit_m8_insertion_trace.py",
+      "bytes": 30341,
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f"
+    },
+    "renderer_sources/m8_demo.py": {
+      "storage": "single_file",
+      "path": "renderer_sources/m8_demo.py",
+      "bytes": 13137,
+      "sha256": "f5989b9ee052a2bb6d68bdec090d90aec4faeed667fd8218bf3fa4dccb3d485d"
+    },
+    "renderer_sources/m8_insertion_demo.py": {
+      "storage": "single_file",
+      "path": "renderer_sources/m8_insertion_demo.py",
+      "bytes": 13740,
+      "sha256": "3531a3659ded5b4a7fe66868989c1bac6437a008282ec1229bf2f8a5ccb97a91"
+    },
+    "renderer_sources/render_supported_closed.py": {
+      "storage": "single_file",
+      "path": "renderer_sources/render_supported_closed.py",
+      "bytes": 10525,
+      "sha256": "87c368ae8c75645cc2d1dfadea3556b63e62e61d30eabab6bf545e0f263dd7a8"
+    },
+    "renderer_sources/runtime.py": {
+      "storage": "single_file",
+      "path": "renderer_sources/runtime.py",
+      "bytes": 2177,
+      "sha256": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+    },
+    "supplemental_audits/audit_binding.json": {
+      "storage": "single_file",
+      "path": "supplemental_audits/audit_binding.json",
+      "bytes": 2268,
+      "sha256": "b3d7ba935be34d9f99bd00f711bdbdcb54c7afe4083ca10a49b2c829fa83fb0e"
+    },
+    "supplemental_audits/audit_sources/audit_m8_free_joint_properties.py": {
+      "storage": "single_file",
+      "path": "supplemental_audits/audit_sources/audit_m8_free_joint_properties.py",
+      "bytes": 6934,
+      "sha256": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11"
+    },
+    "supplemental_audits/audit_sources/audit_m8_insertion_trace.py": {
+      "storage": "single_file",
+      "path": "supplemental_audits/audit_sources/audit_m8_insertion_trace.py",
+      "bytes": 30341,
+      "sha256": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f"
+    },
+    "supplemental_audits/audit_sources/audit_m8_left_pad_force_history.py": {
+      "storage": "single_file",
+      "path": "supplemental_audits/audit_sources/audit_m8_left_pad_force_history.py",
+      "bytes": 10265,
+      "sha256": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc"
+    },
+    "supplemental_audits/audit_sources/audit_m8_supported_trace.py": {
+      "storage": "single_file",
+      "path": "supplemental_audits/audit_sources/audit_m8_supported_trace.py",
+      "bytes": 51285,
+      "sha256": "53a2d18660986ce6cb77eee4c576db6c922722913abb0e07850c354a23927681"
+    },
+    "supplemental_audits/audit_sources/independent_rest_clearance_audit.py": {
+      "storage": "single_file",
+      "path": "supplemental_audits/audit_sources/independent_rest_clearance_audit.py",
+      "bytes": 10444,
+      "sha256": "86c2b621de9612aedc64a4f2d6bcff5a5a8bab12ae0f16e93bdfe0ccaa7f6831"
+    },
+    "supplemental_audits/audit_sources/independent_rest_clearance_software_proof.json": {
+      "storage": "single_file",
+      "path": "supplemental_audits/audit_sources/independent_rest_clearance_software_proof.json",
+      "bytes": 1114,
+      "sha256": "18bad7756812a921a74bb66f5f8dfbc6a0190a25ee7267305ce392a2b96aedd1"
+    },
+    "supplemental_audits/audit_sources/test_independent_rest_clearance_audit.py": {
+      "storage": "single_file",
+      "path": "supplemental_audits/audit_sources/test_independent_rest_clearance_audit.py",
+      "bytes": 2072,
+      "sha256": "0cff4f9226b3e3cd7b228126f1fbcdd484271807b486f3a252b9370174dd54c4"
+    },
+    "supplemental_audits/audit_sources/test_m8_supported_audit.py": {
+      "storage": "single_file",
+      "path": "supplemental_audits/audit_sources/test_m8_supported_audit.py",
+      "bytes": 11021,
+      "sha256": "1d09f461014334941737c8b43bbd8b5e20fcd58c1228bfd7f8e6bd0aed63a943"
+    },
+    "supplemental_audits/independent_cone_release_diagnosis.json": {
+      "storage": "single_file",
+      "path": "supplemental_audits/independent_cone_release_diagnosis.json",
+      "bytes": 2881,
+      "sha256": "7b161f660f7d1683b959d6901ba5b0502cbe9a9c3f5fd64d0e5b9e8c24c600fa"
+    },
+    "supplemental_audits/independent_free_joint_properties.json": {
+      "storage": "single_file",
+      "path": "supplemental_audits/independent_free_joint_properties.json",
+      "bytes": 10113,
+      "sha256": "3afa42235069221bd50e0cf2819c25dbb4a8db915483f0b9c292ed975b6e2776"
+    },
+    "supplemental_audits/independent_left_pad_force_history_audit.json": {
+      "storage": "single_file",
+      "path": "supplemental_audits/independent_left_pad_force_history_audit.json",
+      "bytes": 13521,
+      "sha256": "a03f92ec96526e630f137af93cf473165736d0933114e23e1caf38c6412c9d74"
+    },
+    "supplemental_audits/independent_rest_clearance_audit.json": {
+      "storage": "single_file",
+      "path": "supplemental_audits/independent_rest_clearance_audit.json",
+      "bytes": 4206,
+      "sha256": "2af3217b6f90691a7a7470a7e5e753863fef09969fbd2d6a22d9168834c894f2"
+    },
+    "supplemental_audits/independent_supported_audit.json": {
+      "storage": "single_file",
+      "path": "supplemental_audits/independent_supported_audit.json",
+      "bytes": 2917440,
+      "sha256": "21142947af91e6237e01046d73663661c55f6d90f2267b00992fcb98ddfd34c7"
+    }
+  },
+  "scope": "Exact native table-supported trial evidence. Original acceptance results remain authoritative, including every failed gate. Saved-state replay uses no integration/interpolation/freebody posing. Material calibration, broader numerical convergence and learned-policy robustness are not certified.",
+  "first_demo_preserved": "media/m8_table_pickup/full is unchanged"
+}

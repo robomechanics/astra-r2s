@@ -1,0 +1,45 @@
+{
+  "status": "exact_prefix_to_closed_failed_parent_link",
+  "progress_package": "media/m8_table_supported/progress_bolt_over_bore",
+  "prefix_sha256": "29cf4d3f1754599d1053ae31d55dad90dd803bacd152b11504bd604bf69761ab",
+  "whole_final_trace_sha256": "02a03f0262edfd519a3080bc3d44588f2f2f12ac2da6d40ca44dc379e3acae4c",
+  "prefix_samples": 975,
+  "final_samples": 2586,
+  "byte_equal_native_arrays": {
+    "time": true,
+    "qpos": true,
+    "qvel": true,
+    "controller": true
+  },
+  "exact_original_sample_rows": true,
+  "exact_stable_source_model_identities": {
+    "model_fingerprint": "dd44ffab2beade32ed4682adb551fdf077dd97d4140bb2794cc995effe35a9ca",
+    "model_xml_sha256": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "scene_source_sha256": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+    "controller_sha256": "becfdac6c07f06edc3bd42c88f6ecb0c30445836025f1139c07713dcf89c74ee",
+    "controller_module_sha256": "45d47a30c7f95ac7508cd88396ea765f818fd3715e3519870fe93aa8414f3a0b"
+  },
+  "screenshot_sample_index": 974,
+  "screenshot_time_s": 4.819999999995436,
+  "screenshot_phase": "align_over_hole",
+  "image_sha256": "79f3b51e35eada43351a7e528f43bf0276cf419ac19527b205bc4aa967f11174",
+  "screenshot_qpos_sha256": "1fca72318361a883eda7a3888a1bb510252e4c5be0a96cf7fbe6f1531ae768e6",
+  "screenshot_qvel_sha256": "a0ef9992c58b23c2151eed0b28a9ccbe8d3127e6f5cc1f8e319d42086a0d5e84",
+  "parent_original_aborted": {
+    "phase": "release_search_2",
+    "time": 12.84274999997674,
+    "reported_sdf_depth_m": 1.0010108942968566e-06,
+    "radial_offset_m": 0.00015012955937634913,
+    "bolt_tilt_rad": 0.012632096615879083,
+    "block_grip_slip_m": 2.9723812973738337e-06,
+    "block_grip_rotation_slip_rad": 6.675505297417932e-05,
+    "bolt_grip_slip_m": 0.0,
+    "world_block_support_contacts": 53,
+    "minimum_native_joint_margin_rad": 0.14261019307387435,
+    "warnings": 0,
+    "external_drive_zero": true
+  },
+  "parent_original_passed": false,
+  "published_progress_files_modified": false,
+  "scope": "The published progress is an exact initial prefix of the same unspliced fresh native full_v2 attempt. Its alignment screenshot is verified against the exact final native row; its prefix SHA remains distinct from the whole final trace SHA. The parent later aborted during cone release alignment, with no formed capture or qualified turns."
+}

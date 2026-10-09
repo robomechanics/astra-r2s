@@ -1,0 +1,57 @@
+{
+  "kind": "Independent cone-release failure diagnosis; no physics/source modification",
+  "trajectory_sha256": "02a03f0262edfd519a3080bc3d44588f2f2f12ac2da6d40ca44dc379e3acae4c",
+  "original_controller_module_sha256": "45d47a30c7f95ac7508cd88396ea765f818fd3715e3519870fe93aa8414f3a0b",
+  "original_abort": {
+    "phase": "release_search_2",
+    "time": 12.84274999997674,
+    "reported_sdf_depth_m": 1.0010108942968566e-06,
+    "radial_offset_m": 0.00015012955937634913,
+    "bolt_tilt_rad": 0.012632096615879083,
+    "block_grip_slip_m": 2.9723812973738337e-06,
+    "block_grip_rotation_slip_rad": 6.675505297417932e-05,
+    "bolt_grip_slip_m": 0.0,
+    "world_block_support_contacts": 53,
+    "minimum_native_joint_margin_rad": 0.14261019307387435,
+    "warnings": 0,
+    "external_drive_zero": true
+  },
+  "before_open_original_native_sample": {
+    "time_s": 12.765649999976919,
+    "formed_flank_overlap_m": 0.0,
+    "right_hand_upward_force_on_bolt_N": 0.21063718846893212,
+    "known_bolt_weight_N": 0.26241400403581094,
+    "fraction_of_weight_borne_by_right_hand": 0.8026903489502298,
+    "summed_thread_pair_normal_force_N": 0.08185273159257864,
+    "radial_offset_m": 1.6134938730210276e-05,
+    "tilt_rad": 0.0031455071044706505,
+    "entry_support_observer_ready": true
+  },
+  "original_release_observations": {
+    "duration_s": 0.0771,
+    "final_radial_offset_m": 0.00015012955937634913,
+    "final_tilt_rad": 0.012632096615879083,
+    "formed_flank_overlap_max_m": 0.0,
+    "sampled_right_hand_force_after_contact_loss": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "scope": "The closed pre-opening window was settled under0.05N net feed, with substantial bolt weight still carried by right-pad friction. Summed thread normal force is not axial weight support. Genuine jaw opening removed that support before formed capture; transient cone contact and lateral/tilt motion preceded the unchanged radial guard abort. No open-reset/lead qualification occurred. A longer dwell at the same load does not establish unsupported weight bearing.",
+  "possible_physical_next_experiment": "A bounded closed-grip load transfer toward actual bolt-weight support, checking native axial thread reaction and actual aligned slow motion before release, can test stability without weakening guards or adding object drive.",
+  "original_all_substep_release_clock": {
+    "release_first_native_time_s": 12.765699999976919,
+    "release_final_native_time_s": 12.84274999997674,
+    "first_native_zero_right_hand_contact_time_s": 12.807399999976822,
+    "release_native_substeps": 1542,
+    "native_after_zero_hand_contact_substeps": 708,
+    "native_formed_flank_overlap_max_m": 0.0,
+    "native_loaded_formed_force_max_N": 0.0,
+    "native_axial_motion_range_m": 9.134900738801133e-05,
+    "native_yaw_motion_range_rad": 0.004588572905131372
+  }
+}

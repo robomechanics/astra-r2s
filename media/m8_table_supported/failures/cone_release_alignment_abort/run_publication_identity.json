@@ -1,0 +1,12 @@
+{
+  "producer_commit": "66276d0dd2188c763ada69e7426e5d74cf64fd29",
+  "started_utc": "2026-10-09 06:11:58 UTC",
+  "scope": "Fresh unspliced table-supported native attempt with higher full-shaft transfer.213software proof does not imply trajectory completion. Failedv1/initialpilot/firstcarriedtask preserved.",
+  "frozen_audit_sources": {
+    "scripts/audit_m8_supported_trace.py": "53a2d18660986ce6cb77eee4c576db6c922722913abb0e07850c354a23927681",
+    "scripts/audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+    "scripts/audit_m8_free_joint_properties.py": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+    "scripts/audit_m8_left_pad_force_history.py": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc",
+    "thread_lab/runtime.py": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd"
+  }
+}

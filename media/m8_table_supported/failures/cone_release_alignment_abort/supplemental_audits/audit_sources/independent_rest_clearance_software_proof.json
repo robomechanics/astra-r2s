@@ -1,0 +1,14 @@
+{
+  "kind": "Supplemental independent rest-clearance auditor regression proof",
+  "separate_from_native_producer_213_tests": true,
+  "native_producer_source_or_tests_modified": false,
+  "focused_tests_passed": 2,
+  "focused_seconds": 0.79,
+  "command": "scripts/run_m8.sh -m pytest -q outputs/m8_table_supported/test_independent_rest_clearance_audit.py",
+  "audit_command": "scripts/run_m8.sh outputs/m8_table_supported/independent_rest_clearance_audit.py PATH/insertion_trace.npz --output PATH/independent_rest_clearance_audit.json",
+  "source_sha256": {
+    "independent_rest_clearance_audit.py": "86c2b621de9612aedc64a4f2d6bcff5a5a8bab12ae0f16e93bdfe0ccaa7f6831",
+    "test_independent_rest_clearance_audit.py": "0cff4f9226b3e3cd7b228126f1fbcdd484271807b486f3a252b9370174dd54c4"
+  },
+  "scope": "Independent exact fixed-native box/cylinder bounds; raw original lift-end/transport10mm rest clearance; original source gate consistency and separately replayed post-qpos geometry with explicit timing offsets. Historical recordings lacking guard return uninstrumented/null rather than retroactive qualification."
+}

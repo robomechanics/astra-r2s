@@ -1,0 +1,27 @@
+{
+  "kind": "Closed independent audits of failed native table-supported full_v2",
+  "trajectory_sha256": "02a03f0262edfd519a3080bc3d44588f2f2f12ac2da6d40ca44dc379e3acae4c",
+  "native_producer_software_tests": 213,
+  "supported_auditor_source_sha256": "53a2d18660986ce6cb77eee4c576db6c922722913abb0e07850c354a23927681",
+  "supplemental_rest_auditor_source_sha256": "86c2b621de9612aedc64a4f2d6bcff5a5a8bab12ae0f16e93bdfe0ccaa7f6831",
+  "supplemental_rest_auditor_regression_tests": 2,
+  "supplemental_rest_proof_separate_from_producer": true,
+  "original_native_trace_report_or_sources_modified": false,
+  "original_report_passed": false,
+  "independent_supported_audit_passed": false,
+  "files_sha256": {
+    "audit_sources/audit_m8_free_joint_properties.py": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+    "audit_sources/audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+    "audit_sources/audit_m8_left_pad_force_history.py": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc",
+    "audit_sources/audit_m8_supported_trace.py": "53a2d18660986ce6cb77eee4c576db6c922722913abb0e07850c354a23927681",
+    "audit_sources/independent_rest_clearance_audit.py": "86c2b621de9612aedc64a4f2d6bcff5a5a8bab12ae0f16e93bdfe0ccaa7f6831",
+    "audit_sources/independent_rest_clearance_software_proof.json": "18bad7756812a921a74bb66f5f8dfbc6a0190a25ee7267305ce392a2b96aedd1",
+    "audit_sources/test_independent_rest_clearance_audit.py": "0cff4f9226b3e3cd7b228126f1fbcdd484271807b486f3a252b9370174dd54c4",
+    "audit_sources/test_m8_supported_audit.py": "1d09f461014334941737c8b43bbd8b5e20fcd58c1228bfd7f8e6bd0aed63a943",
+    "independent_cone_release_diagnosis.json": "7b161f660f7d1683b959d6901ba5b0502cbe9a9c3f5fd64d0e5b9e8c24c600fa",
+    "independent_free_joint_properties.json": "3afa42235069221bd50e0cf2819c25dbb4a8db915483f0b9c292ed975b6e2776",
+    "independent_left_pad_force_history_audit.json": "a03f92ec96526e630f137af93cf473165736d0933114e23e1caf38c6412c9d74",
+    "independent_rest_clearance_audit.json": "2af3217b6f90691a7a7470a7e5e753863fef09969fbd2d6a22d9168834c894f2",
+    "independent_supported_audit.json": "21142947af91e6237e01046d73663661c55f6d90f2267b00992fcb98ddfd34c7"
+  }
+}

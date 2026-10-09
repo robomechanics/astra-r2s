@@ -57,8 +57,13 @@ Older load/search failures also remain. See
 The left arm can stabilize a block that stays on the solid table.
 The [actual bolt-over-bore screenshot](media/m8_table_supported/progress_bolt_over_bore/demo.png)
 shows the fresh corrected run after physical bolt pickup, lift and transport;
-that recorded frame precedes thread contact. Full threading qualification is
-still pending.
+that recorded frame precedes thread contact. The
+[closed second attempt](media/m8_table_supported/failures/cone_release_alignment_abort)
+later aborts at 12.84275 s when radial offset exceeds the unchanged 150 µm
+limit during opening. Its first starting half-turn advances only 8.946 µm,
+with zero formed-flank overlap. Table/left-pad support stays loaded throughout
+the observed 11.1928 s active period; complete threading remains unqualified.
+Further checkpoint diagnostics are pending.
 The [actual 1.65 s stabilization clip](media/m8_table_supported/progress_stabilized/demo.gif)
 records 99.072% mean block weight on the table, with 0.928% mean positive
 upward left-hand load. It has not attempted bolt pickup or threading;

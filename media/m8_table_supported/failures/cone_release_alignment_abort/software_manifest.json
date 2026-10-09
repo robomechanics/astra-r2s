@@ -1,0 +1,17 @@
+{
+  "scope": "213 current tests with unchanged source hashes after higher whole-bolt transfer and two audit coverage corrections; prior210producer/181firstpublication/176originalnative proofs preserved. No full table-supported trajectory qualification yet.",
+  "files": {
+    "software_tests.json": {
+      "bytes": 6713,
+      "sha256": "1b2aace7ea1abd7caf9d718594cc12e9fb71537ee2c5cf03bc5a68fd881a8998"
+    },
+    "software_tests.log": {
+      "bytes": 1020,
+      "sha256": "83f82089c16a7fc4fd6383b309378a1f206863981a648cff869e54198602cd47"
+    },
+    "verify_sources.py": {
+      "bytes": 1491,
+      "sha256": "154c1f2b4256ec814c89cb90cbeba1a1c4f9969524375acc2bf67280405e59d6"
+    }
+  }
+}

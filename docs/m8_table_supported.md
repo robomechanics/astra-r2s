@@ -98,9 +98,8 @@ its original rest, before thread starting. The
 [closed failed trial and actual lift screenshot](../media/m8_table_supported/failures/transport_rest_recontact)
 preserve its original report, raw states/forces and independent audits.
 Its original `partial=false` only means the full phase list was selected;
-the non-null abort and failed result remain. A revised bolt-transport path
-and a fresh full attempt are being checked separately. Their source proof
-and producer revision must be recorded independently.
+the non-null abort and failed result remain. The revised bolt-transport path
+was subsequently exercised in the separately recorded `full_v2` attempt.
 
 The corrected supported-only path uses 35 mm tip clearance above the block
 top, putting its nominal bolt tip at 51 mm versus the native rest tops at
@@ -108,12 +107,33 @@ top, putting its nominal bolt tip at 51 mm versus the native rest tops at
 completion and every transport timestep. Lateral transfer holds this height;
 only `align_over_hole` then descends. The current corrected sources pass
 **213 tests** in 79.24 s with unchanged source hashes, recorded in the
-[separate proof](../media/m8_table_supported/software_proof_213). This remains
-a software and static-path check until a new physical rollout closes. The
-prior 210-test proof stays bound to its initial producer. The fresh `full_v2`
-attempt uses producer
-`66276d0dd2188c763ada69e7426e5d74cf64fd29` and is in progress; its complete
-support, pickup and threading outcomes remain pending. Post-closure audit
+[separate proof](../media/m8_table_supported/software_proof_213). The
+prior 210-test proof stays bound to its initial producer. The closed `full_v2`
+attempt uses producer `66276d0dd2188c763ada69e7426e5d74cf64fd29` and
+[preserves its failed result and actual normal-speed media](../media/m8_table_supported/failures/cone_release_alignment_abort).
+It physically picks up the bolt and clears the rest, transports above the
+bore, acquires settled native starting contact and executes the first
+starting stroke. It aborts at **12.84275 s** in `release_search_2`: radial
+offset reaches **150.129559 µm**, above the unchanged 150 µm guard.
+
+The first starting stroke rotates **3.141634 rad** but advances only
+**8.945825 µm**; formed-flank overlap remains zero. Mid-stroke the floating
+hand withdraws about 1.401 mm and the bolt about 1.332 mm. This lead-in motion
+does not establish M8 engagement, qualified pitch travel or an unsupported
+formed-thread reset. Original overall validation remains false.
+
+The observed **11.1928 s** active stabilization period has zero strict
+table/pad load gaps and no block lift. Every active trailing window has at
+least **99.046985%** mean block weight on the table, at most **0.953019%**
+mean positive upward hand load and 100% loaded table duty. Measured minimum
+full-shaft/rest clearance during transfer is **14.93967 mm**. These support
+and transfer results apply to the actually executed failed prefix, not an
+unexecuted complete assembly.
+
+Further bounded native gravity/load-transfer and axial-damping diagnostics
+are being checked from closed checkpoints under `outputs/`. They remain
+separate diagnostic branches; a new continuous full attempt will need its
+own producer, source proof, trajectory and acceptance result. Post-closure audit
 corrections cover unloaded window endpoints and qualified closed hold phases;
 they do not alter the original failed trajectory.
 
@@ -225,7 +245,7 @@ full attempt's source, not a later successful trajectory. It also contains
 the exact archived **earlier** stabilization pilot, whose whole controller
 hash is `189009b40d959325873bc6d215f9031ce9546cf56e01fcfd6b11ada32ef99e6d`.
 
-To check or recreate the **revised `full_v2` attempt**, use a separate unused
+To check or recreate the **failed revised `full_v2` attempt**, use a separate unused
 checkout pinned to its exact producer instead:
 
 ```bash
@@ -241,8 +261,8 @@ At this revised producer expect 213 tests, as bound by the separate
 [213-test source manifest](../media/m8_table_supported/software_proof_213/manifest.json).
 The higher 35 mm transfer target and measured 10 mm full-shaft/rest clearance
 guard come from that pinned source. Reusing the same CLI flags on `4ea910e`
-does not select this revised path. A passing source proof does not predict
-the still-running attempt's physics result.
+does not select this revised path. A passing source proof does not change
+the recorded failed physics result.
 
 Run the following commands from the checkout you chose. Remain in the pinned
 clone when examining that producer; the ordinary cloud checkout is
@@ -285,8 +305,8 @@ scripts/run_m8.sh -m yam_twin.m8_supported_demo \
 ```
 
 A fresh attempt with the revised path uses the following explicit parameters
-from the pinned `66276d0` checkout. Choose a new output directory; the actual
-active production attempt is under `outputs/m8_table_supported/full_v2/`.
+from the pinned `66276d0` checkout. Choose a new output directory; the original
+closed failed production attempt is under `outputs/m8_table_supported/full_v2/`.
 Running these flags at `4ea910e` instead recreates the initial failed
 transport configuration:
 
