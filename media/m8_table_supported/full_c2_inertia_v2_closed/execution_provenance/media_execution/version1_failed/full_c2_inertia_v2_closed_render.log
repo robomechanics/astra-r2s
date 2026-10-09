@@ -1,0 +1,90 @@
+Traceback (most recent call last):
+  File "/workspace/astra-r2s-supported-v5-development/outputs/m8_table_supported/render_full_c2_inertia_v2_closed.py", line 358, in <module>
+    main(parser.parse_args())
+  File "/workspace/astra-r2s-supported-v5-development/outputs/m8_table_supported/render_full_c2_inertia_v2_closed.py", line 175, in main
+    ready = [i for i in contact_free if samples[i]['open_weight_window']['ready']]
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'ready'
+Exception ignored in: <function Renderer.__del__ at 0x7f964d9b7920>
+Traceback (most recent call last):
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/rendering/classic/renderer.py", line 349, in __del__
+    self.close()
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/rendering/classic/renderer.py", line 335, in close
+    self._gl_context.free()
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/egl/__init__.py", line 134, in free
+    EGL.eglDestroyContext(EGL_DISPLAY, self._context)
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/OpenGL/platform/baseplatform.py", line 487, in __call__
+    return self(*args, **named)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: <exception str() failed>
+Exception ignored in: <function GLContext.__del__ at 0x7f964d9b7240>
+Traceback (most recent call last):
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/egl/__init__.py", line 139, in __del__
+    self.free()
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/egl/__init__.py", line 134, in free
+    EGL.eglDestroyContext(EGL_DISPLAY, self._context)
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: <exception str() failed>
+Exception ignored in: <function Renderer.__del__ at 0x7f964d9b7920>
+Traceback (most recent call last):
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/rendering/classic/renderer.py", line 349, in __del__
+    self.close()
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/rendering/classic/renderer.py", line 335, in close
+    self._gl_context.free()
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/egl/__init__.py", line 134, in free
+    EGL.eglDestroyContext(EGL_DISPLAY, self._context)
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: <exception str() failed>
+Exception ignored in: <function GLContext.__del__ at 0x7f964d9b7240>
+Traceback (most recent call last):
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/egl/__init__.py", line 139, in __del__
+    self.free()
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/egl/__init__.py", line 134, in free
+    EGL.eglDestroyContext(EGL_DISPLAY, self._context)
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: <exception str() failed>
+Exception ignored in: <function Renderer.__del__ at 0x7f964d9b7920>
+Traceback (most recent call last):
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/rendering/classic/renderer.py", line 349, in __del__
+    self.close()
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/rendering/classic/renderer.py", line 335, in close
+    self._gl_context.free()
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/egl/__init__.py", line 134, in free
+    EGL.eglDestroyContext(EGL_DISPLAY, self._context)
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: <exception str() failed>
+Exception ignored in: <function GLContext.__del__ at 0x7f964d9b7240>
+Traceback (most recent call last):
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/egl/__init__.py", line 139, in __del__
+    self.free()
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/egl/__init__.py", line 134, in free
+    EGL.eglDestroyContext(EGL_DISPLAY, self._context)
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: <exception str() failed>
+Exception ignored in: <function Renderer.__del__ at 0x7f964d9b7920>
+Traceback (most recent call last):
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/rendering/classic/renderer.py", line 349, in __del__
+    self.close()
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/rendering/classic/renderer.py", line 335, in close
+    self._gl_context.free()
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/egl/__init__.py", line 134, in free
+    EGL.eglDestroyContext(EGL_DISPLAY, self._context)
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: <exception str() failed>
+Exception ignored in: <function GLContext.__del__ at 0x7f964d9b7240>
+Traceback (most recent call last):
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/egl/__init__.py", line 139, in __del__
+    self.free()
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/mujoco/egl/__init__.py", line 134, in free
+    EGL.eglDestroyContext(EGL_DISPLAY, self._context)
+  File "/workspace/.venvs/m8-contact/lib/python3.12/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: <exception str() failed>

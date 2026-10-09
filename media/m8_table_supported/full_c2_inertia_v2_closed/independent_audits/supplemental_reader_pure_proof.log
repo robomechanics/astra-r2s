@@ -1,0 +1,15 @@
+test_contact_free_prefix_does_not_invent_contact_or_success (test_supplemental_open_reset_contact_audit.OriginalOpenResetArithmeticTests.test_contact_free_prefix_does_not_invent_contact_or_success) ... ok
+test_executed_partial_phase_baseline_keeps_force_offset (test_supplemental_open_reset_contact_audit.OriginalOpenResetArithmeticTests.test_executed_partial_phase_baseline_keeps_force_offset) ... ok
+test_finite_cap_preserves_actual_uncapped_direction (test_supplemental_open_reset_contact_audit.OriginalOpenResetArithmeticTests.test_finite_cap_preserves_actual_uncapped_direction) ... ok
+test_first_native_open_contact_is_not_confused_with_closed_grasp (test_supplemental_open_reset_contact_audit.OriginalOpenResetArithmeticTests.test_first_native_open_contact_is_not_confused_with_closed_grasp) ... ok
+test_float_contact_count_cannot_claim_native_integer_schema (test_supplemental_open_reset_contact_audit.OriginalOpenResetArithmeticTests.test_float_contact_count_cannot_claim_native_integer_schema) ... ok
+test_invalid_PD_error_never_produces_a_force_explanation (test_supplemental_open_reset_contact_audit.OriginalOpenResetArithmeticTests.test_invalid_PD_error_never_produces_a_force_explanation) ... ok
+test_numeric_open_flag_cannot_waive_native_boolean (test_supplemental_open_reset_contact_audit.OriginalOpenResetArithmeticTests.test_numeric_open_flag_cannot_waive_native_boolean) ... ok
+test_original_PD_decomposition_requires_uncapped_same_command_inputs (test_supplemental_open_reset_contact_audit.OriginalOpenResetArithmeticTests.test_original_PD_decomposition_requires_uncapped_same_command_inputs) ... ok
+test_under_cap_command_is_not_reported_as_force_saturation (test_supplemental_open_reset_contact_audit.OriginalOpenResetArithmeticTests.test_under_cap_command_is_not_reported_as_force_saturation) ... ok
+test_unexecuted_regrasp_has_no_fabricated_baseline (test_supplemental_open_reset_contact_audit.OriginalOpenResetArithmeticTests.test_unexecuted_regrasp_has_no_fabricated_baseline) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.022s
+
+OK

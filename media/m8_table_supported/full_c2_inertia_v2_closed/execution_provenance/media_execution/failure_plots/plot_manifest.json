@@ -1,0 +1,31 @@
+{
+  "kind": "Closed original open-reset control failure plot",
+  "closed": true,
+  "producer_commit": "da69a9cd44a8312cc7b97365faf5e09c27a646e2",
+  "original_native_child_exit_code": 1,
+  "original_native_passed": false,
+  "native_trajectory_qualification": false,
+  "inputs_sha256": {
+    "full_c2_inertia_v2/insertion_validation.json": "66ac364fd88a325c902945233dba24ef9f06de08a2ee11a50fe62c0d3dadb8fe",
+    "full_c2_inertia_v2/insertion_trace.npz": "6639eff093a6f1ba5d26540ecb77ca9cdd05e9d48ca17eb56efde4e7b95d0678",
+    "full_c2_inertia_v2/native_feedback_force_history.npz": "4a3bba9294cb1b06a0d2b64abacc3d30944ebea9088f19b3eb913ca5907ae9dd",
+    "full_c2_inertia_v2/robot_inertia_command_history.npz": "f04d7fc02d88807833f1171626e47c12f02a3bd4d6ce010f9edbc6eec2296787",
+    "full_c2_inertia_v2_audits/independent_audit_binding.json": "4be80e698c07137d6182dffa297586af18084569d594b4dc49f47ef187f9e605",
+    "full_c2_inertia_v2_audits/supplemental_open_reset_contact_audit.json": "caa7ad3714640ab099bd23aa3fddfc91dc8806228dfe4603a7ed9d42a436a15d"
+  },
+  "outputs_sha256": {
+    "plot_original_open_reset_failure.py": "af7adfc9e9189349fbed2fea563521905d4bbee6b3cf00eae43df98be090d5ad",
+    "original_reset_plot_data.npz": "ee5b5a767bf3d4a4e16625a2b1a8463b7fb6ba2c865fb7a042e7e4fb710e6480",
+    "open_reset_tracking_failure.png": "057396b2b6eacd6cb36e984fe55775d9ddc9226adc7f826bf6a6eda5f9ac81e1"
+  },
+  "reset_native_rows": 21686,
+  "saved_retained_error_samples": 218,
+  "total_original_native_rows": 441657,
+  "first_force_cap_post_label_s": 21.848750000163538,
+  "first_force_cap_command_time_s": 21.848700000163536,
+  "first_contact_post_label_s": 22.08285000017131,
+  "first_contact_native_force_time_s": 22.082800000171307,
+  "first_contact_original_pad_normal_N": 1.4870511326233746,
+  "plot_scope": "Every original executed reset control row and native contact count; original sparse retained-error samples only. No interpolation, new native model/force solve/integration, future run read, original audit/source/runtime mutation or new trajectory success claim.",
+  "timestamp_scope": "Command force plotted at authoritative command_time_s; contact count plotted at original post label minusdt; position error plotted at authoritative retained_native_state_time_s. Callouts separately preserve original post labels."
+}

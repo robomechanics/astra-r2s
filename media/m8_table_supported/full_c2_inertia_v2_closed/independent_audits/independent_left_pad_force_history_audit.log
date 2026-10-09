@@ -1,0 +1,27 @@
+{
+  "output": "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_audits/independent_left_pad_force_history_audit.json",
+  "all_consistency_checks_passed": true,
+  "recomputed_stats": {
+    "observer": "native-bilateral-pad-load-v1",
+    "minimum_loaded_force_N": 0.1,
+    "observed_physics_steps": 408658,
+    "observed_duration_s": 20.4329,
+    "minimum_normal_force_N": [
+      15.959869143281928,
+      15.836516816145437
+    ],
+    "unloaded_physics_steps": [
+      0,
+      0
+    ],
+    "unloaded_duration_s": [
+      0.0,
+      0.0
+    ],
+    "maximum_consecutive_unloaded_duration_s": [
+      0.0,
+      0.0
+    ],
+    "continuously_bilateral_loaded": true
+  }
+}

@@ -46,8 +46,14 @@ Its fresh `full_c2_inertia_v2` attempt closes failed at **22.08285 s / 441,657
 ticks**, after **59.72 min** wall time. Original `passed=false`, `partial=false`,
 **19/27 checks** remain: `reset_open_search_2` aborts on a right-pad/bolt
 recontact (1.487 N). The primary audit passes **13/19 checks** and stays false.
-Its supplemental pose/contact binding is frozen; the complete failed packet
-is being prepared. These old clips do not show the new reset-speed2 attempt.
+The [complete closed failed packet](media/m8_table_supported/full_c2_inertia_v2_closed/README.md)
+now preserves every original ledger, source and audit, with
+[normal 1× GIF](media/m8_table_supported/full_c2_inertia_v2_closed/render/demo.gif),
+[MP4](media/m8_table_supported/full_c2_inertia_v2_closed/render/demo.mp4),
+[actual abort detail](media/m8_table_supported/full_c2_inertia_v2_closed/render/endpoint_detail.png)
+and [dense reset-tracking plot](media/m8_table_supported/full_c2_inertia_v2_closed/execution_provenance/media_execution/failure_plots/open_reset_tracking_failure.png).
+Its exact isolated restoration/replay instructions preserve the failed outcome;
+these old clips do not show the new reset-speed2 attempt.
 The [3.47 s pickup progress clip](media/m8_table_supported/full_c2_inertia_v2_progress/pickup_progress/README.md)
 shows actual table stabilization, side-bolt grasp and lift; it contains no
 thread-entry or capture result.

@@ -1,0 +1,22 @@
+{
+  "schema": "closed-reset-geometry-only-package-v1",
+  "frozen": true,
+  "original_native_after_sha256": "481b930e3dadaddd54240ea9548f5decdb98abfdad9c41db05871c84cf5ccaa3",
+  "producer": "da69a9cd44a8312cc7b97365faf5e09c27a646e2",
+  "original_native_exit_code": 1,
+  "original_report_passed": false,
+  "files_sha256": {
+    "README.md": "ee6ad9af7c4f90a02f08a67a01cc0ae7caf5091acc4a143346f424bcf55a34a5",
+    "first_endpoint_result.json": "ab3c771181faa5eb689609f12713faaf0daa6394608f2e946aca80014ca6a384",
+    "geometry_only_review_execution.json": "44a8cce56b91575332bcb058b880f2c21981a9ba2a0e62179574b577f06ecdb2",
+    "reset_reachability_report.json": "79ec32373c688a279b238fd6f0d9715e990ad64bf85d6f2db106f8aea6bd8ee6",
+    "review_reset_reachability.log": "3a316574f5ca0525159afec19fe54a377821f4486b677c5e1601864f6a67cc3b",
+    "review_reset_reachability.py": "6dc40edef69c7d12450ab40f99bdaf64ccd2c607128c779ecdf434a0a9c81ea9",
+    "source_archive/full_c2_inertia_v2__controller_source.py": "6ac35d9c7094fed98a3084fe60ba12a0ce5bae96124d3bc91bd7f3074f3e5056",
+    "source_archive/m8_table_supported__render_full_c2_inertia_v2_closed.py": "1cc8b6f5ed75603ed83fc1a7387a6e33211253c30102a915f4f4000ca944b2a3",
+    "source_archive/scripts__audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+    "source_archive/yam_twin__kinematics.py": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+    "source_archive/yam_twin__m8_supported_start.py": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51"
+  },
+  "scope": "Executed geometry-only archived model compilation and original ArmIK/FK; recorded endpoint and planned sampled orbit comparison. Residuals do not certify native motor tracking, collision clearance, continuous all-clock reach, thread capture or physics success."
+}

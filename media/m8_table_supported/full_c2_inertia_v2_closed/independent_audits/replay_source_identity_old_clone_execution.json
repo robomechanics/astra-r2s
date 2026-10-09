@@ -1,0 +1,31 @@
+{
+  "command": [
+    "python",
+    "/workspace/astra-r2s-supported-v5-development/outputs/m8_table_supported/verify_closed_supported_run_identity_v2.py",
+    "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2",
+    "--repository-root",
+    "/workspace/astra-r2s-supported-v5-development",
+    "--proof-archive",
+    "/workspace/astra-r2s/media/m8_table_supported/software_proof_c2_inertia_v2",
+    "--expected-producer",
+    "da69a9cd44a8312cc7b97365faf5e09c27a646e2",
+    "--expected-before-sha256",
+    "f98c6ba218d1c5d8503ac3d362a4a501de4fd99a8f1d87e4ee2e11a704f4c9c3",
+    "--expected-after-sha256",
+    "481b930e3dadaddd54240ea9548f5decdb98abfdad9c41db05871c84cf5ccaa3",
+    "--expected-proof-sha256",
+    "71e6d7b7a4688ae8a6e4588424f931b64f824e9552d3d792278ebe472b767be9",
+    "--output",
+    "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_audits/replay_source_identity_old_clone.json"
+  ],
+  "repository_root_checked": "/workspace/astra-r2s-supported-v5-development",
+  "clone_git_head": "9dc4d5e9044c35a2c5436dbd19973112e79e8cb2",
+  "original_native_producer": "da69a9cd44a8312cc7b97365faf5e09c27a646e2",
+  "started_utc": "2026-10-09T14:32:37.693494+00:00",
+  "finished_utc": "2026-10-09T14:32:37.757502+00:00",
+  "wall_seconds": 0.06590711200260557,
+  "exit_code": 0,
+  "identity_sha256": "73c09e18edb23ef55280a7ee631fd964a247540bb5ec689fa9dc8e204baaa49f",
+  "log_sha256": "73c09e18edb23ef55280a7ee631fd964a247540bb5ec689fa9dc8e204baaa49f",
+  "scope": "Old-source mirror ALL74 bytes exactly original da69; mirror Git HEAD is explicitly distinct from original native producer. Current application may advance CLI, while the closed original run/reports/runtime and mirror remain unchanged. No state decoding/model/physics calls."
+}

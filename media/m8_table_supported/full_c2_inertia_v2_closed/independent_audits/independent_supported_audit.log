@@ -1,0 +1,63 @@
+{
+  "output": "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_audits/independent_supported_audit.json",
+  "passed": false,
+  "checks": {
+    "complete_unaborted_native_sequence": {
+      "passed": false
+    },
+    "source_bound_original_feedback_controls_forces_and_events": {
+      "passed": false
+    },
+    "measured_pre_bolt_table_bears_weight": {
+      "passed": true
+    },
+    "whole_task_table_bears_weight_left_merely_stabilizes": {
+      "passed": true
+    },
+    "strict_all_substep_table_load_retention": {
+      "passed": true
+    },
+    "strict_all_substep_bilateral_left_pad_preload": {
+      "passed": true
+    },
+    "block_has_no_lift_or_unintended_world_support": {
+      "passed": true
+    },
+    "male_clears_solid_table_in_original_and_replayed_geometry": {
+      "passed": true
+    },
+    "separately_picked_up_bolt_has_no_later_world_support": {
+      "passed": true
+    },
+    "native_qualified_lead_and_rotation": {
+      "passed": false
+    },
+    "independent_saved_pose_qualified_lead": {
+      "passed": false
+    },
+    "all_open_resets_have_no_hand_bolt_contact": {
+      "passed": false
+    },
+    "captured_bolt_resets_are_passive_and_unseated": {
+      "passed": false
+    },
+    "no_sampled_unintended_penetrations": {
+      "passed": true
+    },
+    "original_all_substep_native_collision_guard": {
+      "passed": true
+    },
+    "native_joint_limits_and_finite_motor_caps": {
+      "passed": true
+    },
+    "each_right_grasp_is_measured_and_retained": {
+      "passed": true
+    },
+    "zero_original_external_drive_and_freebody_artificial_passive_terms": {
+      "passed": true
+    },
+    "no_new_task_collision_exclusions_or_disabled_table_masks": {
+      "passed": true
+    }
+  }
+}

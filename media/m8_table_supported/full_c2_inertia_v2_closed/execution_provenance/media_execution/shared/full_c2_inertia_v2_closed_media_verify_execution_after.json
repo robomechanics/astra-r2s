@@ -1,0 +1,35 @@
+{
+  "closed": true,
+  "recorded_utc": "2026-10-09T14:58:31.402070+00:00",
+  "verification_session_id": 34570,
+  "verification_exit_code": 0,
+  "command": [
+    "/workspace/astra-r2s-supported-v5-development/scripts/run_m8.sh",
+    "/workspace/astra-r2s-supported-v5-development/outputs/m8_table_supported/verify_full_c2_inertia_v2_closed_media.py",
+    "--repository-root",
+    "/workspace/astra-r2s-supported-v5-development",
+    "--proof-archive",
+    "/workspace/astra-r2s/media/m8_table_supported/software_proof_c2_inertia_v2",
+    "--identity",
+    "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_audits/replay_source_identity_old_clone.json",
+    "--identity-sha256",
+    "73c09e18edb23ef55280a7ee631fd964a247540bb5ec689fa9dc8e204baaa49f",
+    "--audit-binding",
+    "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_audits/independent_audit_binding.json",
+    "--audit-binding-sha256",
+    "4be80e698c07137d6182dffa297586af18084569d594b4dc49f47ef187f9e605",
+    "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2",
+    "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_closed_render_v2"
+  ],
+  "environment": {
+    "LP_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "start_timestamp_recorded": false,
+  "timestamp_scope": "This UTC is artifact-recording time; no verification start timestamp was captured.",
+  "verification_source_sha256": "df9be163706c8f3e655b23524179b3ef1007a72bc5d56a7ed1fcf912334f6e2c",
+  "verification_source_prebound_in_renderer_before_sha256": "56e96e7a077749577b3385beda317f24b39c10320924aed03de3e8d41e26a771",
+  "verification_report_sha256": "777e36553c1e29e3b898d3fd1f12fcbf32d1b97cb94bf72bcd29154921f5d976",
+  "stdout_stderr_sha256": "777e36553c1e29e3b898d3fd1f12fcbf32d1b97cb94bf72bcd29154921f5d976",
+  "scope": "One completed pure saved-state/media encoding verifier, no native model imports/integration or physics qualification. Original failed result remains false."
+}

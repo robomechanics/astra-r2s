@@ -1,0 +1,96 @@
+{
+  "closed": true,
+  "scope": "Separate immutable renderer/verification/approved pure-plot provenance. Original closed native and independent audit trees remain unchanged; failed renderer version1 retained as failure.",
+  "original_native_exit_code": 1,
+  "original_native_passed": false,
+  "original_identity_report_sha256": "73c09e18edb23ef55280a7ee631fd964a247540bb5ec689fa9dc8e204baaa49f",
+  "original_independent_audit_binding_sha256": "4be80e698c07137d6182dffa297586af18084569d594b4dc49f47ef187f9e605",
+  "files": {
+    "version1_failed/full_c2_inertia_v2_closed_render.log": {
+      "bytes": 6104,
+      "sha256": "b8c4dd4d3d146815d233fc1a55380e2bebbc3dd955fe6f75e5443a31bad3ff55",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_closed_render.log"
+    },
+    "version1_failed/full_c2_inertia_v2_closed_render_execution_before.json": {
+      "bytes": 10688,
+      "sha256": "f2ccaaa5fb7b26ad64fa65b49fe2794bf5199d86245ade55d5716618656dfa35",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_closed_render_execution_before.json"
+    },
+    "version1_failed/full_c2_inertia_v2_closed_render_execution_after.json": {
+      "bytes": 9198,
+      "sha256": "b18511104ea650dca6ee69645d0fc48e3e15c6750650bcdac4f9306030944ff3",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_closed_render_execution_after.json"
+    },
+    "version1_failed/render_full_c2_inertia_v2_closed.py": {
+      "bytes": 22833,
+      "sha256": "1cc8b6f5ed75603ed83fc1a7387a6e33211253c30102a915f4f4000ca944b2a3",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/render_full_c2_inertia_v2_closed.py"
+    },
+    "version2_closed/full_c2_inertia_v2_closed_render_v2.log": {
+      "bytes": 2454,
+      "sha256": "f299e0eb5f82695279e3b92eb7e6dc179ec0703d1eac7b1241a38c068878d606",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_closed_render_v2.log"
+    },
+    "version2_closed/full_c2_inertia_v2_closed_render_v2_execution_before.json": {
+      "bytes": 11158,
+      "sha256": "56e96e7a077749577b3385beda317f24b39c10320924aed03de3e8d41e26a771",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_closed_render_v2_execution_before.json"
+    },
+    "version2_closed/full_c2_inertia_v2_closed_render_v2_execution_after.json": {
+      "bytes": 9717,
+      "sha256": "81c454280d89d1561578d17698fe1f84ac5d8de43e3fdb08f9a70afdb5f11f27",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_closed_render_v2_execution_after.json"
+    },
+    "version2_closed/render_full_c2_inertia_v2_closed_v2.py": {
+      "bytes": 23071,
+      "sha256": "43aff66a231b7c8ef4223c3bd38411523d700cb4fc70f5d22c246b949a30935e",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/render_full_c2_inertia_v2_closed_v2.py"
+    },
+    "shared/full_c2_inertia_v2_closed_clone_helpers_before.json": {
+      "bytes": 17859,
+      "sha256": "31a4fd5dfacb32942517084e36e5b96b7450e6117946e2083e1ae7901b6ea034",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_closed_clone_helpers_before.json"
+    },
+    "shared/full_c2_inertia_v2_closed_media_verify.log": {
+      "bytes": 1845,
+      "sha256": "777e36553c1e29e3b898d3fd1f12fcbf32d1b97cb94bf72bcd29154921f5d976",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_closed_media_verify.log"
+    },
+    "shared/full_c2_inertia_v2_closed_media_verify_execution_after.json": {
+      "bytes": 1995,
+      "sha256": "d4833a01c047e77b08c0143c9806c688c82716915b1181f317f739232b3ccae6",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_closed_media_verify_execution_after.json"
+    },
+    "shared/verify_full_c2_inertia_v2_closed_media.py": {
+      "bytes": 6067,
+      "sha256": "df9be163706c8f3e655b23524179b3ef1007a72bc5d56a7ed1fcf912334f6e2c",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/verify_full_c2_inertia_v2_closed_media.py"
+    },
+    "failure_plots/open_reset_tracking_failure.png": {
+      "bytes": 294583,
+      "sha256": "057396b2b6eacd6cb36e984fe55775d9ddc9226adc7f826bf6a6eda5f9ac81e1",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_failure_plots/open_reset_tracking_failure.png"
+    },
+    "failure_plots/original_reset_plot_data.npz": {
+      "bytes": 1751080,
+      "sha256": "ee5b5a767bf3d4a4e16625a2b1a8463b7fb6ba2c865fb7a042e7e4fb710e6480",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_failure_plots/original_reset_plot_data.npz"
+    },
+    "failure_plots/plot_manifest.json": {
+      "bytes": 2330,
+      "sha256": "0a6b3ee2bd87d6fafa7a064acabae72f1f5f9799880511aa67e08488d049644e",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_failure_plots/plot_manifest.json"
+    },
+    "failure_plots/plot_original_open_reset_failure.py": {
+      "bytes": 10145,
+      "sha256": "af7adfc9e9189349fbed2fea563521905d4bbee6b3cf00eae43df98be090d5ad",
+      "source_absolute_path": "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_failure_plots/plot_original_open_reset_failure.py"
+    }
+  },
+  "failed_version1_render_output_empty": true,
+  "failed_version1_encoding_started": false,
+  "version2_render_exit_code": 0,
+  "pure_media_verification_exit_code": 0,
+  "plot_scope": "Original21,686 reset rows/218 sparse retained-error records; no native solving or prospective slower-run success.",
+  "published_prefix": "execution_provenance/media_execution/"
+}

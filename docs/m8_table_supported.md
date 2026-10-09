@@ -31,9 +31,16 @@ The historical `da69a9c` **`full_c2_inertia_v2`** attempt closes failed at
 **22.08285 s / 441,657 ticks**, after **59.72 min** wall time, with original
 `passed=false`, `partial=false`, **19/27 checks**. Its open search reset
 recontacts at 1.0843 s of 1.47262 s (right pad/bolt, 1.487 N); the primary
-physical audit remains false at **13/19 checks**. Supplemental binding
-`4be80e69…` is frozen; complete old failed media are being packaged. The old
-progress clips below belong to that da69 trial, not the current 9ae attempt.
+physical audit remains false at **13/19 checks**. The
+[complete closed failed packet](../media/m8_table_supported/full_c2_inertia_v2_closed/README.md)
+now includes all 39 original native files, 36 derivative audits plus their
+frozen `4be80e69…` binder, and exact isolated restore/replay instructions:
+[normal 1× GIF](../media/m8_table_supported/full_c2_inertia_v2_closed/render/demo.gif),
+[MP4](../media/m8_table_supported/full_c2_inertia_v2_closed/render/demo.mp4),
+[actual failed state](../media/m8_table_supported/full_c2_inertia_v2_closed/render/endpoint_detail.png)
+and [dense reset-tracking plot](../media/m8_table_supported/full_c2_inertia_v2_closed/execution_provenance/media_execution/failure_plots/open_reset_tracking_failure.png).
+Its 265 exact-state frames / 19 stills qualify media identity only. These old
+closed/progress clips belong to the da69 trial, not the current 9ae attempt.
 The closed V5 branch below is separate evidence, using the old 6e7/402 source.
 The new [pickup progress recording](../media/m8_table_supported/full_c2_inertia_v2_progress/pickup_progress/README.md)
 preserves the original prefix through **3.47 s**, showing left stabilization

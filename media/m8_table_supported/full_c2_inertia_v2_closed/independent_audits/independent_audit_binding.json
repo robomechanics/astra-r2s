@@ -1,0 +1,299 @@
+{
+  "kind": "Closed fresh da69 native failure and independent audits binding",
+  "closed": true,
+  "original_run_relative_path": "outputs/m8_table_supported/full_c2_inertia_v2",
+  "producer_commit": "da69a9cd44a8312cc7b97365faf5e09c27a646e2",
+  "native_child_exit_code": 1,
+  "original_run_files_sha256": {
+    "native_stdout_stderr.log": "8b240ea31137f5ad8e1d6a0d233362b7abb2e20f858cc14ddfa2264500b3d610",
+    "launch_source.py": "89cbd77d9527bb076fa2a03f06a6f4dfde36e26a3e9b4ad92861be99b0196d53",
+    "verify_sources.py": "d7d8928e81660ea3d85d1a1d4092fc71ad5cb705df95ed11fd1fab2c5af740f8",
+    "native_feedback_force_history.npz": "4a3bba9294cb1b06a0d2b64abacc3d30944ebea9088f19b3eb913ca5907ae9dd",
+    "left_pad_force_history.npz": "b193475b8353f6dbe707b2dbb33a89f09019c437ee969ab3bf84f919f565d625",
+    "run_publication_identity_after.json": "481b930e3dadaddd54240ea9548f5decdb98abfdad9c41db05871c84cf5ccaa3",
+    "supported_scene.zip": "94c46ba45fe534f822e04ef42f1e820597d1c6bef38015b74af82d6c2b002d93",
+    "manifest.json": "43debcef1754273f14cf7a14e3beb8a30bfbe73532ce5e08e42a755c68fe8b00",
+    "table_support_force_history.npz": "487b7d8b79412115283752481cd16006b162a03d6c264044e33cf6a29dbffafa",
+    "robot_inertia_command_history.npz": "f04d7fc02d88807833f1171626e47c12f02a3bd4d6ce010f9edbc6eec2296787",
+    "scene_source.py": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+    "controller_source.py": "6ac35d9c7094fed98a3084fe60ba12a0ce5bae96124d3bc91bd7f3074f3e5056",
+    "software_tests.log": "629e0b6b4721de07a21d9eadd4adbe573e8f0efc9fe20836eb6e4e0b0d06ace5",
+    "software_tests.json": "71e6d7b7a4688ae8a6e4588424f931b64f824e9552d3d792278ebe472b767be9",
+    "insertion_trace_partial.npz": "20b00a554bc1b04b161a80d208a63d872739bb94373f871850f61e42dde50dc7",
+    "insertion_trace.npz": "6639eff093a6f1ba5d26540ecb77ca9cdd05e9d48ca17eb56efde4e7b95d0678",
+    "engagement_observer_source.py": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "insertion_validation.json": "66ac364fd88a325c902945233dba24ef9f06de08a2ee11a50fe62c0d3dadb8fe",
+    "renderer_source.py": "a9f3fa23986cc0cd68e572eee2a3dc1bad11a67130fbea5a2d651eb0f21db5f7",
+    "run_publication_identity.json": "f98c6ba218d1c5d8503ac3d362a4a501de4fd99a8f1d87e4ee2e11a704f4c9c3",
+    "scene.xml": "b4d1e4002c4ede9b12881b6a99965e22d56e7253bf2115c10def36369adcce10",
+    "frozen_audit_sources/scripts/audit_m8_free_joint_properties.py": "8f95835b01c9f63aadb4ed972b0b64d657bade69a208f19eb6255faefe038d11",
+    "frozen_audit_sources/scripts/audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f",
+    "frozen_audit_sources/scripts/audit_m8_supported_trace.py": "4a8b018a1326bce540a0351d5d715ab58ffb505d2ae44be6d34aa8d8cd68fe3f",
+    "frozen_audit_sources/scripts/audit_m8_left_pad_force_history.py": "da14a09bacfdb97bd9fffc69ea504382f7e532f66ec42fa3ea41a0adf30571dc",
+    "frozen_audit_sources/thread_lab/runtime.py": "39646360b6f2add479e7017482a930415d3869dbf79d333b6c22e22c935b7ddd",
+    "recorded_sources/yam_twin/m8_supported_recording.py": "6e73eddfaa5e8113d34b5e2c4bf280f15a9d27bfba031960fa956ace5481f0bc",
+    "recorded_sources/yam_twin/m8_insertion_mechanics.py": "4d4ece4e8889c6b84d47c2569a67e4ad86a398cfd1b5a9e4f713e3c36307ac20",
+    "recorded_sources/yam_twin/m8_insertion_simulation.py": "561137525e6bb8a3adc55e99c86112ff3bf33e8173f4674957303a15d842c294",
+    "recorded_sources/yam_twin/kinematics.py": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+    "recorded_sources/yam_twin/m8_insertion_engagement.py": "d9530e53b5570a74c01de52fb8cf5261c0bc7b685427b7965f0d1b8c888ad866",
+    "recorded_sources/yam_twin/m8_supported_start.py": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51",
+    "recorded_sources/yam_twin/m8_robot_braking.py": "4bc45250cbf1aba271dad51df2781971e323735d631349afcc20ab311afa21c1",
+    "recorded_sources/yam_twin/m8_supported_scene.py": "3e221e6583500f6264e759c37ea0f8dd63235f0eec8292b49b34b19a028f7ff4",
+    "recorded_sources/yam_twin/m8_robot_inertia.py": "1f287d571ac8425bd71be9e29ad5679056a7dbd09c7f8c7d758cd813c8f3fa4a",
+    "recorded_sources/yam_twin/m8_supported_crest.py": "0f9bd4e13d85e4cb0e2319894c30163f869636f5dd9e634c149b0d7e5715f502",
+    "recorded_sources/yam_twin/m8_insertion_scene.py": "f79d8878e9f3bd661b89bd4472eeac91d994c71bd742f7d544c79fb9ff16680d",
+    "recorded_sources/yam_twin/m8_simulation.py": "c38a192be750caa3871755ce73ed3de0af1ea1fde31c54c1be02f0d031de5449",
+    "recorded_sources/yam_twin/m8_scene.py": "fc7cfc5a718704d13bd6218717a4d141716d554febff7cba0ff3e4343e194c8f"
+  },
+  "audit_files_sha256": {
+    "replay_source_identity_old_clone.json": "73c09e18edb23ef55280a7ee631fd964a247540bb5ec689fa9dc8e204baaa49f",
+    "supplemental_open_reset_contact_audit.json": "caa7ad3714640ab099bd23aa3fddfc91dc8806228dfe4603a7ed9d42a436a15d",
+    "independent_left_pad_force_history_audit.json": "f7e6c53a77e7cf358cf2ec3e7ea7fc1d74746d8b3324507b535686d17ae25fd4",
+    "independent_left_pad_force_history_audit_execution.json": "81bd50033190ce0c3e4959a9d51c1ad94058cf67d319079ec1142fd817a7dbcb",
+    "fresh_da69_open_reset_contact_audit_plan.md": "f2d4ee0ea23795465260aa467c79d1a4a74188a37069ff53f532bf8e7d5284d1",
+    "test_supplemental_open_reset_contact_audit.py": "4b2988e88dfedb8e4924cbd9d7018181c6fa6c85e0c035fc901d4ce944a7068a",
+    "replay_source_identity_old_clone.log": "73c09e18edb23ef55280a7ee631fd964a247540bb5ec689fa9dc8e204baaa49f",
+    "independent_supported_audit.json": "b795f6308a655019bff5f8aef64bac9829cc2b3a84cf9579ff0bc41ea22d4727",
+    "supplemental_reader_pure_proof.json": "fbf84ce6634e6c53329fa06c234e30a222f04d35bc4c00a780c9591f9e32adaf",
+    "supplemental_open_reset_contact_audit.py": "b714fed754d21b4a4684394802912b33b6f562b4e3936e90d70e3ad56fb23a0e",
+    "independent_free_joint_properties.log": "8f7048f85d8d5d508034fa98c36ad0b7260e9af6d15d5ac3b232603a88583cc3",
+    "independent_left_pad_force_history_audit.log": "d217274e58a76ec0d402fbaa82d56719dab977386fc6907744e567a00433dd72",
+    "supplemental_reader_pure_proof.log": "8fd41ea79a3ae0f68f48b30b48e9bb77ae3a11a51081c83c6f28be1f51febde4",
+    "source_identity_before.json": "73c09e18edb23ef55280a7ee631fd964a247540bb5ec689fa9dc8e204baaa49f",
+    "official_audit_execution_source.py": "18e860f5a95a28191777f805fc6f117dba03b7e553e5ddc9656963561b794cc2",
+    "independent_free_joint_properties_execution.json": "1674a72f6eebb9ccafc2e62d1d64f7a62c95c3dd9e7cdd07a9cefa236204d04b",
+    "independent_supported_audit.log": "39213853695863e0a66ee70f5df06239066726b5577b05f1df69b23d6ad4d944",
+    "replay_source_identity_old_clone_execution.json": "6fc25295776958143bc6c788700dd845b97f901c776ac2f5009ff21dc229f8fe",
+    "close_fresh_failure_audit_binding.py": "20404f9fffc613d902eaeddcb7472383534916d5d5d2145001bc27b4f239817d",
+    "independent_supported_audit_execution.json": "07d4e1c121bc37224ac30c71e015e8b526bbca13d8e3bead761e2ee5f9d4bd6c",
+    "source_identity_after.json": "73c09e18edb23ef55280a7ee631fd964a247540bb5ec689fa9dc8e204baaa49f",
+    "independent_free_joint_properties.json": "356e6881e2e72800fafd8993accdd09abc16a2e7e102b75db49b41d2dbf163cb",
+    "__pycache__/supplemental_open_reset_contact_audit.cpython-312.pyc": "0e44e0eabb84c16491a99bdd78029b1051e7aff05f59fa3c9a181a14267c0b92",
+    "__pycache__/test_supplemental_open_reset_contact_audit.cpython-312.pyc": "f0652c018a28d8823503411476dd630bf554288f98dd74a57b8cbd0854d6c5a5",
+    "geometry_review/geometry_only_review_execution.json": "44a8cce56b91575332bcb058b880f2c21981a9ba2a0e62179574b577f06ecdb2",
+    "geometry_review/review_reset_reachability.log": "3a316574f5ca0525159afec19fe54a377821f4486b677c5e1601864f6a67cc3b",
+    "geometry_review/manifest.json": "0b05df823cb5f25c500bd5eca1f4ac5e88931040b706a5a7770e1d4da75c8709",
+    "geometry_review/review_reset_reachability.py": "6dc40edef69c7d12450ab40f99bdaf64ccd2c607128c779ecdf434a0a9c81ea9",
+    "geometry_review/README.md": "ee6ad9af7c4f90a02f08a67a01cc0ae7caf5091acc4a143346f424bcf55a34a5",
+    "geometry_review/reset_reachability_report.json": "79ec32373c688a279b238fd6f0d9715e990ad64bf85d6f2db106f8aea6bd8ee6",
+    "geometry_review/first_endpoint_result.json": "ab3c771181faa5eb689609f12713faaf0daa6394608f2e946aca80014ca6a384",
+    "geometry_review/source_archive/full_c2_inertia_v2__controller_source.py": "6ac35d9c7094fed98a3084fe60ba12a0ce5bae96124d3bc91bd7f3074f3e5056",
+    "geometry_review/source_archive/yam_twin__m8_supported_start.py": "ffe021f74b879b91e961509d1b2b0071b7aadf8ff64b1329bf179d8f33758f51",
+    "geometry_review/source_archive/yam_twin__kinematics.py": "ded6989122b9a3b509cafafa0905de3bd30d9d17c4a6d1ae5e165081abdc4683",
+    "geometry_review/source_archive/m8_table_supported__render_full_c2_inertia_v2_closed.py": "1cc8b6f5ed75603ed83fc1a7387a6e33211253c30102a915f4f4000ca944b2a3",
+    "geometry_review/source_archive/scripts__audit_m8_insertion_trace.py": "2a26d0a8febf0aa27c9891decc5a87deda814744897928906fba75aa4ec81f1f"
+  },
+  "original_native_passed": false,
+  "original_native_partial": false,
+  "original_native_steps": 441657,
+  "original_native_final_time_s": 22.08285000017131,
+  "source_original_acceptance_checks": {
+    "completed_qualifying_turns": {
+      "passed": false
+    },
+    "picked_up_free_bolt": {
+      "passed": true,
+      "maximum_world_support_after_pickup": 0,
+      "sampled_minimum_closed_transport_pad_normals_N": [
+        15.516603038170373,
+        15.73969718802988
+      ]
+    },
+    "started_previously_separate_threads": {
+      "passed": false,
+      "engagement_time_s": null
+    },
+    "observed_metric_lead": {
+      "passed": false
+    },
+    "closed_turn_tracking": {
+      "passed": false
+    },
+    "contact_torque_turns_bolt": {
+      "passed": false
+    },
+    "open_reset_contact_decoupling": {
+      "passed": false
+    },
+    "passive_self_locking_during_open_reset": {
+      "passed": false,
+      "scope": "All-substep maximum yaw/axial drift only after declared formed-flank engagement; starting-cone resets are reported separately",
+      "angular_drift_limit_rad": 0.02,
+      "axial_drift_limit_m": 1e-05
+    },
+    "reported_sdf_depth_proxy": {
+      "passed": true,
+      "observed_peak_m": 1.2773003266906945e-06
+    },
+    "entry_alignment": {
+      "passed": true,
+      "peak_radial_m": 0.00010396887366983292,
+      "peak_tilt_rad": 0.003290858227662749
+    },
+    "left_grasp_retention": {
+      "passed": true,
+      "peak_translation_m": 2.8840843949104147e-06,
+      "peak_rotation_rad": 6.555706636329623e-05
+    },
+    "left_pad_contact_retention": {
+      "passed": true,
+      "sampled_minimum_loaded_pad_normals_N": [
+        15.96994963875138,
+        15.938040837373345
+      ]
+    },
+    "right_bolt_grasp_retention": {
+      "passed": true,
+      "peak_translation_m": 0.0002531742720036024,
+      "peak_rotation_slip_rad": 0.015335041675734245,
+      "scope": "Within each original bilateral loaded closed grasp; references end on intentional opening and are acquired again after real regrasp"
+    },
+    "block_stays_on_table": {
+      "passed": true,
+      "maximum_upward_lift_m": 0.0,
+      "maximum_translation_from_initial_m": 3.907925026742502e-06,
+      "maximum_rotation_from_initial_rad": 4.5756736091656426e-05,
+      "unexpected_world_contact_candidates": 0
+    },
+    "male_tip_clears_plain_table": {
+      "passed": true,
+      "minimum_observed_clearance_m": 0.013985580523454062,
+      "minimum_allowed_clearance_m": 0.001
+    },
+    "whole_shaft_clears_rest_before_lateral_transfer": {
+      "passed": true,
+      "minimum_measured_tip_above_highest_rest_m": 0.014938962992165204,
+      "minimum_allowed_clearance_m": 0.01,
+      "native_rest_top_world_z_m": 0.036,
+      "scope": "Lift completion and every native transport substep; no extra body actuation"
+    },
+    "native_unexpected_collision_clearance": {
+      "passed": true,
+      "peak_native_signed_penetration_m": 0.0,
+      "native_depth_limit_m": 1e-06,
+      "scope": "Every native solved substep; intended table/block, pads/workpieces, thread and pre-pickup bolt-rest contacts are declared separately"
+    },
+    "free_objects_have_no_external_drive": {
+      "passed": true
+    },
+    "native_joint_limits": {
+      "passed": true,
+      "minimum_observed_margin_rad": 0.017304900770631404
+    },
+    "no_solver_or_state_abort": {
+      "passed": false
+    },
+    "all_substep_left_pad_contact_retention": {
+      "passed": true,
+      "observer": "native-bilateral-pad-load-v1",
+      "minimum_loaded_force_N": 0.1,
+      "observed_physics_steps": 408658,
+      "observed_duration_s": 20.432900000116536,
+      "minimum_normal_force_N": [
+        15.959869143281928,
+        15.836516816145437
+      ],
+      "unloaded_physics_steps": [
+        0,
+        0
+      ],
+      "unloaded_duration_s": [
+        0.0,
+        0.0
+      ],
+      "maximum_consecutive_unloaded_duration_s": [
+        0.0,
+        0.0
+      ],
+      "continuously_bilateral_loaded": true,
+      "scope": "Every physics substep at and after the end of settle_left_block; no lift or physical roll is commanded"
+    },
+    "both_hands_start_separate_from_workpieces": {
+      "passed": true,
+      "initial_left_block_hand_contacts": 0,
+      "initial_right_bolt_hand_contacts": 0
+    },
+    "table_bears_block_weight_before_bolt_pickup": {
+      "passed": true,
+      "left_stabilization_time_s": 1.6500000000012698,
+      "settled_table_load_window": {
+        "observer": "native-supported-block-load-window-v1",
+        "ready": true,
+        "required_window_s": 0.1,
+        "observed_window_s": 0.10004999999999714,
+        "block_weight_N": 0.9987972925280899,
+        "minimum_mean_table_weight_fraction": 0.9,
+        "maximum_mean_positive_hand_upward_weight_fraction": 0.1,
+        "minimum_loaded_table_duty": 0.99,
+        "mean_table_upward_force_N": 0.9895282468139129,
+        "mean_positive_hand_upward_force_N": 0.009269001465986838,
+        "loaded_table_substep_duty": 1.0,
+        "final_table_upward_force_N": 0.9896497437533301,
+        "scope": "No-bolt settled stabilization: original native table force bears block weight; contact candidates alone do not establish support"
+      },
+      "scope": "Pre-bolt no-lift stabilization: >=90% mean block weight on table, <=10% mean positive hand upward load, >=99% loaded table duty over >=100 ms"
+    },
+    "all_substep_table_load_retention": {
+      "passed": true,
+      "observed_physics_steps": 408658,
+      "minimum_table_upward_force_N": 0.9885933090261163,
+      "minimum_loaded_table_upward_force_N": 0.099879729252809,
+      "unloaded_physics_steps": 0,
+      "unloaded_duration_s": 0.0,
+      "maximum_consecutive_unloaded_duration_s": 0.0,
+      "scope": "Every original native substep after stabilization acquisition; brief gaps remain failures"
+    },
+    "table_bears_weight_throughout_active_task": {
+      "passed": true,
+      "observed_active_windows": 408658,
+      "failed_active_trailing_windows": 0,
+      "trailing_window_s": 0.1,
+      "minimum_mean_table_weight_fraction": 0.9904698525550947,
+      "maximum_mean_positive_hand_upward_weight_fraction": 0.009530190335387902,
+      "minimum_loaded_table_duty": 1.0,
+      "final_window": {
+        "observer": "native-supported-block-load-window-v1",
+        "ready": true,
+        "required_window_s": 0.1,
+        "observed_window_s": 0.10004999999999714,
+        "block_weight_N": 0.9987972925280899,
+        "minimum_mean_table_weight_fraction": 0.9,
+        "maximum_mean_positive_hand_upward_weight_fraction": 0.1,
+        "minimum_loaded_table_duty": 0.99,
+        "mean_table_upward_force_N": 3.261827619108832,
+        "mean_positive_hand_upward_force_N": 5.052004557708725e-18,
+        "loaded_table_substep_duty": 1.0,
+        "final_table_upward_force_N": 4.54325057688826,
+        "scope": "No-bolt settled stabilization: original native table force bears block weight; contact candidates alone do not establish support"
+      },
+      "scope": "Every active trailing original-force window, including pickup/entry/turn/reset/regrasp; same90%table/10%positive-hand-up/99%duty thresholds as stabilization, without hiding transient load sharing"
+    },
+    "native_cone_entry_acquired_before_rotation": {
+      "passed": true,
+      "acquisition_time_s": 11.494649999979881,
+      "scope": "Settled native lead-in load only; does not qualify formed-flank capture"
+    },
+    "native_starting_support_before_searching_open": {
+      "passed": true,
+      "maximum_dwell_s": 10.0,
+      "failed_acquisition": null,
+      "scope": "Every searching release/open reset must have measured settled native thread-pair support; pre-release acquisition timeout retains closed jaws"
+    }
+  },
+  "source_original_passed_checks": 19,
+  "source_original_total_checks": 27,
+  "official_independent_passed": false,
+  "official_independent_passed_checks": 13,
+  "official_independent_total_checks": 19,
+  "supplemental_reader_source_sha256": "b714fed754d21b4a4684394802912b33b6f562b4e3936e90d70e3ad56fb23a0e",
+  "supplemental_pure_tests_passed": 10,
+  "official_auditor_source_sha256": "4a8b018a1326bce540a0351d5d715ab58ffb505d2ae44be6d34aa8d8cd68fe3f",
+  "replay_repository_root": "/workspace/astra-r2s-supported-v5-development",
+  "replay_clone_git_head": "9dc4d5e9044c35a2c5436dbd19973112e79e8cb2",
+  "replay_source_identity_sha256": "73c09e18edb23ef55280a7ee631fd964a247540bb5ec689fa9dc8e204baaa49f",
+  "current_repository_scope": "Current root may advance its separately tested CLI. All74 original-da69 producer bytes remain exact in the declared old source clone; clone Git HEAD is explicitly distinct from native producer commit. Existing creation-time official before/after identities remain unchanged.",
+  "geometry_review_scope": "Separate archived12-artifact geometry-only review of exact saved states and three65-point sampled complete-orbit target branches. No all-clock reachability, native dynamic tracking, collision/force solve or actuation/capture qualification.",
+  "closure_scope": "closed means original native process and audits have finished, not that the trajectory succeeded. Original nonzero exit,19/27 native and13/19 independent acceptance outcome, final zero-hand-contact guard failure and unexecuted regrasp/full-capture/reset qualification are retained.",
+  "physics_review_scope": "Official exact-source audits verify all-step loads/guards/native FF/cache/control arithmetic and passive properties. Supplemental10 pure regressions and selected original-array analysis quantify the sole actual fully-open pad recontact and finite PD tracking/saturation. No fresh run data was read and no native integration or force replay was performed by the supplemental reader.",
+  "timing_scope": "Saved post-q/v at t; original solved contact forces/geometry t-dt; original retained command pose/velocity t-2dt after startup. Original retained6.82512mm error and independently checked saved-post6.82718mm target discrepancy are distinct."
+}

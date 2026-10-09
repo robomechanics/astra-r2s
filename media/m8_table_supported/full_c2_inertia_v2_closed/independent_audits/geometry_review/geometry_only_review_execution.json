@@ -1,0 +1,19 @@
+{
+  "schema": "closed-reset-geometry-only-execution-v1",
+  "completed": true,
+  "native_process_exit_code": 0,
+  "original_native_run_exit_code": 1,
+  "original_native_report_passed": false,
+  "script_sha256": "6dc40edef69c7d12450ab40f99bdaf64ccd2c607128c779ecdf434a0a9c81ea9",
+  "report_sha256": "79ec32373c688a279b238fd6f0d9715e990ad64bf85d6f2db106f8aea6bd8ee6",
+  "log_sha256": "3a316574f5ca0525159afec19fe54a377821f4486b677c5e1601864f6a67cc3b",
+  "original_input_hashes_before_after_equal": true,
+  "compiled_archived_model": true,
+  "geometry_only_clock_points": 195,
+  "independent_warm_sweeps": 3,
+  "forbidden_native_call_count": 0,
+  "dynamics_step_count": 0,
+  "collision_or_force_solve_count": 0,
+  "simulator_test_count": 0,
+  "scope": "Executed geometry-only archived model compilation and original ArmIK/FK; recorded endpoint and planned sampled orbit comparison. Residuals do not certify native motor tracking, collision clearance, continuous all-clock reach, thread capture or physics success."
+}

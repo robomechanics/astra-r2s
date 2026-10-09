@@ -1,0 +1,32 @@
+Multiple -pix_fmt options specified for stream 0, only the last option '-pix_fmt yuv420p' will be used.
+{
+  "mode": "closed_native",
+  "frames": 265,
+  "encoded_video_duration_s": 22.083333333333332,
+  "gif_duration_ms": 22080,
+  "native_last_time_s": 22.08285000017131,
+  "trajectory_sha256": "6639eff093a6f1ba5d26540ecb77ca9cdd05e9d48ca17eb56efde4e7b95d0678",
+  "media_sha256": {
+    "demo.mp4": "b0f258560980ab72a78e38ab42345b71dd7e78d68e68497c3ff82bae03b8a6ae",
+    "demo.gif": "c03d58ece39a3eac74ca9033766f9d37fd2a9b44ee0cc6ae416e41b5e8bb61cb",
+    "demo.png": "3f346c75db7ffd506dae599272171e1ccffd6285ac6a7a9d5f91299b43464606",
+    "initial_state.png": "4d0166918eeebdfa85000c29eed25ba478ac64d69053f3e51233edefb9d87e43",
+    "left_stabilized.png": "b4e0fc1c996b8cb30469fa8cbdf8b086ad44276ea688b7556143c9754eba95a7",
+    "bolt_grasped.png": "196930d7b632494ba0fa6fb9ba4d638d601f2e055cf2064b87d291a27c363771",
+    "bolt_lifted.png": "2ea5d363d8259a8336a51ca1dadf33587541db86a4d80ed7f302ce67b5e7dfe6",
+    "bolt_aligned.png": "5227633bcd137d5df2ca723c1207ff4a77ca61b88b53a08c7ee55f3cffff5463",
+    "direction_stopped.png": "627d7ee34b035426fa8d64ca9e6b5a986948cf239e919b14e6fcd30aa5969119",
+    "phase_stop_start_1.png": "7587ef35aa0377c1ee8843bf2d1315c42683666b1ee9b438c1a15b877f76d931",
+    "phase_open_settle_search_2.png": "09f86b91ed74c2d60c59b45a2952422bbdbafd87583f8c324fb5872961671aed",
+    "phase_reset_open_search_2.png": "3f346c75db7ffd506dae599272171e1ccffd6285ac6a7a9d5f91299b43464606",
+    "first_contact_free_open_settle.png": "deda683953bfe195e737e53b37bf17dcae95e712bd5e2e278f6fb80e03165f18",
+    "first_ready_open_settle.png": "09f86b91ed74c2d60c59b45a2952422bbdbafd87583f8c324fb5872961671aed",
+    "first_forward_stopped.png": "7587ef35aa0377c1ee8843bf2d1315c42683666b1ee9b438c1a15b877f76d931",
+    "endpoint_detail.png": "b9a17c8390db89d0327b44132b580fe90e27a4c7cd1b5e9934fa0f83014c4825",
+    "initial_state_detail.png": "f0a02a3f4d83363d7ecb19ee978e392c6119c43ccdc86d9ba007ead598fa0003",
+    "first_contact_free_open_settle_detail.png": "d0d9b165810c0e1d2d0e2478dccd7bb6b180551f2ac82314ee389a727cecd87a",
+    "first_ready_open_settle_detail.png": "cb9e8924850af400a801610c93e2b5230daeb06577069e4240012e1387a2e3e5",
+    "first_forward_stopped_detail.png": "425bf74c208bfd406308211738738ebf60ea49e340e996867fa622c2a071948a",
+    "left_stabilized_detail.png": "e034fc2190b4cac8fbbb4c8b489d50ed2930effe91a95881cfe4e5beb9ee3856"
+  }
+}

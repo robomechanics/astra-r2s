@@ -168,7 +168,33 @@ and passive-property reports pass only their executed scopes. Supplemental
 binding `4be80e698c07137d6182dffa297586af18084569d594b4dc49f47ef187f9e605`
 is frozen, covering 39 original native files and 36 derivative audit files.
 Its ten pure reader regressions are separate from the 672-test producer proof.
-The complete failed media/evidence packet is being packaged.
+The [complete closed failed packet](../media/m8_table_supported/full_c2_inertia_v2_closed/README.md)
+is frozen: **213 reconstructed artifacts / 232 stored files / 231 checksum
+entries**, including all **39 original native files**, **36 derivative audit
+files plus the binder**, and the complete **80-file** software packet.
+SHA256SUMS identity is
+`4fcc9100fea1f114de01d27db807f6d05129c5a67b1838b3a8b98a79e7203506`;
+manifest SHA is
+`fa4abb42894b1025f20c283f3c141d7a3d69c44ffa21451902e7261e05c5ad43`.
+Its 812,281,746 bytes use lossless stored chunks of at most 45,000,000 bytes.
+No original force/state bytes, acceptance failures or unexecuted stages change.
+
+[Normal 1× GIF](../media/m8_table_supported/full_c2_inertia_v2_closed/render/demo.gif),
+[MP4](../media/m8_table_supported/full_c2_inertia_v2_closed/render/demo.mp4),
+[actual abort detail](../media/m8_table_supported/full_c2_inertia_v2_closed/render/endpoint_detail.png)
+and [dense reset-tracking plot](../media/m8_table_supported/full_c2_inertia_v2_closed/execution_provenance/media_execution/failure_plots/open_reset_tracking_failure.png)
+retain the failed motion. The media selects **265 exact states at 12 fps**
+(22.083333 s MP4 / 22,080 ms GIF), with **19 exact-state stills** and no
+interpolation. The first saved contact-free open still at 20.70085 s is
+separate from the later ready100ms state; media-review pass is not reset success.
+Use its [complete isolated-copy/original-layout recipe](../media/m8_table_supported/full_c2_inertia_v2_closed/README.md#isolated-sourceruntime-and-original-layout-handoff)
+and [strict geometry-only replay recipe](../media/m8_table_supported/full_c2_inertia_v2_closed/README.md#geometry-only-recorded-state-replay).
+They pin da69, restore all original filenames and frozen companion files,
+guard received helper copies, recompute recipient identity SHA and verify
+explicit source/runtime/audit/replay-plugin anchors before rendering. Replay
+integrates no motion and recreates no native forces. The supplied replay
+plugin binary is an explicit anchor, not an inferred original native binary.
+
 The older failed full run and all cold branches below retain their original
 producer/evidence identities; no cold state is stitched into this attempt.
 
@@ -229,9 +255,9 @@ scripts/run_m8.sh -m yam_twin.m8_supported_demo --output outputs/m8_table_suppor
 
 It uses the original default 4 rad/s reset. This repeats a failed-capable
 fresh native experiment, not a successful assembly or recorded-state replay.
-The complete closed package/portable geometry-only recipe is being prepared;
-its exact original source/runtime/audit identities must remain distinct from
-the current reset-speed2 launch. No future evidence link is assumed.
+Use the closed packet's [serial official audit commands](../media/m8_table_supported/full_c2_inertia_v2_closed/README.md#serial-official-audits-after-closure)
+only after complete restoration. Its exact original source/runtime/audit
+identities remain distinct from the current reset-speed2 launch.
 
 ## Historical 6e7d0d2 outcome and proof scope
 

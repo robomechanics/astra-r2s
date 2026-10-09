@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "tests_passed": 10,
+  "exit_code": 0,
+  "wall_seconds": 0.15830070100491866,
+  "source_sha256_before": {
+    "supplemental_open_reset_contact_audit.py": "b714fed754d21b4a4684394802912b33b6f562b4e3936e90d70e3ad56fb23a0e",
+    "test_supplemental_open_reset_contact_audit.py": "4b2988e88dfedb8e4924cbd9d7018181c6fa6c85e0c035fc901d4ce944a7068a"
+  },
+  "source_sha256_after": {
+    "supplemental_open_reset_contact_audit.py": "b714fed754d21b4a4684394802912b33b6f562b4e3936e90d70e3ad56fb23a0e",
+    "test_supplemental_open_reset_contact_audit.py": "4b2988e88dfedb8e4924cbd9d7018181c6fa6c85e0c035fc901d4ce944a7068a"
+  },
+  "all_sources_unchanged": true,
+  "log_sha256": "8fd41ea79a3ae0f68f48b30b48e9bb77ae3a11a51081c83c6f28be1f51febde4",
+  "scope": "Pure supplemental first-open-contact/count/phase-clock/cap/uncapped-PD decomposition regressions. Separate from original672 native-controller software proof; no native import, compile, collision/force solve or integration."
+}

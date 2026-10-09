@@ -1,0 +1,22 @@
+{
+  "command": [
+    "scripts/run_m8.sh",
+    "scripts/audit_m8_supported_trace.py",
+    "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2/insertion_trace.npz",
+    "--output",
+    "/workspace/astra-r2s/outputs/m8_table_supported/full_c2_inertia_v2_audits/independent_supported_audit.json"
+  ],
+  "cwd": "/workspace/astra-r2s",
+  "started_utc": "2026-10-09T14:14:47.747249+00:00",
+  "finished_utc": "2026-10-09T14:15:42.150199+00:00",
+  "wall_seconds": 54.40300756400393,
+  "exit_code": 0,
+  "original_native_child_exit_code": 1,
+  "auditor_source_sha256_before_after": "4a8b018a1326bce540a0351d5d715ab58ffb505d2ae44be6d34aa8d8cd68fe3f",
+  "log_sha256": "39213853695863e0a66ee70f5df06239066726b5577b05f1df69b23d6ad4d944",
+  "report_sha256": "b795f6308a655019bff5f8aef64bac9829cc2b3a84cf9579ff0bc41ea22d4727",
+  "original_after_sha256": "481b930e3dadaddd54240ea9548f5decdb98abfdad9c41db05871c84cf5ccaa3",
+  "original_trace_sha256": "6639eff093a6f1ba5d26540ecb77ca9cdd05e9d48ca17eb56efde4e7b95d0678",
+  "execution_wrapper_sha256": "18e860f5a95a28191777f805fc6f117dba03b7e553e5ddc9656963561b794cc2",
+  "scope": "Original frozen auditor, read-only derivative; native failure retained. No trajectory reintegration or original-file rewrite."
+}
