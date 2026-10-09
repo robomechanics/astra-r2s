@@ -1,9 +1,10 @@
 """Actual YAM acquisition and thread starting for a separately resting M8 bolt.
 
 The only writes during integration are native arm and finger motor controls.
-The free bolt starts on a declared rest. The female thread moves with the free
-block held by the left hand. Thread engagement has an axial force command, with
-no depth, pitch, or bolt-position servo along the insertion axis.
+The free bolt starts on a declared rest. In table-pickup mode the left arm
+reaches, grasps, lifts and physically rolls the separately resting free block
+before the right arm acquires the bolt. Thread engagement has an axial force
+command, with no depth, pitch, or bolt-position servo along the insertion axis.
 """
 from __future__ import annotations
 
@@ -27,39 +28,153 @@ from .m8_insertion_mechanics import (fully_formed_flank_interval,
 from .m8_insertion_engagement import LoadedFlankWindow
 
 
+class PadLoadHistory:
+    """Observe native pad-force gaps at every physics step without actuation."""
+
+    version = "native-bilateral-pad-load-v1"
+
+    def __init__(self, minimum_loaded_force_N=.1):
+        if not np.isfinite(minimum_loaded_force_N) or minimum_loaded_force_N <= 0:
+            raise ValueError("Loaded-pad threshold must be positive and finite")
+        self.threshold = float(minimum_loaded_force_N)
+        self.minimum = np.full(2, np.inf)
+        self.unloaded_steps = np.zeros(2, dtype=np.int64)
+        self.unloaded_duration = np.zeros(2)
+        self.current_gap = np.zeros(2)
+        self.maximum_gap = np.zeros(2)
+        self.observations = 0
+        self.duration = 0.
+
+    def observe(self, pad_normal_force_N, timestep_s):
+        forces = np.asarray(pad_normal_force_N, dtype=float)
+        if forces.shape != (2,) or not np.isfinite(forces).all() or not np.isfinite(timestep_s) or timestep_s <= 0:
+            raise ValueError("Pad-load observation needs two finite forces and a positive timestep")
+        unloaded = forces <= self.threshold
+        self.minimum = np.minimum(self.minimum, forces)
+        self.unloaded_steps += unloaded
+        self.unloaded_duration += unloaded*timestep_s
+        self.current_gap = np.where(unloaded, self.current_gap+timestep_s, 0.)
+        self.maximum_gap = np.maximum(self.maximum_gap, self.current_gap)
+        self.observations += 1
+        self.duration += timestep_s
+
+    def report(self):
+        return {"observer": self.version, "minimum_loaded_force_N": self.threshold,
+                "observed_physics_steps": self.observations,
+                "observed_duration_s": self.duration,
+                "minimum_normal_force_N": self.minimum.tolist() if self.observations else None,
+                "unloaded_physics_steps": self.unloaded_steps.tolist(),
+                "unloaded_duration_s": self.unloaded_duration.tolist(),
+                "maximum_consecutive_unloaded_duration_s": self.maximum_gap.tolist(),
+                "continuously_bilateral_loaded": bool(self.observations and not self.unloaded_steps.any())}
+
+
+def _pad_normal_forces(model, data, body, pad_geoms, *, with_compliance=False):
+    """Sum native solved forces for each pad against the full rigid subtree."""
+    pads = {int(geom): i for i, geom in enumerate(pad_geoms)}
+    root = int(model.body_weldid[body])
+    result = np.zeros(2)
+    weighted_indentation = np.zeros(2)
+    loaded_force = np.zeros(2)
+    contacts = []
+    force = np.zeros(6)
+    for i in range(data.ncon):
+        c = data.contact[i]
+        g1, g2 = int(c.geom1), int(c.geom2)
+        if g1 in pads and int(model.body_weldid[int(model.geom_bodyid[g2])]) == root:
+            pad = g1
+        elif g2 in pads and int(model.body_weldid[int(model.geom_bodyid[g1])]) == root:
+            pad = g2
+        else:
+            continue
+        mujoco.mj_contactForce(model, data, i, force)
+        result[pads[pad]] += float(force[0])
+        if with_compliance:
+            normal = float(force[0])
+            if normal > .1:
+                weighted_indentation[pads[pad]] += normal*max(-float(c.dist), 0.)
+                loaded_force[pads[pad]] += normal
+            contacts.append({"pad": model.geom(pad).name,
+                "signed_distance_m": float(c.dist), "normal_force_N": normal,
+                "normal_solref": c.solref.tolist(),
+                "friction_solref": c.solreffriction.tolist(),
+                "solimp": c.solimp.tolist()})
+    if with_compliance:
+        indentation = [float(weighted_indentation[i]/loaded_force[i])
+                       if loaded_force[i] else None for i in range(2)]
+        stiffness = [float(loaded_force[i]/indentation[i])
+                     if indentation[i] is not None and indentation[i] > 0 else None
+                     for i in range(2)]
+        return {"normal_force_N": result.tolist(),
+                "loaded_force_weighted_indentation_m": indentation,
+                "effective_pad_force_per_indentation_N_per_m": stiffness,
+                "contacts": contacts,
+                "scope": "Native signed distances and solved forces at acquisition end-settle; effective force/indentation is a model observation, not material modulus or hardware calibration"}
+    return result
+
+
+def _relative_axial_velocity(site_position, site_linear_velocity, hole_position,
+                             hole_spatial_velocity, axis_world):
+    """Hand speed along the axis relative to a moving hole's rigid frame."""
+    hole_velocity_at_hand = (np.asarray(hole_spatial_velocity)[3:] +
+        np.cross(np.asarray(hole_spatial_velocity)[:3],
+                 np.asarray(site_position)-np.asarray(hole_position)))
+    axis = np.asarray(axis_world, dtype=float)
+    axis = axis/np.linalg.norm(axis)
+    return float(np.dot(np.asarray(site_linear_velocity)-hole_velocity_at_hand, axis))
+
+
 @dataclass(frozen=True)
 class InsertionControlConfig:
     arm: YamM8ControlConfig = YamM8ControlConfig()
     pickup_hover_m: float = .020
+    left_pickup_hover_m: float = .075
+    left_lift_clearance_m: float = .060
     transport_tip_clearance_m: float = .015
     entry_tip_clearance_m: float = .00075
     block_lift_m: float = .004
     net_axial_feed_N: float = .050
+    axial_velocity_damping_Ns_per_m: float = 0.
     maximum_starting_strokes: int = 8
     qualifying_turns: int = 2
     sample_period_s: float = .005
     full_flank_contact_streak_s: float = .20
 
     def __post_init__(self):
-        values = (self.pickup_hover_m, self.transport_tip_clearance_m,
+        values = (self.pickup_hover_m, self.left_pickup_hover_m,
+                  self.left_lift_clearance_m, self.transport_tip_clearance_m,
                   self.entry_tip_clearance_m, self.block_lift_m,
                   self.net_axial_feed_N, self.sample_period_s,
                   self.full_flank_contact_streak_s)
         if not np.isfinite(values).all() or min(values) <= 0:
             raise ValueError("Insertion clearances, load, and sample interval must be positive")
+        if (not np.isfinite(self.axial_velocity_damping_Ns_per_m)
+                or self.axial_velocity_damping_Ns_per_m < 0):
+            raise ValueError("Axial velocity damping must be nonnegative and finite")
         if self.qualifying_turns < 1 or int(self.qualifying_turns) != self.qualifying_turns:
             raise ValueError("At least one complete lead-qualification turn is required")
         if self.maximum_starting_strokes < 1 or int(self.maximum_starting_strokes) != self.maximum_starting_strokes:
             raise ValueError("Starting stroke count must be a positive integer")
 
 
-def insertion_phases(config: InsertionControlConfig):
+def insertion_phases(config: InsertionControlConfig, *, pickup_from_table=False):
     """Named phases, durations, hand stroke endpoints, jaw endpoints, and float."""
     c = config.arm
     stroke = c.stroke_angle_rad
     turn_duration = 1.875 * stroke / c.angular_speed_rad_s
     reset_duration = 1.875 * stroke / c.reset_speed_rad_s
-    phases = [
+    phases = []
+    if pickup_from_table:
+        phases.extend([
+            ("settle_table", .20, 0., 0., c.open_aperture, c.open_aperture, False),
+            ("reach_left_block", .90, 0., 0., c.open_aperture, c.open_aperture, False),
+            ("close_left_block", .25, 0., 0., c.open_aperture, c.open_aperture, False),
+            ("settle_left_block", .15, 0., 0., c.open_aperture, c.open_aperture, False),
+            ("lift_left_block", .90, 0., 0., c.open_aperture, c.open_aperture, False),
+            ("transport_left_block", 3.00, 0., 0., c.open_aperture, c.open_aperture, False),
+            ("hold_left_block", .15, 0., 0., c.open_aperture, c.open_aperture, False),
+        ])
+    phases.extend([
         ("secure_left", .25, 0., 0., c.open_aperture, c.open_aperture, False),
         ("reach_bolt", .55, 0., 0., c.open_aperture, c.open_aperture, False),
         ("close_bolt", .25, 0., 0., c.open_aperture, c.closed_aperture, False),
@@ -70,7 +185,7 @@ def insertion_phases(config: InsertionControlConfig):
         ("feed_to_entry", .25, 0., 0., c.closed_aperture, c.closed_aperture, True),
         ("start_thread_1", turn_duration, 0., stroke, c.closed_aperture, c.closed_aperture, True),
         ("stop_start_1", .12, stroke, stroke, c.closed_aperture, c.closed_aperture, True),
-    ]
+    ])
     for tag, turn_label, stop_label in [
             (f"search_{i}", f"start_thread_{i}", f"stop_start_{i}")
             for i in range(2, config.maximum_starting_strokes + 1)] + [
@@ -93,11 +208,14 @@ def initialize_insertion_pose(model, data, scene, control):
     from .m8_scene import jaw_positions, left_touch_aperture
     from .m8_insertion_scene import initial_left_grasp_position, left_grasp_rotation
     base = scene.base
+    table_pickup = bool(getattr(scene, "pickup_from_table", False))
     for side in ("left", "right"):
         ids = [model.joint(f"{side}_joint{i}").id for i in range(1, 7)]
         data.qpos[model.jnt_qposadr[ids]] = HOME
-        aperture = left_touch_aperture(base) if side == "left" else control.arm.open_aperture
-        requested = control.arm.left_closed_aperture if side == "left" else aperture
+        aperture = (left_touch_aperture(base) if side == "left" and not table_pickup
+                    else control.arm.open_aperture)
+        requested = (control.arm.left_closed_aperture if side == "left" and not table_pickup
+                     else aperture)
         for finger, q, command in zip(("left", "right"), jaw_positions(aperture, base),
                                       jaw_positions(requested, base)):
             data.qpos[model.joint(f"{side}_{finger}_finger").qposadr[0]] = q
@@ -107,7 +225,11 @@ def initialize_insertion_pose(model, data, scene, control):
     bolt_r = data.xmat[bolt].reshape(3, 3).copy()
     pickup = data.xpos[bolt] + bolt_r @ [0., 0., -scene.head_height / 2]
     right_r = bolt_r @ Rotation.from_euler("z", np.pi / 2).as_matrix()
-    targets = {"left": (initial_left_grasp_position(scene), left_grasp_rotation(scene)),
+    left_r = left_grasp_rotation(scene)
+    left_p = initial_left_grasp_position(scene)
+    if table_pickup:
+        left_p = left_p-left_r[:, 2]*control.left_pickup_hover_m
+    targets = {"left": (left_p, left_r),
                "right": (pickup + [0., 0., control.pickup_hover_m], right_r)}
     for side, (p, r) in targets.items():
         ik = ArmIK(model, side)
@@ -152,9 +274,13 @@ def formed_flank_overlap(relative, relative_r, thread):
 def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                        control_config=None, maximum_phases=None):
     """Acquire, carry, align, start, and turn using actual bounded robot motors."""
-    from .m8_insertion_scene import InsertionConfig, build_model, scene_xml, scene_fingerprint
+    from .m8_insertion_scene import (InsertionConfig, build_model, scene_xml,
+                                   scene_fingerprint, holding_block_position,
+                                   holding_block_rotation, initial_left_grasp_position)
     scene = scene_config or InsertionConfig()
-    control = control_config or InsertionControlConfig()
+    table_pickup = bool(getattr(scene, "pickup_from_table", False))
+    control = (control_config if control_config is not None else
+               InsertionControlConfig(axial_velocity_damping_Ns_per_m=50. if table_pickup else 0.))
     runtime = require_micron_engine()
     model = build_model(scene)
     data = mujoco.MjData(model)
@@ -172,11 +298,27 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
     right, left = controllers["right"], controllers["left"]
     hole_initial_r = data.xmat[hole_id].reshape(3, 3).copy()
     hole_initial_p = data.xpos[hole_id].copy()
-    hand_relative_r = hole_initial_r.T @ right_initial_r
+    held_block_p = holding_block_position(scene)
+    held_block_r = holding_block_rotation(scene)
+    held_hole_p = held_block_p + held_block_r @ np.asarray(scene.hole_offset)
+    held_hole_r = held_block_r @ np.diag([1., -1., -1.])
+    hand_relative_r = (held_hole_r if table_pickup else hole_initial_r).T @ right_initial_r
     left_p0, left_r0 = initial["left"]
     block_p0 = data.xpos[block_id].copy()
     left_grip_p = left_r0.T @ (data.xpos[block_id] - left_p0)
     left_grip_r = left_r0.T @ data.xmat[block_id].reshape(3, 3)
+    left_pickup_p = initial_left_grasp_position(scene)
+    left_lift_p = left_pickup_p + [0., 0., control.left_lift_clearance_m]
+    left_hold_p = held_block_p + held_block_r @ np.asarray(scene.base.left_grasp_offset)
+    left_hold_p = left_hold_p + [0., 0., control.block_lift_m]
+    left_hold_r = held_block_r @ data.xmat[block_id].reshape(3, 3).T @ left_r0
+    left_grasp_acquired = not table_pickup
+    left_acquisition_time = None
+    left_lift_verified_time = None
+    left_acquisition_pad_normals = None
+    initial_left_block_contacts = _body_contact(model, data, block_id, left.hand_geom_ids)
+    initial_right_bolt_contacts = _body_contact(model, data, bolt_id, right.hand_geom_ids)
+    initial_block_support = _body_contact(model, data, block_id)["world_support_contacts"]
     mass = float(model.body_mass[bolt_id])
     thread = scene.base.thread
     female_half_height = scene.base.block_size[2] / 2
@@ -190,23 +332,33 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
     male_tip_chamfer_m = .000956
     full_flank_overlap_m = male_tip_chamfer_m + female_full_profile_chamfer_m + thread.pitch
     pickup_lift_goal = pickup.copy()
-    pickup_lift_goal[2] = (hole_initial_p[2] + control.block_lift_m + female_half_height +
+    pickup_lift_goal[2] = ((held_hole_p if table_pickup else hole_initial_p)[2]
+                           + control.block_lift_m + female_half_height +
                            shaft_and_half_head + control.transport_tip_clearance_m)
     tip_local = np.array([0., 0., thread.bolt_length])
-    phases = insertion_phases(control)
+    phases = insertion_phases(control, pickup_from_table=table_pickup)
     selected = phases if maximum_phases is None else phases[:maximum_phases]
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     start_wall = time.perf_counter()
     rows, times, positions, velocities, controls, summaries = [], [], [], [], [], []
     metadata = {
-        "description": "Actual YAM picks up a free bolt, carries it over a female M8 block, and starts the thread",
+        "description": ("Actual YAM picks up both free workpieces from declared table/rest support, carries them, and starts the M8 thread"
+                        if table_pickup else "Actual YAM picks up a free bolt, carries it over a female M8 block, and starts the thread"),
         "scene_config": asdict(scene), "control_config": asdict(control), "runtime": runtime,
         "starts_preengaged": False, "starts_grasp_ready": False,
-        "block_starts_left_touching": True, "bolt_starts_on_declared_fixed_rest": True,
+        "block_starts_left_touching": not table_pickup,
+        "block_starts_on_table": table_pickup,
+        "initial_left_block_hand_contacts": initial_left_block_contacts,
+        "initial_right_bolt_hand_contacts": initial_right_bolt_contacts,
+        "initial_block_world_support_contacts": initial_block_support,
+        "left_acquisition_reference_scope": ("Frozen at end of settle_left_block after actual bilateral loaded pad contact"
+                                             if table_pickup else "Initial touching grasp pose"),
+        "bolt_starts_on_declared_fixed_rest": True,
         "model_fingerprint": scene_fingerprint(scene),
         "model_xml_sha256": hashlib.sha256(scene_xml(scene).encode()).hexdigest(),
         "controller_sha256": hashlib.sha256("\n".join(inspect.getsource(v) for v in (
+            PadLoadHistory, _pad_normal_forces, _relative_axial_velocity,
             InsertionControlConfig, insertion_phases, initialize_insertion_pose,
             _body_contact, formed_flank_overlap, run_insertion_demo,
             fully_formed_flank_interval, contact_is_on_full_flanks, thread_end_bounds,
@@ -226,7 +378,12 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
             "minimum_loaded_duration_s": .0005,
             "maximum_helix_phase_range_m": 150e-6},
         "legacy_engagement_note": "Consecutive positive force for 0.2 s retained as a diagnostic; unilateral contact may have valid resolved gaps",
-        "axial_command_note": "Gravity compensation of known bolt weight plus constant net axial feed; no axial motion servo during entry or turns",
+        "axial_command_note": ("Known bolt-weight compensation plus constant net axial feed, with declared dissipative relative hand/hole velocity damping through finite native arm motors; no axial position or pitch spring"
+                               if control.axial_velocity_damping_Ns_per_m else
+                               "Gravity compensation of known bolt weight plus constant net axial feed; no axial motion servo during entry or turns"),
+        "axial_velocity_reference_note": "Actual hand SITE linear velocity minus hole rigid-frame velocity evaluated at the hand point; pre-command native kinematics retained from the preceding mj_step's pre-integration state (the initialized state on the first command), with requested feed subject to the existing Cartesian-force and native motor-torque caps",
+        "native_force_recording_note": "mj_step contact forces and contact geometry are from the pre-integration state at recorded time minus timestep; saved qpos/qvel are the post-integration state",
+        "left_pad_history_scope": "Every physics substep after end-settle acquisition; force minima and gaps include physical lift and roll, separately from 5 ms saved-pose sampling",
         "partial": True,
     }
     sample_steps = max(1, round(control.sample_period_s / model.opt.timestep))
@@ -234,10 +391,15 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
     peak_depth = peak_left_slip = peak_left_angle = peak_grip_slip = 0.
     peak_alignment_radial = peak_alignment_tilt = 0.
     maximum_support_after_pickup = maximum_left_support = 0
+    maximum_left_support_after_lift = 0
+    minimum_left_lift_m_after_lift = np.inf
     minimum_joint_margin = np.inf
     minimum_lift_pad_normals = np.full(2, np.inf)
     minimum_loaded_left_pad_normals = np.full(2, np.inf)
     grip_reference = None
+    left_pad_geoms = [model.geom(f"left_m8_pad_{side}").id for side in ("left", "right")]
+    left_pad_history = PadLoadHistory()
+    left_pad_times, left_pad_forces, left_pad_phase_indices = [], [], []
     engaged = False
     engagement_streak = 0.
     engagement_time = None
@@ -251,13 +413,27 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
     unforced = True
     aborted = None
     hole_velocity = np.zeros(6)
+    right_site_velocity = np.zeros(6)
     # Persist the exact controller and model texts used for this integration.
     # Later source revisions cannot silently change how a partial trace is read.
     (output / "controller_source.py").write_text(Path(__file__).read_text())
     (output / "engagement_observer_source.py").write_text(Path(inspect.getfile(LoadedFlankWindow)).read_text())
     (output / "scene.xml").write_text(scene_xml(scene))
+    scene_source = Path(inspect.getfile(InsertionConfig)).read_text()
+    (output / "scene_source.py").write_text(scene_source)
+    metadata["scene_source_sha256"] = hashlib.sha256(scene_source.encode()).hexdigest()
+    recorded_helpers = output / "recorded_sources" / "yam_twin"
+    recorded_helpers.mkdir(parents=True, exist_ok=True)
+    for value in (YamCartesianController, fully_formed_flank_interval):
+        source_path = Path(inspect.getfile(value))
+        (recorded_helpers / source_path.name).write_bytes(source_path.read_bytes())
     search_skip = {1: False}
-    for label, duration, angle0, angle1, gap0, gap1, axial_float in selected:
+    left_pickup_phases = {"settle_table", "reach_left_block", "close_left_block",
+                          "settle_left_block", "lift_left_block",
+                          "transport_left_block", "hold_left_block"}
+    left_table_support_phases = {"settle_table", "reach_left_block", "close_left_block",
+                                "settle_left_block", "lift_left_block"}
+    for phase_index, (label, duration, angle0, angle1, gap0, gap1, axial_float) in enumerate(selected):
         match = re.search(r"(?:search_|start_thread_|stop_start_)(\d+)$", label)
         if match:
             group = int(match.group(1))
@@ -270,16 +446,20 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                        "reason": "No full-flank engagement after all allowed physical starting strokes"}
             break
         phase_p0 = right.pose()[0]
+        phase_left_p0, phase_left_r0 = left.pose()
+        left_rotation_delta = Rotation.from_matrix(left_hold_r @ phase_left_r0.T).as_rotvec()
         hole_r = data.xmat[hole_id].reshape(3, 3).copy()
         hole_p = data.xpos[hole_id].copy()
         phase_start_depth = float((hole_r.T @ (data.xpos[bolt_id] - hole_p))[2])
         phase_start_yaw = yaw_total
         held_relative_z = float((hole_r.T @ (phase_p0 - hole_p))[2])
         phase_max_hand_contacts = phase_max_support = 0
+        phase_max_left_support = 0
         phase_max_head_block_contacts = 0
         phase_peak_pad_torque = 0.
         phase_peak_rotation_drift = phase_peak_axial_drift = 0.
         phase_started_engaged = engaged
+        phase_left_pad_history = PadLoadHistory()
         steps = round(duration / model.opt.timestep)
         for step in range(steps):
             u = (step + 1) / steps
@@ -289,7 +469,9 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
             down = hole_r[:, 2]
             mujoco.mj_objectVelocity(model, data, mujoco.mjtObj.mjOBJ_XBODY,
                                     hole_id, hole_velocity, 0)
-            if label in ("secure_left", "reach_bolt", "close_bolt", "settle_bolt"):
+            if label in left_pickup_phases:
+                goal = initial["right"][0]
+            elif label in ("secure_left", "reach_bolt", "close_bolt", "settle_bolt"):
                 goal = pickup if label != "secure_left" else initial["right"][0]
             elif label == "lift_bolt":
                 goal = pickup_lift_goal
@@ -301,7 +483,7 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                                        control.entry_tip_clearance_m)
             else:
                 goal = hole_p + down * held_relative_z
-            if label in ("secure_left", "reach_bolt", "close_bolt", "settle_bolt", "lift_bolt", "transport_bolt", "align_over_hole"):
+            if label in left_pickup_phases or label in ("secure_left", "reach_bolt", "close_bolt", "settle_bolt", "lift_bolt", "transport_bolt", "align_over_hole"):
                 target_p = phase_p0 + blend * (goal - phase_p0)
                 target_v = derivative * (goal - phase_p0) / duration
             else:
@@ -309,20 +491,64 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                 target_v = hole_velocity[3:] + np.cross(hole_velocity[:3], goal - hole_p)
             theta = angle0 + blend * (angle1 - angle0)
             omega = derivative * (angle1 - angle0) / duration
-            target_r = hole_r @ Rotation.from_euler("z", theta).as_matrix() @ hand_relative_r
+            target_r = (right_initial_r if label in left_pickup_phases else
+                        hole_r @ Rotation.from_euler("z", theta).as_matrix() @ hand_relative_r)
             feed = control.net_axial_feed_N + mass * float(np.dot(model.opt.gravity, down)) * -1
+            axial_velocity = None
+            axial_damping_force = 0.
+            if axial_float and control.axial_velocity_damping_Ns_per_m:
+                mujoco.mj_objectVelocity(model, data, mujoco.mjtObj.mjOBJ_SITE,
+                                        right.site_id, right_site_velocity, 0)
+                axial_velocity = _relative_axial_velocity(data.site_xpos[right.site_id],
+                    right_site_velocity[3:], hole_p, hole_velocity, down)
+                axial_damping_force = -control.axial_velocity_damping_Ns_per_m*axial_velocity
+                feed += axial_damping_force
             right.command(target_p, target_r, gap0 + blend * (gap1 - gap0),
                           linear_velocity=target_v,
-                          angular_velocity=hole_velocity[:3] + down * omega,
+                          angular_velocity=(np.zeros(3) if label in left_pickup_phases else
+                                            hole_velocity[:3] + down * omega),
                           axial_float=axial_float, axis_world=down, axial_feed_N=feed)
-            if label == "lift_bolt":
+            if table_pickup:
+                if label == "settle_table":
+                    left_target_p, left_target_r = left_p0, left_r0
+                    left_target_v, left_target_w = np.zeros(3), np.zeros(3)
+                    left_gap = control.arm.open_aperture
+                elif label == "reach_left_block":
+                    left_target_p = phase_left_p0 + blend*(left_pickup_p-phase_left_p0)
+                    left_target_v = derivative*(left_pickup_p-phase_left_p0)/duration
+                    left_target_r, left_target_w = left_r0, np.zeros(3)
+                    left_gap = control.arm.open_aperture
+                elif label in ("close_left_block", "settle_left_block"):
+                    left_target_p, left_target_r = left_pickup_p, left_r0
+                    left_target_v, left_target_w = np.zeros(3), np.zeros(3)
+                    left_gap = (control.arm.open_aperture + blend*(control.arm.left_closed_aperture-control.arm.open_aperture)
+                                if label == "close_left_block" else control.arm.left_closed_aperture)
+                elif label == "lift_left_block":
+                    left_target_p = phase_left_p0 + blend*(left_lift_p-phase_left_p0)
+                    left_target_v = derivative*(left_lift_p-phase_left_p0)/duration
+                    left_target_r, left_target_w = left_r0, np.zeros(3)
+                    left_gap = control.arm.left_closed_aperture
+                elif label == "transport_left_block":
+                    left_target_p = phase_left_p0 + blend*(left_hold_p-phase_left_p0)
+                    left_target_v = derivative*(left_hold_p-phase_left_p0)/duration
+                    left_target_r = Rotation.from_rotvec(blend*left_rotation_delta).as_matrix() @ phase_left_r0
+                    left_target_w = derivative*left_rotation_delta/duration
+                    left_gap = control.arm.left_closed_aperture
+                else:
+                    left_target_p, left_target_r = left_hold_p, left_hold_r
+                    left_target_v, left_target_w = np.zeros(3), np.zeros(3)
+                    left_gap = control.arm.left_closed_aperture
+                left.command(left_target_p, left_target_r, left_gap,
+                             linear_velocity=left_target_v, angular_velocity=left_target_w)
+            elif label == "lift_bolt":
                 block_lift = control.block_lift_m * blend
                 lift_velocity = control.block_lift_m * derivative / duration
             else:
                 lift_velocity = 0.
-            left.command(left_p0 + [0., 0., block_lift], left_r0,
-                         control.arm.left_closed_aperture,
-                         linear_velocity=[0., 0., lift_velocity])
+            if not table_pickup:
+                left.command(left_p0 + [0., 0., block_lift], left_r0,
+                             control.arm.left_closed_aperture,
+                             linear_velocity=[0., 0., lift_velocity])
             mujoco.mj_step(model, data)
             hole_p = data.xpos[hole_id].copy()
             hole_r = data.xmat[hole_id].reshape(3, 3).copy()
@@ -370,9 +596,44 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
             if legacy_engagement_time is None and engagement_streak >= control.full_flank_contact_streak_s:
                 legacy_engagement_time = float(data.time)
             left_p, left_r = left.pose()
-            left_slip = float(np.linalg.norm(left_r.T @ (data.xpos[block_id] - left_p) - left_grip_p))
-            left_angle = float(np.linalg.norm(Rotation.from_matrix(
+            if table_pickup and label == "settle_left_block" and step == steps-1:
+                acquisition_contact = left.contact_wrench_on("fixture_block")
+                left_acquisition_pad_normals = acquisition_contact["pad_normal_force_N"]
+                if np.all(np.asarray(left_acquisition_pad_normals) > .1):
+                    left_grasp_acquired = True
+                    left_acquisition_time = float(data.time)
+                    left_grip_p = left_r.T @ (data.xpos[block_id] - left_p)
+                    left_grip_r = left_r.T @ data.xmat[block_id].reshape(3, 3)
+                    metadata["left_acquisition"] = {
+                        "time_s": left_acquisition_time,
+                        "phase": label,
+                        "pad_normal_force_N": left_acquisition_pad_normals,
+                        "block_world_support_contacts": _body_contact(model, data, block_id)["world_support_contacts"],
+                        "grasp_relative_block_position_m": left_grip_p.tolist(),
+                        "grasp_relative_block_rotation": left_grip_r.tolist(),
+                        "pad_contact_compliance_observation": _pad_normal_forces(
+                            model, data, block_id, left_pad_geoms, with_compliance=True),
+                        "block_free_velocity": data.qvel[block_dof:block_dof+6].tolist(),
+                        "jaw_velocity_m_s": [float(data.qvel[
+                            model.joint(f"left_{side}_finger").dofadr[0]])
+                            for side in ("left", "right")],
+                    }
+                else:
+                    aborted = {"phase": label, "time": float(data.time),
+                               "reason": "Left block acquisition lacks bilateral loaded pad contact",
+                               "left_pad_normal_force_N": left_acquisition_pad_normals}
+            left_slip = (float(np.linalg.norm(left_r.T @ (data.xpos[block_id] - left_p) - left_grip_p))
+                         if left_grasp_acquired else 0.)
+            left_angle = (float(np.linalg.norm(Rotation.from_matrix(
                 left_r.T @ data.xmat[block_id].reshape(3, 3) @ left_grip_r.T).as_rotvec()))
+                          if left_grasp_acquired else 0.)
+            if table_pickup and left_grasp_acquired:
+                substep_pad_normals = _pad_normal_forces(model, data, block_id, left_pad_geoms)
+                left_pad_history.observe(substep_pad_normals, model.opt.timestep)
+                phase_left_pad_history.observe(substep_pad_normals, model.opt.timestep)
+                left_pad_times.append(float(data.time))
+                left_pad_forces.append(substep_pad_normals.copy())
+                left_pad_phase_indices.append(phase_index)
             peak_left_slip = max(peak_left_slip, left_slip)
             peak_left_angle = max(peak_left_angle, left_angle)
             hand_p, hand_r = right.pose()
@@ -386,9 +647,30 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
             support = _body_contact(model, data, bolt_id)["world_support_contacts"]
             left_support = _body_contact(model, data, block_id)["world_support_contacts"]
             maximum_left_support = max(maximum_left_support, left_support)
+            phase_max_left_support = max(phase_max_left_support, left_support)
             phase_max_support = max(phase_max_support, support)
-            if label not in ("secure_left", "reach_bolt", "close_bolt", "settle_bolt", "lift_bolt"):
+            if label not in left_pickup_phases and label not in ("secure_left", "reach_bolt", "close_bolt", "settle_bolt", "lift_bolt"):
                 maximum_support_after_pickup = max(maximum_support_after_pickup, support)
+            left_lift_m = float(data.xpos[block_id, 2]-block_p0[2])
+            if table_pickup and label == "lift_left_block" and step == steps-1:
+                lift_contact = left.contact_wrench_on("fixture_block")
+                if left_grasp_acquired and left_lift_m > .003 and not left_support and np.all(
+                        np.asarray(lift_contact["pad_normal_force_N"]) > .1):
+                    left_lift_verified_time = float(data.time)
+                    metadata["left_pickup_verified"] = {"time_s": left_lift_verified_time,
+                        "phase": label, "physical_block_lift_m": left_lift_m,
+                        "block_world_support_contacts": left_support,
+                        "pad_normal_force_N": lift_contact["pad_normal_force_N"]}
+                else:
+                    aborted = {"phase": label, "time": float(data.time),
+                               "reason": "Left block did not physically lift clear of table in a retained bilateral grasp",
+                               "physical_block_lift_m": left_lift_m,
+                               "block_world_support_contacts": left_support,
+                               "left_pad_normal_force_N": lift_contact["pad_normal_force_N"]}
+            after_left_lift = table_pickup and label not in left_table_support_phases
+            if after_left_lift:
+                maximum_left_support_after_lift = max(maximum_left_support_after_lift, left_support)
+                minimum_left_lift_m_after_lift = min(minimum_left_lift_m_after_lift, left_lift_m)
             hand_contacts = _body_contact(model, data, bolt_id, right.hand_geom_ids)["contact_count"]
             phase_max_hand_contacts = max(phase_max_hand_contacts, hand_contacts)
             unforced = unforced and bool(np.all(data.xfrc_applied[[bolt_id, block_id, hole_id]] == 0)
@@ -400,7 +682,7 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                 model.jnt_range[c.joint_ids, 1]-data.qpos[c.qpos_indices])))
                 for c in controllers.values())
             minimum_joint_margin = min(minimum_joint_margin, joint_margin)
-            alignment_guard = label not in ("secure_left", "reach_bolt", "close_bolt", "settle_bolt", "lift_bolt", "transport_bolt", "align_over_hole") and overlap > 0
+            alignment_guard = label not in left_pickup_phases and label not in ("secure_left", "reach_bolt", "close_bolt", "settle_bolt", "lift_bolt", "transport_bolt", "align_over_hole") and overlap > 0
             if alignment_guard:
                 peak_alignment_radial = max(peak_alignment_radial, radial)
                 peak_alignment_tilt = max(peak_alignment_tilt, tilt)
@@ -414,7 +696,10 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                 engaged = True
                 engagement_time = float(data.time)
             if (thread_depth > 10e-6 or left_slip > .001 or left_angle > np.deg2rad(2)
-                    or grip_slip > .001 or left_support or warnings or not unforced
+                    or grip_slip > .001
+                    or (left_support and (not table_pickup or after_left_lift))
+                    or (after_left_lift and left_lift_verified_time is None)
+                    or warnings or not unforced
                     or joint_margin < -1e-5
                     or (alignment_guard and (radial > 150e-6 or tilt > np.deg2rad(2)))
                     or not np.isfinite(data.qpos).all() or not np.isfinite(data.qvel).all()):
@@ -427,7 +712,7 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
             if step % sample_steps == 0 or step == steps-1 or aborted:
                 contact = right.contact_wrench_on("male_bolt")
                 left_contact = left.contact_wrench_on("fixture_block")
-                if label != "secure_left":
+                if (left_grasp_acquired if table_pickup else label != "secure_left"):
                     minimum_loaded_left_pad_normals = np.minimum(minimum_loaded_left_pad_normals,
                                                                 left_contact["pad_normal_force_N"])
                 if label in ("transport_bolt", "align_over_hole", "feed_to_entry") or label.startswith(("start_thread_", "turn_")):
@@ -450,12 +735,16 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                        "bolt_world_position": bolt_p.tolist(), "hole_world_position": hole_p.tolist(),
                        "bolt_tip_world_position": (bolt_p + bolt_r @ tip_local).tolist(),
                        "block_lift_m": float(data.xpos[block_id, 2] - block_p0[2]),
+                       "left_grasp_acquired": left_grasp_acquired,
+                       "left_pickup_verified": left_lift_verified_time is not None if table_pickup else True,
                        "block_grip_slip_m": left_slip, "block_grip_rotation_slip_rad": left_angle,
                        "bolt_grip_slip_m": grip_slip, "bolt_world_support_contacts": support,
                        "block_world_support_contacts": left_support, "external_drive_zero": unforced,
                        "minimum_native_joint_margin_rad": joint_margin,
                        "contact": contact, "left_contact": left_contact,
                        "axial_float": axial_float, "axial_feed_command_N": feed if axial_float else None,
+                       "right_relative_axial_velocity_m_per_s": axial_velocity,
+                       "axial_velocity_damping_force_N": axial_damping_force if axial_float else None,
                        "right_position_error_m": right.last_position_error.tolist(),
                        "right_rotation_error_rad": right.last_rotation_error.tolist()}
                 rows.append(row); times.append(float(data.time)); positions.append(data.qpos.copy())
@@ -470,15 +759,23 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
                    "observed_helix_residual_m": advance-thread.pitch*rotation/(2*np.pi),
                    "maximum_hand_bolt_contacts": phase_max_hand_contacts,
                    "maximum_bolt_world_support_contacts": phase_max_support,
+                   "maximum_block_world_support_contacts": phase_max_left_support,
                    "maximum_head_block_seating_contacts": phase_max_head_block_contacts,
                    "sampled_peak_pad_contact_torque_Nm": phase_peak_pad_torque,
                    "maximum_absolute_bolt_rotation_from_phase_start_rad": phase_peak_rotation_drift,
                    "maximum_absolute_bolt_axial_motion_from_phase_start_m": phase_peak_axial_drift,
                    "started_engaged": phase_started_engaged, "ended_engaged": engaged,
                    "final_bolt_world_support_contacts": support,
+                   "final_block_world_support_contacts": left_support,
+                   "final_block_lift_m": left_lift_m,
+                   "left_grasp_acquired": left_grasp_acquired,
+                   "left_pickup_verified": left_lift_verified_time is not None if table_pickup else True,
+                   "all_substep_left_pad_loads": phase_left_pad_history.report() if table_pickup else None,
                    "final_thread_overlap_m": float(overlap),
                    "final_formed_flank_overlap_m": formed_overlap}
         summaries.append(summary)
+        if table_pickup:
+            metadata["all_substep_left_pad_loads"] = left_pad_history.report()
         print(json.dumps(summary), flush=True)
         np.savez_compressed(output / "insertion_trace_partial.npz", time=times, qpos=positions,
             qvel=velocities, controller=controls, info_json=np.asarray(json.dumps(rows)),
@@ -488,6 +785,22 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
     turns = [s for s in summaries if s["phase"].startswith("turn_")]
     resets = [s for s in summaries if s["phase"].startswith("reset_open_")]
     expected_resets = sum(s["phase"].startswith(("start_thread_", "turn_")) for s in summaries)-1
+    if table_pickup:
+        force_history_path = output / "left_pad_force_history.npz"
+        np.savez_compressed(force_history_path, time=np.asarray(left_pad_times),
+            pad_normal_force_N=np.asarray(left_pad_forces, dtype=float).reshape(-1, 2),
+            phase_index=np.asarray(left_pad_phase_indices, dtype=np.int16),
+            phase_labels_json=np.asarray(json.dumps([p[0] for p in selected])),
+            metadata_json=np.asarray(json.dumps({"model_fingerprint": metadata["model_fingerprint"],
+                "controller_sha256": metadata["controller_sha256"], "runtime": runtime,
+                "observer": PadLoadHistory.version, "timestep_s": model.opt.timestep,
+                "minimum_loaded_force_N": left_pad_history.threshold,
+                "scope": metadata["left_pad_history_scope"],
+                "timing": metadata["native_force_recording_note"]})))
+        metadata["left_pad_force_history"] = {
+            "filename": force_history_path.name,
+            "sha256": hashlib.sha256(force_history_path.read_bytes()).hexdigest(),
+            "observed_physics_steps": left_pad_history.observations}
     checks = {
         "completed_qualifying_turns": {"passed": len(turns)==control.qualifying_turns},
         "picked_up_free_bolt": {"passed": any(s["phase"]=="transport_bolt" for s in summaries)
@@ -521,16 +834,39 @@ def run_insertion_demo(output="outputs/m8_insertion", *, scene_config=None,
         "left_arm_physically_lifts_block": {"passed": float(data.xpos[block_id,2]-block_p0[2])>.003,
             "observed_lift_m":float(data.xpos[block_id,2]-block_p0[2])},
         "right_bolt_grasp_retention": {"passed": peak_grip_slip<.001,"peak_translation_m":peak_grip_slip},
-        "left_block_has_no_world_support": {"passed": maximum_left_support==0},
+        "left_block_has_no_world_support": {"passed": (maximum_left_support_after_lift==0
+                                                        if table_pickup else maximum_left_support==0),
+            "scope": "After completion of actual table lift" if table_pickup else "Entire integration",
+            "maximum_world_support_after_lift": maximum_left_support_after_lift if table_pickup else maximum_left_support},
         "free_objects_have_no_external_drive": {"passed": unforced},
         "native_joint_limits": {"passed": minimum_joint_margin>=-1e-5,
                                 "minimum_observed_margin_rad": minimum_joint_margin},
         "no_solver_or_state_abort": {"passed": aborted is None},
     }
+    if table_pickup:
+        checks["all_substep_left_pad_contact_retention"] = {
+            "passed": left_pad_history.report()["continuously_bilateral_loaded"],
+            **left_pad_history.report(),
+            "scope": "Every physics substep at and after the end of settle_left_block, including lift and physical roll"}
+        checks["both_hands_start_separate_from_workpieces"] = {
+            "passed": initial_left_block_contacts["contact_count"] == 0
+            and initial_right_bolt_contacts["contact_count"] == 0,
+            "initial_left_block_hand_contacts": initial_left_block_contacts["contact_count"],
+            "initial_right_bolt_hand_contacts": initial_right_bolt_contacts["contact_count"]}
+        checks["picked_up_previously_table_supported_block"] = {
+            "passed": initial_block_support > 0 and left_acquisition_time is not None
+            and left_lift_verified_time is not None and maximum_left_support_after_lift == 0
+            and minimum_left_lift_m_after_lift > .003,
+            "initial_block_world_support_contacts": initial_block_support,
+            "left_acquisition_time_s": left_acquisition_time,
+            "left_pickup_verified_time_s": left_lift_verified_time,
+            "minimum_physical_block_lift_after_pickup_m": minimum_left_lift_m_after_lift,
+            "maximum_world_support_after_pickup": maximum_left_support_after_lift}
     checks = {k:{**v,"passed":bool(v["passed"])} for k,v in checks.items()}
     result = {**metadata,"partial":len(selected)<len(phases),"passed":all(v["passed"] for v in checks.values()),
               "phases":summaries,"acceptance_checks":checks,"aborted":aborted,
               "wall_seconds":time.perf_counter()-start_wall,
+              "all_substep_left_pad_loads": left_pad_history.report() if table_pickup else None,
               "legacy_continuous_loaded_force_criterion": {"would_have_tagged_engagement":legacy_engagement_time is not None,
                                                            "first_pass_time_s":legacy_engagement_time,
                                                            "required_streak_s":control.full_flank_contact_streak_s},

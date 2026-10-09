@@ -1,0 +1,17 @@
+{
+  "scope": "167 software checks at unchanged final damped-controller/separated-bolt source hashes; no physics or hardware/training certification. Earlier158 proof remains in the failed full attempt.",
+  "files": {
+    "software_tests.json": {
+      "sha256": "68bc51b465b98662b97529e42daa6047d6bddfa177f905ad9aa42dae33de6470",
+      "bytes": 3573
+    },
+    "software_tests.log": {
+      "sha256": "b07eb9b5a07fb4447b9f2e3e442cd2439e8e2e2f948f7a5a2e69f249ae924103",
+      "bytes": 1020
+    },
+    "verify_software_sources.py": {
+      "sha256": "8d7cf7e8632b3eb2664b9c58c28c1b6faf401f20fa04d8e88a19635018c90fb2",
+      "bytes": 1339
+    }
+  }
+}

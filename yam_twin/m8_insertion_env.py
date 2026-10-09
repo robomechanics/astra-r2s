@@ -1,7 +1,8 @@
 """Actual joint-action interface for unengaged M8 pickup and thread starting.
 
-The bolt begins on its three-pin rest, separately from the female threaded
-block. No scripted controller runs in policy steps. The observations are
+The default task begins with the block on the table and the bolt on its
+three-pin rest, separately from the female thread. No scripted controller runs
+in policy steps. The observations are
 privileged simulator state; this module supplies neither a trained policy nor
 thread-start qualification. Depth, rotation and support gates only measure the
 result of rigid-body contacts, never command a helix.
@@ -59,8 +60,11 @@ class YamM8InsertionEnv(gym.Env):
     compensation is included inside each compiled motor's finite torque limit.
     Actions 12/13 request mirrored left/right native finger apertures (-1 open,
     +1 closed). No Cartesian hand, free-body wrench, pose assignment or scripted
-    pickup is an action. Reset uses the demo's open 20-mm pickup hover and left
-    touching-pad pose, preserving both workpieces' initial scene states.
+    pickup is an action. The default reset opens both hands away from the two
+    separately supported workpieces. Explicit legacy models/configurations
+    preserve the original left touching-pad reset. Neither reset changes a
+    workpiece pose. Pickup history is exposed in info; a recurrent policy or
+    observation history is needed to use that history with the 118-vector.
 
     Acquisition, thread-contact and completion flags require measured forces.
     Projected tip depth while away from the hole earns no insertion reward.
@@ -80,7 +84,11 @@ class YamM8InsertionEnv(gym.Env):
                  gravity_compensation=True, render_mode=None):
         super().__init__()
         self.runtime_info = require_micron_engine()
+        if model is None and scene_config is None:
+            from .m8_insertion_scene import table_pickup_config
+            scene_config = table_pickup_config()
         self.scene_config = scene_config or InsertionConfig()
+        self.pickup_from_table = bool(getattr(self.scene_config, "pickup_from_table", False))
         self.model = model if model is not None else build_model(self.scene_config)
         self.data = mujoco.MjData(self.model)
         if not np.isfinite([control_dt, horizon_seconds]).all() or min(control_dt, horizon_seconds) <= 0:
@@ -162,9 +170,15 @@ class YamM8InsertionEnv(gym.Env):
         self._yaw_total = self._last_yaw = self._peak_thread_depth = 0.
         self._start_depth = self._start_yaw = self._last_scored_depth = None
         self._pickup_observed = self._ever_rest_support = False
+        self._left_acquisition_observed = self._left_pickup_observed = False
+        self._right_pickup_observed = self._ever_block_world_support = False
+        self._left_acquisition_time = self._right_acquisition_time = None
+        self._left_pickup_time = self._right_pickup_time = None
+        self._left_loaded_last = False
         self._right_loaded_last = False
         self._right_reference = None
-        self._left_reference = (np.zeros(3), np.eye(3))
+        self._left_reference = None
+        self._initial_block_height = 0.
         self._initial_head_height = 0.
         self._minimum_joint_margin = self._native_joint_margin()
         self.engagement_observer = LoadedFlankWindow()
@@ -190,16 +204,27 @@ class YamM8InsertionEnv(gym.Env):
         initialize_insertion_pose(self.model, self.data, self.scene_config, control)
         mujoco.mj_forward(self.model, self.data)
         self._clear_episode()
-        self._left_reference = self._held_pose("left")
+        # The new task has no initial grasp reference: that can only arise
+        # from bilateral pad forces after an actual physics substep. The old
+        # touching-pad task retains its archived reset behavior.
+        if not self.pickup_from_table:
+            self._left_reference = self._held_pose("left")
         self._last_yaw = self._relative_yaw()
+        self._initial_block_height = float(self._free_pose(self.block_qadr)[0][2])
         self._initial_head_height = float(self._head_position()[2])
         self._warnings = int(sum(w.number for w in self.data.warning))
-        self._ever_rest_support = self._contacts()["bolt_rest_support_contacts"] > 0
+        contacts = self._contacts()
+        self._ever_rest_support = contacts["bolt_rest_support_contacts"] > 0
+        self._ever_block_world_support = contacts["block_world_support_contacts"] > 0
         self.last_motor_torques.fill(0)
-        self.last_apertures[:] = [cfg.left_closed_aperture, cfg.open_aperture]
+        self.last_apertures[:] = [cfg.open_aperture if self.pickup_from_table else cfg.left_closed_aperture,
+                                  cfg.open_aperture]
         self._active = True
         info = self._info()
-        info["reset_grasp_state"] = "Left touching-pad preload request; right open at pickup hover; free bolt on rest; no settling"
+        info["reset_grasp_state"] = (
+            "Both hands open and separated; free block on table and free bolt on rest; no settling"
+            if self.pickup_from_table else
+            "Left touching-pad preload request; right open at pickup hover; free bolt on rest; no settling")
         return self._observation(), info
 
     def _free_pose(self, address):
@@ -280,8 +305,13 @@ class YamM8InsertionEnv(gym.Env):
         radial = float(np.linalg.norm(entry_axis[:2]))
         tilt = float(np.arccos(np.clip(axis[2], -1., 1.)))
         left_pose, right_pose = self._held_pose("left"), self._held_pose("right")
-        left_slip = float(np.linalg.norm(left_pose[0]-self._left_reference[0]))
-        left_rotation = _rotation_error(left_pose[1], self._left_reference[1])
+        if self._left_reference is None:
+            left_slip, left_rotation = 0., 0.
+            left_retained = False
+        else:
+            left_slip = float(np.linalg.norm(left_pose[0]-self._left_reference[0]))
+            left_rotation = _rotation_error(left_pose[1], self._left_reference[1])
+            left_retained = left_slip < .001 and left_rotation < np.deg2rad(2.)
         normals = contacts["pad_normals"]
         left_loaded, right_loaded = bool(np.all(normals[:2] > .1)), bool(np.all(normals[2:] > .1))
         if self._right_reference is None:
@@ -291,7 +321,7 @@ class YamM8InsertionEnv(gym.Env):
             right_slip = float(np.linalg.norm(right_pose[0]-self._right_reference[0]))
             right_rotation = _rotation_error(right_pose[1], self._right_reference[1])
             right_retained = right_slip < .001 and right_rotation < np.deg2rad(2.)
-        left_secure = bool(left_loaded and left_slip < .001 and left_rotation < np.deg2rad(2.)
+        left_secure = bool(left_loaded and left_retained
                            and contacts["block_world_support_contacts"] == 0)
         right_secure = bool(right_loaded and right_retained and contacts["bolt_world_support_contacts"] == 0)
         advance = 0. if self._start_depth is None else depth-self._start_depth
@@ -307,6 +337,8 @@ class YamM8InsertionEnv(gym.Env):
             "right_grasp_position_slip_m": right_slip, "right_grasp_rotation_slip_rad": right_rotation,
             "left_block_grasp_secure": left_secure, "right_bolt_grasp_secure": right_secure,
             "left_pads_loaded": left_loaded, "right_pads_loaded": right_loaded,
+            "left_grasp_reference_observed": self._left_reference is not None,
+            "right_grasp_reference_observed": self._right_reference is not None,
             "loaded_flank_engagement_candidate": self._start_depth is not None,
             "thread_started": lead_observed, "one_turn_lead_observed": lead_observed,
             "whole_ring_full_flank_length_m": interval["length_m"],
@@ -316,14 +348,43 @@ class YamM8InsertionEnv(gym.Env):
 
     def _observe_task_events(self, contacts):
         self._ever_rest_support |= contacts["bolt_rest_support_contacts"] > 0
+        self._ever_block_world_support |= contacts["block_world_support_contacts"] > 0
+        left_loaded = bool(np.all(contacts["pad_normals"][:2] > .1))
+        if self.pickup_from_table and left_loaded and not self._left_loaded_last:
+            # Before lift, renewed bilateral contact can establish an
+            # acquisition reference. After observed pickup it is frozen, so
+            # opening, dropping, or slipping cannot erase measured retention.
+            if not self._left_pickup_observed:
+                self._left_reference = self._held_pose("left")
+            if not self._left_acquisition_observed:
+                self._left_acquisition_observed = True
+                self._left_acquisition_time = float(self.data.time)
+        self._left_loaded_last = left_loaded
         right_loaded = bool(np.all(contacts["pad_normals"][2:] > .1))
         if right_loaded and not self._right_loaded_last:
             self._right_reference = self._held_pose("right")
+            if self._right_acquisition_time is None:
+                self._right_acquisition_time = float(self.data.time)
         self._right_loaded_last = right_loaded
         metrics = self._metrics(contacts)
-        if (self._ever_rest_support and metrics["left_block_grasp_secure"]
+        if (self.pickup_from_table and not self._left_pickup_observed
+                and self._ever_block_world_support and self._left_acquisition_observed
+                and metrics["left_block_grasp_secure"]
+                and self._free_pose(self.block_qadr)[0][2]-self._initial_block_height >= .003):
+            self._left_pickup_observed = True
+            self._left_pickup_time = float(self.data.time)
+            # Final retention reference belongs to an observed, unsupported
+            # pickup, never to the open hand at initialization.
+            self._left_reference = self._held_pose("left")
+        if (not self._right_pickup_observed and self._ever_rest_support
                 and metrics["right_bolt_grasp_secure"]
                 and self._head_position()[2]-self._initial_head_height >= .005):
+            self._right_pickup_observed = True
+            self._right_pickup_time = float(self.data.time)
+        left_ready = self._left_pickup_observed if self.pickup_from_table else True
+        if (left_ready and self._right_pickup_observed and metrics["left_block_grasp_secure"]
+                and metrics["right_bolt_grasp_secure"]
+                and (self.pickup_from_table or self._head_position()[2]-self._initial_head_height >= .005)):
             self._pickup_observed = True
         valid_geometry = (self._pickup_observed and metrics["left_block_grasp_secure"]
             and metrics["right_bolt_grasp_secure"]
@@ -362,6 +423,11 @@ class YamM8InsertionEnv(gym.Env):
                 reasons.append(name+"_outside_workspace")
         if np.any(self.data.xfrc_applied[self.female_id]):
             reasons.append("female_frame_external_drive_present")
+        if self.pickup_from_table:
+            if self._left_pickup_observed and contacts["block_world_support_contacts"]:
+                reasons.append("block_world_support_after_pickup")
+            if self._right_pickup_observed and contacts["bolt_world_support_contacts"]:
+                reasons.append("bolt_world_support_after_pickup")
         if self._start_depth is not None:
             metrics = self._metrics(contacts)
             if metrics["axis_radial_offset_at_entry_m"] > 150e-6:
@@ -414,7 +480,7 @@ class YamM8InsertionEnv(gym.Env):
             reasons = list(dict.fromkeys(reasons+self._failures(contacts)))
         self._steps += 1
         info = self._info()
-        valid = (not reasons and info["engagement_window"]["ready"]
+        valid = (not reasons and info["pickup_observed"] and info["engagement_window"]["ready"]
                  and info["whole_ring_full_flank_length_m"] > self.pitch and info["loaded_flank_engagement_candidate"]
                  and info["left_block_grasp_secure"] and info["right_bolt_grasp_secure"]
                  and info["axis_radial_offset_at_entry_m"] <= 150e-6 and info["axis_tilt_rad"] <= np.deg2rad(2.))
@@ -456,6 +522,21 @@ class YamM8InsertionEnv(gym.Env):
     def _info(self):
         c = self._contacts()
         return {"starts_preengaged": False, "pickup_observed": self._pickup_observed,
+            "pickup_from_table": self.pickup_from_table,
+            "left_pad_acquisition_observed": self._left_acquisition_observed,
+            "right_pad_acquisition_observed": self._right_acquisition_time is not None,
+            "left_block_pickup_observed": self._left_pickup_observed,
+            "right_bolt_pickup_observed": self._right_pickup_observed,
+            "block_world_support_observed": self._ever_block_world_support,
+            "left_pad_acquisition_time_s": self._left_acquisition_time,
+            "right_pad_acquisition_time_s": self._right_acquisition_time,
+            "left_block_pickup_time_s": self._left_pickup_time,
+            "right_bolt_pickup_time_s": self._right_pickup_time,
+            "left_grasp_reference_frozen_after_pickup": self.pickup_from_table and self._left_pickup_observed,
+            "minimum_block_pickup_lift_m": .003,
+            "minimum_bolt_pickup_lift_m": .005,
+            "block_lift_from_reset_m": float(self._free_pose(self.block_qadr)[0][2]-self._initial_block_height),
+            "bolt_head_lift_from_reset_m": float(self._head_position()[2]-self._initial_head_height),
             "rest_support_observed": self._ever_rest_support, **self._metrics(c),
             "thread_contact_count": c["thread_count"], "worst_reported_thread_sdf_depth_m": c["thread_depth"],
             "loaded_full_flank_contact_count": c["loaded_full_flank_contact_count"],
@@ -486,6 +567,10 @@ class YamM8InsertionEnv(gym.Env):
             "native_joint_limit_violation_tolerance_rad": 1e-5,
             "gravity_bias_compensation": self.gravity_compensation,
             "privileged_state_observations": True, "observation_fields": dict(OBSERVATION_FIELDS),
+            "pickup_history_observation_note": (
+                "Separate left/right pickup and acquisition history is in info; "
+                "the unchanged 118-vector contains their combined pickup marker, "
+                "so a policy needs observation history to recover the separate history"),
             "runtime": deepcopy(self.runtime_info),
             "reported_sdf_depth_note": "Native distance proxy; not an independent geometric overlap certificate",
             "physics_scope": "Unengaged rigid-body pickup/start task; actual YAM motors; no trained policy or thread-start qualification"}

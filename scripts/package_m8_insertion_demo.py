@@ -19,6 +19,7 @@ import tempfile
 import xml.etree.ElementTree as ET
 
 import numpy as np
+from audit_m8_left_pad_force_history import audit_recorded_force_history
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -146,6 +147,14 @@ def load_completed_run(run_dir, *, evidence_only=False, legacy_inline_observer=F
     fingerprint, meshes = _model_identity(xml, run_dir, snapshots)
     if fingerprint != report["model_fingerprint"]:
         raise ValueError("Frozen scene and repository mesh bytes do not match the model fingerprint")
+    table_pickup = bool(report["scene_config"].get("pickup_from_table", False))
+    scene_sha = report.get("scene_source_sha256")
+    if table_pickup and not scene_sha:
+        raise ValueError("Table-pickup publication requires the exact scene generator archive SHA")
+    if scene_sha:
+        scene_source = _snapshot(run_dir / "scene_source.py", snapshots)
+        if sha256(scene_source) != scene_sha:
+            raise ValueError("Frozen scene generator does not match its declared SHA")
     controller_sha, names, helpers = _controller_identity(run_dir / "controller_source.py", run_dir, snapshots)
     if controller_sha != report["controller_sha256"]:
         raise ValueError("Archived controller/helper definitions do not match the declared function SHA")
@@ -161,15 +170,33 @@ def load_completed_run(run_dir, *, evidence_only=False, legacy_inline_observer=F
         warnings.append("Legacy capture criterion is inline in the hash-verified controller archive; no separate observer module SHA exists")
     else:
         raise ValueError("Current publication requires engagement_observer_source_sha256")
+    force_declaration = report.get("left_pad_force_history")
+    force_audit = None
+    if force_declaration:
+        name = force_declaration["filename"]
+        if Path(name).name != name:
+            raise ValueError("Raw force history filename must stay inside the run directory")
+        force_bytes = _snapshot(run_dir / name, snapshots)
+        force_audit = audit_recorded_force_history(run_dir, report, raw_bytes=force_bytes,
+                                                   final_time_s=float(times[-1]), sampled_force_rows=rows)
+        if not force_audit["all_consistency_checks_passed"]:
+            raise ValueError("Raw every-substep pad history contradicts the report or acceptance gate")
+    elif table_pickup and report["passed"] and not report["partial"]:
+        raise ValueError("Completed table-pickup publication requires raw every-substep pad forces")
     return {"report": report, "times": times, "rows": rows, "arrays": arrays,
             "checks": {"trace_report_identity": True, "finite_aligned_states": True,
                 "model_xml_sha256": report["model_xml_sha256"], "model_fingerprint": fingerprint,
+                "scene_source_sha256": scene_sha,
+                "scene_source_matches_recorded": True if scene_sha else None,
                 "mesh_sha256": meshes, "controller_sha256": controller_sha,
                 "hashed_controller_objects": names, "observer_sha256": observer_sha,
                 "observer_identity_kind": "separate_hash_verified_module" if observer_sha else "legacy_inline_controller_criterion",
                 "legacy_inline_observer_verified": bool(not observer_sha and "run_insertion_demo" in names),
+                "left_pad_force_history_verified": force_audit is not None,
+                "left_pad_force_history_sha256": force_audit["raw_history_sha256"] if force_audit else None,
                 "warnings": warnings},
             "source_bytes": snapshots, "helper_sources": helpers,
+            "force_history_audit": force_audit,
             "trace_sha256": sha256(trace)}
 
 
@@ -232,6 +259,11 @@ def package_run(run_dir, target, *, rendered_media_dir=None, evidence_only=False
              **loaded["helper_sources"]}
     if report.get("engagement_observer_source_sha256"):
         files["engagement_observer_source.py"] = snapshots[run_dir / "engagement_observer_source.py"]
+    if report.get("scene_source_sha256"):
+        files["scene_source.py"] = snapshots[run_dir / "scene_source.py"]
+    if report.get("left_pad_force_history"):
+        name = report["left_pad_force_history"]["filename"]
+        files[name] = snapshots[run_dir / name]
     modern_observer = bool(report.get("engagement_observer_source_sha256"))
     audit_name = "independent_capture_audit.json" if modern_observer else "independent_insertion_audit.json"
     audit_path = run_dir / audit_name
@@ -244,6 +276,18 @@ def package_run(run_dir, target, *, rendered_media_dir=None, evidence_only=False
             or audit["inspected_controller_source"]["module_sha256"] != sha256(files["controller_source.py"])
             or not audit["runtime_core_and_plugin_identities_match_recorded"]):
         raise ValueError("Independent audit does not link to this exact trace/model/controller/runtime")
+    if report["scene_config"].get("pickup_from_table", False):
+        identity = audit.get("archived_model_identity", {})
+        if (identity.get("scene_source_sha256") != report["scene_source_sha256"]
+                or identity.get("scene_source_matches_recorded") is not True):
+            raise ValueError("Table-pickup audit does not verify the archived scene module")
+        if report["passed"] and not report["partial"]:
+            acquisition = audit.get("table_block_pickup_audit") or {}
+            if (acquisition.get("initial_sample_has_table_support_candidates") is not True
+                    or acquisition.get("initial_sample_has_no_left_hand_block_candidates") is not True
+                    or acquisition.get("post_grasp_reference_present") is not True
+                    or acquisition.get("post_lift_samples_have_no_world_support_candidates") is not True):
+                raise ValueError("Recorded table-pickup pass contradicts independent acquisition geometry")
     removed = audit.pop("recomputed_rows", [])
     omitted = {"recomputed_rows": len(removed)}
     if modern_observer:
@@ -258,6 +302,16 @@ def package_run(run_dir, target, *, rendered_media_dir=None, evidence_only=False
     source_names = ({"audit_m8_insertion_trace.py": audit["geometry_auditor_sha256"],
                      "audit_m8_insertion_capture.py": audit["capture_auditor_sha256"]}
                     if modern_observer else {"audit_m8_insertion_trace.py": audit["auditor_sha256"]})
+    if audit.get("left_pad_force_history_auditor_sha256"):
+        source_names["audit_m8_left_pad_force_history.py"] = audit["left_pad_force_history_auditor_sha256"]
+    if loaded["force_history_audit"] is not None:
+        force_audit = audit.get("left_pad_force_history_audit") or {}
+        if (force_audit.get("raw_history_sha256") != loaded["force_history_audit"]["raw_history_sha256"]
+                or force_audit.get("all_consistency_checks_passed") is not True
+                or force_audit.get("recomputed_stats") != loaded["force_history_audit"]["recomputed_stats"]):
+            raise ValueError("Independent raw-force audit does not bind to this exact history/report")
+        if source_names.get("audit_m8_left_pad_force_history.py") != force_audit["auditor_source_sha256"]:
+            raise ValueError("Capture audit raw-force helper source identity is inconsistent")
     auditor_sources_verified = True
     for name, expected in source_names.items():
         candidates = (run_dir / "audit_sources" / name, ROOT / "scripts" / name)

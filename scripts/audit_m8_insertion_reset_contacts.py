@@ -15,11 +15,13 @@ import sys
 import mujoco
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = next(parent for parent in Path(__file__).resolve().parents
+            if (parent / "thread_lab" / "runtime.py").is_file())
+# Prefer the accompanying hash-bound auditor archive when run from a package.
 sys.path.insert(0, str(ROOT / "scripts"))
-from audit_m8_insertion_trace import recorded_configuration
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from audit_m8_insertion_trace import recorded_model
 from thread_lab.runtime import require_micron_engine
-from yam_twin.m8_insertion_scene import build_model, scene_fingerprint
 
 
 def audit(path):
@@ -29,11 +31,8 @@ def audit(path):
         times = saved["time"].copy()
         records = json.loads(str(saved["info_json"]))
         metadata = json.loads(str(saved["metadata_json"]))
-    config = recorded_configuration(metadata)
-    fingerprint = scene_fingerprint(config)
-    if fingerprint != metadata["model_fingerprint"]:
-        raise ValueError("Portable scene fingerprint does not match recorded model")
-    model = build_model(config)
+    model, identity = recorded_model(path, metadata)
+    fingerprint = identity["model_fingerprint"]
     data = mujoco.MjData(model)
     male, female, block = [model.body(n).id for n in ("male_bolt", "female_frame", "fixture_block")]
     thread_pair = {model.geom(n).id for n in ("bolt_thread", "female_thread")}
@@ -108,6 +107,7 @@ def audit(path):
         "expected_contacts": ["True male/female SDF thread pair", "Actual left finger pads gripping the free block"],
         "force_scope": "Original rollout all-substep hand, world-support, head-seating and drift instrumentation remains the acceptance evidence. Candidate geometry does not reconstruct contact forces.",
         "model_fingerprint": fingerprint,
+        "archived_model_identity": identity,
         "audit_runtime": runtime,
         "recorded_controller_sha256": metadata["controller_sha256"],
         "recorded_observer_sha256": metadata.get("engagement_observer_source_sha256"),

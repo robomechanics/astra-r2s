@@ -14,9 +14,12 @@ import sys
 
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = next(parent for parent in Path(__file__).resolve().parents
+            if (parent / "thread_lab" / "runtime.py").is_file())
 sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 import audit_m8_insertion_trace as geometry_audit
+import audit_m8_left_pad_force_history as pad_force_audit
 
 
 def load_archived_observer(path):
@@ -32,6 +35,7 @@ def capture_audit(path):
     with np.load(path) as saved:
         records = json.loads(str(saved["info_json"]))
         metadata = json.loads(str(saved["metadata_json"]))
+        final_time = float(saved["time"][-1])
     archive = path.parent / "engagement_observer_source.py"
     if not archive.exists():
         raise ValueError("Versioned capture audit requires the observer archive from run start")
@@ -42,6 +46,8 @@ def capture_audit(path):
     if archived_module.LoadedFlankWindow.version != metadata.get("engagement_observer"):
         raise ValueError("Archived observer version does not match recorded version")
     result = geometry_audit.robot_audit(path)
+    result["left_pad_force_history_audit"] = pad_force_audit.audit_recorded_force_history(
+        path.parent, metadata, final_time_s=final_time, sampled_force_rows=records)
     limits = metadata["engagement_window"]
     duration = limits["duration_s"]
     impulse = limits["minimum_loaded_normal_impulse_Ns"]
@@ -101,6 +107,7 @@ def capture_audit(path):
     result.update(
         capture_auditor_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         geometry_auditor_sha256=hashlib.sha256(Path(geometry_audit.__file__).read_bytes()).hexdigest(),
+        left_pad_force_history_auditor_sha256=hashlib.sha256(Path(pad_force_audit.__file__).read_bytes()).hexdigest(),
         trajectory=str(path),
         trajectory_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
         force_scope_note="Original loaded-contact and between-sample force/support checks remain the rollout's evidence; this audit performs zero integration or force solve")

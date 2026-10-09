@@ -2,15 +2,20 @@
 
 The insertion extension keeps the existing M8 × 1.25 right-hand, 60° thread
 geometry, zero-margin contact, specified male/female pitch diameters, and
-Coulomb friction. It changes which part is held: the left arm holds a free
-aluminum block with a female through-hole, while the right arm picks up a
-separate free headed steel bolt. Nothing couples yaw to axial displacement.
+Coulomb friction. It changes which part is held: the left arm manipulates a
+free aluminum block with a female through-hole, while the right arm picks up
+a separate free headed steel bolt. The table-pickup extension acquires both
+workpieces from physical support; its completed threading checks are pending.
+The earlier published rollout starts with the left pads touching the block.
+Nothing couples yaw to axial displacement.
 
 ## Ends, orientation, and the opening
 
 The existing male SDF spans local `z=0..16 mm`. Its 45° lead-in is at the
 `z=16 mm` tip; a solid AF20 × 8 mm head occupies `z=-8..0 mm`. Both male and
-female thread frames point local +Z downward in the manipulation scene.
+female thread frames point local +Z downward at the assembly holding pose.
+The block starts upright in the table-pickup scene and is physically rolled
+to this orientation after lifting.
 Their fixed phases remain zero. In these common downward coordinates,
 matching thread phase gives
 
@@ -123,14 +128,76 @@ contact metrics or the whole robot task. The
 [compact refinement report and traces](../media/m8_insertion/refinement/README.md)
 retain the failed depth diagnostic, hashes and reproducible comparison.
 
+## Pad compliance in the table-pickup extension
+
+The table-pickup investigation separates numerical left-pad normal compliance
+from its tangential contact regularization. Every trial archives its exact
+scene and contact parameters; changes to the pad model do not qualify the
+unchanged thread geometry by themselves. The strict all-substep pad-load
+retention gate remains separate from successful lifting and pose tracking.
+
+MuJoCo's signed direct-format `solref` specifies a mass-normalized normal
+penalty through acceleration-reference stiffness and damping coefficients.
+Those coefficients are not physical N/m or N·s/m constants. The resulting
+static force/indentation relation depends on the robot pose, articulated
+inertia, contact patch and constraint coupling. A pilot may measure finite
+pad indentation under its declared clamp load, but that observation does not
+identify a rubber modulus or establish a hardware-calibrated 10 MPa material.
+The scene records native signed distances, solved pad loads and an observed
+force/indentation ratio at acquisition; that ratio is scoped to the simulated
+configuration.
+
+The [very soft direct-normal pilot](../media/m8_table_pickup/failures/roll_3s_assumed_compliance_50us_allsteps)
+(`solref=(-51, -14.2828569)`) is rejected
+for the final demonstration: its saved-pose clearance audit finds contact
+with the native finger backing, outside the intended pad/block contact.
+Its physical lift and finite indentation therefore cannot establish valid
+pad-only pickup. Its exact failure notes retain 1,720 sampled penetrating
+backing candidates and 18.46 µm maximum penetration. The selected full trial
+uses the original box collision
+geometry with `solref=(-31250, -2500)` and 0.8 ms tangential regularization.
+This is an explicit numerical contact-compliance assumption, rather than a
+soft-rubber material model. Its completed full rollout and final audits are
+still pending. All earlier trial failures remain separate evidence.
+The selected [direct-normal pickup pilot](../media/m8_table_pickup/failures/roll_3s_direct_normal_50us_allsteps)
+has no sampled nonpad hand/block candidates, but its raw every-substep load
+history still fails the same strict retention criterion. This selects a
+clearer geometry condition without claiming physical qualification.
+
+The [preserved undamped full attempt](../media/m8_table_pickup/failures/full_v10_depth_abort)
+physically picked up both workpieces but aborted at the unchanged 10 µm
+thread-depth guard before capture. Its released bolt fell onto the entry
+while the force-driven floating hand moved upward; the original trace and
+failed report are retained. A corrected fresh trial places the bolt farther
+aside to clear the opposite hand and adds velocity-only axial damping of
+50 N·s/m through native arm torques. The damping acts relative to the moving
+hole and contains no axial position spring or pitch-following command. Its
+completed outcome remains pending, with every depth, alignment and force
+retention gate unchanged.
+
+The declared μ=0.8 pad friction and numerical contact assumptions still
+require physical force/displacement and friction measurements. Isolated
+unilateral force gaps are retained in the raw per-physics-step history even
+when a finite compliant pad permits the robot to complete the movement. A
+full motion recording can therefore have useful pickup and thread-lead
+measurements while its overall strict acceptance remains failed.
+
 ## Qualification before policy-training claims
 
-The [completed nominal YAM rollout](yam_m8_insertion.md) now demonstrates
-physical pickup, contact-driven capture, unsupported open resets and two
+The [published earlier nominal YAM rollout](yam_m8_insertion.md) demonstrates
+physical bolt pickup, contact-driven capture, unsupported open resets and two
 qualified half-turns. All 18 nominal gates pass; source/runtime identities and
 saved-pose contacts have independent audits. The measured travel is 1.245793 mm
 over 1.000085 revolutions. This is evidence for the declared rigid-contact
-condition, alongside the retained numerical and load failures below.
+condition, alongside the retained numerical and load failures below. Its left
+arm starts touching the free block, so it is not evidence of block pickup.
+The current table-pickup mode must independently demonstrate initial separation
+from both hands, native finger closure, loss of table/rest support after each
+lift, and retention through the block's roll into the assembly pose.
+Its first [raw all-substep pickup diagnostic](../media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us)
+retains an explicit failed pad-load check: isolated 50 µs unilateral force
+gaps appear during the roll, although the sampled force check passes. A
+successful pose sequence does not override that stricter recorded failure.
 
 Acceptance of a nominal robot trace requires initially separated male/female bodies,
 finite finger-contact pickup from the bolt rest, no rest contacts after

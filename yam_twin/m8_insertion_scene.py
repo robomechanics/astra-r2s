@@ -23,6 +23,7 @@ from thread_lab.model import ThreadConfig
 from yam_twin import m8_scene as baseline
 
 DOWN_QUATERNION = (0., 1., 0., 0.)
+TABLE_REST_OVERLAP_M = 1e-8
 BLOCK_GEOM_NAMES = ("fixture_block_geom", "block_hole_x_plus",
                     "block_hole_x_minus", "block_hole_top_left", "block_hole_top_right",
                     "block_hole_bottom_left", "block_hole_bottom_right")
@@ -51,15 +52,47 @@ class InsertionConfig:
     rest_radius: float = .007
     rest_pin_radius: float = .001
     rest_base_height: float = .010
+    # Legacy defaults remain byte-identical for replay of the published run.
+    # In the opt-in acquisition scene the block rests upright on its short end
+    # and is physically carried and rolled flat by the native left hand.
+    pickup_from_table: bool = False
+    held_block_position: tuple[float, float, float] = (.30, -.010, .10325)
+    # Optional native elliptic-contact tangential regularization. None keeps
+    # the historical MuJoCo fallback to the pair's normal solref verbatim.
+    left_block_friction_time_constant: float | None = None
+    # Exact-envelope collision diagnostic for acquisition. The convex mesh
+    # chooses native GJK/EPA rather than the specialized box/box manifold.
+    left_pad_collision_geometry: str = "box"
+    # Native signed direct-format (negative stiffness, negative damping).
+    # These are acceleration-reference parameters, not material N/m or Ns/m.
+    left_block_direct_normal_solref: tuple[float, float] | None = None
 
     @property
     def thread(self):
         return self.base.thread
 
     def __post_init__(self):
-        for vector in (self.block_position, self.hole_offset, self.bolt_head_position):
+        for vector in (self.block_position, self.hole_offset, self.bolt_head_position,
+                       self.held_block_position):
             if np.asarray(vector).shape != (3,) or not np.isfinite(vector).all():
                 raise ValueError("Insertion positions must be finite three-vectors")
+        if not isinstance(self.pickup_from_table, bool):
+            raise ValueError("Table pickup must be a boolean mode")
+        if self.left_pad_collision_geometry not in ("box", "convex_mesh"):
+            raise ValueError("Left pad collision geometry must be box or convex_mesh")
+        if self.left_pad_collision_geometry != "box" and not self.pickup_from_table:
+            raise ValueError("Alternative left pad collision geometry requires table pickup")
+        if self.left_block_direct_normal_solref is not None:
+            values = np.asarray(self.left_block_direct_normal_solref, dtype=float)
+            if values.shape != (2,) or not np.isfinite(values).all() or not np.all(values < 0):
+                raise ValueError("Direct normal solref requires two finite strictly negative parameters")
+            # Retain a hashable configuration after JSON restores a list.
+            object.__setattr__(self, "left_block_direct_normal_solref",
+                               tuple(float(value) for value in values))
+        if self.left_block_friction_time_constant is not None:
+            tau = self.left_block_friction_time_constant
+            if not np.isfinite(tau) or tau <= 0 or tau < 2*self.thread.timestep:
+                raise ValueError("Resolve the left block friction time constant with at least two steps")
         scalars = (self.head_across_flats, self.head_height, self.steel_density,
                    self.rest_radius, self.rest_pin_radius, self.rest_base_height)
         if not np.isfinite(scalars).all() or min(scalars) <= 0 or not np.isfinite(self.bolt_yaw_rad):
@@ -87,8 +120,43 @@ class InsertionConfig:
             raise ValueError("Bolt support surface must lie above the rest base")
 
 
-def block_rotation(config: InsertionConfig | None = None):
+def table_pickup_config():
+    """Physical tabletop acquisition with a separate, low head-support rest.
+
+    The 20 x 120 x 16 mm block initially stands on its 20 x 16 mm end. This
+    leaves the actual native fingers and their collision backings clear of the
+    table while keeping the qualified hand-to-block transform. The controller
+    must lift and physically roll the block to its horizontal assembly pose.
+    """
+    # A declared 10 nm initial overlap reliably creates the native tabletop
+    # candidate despite quaternion/mesh roundoff. Gravity establishes the
+    # resting load during settle_table; no constraint or state correction does.
+    # Numerical normal contact compliance is specified separately from the
+    # original tangential regularization. These native reference coefficients
+    # do not define a physical rubber material model or hardware calibration.
+    return replace(InsertionConfig(), pickup_from_table=True,
+                   block_position=(.25, .15, .060-TABLE_REST_OVERLAP_M),
+                   bolt_head_position=(.36, -.22, .040),
+                   left_block_direct_normal_solref=(-31250., -2500.),
+                   left_block_friction_time_constant=.0008)
+
+
+def holding_block_position(config: InsertionConfig | None = None):
+    cfg = config or InsertionConfig()
+    return np.asarray(cfg.held_block_position if cfg.pickup_from_table else cfg.block_position)
+
+
+def holding_block_rotation(config: InsertionConfig | None = None):
     return baseline.bolt_rotation((config or InsertionConfig()).base)
+
+
+def block_rotation(config: InsertionConfig | None = None):
+    cfg = config or InsertionConfig()
+    rotation = holding_block_rotation(cfg)
+    if cfg.pickup_from_table:
+        # Rx(+90 degrees): the long local Y axis stands along world +Z.
+        return rotation @ np.array([[1., 0., 0.], [0., 0., -1.], [0., 1., 0.]])
+    return rotation
 
 
 def female_rotation(config: InsertionConfig | None = None):
@@ -123,6 +191,19 @@ def initial_left_grasp_position(config: InsertionConfig | None = None):
 
 
 def left_grasp_rotation(config: InsertionConfig | None = None):
+    cfg = config or InsertionConfig()
+    rotation = baseline.left_grasp_rotation(cfg.base)
+    if cfg.pickup_from_table:
+        return block_rotation(cfg) @ holding_block_rotation(cfg).T @ rotation
+    return rotation
+
+
+def holding_left_grasp_position(config: InsertionConfig | None = None):
+    cfg = config or InsertionConfig()
+    return holding_block_position(cfg) + holding_block_rotation(cfg) @ np.asarray(cfg.base.left_grasp_offset)
+
+
+def holding_left_grasp_rotation(config: InsertionConfig | None = None):
     return baseline.left_grasp_rotation((config or InsertionConfig()).base)
 
 
@@ -276,6 +357,15 @@ def scene_xml(config: InsertionConfig | None = None):
     root = ET.fromstring(baseline.scene_xml(cfg.base))
     root.set("model", "dual_yam_m8_bolt_insertion")
     world, asset, contact = root.find("worldbody"), root.find("asset"), root.find("contact")
+    if cfg.left_pad_collision_geometry == "convex_mesh":
+        x, y, z = baseline.PAD_HALF_SIZE
+        mesh_name = "left_m8_pad_convex_shape"
+        _add_prism_mesh(asset, mesh_name,
+                        ((-x, -y), (x, -y), (x, y), (-x, y)), -z, z)
+        for name in ("left_m8_pad_left", "left_m8_pad_right"):
+            pad = root.find(f".//geom[@name='{name}']")
+            pad.attrib.update(type="mesh", mesh=mesh_name)
+            pad.attrib.pop("size")
     old_nut = world.find("body[@name='nut']")
     female_geom = old_nut.find("geom")
     old_nut.remove(female_geom)
@@ -288,6 +378,8 @@ def scene_xml(config: InsertionConfig | None = None):
     old_block_geom = block.find("geom[@name='fixture_block_geom']")
     block.remove(old_block_geom)
     block.set("pos", baseline._numbers(cfg.block_position))
+    if cfg.pickup_from_table:
+        block.set("quat", _quat(block_rotation(cfg)))
     _set_inertial(block, block_mass_properties(cfg))
     for name, position, size in block_strip_geometry(cfg):
         baseline._add(block, "geom", name=name, type="box", pos=baseline._numbers(position),
@@ -352,6 +444,11 @@ def scene_xml(config: InsertionConfig | None = None):
         if pair.get("geom1") == "nut_thread":
             pair.set("geom1", "bolt_head")
         elif pair.get("geom1") == "fixture_block_geom":
+            if pair.get("geom2", "").startswith("left_m8_pad_"):
+                if cfg.left_block_direct_normal_solref is not None:
+                    pair.set("solref", baseline._numbers(cfg.left_block_direct_normal_solref))
+                if cfg.left_block_friction_time_constant is not None:
+                    pair.set("solreffriction", f"{cfg.left_block_friction_time_constant} 1")
             for name in (*BLOCK_GEOM_NAMES[1:], "female_thread"):
                 new = ET.fromstring(ET.tostring(pair, encoding="unicode"))
                 new.set("geom1", name)

@@ -88,7 +88,9 @@ class InsertionRenderer:
             shade.rectangle(box, fill=(12, 22, 32, 218))
         canvas = Image.alpha_composite(canvas.convert("RGBA"), overlay).convert("RGB")
         draw = ImageDraw.Draw(canvas)
-        draw.text((20, 20), "M8 bolt pickup + threaded block", font=self.big, fill="white")
+        table_pickup = report.get("scene_config", {}).get("pickup_from_table", False)
+        title = "M8 block + bolt pickup" if table_pickup else "M8 bolt pickup + threaded block"
+        draw.text((20, 20), title, font=self.big, fill="white")
         draw.text((20, 59), "Joint motors → fingers → free bolt / free block",
                   font=self.small, fill="#c5d6e4")
         draw.text((632, 20), "Right wrist camera", font=self.small, fill="#c5d6e4")
@@ -101,16 +103,20 @@ class InsertionRenderer:
         draw.text((20, 678), note, font=self.small, fill="#c5d6e4")
         if not static:
             normals = sample.get("contact", {}).get("pad_normal_force_N", [])
-            if len(normals) == 2:
-                draw.text((390, 632), f"Right pads: {normals[0]:.2f} / {normals[1]:.2f} N",
+            left_normals = sample.get("left_contact", {}).get("pad_normal_force_N", [])
+            if len(left_normals) == 2:
+                draw.text((390, 632), f"Left pads: {left_normals[0]:.2f} / {left_normals[1]:.2f} N"
+                          f" · table: {sample.get('block_world_support_contacts', '?')}",
                           font=self.small, fill="#c5d6e4")
-            draw.text((390, 654), f"Rest contacts: {sample.get('bolt_world_support_contacts', '?')}"
-                      f" · thread contacts: {sample.get('thread_contacts', '?')}",
-                      font=self.small, fill="#c5d6e4")
+            if len(normals) == 2:
+                draw.text((390, 654), f"Right pads: {normals[0]:.2f} / {normals[1]:.2f} N"
+                          f" · rest: {sample.get('bolt_world_support_contacts', '?')}",
+                          font=self.small, fill="#c5d6e4")
             status = ("Full physical rollout passed" if report.get("passed") and not report.get("partial")
                       else "Diagnostic rollout · inspect checks")
             draw.text((390, 681), status, font=self.small, fill="#68e0c5" if report.get("passed") else "#f1c46c")
-        draw.text((882, 653), "Left secures block · right picks up bolt", font=self.small, fill="#c5d6e4")
+        draw.text((882, 653), "Both parts start separately on table" if table_pickup else
+                  "Left secures block · right picks up bolt", font=self.small, fill="#c5d6e4")
         draw.text((882, 680), "Actual collision geometry · no grasp weld", font=self.small, fill="#c5d6e4")
         return canvas
 
@@ -121,7 +127,8 @@ def render_preview(config, output):
     initialize_preview(model, data, config)
     renderer = InsertionRenderer(model)
     try:
-        renderer.frame(data, static=True).save(output)
+        renderer.frame(data, report={"scene_config": {"pickup_from_table":
+                       getattr(config, "pickup_from_table", False)}}, static=True).save(output)
     finally:
         renderer.close()
     return {"screenshot": str(output), "physics_rollout": False,
@@ -135,10 +142,8 @@ def render_recording(trajectory, output, *, fps=12, slow_motion=1.5, still_time=
         times, qpos, qvel = (saved[key].copy() for key in ("time", "qpos", "qvel"))
         samples = json.loads(str(saved["info_json"]))
         report = json.loads(str(saved["metadata_json"]))
-    config = recorded_config(report)
-    if scene_fingerprint(config) != report.get("model_fingerprint"):
-        raise ValueError("The recorded scene provenance does not match the renderer model")
-    model = build_model(config)
+    from scripts.audit_m8_insertion_trace import recorded_model
+    model, _ = recorded_model(Path(trajectory), report)
     if (qpos.shape != (len(times), model.nq) or qvel.shape != (len(times), model.nv)
             or len(samples) != len(times) or not len(times)
             or not np.isfinite(qpos).all() or not np.isfinite(qvel).all()):
@@ -174,7 +179,7 @@ def render_recording(trajectory, output, *, fps=12, slow_motion=1.5, still_time=
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", type=Path, default=Path("outputs/m8_insertion/demo"))
+    parser.add_argument("--output", type=Path, default=Path("outputs/m8_table_pickup/demo"))
     parser.add_argument("--preview", action="store_true", help="Static scene with robot pickup poses")
     parser.add_argument("--replay", type=Path)
     parser.add_argument("--export-only", action="store_true")
@@ -185,10 +190,14 @@ def main():
     parser.add_argument("--still-time", type=float)
     parser.add_argument("--stills-only", action="store_true")
     parser.add_argument("--maximum-phases", type=int)
-    parser.add_argument("--stroke-degrees", type=float, default=120.)
-    parser.add_argument("--angular-speed", type=float, default=1.)
-    parser.add_argument("--maximum-starting-strokes", type=int, default=8)
+    parser.add_argument("--stroke-degrees", type=float, default=180.)
+    parser.add_argument("--angular-speed", type=float, default=2.)
+    parser.add_argument("--maximum-starting-strokes", type=int, default=5)
     parser.add_argument("--qualifying-strokes", type=int, default=2)
+    parser.add_argument("--axial-damping", type=float,
+                        help="Native arm axial velocity damping in N s/m (table: 50, legacy: 0)")
+    parser.add_argument("--preheld-block", action="store_true",
+                        help="Use the archived initial left-touching block scene")
     args = parser.parse_args()
     if not 1 <= args.fps <= 60 or args.slow_motion <= 0:
         parser.error("fps must be 1–60 and slow motion must be positive")
@@ -199,7 +208,8 @@ def main():
             fps=args.fps, slow_motion=args.slow_motion, still_time=args.still_time,
             stills_only=args.stills_only)))
         return
-    config = InsertionConfig()
+    from .m8_insertion_scene import table_pickup_config
+    config = InsertionConfig() if args.preheld_block else table_pickup_config()
     config = replace(config, base=replace(config.base,
         thread=replace(config.thread, timestep=args.dt)))
     if args.preview:
@@ -215,7 +225,9 @@ def main():
     control = InsertionControlConfig(arm=replace(YamM8ControlConfig(),
         stroke_angle_rad=np.deg2rad(args.stroke_degrees), angular_speed_rad_s=args.angular_speed),
         maximum_starting_strokes=args.maximum_starting_strokes,
-        qualifying_turns=args.qualifying_strokes)
+        qualifying_turns=args.qualifying_strokes,
+        axial_velocity_damping_Ns_per_m=(args.axial_damping if args.axial_damping is not None
+                                        else 0. if args.preheld_block else 50.))
     report = run_insertion_demo(args.output, scene_config=config, control_config=control,
                                 maximum_phases=args.maximum_phases)
     if args.video:

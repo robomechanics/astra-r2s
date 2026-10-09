@@ -1,17 +1,81 @@
-# YAM pickup and M8 thread starting
+# YAM block and bolt pickup with M8 thread starting
 
-The female M8 × 1.25 through-hole is in a free aluminum block held by the
-left YAM arm. A separate steel bolt has a 16 mm shaft and an AF20 × 8 mm
-solid head. The right arm reaches for it, closes its real fingers, lifts it
-off a physical three-pin rest, transports it over the hole, and searches for
-the thread with finite motor torques and an axially floating hand.
+The current table-pickup mode starts with a free aluminum block on the table
+and a separate steel bolt on a low three-pin rest. The left arm begins open,
+reaches the block, closes its real fingers, lifts it, and rotates/transports
+it into the assembly pose. The right arm then physically picks up the bolt,
+transports it over the female M8 × 1.25 through-hole, and searches for the
+thread with finite motor torques and an axially floating hand. The bolt has
+a 16 mm shaft and an AF20 × 8 mm solid head.
 
-[![Complete recorded pickup, capture and threading](../media/m8_insertion/full/demo.gif)](../media/m8_insertion/full/demo.mp4)
+The frozen table-pickup source passes [167 software tests](../media/m8_table_pickup/software_tests.json)
+in 79.45 s with unchanged recorded source hashes; the
+[manifest](../media/m8_table_pickup/software_manifest.json) binds the proof and executed verification script.
+Its fresh full physics run starts again with both workpieces separately
+supported, without reusing a checkpoint. The completed result and final
+independent audits are pending. The
+published earlier nominal rollout farther below starts with the left pads
+touching the block. Its result establishes bolt pickup and threading,
+not block pickup.
 
-## Completed nominal rollout
+The [earlier initial table layout](../media/m8_table_pickup/preview.png) and its
+[configuration](../media/m8_table_pickup/preview.json) are a static preview,
+with the earlier side-bolt placement.
+The current CLI defaults are 50 µs physics steps, 180° strokes, 2 rad/s peak
+angular speed, at most five starting strokes, and two qualification strokes;
+table-mode axial velocity damping defaults to 50 N·s/m. Recorded preview
+configurations retain their own original parameters.
 
-The fresh, unspliced **27.35665 s** trajectory passes all **18 nominal gates**.
-It starts with the bolt on its rest, performs physical pickup and transport,
+The [preserved failed full attempt](../media/m8_table_pickup/failures/full_v10_depth_abort)
+actually picks up both objects, with a 59.965 mm block lift and zero world
+support after each lift. It aborts at **12.15315 s** in `release_search_2`:
+the native depth proxy reaches **10.562 µm**, exceeding the unchanged
+**10 µm** guard. No formed-flank capture, qualifying turn or open reset was
+executed. The force-driven floating hand rose during release; the released
+bolt fell freely and struck the entry. That recorded physical motion is not
+a hand-pose teleport. Its raw trace also retains 9 / 6 isolated 50 µs left
+pad-load gaps and 120 sampled camera/jaw penetrating candidates, reaching
+36.610 µm. `partial=false` names the requested full-task scope; the attempt
+did not finish.
+
+[Failed-attempt MP4](../media/m8_table_pickup/failures/full_v10_depth_abort/demo.mp4) ·
+[GIF](../media/m8_table_pickup/failures/full_v10_depth_abort/demo.gif) ·
+[Screenshot](../media/m8_table_pickup/failures/full_v10_depth_abort/demo.png) ·
+[Measured trajectory](../media/m8_table_pickup/failures/full_v10_depth_abort/trajectory.png) ·
+[Original report](../media/m8_table_pickup/failures/full_v10_depth_abort/validation.json)
+
+The earlier [feed screenshot's exact trace link](../media/m8_table_pickup/progress_feed_trace_link.json)
+binds it to this failed attempt. Its preserved 158-test source proof is
+separate from the current 167-test corrected-controller result.
+
+The [recorded block-pickup diagnostic](../media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us)
+physically acquires the table-supported block, lifts it and rolls it into the
+holding pose. It remains **failed and partial**: the every-physics-step pad
+retention check records 26 isolated unloaded steps on one pad and 16 on the
+other, each 50 µs long, despite the coarser saved-pose force check passing.
+The pads are never both unloaded at the same step. The raw
+[pad-force history](../media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/left_pad_force_history.npz)
+and [original report](../media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/validation.json)
+preserve that distinction. This bounded trial contains no full bolt-pickup
+or thread qualification, and its gate has not been relaxed to claim success.
+
+[![Physical block pickup diagnostic; failed pad-load gate](../media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/demo.gif)](../media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/demo.mp4)
+
+[Pickup MP4](../media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/demo.mp4) ·
+[Pickup GIF](../media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/demo.gif) ·
+[Pickup screenshot](../media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/demo.png) ·
+[Media/source manifest](../media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/media_manifest.json)
+
+The video replays the actual 5.55 s diagnostic at 1.5× slow motion; it does
+not add a bolt-pickup or thread trajectory.
+
+[![Earlier bolt pickup, capture and threading; left starts touching block](../media/m8_insertion/full/demo.gif)](../media/m8_insertion/full/demo.mp4)
+
+## Published earlier nominal rollout
+
+The archived fresh, unspliced **27.35665 s** trajectory passes all **18 nominal gates**.
+It starts with the left pads touching the block and the bolt on its rest,
+acquires the finite-force left clamp, performs physical bolt pickup and transport,
 searches through three starting strokes, captures complete flanks, opens the
 right fingers to reset, regrips and performs two qualified half-turns. Those
 two strokes give **1.000085 measured revolutions and 1.245793 mm axial travel**.
@@ -37,14 +101,14 @@ at the block and **367.40 µm** at the bolt. Loaded sampled left pad forces
 remain at least **15.57 / 14.81 N**. Right pad minima during the declared
 transport/alignment/feed/closed-turn samples are **5.70 / 5.50 N**.
 Minimum actual native arm-joint margin is **0.03467 rad**. No solver/state
-abort, direct object drive or post-pickup world support occurs.
+abort, direct object drive or post-bolt-pickup world support occurs.
 
 Published evidence:
 
 - [Complete MP4](../media/m8_insertion/full/demo.mp4), [GIF](../media/m8_insertion/full/demo.gif) and [open-reset still](../media/m8_insertion/full/demo.png).
 - [Actual trajectory](../media/m8_insertion/full/trace.npz), [all 18 gates and phase metrics](../media/m8_insertion/full/validation.json), [source/runtime manifest](../media/m8_insertion/full/manifest.json) and executed source archives.
 - [Independent geometry/capture audit](../media/m8_insertion/full/independent_capture_audit.json), [all-candidate reset-contact audit](../media/m8_insertion/full_reset_contact_audit.json) and [free-joint property audit](../media/m8_insertion/full_free_joint_properties.json).
-- [Measured motion/contact chart](../media/m8_insertion/full/trajectory.png) and [126-test software proof](../media/m8_insertion/software_tests.json).
+- [Measured motion/contact chart](../media/m8_insertion/full/trajectory.png) and [126-test software proof for the earlier source snapshot](../media/m8_insertion/software_tests.json).
 
 The contact audit recomputes collision candidates at saved poses without
 integrating physics. The rollout report supplies all-substep contact and
@@ -62,7 +126,7 @@ partial traces, executed sources, interruption records and audits are preserved
 under [interrupted trials](../media/m8_insertion/interrupted). The legacy
 continuous-force trial reached capture and an unsupported reset, then stopped
 before its first qualification turn. It has no final acceptance result.
-The completed fresh run starts again from the separate bolt's original pickup
+The completed earlier run starts again from the separate bolt's original pickup
 state; no trajectory is spliced from those checkpoints.
 
 The separate fixed-female/free-bolt contact experiment starts from 0.5 mm
@@ -86,20 +150,71 @@ The block is 20 × 120 × 16 mm and weighs 101.814 g after subtracting the real
 helical bore. Its collision geometry tiles the rectangular solid around an
 AF16 female-thread SDF prism without overlapping volumes or a box covering
 the opening. The solid steel head and independently integrated shaft weigh
-26.750 g together. Both thread frames point down; the unchanged exact M8
+26.750 g together. Both thread frames point down in the assembly pose; the unchanged exact M8
 SDF geometry supplies contact surfaces only.
 
-The left arm starts with its pads touching the block and acquires the grip
-through finite finger forces. The right arm starts open, 20 mm above the
-separate bolt head, then physically reaches and closes. Only actual YAM joint
+In the current table-pickup mode, the block stands on its 20 × 16 mm short
+end, with its center initially at (0.25, 0.15, 0.060) m. This upright placement
+gives the native fingers and wrist clearance from the table; the block is
+physically rotated flat after lifting. The male bolt starts separately, with
+its head center at (0.36, −0.22, 0.040) m on a three-pin support that leaves
+the shaft clear. Table support before acquisition is permitted and measured;
+support after the declared lift must be zero. Both hands start open and clear
+of their workpieces. The block's grasp reference is acquired after actual
+closure rather than initialized as a held object.
+
+Left-pad normal contact compliance is an explicit numerical assumption. Native
+mass-normalized normal-penalty parameters do not identify a material modulus;
+their force/indentation mapping depends on pose, inertia and contact patch.
+The [compliance discussion](m8_insertion_physics.md#pad-compliance-in-the-table-pickup-extension)
+explains the recorded indentation/load diagnostics and hardware-calibration
+limit. Per-physics-step force gaps remain explicit failures, even when the
+physical pickup movement completes.
+
+The next full trial uses the original box pad geometry, direct normal
+`solref=(-31250, -2500)`, and 0.8 ms tangential contact regularization.
+A softer pilot was rejected after a separate clearance audit found native
+finger-backing contacts; successful motion does not make those contacts
+acceptable. This numerical contact model does not represent a calibrated
+rubber material. Full-run results for the selected parameters remain pending.
+
+The selected [direct-normal block-pickup pilot](../media/m8_table_pickup/failures/roll_3s_direct_normal_50us_allsteps)
+still fails the unchanged strict load-retention gate: it records 9 / 6
+isolated 50 µs unilateral force gaps. Its saved-pose geometry audit finds
+zero nonpad left-hand/block candidates and at most 10.315 µm pad depth;
+this sampled check does not establish every-substep backing clearance.
+The [rejected softer pilot](../media/m8_table_pickup/failures/roll_3s_assumed_compliance_50us_allsteps)
+records 1,720 penetrating native backing candidates at saved poses, with
+18.46 µm maximum penetration. Its [interrupted full attempt](../media/m8_table_pickup/interrupted_soft_pad_full)
+has no final validation and supplies no checkpoint for the fresh trial.
+The [158-test proof for that rejected source snapshot](../media/m8_table_pickup/rejected_soft_pad_software)
+is retained as software evidence, rather than physical acceptance of that model.
+The earlier 158-test numerical-contact source proof remains inside the
+failed full attempt. The current 167-test result was rerun after moving the
+bolt and adding the native axial damping; it has a separate source-bound record.
+
+The explicit `--preheld-block` mode preserves the earlier initial left pad
+touching pose and finite-force clamp. The factory `InsertionConfig()` remains
+that historical mode; `table_pickup_config()` selects the new table layout.
+The demo CLI uses the table layout by default. The right arm starts open,
+20 mm above the separate bolt head, then physically reaches and closes. Only actual YAM joint
 and finger motors are commanded. The free bolt and block have no actuator,
 grasp weld, external wrench, or prescribed screw trajectory.
 
-During thread search/turning, the right controller removes axial position and
-velocity servo forces. A constant net 0.05 N axial feed is produced through
-bounded arm torques, including the declared bolt-weight compensation. Nut
-or bolt yaw is never converted into a commanded axial position. Lateral and
-orientation targets follow the measured moving hole frame.
+During thread search/turning, the right controller removes the axial position
+spring. It applies a constant net 0.05 N feed plus velocity-only damping
+`F=-50*v` N through bounded native arm torques, including the declared
+bolt-weight compensation. Here `v` is the hand's axial velocity relative to
+the moving hole. This damping is active in floating phases, including release,
+and has no axial position target or yaw-to-travel rule. Nut or bolt yaw is
+never converted into a commanded axial position. Lateral and orientation
+targets follow the measured moving hole frame.
+
+The table demo defaults to 50 N·s/m damping. `--axial-damping` selects another
+declared value; an explicit `--axial-damping 0` preserves undamped behavior.
+The historical `--preheld-block` default remains zero damping. The policy
+environment continues to expose actual torque actions, without this scripted
+pickup controller.
 
 Full engagement is distinct from cone contact. The geometry observer requires
 one whole pitch of complete, unchamfered flank overlap, accounting for tilt
@@ -117,13 +232,14 @@ Normal impulse establishes loaded contact; it does not establish axial force
 balance. Actual lead and unsupported open resets independently qualify
 engagement. Every saved sample records the window metrics.
 
-The candidate capture tag occurs at **16.063 s**. Qualification follows from
-the measured lead and unsupported resets above, rather than the tag alone.
+In the archived earlier rollout, the candidate capture tag occurs at
+**16.063 s**. Qualification follows from the measured lead and unsupported
+resets above, rather than the tag alone.
 
 The earlier observer required 0.2 s of uninterrupted positive contact force.
 Zero-margin unilateral contacts have real force gaps even during correct
 pitch-following motion. That criterion remains a separate diagnostic, and
-the original trial retains its executed source and outcome. The fresh full
+the original trial retains its executed source and outcome. The earlier completed
 run also passes this legacy diagnostic at **22.44105 s**. Contact geometry,
 force laws, motor bounds, lead limits and reset limits are unchanged.
 
@@ -135,7 +251,11 @@ MJLab bridge; no GPU or learned policy is used.
 ```bash
 scripts/run_m8.sh -m yam_twin.m8_insertion_demo --preview
 scripts/run_m8.sh -m yam_twin.m8_insertion_demo \
-  --output outputs/m8_insertion/demo --dt .00005 \
+  --output outputs/m8_table_pickup/demo --dt .00005 \
+  --stroke-degrees 180 --angular-speed 2 --maximum-starting-strokes 5 \
+  --axial-damping 50 --video
+scripts/run_m8.sh -m yam_twin.m8_insertion_demo --preheld-block \
+  --output outputs/m8_insertion/preheld_demo --dt .00005 \
   --stroke-degrees 180 --angular-speed 2 --maximum-starting-strokes 5 --video
 scripts/run_m8.sh -m yam_twin.m8_insertion_demo \
   --replay media/m8_insertion/full/trace.npz \
@@ -162,7 +282,15 @@ diagnostic passes; inspect every result and its scope.
 motor/jaw actions and 118 privileged observations, including pickup history,
 grasp slips and moving-thread geometry. Contact impulse and capture-window
 diagnostics are available in `info`. Policy steps contain no scripted pickup
-controller. Success requires retained,
+controller. Its default reset uses the table-pickup scene when neither a model
+nor a scene config is supplied; an explicit `scene_config=InsertionConfig()`
+selects the historical left-touching reset. Separate left/right acquisition
+times, table/rest support histories, lift flags and frozen grasp-reference
+status are reported in `info`. A loaded, retained block lift of at least
+3 mm and loss of table support must precede its frozen grasp reference;
+the bolt must similarly leave its rest by at least 5 mm. Both physical
+pickups are required before capture or successful threading reward.
+Success requires retained,
 unsupported grasps and independently measured rotation/advance within 2%
 of pitch after full-flank engagement. Actual arm joints outside their native
 ranges by more than 10 µrad terminate the episode; current and episode-minimum

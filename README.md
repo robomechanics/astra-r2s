@@ -1,15 +1,46 @@
 # Bimanual YAM M8 contact tasks
 
-The **female M8 × 1.25 thread is in the left-held block**. The right arm
-picks up a separate headed bolt, starts the thread, releases and regrasps,
-then performs two qualified 180° strokes. The complete recorded rollout
+The current task starts with **both M8 workpieces set aside**: the female
+threaded block rests on the table and the male bolt rests on a separate
+low support. The left arm must reach, close its fingers, lift the block,
+and rotate it into the assembly pose before the right arm picks up the bolt.
+The selected table-pickup source passes **167 software tests** at unchanged
+recorded hashes. Its fresh complete physics rollout is running; threading
+acceptance remains pending. See [task modes, controls and evidence](docs/yam_m8_insertion.md).
+
+The [preserved failed full attempt](media/m8_table_pickup/failures/full_v10_depth_abort)
+physically picks up both workpieces, then aborts at thread entry: its depth
+proxy reaches 10.562 µm, exceeding the unchanged 10 µm guard. Capture and
+qualified turns were not reached. Camera/jaw collisions and isolated pad-load
+gaps remain recorded failures. The fresh trial moves the separate bolt farther
+aside and adds native axial velocity damping, with no imposed screw motion.
+
+[Failed-attempt MP4](media/m8_table_pickup/failures/full_v10_depth_abort/demo.mp4) ·
+[GIF](media/m8_table_pickup/failures/full_v10_depth_abort/demo.gif) ·
+[Screenshot](media/m8_table_pickup/failures/full_v10_depth_abort/demo.png)
+
+[Initial table layout](media/m8_table_pickup/preview.png) shows the upright
+block and separate bolt. This is a static preview, not a completed rollout.
+The [physical block-pickup diagnostic](media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us)
+reaches the holding pose but retains a failed pad-load check for isolated
+50 µs force gaps. It is partial evidence, with no bolt/thread qualification.
+
+[![Physical block pickup diagnostic; failed pad-load gate](media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/demo.gif)](media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/demo.mp4)
+
+[Pickup MP4](media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/demo.mp4) ·
+[Pickup GIF](media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/demo.gif) ·
+[Pickup screenshot](media/m8_table_pickup/failures/roll_3s_normal8ms_friction0p8ms_50us/demo.png)
+
+The published **earlier bolt-pickup rollout** starts with the left pads
+already touching the free block. The right arm physically picks up the bolt,
+starts the thread, releases and regrasps, then performs two qualified 180°
+strokes. That recorded rollout
 passes all **18 nominal checks**: one verified revolution advances the bolt
 **1.24579 mm**, with **0.70 and 3.61 µm** lead residuals. Native MuJoCo CPU
 contact drives the threads; the free objects have no grasp welds, imposed
 helix, object motors or direct external drive.
-See [task controls, policy interface and measured results](docs/yam_m8_insertion.md).
 
-[![Complete recorded pickup, capture and threading](media/m8_insertion/full/demo.gif)](media/m8_insertion/full/demo.mp4)
+[![Earlier bolt pickup, capture and threading; left starts touching block](media/m8_insertion/full/demo.gif)](media/m8_insertion/full/demo.mp4)
 
 [Watch/download the MP4](media/m8_insertion/full/demo.mp4) ·
 [Raw trajectory and checks](media/m8_insertion/full) ·
@@ -18,8 +49,9 @@ See [task controls, policy interface and measured results](docs/yam_m8_insertion
 The short shaft is 16 mm long and its solid graspable head is AF20 × 8 mm.
 Both captured open resets have zero hand/bolt, world-support and head-seating
 contacts; peak axial drift is **0.253 and 0.083 µm**. This establishes the
-nominal pickup-to-running sequence. Full seating, preload, hardware calibration
-and policy training remain unqualified.
+nominal bolt-pickup-to-running sequence with that initial left grasp pose.
+It does not demonstrate acquiring the block from the table. Full seating,
+preload, hardware calibration and policy training remain unqualified.
 
 The separate disengaged contact benchmark measures **1.250052 mm/revolution**
 after capture. Without a rotation command, the bolt stops at the thread
@@ -27,7 +59,10 @@ entry. These are explicitly ideal-fixture tests; their results do not replace
 the full robot checks. Timestep and contact-search refinement pass the strict
 2% travel/lead comparisons; the peak reported depth remains search-sensitive.
 See [the numerical comparison and raw traces](media/m8_insertion/refinement/README.md).
-**126 software tests pass.**
+The [current 167-test software proof](media/m8_table_pickup/software_tests.json)
+and [source-bound manifest](media/m8_table_pickup/software_manifest.json)
+are separate from physical acceptance. The earlier bolt-pickup snapshot's
+126-test proof remains archived with its own sources.
 
 ## Verified turning baseline
 
@@ -118,7 +153,7 @@ scripts/run_m8.sh -m thread_lab.load_benchmark --help
 ```
 
 `thread_lab.validate` retains strict physics gates and can exit with failure.
-The current **126 software tests pass**. Software tests, numerical geometry checks,
+The current table-pickup source passes **167 software tests**. Software tests, numerical geometry checks,
 and physics acceptance answer different questions.
 [Setup and engine provenance](docs/m8_setup.md) explain the separate runtimes.
 

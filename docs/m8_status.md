@@ -6,11 +6,18 @@ male/female fit, a rounded bolt root, and entry chamfers. The nut is a free
 rigid body; the hand transmits forces through finite frictional pad contacts.
 The collision plugin contains no force law or rotation-to-translation rule.
 
-The separate [YAM pickup and female-block task](yam_m8_insertion.md) now
-passes all 18 nominal rollout gates, including actual thread capture and one
+The separate [YAM bolt-pickup and female-block task](yam_m8_insertion.md)
+has an earlier published rollout passing all 18 nominal gates, including actual thread capture and one
 qualified revolution. Its raw evidence is published alongside this older
 fixed-bolt experiment. Those nominal results do not erase the load/search
-failures or calibration limits documented here.
+failures or calibration limits documented here. That earlier rollout starts
+with the left pads touching the block. The current extension physically picks
+the block up from the table as well; its complete rollout is pending.
+Its [167-test software proof](../media/m8_table_pickup/software_tests.json)
+checks the selected source snapshot and does not override failed physics gates.
+The [earlier full attempt](../media/m8_table_pickup/failures/full_v10_depth_abort)
+physically picked up both workpieces but aborted at the unchanged depth guard
+before capture. Recorded preload gaps and camera/jaw collisions remain failures.
 
 ![Recorded contact-driven turn](../media/m8_contact.png)
 

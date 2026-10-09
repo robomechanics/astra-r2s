@@ -4,13 +4,119 @@ import numpy as np
 import pytest
 
 from yam_twin.m8_insertion_env import OBSERVATION_FIELDS, YamM8InsertionEnv
-from yam_twin.m8_insertion_scene import InsertionConfig, build_model
+from yam_twin.m8_insertion_scene import InsertionConfig, build_model, table_pickup_config
 from yam_twin.m8_insertion_engagement import LoadedFlankWindow
 
 
 @pytest.fixture(scope="module")
 def model():
     return build_model(InsertionConfig())
+
+
+@pytest.fixture(scope="module")
+def table_scene():
+    return table_pickup_config()
+
+
+@pytest.fixture(scope="module")
+def table_model(table_scene):
+    return build_model(table_scene)
+
+
+def test_default_task_picks_up_both_supported_workpieces_and_preserves_legacy_explicit_model(model):
+    env = YamM8InsertionEnv(control_dt=.000025)
+    _, info = env.reset()
+    assert info["pickup_from_table"] and env.scene_config.pickup_from_table
+    env.close()
+    old = YamM8InsertionEnv(model)
+    _, old_info = old.reset()
+    assert not old_info["pickup_from_table"]
+    assert old._left_reference is not None
+    assert "Left touching-pad" in old_info["reset_grasp_state"]
+    old.close()
+    explicit_config = YamM8InsertionEnv(scene_config=InsertionConfig())
+    _, explicit_info = explicit_config.reset()
+    assert not explicit_info["pickup_from_table"]
+    explicit_config.close()
+
+
+def test_table_reset_has_open_separated_hands_and_no_invented_grasp_reference(table_model, table_scene):
+    env = YamM8InsertionEnv(table_model, scene_config=table_scene, control_dt=.000050)
+    obs, info = env.reset(seed=3)
+    qpos = env.data.qpos.copy()
+    repeated, repeated_info = env.reset(seed=3)
+    assert np.array_equal(qpos, env.data.qpos) and np.array_equal(obs, repeated)
+    assert obs.shape == (118,) and env.action_space.shape == (14,)
+    assert env.observation_space.contains(obs)
+    # Exact touching placements can have no candidate at t=0 owing to
+    # roundoff. Test physical surface placement, then observed support after
+    # real gravity/contact substeps; never fabricate reset contact history.
+    block_p, block_r = env._free_pose(env.block_qadr)
+    corners = np.asarray([[x, y, z] for x in (-1, 1) for y in (-1, 1) for z in (-1, 1)])
+    corners = block_p+(corners*np.asarray(table_scene.base.block_size)/2)@block_r.T
+    table = table_model.geom("table").id
+    table_top = float(table_model.geom_pos[table, 2]+table_model.geom_size[table, 2])
+    assert abs(np.min(corners[:, 2])-table_top) <= 20e-9
+    assert table_scene.bolt_head_position[2]-table_scene.head_height/2 == pytest.approx(
+        table_model.geom_pos[table_model.geom("bolt_rest_pin_0").id, 2]
+        +table_model.geom_size[table_model.geom("bolt_rest_pin_0").id, 1], abs=1e-12)
+    assert not info["left_pads_loaded"] and not info["right_pads_loaded"]
+    assert not info["left_grasp_reference_observed"] and not info["right_grasp_reference_observed"]
+    assert env._left_reference is None and env._right_reference is None
+    for key in ("left_pad_acquisition_observed", "right_pad_acquisition_observed", "left_block_pickup_observed", "right_bolt_pickup_observed",
+                "pickup_observed", "loaded_flank_engagement_candidate", "thread_started"):
+        assert not info[key] and not repeated_info[key]
+    assert info["left_pad_acquisition_time_s"] is None and info["left_block_pickup_time_s"] is None
+    assert info["right_pad_acquisition_time_s"] is None
+    assert info["right_bolt_pickup_time_s"] is None
+    assert np.allclose(env.last_apertures, table_scene.base.open_aperture)
+    assert np.allclose(env.data.qpos[env.finger_qpos], [.0125, -.0125, .0125, -.0125])
+    for address in (env.block_qadr, env.male_qadr):
+        assert np.array_equal(env.data.qpos[address:address+7], table_model.qpos0[address:address+7])
+    assert np.linalg.norm(env.data.site_xpos[env.grasp_sites[0]]-
+                          (env._free_pose(env.block_qadr)[0]+env._free_pose(env.block_qadr)[1]
+                           @np.asarray(table_scene.base.left_grasp_offset))) >= .02
+    assert np.allclose(env.data.site_xpos[env.grasp_sites[1]]-env._head_position(), [0, 0, .020], atol=2e-6)
+    _, reward, terminated, _, stepped = env.step(np.r_[np.zeros(12), [-1., -1.]])
+    assert not terminated, stepped["failure_reasons"]
+    assert stepped["block_world_support_contacts"] > 0 and stepped["bolt_rest_support_contacts"] > 0
+    assert stepped["block_world_support_observed"] and stepped["rest_support_observed"]
+    assert reward == 0 and not stepped["pickup_observed"] and not stepped["success"]
+    assert not stepped["left_grasp_reference_observed"]
+    assert not stepped["right_grasp_reference_observed"]
+    env.close()
+
+
+def test_lifted_block_without_measured_pad_acquisition_cannot_earn_pickup(table_model, table_scene):
+    env = YamM8InsertionEnv(table_model, scene_config=table_scene, control_dt=.000025)
+    env.reset()
+    # Backend fault injection lifts the free block geometrically while both
+    # hands remain open and away. Height and loss of support alone are never
+    # evidence that a policy acquired the workpiece.
+    env.data.qpos[env.block_qadr+2] += .010
+    mujoco.mj_forward(table_model, env.data)
+    assert env._contacts()["block_world_support_contacts"] == 0
+    _, reward, terminated, _, info = env.step(np.r_[np.zeros(12), [-1., -1.]])
+    assert not terminated, info["failure_reasons"]
+    assert info["block_lift_from_reset_m"] > info["minimum_block_pickup_lift_m"]
+    assert not info["left_pads_loaded"] and not info["left_pad_acquisition_observed"]
+    assert not info["left_block_pickup_observed"] and not info["left_grasp_reference_observed"]
+    assert not info["pickup_observed"] and not info["success"] and reward == 0
+    env.close()
+
+
+@pytest.mark.parametrize("name", ["block", "bolt"])
+def test_table_task_detects_external_workpiece_drive_before_any_acquisition(table_model, table_scene, name):
+    env = YamM8InsertionEnv(table_model, scene_config=table_scene, control_dt=.001)
+    env.reset()
+    body = env.block_id if name == "block" else env.male_id
+    env.data.xfrc_applied[body, 0] = .01
+    _, reward, terminated, _, info = env.step(np.r_[np.zeros(12), [-1., -1.]])
+    assert terminated and reward == -1 and not info["success"]
+    assert name+"_external_drive_present" in info["failure_reasons"]
+    assert not info["pickup_observed"]
+    assert env.data.time <= table_model.opt.timestep*1.01
+    env.close()
 
 
 def test_reset_is_unengaged_hover_and_preserves_both_free_workpieces(model):

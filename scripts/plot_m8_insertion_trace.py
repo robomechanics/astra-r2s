@@ -37,7 +37,9 @@ PHASE_COLORS = {
 
 
 def _phase_category(phase):
-    if phase in {"secure_left", "reach_bolt", "close_bolt", "settle_bolt", "lift_bolt"}:
+    if phase in {"settle_table", "reach_left_block", "close_left_block", "settle_left_block",
+                 "lift_left_block", "transport_left_block", "hold_left_block",
+                 "secure_left", "reach_bolt", "close_bolt", "settle_bolt", "lift_bolt"}:
         return "Pickup"
     if phase in {"transport_bolt", "align_over_hole", "feed_to_entry"}:
         return "Carry / align"
@@ -173,6 +175,19 @@ def plot_completed_run(run, output_dir, *, evidence_only=False,
     # Off-axis pickup projections and the distant approach are not thread entry.
     # The top panel retains the entire recorded axial trajectory.
     aligned = ((radial <= 150e-6) & (tilt <= np.deg2rad(2)) & (overlap >= -pitch))
+    table_pickup = bool(report["scene_config"].get("pickup_from_table", False))
+    insertion_display = np.ones(len(rows), dtype=bool)
+    if table_pickup:
+        alignment_start = next((index for index, row in enumerate(rows)
+                                if row["phase"] == "align_over_hole"), len(rows))
+        insertion_display = ((np.arange(len(rows)) >= alignment_start)
+                             & (radial <= 150e-6) & (tilt <= np.deg2rad(2)))
+        block_world_height = float(report["scene_config"]["block_position"][2]) + _values(rows, "block_lift_m")
+        bolt_world_height = np.asarray([row["bolt_world_position"][2] for row in rows], dtype=float)
+        if not np.isfinite(block_world_height).all() or not np.isfinite(bolt_world_height).all():
+            raise ValueError("Pickup world-height diagnostics must be finite")
+    displayed_yaw = np.where(insertion_display, yaw, np.nan) if table_pickup else yaw
+    displayed_z = np.where(insertion_display, z, np.nan) if table_pickup else z
     masked_overlap = np.where(aligned, overlap * 1e3, np.nan)
     masked_ring = np.where(aligned, full_ring * 1e3, np.nan)
 
@@ -185,12 +200,14 @@ def plot_completed_run(run, output_dir, *, evidence_only=False,
              "grid.alpha": .75, "grid.linewidth": .6,
              "savefig.facecolor": "white", "svg.fonttype": "none"}
     with plt.rc_context(style):
-        fig = plt.figure(figsize=(12.8, 10.2), facecolor="white")
-        grid = fig.add_gridspec(5, 1, height_ratios=[.16, 1.4, 1.25, 1.05, .85],
+        fig = plt.figure(figsize=(12.8, 12.0 if table_pickup else 10.2), facecolor="white")
+        heights = [.16, .9, 1.4, 1.25, 1.05, .85] if table_pickup else [.16, 1.4, 1.25, 1.05, .85]
+        grid = fig.add_gridspec(len(heights), 1, height_ratios=heights,
                                left=.095, right=.905, bottom=.145, top=.815, hspace=.33)
         band = fig.add_subplot(grid[0])
-        axes = [fig.add_subplot(grid[i], sharex=band) for i in range(1, 5)]
-        ax, geometry_ax, pad_ax, support_ax = axes
+        axes = [fig.add_subplot(grid[i], sharex=band) for i in range(1, len(heights))]
+        pickup_ax = axes[0] if table_pickup else None
+        ax, geometry_ax, pad_ax, support_ax = axes[1:] if table_pickup else axes
         fig.text(.095, .958, "YAM · M8 pickup and thread insertion", fontsize=20,
                  weight="bold", va="top")
         fig.text(.095, .92, status, color=status_color, fontsize=11, weight="bold")
@@ -219,12 +236,21 @@ def plot_completed_run(run, output_dir, *, evidence_only=False,
                    ncol=min(5, len(phase_handles)), frameon=False, fontsize=8.5,
                    handlelength=1.2, columnspacing=1.25, borderaxespad=0)
 
-        position_line, = ax.plot(times, z * 1e3, color=COLORS["position"], linewidth=1.7,
-                                 label="Measured axial base position")
-        ax.set_ylabel("Bolt axial base\nposition (mm)")
+        if table_pickup:
+            pickup_ax.plot(times, block_world_height * 1e3, color=COLORS["left_1"], linewidth=1.4,
+                           label="Block center · world Z")
+            pickup_ax.plot(times, bolt_world_height * 1e3, color=COLORS["position"], linewidth=1.4,
+                           label="Bolt shaft base · world Z")
+            pickup_ax.set_ylabel("World height (mm)")
+            pickup_ax.set_title("A  Actual pickup and carry height", loc="left", pad=9)
+            pickup_ax.legend(loc="upper right", frameon=True, framealpha=.92, fontsize=8.2)
+
+        position_line, = ax.plot(times, displayed_z * 1e3, color=COLORS["position"], linewidth=1.7,
+                                 label="Female-frame axial coordinate" if table_pickup else "Measured axial base position")
+        ax.set_ylabel("Female-frame axial\ncoordinate (mm)" if table_pickup else "Bolt axial base\nposition (mm)")
         yaw_ax = ax.twinx()
-        yaw_line, = yaw_ax.plot(times, yaw, color=COLORS["yaw"], linewidth=1.2,
-                               alpha=.85, label="Measured unwrapped yaw")
+        yaw_line, = yaw_ax.plot(times, displayed_yaw, color=COLORS["yaw"], linewidth=1.2,
+                               alpha=.85, label="Relative yaw (axes within 2°)" if table_pickup else "Measured unwrapped yaw")
         yaw_ax.spines["right"].set_visible(True)
         yaw_ax.set_ylabel("Relative yaw (rad)", color=COLORS["yaw"])
         position_handles = [position_line, yaw_line]
@@ -232,13 +258,23 @@ def plot_completed_run(run, output_dir, *, evidence_only=False,
             anchor = max(0, segment["start"] - 1)
             selected = np.arange(anchor, segment["end"] + 1)
             reference = z[anchor] + pitch * (yaw[selected] - yaw[anchor]) / (2 * np.pi)
+            if table_pickup:
+                reference = np.where(insertion_display[selected], reference, np.nan)
             line, = ax.plot(times[selected], reference * 1e3, "--", color=COLORS["reference"],
                             linewidth=1.4, label="Pitch comparison (qualified turns only)")
             if index == 0:
                 position_handles.append(line)
         ax.legend(handles=position_handles, loc="lower left", frameon=True,
                   facecolor="white", framealpha=.92, fontsize=8.5)
-        ax.set_title("A  Recorded axial position and actual rotation", loc="left", pad=9)
+        ax.set_title("B  Insertion and rotation after alignment over the hole" if table_pickup else
+                     "A  Recorded axial position and actual rotation", loc="left", pad=9)
+        if table_pickup:
+            ax.text(.995, .94, "Shown from alignment stage onward, within 150 µm offset / 2° tilt.",
+                    transform=ax.transAxes, ha="right", va="top", fontsize=7.7, color="#4f626d",
+                    bbox={"facecolor": "white", "alpha": .87, "edgecolor": "none"})
+            if not np.any(insertion_display):
+                ax.text(.5, .5, "No aligned insertion stage was recorded", transform=ax.transAxes,
+                        ha="center", va="center", fontsize=10, color="#596975")
 
         geometry_ax.plot(times, masked_overlap, color=COLORS["overlap"], linewidth=1.1,
                          label="Nominal axial overlap")
@@ -247,7 +283,8 @@ def plot_completed_run(run, output_dir, *, evidence_only=False,
         geometry_ax.axhline(pitch * 1e3, color=COLORS["threshold"], linestyle="--", linewidth=1.2,
                             label=f"One complete pitch: {pitch * 1e3:.3f} mm")
         geometry_ax.set_ylabel("Potential overlap /\nfull-ring length (mm)")
-        geometry_ax.set_title("B  Geometric threshold and observer tag", loc="left", pad=13)
+        geometry_ax.set_title("C  Geometric threshold and observer tag" if table_pickup else
+                             "B  Geometric threshold and observer tag", loc="left", pad=13)
         geometry_ax.legend(loc="upper left", frameon=True, framealpha=.92, fontsize=8.2)
         geometry_ax.text(.995, .05, "Near entry (gap ≤ one pitch), within 150 µm offset / 2° tilt.\n"
                          "One complete ring is potential overlap; it alone does not prove engagement.",
@@ -262,7 +299,8 @@ def plot_completed_run(run, output_dir, *, evidence_only=False,
                     label="Left pad 2 · block")
         pad_ax.set_ylim(bottom=-.03 * max(1., float(max(right_pads.max(), left_pads.max()))))
         pad_ax.set_ylabel("Contact normal force (N)")
-        pad_ax.set_title("C  Resolved friction-grip contact loads", loc="left", pad=9)
+        pad_ax.set_title("D  Resolved friction-grip contact loads" if table_pickup else
+                        "C  Resolved friction-grip contact loads", loc="left", pad=9)
         pad_ax.legend(loc="upper right", frameon=True, framealpha=.92, fontsize=8.2, ncol=2)
 
         support_ax.step(times, bolt_support, where="post", color=COLORS["support"], linewidth=1.4,
@@ -271,7 +309,8 @@ def plot_completed_run(run, output_dir, *, evidence_only=False,
                         linewidth=1.4, label="Block ↔ world")
         support_ax.set_ylabel("World-support\ncontacts")
         support_ax.set_xlabel("Simulation time (s)")
-        support_ax.set_title("D  Recorded support counts", loc="left", pad=9)
+        support_ax.set_title("E  Recorded support counts" if table_pickup else
+                            "D  Recorded support counts", loc="left", pad=9)
         support_ax.set_ylim(-.4, max(1., float(max(bolt_support.max(), block_support.max()))) + 1)
         support_ax.yaxis.set_major_locator(matplotlib.ticker.MaxNLocator(integer=True, nbins=4))
         support_ax.legend(loc="upper right", frameon=True, framealpha=.92, fontsize=8.2)
@@ -324,6 +363,10 @@ def plot_completed_run(run, output_dir, *, evidence_only=False,
 
     return {"png": str(png), "pdf": str(pdf), "status": status,
             "plot_scope": "Recorded samples; no integration or force reconstruction",
+            "prealignment_yaw_masked": table_pickup,
+            "pickup_world_height_panel": table_pickup,
+            "insertion_coordinate_mask_scope": ("align_over_hole onward, radial<=150um, tilt<=2deg"
+                                                  if table_pickup else None),
             "lead_qualified_turn_segments": [segment["phase"] for segment in qualified],
             "capture_tag_time_s": capture_time,
             "observer_provenance_present": has_window_observer,
