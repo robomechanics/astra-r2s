@@ -27,6 +27,21 @@ The new [pickup progress recording](../media/m8_table_supported/full_c2_inertia_
 preserves the original prefix through **3.47 s**, showing left stabilization
 and right side-bolt grasp/lift. It qualifies no thread entry, capture or reset.
 
+The [entry/weight-transfer package](../media/m8_table_supported/full_c2_inertia_v2_progress/entry_transfer/README.md)
+preserves the same complete fresh prefix through **13.1946 native seconds**:
+[normal 1× clip](../media/m8_table_supported/full_c2_inertia_v2_progress/entry_transfer/render/demo.gif)
+and [actual entry detail](../media/m8_table_supported/full_c2_inertia_v2_progress/entry_transfer/render/endpoint_detail.png).
+Its 2,652 original states include pickup, alignment and entry. The original
+100.05 ms / 2,001-sample transfer window reports **100.003432%** thread reaction
+of bolt weight, **1.383709%** positive upward hand support and 100% loaded duty;
+formed overlap/interior contacts remain zero. The recorded 159-state / 12 fps
+clip encodes 13.25 s; it contains no later direction-search result.
+Subsequently, the live native run completes 1.4431 s reverse motion and a
+150 ms C2 brake within its 0.36275 s stopped-direction phase, with a ready
+quiet/load gate (103.658724% thread reaction / 0.458881% positive hand support).
+The first forward phase is underway. Full ledgers/audit and capture/reset/
+complete assembly remain pending; no closed result is inferred from this prefix.
+
 The earlier [crest-search V3 cold diagnostic](../media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/README.md)
 fails at **1.6254 s**, radial error **150.848 µm** above the unchanged
 150 µm guard, after requesting a closed stop at 1.61915 s. It never reaches

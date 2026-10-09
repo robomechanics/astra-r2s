@@ -37,6 +37,40 @@ Its copied state replay recipe refreshes geometry only. Feedforward is disabled
 in all pickup samples; dense ledgers/final audit were pending at capture.
 The side-pickup bore-distance guard is inactive; no thread entry is claimed.
 
+The newer [immutable entry/transfer prefix](../media/m8_table_supported/full_c2_inertia_v2_progress/entry_transfer/README.md)
+preserves **13.19459999997592 s / 2,652 original post-step states**, from the
+same independent spawns through actual alignment, entry and weight transfer.
+[Normal 1× GIF](../media/m8_table_supported/full_c2_inertia_v2_progress/entry_transfer/render/demo.gif),
+[MP4](../media/m8_table_supported/full_c2_inertia_v2_progress/entry_transfer/render/demo.mp4)
+and [entry detail](../media/m8_table_supported/full_c2_inertia_v2_progress/entry_transfer/render/endpoint_detail.png)
+select 159 exact states at 12 fps (13.25 s encoded), with the true endpoint
+in the last frame and no interpolation. Original transfer-window fields cover
+**100.05 ms / 2,001 native samples**, reporting **100.003432%** mean thread
+reaction of bolt weight, **1.383709%** mean positive right-hand upward support
+and 100% loaded duty. Formed overlap and actual interior contact count stay zero.
+Those fields are controller observations; dense force/command ledgers and the
+independent full audit were pending at capture. Its 2,311 disabled / 341 enabled
+inertia records are sparse saved samples, not every native command.
+
+Package SHA256SUMS is
+`28f69cb9769200cb776393d5e495421f199c2acb85aeb991b000fbc4674385f0`.
+The **45,367,323-byte** original trace is losslessly split into 45,000,000 and
+367,323-byte chunks. Use its [verify/copy/reassemble/replay recipe](../media/m8_table_supported/full_c2_inertia_v2_progress/entry_transfer/README.md#verify-and-replay-the-recording):
+copy the COMPLETE newer package to an isolated da69 checkout, reassemble
+all original artifacts/sidecars into a new output, and pass the restored
+`native_snapshot` to the archived renderer with `--repository-root "$PWD"`.
+The 74-source/runtime checks and kinematics-only geometry replay integrate
+no motion and reproduce no contact forces. Do not concatenate this prefix
+with pickup or cold-trial recordings.
+
+The live native run later completes **1.4431 s** reverse motion and a
+**150 ms C2 brake** within its **0.36275 s** stopped-direction phase. Its actual
+quiet/load readiness window reports **103.658724%** thread reaction of bolt
+weight and **0.458881%** positive upward hand support, with formed overlap zero.
+The first forward phase is underway. These later live events are not in the
+historical 13.1946 s media package; no final outcome, capture/open/reset or
+full-task audit is claimed.
+
 Use an absent complete clone destination and detach to the exact new pin.
 The commands below use the recorded runtime; for a different-host build,
 follow [the local-proof case](#different-host-local-proof) before launching:

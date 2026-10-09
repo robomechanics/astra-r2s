@@ -41,6 +41,15 @@ The [3.47 s pickup progress clip](media/m8_table_supported/full_c2_inertia_v2_pr
 shows actual table stabilization, side-bolt grasp and lift; it contains no
 thread-entry or capture result.
 
+The newer [13.1946 s entry/transfer recording](media/m8_table_supported/full_c2_inertia_v2_progress/entry_transfer/README.md)
+has a [normal 1× clip](media/m8_table_supported/full_c2_inertia_v2_progress/entry_transfer/render/demo.gif)
+and [actual entry detail](media/m8_table_supported/full_c2_inertia_v2_progress/entry_transfer/render/endpoint_detail.png).
+Its original 100.05 ms window reports 100.003432% of bolt weight in thread
+reaction and 1.383709% positive upward hand support; formed overlap/interior
+contacts stay zero. The live run subsequently completes the 150 ms brake and
+stopped-direction quiet/load gate; its first forward phase is underway.
+These are progress milestones, with no closed full result or capture claim.
+
 The historical `6e7d0d2` producer retains its separate
 [402-test / 65-source proof](media/m8_table_supported/software_proof_feedback_v1).
 Its fresh unspliced native attempt closed with a

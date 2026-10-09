@@ -1,0 +1,19 @@
+{
+  "scope": "Read-only saved native states/original sampled metadata/media encoding identities only. No native integration, dense-force/inertia validation, closed-rollout or capture qualification.",
+  "passed": true,
+  "trajectory_sha256": "fef393d5bd4e1c4ce685c86a54f1c983550921d2db6a2f2348e52e9a1c51a39e",
+  "render_manifest_sha256": "1eee3d6cb661251af35ef23c37526c423bb9b37402c1f34f2fda5e0fac657c2d",
+  "original_saved_state_stills": 7,
+  "all_original_sample_qpos_qvel_hashes_exact": true,
+  "all_original_frame_indices_times_exact": true,
+  "mp4_frames": 159,
+  "mp4_fps": 12.0,
+  "mp4_encoded_duration_s": 13.25,
+  "gif_duration_ms": 13250,
+  "original_prefix_bytes_unchanged": true,
+  "source74_identity_unchanged": true,
+  "sampled_inertia_disabled_records": 2311,
+  "sampled_inertia_active_records": 341,
+  "disabled_inverse_inputs_are_not_measured_mass_or_Jdot": true,
+  "verification_source_sha256": "3629ed9b4c81b5f4734932b2699bfdf37a9fbae24bf2542e24398088c0d4a7ae"
+}
