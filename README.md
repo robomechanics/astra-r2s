@@ -30,13 +30,24 @@ with peak axial drift **0.178 / 0.424 µm**. Independent saved-pose audits
 check all four resets. The head remains unseated; full tightening/preload,
 hardware calibration and broad policy-training fidelity remain unqualified.
 
-**672 software tests pass** for the current table-supported C2/inertia
-controller, with [all 74 exact source files, original log and before/after proof](media/m8_table_supported/software_proof_c2_inertia_v2).
-Producer `da69a9c` starts a new fresh, unspliced table/rest-spawn attempt,
-`full_c2_inertia_v2`, at **13:12:50 UTC on 2026-10-09**. That native attempt is
-in progress; capture, lead/reset and complete assembly remain unqualified.
+**672 software tests pass** for the current reset-speed2 producer, with
+[all 74 exact source files, original log and before/after proof](media/m8_table_supported/software_proof_reset_speed2_v3).
+Producer `9ae1a9f` starts **`full_reset_speed2_v3`** at **14:32:53 UTC on
+2026-10-09**, from independent table/rest spawns. Native integration is in
+progress, with no completed capture/reset/full result. The selected
+`--reset-speed 2` doubles the intended free-hand reset duration to 2.94524 s;
+half scheduled velocity and quarter acceleration are command facts, not
+measured tracking or clearance. Geometry, physics, caps and guards are unchanged.
 The [current exact checkout/fresh-run recipe](docs/m8_supported_agent_handoff.md#current-producer-fresh-run)
-binds the new producer, source/runtime checks and finite C2/inertia controller.
+binds this new source/proof/launcher separately from every historical trial.
+
+The earlier `da69a9c` producer retains its [separate 672-test proof](media/m8_table_supported/software_proof_c2_inertia_v2).
+Its fresh `full_c2_inertia_v2` attempt closes failed at **22.08285 s / 441,657
+ticks**, after **59.72 min** wall time. Original `passed=false`, `partial=false`,
+**19/27 checks** remain: `reset_open_search_2` aborts on a right-pad/bolt
+recontact (1.487 N). The primary audit passes **13/19 checks** and stays false.
+Its supplemental pose/contact binding is frozen; the complete failed packet
+is being prepared. These old clips do not show the new reset-speed2 attempt.
 The [3.47 s pickup progress clip](media/m8_table_supported/full_c2_inertia_v2_progress/pickup_progress/README.md)
 shows actual table stabilization, side-bolt grasp and lift; it contains no
 thread-entry or capture result.
@@ -46,9 +57,9 @@ has a [normal 1× clip](media/m8_table_supported/full_c2_inertia_v2_progress/ent
 and [actual entry detail](media/m8_table_supported/full_c2_inertia_v2_progress/entry_transfer/render/endpoint_detail.png).
 Its original 100.05 ms window reports 100.003432% of bolt weight in thread
 reaction and 1.383709% positive upward hand support; formed overlap/interior
-contacts stay zero. The live run subsequently completes the 150 ms brake and
-stopped-direction quiet/load gate; its first forward phase is underway.
-These are progress milestones, with no closed full result or capture claim.
+contacts stay zero. The run later completes its stopped-direction gate and
+first shallow forward phase, then fails during an open search reset. These
+historical progress milestones preserve their capture-time scope.
 
 The historical `6e7d0d2` producer retains its separate
 [402-test / 65-source proof](media/m8_table_supported/software_proof_feedback_v1).

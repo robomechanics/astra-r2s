@@ -14,14 +14,26 @@ establish completion of this new table-supported trajectory.
 
 ## Start here
 
-The current producer **`da69a9cd44a8312cc7b97365faf5e09c27a646e2`** passes
-[672 whole-suite software tests on 74 unchanged source files](../media/m8_table_supported/software_proof_c2_inertia_v2/README.md).
-Its fresh **`full_c2_inertia_v2`** native attempt starts at **13:12:50 UTC on
-2026-10-09**, from independent table/rest spawns, with no cold checkpoint or
-stitched trajectory. Native integration is in progress; physical capture,
-qualified lead/reset and full assembly remain unqualified. Use the
+The current producer **`9ae1a9fe76968a4013ea6c39e67718026622b9c0`** passes
+[672 whole-suite tests on 74 unchanged files](../media/m8_table_supported/software_proof_reset_speed2_v3/README.md).
+Its new fresh **`full_reset_speed2_v3`** attempt starts at **14:32:53 UTC on
+2026-10-09**, from independent table/rest spawns, without cold checkpoints or
+stitching. Native integration is in progress; capture/reset/full completion
+have no result yet. Only the CLI reset-speed selection changes: default 4 rad/s
+remains, and this command explicitly selects 2 rad/s. Its intended 2.94524 s
+free-hand reset halves scheduled velocity and quarters acceleration; those
+command facts do not establish native tracking or clearance. Thread/model/
+controller physics, caps and guards are unchanged. Use the
 [current exact source-bound launch recipe](#run-current-canonical-candidate)
 and [agent setup/provenance handoff](m8_supported_agent_handoff.md#current-producer-fresh-run).
+
+The historical `da69a9c` **`full_c2_inertia_v2`** attempt closes failed at
+**22.08285 s / 441,657 ticks**, after **59.72 min** wall time, with original
+`passed=false`, `partial=false`, **19/27 checks**. Its open search reset
+recontacts at 1.0843 s of 1.47262 s (right pad/bolt, 1.487 N); the primary
+physical audit remains false at **13/19 checks**. Supplemental binding
+`4be80e69…` is frozen; complete old failed media are being packaged. The old
+progress clips below belong to that da69 trial, not the current 9ae attempt.
 The closed V5 branch below is separate evidence, using the old 6e7/402 source.
 The new [pickup progress recording](../media/m8_table_supported/full_c2_inertia_v2_progress/pickup_progress/README.md)
 preserves the original prefix through **3.47 s**, showing left stabilization
@@ -36,11 +48,13 @@ Its 2,652 original states include pickup, alignment and entry. The original
 of bolt weight, **1.383709%** positive upward hand support and 100% loaded duty;
 formed overlap/interior contacts remain zero. The recorded 159-state / 12 fps
 clip encodes 13.25 s; it contains no later direction-search result.
-Subsequently, the live native run completes 1.4431 s reverse motion and a
-150 ms C2 brake within its 0.36275 s stopped-direction phase, with a ready
-quiet/load gate (103.658724% thread reaction / 0.458881% positive hand support).
-The first forward phase is underway. Full ledgers/audit and capture/reset/
-complete assembly remain pending; no closed result is inferred from this prefix.
+The run subsequently completes 1.4431 s reverse motion and a 150 ms C2 brake
+within its 0.36275 s stopped-direction phase, with a ready quiet/load gate
+(103.658724% thread reaction / 0.458881% positive hand support). Its first
+forward phase leaves only 21.60 µm formed overlap, with zero loaded interior
+contacts. The later 0.29775 s open-settle phase has zero whole-right/bolt
+contacts and 65.42 nm / 0.162 mrad drift; the subsequent reset recontacts and
+aborts. These later events do not change the historical 13.1946 s package.
 
 The earlier [crest-search V3 cold diagnostic](../media/m8_table_supported/diagnostics/crest_seat_search_v3_failed/README.md)
 fails at **1.6254 s**, radial error **150.848 µm** above the unchanged
@@ -517,8 +531,8 @@ the current CLI's implicit output is `outputs/m8_supported/demo`.
 
 ## Run current canonical candidate
 
-Producer **`da69a9cd44a8312cc7b97365faf5e09c27a646e2`** contains the new
-crest/C2/inertia controller and its [672-test / 74-source packet](../media/m8_table_supported/software_proof_c2_inertia_v2/README.md).
+Producer **`9ae1a9fe76968a4013ea6c39e67718026622b9c0`** exposes reset-speed selection through the same
+crest/C2/inertia controller and its [672-test / 74-source packet](../media/m8_table_supported/software_proof_reset_speed2_v3/README.md).
 Use a complete unused clone, exact detached producer and the matched native
 runtime. On a fresh host run `scripts/setup.sh` there first; do not rebuild a
 shared runtime during another native integration. If that binary differs from
@@ -526,12 +540,12 @@ the archived SHA, use the handoff's [new local-proof/runtime recipe](m8_supporte
 before launching; the published proof is not relabeled.
 
 ```sh
-task_producer=da69a9cd44a8312cc7b97365faf5e09c27a646e2
-git clone https://github.com/robomechanics/astra-r2s.git /workspace/astra-r2s-supported-c2-inertia
-git -C /workspace/astra-r2s-supported-c2-inertia switch --detach "$task_producer"
-cd /workspace/astra-r2s-supported-c2-inertia
-python media/m8_table_supported/software_proof_c2_inertia_v2/launch_supported_c2_inertia_v2.py --repository-root "$PWD" --proof media/m8_table_supported/software_proof_c2_inertia_v2 --producer "$task_producer" --output outputs/m8_table_supported/agent_full_c2_inertia --prepare-only
-python media/m8_table_supported/software_proof_c2_inertia_v2/launch_supported_c2_inertia_v2.py --repository-root "$PWD" --proof media/m8_table_supported/software_proof_c2_inertia_v2 --producer "$task_producer" --output outputs/m8_table_supported/agent_full_c2_inertia
+task_producer=9ae1a9fe76968a4013ea6c39e67718026622b9c0
+git clone https://github.com/robomechanics/astra-r2s.git /workspace/astra-r2s-supported-reset-speed2
+git -C /workspace/astra-r2s-supported-reset-speed2 switch --detach "$task_producer"
+cd /workspace/astra-r2s-supported-reset-speed2
+python media/m8_table_supported/software_proof_reset_speed2_v3/launch_supported_reset_speed2_v3.py --repository-root "$PWD" --proof media/m8_table_supported/software_proof_reset_speed2_v3 --producer "$task_producer" --output outputs/m8_table_supported/agent_full_reset_speed2 --prepare-only
+python media/m8_table_supported/software_proof_reset_speed2_v3/launch_supported_reset_speed2_v3.py --repository-root "$PWD" --proof media/m8_table_supported/software_proof_reset_speed2_v3 --producer "$task_producer" --output outputs/m8_table_supported/agent_full_reset_speed2
 ```
 
 Preparation verifies HEAD, all 74 tested source bytes and runtime hashes,
@@ -542,7 +556,7 @@ must be absent; do not also run the bare CLI into it. The exact native child
 command is:
 
 ```sh
-scripts/run_m8.sh -m yam_twin.m8_supported_demo --output outputs/m8_table_supported/agent_full_c2_inertia --dt .00005 --starting-angular-speed 1 --angular-speed 2 --maximum-entry-dwell 10 --maximum-starting-strokes 5 --qualifying-strokes 2 --axial-damping 200
+scripts/run_m8.sh -m yam_twin.m8_supported_demo --output outputs/m8_table_supported/agent_full_reset_speed2 --dt .00005 --starting-angular-speed 1 --angular-speed 2 --reset-speed 2 --maximum-entry-dwell 10 --maximum-starting-strokes 5 --qualifying-strokes 2 --axial-damping 200
 ```
 
 Omit replay, maximum-phases and cold-parent state. Actual 30 mm opening,
@@ -552,8 +566,11 @@ a 150 ms C2 brake and fresh 100 ms actual quiet/load windows precede forward
 search. Approximate five-axis robot-arm inertia feedforward excludes the axial
 row and is disabled during pickup/transport/open/regrasp; combined Cartesian
 and native motor caps remain. No pitch-clock or object driver is introduced.
-The explicit 10 s entry bound changes the timeout only. Expect 1–2 h CPU or
-more for a longer bounded attempt; the live run has no closed outcome yet.
+The explicit 10 s entry bound changes the timeout only. The CLI retains
+4 rad/s by default; `--reset-speed 2` explicitly selects a 2.945243112740431 s
+free-hand reset schedule. Halved scheduled velocity and quarter acceleration
+are command-profile changes only; native tracking and clearance are pending.
+This is a new continuous experiment with no completed physical outcome yet.
 
 Use the [current agent handoff](m8_supported_agent_handoff.md#current-producer-fresh-run)
 for source/runtime closure, required raw ledgers, nonintegrating replay/audits

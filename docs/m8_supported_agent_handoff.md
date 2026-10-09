@@ -13,7 +13,135 @@ stabilized on the table and a separately spawned M8 × 1.25 bolt.
 
 ## Current producer: fresh run
 
-Current producer **`da69a9cd44a8312cc7b97365faf5e09c27a646e2`** passes
+Current producer **`9ae1a9fe76968a4013ea6c39e67718026622b9c0`** passes
+[672 whole-suite tests on 74 unchanged files](../media/m8_table_supported/software_proof_reset_speed2_v3/README.md),
+with 104.74 s pytest / 105.516 s proof-wrapper duration and unchanged runtime.
+Its new proof SHA is
+`9f3617e33a047e1c5755e6fa62a76d490cc16bb73980ded33c2f57caac34d1a7`.
+The one selected-file change from da69 is CLI reset-speed exposure; the other
+73 files, controller, model/thread physics, finite caps and guards are unchanged.
+Default 4 rad/s remains; the new native command explicitly selects 2 rad/s.
+
+The fresh **`full_reset_speed2_v3`** attempt starts at **2026-10-09
+14:32:53.840320 UTC**, from independent table/rest spawns, with no cold state
+or stitched trajectory. Native integration is in progress; no captured-thread,
+qualified reset, full-task outcome or closed audit is claimed. BEFORE identity is
+`1aceb2b906b6201ba715bde99dfe1394bb0880907b0f9914529a9c50adff1ec9`.
+The historical da69 failed run and its 13.1946 s progress clips below remain
+separate. They do not show the current 9ae trajectory.
+
+Use an absent complete clone destination and detach to the exact new pin.
+The commands below use the recorded runtime; for a different-host build,
+follow [the local-proof case](#different-host-local-proof) before launching:
+
+```sh
+git clone https://github.com/robomechanics/astra-r2s.git /workspace/astra-r2s-supported-reset2-agent
+git -C /workspace/astra-r2s-supported-reset2-agent switch --detach 9ae1a9fe76968a4013ea6c39e67718026622b9c0
+cd /workspace/astra-r2s-supported-reset2-agent
+scripts/setup.sh
+scripts/run_m8.sh -m yam_twin.m8_supported_demo --help
+python media/m8_table_supported/software_proof_reset_speed2_v3/launch_supported_reset_speed2_v3.py --repository-root "$PWD" --proof media/m8_table_supported/software_proof_reset_speed2_v3 --producer 9ae1a9fe76968a4013ea6c39e67718026622b9c0 --output outputs/m8_table_supported/agent_reset2_fresh --prepare-only
+python media/m8_table_supported/software_proof_reset_speed2_v3/launch_supported_reset_speed2_v3.py --repository-root "$PWD" --proof media/m8_table_supported/software_proof_reset_speed2_v3 --producer 9ae1a9fe76968a4013ea6c39e67718026622b9c0 --output outputs/m8_table_supported/agent_reset2_fresh
+```
+
+Reuse the verified cloud runtime if already installed; setup is needed on a
+fresh host. Never rebuild shared core/bindings/plugin during another native
+integration. Preparation checks exact HEAD, all 74 proof-bound source bytes
+and recorded runtime files, without model initialization, native steps or
+output creation. `--repository-root` makes the public launcher portable;
+it does not require the historical helper depth. The proof is bound to the
+recorded binary/runtime hashes listed below. A different machine's rebuild
+needs a new local proof/runtime binding, not a claim of identical binaries.
+The archived `verification_source.py` reruns the whole suite; it is not a
+read-only source verifier. Its original proof/log remain immutable.
+
+### Different-host local proof
+
+A different host's rebuilt binary can differ from the published runtime SHA,
+so the published-proof preparation above rejects it by design. After setup,
+create a NEW local proof and log, preserving the published packet. The whole
+suite includes native tests: run it serially when no other native integration
+is active. From the exact detached 9ae checkout:
+
+```sh
+python media/m8_table_supported/software_proof_reset_speed2_v3/verification_source.py --output outputs/m8_table_supported/agent_local_software_proof
+python - <<'PY_SOURCE_CHECK'
+import json
+from pathlib import Path
+published=json.loads(Path('media/m8_table_supported/software_proof_reset_speed2_v3/software_proof.json').read_text())
+local=json.loads(Path('outputs/m8_table_supported/agent_local_software_proof/software_proof.json').read_text())
+assert local['passed'] and local['source_hashes_unchanged'] and local['runtime_files_unchanged']
+assert len(local['source_hashes']) == 74 and local['source_hashes'] == published['source_hashes']
+PY_SOURCE_CHECK
+python media/m8_table_supported/software_proof_reset_speed2_v3/launch_supported_reset_speed2_v3.py --repository-root "$PWD" --proof outputs/m8_table_supported/agent_local_software_proof --producer 9ae1a9fe76968a4013ea6c39e67718026622b9c0 --output outputs/m8_table_supported/agent_local_reset2_fresh --prepare-only
+```
+
+The proof and trial destinations must be absent. Preparation still takes zero
+native steps; start the actual fresh trial by repeating the last command
+without `--prepare-only`. This binds a new local runtime/trial with the same
+74 source bytes, not binary-equivalent reproduction of the archived trial.
+Preserve its new proof/log, runtime identities and native closure independently.
+
+The launcher starts exactly this child; use the launcher OR the bare CLI
+for a new run, not both into the same destination:
+
+```sh
+scripts/run_m8.sh -m yam_twin.m8_supported_demo --output outputs/m8_table_supported/agent_reset2_fresh --dt .00005 --starting-angular-speed 1 --angular-speed 2 --reset-speed 2 --maximum-entry-dwell 10 --maximum-starting-strokes 5 --qualifying-strokes 2 --axial-damping 200
+```
+
+No replay, phase truncation, parent checkpoint or state injection is used.
+The explicit 10 s entry timeout is separate from physical readiness. At this
+pin, 30 mm actual opening/18.4 mm closure and finite downward left stabilization
+remain. The measured local crest return only requests CLOSED yaw deceleration;
+150 ms C2 braking plus a fresh 100 ms body/hand quiet, original impulse/current
+load and 90/10 bolt-weight window must confirm direction before forward motion.
+Approximate arm inertia feedforward controls two transverse translations and
+three rotations, excluding axial acceleration/position/lead. Fingers remain
+native; their independent acceleration coupling/contact dynamics are not
+inverted. Pickup/transport/open/regrasp rows explicitly disable feedforward.
+Total PD/feedforward and native motor caps remain finite. Perfect native pose
+feedback at 20 kHz is privileged; no learned policy or supported Gym wrapper
+is supplied.
+
+The wrapper preserves `run_publication_identity.json`, original native
+stdout/stderr/exit and `run_publication_identity_after.json`, all 74 before/after
+source hashes and runtime identities. Exit 2 records source/runtime drift;
+a native failed exit remains failed. The final native archive must retain
+XML/ZIP/imported sources, original validation/trace, all table/pad/native-feedback
+ledgers and the complete `robot_inertia_command_history.npz`. Enabled FF rows
+need exact retained M/J/Jdot/velocity inputs; disabled rows keep false presence
+flags and explicit uncomputed placeholders. Rejected unapplied commands are
+separate from actual solved steps/previous controls. Preserve raw timing and
+failed/unexecuted stages, and reassemble any large arrays losslessly.
+
+Phase-end partial snapshots/logs are progress only while integration lives.
+Require complete closed artifacts/source maps before serial audits; do not
+solve/audit live outputs. Record this new attempt's actual native/wall duration
+at closure. The pinned auditor source `4a8b018a…` handles the new canonical
+ledger; historical e468/abb4 compatibility and 65-file wrappers are for the
+older failed run only. Recorded-state geometry replay refreshes saved poses,
+not native forces or controller execution; keep a complete matching pinned
+checkout/runtime and write derivatives to new paths. A successful shell
+preparation or audit execution does not certify physical acceptance. This
+new live attempt has no closed outcome. Default reset speed remains 4 rad/s;
+the explicit 2 rad/s selection doubles the intended reset schedule to
+2.945243112740431 s, halves scheduled velocity and quarters acceleration.
+These are command-profile facts, not measured tracking/clearance results.
+
+After closure, a generic received identity verifier must bind THIS producer,
+its own original BEFORE/AFTER and the new proof. For this recorded launch the
+anchors are producer `9ae1a9fe76968a4013ea6c39e67718026622b9c0`, BEFORE
+`1aceb2b906b6201ba715bde99dfe1394bb0880907b0f9914529a9c50adff1ec9`
+and proof `9f3617e33a047e1c5755e6fa62a76d490cc16bb73980ded33c2f57caac34d1a7`;
+AFTER does not exist until native closure. A new agent's separately launched
+trial uses its own BEFORE/AFTER identities. The old fixed da69 closed-media
+gate and historical source maps must not be substituted for these anchors.
+Require the complete matching helper/source/runtime archive before original-
+layout replay/audit; partial milestone bytes do not establish full coverage.
+
+## Historical da69a9c C2/inertia failure
+
+Historical producer **`da69a9cd44a8312cc7b97365faf5e09c27a646e2`** passes
 [672 whole-suite tests on 74 unchanged source/test files](../media/m8_table_supported/software_proof_c2_inertia_v2/README.md),
 with 88.97 s pytest / 89.685 s proof-wrapper duration and unchanged native
 runtime. The source packet archives all 74 files, original proof/log and the
@@ -21,10 +149,26 @@ portable launcher. Its software proof SHA is
 `71e6d7b7a4688ae8a6e4588424f931b64f824e9552d3d792278ebe472b767be9`.
 These tests do not qualify native thread capture or a completed trajectory.
 
-The new fresh `full_c2_inertia_v2` attempt starts at **2026-10-09
-13:12:50.752963 UTC**, from independent table/rest spawns. It is in progress;
-there is no closed native result or complete audit yet. Its launch-before
-identity is `f98c6ba218d1c5d8503ac3d362a4a501de4fd99a8f1d87e4ee2e11a704f4c9c3`.
+The fresh `full_c2_inertia_v2` attempt starts at **2026-10-09
+13:12:50.752963 UTC**, from independent table/rest spawns, and closes failed
+at **22.08285000017131 s / 441,657 native ticks**, native exit **1**, after
+**3583.482 s / 59.72 min** launch wall time. All 74 source/runtime identities
+stay unchanged. Original `passed=false`, `partial=false`, **19/27 checks**
+remain; selecting the full schedule does not mean completion. It aborts in
+`reset_open_search_2`, after **1.0843 s** of the **1.47262 s** planned motion,
+when one right pad recontacts the bolt at **1.487 N**. Capture, qualified
+lead/reset and fresh complete assembly remain unachieved.
+Its launch-before identity is
+`f98c6ba218d1c5d8503ac3d362a4a501de4fd99a8f1d87e4ee2e11a704f4c9c3`;
+original closure identity is
+`481b930e3dadaddd54240ea9548f5decdb98abfdad9c41db05871c84cf5ccaa3`.
+The three official audit commands execute successfully, while the primary
+physical audit remains **overall false, 13/19 checks**. Table/left-retention
+and passive-property reports pass only their executed scopes. Supplemental
+binding `4be80e698c07137d6182dffa297586af18084569d594b4dc49f47ef187f9e605`
+is frozen, covering 39 original native files and 36 derivative audit files.
+Its ten pure reader regressions are separate from the 672-test producer proof.
+The complete failed media/evidence packet is being packaged.
 The older failed full run and all cold branches below retain their original
 producer/evidence identities; no cold state is stitched into this attempt.
 
@@ -63,107 +207,31 @@ The 74-source/runtime checks and kinematics-only geometry replay integrate
 no motion and reproduce no contact forces. Do not concatenate this prefix
 with pickup or cold-trial recordings.
 
-The live native run later completes **1.4431 s** reverse motion and a
-**150 ms C2 brake** within its **0.36275 s** stopped-direction phase. Its actual
-quiet/load readiness window reports **103.658724%** thread reaction of bolt
-weight and **0.458881%** positive upward hand support, with formed overlap zero.
-The first forward phase is underway. These later live events are not in the
-historical 13.1946 s media package; no final outcome, capture/open/reset or
-full-task audit is claimed.
+The run later completes **1.4431 s** reverse motion and a **150 ms C2 brake**
+within its **0.36275 s** stopped-direction phase. Its actual quiet/load window
+reports **103.658724%** thread reaction of bolt weight and **0.458881%** positive
+upward hand support, with formed overlap zero. The completed first shallow
+forward phase reaches only **21.60 µm** formed overlap and zero interior
+contacts. The subsequent **0.29775 s** open-settle phase has zero whole-right/
+bolt contacts, with **65.42 nm / 0.162 mrad** maximum drift. The later reset
+recontacts and aborts, so no qualified passive reset is completed. These later
+events are absent from the historical 13.1946 s prefix; its capture-time scope
+is unchanged.
 
-Use an absent complete clone destination and detach to the exact new pin.
-The commands below use the recorded runtime; for a different-host build,
-follow [the local-proof case](#different-host-local-proof) before launching:
-
-```sh
-git clone https://github.com/robomechanics/astra-r2s.git /workspace/astra-r2s-supported-c2-agent
-git -C /workspace/astra-r2s-supported-c2-agent switch --detach da69a9cd44a8312cc7b97365faf5e09c27a646e2
-cd /workspace/astra-r2s-supported-c2-agent
-scripts/setup.sh
-scripts/run_m8.sh -m yam_twin.m8_supported_demo --help
-python media/m8_table_supported/software_proof_c2_inertia_v2/launch_supported_c2_inertia_v2.py --repository-root "$PWD" --proof media/m8_table_supported/software_proof_c2_inertia_v2 --producer da69a9cd44a8312cc7b97365faf5e09c27a646e2 --output outputs/m8_table_supported/agent_c2_fresh --prepare-only
-python media/m8_table_supported/software_proof_c2_inertia_v2/launch_supported_c2_inertia_v2.py --repository-root "$PWD" --proof media/m8_table_supported/software_proof_c2_inertia_v2 --producer da69a9cd44a8312cc7b97365faf5e09c27a646e2 --output outputs/m8_table_supported/agent_c2_fresh
-```
-
-Reuse the verified cloud runtime if already installed; setup is needed on a
-fresh host. Never rebuild shared core/bindings/plugin during another native
-integration. Preparation checks exact HEAD, all 74 proof-bound source bytes
-and recorded runtime files, without model initialization, native steps or
-output creation. `--repository-root` makes the public launcher portable;
-it does not require the historical helper depth. The proof is bound to the
-recorded binary/runtime hashes listed below. A different machine's rebuild
-needs a new local proof/runtime binding, not a claim of identical binaries.
-The archived `verification_source.py` reruns the whole suite; it is not a
-read-only source verifier. Its original proof/log remain immutable.
-
-### Different-host local proof
-
-A different host's rebuilt binary can differ from the published runtime SHA,
-so the published-proof preparation above rejects it by design. After setup,
-create a NEW local proof and log, preserving the published packet. The whole
-suite includes native tests: run it serially when no other native integration
-is active. From the exact detached da69 checkout:
+To repeat that historical failed experiment, use a COMPLETE clone detached
+to `da69a9cd44a8312cc7b97365faf5e09c27a646e2` and its original 672/74
+software packet. Do not use new 9ae source bytes for its archived replay.
+The unchanged historical native command is:
 
 ```sh
-python media/m8_table_supported/software_proof_c2_inertia_v2/verification_source.py --output outputs/m8_table_supported/agent_local_software_proof
-python - <<'PY_SOURCE_CHECK'
-import json
-from pathlib import Path
-published=json.loads(Path('media/m8_table_supported/software_proof_c2_inertia_v2/software_proof.json').read_text())
-local=json.loads(Path('outputs/m8_table_supported/agent_local_software_proof/software_proof.json').read_text())
-assert local['passed'] and local['source_hashes_unchanged'] and local['runtime_files_unchanged']
-assert len(local['source_hashes']) == 74 and local['source_hashes'] == published['source_hashes']
-PY_SOURCE_CHECK
-python media/m8_table_supported/software_proof_c2_inertia_v2/launch_supported_c2_inertia_v2.py --repository-root "$PWD" --proof outputs/m8_table_supported/agent_local_software_proof --producer da69a9cd44a8312cc7b97365faf5e09c27a646e2 --output outputs/m8_table_supported/agent_local_c2_fresh --prepare-only
+scripts/run_m8.sh -m yam_twin.m8_supported_demo --output outputs/m8_table_supported/agent_historical_da69 --dt .00005 --starting-angular-speed 1 --angular-speed 2 --maximum-entry-dwell 10 --maximum-starting-strokes 5 --qualifying-strokes 2 --axial-damping 200
 ```
 
-The proof and trial destinations must be absent. Preparation still takes zero
-native steps; start the actual fresh trial by repeating the last command
-without `--prepare-only`. This binds a new local runtime/trial with the same
-74 source bytes, not binary-equivalent reproduction of the archived trial.
-Preserve its new proof/log, runtime identities and native closure independently.
-
-The launcher starts exactly this child; use the launcher OR the bare CLI
-for a new run, not both into the same destination:
-
-```sh
-scripts/run_m8.sh -m yam_twin.m8_supported_demo --output outputs/m8_table_supported/agent_c2_fresh --dt .00005 --starting-angular-speed 1 --angular-speed 2 --maximum-entry-dwell 10 --maximum-starting-strokes 5 --qualifying-strokes 2 --axial-damping 200
-```
-
-No replay, phase truncation, parent checkpoint or state injection is used.
-The explicit 10 s entry timeout is separate from physical readiness. At this
-pin, 30 mm actual opening/18.4 mm closure and finite downward left stabilization
-remain. The measured local crest return only requests CLOSED yaw deceleration;
-150 ms C2 braking plus a fresh 100 ms body/hand quiet, original impulse/current
-load and 90/10 bolt-weight window must confirm direction before forward motion.
-Approximate arm inertia feedforward controls two transverse translations and
-three rotations, excluding axial acceleration/position/lead. Fingers remain
-native; their independent acceleration coupling/contact dynamics are not
-inverted. Pickup/transport/open/regrasp rows explicitly disable feedforward.
-Total PD/feedforward and native motor caps remain finite. Perfect native pose
-feedback at 20 kHz is privileged; no learned policy or supported Gym wrapper
-is supplied.
-
-The wrapper preserves `run_publication_identity.json`, original native
-stdout/stderr/exit and `run_publication_identity_after.json`, all 74 before/after
-source hashes and runtime identities. Exit 2 records source/runtime drift;
-a native failed exit remains failed. The final native archive must retain
-XML/ZIP/imported sources, original validation/trace, all table/pad/native-feedback
-ledgers and the complete `robot_inertia_command_history.npz`. Enabled FF rows
-need exact retained M/J/Jdot/velocity inputs; disabled rows keep false presence
-flags and explicit uncomputed placeholders. Rejected unapplied commands are
-separate from actual solved steps/previous controls. Preserve raw timing and
-failed/unexecuted stages, and reassemble any large arrays losslessly.
-
-Phase-end partial snapshots/logs are progress only while integration lives.
-Require complete closed artifacts/source maps before serial audits; do not
-solve/audit live outputs. Budget roughly 1–2 h CPU or more for a longer bounded
-schedule. The new pinned auditor source `4a8b018a…` handles the new canonical
-ledger; historical e468/abb4 compatibility and 65-file wrappers are for the
-older failed run only. Recorded-state geometry replay refreshes saved poses,
-not native forces or controller execution; keep a complete matching pinned
-checkout/runtime and write derivatives to new paths. No closed new evidence
-package or acceptance report is promised before closure.
+It uses the original default 4 rad/s reset. This repeats a failed-capable
+fresh native experiment, not a successful assembly or recorded-state replay.
+The complete closed package/portable geometry-only recipe is being prepared;
+its exact original source/runtime/audit identities must remain distinct from
+the current reset-speed2 launch. No future evidence link is assumed.
 
 ## Historical 6e7d0d2 outcome and proof scope
 
