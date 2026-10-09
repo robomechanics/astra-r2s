@@ -1,0 +1,105 @@
+{
+  "status": "Static initial scene preview; no physical rollout qualification",
+  "scene_config": {
+    "base": {
+      "thread": {
+        "timestep": 2.5e-05,
+        "friction": 0.15,
+        "contact_time_constant": 0.0005,
+        "contact_margin": 0.0,
+        "contact_impratio": 1.0,
+        "sdf_initpoints": 40,
+        "sdf_iterations": 30,
+        "bolt_length": 0.016,
+        "pitch": 0.00125,
+        "male_pitch_diameter": 0.0071,
+        "female_pitch_diameter": 0.007268,
+        "nut_height": 0.016,
+        "nut_across_flats": 0.016,
+        "nut_mass": 0.018984665656908355,
+        "nut_transverse_inertia": 6.946182225160569e-07,
+        "nut_axial_inertia": 1.1886877420788483e-06,
+        "initial_z": 0.00875,
+        "gravity": -9.81,
+        "with_gripper": false,
+        "with_bolt": true,
+        "guided": false
+      },
+      "bolt_position": [
+        0.3,
+        -0.06,
+        0.11125
+      ],
+      "bolt_quaternion": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pad_friction": 0.8,
+      "jaw_stiffness": 20000.0,
+      "jaw_damping": 8.0,
+      "maximum_jaw_force": 20.0,
+      "open_aperture": 0.024,
+      "closed_aperture": 0.0194,
+      "left_closed_aperture": 0.0144,
+      "left_grasp_roll_rad": -1.5707963267948966,
+      "left_block_contact_impedance": [
+        0.9999,
+        0.9999,
+        0.0001
+      ],
+      "left_block_contact_time_constant": 0.0008,
+      "pad_inner_offset": 0.0005,
+      "block_size": [
+        0.02,
+        0.12,
+        0.016
+      ],
+      "block_density": 2700.0,
+      "bolt_offset": [
+        0.0,
+        -0.05,
+        0.008
+      ],
+      "left_grasp_offset": [
+        0.0,
+        -0.0094,
+        0.0
+      ]
+    },
+    "block_position": [
+      0.25,
+      0.15,
+      0.06
+    ],
+    "hole_offset": [
+      0.0,
+      -0.05,
+      0.0
+    ],
+    "bolt_head_position": [
+      0.36,
+      -0.15,
+      0.04
+    ],
+    "bolt_yaw_rad": 0.23,
+    "head_across_flats": 0.02,
+    "head_height": 0.008,
+    "steel_density": 7850.0,
+    "rest_radius": 0.007,
+    "rest_pin_radius": 0.001,
+    "rest_base_height": 0.01,
+    "pickup_from_table": true,
+    "held_block_position": [
+      0.3,
+      -0.01,
+      0.10325
+    ]
+  },
+  "model_fingerprint": "cd74d45030c8aecd16d20fe40b9c2885cdebb437e61a49c58f4c8c9b4768bffc",
+  "both_hands_start_open": true,
+  "left_block_starts_on_table": true,
+  "male_bolt_starts_separately_on_head_support_rest": true,
+  "block_initial_rest": "Upright on 20 by 16 mm short end for native gripper and wrist clearance"
+}
